@@ -1,0 +1,21 @@
+img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  vertical-align: middle;
+  padding: 8px;
+}
+
+img[src] {
+  max-width: 100%;
+}
