@@ -1,0 +1,96 @@
+<section id="tripshorts" class="sec">
+  <div class="tex" appParallax="-0.12" [pxScale]="0.05" [style.background-image]="'url(' + img + ')'"></div>
+  <div class="wash"></div>
+  <div class="orb o1" appParallax="-0.22" [pxX]="0.05"></div>
+
+  <div class="container grid">
+    <!-- Cột trái: câu chuyện -->
+    <div class="narr">
+      <span class="badge" appReveal><span class="dot pulse"></span>🌊 Đánh thức mọi giác quan</span>
+
+      <h2 class="h2" appReveal revealDelay="100">
+        TripShorts: Đưa Bạn Đặt Chân Tới Giữa <span class="gradient-text">Đại Dương Hoàng Hôn</span>
+      </h2>
+
+      <p class="lead" appReveal revealDelay="200">
+        Chấm dứt hoàn toàn những bài review câu chữ cứng nhắc và bức ảnh chụp tĩnh buồn chán. Với TripShorts, bạn lắng nghe
+        trực tiếp tiếng sóng vỗ bên vách đá resort Amanoi, cảm nhận gió nhiệt đới lướt qua rặng dừa và bước vào chuyến du
+        ngoạn thực thụ trước cả khi khởi hành.
+      </p>
+
+      <div class="pillars">
+        @for (p of pillars; track p.title) {
+          <div class="cell" appReveal [revealDelay]="300 + $index * 130">
+            <div class="pillar glass">
+              <div class="ico" [class.amber]="p.tone === 'amber'">
+                <span class="material-symbols-outlined">{{ p.icon }}</span>
+              </div>
+              <h3>{{ p.title }}</h3>
+              <p>{{ p.text }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Cột phải: thẻ video 9:16 -->
+    <div class="stage" appReveal="right">
+      <div class="aura a1" appParallax="0.1"></div>
+      <div class="aura a2" appParallax="-0.18"></div>
+
+      <div class="chip c1 glass" appParallax="-0.2" [pxMouse]="14">
+        <span class="material-symbols-outlined">waves</span> Sóng biển 3D
+      </div>
+      <div class="chip c2 glass" appParallax="0.16" [pxMouse]="-14">
+        <span class="material-symbols-outlined fill">star</span> 5-sao • Michelin
+      </div>
+
+      <div class="drift" appParallax="-0.06">
+        <div class="float">
+          <div class="tilt" #tilt>
+            <div class="phone">
+              <div class="screen">
+                <img class="shot" [src]="img" alt="TripShorts Vịnh Vĩnh Hy - Amanoi" />
+                <div class="shade"></div>
+
+                <div class="top">
+                  <div class="pill"><span class="dot pulse"></span><b>HOÀNG HÔN LIVE</b></div>
+                  <div class="pill"><span class="material-symbols-outlined" style="color: #dfecb6">visibility</span><b>58.9K</b></div>
+                </div>
+
+                <div class="side">
+                  <button class="act" type="button" [class.liked]="liked()" (click)="toggleLike()">
+                    <span class="circle"><span class="material-symbols-outlined fill">favorite</span></span>
+                    <b>{{ likes() }}</b>
+                  </button>
+                  <div class="act">
+                    <span class="circle"><span class="material-symbols-outlined">chat_bubble</span></span><b>1.2K</b>
+                  </div>
+                  <div class="act">
+                    <span class="circle"><span class="material-symbols-outlined">bookmark</span></span><b>8.4K</b>
+                  </div>
+                  <div class="act">
+                    <span class="circle"><span class="material-symbols-outlined">share</span></span><b>Chia Sẻ</b>
+                  </div>
+                </div>
+
+                <div class="meta">
+                  <div class="tag">
+                    <span class="material-symbols-outlined">location_on</span>
+                    <b>Amanoi Resort Vĩnh Hy • Đặt 1 Chạm</b>
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                  </div>
+                  <div class="audio">
+                    <span class="material-symbols-outlined" style="color: #dfecb6">graphic_eq</span>
+                    <span>Âm thanh sóng biển thực tế • Vĩnh Hy</span>
+                  </div>
+                  <p>Hoàng hôn buông trên bãi cát nguyên sơ. Đặt trọn gói kỳ nghỉ riêng tư ngay trong video này!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

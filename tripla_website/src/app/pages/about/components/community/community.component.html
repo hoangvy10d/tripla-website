@@ -1,0 +1,60 @@
+<section id="trai-nghiem" class="sec">
+  <div class="ring r1" appParallax="-0.15" [pxRotate]="40"></div>
+  <div class="ring r2" appParallax="0.12" [pxRotate]="-30"></div>
+
+  <div class="container grid">
+    <!-- Trái: bộ sưu tập ảnh nhiều tầng -->
+    <div class="gallery" appReveal="left">
+      <div class="main">
+        <img class="photo" [src]="img" alt="Sơn thủy Tràng An Ninh Bình"
+             appParallax="-0.07" pxBase="scale(1.18)" />
+        <div class="fade"></div>
+        <span class="tag">
+          <span class="material-symbols-outlined">landscape</span> Non Nước Việt Nam
+        </span>
+        <div class="cap">
+          <p class="t">Di Sản Thần Tiên Mây Núi</p>
+          <p class="s">Vẻ đẹp hùng vĩ lay động hàng triệu trái tim du khách quốc tế</p>
+        </div>
+      </div>
+
+      <div class="over" appParallax="-0.12" [pxMouse]="10">
+        <div class="float glass">
+          <div class="who">
+            <div class="mini"><span class="material-symbols-outlined">video_call</span></div>
+            <b>Cộng Đồng Creator</b>
+          </div>
+          <p>Biến mỗi thước phim hành trình của bạn thành tác phẩm điện ảnh và nhận chia sẻ doanh thu minh bạch cùng Tripla.</p>
+          <div class="line">
+            <span><span class="material-symbols-outlined">stars</span> Đặc Quyền Du Khách Thượng Lưu</span>
+            <span class="material-symbols-outlined go">arrow_forward</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phải: câu chuyện + số liệu -->
+    <div class="narr">
+      <span class="badge" appReveal><span class="dot"></span>Cộng đồng nhà sáng tạo Tripla</span>
+      <h2 class="h2" appReveal revealDelay="100">
+        Lan Tỏa Khoảnh Khắc, <span class="gradient-text">Đánh Thức Cơn Khát Phiêu Lưu</span>
+      </h2>
+      <p class="lead" appReveal revealDelay="200">
+        Tripla không đơn thuần là nền tảng đặt phòng — mà là sân khấu điện ảnh để những người yêu xê dịch đích thực cất tiếng.
+        Chia sẻ góc nhìn chân phương không qua lăng kính chỉnh sửa, khẳng định phong cách du lịch thượng lưu và tận hưởng hệ
+        sinh thái ưu đãi vương giả.
+      </p>
+
+      <div class="stats">
+        @for (s of stats; track s.label) {
+          <div class="cell" appReveal="zoom" [revealDelay]="300 + $index * 140">
+            <div class="stat glass" [class.hot]="s.hot">
+              <span class="num">{{ s.value }}</span>
+              <span class="lbl">{{ s.label }}</span>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

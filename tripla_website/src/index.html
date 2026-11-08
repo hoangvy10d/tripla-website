@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="vi" class="h-full w-full">
+<head>
+  <meta charset="utf-8">
+  <title>TRIPLA - Travel EASY, NOT BUSY</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TRIPLA - Nền tảng giải trí và phong cách du lịch  qua lăng kính điện ảnh .">
+  <meta name="theme-color" content="#a63b00">
+  <meta property="og:title" content="TRIPLA - Du lịch dễ dàng với một lần chạm">
+  <meta property="og:description" content="Khám phá kỳ nghỉ xa hoa, trải nghiệm 1 chạm và những điểm đến du lịch đẳng cấp qua TripShorts.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:image:alt" content="TRIPLA luxury travel landscape">
+
+  <link rel="stylesheet" href="/fonts/tripla-fonts.css">
+  <!-- Shared Vietnamese fonts are served locally. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- 2. Google Material Symbols Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0" rel="stylesheet" />
+
+  <!-- 3. Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- 4. GỘP CẢ 2 TAILWIND CONFIG (HOME + TRIPSHORTS) - BẮT BUỘC ĐỂ KHÔNG BỊ VỠ HOME -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class", 
+      theme: {
+        extend: {
+          colors: {
+            secondary: "#855300", 
+            "on-secondary-fixed": "#2a1700", 
+            "on-tertiary-container": "#4d1f00", 
+            "error-container": "#ffdad6", 
+            "on-secondary-container": "#684000", 
+            outline: "#8f7065", 
+            "on-secondary-fixed-variant": "#653e00", 
+            "tertiary-container": "#e2762d", 
+            "on-tertiary": "#ffffff", 
+            "secondary-container": "#fea619", 
+            "surface-variant": "#e5e1e4", 
+            tertiary: "#9b4500", 
+            "on-background": "#1c1b1d", 
+            "primary-container": "#ff5e00", 
+            "on-secondary": "#ffffff", 
+            "secondary-fixed": "#ffddb8", 
+            "surface-container-low": "#f6f3f5", 
+            "surface-container-lowest": "#ffffff", 
+            "tertiary-fixed": "#ffdbc9", 
+            "on-tertiary-fixed": "#331200", 
+            "on-surface": "#1c1b1d", 
+            "inverse-on-surface": "#f3f0f2", 
+            "on-error-container": "#93000a", 
+            "surface-tint": "#a63b00", 
+            "surface-container": "#f0edf0", 
+            primary: "#a63b00", 
+            "inverse-surface": "#313032", 
+            "surface-container-highest": "#e5e1e4", 
+            "on-primary-fixed": "#370e00", 
+            "tertiary-fixed-dim": "#ffb68d", 
+            "on-error": "#ffffff", 
+            "inverse-primary": "#ffb599", 
+            background: "#fcf8fb", 
+            "primary-fixed-dim": "#ffb599", 
+            "primary-fixed": "#ffdbce", 
+            "on-surface-variant": "#5b4137", 
+            "secondary-fixed-dim": "#ffb95f", 
+            "surface-bright": "#fcf8fb", 
+            "outline-variant": "#e4bfb1", 
+            "surface-dim": "#dcd9dc", 
+            "on-tertiary-fixed-variant": "#763300", 
+            error: "#ba1a1a", 
+            "on-primary-fixed-variant": "#7f2b00", 
+            "surface-container-high": "#eae7ea", 
+            "on-primary-container": "#531900", 
+            "on-primary": "#ffffff", 
+            surface: "#fcf8fb",
+            // Thêm màu sắc của TripShorts
+            'deep-slate': '#0F172A',
+            'muted-steel': '#475569',
+            'sunset-coral': '#FF6B6B',
+            'sun-gold': '#F7B731',
+            'soft-slate': '#F8FAFC'
+          }, 
+          borderRadius: {DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem"}, 
+          spacing: {"space-lg": "1.5rem", margin: "4rem", "space-sm": "0.5rem", "space-xl": "2.5rem", "space-xs": "0.25rem", "space-md": "1rem", gutter: "2rem"}, 
+          fontFamily: {
+            "body-sm": ["Tripla Sans", "Arial", "sans-serif"], 
+            "display-lg": ["Tripla Sans", "Arial", "sans-serif"], 
+            "headline-xl": ["Tripla Sans", "Arial", "sans-serif"], 
+            "title-md": ["Tripla Sans", "Arial", "sans-serif"], 
+            "body-md": ["Tripla Sans", "Arial", "sans-serif"], 
+            "label-md": ["Tripla Sans", "Arial", "sans-serif"], 
+            "label-sm": ["Tripla Sans", "Arial", "sans-serif"], 
+            "display-xl-mobile": ["Tripla Sans", "Arial", "sans-serif"], 
+            "label-caps": ["Tripla Sans", "Arial", "sans-serif"], 
+            "headline-lg-mobile": ["Tripla Sans", "Arial", "sans-serif"], 
+            "headline-lg": ["Tripla Sans", "Arial", "sans-serif"], 
+            "headline-md": ["Tripla Sans", "Arial", "sans-serif"], 
+            "display-xl": ["Tripla Sans", "Arial", "sans-serif"], 
+            "body-lg": ["Tripla Sans", "Arial", "sans-serif"], 
+            headline: ["Tripla Sans", "Arial", "sans-serif"], 
+            display: ["Tripla Sans", "Arial", "sans-serif"], 
+            body: ["Tripla Sans", "Arial", "sans-serif"], 
+            label: ["Tripla Sans", "Arial", "sans-serif"]
+          }, 
+          fontSize: {
+            "body-sm": ["0.875rem", {lineHeight: "1.35rem", letterSpacing: "0em", fontWeight: "400"}], 
+            "display-lg": ["3.5rem", {lineHeight: "4rem", letterSpacing: "-0.03em", fontWeight: "700"}], 
+            "headline-xl": ["2.5rem", {lineHeight: "3rem", letterSpacing: "-0.025em", fontWeight: "700"}], 
+            "title-md": ["1.25rem", {lineHeight: "1.75rem", letterSpacing: "-0.01em", fontWeight: "600"}], 
+            "body-md": ["1rem", {lineHeight: "1.6rem", letterSpacing: "0em", fontWeight: "400"}], 
+            "label-md": ["0.875rem", {lineHeight: "1.25rem", letterSpacing: "0.01em", fontWeight: "500"}], 
+            "label-sm": ["0.75rem", {lineHeight: "1rem", letterSpacing: "0.06em", fontWeight: "600"}], 
+            "display-xl-mobile": ["2.5rem", {lineHeight: "3rem", letterSpacing: "-0.03em", fontWeight: "800"}], 
+            "label-caps": ["0.6875rem", {lineHeight: "0.875rem", letterSpacing: "0.12em", fontWeight: "700"}], 
+            "headline-lg-mobile": ["1.75rem", {lineHeight: "2.25rem", letterSpacing: "-0.02em", fontWeight: "700"}], 
+            "headline-lg": ["2rem", {lineHeight: "2.5rem", letterSpacing: "-0.02em", fontWeight: "600"}], 
+            "headline-md": ["1.5rem", {lineHeight: "2rem", letterSpacing: "-0.015em", fontWeight: "600"}], 
+            "display-xl": ["4.5rem", {lineHeight: "5rem", letterSpacing: "-0.035em", fontWeight: "800"}], 
+            "body-lg": ["1.125rem", {lineHeight: "1.75rem", letterSpacing: "-0.005em", fontWeight: "400"}]
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- 5. Keyframes & Glassmorphism Animation -->
+  <style>
+    @layer base {
+      html, body { margin:0; padding:0; scroll-behavior: smooth; }
+      body { overscroll-behavior:none; }
+    }
+    ::-webkit-scrollbar { display:none; }
+
+    /* Keyframe Animations */
+    @keyframes floatGentle {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
+    }
+    @keyframes heroBreatheGlow {
+      0%, 100% { box-shadow: 0 14px 36px rgba(255, 107, 107, 0.38), 0 0 20px rgba(247, 183, 49, 0.2); transform: scale(1); }
+      50% { box-shadow: 0 18px 46px rgba(255, 107, 107, 0.52), 0 0 32px rgba(247, 183, 49, 0.35); transform: scale(1.02); }
+    }
+    .animate-float-slow { animation: floatGentle 5s ease-in-out infinite; }
+    .animate-hero-breathe { animation: heroBreatheGlow 3.6s ease-in-out infinite; }
+
+    /* Glassmorphism Classes cho TripShorts */
+    .glass-1 { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.6); }
+    .glass-2 { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.9); }
+    .glass-3 { background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); box-shadow: 0 24px 50px -12px rgba(15, 23, 42, 0.16); }
+  </style>
+</head>
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-fixed">
+  <app-root></app-root>
+</body>
+</html>

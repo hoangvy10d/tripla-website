@@ -1,0 +1,21 @@
+<div class="blobs" aria-hidden="true">
+  @for (b of blobs; track $index) {
+    <div class="blob"
+         [appParallax]="b.speed" [pxMouse]="b.mouse"
+         [style.top]="b.top" [style.left]="b.left" [style.right]="b.right"
+         [style.width.px]="b.size" [style.height.px]="b.size"
+         [style.background]="'radial-gradient(circle at 35% 35%, rgba(' + b.rgb + ',' + b.alpha + '), rgba(' + b.rgb + ',0) 68%)'"
+         [style.animation-delay.s]="b.delay"></div>
+  }
+</div>
+
+<div class="fireflies" aria-hidden="true">
+  @for (f of fireflies; track $index) {
+    <span class="ff"
+          [style.top]="f.top" [style.left]="f.left" [style.right]="f.right"
+          [style.width.px]="f.size" [style.height.px]="f.size"
+          [style.background]="f.color"
+          [style.box-shadow]="'0 0 0 3px rgba(255,255,255,.55), 0 0 16px 4px ' + f.color"
+          [style.animation-duration.s]="f.dur" [style.animation-delay.s]="f.delay"></span>
+  }
+</div>

@@ -1,0 +1,13 @@
+/* host không tạo stacking context để fireflies có thể nổi lên trên nội dung */
+:host { display: contents; }
+
+/* phủ toàn bộ chiều cao trang (body là position: relative) */
+.blobs { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.blob {
+  position: absolute; filter: blur(36px);
+  border-radius: 58% 42% 55% 45% / 48% 56% 44% 52%;
+  animation: blobMorph 18s ease-in-out infinite;
+}
+
+.fireflies { position: fixed; inset: 0; z-index: 30; overflow: hidden; pointer-events: none; }
+.ff { position: absolute; border-radius: 50%; animation: fireflyPulse 7s ease-in-out infinite; }

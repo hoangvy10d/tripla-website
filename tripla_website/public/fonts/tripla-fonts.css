@@ -1,0 +1,5 @@
+@font-face { font-family: 'Tripla Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url('./be-vietnam-pro-regular.ttf') format('truetype'); }
+@font-face { font-family: 'Tripla Sans'; font-style: normal; font-weight: 500; font-display: swap; src: url('./be-vietnam-pro-medium.ttf') format('truetype'); }
+@font-face { font-family: 'Tripla Sans'; font-style: normal; font-weight: 600 900; font-display: swap; src: url('./be-vietnam-pro-semibold.ttf') format('truetype'); }
+@font-face { font-family: 'Tripla Editorial'; font-style: normal; font-weight: 400; font-display: swap; src: url('./lora-regular.ttf') format('truetype'); }
+@font-face { font-family: 'Tripla Editorial'; font-style: italic; font-weight: 400; font-display: swap; src: url('./lora-italic.ttf') format('truetype'); }

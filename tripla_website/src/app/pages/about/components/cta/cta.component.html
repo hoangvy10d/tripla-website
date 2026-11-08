@@ -1,0 +1,38 @@
+<section id="cta" class="sec">
+  <div class="bg" [style.background-image]="'url(' + img + ')'"></div>
+  <div class="veil"></div>
+
+  <!-- vật thể trôi nổi nhiều tầng -->
+  <span class="material-symbols-outlined fill shape s1" appParallax="-0.25" [pxX]="0.08" [pxRotate]="18">flight_takeoff</span>
+  <span class="material-symbols-outlined fill shape s2" appParallax="0.2" [pxX]="-0.06" [pxRotate]="-24">cloud</span>
+  <span class="material-symbols-outlined fill shape s3" appParallax="-0.32" [pxRotate]="60">auto_awesome</span>
+  <span class="material-symbols-outlined fill shape s4" appParallax="0.3" [pxRotate]="-40">stars</span>
+
+  <div class="slab glass" appReveal="zoom">
+    <div class="plane"><span class="material-symbols-outlined">flight_takeoff</span></div>
+
+    <div class="badge">
+      <span class="material-symbols-outlined" style="font-size: 16px">stars</span> Hành trình khởi nguồn từ đam mê
+    </div>
+
+    <h2 class="h2">
+      Sẵn Sàng Du Ngoạn Thế Giới <br />
+      <span class="gradient-text">Theo Cách Hoàn Toàn Mới?</span>
+    </h2>
+
+    <p class="lead">
+      Hãy để Tripla đánh thức mọi giác quan và đưa bước chân bạn đến những thiên đường biển ngọc, núi non trác tuyệt ngay hôm nay.
+    </p>
+
+    <div class="btns">
+      <a class="btn btn-primary" href="#">
+        <span>Bắt Đầu Khám Phá Tripla</span>
+        <span class="material-symbols-outlined" style="font-size: 18px">arrow_forward</span>
+      </a>
+      <a class="btn btn-glass glass" routerLink="/trip-shop">
+        <span class="material-symbols-outlined" style="font-size: 18px; color: var(--amber-d)">explore</span>
+        <span>Bộ Sưu Tập Điểm Đến VIP</span>
+      </a>
+    </div>
+  </div>
+</section>

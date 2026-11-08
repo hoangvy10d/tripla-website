@@ -1,0 +1,27 @@
+<header class="wrap">
+  <div class="bar glass">
+    <a class="brand" href="#top">
+      <span class="logo"><img src="images/logo (2).png" alt="TRIPLA Logo" /></span>
+      <span class="brand-name">TRIPLA</span>
+    </a>
+
+    <nav>
+      @for (item of nav; track item.href) {
+        <a [href]="item.href" (click)="goToSection(item.anchor, $event)">{{ item.label }}</a>
+      }
+    </nav>
+
+    <div class="actions">
+      <button class="sound" type="button" [class.on]="audio.playing()" (click)="audio.toggle()"
+              [attr.aria-pressed]="audio.playing()"
+              [attr.aria-label]="audio.playing() ? 'Tắt tiếng chim hót' : 'Bật tiếng chim hót'"
+              [title]="audio.playing() ? 'Tắt tiếng chim hót' : 'Bật tiếng chim hót'">
+        <span class="material-symbols-outlined">{{ audio.playing() ? 'volume_up' : 'volume_off' }}</span>
+      </button>
+
+      <a class="btn btn-primary cta" [routerLink]="tripshortCtaRoute">Trải Nghiệm TripShorts</a>
+
+      <div class="avatar"><span class="material-symbols-outlined">person</span></div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,245 @@
+<!-- Biểu tượng SVG dùng chung (chip của thẻ) -->
+<svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-chip" viewBox="0 0 115.912 111.796"><g fill="none" stroke="currentColor" stroke-width="3"><path d="M16.4608 1.5H99.4508C107.713 1.5 114.412 8.19819 114.412 16.4608V95.3356C114.412 103.598 107.713 110.296 99.4508 110.296H16.4608C8.19819 110.296 1.5 103.598 1.5 95.3356V16.4608C1.5 8.19819 8.19819 1.5 16.4608 1.5Z"/><path d="M46.0814 44.7096H71.8878V70.5161H46.0814V44.7096Z"/><path d="M58.9846 43.2096V0.685867"/><path d="M58.9846 111.111V72.0161"/><path d="M72.7032 55.5552L115.227 55.5552"/><path d="M72.9014 44.0963L86.6202 30.1782H115.226"/><path d="M72.9014 72.0162L86.6202 85.9343H115.226"/><path d="M45.2635 55.5552L1.36797 55.5552"/><path d="M45.0652 44.0963L31.3465 30.1782H1.36921"/><path d="M45.0652 72.0162L31.3465 85.9343H1.36921"/></g></symbol>
+</svg>
+
+<div class="page" #page (click)="clearSearchFieldHighlight($event)">
+
+  <!-- ===================================================================== -->
+  <!-- HEADER                                                                  -->
+  <!-- ===================================================================== -->
+  <header class="nav intro-item" style="--at: 1.15s" [attr.data-theme]="navDark ? 'dark' : 'light'">
+    <a href="#featured-trips" class="logo" aria-label="TRIPLA trang chủ">
+      <span class="logo-disc"><img src="images/logo (2).png" alt="" /></span>
+      <span class="logo-name">TRIPLA</span>
+    </a>
+
+    <nav class="links glass" aria-label="Điều hướng chính" id="main-nav-bar">
+      <a class="link" [attr.data-active]="activeNavPath === 'kham-pha' ? '' : null"
+         (click)="setActiveNav('kham-pha')" href="#featured-trips">Khám phá</a>
+      <button type="button" class="link" [attr.data-active]="activeNavPath === 'tripshorts' ? '' : null"
+         (click)="setActiveNav('tripshorts'); goToTripshort()">TripShorts</button>
+      <a class="link" [attr.data-active]="activeNavPath === 'tripshop' ? '' : null"
+         routerLink="/trip-shop">TripShop</a>
+      <a class="link" [attr.data-active]="activeNavPath === 've-tripla' ? '' : null"
+         (click)="setActiveNav('ve-tripla')" routerLink="/about">Về TRIPLA</a>
+    </nav>
+
+    <div class="actions">
+      <button type="button" class="account glass" (click)="openAuthModal()">
+        <span class="material-symbols-outlined">person</span><span class="label">Tài khoản</span>
+      </button>
+      <button type="button" class="nav-cta" (click)="openAuthModal()"><span class="label">Đăng nhập</span></button>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- HERO — cổng thẻ kính trong cảnh thiên nhiên (ghim khi cuộn)             -->
+  <!-- ===================================================================== -->
+  <div class="pin" #pin>
+    <main class="stage" #stage id="hero">
+
+      <div class="preloader" aria-hidden="true">
+        <p class="pre-word">TRIPLA</p>
+        <p class="pre-counter"><span #counter>00</span>%</p>
+      </div>
+
+      <!-- Ảnh thiên nhiên + ánh sáng của thẻ -->
+      <div class="media grow" aria-hidden="true">
+        <div class="image" #image [style.--hero-photo]="heroPhotoCss"></div>
+        <div class="plane light" #light>
+          <div class="light-flicker">
+            <div class="face" [style.--hero-photo]="heroPhotoCss">
+              <span class="card-logo">special ticket</span>
+              <svg class="chip" viewBox="0 0 115.912 111.796"><use href="#i-chip"/></svg>
+              <span class="name">TRIPLA Ticket</span>
+              <span class="number">"9276 9400 2812 0000"</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nội dung hero -->
+      <div class="copy" #copy>
+        <h1 class="journey-quote intro-item" style="--at: 1.35s"> " lên đường thôi "</h1>
+      </div>
+
+      <!-- Cổng: viền sáng và nền trắng phủ kín màn hình -->
+      <div class="over grow" aria-hidden="true">
+        <div class="plane portal" #portal>
+          <div class="fill" #fill></div>
+          <div class="rim" #rim></div>
+          <div class="rim rim-flash"></div>
+        </div>
+      </div>
+
+      <!-- Màn hình thứ hai: nội dung "Chạm vào thiên nhiên" -->
+      <section class="ready" #ready inert aria-labelledby="ready-title">
+        <audio #oceanAudio src="/audio/ocean.mp3" loop preload="none"
+          (playing)="syncOceanAudioState()" (pause)="syncOceanAudioState()" (error)="syncOceanAudioState()"></audio>
+        <button type="button" class="sound glass ocean-sound-control" [class.on]="isAudioActive" (click)="toggleAmbientSound()"
+          [attr.aria-pressed]="isAudioActive" [attr.aria-label]="isAudioActive ? 'Tắt âm thanh biển' : 'Bật âm thanh biển'"
+          [title]="isAudioActive ? 'Tắt âm thanh biển' : 'Bật âm thanh biển'">
+          <span class="material-symbols-outlined">{{ isAudioActive ? 'waves' : 'volume_off' }}</span>
+        </button>
+        <video #heroVideo class="destination-video" autoplay loop muted [muted]="true" playsinline aria-hidden="true"><source src="/ocean.mp4" type="video/mp4" /></video>
+        <div class="destination-shade" aria-hidden="true"></div>
+        <div class="destination-content">
+          <p class="section-kicker" data-r style="--at:.1s">TRIPLA CURATED EDITION · MÙA HÈ 2026</p>
+          <p class="destination-eyebrow" data-r style="--at:.2s">Kiến tạo kỳ nghỉ xa hoa độc bản với trải nghiệm độc đáo</p>
+          <h2 id="ready-title" data-r style="--at:.3s">Thế giới trù phú<br /><em>trong tầm tay.</em></h2>
+          <p class="destination-note" data-r style="--at:.4s">Khám phá 500+ biệt thự biển &amp; thác nước riêng tư, không cần tài khoản.</p>
+          <div class="destination-actions" data-r style="--at:.5s">
+            <a routerLink="/tripshort" class="destination-cta"><span class="material-symbols-outlined">play_arrow</span> Lướt ngay</a>
+            <button type="button" (click)="scrollToFeaturedTrips()">Khám phá hành trình ↗</button>
+          </div>
+        </div>
+        <div class="destination-caption"><span>TRAVEL EASY — NOT BUSY</span><span>Biển xanh. Nắng ấm. Một hành trình của riêng bạn.</span></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- SEARCH CONSOLE                                                          -->
+  <!-- ===================================================================== -->
+  <div class="discovery-content">
+  <section class="console" id="booking-console">
+    <div class="console-heading"><p class="section-kicker">KỲ NGHỈ TIẾP THEO CỦA BẠN</p><h2>Bắt đầu từ một điểm đến.</h2></div>
+    <div class="console-card glass" appReveal="zoom">
+      <div class="console-grid" id="search-fields-grid">
+
+        <div (click)="selectSearchField('destination')" [class.is-field-active]="activeSearchField === 'destination'" class="search-field-cell">
+          <label>Điểm đến</label>
+          <div class="field-row">
+            <span class="field-icon material-symbols-outlined">explore</span>
+            <input [(ngModel)]="searchDestination" class="field-input" type="text"/>
+          </div>
+        </div>
+
+        <div (click)="selectSearchField('date')" [class.is-field-active]="activeSearchField === 'date'" class="search-field-cell">
+          <label>Thời gian nghỉ</label>
+          <div class="field-row">
+            <span class="field-icon material-symbols-outlined">calendar_month</span>
+            <input [(ngModel)]="searchDateRange" class="field-input" type="text"/>
+          </div>
+        </div>
+
+        <div (click)="selectSearchField('guests')" [class.is-field-active]="activeSearchField === 'guests'" class="search-field-cell">
+          <label>Số khách &amp; hạng phòng</label>
+          <div class="field-row">
+            <span class="field-icon material-symbols-outlined">group</span>
+            <span class="field-text">{{ searchGuestInfo }}</span>
+          </div>
+        </div>
+
+        <div class="console-action">
+          <button class="btn btn-primary btn-xl" type="button">
+            <span>Tìm kỳ nghỉ</span>
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Chỉ số nổi bật -->
+    <div class="pills" id="stat-pills-container">
+      <div *ngFor="let pill of statPills"
+           (click)="toggleStatPill(pill)"
+           [class.is-pill-active]="pill.isActive"
+           class="stat-pill">
+        <div class="pill-icon-box"><span class="material-symbols-outlined">{{ pill.icon }}</span></div>
+        <div class="pill-text">
+          <div class="pill-value">{{ pill.value }}</div>
+          <div class="pill-label">{{ pill.label }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- FEATURED TRIPS                                                          -->
+  <!-- ===================================================================== -->
+  <section class="trips" id="featured-trips">
+    <div class="trips-inner">
+      <div class="section-head">
+        <p class="section-kicker" appReveal>TUYỂN CHỌN ĐẶC BIỆT / 01</p>
+        <h2 class="h2" appReveal>Hành trình nổi bật dành cho bạn</h2>
+        <p class="lead-lg" appReveal revealDelay="100">Tuyển tập những trải nghiệm du ngoạn tinh hoa được tuyển chọn bởi TRIPLA Concierge</p>
+      </div>
+
+      <div class="trips-grid" id="trips-grid">
+        <div *ngFor="let trip of trips; let i = index" class="trip-card-perspective"
+             appReveal [revealDelay]="i * 140" [appParallax]="i % 2 === 1 ? -0.05 : 0.035">
+          <div (click)="toggleTripSelection(trip)"
+               [class.is-card-selected]="trip.isSelected"
+               class="trip-card-inner">
+
+            <div *ngIf="trip.isSelected" class="selected-trip-badge">
+              <span class="material-symbols-outlined">check_circle</span>
+              <span>Đang chọn</span>
+            </div>
+
+            <div class="trip-media">
+              <div class="trip-img-par" [appParallax]="-0.06" pxBase="scale(1.08)">
+                <img [alt]="trip.title" [src]="trip.image" class="trip-img"/>
+              </div>
+              <div class="trip-shade"></div>
+              <div class="chip-light trip-loc">
+                <span class="material-symbols-outlined fill gold">location_on</span>
+                <span>{{ trip.location }}</span>
+              </div>
+              <div class="chip-light trip-rate">
+                <span class="material-symbols-outlined fill gold">star</span>
+                <b>{{ trip.rating }}</b>
+                <span class="muted">{{ trip.reviewCount }}</span>
+              </div>
+            </div>
+
+            <div class="trip-body">
+              <div>
+                <h3 class="trip-title">{{ trip.title }}</h3>
+                <p class="trip-sub">{{ trip.subtitle }}</p>
+              </div>
+              <div class="trip-foot">
+                <div class="price">
+                  <span class="price-num">VNĐ {{ trip.price }}</span>
+                  <span class="price-unit">/ khách</span>
+                </div>
+                <button class="trip-book" type="button">
+                  <span>Đặt ngay</span>
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================= -->
+  <!-- FOOTER                                                                    -->
+  <!-- ======================================================================= -->
+  <section class="forest" id="forest">
+    <div class="forest-content">
+      <p class="section-kicker" appReveal>TRAVEL EASY — NOT BUSY / 02</p>
+      <h2 appReveal>Chạm vào thiên nhiên,<br /><em>để hành trình tự kể chuyện.</em></h2>
+      <p appReveal>Lắng nghe sóng biển, hơi thở đại ngàn và ánh hoàng hôn qua từng thước phim — rồi đặt chân đến đó chỉ bằng một lần chạm.</p>
+      <a routerLink="/tripshort" class="destination-cta" appReveal><span class="material-symbols-outlined">play_arrow</span> Lướt ngay</a>
+    </div><span class="forest-mark" aria-hidden="true">TRIPLA</span>
+  </section>
+  </div>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-name">TRIPLA</span>
+        <span class="footer-tag">Nghệ thuật du lịch thượng lưu</span>
+      </div>
+      <div class="footer-copy">© 2026 TRIPLA Luxury Travel Connoisseurs. Bản quyền được bảo lưu.</div>
+    </div>
+  </footer>
+
+  <div class="cursor" #cursor data-visible="false" aria-hidden="true"></div>
+</div>

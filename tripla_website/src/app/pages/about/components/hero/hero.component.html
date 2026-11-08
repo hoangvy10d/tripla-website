@@ -1,0 +1,67 @@
+<section id="top" class="hero">
+  <!-- Tầng 1: ảnh nền (chậm nhất) -->
+  <div class="bg"
+       [style.background-image]="'url(' + img + ')'"></div>
+
+  <!-- Tầng 2: sương mù, mặt trời, mây -->
+  <div class="veil"></div>
+  <div class="sun" appParallax="0.25" pxMode="scroll" [pxMouse]="24"></div>
+  <div class="cloud c1" appParallax="0.14" pxMode="scroll" [pxMouse]="-14"></div>
+  <div class="cloud c2" appParallax="0.3" pxMode="scroll" [pxMouse]="18"></div>
+  <div class="mist"></div>
+
+  <!-- Tầng 3: tán lá phía trước (nhanh nhất) -->
+  <div class="leaves left" appParallax="0.2" [pxX]="-0.15" pxMode="scroll" [pxMouse]="-28">
+    <svg viewBox="0 0 200 200" aria-hidden="true">
+      <defs>
+        <linearGradient id="lgL" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0" stop-color="#173b32" /><stop offset="1" stop-color="#7d9e68" />
+        </linearGradient>
+      </defs>
+      <path d="M10,200 C30,130 90,80 190,40 C140,80 110,130 100,200 Z" fill="url(#lgL)" opacity="0.85" />
+      <path d="M0,190 C40,140 120,110 180,90 C130,120 90,160 70,200 Z" fill="url(#lgL)" opacity="0.6" />
+      <path d="M40,200 C70,150 140,130 195,120 C140,150 110,180 90,200 Z" fill="url(#lgL)" opacity="0.45" />
+    </svg>
+  </div>
+  <div class="leaves right" appParallax="0.25" [pxX]="0.15" pxMode="scroll" [pxMouse]="28">
+    <svg viewBox="0 0 200 200" aria-hidden="true">
+      <defs>
+        <linearGradient id="lgR" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0" stop-color="#52734c" /><stop offset="1" stop-color="#cfdfb3" />
+        </linearGradient>
+      </defs>
+      <path d="M10,200 C30,130 90,80 190,40 C140,80 110,130 100,200 Z" fill="url(#lgR)" opacity="0.8" />
+      <path d="M0,190 C40,140 120,110 180,90 C130,120 90,160 70,200 Z" fill="url(#lgR)" opacity="0.55" />
+    </svg>
+  </div>
+
+  <!-- Thẻ kính ở giữa -->
+  <div class="card glass" appReveal="zoom">
+    <div class="badge">
+      <span class="material-symbols-outlined fill" style="font-size: 18px; color: #52734c">eco</span>
+      <span>🍃 Chạm vào bản nguyên thiên nhiên • Đầu tiên tại Việt Nam</span>
+      <span class="dot ping"></span>
+    </div>
+
+    <h1>
+      Nơi Cảm Xúc Dẫn Lối <br />
+      <span class="gradient-text">Mỗi Hành Trình Diệu Kỳ</span>
+    </h1>
+
+    <p class="lead">
+      Đắm mình giữa non xanh mây biếc và bờ biển ngọc qua lăng kính điện ảnh 9:16 sống động. Lắng nghe nhịp thở đại ngàn,
+      cảm nhận vẻ đẹp nguyên sơ và đặt chân đến thiên đường chỉ bằng một lần chạm.
+    </p>
+
+    <div class="features">
+      @for (f of features; track f.text) {
+        <div class="feature">
+          <span class="material-symbols-outlined" [style.color]="f.color">{{ f.icon }}</span>
+          <span>{{ f.text }}</span>
+        </div>
+      }
+    </div>
+  </div>
+
+  <a class="cue" href="#tripshorts" aria-label="Cuộn xuống"><span class="mouse"><i></i></span></a>
+</section>

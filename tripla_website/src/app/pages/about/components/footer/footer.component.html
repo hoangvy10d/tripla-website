@@ -1,0 +1,36 @@
+<footer class="footer-shell">
+  <div class="mark" appParallax="-0.06" [pxX]="-0.08" aria-hidden="true">TRIPLA</div>
+
+  <div class="container">
+    <div class="cols" appReveal>
+      <div class="about">
+        <div class="brand">
+          <div class="logo"><span class="material-symbols-outlined">explore</span></div>
+          <span class="name">TRIPLA</span>
+        </div>
+        <p>
+          Nền tảng giải trí và phong cách du lịch thượng lưu thế hệ mới. Đánh thức giấc mơ xê dịch qua lăng kính điện ảnh chân
+          thực, tôn vinh vẻ đẹp nguyên bản của thiên nhiên Việt Nam.
+        </p>
+      </div>
+
+      <div class="col">
+        <span class="title">Hệ Sinh Thái Điện Ảnh</span>
+        @for (l of ecosystem; track l) { <a href="#">{{ l }}</a> }
+      </div>
+
+      <div class="col">
+        <span class="title">Liên Hệ Thượng Khách</span>
+        <p class="ct"><span class="material-symbols-outlined">mail</span> {{ email }}</p>
+        <p class="ct"><span class="material-symbols-outlined">pin_drop</span> {{ places }}</p>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <p>© 2025 TRIPLA Cinematic Travel Ecosystem. All rights reserved.</p>
+      <div class="legal">
+        @for (l of legal; track l) { <a href="#">{{ l }}</a> }
+      </div>
+    </div>
+  </div>
+</footer>

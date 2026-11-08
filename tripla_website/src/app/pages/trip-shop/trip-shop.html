@@ -1,0 +1,379 @@
+<header class="site-header">
+  <div class="header-bar glass">
+    <a class="brand" routerLink="/home">
+      <div class="brand-logo"><img src="images/logo (2).png" alt="TRIPLA Logo" /></div>
+      <span class="brand-name font-head">TRIPLA</span>
+    </a>
+
+    <nav class="nav-pill" id="main-nav-bar">
+      <a class="nav-link-indicator" routerLink="/home">Khám phá</a>
+      <a class="nav-link-indicator" routerLink="/tripshort">TripShorts</a>
+      <a class="nav-link-indicator is-nav-active" routerLink="/trip-shop">TripShop</a>
+      <a class="nav-link-indicator" routerLink="/about">Về TRIPLA</a>
+    </nav>
+
+    <div class="header-actions">
+      <button type="button" class="btn btn-primary login-btn" (click)="openAuthModal()">Đăng Nhập</button>
+      <div class="avatar-btn"><span class="material-symbols-outlined">person</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===================================================================== -->
+  <!-- HERO + BOOKING CONSOLE                                                 -->
+  <!-- ===================================================================== -->
+  <section class="hero" id="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-content">
+        <div class="shimmer-badge chip-glass reveal-item">
+          <span class="live-dot"></span>
+          <span class="label-caps ota">TRIPSHOP · CURATED STAYS 2026</span>
+        </div>
+        <h1 class="hero-title font-head reveal-item" style="animation-delay: 0.1s">
+          Một nơi để đến.<br /><em>Một kỳ nghỉ của riêng bạn.</em>
+        </h1>
+        <p class="hero-sub reveal-item" style="animation-delay: 0.2s">
+          Hơn 2,000,000+ khách sạn, khu nghỉ dưỡng và trải nghiệm chuẩn mực toàn cầu với chính sách giá ưu đãi bảo chứng.
+        </p>
+      </div>
+
+      <!-- Booking console -->
+      <div class="console glass" id="tripshop-booking" appReveal="zoom">
+        <div class="tabs">
+          <button class="tab is-on" type="button"><span class="material-symbols-outlined">hotel</span><span>Khách Sạn &amp; Resort</span></button>
+          <button class="tab" type="button"><span class="material-symbols-outlined">flight</span><span>Vé Máy Bay</span></button>
+          <button class="tab" type="button"><span class="material-symbols-outlined">tour</span><span>Tour &amp; Trải Nghiệm</span></button>
+          <button class="tab" type="button"><span class="material-symbols-outlined">directions_car</span><span>Đưa Đón Sân Bay</span></button>
+        </div>
+
+        <div class="search-grid">
+          <div class="seg s4">
+            <div class="seg-ico"><span class="material-symbols-outlined">location_on</span></div>
+            <div class="seg-body">
+              <span class="seg-label">Điểm Đến Nghỉ Dưỡng</span>
+              <input class="seg-input" id="tripshop-destination" type="text" [(ngModel)]="searchDestination" aria-label="Điểm đến nghỉ dưỡng"/>
+              <span class="seg-sub">Bãi biển Mỹ Khê, Ngũ Hành Sơn</span>
+            </div>
+          </div>
+          <div class="seg s4">
+            <div class="seg-ico"><span class="material-symbols-outlined">calendar_month</span></div>
+            <div class="seg-body">
+              <span class="seg-label">Nhận &amp; Trả Phòng</span>
+              <div class="seg-input">15 Th04 - 18 Th04</div>
+              <span class="seg-sub">Thứ 3 - Thứ 6 (3 đêm)</span>
+            </div>
+          </div>
+          <div class="seg s2">
+            <div class="seg-ico"><span class="material-symbols-outlined">group</span></div>
+            <div class="seg-body">
+              <span class="seg-label">Số Khách</span>
+              <div class="seg-input">2 Khách</div>
+              <span class="seg-sub">1 Phòng ngủ</span>
+            </div>
+          </div>
+          <div class="s2 search-wrap">
+            <button class="search-btn" type="button">
+              <span class="sb-top"><span class="material-symbols-outlined">search</span><span class="font-head">Tìm Kiếm</span></span>
+              <span class="sb-sub">Giá Độc Quyền</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="quick">
+          <span class="qf-label"><span class="material-symbols-outlined">tune</span> Lọc Nhanh:</span>
+          <span class="qf"><span class="material-symbols-outlined">check_circle</span> Miễn phí hủy phòng</span>
+          <span class="qf"><span class="material-symbols-outlined">credit_card_off</span> Thanh toán tại chỗ</span>
+          <span class="qf"><span class="material-symbols-outlined">pool</span> Hồ bơi vô cực riêng</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- TRIPSHORTS PROMO + VALUE PROPOSITIONS                                  -->
+  <!-- ===================================================================== -->
+  <section class="props-sec">
+
+    <div class="wrap">
+      <div class="promo glass" appReveal>
+        <div class="promo-left">
+          <div class="promo-ico"><span class="material-symbols-outlined fill">play_arrow</span></div>
+          <div>
+            <p class="promo-title">Khám phá phòng thực tế cùng hệ sinh thái TRIPLA
+              <span class="tag-4k">TripShorts 4K</span>
+            </p>
+            <p class="promo-sub">Xem video review thực tế 100% từ travel creator &amp; chuyên gia trước khi đặt phòng</p>
+          </div>
+        </div>
+        <div class="promo-actions">
+          <a class="btn btn-primary promo-btn" routerLink="/tripshort">
+            <span class="material-symbols-outlined">videocam</span><span>Lướt TripShorts Ngay</span>
+          </a>
+          <a class="btn-amber" href="#">
+            <span class="material-symbols-outlined">smart_toy</span><span>Hỏi AI Concierge</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="props glass" appReveal revealDelay="120">
+        <div *ngFor="let prop of valueProps" class="prop">
+          <div class="prop-ico"><span class="material-symbols-outlined">{{ prop.icon }}</span></div>
+          <div>
+            <h4 class="prop-title">{{ prop.title }}</h4>
+            <p class="prop-sub">{{ prop.subtitle }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- FLASH DEALS                                                            -->
+  <!-- ===================================================================== -->
+  <section class="sec">
+
+    <div class="wrap">
+      <div class="sec-head split">
+        <div class="head-text">
+          <div class="flash-row" appReveal>
+            <span class="flash-badge">
+              <span class="material-symbols-outlined bounce">local_fire_department</span> Flash Deals 24h
+            </span>
+            <span class="flash-note">Ưu đãi giảm sâu giới hạn mỗi ngày</span>
+          </div>
+          <h2 class="h2 font-head" appReveal revealDelay="100">Ưu Đãi Giờ Vàng Đang Mở Bán</h2>
+        </div>
+
+        <div class="timer glass" appReveal="left">
+          <span class="material-symbols-outlined t-ico">timer</span>
+          <span class="t-text">Kết thúc sau:</span>
+          <div class="digits">
+            <span class="dg">{{ countdownHours }}</span>:<span class="dg">{{ countdownMinutes }}</span>:<span class="dg">{{ countdownSeconds }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-4">
+        <div *ngFor="let deal of flashDeals; let i = index" class="cell"
+             appReveal [revealDelay]="i * 120" [appParallax]="i % 2 === 1 ? -0.04 : 0.03">
+          <article class="deal glass">
+            <div class="deal-media">
+              <div class="img-par" appParallax="-0.05" pxBase="scale(1.08)">
+                <div class="img-bg" [style.background-image]="'url(' + deal.imageUrl + ')'"></div>
+              </div>
+              <span class="chip-off">-{{ deal.discountPercent }}% OFF</span>
+              <span *ngIf="deal.tag" class="chip-light chip-tag">{{ deal.tag }}</span>
+            </div>
+            <div class="deal-body">
+              <div>
+                <div class="deal-loc">
+                  <span class="material-symbols-outlined">location_on</span>
+                  <span>{{ deal.location }}</span>
+                </div>
+                <h3 class="deal-name font-head">{{ deal.name }}</h3>
+                <div class="rating-row">
+                  <span class="rate-pill">{{ deal.rating }}</span>
+                  <span class="rate-text">{{ deal.ratingText }}</span>
+                  <span class="rate-count">({{ deal.reviewCount }} đánh giá)</span>
+                </div>
+              </div>
+              <div class="price-box">
+                <div class="price-row">
+                  <span class="price-old">{{ deal.originalPrice | number:'1.0-0' }}₫</span>
+                  <span class="price-now font-head">{{ deal.discountPrice | number:'1.0-0' }}₫<span class="price-unit">/đêm</span></span>
+                </div>
+                <div class="bar"><div class="bar-fill" [style.width.%]="deal.soldPercent"></div></div>
+                <span class="sold">Đã bán {{ deal.soldPercent }}%</span>
+              </div>
+              <button type="button" class="book-now" (click)="beginBooking(deal.name)" [attr.aria-label]="'Đặt ngay ' + deal.name">
+                <span>Đặt ngay</span><span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- POPULAR DESTINATIONS                                                   -->
+  <!-- ===================================================================== -->
+  <section class="sec">
+
+    <div class="wrap">
+      <div class="sec-head split">
+        <div class="head-text">
+          <span class="eyebrow" appReveal>Điểm Đến Hấp Dẫn 2026</span>
+          <h2 class="h2 font-head" appReveal revealDelay="100">Điểm Đến Được Yêu Thích Nhất</h2>
+          <p class="lead" appReveal revealDelay="200">Khám phá thiên đường nghỉ dưỡng trong nước và quốc tế với chi phí tối ưu</p>
+        </div>
+        <button class="pill-btn glass" type="button" appReveal="left">
+          <span>Xem tất cả 120+ điểm đến</span>
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
+      </div>
+
+      <div class="dest-grid">
+        <div *ngFor="let dest of destinations; let i = index" class="cell"
+             appReveal [revealDelay]="i * 140" [appParallax]="i === 1 ? -0.05 : 0.04">
+          <article class="dest">
+            <div class="dest-par" appParallax="-0.07" pxBase="scale(1.1)">
+              <div class="dest-bg" [style.background-image]="'url(' + dest.imageUrl + ')'"></div>
+            </div>
+            <div class="dest-shade"></div>
+            <span class="chip-light dest-badge">{{ dest.badge }}</span>
+            <div class="dest-info">
+              <h3 class="dest-name font-head">{{ dest.name }}</h3>
+              <p class="dest-sub">{{ dest.subtitle }}</p>
+              <div class="destination-actions">
+              <div class="dest-price">
+                <span class="dp-label">Giá chỉ từ</span>
+                <span class="dp-value font-head">{{ dest.startingPrice | number:'1.0-0' }}₫/đêm</span>
+              </div>
+              <button type="button" class="book-now destination-book" (click)="beginBooking(dest.name)" [attr.aria-label]="'Đặt ngay tại ' + dest.name">
+                <span>Đặt ngay</span><span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+              </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- LUXURY STAYS (lọc theo category)                                       -->
+  <!-- ===================================================================== -->
+  <section class="sec stays-sec">
+
+    <div class="wrap">
+      <div class="sec-head split">
+        <div class="head-text">
+          <span class="eyebrow" appReveal>Được Chuyên Gia Tuyển Chọn</span>
+          <h2 class="h2 font-head" appReveal revealDelay="100">Khách Sạn &amp; Resort Xa Hoa Đề Xuất</h2>
+          <p class="lead" appReveal revealDelay="200">Đánh giá thực tế từ khách du lịch đã lưu trú cùng đặc quyền độc quyền</p>
+        </div>
+
+        <div class="filters" appReveal="left">
+          <button type="button" class="fbtn" [class.is-on]="activeCategory === 'all'" (click)="filterCategory('all')">Tất cả</button>
+          <button type="button" class="fbtn" [class.is-on]="activeCategory === 'resort'" (click)="filterCategory('resort')">Resort Biển</button>
+          <button type="button" class="fbtn" [class.is-on]="activeCategory === 'villa'" (click)="filterCategory('villa')">Biệt Thự Riêng Tư</button>
+        </div>
+      </div>
+
+      <div class="stay-list">
+        <article *ngFor="let stay of filteredLuxuryStays" class="stay glass" appReveal>
+          <div class="stay-media">
+            <div class="img-par" appParallax="-0.06" pxBase="scale(1.1)">
+              <div class="img-bg" [style.background-image]="'url(' + stay.imageUrl + ')'"></div>
+            </div>
+            <span class="chip-light stay-badge">{{ stay.isBestSeller ? '5 Sao Đẳng Cấp' : 'Biệt Thự Riêng Tư' }}</span>
+          </div>
+
+          <div class="stay-main">
+            <div>
+              <div class="stay-meta">
+                <span class="stay-loc"><span class="material-symbols-outlined">location_on</span> {{ stay.location }}</span>
+                <div class="stay-score">
+                  <div class="score-txt">
+                    <div class="st-a">{{ stay.ratingText }}</div>
+                    <div class="st-b">{{ stay.reviewCount }} đánh giá</div>
+                  </div>
+                  <div class="score-box font-head">{{ stay.rating }}</div>
+                </div>
+              </div>
+              <h3 class="stay-name font-head">{{ stay.name }}</h3>
+              <p class="stay-desc">{{ stay.description }}</p>
+
+              <div class="stay-tags">
+                <a class="tag-video" href="#">
+                  <span class="material-symbols-outlined">play_circle</span> Xem TripShorts ({{ stay.videoCount }})
+                </a>
+                <span *ngFor="let perk of stay.perks" class="perk">
+                  <span class="material-symbols-outlined">check</span> {{ perk }}
+                </span>
+              </div>
+            </div>
+
+            <div class="stay-buy">
+              <div>
+                <span class="offer">{{ stay.specialOffer }}</span>
+                <div class="room">{{ stay.roomType }}</div>
+              </div>
+              <div class="buy-right">
+                <div>
+                  <span class="stay-old">{{ stay.originalPrice | number:'1.0-0' }}₫</span>
+                  <span class="stay-now font-head">{{ stay.discountPrice | number:'1.0-0' }}₫</span>
+                </div>
+                <button class="btn btn-primary stay-cta" type="button">Xem Phòng Trống</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- NEWSLETTER — rừng hoàng hôn                                            -->
+  <!-- ===================================================================== -->
+  <section class="forest" id="newsletter">
+    <div class="forest-content">
+      <div class="news-card glass" appReveal="zoom">
+        <span class="shimmer-badge chip-glass">
+          <span class="material-symbols-outlined fill gold">workspace_premium</span>
+          <span class="label-caps">Thành Viên TRIPLA VIP</span>
+        </span>
+        <h2 class="h2 font-head news-title">Nhận Ưu Đãi Độc Quyền Giảm Thêm <span class="gradient-text">15%</span> Cho Chuyến Đi Tới</h2>
+        <p class="lead">Đăng ký nhận bản tin để nhận mã giảm giá bí mật cho các resort 5 sao cùng thông báo mở bán sớm nhất.</p>
+        <form (submit)="subscribeNewsletter($event)" class="news-form">
+          <input [(ngModel)]="newsletterEmail" name="email" class="news-input" placeholder="Nhập địa chỉ email của bạn..." required type="email"/>
+          <button class="btn btn-primary news-btn" type="submit">Nhận Mã VIP</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ======================================================================= -->
+<!-- FOOTER                                                                    -->
+<!-- ======================================================================= -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col brand-col">
+        <div class="foot-brand">
+          <div class="foot-ico"><span class="material-symbols-outlined">travel_explore</span></div>
+          <span class="foot-name font-head">TRIPLA</span>
+        </div>
+        <p>TRIPLA — Nghệ Thuật Du Lịch Thượng Lưu. TripShop là cổng đặt phòng &amp; dịch vụ độc quyền chuẩn mực 5 sao.</p>
+      </div>
+      <div class="foot-col">
+        <h3>Về TripShop</h3>
+        <ul>
+          <li>Giới thiệu thương hiệu</li>
+          <li>Cơ hội nghề nghiệp</li>
+          <li>Điều khoản &amp; Bảo mật</li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h3>Dịch Vụ Du Lịch</h3>
+        <ul>
+          <li>Khách sạn 5 sao cao cấp</li>
+          <li>Vé máy bay vé thương gia</li>
+          <li>Tour độc quyền</li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h3>Hỗ Trợ 24/7</h3>
+        <div class="hotline glass">
+          <span class="hl-label">Hotline</span>
+          <span class="hl-num font-head">1900 8888</span>
+        </div>
+      </div>
+    </div>
+    <div class="foot-copy">© 2026 TRIPLA Luxury Travel Connoisseurs. TripShop là dịch vụ thuộc hệ sinh thái TRIPLA.</div>
+  </div>
+</footer>

@@ -1,0 +1,94 @@
+/* Scoped to About; existing photographs and image bindings are preserved. */
+app-about-page#tripla-about .glass {
+  background: linear-gradient(140deg, #fffdf3d9, #dce8d2c9);
+  border: 1px solid #173b3220;
+  box-shadow: 0 20px 50px -30px #173b3240, inset 0 1px 0 #ffffffb0;
+}
+app-about-page#tripla-about .gradient-text { background: none; color: #30624b; animation: none; }
+app-about-page#tripla-about .h2 { font-weight: 400; font-size: clamp(28px, 3.5vw, 46px); line-height: 1.35; letter-spacing: -.025em; }
+app-about-page#tripla-about .lead { color: #50675b; font-size: 16px; font-weight: 400; line-height: 1.8; }
+app-about-page#tripla-about .badge { background: #e7edda; color: #30624b; border-color: #173b3220; font-weight: 500; line-height: 1.8; }
+app-about-page#tripla-about .btn { border-radius: 99px; letter-spacing: 0; font-weight: 500; }
+app-about-page#tripla-about .btn-primary { background: #173b32; color: #fff; box-shadow: 0 8px 20px #173b3218; }
+app-about-page#tripla-about .btn-primary:hover { background: #30624b; box-shadow: 0 12px 26px #173b3225; }
+app-about-page#tripla-about .btn-secondary { background: #ffffff90; color: #173b32; border: 1px solid #173b3230; box-shadow: none; }
+app-about-page#tripla-about .btn-secondary:hover { background: #e2e9d5; }
+app-about-page#tripla-about button:focus-visible, app-about-page#tripla-about a:focus-visible { outline: 2px solid #52734c; outline-offset: 4px; }
+app-about-page#tripla-about app-header .wrap, app-about-page#tripla-about app-header.scrolled .wrap { top: 0; padding: 0; }
+app-about-page#tripla-about app-header .bar, app-about-page#tripla-about app-header.scrolled .bar { max-width: none; height: 88px; padding: 0 28px; border-radius: 0; background: #f3f3e9ed; border: 0; border-bottom: 1px solid #173b3220; box-shadow: 0 5px 20px #173b3208; }
+app-about-page#tripla-about app-header .brand-name { font-size: 19px; font-weight: 600; letter-spacing: .09em; }
+app-about-page#tripla-about app-header .logo { background: #fff; box-shadow: 0 0 0 1px #173b3220; }
+app-about-page#tripla-about app-header nav { padding: 14px 22px; gap: 20px; border-radius: 99px; background: #ffffff60; border: 1px solid #173b3225; }
+app-about-page#tripla-about app-header nav a { font-weight: 400; font-size: 11px; letter-spacing: 0; white-space: nowrap; line-height: 1.6; }
+app-about-page#tripla-about app-header .sound, app-about-page#tripla-about app-header .avatar { border-radius: 99px; background: #ffffff80; border-color: #173b3220; }
+app-about-page#tripla-about app-header .sound { width: 38px; height: 38px; padding: 0; align-items: center; justify-content: center; }
+app-about-page#tripla-about app-header .sound.on { background: #e5edda; border-color: #64845980; box-shadow: 0 0 0 3px #91ae7618; }
+app-about-page#tripla-about app-header .cta { font-size: 11px; }
+app-about-page#tripla-about app-hero .hero { padding-top: 128px; }
+app-about-page#tripla-about app-hero .card { max-width: 680px; padding: 30px 32px; border-radius: 24px; animation: none; background: linear-gradient(145deg, #fffdf3de, #e5edd9cc); backdrop-filter: none; -webkit-backdrop-filter: none; border: 1px solid #ffffffb0; box-shadow: 0 30px 70px -25px #102f2c70, inset 0 1px 0 #fff; }
+app-about-page#tripla-about app-hero h1 { font-size: clamp(28px,3.6vw,44px); font-weight: 400; line-height: 1.4; letter-spacing: -.02em; }
+app-about-page#tripla-about app-hero .card .lead { font-size: 14px; line-height: 1.9; margin-bottom: 22px; }
+app-about-page#tripla-about app-hero .card .badge { margin-bottom: 18px; font-size: 9px; letter-spacing: .06em; }
+app-about-page#tripla-about app-hero .features { padding-top: 18px; gap: 8px; }
+app-about-page#tripla-about app-hero .feature { font-size: 10px; background: #fffdf3b0; }
+app-about-page#tripla-about app-hero h1 .gradient-text { font-family: var(--font-editorial); font-style: italic; letter-spacing: 0; }
+app-about-page#tripla-about app-hero .bg { inset: 0; height: 100%; background-position: center; filter: none; }
+app-about-page#tripla-about app-hero .veil { background: linear-gradient(180deg, #102f2c12, transparent 40%, #173b320d); }
+app-about-page#tripla-about app-hero .mist { height: 70px; background: linear-gradient(to top, #f3f3e9, transparent); }
+app-about-page#tripla-about app-hero .cloud, app-about-page#tripla-about app-hero .sun { display: none; }
+app-about-page#tripla-about app-hero .sun { background: radial-gradient(circle, #f8ffdf70, #c8dbab25 45%, transparent 70%); opacity: .4; }
+app-about-page#tripla-about app-hero .leaves { opacity: .45; filter: drop-shadow(0 12px 22px #173b3230); }
+app-about-page#tripla-about app-hero .feature { border-radius: 99px; font-weight: 500; letter-spacing: 0; line-height: 1.6; }
+app-about-page#tripla-about app-community .sec { background: radial-gradient(ellipse at 0 60%, #bdd1ac70, transparent 60%), linear-gradient(180deg, #f3f3e9, #dfe9d4); }
+app-about-page#tripla-about app-community .main, app-about-page#tripla-about app-community .float, app-about-page#tripla-about app-community .stat { border-radius: 22px; }
+app-about-page#tripla-about app-community .num { font-weight: 500; }
+app-about-page#tripla-about app-steps .sec { background: radial-gradient(ellipse at 90% 0, #53795960, transparent 65%), linear-gradient(155deg, #28533f, #102f2c); color: #f3f5e8; }
+app-about-page#tripla-about app-steps .head .h2 { color: #f3f5e8; }
+app-about-page#tripla-about app-steps .head .lead { color: #c7d8c8; }
+app-about-page#tripla-about app-steps .head .badge { background: #ffffff10; color: #dfecb6; border-color: #ffffff30; }
+app-about-page#tripla-about app-steps .step { border-radius: 24px; background: linear-gradient(145deg, #fffdf3f5, #dde8cfe8); box-shadow: 0 25px 50px -20px #051c2560, inset 0 1px 0 #fff; color: #173b32; }
+app-about-page#tripla-about app-steps .step.amber { background: linear-gradient(145deg, #d8e8c5, #b7cfa7); }
+app-about-page#tripla-about app-steps .no { font-weight: 400; }
+app-about-page#tripla-about app-steps h3, app-about-page#tripla-about app-tripshorts .pillar h3 { font-weight: 500; line-height: 1.5; }
+app-about-page#tripla-about app-tripshorts .wash { background: linear-gradient(180deg, #d6e2cce8, #f4f4e6b0 40%, #c0d3b5cf); }
+app-about-page#tripla-about app-tripshorts .phone { background: linear-gradient(145deg, #f8f9ee, #aabda2); border-color: #173b3230; box-shadow: 0 35px 65px -25px #102f2c70; }
+app-about-page#tripla-about app-tripshorts .pillar { border-radius: 22px; background: linear-gradient(145deg, #fffdf3ed, #dce8cfe0); box-shadow: 0 14px 32px -18px #173b3245, inset 0 1px 0 #fff; }
+app-about-page#tripla-about app-tripshorts .tag { background: #dfecb6; color: #173b32; box-shadow: 0 5px 16px #102f2c25; }
+app-about-page#tripla-about app-cta .sec { padding: 72px 24px; }
+app-about-page#tripla-about app-cta .bg { inset: 0; height: 100%; background-position: center; }
+app-about-page#tripla-about app-cta .veil { background: linear-gradient(180deg, #f3f3e920, #173b3218 45%, #102f2c65); }
+app-about-page#tripla-about app-cta .slab { max-width: 640px; padding: 28px 32px; border-radius: 24px; background: linear-gradient(145deg, #fffdf3de, #e5edd9cc); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); border: 1px solid #ffffffb0; box-shadow: 0 25px 60px -25px #102f2c80, inset 0 1px 0 #fff; }
+app-about-page#tripla-about app-cta .plane { width: 42px; height: 42px; margin-bottom: 12px; background: #173b32; box-shadow: 0 10px 25px #173b3225; border-radius: 50%; animation: none; }
+app-about-page#tripla-about app-cta .plane .material-symbols-outlined { font-size: 24px; }
+app-about-page#tripla-about app-cta .badge { font-size: 9px; letter-spacing: .06em; margin-bottom: 14px; }
+app-about-page#tripla-about app-cta .h2 { font-size: clamp(24px, 2.8vw, 34px); line-height: 1.4; margin-bottom: 12px; }
+app-about-page#tripla-about app-cta .lead { max-width: 480px; font-size: 14px; line-height: 1.8; margin-bottom: 22px; }
+app-about-page#tripla-about app-cta .btns { gap: 10px; }
+app-about-page#tripla-about app-cta .btn { padding: 12px 18px; font-size: 11px; }
+app-about-page#tripla-about app-cta .shape { opacity: .2; }
+app-about-page#tripla-about app-footer footer { --ink: #fffdf3; --ink-2: #c5d6cb; --ink-3: #a4bdad; --primary: #dfecb6; --amber-d: #dfecb6; --line: #ffffff20; background: linear-gradient(160deg, #1d483b, #102f2c 70%); border-top-color: #ffffff18; }
+app-about-page#tripla-about app-footer .logo { background: #ffffff12; color: #dfecb6; box-shadow: none; }
+app-about-page#tripla-about app-footer .name { color: #fff; font-weight: 500; }
+app-about-page#tripla-about app-footer .mark { background-image: linear-gradient(#dfecb618, transparent); }
+@media (max-width: 1200px) {
+  app-about-page#tripla-about app-header .sound-label { display: none; }
+  app-about-page#tripla-about app-header .actions { gap: 8px; }
+  app-about-page#tripla-about app-header nav { gap: 12px; padding-inline: 14px; }
+}
+@media (max-width: 600px) {
+  app-about-page#tripla-about app-header .bar, app-about-page#tripla-about app-header.scrolled .bar { height: 72px; padding-inline: 16px; }
+  app-about-page#tripla-about app-header .brand-name { font-size: 16px; }
+  app-about-page#tripla-about app-hero .hero { padding-top: 104px; }
+  app-about-page#tripla-about app-hero .card { padding: 20px 18px; }
+  app-about-page#tripla-about app-hero h1 { font-size: 26px; }
+  app-about-page#tripla-about app-hero .card .badge { padding: 6px 10px; gap: 5px; border-radius: 14px; font-size: 8px; }
+  app-about-page#tripla-about app-hero .card .badge .dot { display: none; }
+  app-about-page#tripla-about app-hero .card .lead { font-size: 13px; line-height: 1.75; margin-bottom: 16px; }
+  app-about-page#tripla-about app-hero .features { padding-top: 12px; gap: 6px; }
+  app-about-page#tripla-about app-hero .feature { padding: 6px 8px; font-size: 9px; }
+  app-about-page#tripla-about .lead { font-size: 14px; }
+  app-about-page#tripla-about app-cta .sec { padding: 48px 16px; }
+  app-about-page#tripla-about app-cta .slab { padding: 24px 20px; }
+  app-about-page#tripla-about app-cta .lead { font-size: 13px; }
+  app-about-page#tripla-about app-community .stat { padding: 12px 6px; }
+}

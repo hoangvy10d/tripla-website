@@ -1,0 +1,679 @@
+<div class="h-screen w-screen flex select-none antialiased overflow-hidden relative app-canvas t-ink" data-mode="connect"
+  [class.drawer-open]="isDrawerOpen() || isCommentDrawerOpen">
+
+  <header class="tripshort-header">
+    <button type="button" class="tripshort-brand" (click)="navigateToHome()" aria-label="TRIPLA trang chủ">
+      <img src="images/logo (2).png" alt="" /><span>TRIPLA</span>
+    </button>
+    <nav class="tripshort-nav" aria-label="Điều hướng chính">
+      <button type="button" (click)="navigateToHome()">Khám phá</button>
+      <button type="button" [class.is-active]="!isCommunityHubVisible()" (click)="switchToFeed()">TripShorts</button>
+      <button type="button" (click)="setActiveNav('nav-tripshop')">TripShop</button>
+      <a routerLink="/about">Về TRIPLA</a>
+    </nav>
+    <button type="button" class="header-upload" (click)="triggerUploadModal()"><span class="material-symbols-outlined">add</span><span>Chia sẻ hành trình</span></button>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- 1. LEFT SIDEBAR  (Glass Level 1)                                          -->
+  <!-- ========================================================================= -->
+  <aside
+    id="main-sidebar"
+    class="glass-1 sidebar-shell h-full flex flex-col justify-between shrink-0 z-30 relative transition-all duration-300 ease-in-out"
+    [ngClass]="isSidebarCollapsed() ? 'sidebar-collapsed-state' : 'sidebar-expanded'">
+
+    <button
+      id="sidebar-toggle-btn"
+      class="icon-btn icon-btn-sm absolute -right-3.5 top-8 z-40"
+      (click)="toggleSidebar()"
+      title="Thu gọn / Mở rộng Sidebar">
+      <span class="material-symbols-outlined text-base">{{ isSidebarCollapsed() ? 'chevron_right' : 'chevron_left' }}</span>
+    </button>
+
+    <div class="sidebar-scroll" tabindex="0" role="region" aria-label="Menu và bộ lọc TripShorts">
+      <!-- Brand -->
+      <div class="flex items-center justify-between mb-4 px-1">
+        <div class="flex items-center gap-2.5">
+          <div class="brand-mark font-head overflow-hidden rounded-full border border-white/70 bg-white/80 shadow-[0_8px_20px_rgba(255,94,0,0.12)]">
+            <img src="images/logo (2).png" alt="TRIPLA Logo" class="h-full w-full object-cover" />
+          </div>
+          <div class="sidebar-expanded-content">
+            <h1 class="font-head font-black text-base leading-tight tracking-[0.04em] t-ink">TRIPLA</h1>
+            <p class="label-sm t-muted">Travel EASY - NOT BUSY</p>
+          </div>
+        </div>
+        <span class="sidebar-expanded-content chip chip-gold"><span class="live-dot"></span>VIP</span>
+      </div>
+
+      <!-- Upload (Primary Kinetic) -->
+      <div class="mb-4">
+        <button
+          class="btn btn-primary w-full py-2.5 px-3.5 group sidebar-icon-center"
+          (click)="triggerUploadModal()"
+          title="Upload Video">
+          <span class="material-symbols-outlined text-lg group-hover:rotate-90 transition-transform duration-300">add_circle</span>
+          <span class="sidebar-expanded-content">Upload Video</span>
+        </button>
+      </div>
+
+      <!-- Search -->
+      <div class="relative mb-5 sidebar-expanded-content">
+        <span class="material-symbols-outlined absolute left-3 top-2 text-lg t-muted pointer-events-none">search</span>
+        <input class="field pl-9 pr-3 py-2" placeholder="Tìm biệt thự, vịnh đảo..." type="text">
+      </div>
+
+      <button
+        *ngIf="isSidebarCollapsed()"
+        class="icon-btn icon-btn-block mb-4"
+        (click)="toggleSidebar()">
+        <span class="material-symbols-outlined text-lg">search</span>
+      </button>
+
+      <!-- Navigation -->
+      <nav class="space-y-1">
+        <p class="label-sm t-muted px-3 mb-2 sidebar-expanded-content">Khám phá tuyển chọn</p>
+
+        <button
+          class="nav-btn w-full flex items-center justify-between px-3.5 py-2.5 text-xs font-semibold sidebar-icon-center"
+          [ngClass]="activeNav() === 'nav-home' ? 'nav-active' : 'nav-inactive'"
+          (click)="navigateToHome()">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-lg shrink-0">home</span>
+            <span class="sidebar-expanded-content">Trang chủ</span>
+          </div>
+        </button>
+
+        <button
+          class="nav-btn w-full flex items-center justify-between px-3.5 py-2.5 text-xs font-semibold sidebar-icon-center"
+          [ngClass]="activeNav() === 'nav-for-you' ? 'nav-active' : 'nav-inactive'"
+          (click)="switchToFeed()">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-lg shrink-0">auto_awesome</span>
+            <span class="sidebar-expanded-content">Dành Cho Bạn</span>
+          </div>
+          <span class="live-dot sidebar-expanded-content"></span>
+        </button>
+
+        <button
+          class="nav-btn w-full flex items-center justify-between px-3.5 py-2.5 text-xs font-semibold sidebar-icon-center"
+          [ngClass]="activeNav() === 'nav-community' ? 'nav-active' : 'nav-inactive'"
+          (click)="switchToCommunity()">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-lg shrink-0">grid_view</span>
+            <span class="sidebar-expanded-content">Community Hub</span>
+          </div>
+          <span class="sidebar-expanded-content chip chip-gold">6 Mới</span>
+        </button>
+
+        <button
+          class="nav-btn w-full flex items-center justify-between px-3.5 py-2.5 text-xs font-semibold sidebar-icon-center"
+          [ngClass]="activeNav() === 'nav-tripshop' ? 'nav-active' : 'nav-inactive'"
+          (click)="setActiveNav('nav-tripshop')">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-lg shrink-0">shopping_bag</span>
+            <span class="sidebar-expanded-content" >TripShop</span>
+          </div>
+          <span class="sidebar-expanded-content chip chip-neon">Hot</span>
+        </button>
+
+        <button
+          class="nav-btn w-full flex items-center justify-between px-3.5 py-2.5 text-xs font-semibold sidebar-icon-center"
+          [ngClass]="activeNav() === 'nav-saved' ? 'nav-active' : 'nav-inactive'"
+          (click)="setActiveNav('nav-saved')">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-lg shrink-0">bookmark</span>
+            <span class="sidebar-expanded-content">Bộ Sưu Tập</span>
+          </div>
+          <span class="count-badge sidebar-expanded-content" [class.on]="activeNav() === 'nav-saved'">4</span>
+        </button>
+      </nav>
+
+      <!-- Filters -->
+      <div class="mt-6 sidebar-expanded-content">
+        <p class="label-sm t-muted px-3 mb-2.5">Bộ lọc độc quyền</p>
+        <div class="flex flex-wrap gap-1.5 px-1">
+          <button class="chip-filter is-on">Miền Bắc</button>
+          <button class="chip-filter">Miền Trung</button>
+          <button class="chip-filter">Miền Nam</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- User card -->
+    <div class="sidebar-account pt-4 border-t hr-hair">
+      <div class="glass-1 card-hover flex items-center gap-3 p-2 cursor-pointer sidebar-icon-center">
+        <div class="relative shrink-0">
+          <img alt="Profile Avatar" class="avatar w-10 h-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqnBTgROwYczNTkYPnbGk2lCefl-CeXgnMmDig2W-bxDiKURUmPkgKhRKivdUUjQ-aMOrO71jdjoAdXee3Iar90dXUeTYeR-btyblgRZxl0pc837uGxP7U47AVFhzY50eO2N9ref7kpCJnemb1U6x5aFHGfnqZ8zLSJ_oUnyAEJ5uMZAaSPRJWpWJYvQ6VyJN80IP_tHxIG5YavuwVM77FQZ0uQzKvoUwip7-IyxEf">
+          <span class="status-dot"></span>
+        </div>
+        <div class="flex-1 min-w-0 sidebar-expanded-content">
+          <div class="flex items-center justify-between">
+            <h4 class="font-head text-xs font-bold t-ink truncate">Victoria Chen</h4>
+            <span class="material-symbols-outlined text-sm text-gold">verified</span>
+          </div>
+          <span class="chip chip-gold" style="padding: 0 6px; font-size: 9px">Elite Platinum</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ========================================================================= -->
+  <!-- 2. MIDDLE STAGE: VERTICAL FEED VS COMMUNITY HUB                          -->
+  <!-- ========================================================================= -->
+  <main id="video-container" class="stage-bg flex-1 h-full relative flex items-center justify-center overflow-hidden transition-all duration-500 z-10"
+    (click)="closeDrawersOnBackdrop($event)">
+
+    <!-- VIEW 1: SINGLE VERTICAL VIDEO CANVAS -->
+    <div *ngIf="!isCommunityHubVisible()" id="single-video-view" class="w-full h-full relative flex items-center justify-center transition-all duration-500">
+      <div id="ambient-backdrop" class="absolute inset-0 bg-cover bg-center blur-2xl opacity-40 scale-110 pointer-events-none transition-all duration-700" [style.background-image]="'url(\'' + currentVideo().media + '\')'"></div>
+      <div class="stage-wash absolute inset-0 pointer-events-none"></div>
+
+      <div class="journey-lines" aria-hidden="true"><span></span><span></span><span></span></div>
+      <aside class="feed-editorial" aria-label="Cảm hứng hành trình">
+        <p class="editorial-kicker"><span></span> TRIPLA FILM JOURNAL</p>
+        <h2>Đi một chút.<br /><em>Nhớ thật lâu.</em></h2>
+        <p class="editorial-description">Có những nơi, chỉ một thước phim cũng đủ khiến ta muốn lên đường.</p>
+        <div class="editorial-location">
+          <span class="material-symbols-outlined">explore</span>
+          <div><span>ĐANG KHÁM PHÁ</span><p>{{ currentVideo().location }}</p></div>
+        </div>
+        <button type="button" class="editorial-tag-toggle" (click)="handleVideoClick($event)">
+          <span class="material-symbols-outlined">{{ isTagsVisible() ? 'visibility_off' : 'location_on' }}</span>
+          {{ isTagsVisible() ? 'Ẩn địa điểm' : 'Khám phá địa điểm' }}
+          <span aria-hidden="true">↗</span>
+        </button>
+        <p class="editorial-footer">TRAVEL EASY — NOT BUSY</p>
+      </aside>
+
+      <aside class="feed-next" *ngIf="hubVideos.length > 1" aria-label="Hành trình tiếp theo">
+        <div class="next-heading"><span>TIẾP NỐI CẢM HỨNG</span><span aria-hidden="true">↗</span></div>
+        <button type="button" class="next-destination" (click)="openVideoFromHub((currentVideoIndex() + 1) % hubVideos.length)">
+          <div class="next-cover">
+            <img [src]="hubVideos[(currentVideoIndex() + 1) % hubVideos.length].media" alt="" loading="lazy" />
+            <span class="next-play material-symbols-outlined">play_arrow</span>
+            <span class="next-index">{{ (currentVideoIndex() + 1) % hubVideos.length + 1 < 10 ? '0' : '' }}{{ (currentVideoIndex() + 1) % hubVideos.length + 1 }} / {{ hubVideos.length }}</span>
+          </div>
+          <p>{{ hubVideos[(currentVideoIndex() + 1) % hubVideos.length].title }}</p>
+          <span class="next-location"><span class="material-symbols-outlined">location_on</span>{{ hubVideos[(currentVideoIndex() + 1) % hubVideos.length].location }}</span>
+        </button>
+        <button type="button" class="next-community" (click)="switchToCommunity()"><span>Ghé qua cộng đồng</span><span aria-hidden="true">→</span></button>
+        <div class="scroll-guide"><span class="material-symbols-outlined">swap_vert</span><p>Cuộn để khám phá<br /><span>Mỗi lần lướt, một góc nhìn mới.</span></p></div>
+      </aside>
+
+      <!-- Header bar -->
+      <div class="feed-toolbar absolute top-5 left-8 right-8 flex items-center justify-between z-20 pointer-events-auto">
+        <div class="flex items-center gap-3">
+          <button
+            *ngIf="!isCommunityHubVisible()"
+            class="btn btn-secondary px-3.5 py-1.5 group"
+            (click)="switchToCommunity()">
+            <span class="material-symbols-outlined text-sm group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
+            <span>Cộng đồng</span>
+          </button>
+
+          <span class="chip chip-neon glass-1 py-1 px-3" style="padding: 4px 12px">
+            <span class="live-dot"></span>
+            <span>{{ currentVideo().location }}</span>
+          </span>
+          <span class="feed-hint text-xs t-variant font-medium hidden md:inline">Một thước phim, một hành trình.</span>
+        </div>
+
+        <button class="btn btn-secondary px-3 py-1.5" (click)="toggleAudio($event)">
+          <span class="material-symbols-outlined text-base">{{ isAudioOn() ? 'volume_up' : 'volume_off' }}</span>
+          <span>{{ isAudioOn() ? 'Âm Thanh' : 'Tắt Âm Thanh' }}</span>
+        </button>
+      </div>
+
+      <!-- Central video canvas (Hero · rounded-xl · neon glow) -->
+      <div
+        id="video-card"
+        class="w-[430px] md:w-[460px] h-[92%] max-h-[880px] group select-none"
+        (click)="handleVideoClick($event)">
+
+        <!-- Lớp media có cắt bo góc -->
+        <div class="film-marker" aria-hidden="true"><span class="film-dot"></span> TRIPSHORTS <span>{{ currentVideoIndex() + 1 < 10 ? '0' : '' }}{{ currentVideoIndex() + 1 }}</span></div>
+        <div class="video-clip">
+          <img [src]="currentVideo().media" [alt]="currentVideo().title" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+          <div class="video-shade absolute inset-0 pointer-events-none"></div>
+
+          <div class="play-overlay absolute inset-0 flex items-center justify-center pointer-events-none" [class.opacity-0]="!isPlayOverlayVisible()">
+            <div class="glass-photo w-16 h-16 rounded-lg flex items-center justify-center">
+              <span class="material-symbols-outlined text-4xl">pause</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hotspot pins -->
+        <div *ngIf="activeNav() === 'nav-for-you'" class="absolute inset-0 z-30 tags-transition" [ngClass]="isTagsVisible() ? 'tags-visible' : 'tags-hidden'">
+
+          <div class="pin-hotspot hotspot-resort" (click)="openDrawerWithData('resort', $event)">
+            <div class="relative flex items-center">
+              <div class="pin-icon pin-neon pulse-ring"><span class="material-symbols-outlined text-sm">hotel</span></div>
+              <div class="pin-label glass-2">
+                <span class="pin-title">{{ pointDataMap.resort.title }}</span>
+                <span class="pin-price">{{ pointDataMap.resort.price }}/đêm</span>
+                <span class="material-symbols-outlined text-xs t-muted">chevron_right</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pin-hotspot hotspot-dining" (click)="openDrawerWithData('dining', $event)">
+            <div class="relative flex items-center">
+              <div class="pin-icon pin-light"><span class="material-symbols-outlined text-sm">restaurant</span></div>
+              <div class="pin-label glass-2">
+                <span class="pin-title">{{ pointDataMap.dining.title }}</span>
+                <span class="pin-sub">Michelin Star</span>
+                <span class="material-symbols-outlined text-xs t-muted">chevron_right</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pin-hotspot hotspot-yacht" (click)="openDrawerWithData('yacht', $event)">
+            <div class="relative flex items-center">
+              <div class="pin-icon pin-gold"><span class="material-symbols-outlined text-sm">sailing</span></div>
+              <div class="pin-label glass-2">
+                <span class="pin-title">{{ pointDataMap.yacht.title }}</span>
+                <span class="chip chip-neon" style="padding: 1px 6px; font-size: 9px">Đặt ngay</span>
+                <span class="material-symbols-outlined text-xs t-muted">chevron_right</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Creator info -->
+        <div class="creator-info absolute bottom-4 left-4 right-14 text-white z-20 pointer-events-auto">
+          <div class="creator-header mb-2">
+            <img [src]="currentVideo().creatorAvatar" alt="Creator Avatar" class="avatar-ring w-9 h-9">
+            <div class="creator-details">
+              <div class="creator-name flex items-center gap-1">
+                <span class="font-head font-bold text-xs tracking-wide">{{ currentVideo().creator }}</span>
+                <span class="material-symbols-outlined text-gold text-xs">verified</span>
+              </div>
+              <p class="text-[10px] text-white/75">Chuyên gia giám tuyển Luminous</p>
+            </div>
+            <button class="btn-follow" (click)="$event.stopPropagation()">THEO DÕI</button>
+          </div>
+          <p class="text-xs text-white/90 leading-snug line-clamp-2 mb-2">{{ currentVideo().desc }}</p>
+          <div class="creator-audio glass-photo flex items-center gap-2 text-[11px] px-2.5 py-1 rounded-lg w-fit">
+            <span class="material-symbols-outlined text-xs text-gold animate-spin" style="animation-duration: 4s;">music_note</span>
+            <span class="truncate max-w-[190px]">Luminous Waves • 3D Binaural Soundscape</span>
+          </div>
+        </div>
+
+        <!-- Prev / Next -->
+        <div *ngIf="!isCommunityHubVisible()" class="video-step-controls absolute -right-14 top-1/2 -translate-y-1/2 flex flex-col gap-2.5 z-30 pointer-events-auto">
+          <button class="video-nav-btn" (click)="prevVideo($event)" title="Video trước (Mũi tên lên)" type="button">
+            <span class="material-symbols-outlined text-2xl">keyboard_arrow_up</span>
+          </button>
+          <button class="video-nav-btn" (click)="nextVideo($event)" title="Video tiếp theo (Mũi tên xuống)" type="button">
+            <span class="material-symbols-outlined text-2xl">keyboard_arrow_down</span>
+          </button>
+        </div>
+
+        <!-- Floating actions -->
+        <div class="video-actions absolute right-3 bottom-8 flex flex-col items-center gap-4 z-20 pointer-events-auto">
+          <button class="action-wrap" (click)="toggleLike($event)">
+            <div class="action-btn" [class.is-liked]="isLiked()">
+              <span class="material-symbols-outlined text-xl" [style.font-variation-settings]="isLiked() ? '\'FILL\' 1' : '\'FILL\' 0'">favorite</span>
+            </div>
+            <span class="action-count">{{ likeCountText() }}</span>
+          </button>
+
+          <button class="action-wrap" (click)="openCommentDrawer($event)">
+            <div class="action-btn"><span class="material-symbols-outlined text-xl">chat_bubble</span></div>
+            <span class="action-count">1,420</span>
+          </button>
+
+          <button class="action-wrap" (click)="toggleBookmark($event)">
+            <div class="action-btn" [class.is-marked]="isBookmarked()">
+              <span class="material-symbols-outlined text-xl" [style.font-variation-settings]="isBookmarked() ? '\'FILL\' 1' : '\'FILL\' 0'">bookmark</span>
+            </div>
+            <span class="action-count">{{ bookmarkCountText() }}</span>
+          </button>
+
+          <button class="action-wrap" (click)="openShareModal($event)">
+            <div class="action-btn"><span class="material-symbols-outlined text-xl">share</span></div>
+            <span class="action-count">Chia sẻ</span>
+          </button>
+
+          <div class="disc animate-spin mt-2" style="animation-duration: 8s;">
+            <img alt="Audio Cover" [src]="currentVideo().creatorAvatar">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW 2: COMMUNITY HUB -->
+    <div
+      class="hub-surface w-full h-full absolute inset-0 z-20 flex flex-col p-8 overflow-y-auto custom-scroll transition-opacity duration-300"
+      [class.hidden]="!isCommunityHubVisible()">
+
+      <!-- Hub header -->
+      <div class="flex items-center justify-between mb-6 pb-4 border-b hr-hair">
+        <div class="flex items-center gap-3">
+          <div class="brand-mark" style="width: 40px; height: 40px">
+            <span class="material-symbols-outlined text-xl">grid_view</span>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h2 class="hub-heading t-ink">Những hành trình <em>đáng nhớ.</em></h2>
+              <span class="chip chip-gold">TRIPLA Curated</span>
+            </div>
+            <p class="text-xs t-variant">Khám phá các video shorts thực tế từ cộng đồng du khách &amp; giám tuyển thượng lưu</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <div class="hub-tabs glass-1">
+            <button class="hub-tab" [class.is-active]="activeCommunityTab() === 'trending'" (click)="switchCommunityTab('trending')">Xu Hướng</button>
+            <button class="hub-tab" [class.is-active]="activeCommunityTab() === 'latest'" (click)="switchCommunityTab('latest')">Mới Nhất</button>
+            <button class="hub-tab" [class.is-active]="activeCommunityTab() === 'saved'" (click)="switchCommunityTab('saved')">Được Lưu Nhiều</button>
+            <button class="hub-tab" [class.is-active]="activeCommunityTab() === 'live'" (click)="switchCommunityTab('live')">
+              <span class="live-dot"></span>
+              <span>Trực Tiếp</span>
+              <span class="chip chip-neon" style="padding: 0 5px; font-size: 9px">LIVE</span>
+            </button>
+          </div>
+          <button class="btn btn-primary px-3.5 py-2" (click)="triggerUploadModal()">
+            <span class="material-symbols-outlined text-base">add</span>
+            <span>Đăng Video Mới</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Hub grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto w-full pb-8" [class.hidden]="activeCommunityTab() === 'live'">
+        <div *ngFor="let video of hubVideos; let i = index" class="hub-card card-hover group relative cursor-pointer flex flex-col h-[340px]" (click)="openVideoFromHub(i)">
+          <div class="relative w-full h-full overflow-hidden">
+            <img [src]="video.media" [alt]="video.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+            <div class="hub-shade absolute inset-0"></div>
+            <div class="absolute top-3 left-3 right-3 flex items-center justify-between">
+              <span class="chip chip-photo">
+                <span class="material-symbols-outlined text-xs text-gold">visibility</span>
+                <span>1.2M lượt xem</span>
+              </span>
+              <span class="chip chip-light">
+                <span class="material-symbols-outlined text-xs">hotel</span>
+                <span>{{ pointDataMap[video.drawerKey].title }}</span>
+              </span>
+            </div>
+            <div class="absolute bottom-3 left-3 right-3 text-white">
+              <div class="flex items-center gap-2 mb-1.5">
+                <img [src]="video.creatorAvatar" [alt]="video.creator" class="avatar-ring w-6 h-6" style="box-shadow: 0 0 0 1.5px var(--gold)">
+                <span class="font-head font-bold text-xs text-white/95">{{ video.creator }}</span>
+              </div>
+              <h3 class="hub-title font-head font-bold text-sm line-clamp-1">{{ video.title }}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- 3. SLIDE-OVER: DETAILS · CHECKOUT · SUCCESS  (Glass Level 2 sheet)       -->
+  <!-- ========================================================================= -->
+  <aside
+    *ngIf="isSlideDrawerOpen"
+    id="slide-drawer"
+    class="glass-3 drawer-sheet fixed top-0 right-0 h-full w-[410px] z-50">
+
+    <!-- MÀN HÌNH 1: CHI TIẾT -->
+    <div class="w-[410px] h-full flex flex-col justify-between" [class.hidden]="store.drawerView() !== 'details'">
+      <div class="drawer-head p-5 pb-3 flex items-start justify-between">
+        <div>
+          <div class="flex items-center gap-2 mb-1.5">
+            <span class="chip chip-gold">Xác Thực Luminous</span>
+            <div class="flex items-center text-xs font-bold">
+              <span class="material-symbols-outlined text-sm text-gold" style="font-variation-settings: 'FILL' 1;">star</span>
+              <span class="ml-0.5 t-ink">4.95</span>
+              <span class="t-muted font-normal ml-1">(280 đánh giá)</span>
+            </div>
+          </div>
+          <h2 class="font-head font-extrabold text-xl t-ink leading-tight">{{ store.activeDrawerData().title }}</h2>
+          <p class="text-xs t-variant flex items-center mt-0.5">
+            <span class="material-symbols-outlined text-xs mr-1 text-neon">location_on</span>
+            {{ store.activeDrawerData().location }}
+          </p>
+        </div>
+        <button class="icon-btn" (click)="closeDrawer()" title="Đóng bảng">
+          <span class="material-symbols-outlined text-base">close</span>
+        </button>
+      </div>
+
+      <div class="flex-1 overflow-y-auto custom-scroll p-5 space-y-5">
+        <div class="media-frame">
+          <img [src]="store.activeDrawerData().img" [alt]="store.activeDrawerData().title" class="w-full h-44 object-cover">
+          <span class="chip chip-photo absolute bottom-2.5 right-2.5">1/8 Ảnh Thực Tế</span>
+        </div>
+
+        <div class="glass-1 card-hover p-3.5 flex items-center justify-between">
+          <div>
+            <span class="label-sm t-muted">Giá ưu đãi độc quyền</span>
+            <div class="flex items-baseline gap-1.5 mt-0.5">
+              <span class="text-grad font-head font-extrabold text-2xl">{{ store.activeDrawerData().price }}</span>
+              <span class="text-xs t-variant font-medium">/ đêm</span>
+            </div>
+          </div>
+          <span class="chip chip-neon">Tiết kiệm 22%</span>
+        </div>
+
+        <div class="space-y-3">
+          <p class="label-sm t-muted">Cấu hình kỳ nghỉ</p>
+          <div class="glass-1 card-hover p-3 flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+              <span class="material-symbols-outlined text-neon text-lg">calendar_month</span>
+              <div>
+                <p class="text-[10px] t-muted font-semibold">Lịch Trình Lưu Trú</p>
+                <p class="text-xs font-bold t-ink">18 Th10 – 21 Th10, 2025 (3 Đêm)</p>
+              </div>
+            </div>
+            <button class="btn btn-ghost px-1 py-0.5 text-[11px]">Đổi ngày</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer-foot p-4">
+        <button class="btn btn-primary btn-lg w-full py-3.5 px-4" (click)="goToCheckout()">
+          <span>ĐẶT NGAY &amp; XÁC NHẬN PHÒNG</span>
+          <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- MÀN HÌNH 2: XÁC NHẬN & THANH TOÁN -->
+    <div class="w-[410px] h-full flex flex-col justify-between" [class.hidden]="store.drawerView() !== 'checkout'">
+      <div class="drawer-head p-5 pb-3 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <button class="icon-btn" (click)="backToDetails()">
+            <span class="material-symbols-outlined text-lg">arrow_back</span>
+          </button>
+          <div>
+            <h3 class="font-head font-bold text-base t-ink">Xác Nhận &amp; Thanh Toán</h3>
+            <p class="text-[11px] t-variant">Bảo mật mã hóa 256-Bit SSL</p>
+          </div>
+        </div>
+        <button class="icon-btn" (click)="closeDrawer()">
+          <span class="material-symbols-outlined text-base">close</span>
+        </button>
+      </div>
+
+      <div class="flex-1 overflow-y-auto custom-scroll p-5 space-y-4">
+        <div class="glass-1 card-hover p-3.5 flex items-center gap-3">
+          <img [src]="store.activeDrawerData().img" alt="Villa Thumb" class="thumb w-14 h-14">
+          <div class="flex-1 min-w-0">
+            <h4 class="font-head text-xs font-bold t-ink truncate">{{ store.activeDrawerData().title }}</h4>
+            <p class="text-[11px] t-variant">18 Th10 – 21 Th10 (3 Đêm)</p>
+            <p class="text-grad font-head text-xs font-extrabold mt-0.5">$3,600 USD</p>
+          </div>
+        </div>
+
+        <div>
+          <p class="label-sm t-muted mb-2">Thanh toán 1 chạm</p>
+          <button class="btn btn-pay w-full py-2.5" (click)="processFakePayment()">
+            <span class="font-semibold tracking-wide text-sm">Apple Pay</span>
+            <span class="text-[11px] text-white/60 font-normal">| Xác thực FaceID</span>
+          </button>
+        </div>
+
+        <div class="glass-1 p-3 rounded-lg space-y-1.5 text-xs">
+          <div class="flex justify-between t-variant"><span>Tiền phòng (3 đêm)</span><span>$3,600</span></div>
+          <div class="flex justify-between t-variant"><span>Đưa đón trực thăng</span><span class="text-neon-deep font-bold">MIỄN PHÍ</span></div>
+          <div class="border-t hr-hair pt-1.5 flex justify-between font-bold t-ink text-sm">
+            <span>Tổng cộng</span><span class="text-grad font-head font-extrabold">$3,960 USD</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer-foot p-4">
+        <button class="btn btn-primary btn-lg w-full py-3.5 px-4 neon-state" (click)="processFakePayment()">
+          <span class="material-symbols-outlined text-base">lock</span>
+          <span>THANH TOÁN $3,960 &amp; GIỮ PHÒNG</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- MÀN HÌNH 3: THÀNH CÔNG -->
+    <div class="success-bg w-[410px] h-full flex flex-col items-center justify-center p-6 text-center" [class.hidden]="store.drawerView() !== 'success'">
+      <div class="success-mark mb-4">
+        <span class="material-symbols-outlined text-3xl">check</span>
+      </div>
+      <h3 class="font-head font-extrabold text-xl t-ink mb-1">Cắm Mốc &amp; Đặt Chỗ Thành Công!</h3>
+      <p class="text-xs t-variant mb-6 max-w-xs">Mã vé: <strong class="text-neon-deep">LUM-88921-VN</strong>. Concierge Luminous sẽ liên hệ trong 15 phút.</p>
+      <button class="btn btn-primary w-full py-3" (click)="closeDrawer()">
+        Khám phá trải nghiệm khác
+      </button>
+    </div>
+  </aside>
+
+  <!-- ========================================================================= -->
+  <!-- 4. COMMENT DRAWER                                                         -->
+  <!-- ========================================================================= -->
+  <aside
+    *ngIf="isCommentDrawerOpen"
+    id="comment-drawer"
+    class="glass-3 drawer-sheet fixed top-0 right-0 h-full w-[410px] z-50 overflow-y-auto">
+    <div class="w-[410px] h-full flex flex-col justify-between">
+      <div class="drawer-head p-5 pb-3 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-neon text-xl">forum</span>
+          <h3 class="font-head font-bold text-base t-ink">Bình luận <span class="t-muted font-normal text-xs">(1,420)</span></h3>
+        </div>
+        <button class="icon-btn" (click)="closeCommentDrawer()" title="Đóng">
+          <span class="material-symbols-outlined text-base">close</span>
+        </button>
+      </div>
+
+      <div class="flex-1 overflow-y-auto custom-scroll p-5 space-y-4">
+        <div *ngFor="let comment of comments" class="flex items-start gap-3">
+          <img [src]="comment.avatar" [alt]="comment.author" class="comment-avatar w-9 h-9 shrink-0 mt-0.5">
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center justify-between">
+              <span class="font-head text-xs font-bold t-ink">{{ comment.author }}</span>
+              <span class="text-[10px] t-muted">{{ comment.time }}</span>
+            </div>
+            <p class="text-xs t-variant mt-1 leading-relaxed">{{ comment.content }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer-foot p-4">
+        <div class="flex items-center gap-2">
+          <input class="field px-3 py-2" placeholder="Viết bình luận của bạn..." type="text">
+          <button class="icon-btn icon-btn-primary">
+            <span class="material-symbols-outlined text-sm">arrow_upward</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<!-- ========================================================================= -->
+<!-- UPLOAD MODAL                                                              -->
+<!-- ========================================================================= -->
+<div
+  id="upload-modal-backdrop"
+  class="modal-scrim fixed inset-0 z-50 flex items-center justify-center transition-all duration-300 ease-out"
+  [ngClass]="isUploadModalOpen() ? 'modal-open' : 'modal-closed'"
+  (click)="closeUploadModal()">
+
+  <div class="glass-3 modal-panel w-[90%] max-w-[430px] transition-all duration-300 ease-out" (click)="$event.stopPropagation()">
+    <div class="flex items-center justify-between pb-4 border-b hr-hair">
+      <div class="flex items-center gap-2">
+        <div class="icon-btn icon-btn-primary" style="pointer-events: none"><span class="material-symbols-outlined text-lg">upload</span></div>
+        <h3 class="font-head font-bold text-sm t-ink">Upload Video Shorts</h3>
+      </div>
+      <button class="icon-btn icon-btn-sm" (click)="closeUploadModal()" title="Đóng">
+        <span class="material-symbols-outlined text-sm">close</span>
+      </button>
+    </div>
+
+    <div class="dropzone mt-4 px-4 py-6 flex flex-col items-center justify-center text-center">
+      <div class="tile mb-2"><span class="material-symbols-outlined text-2xl">cloud_upload</span></div>
+      <p class="text-[11px] font-medium t-variant">Kéo thả video 9:16 hoặc nhấp để chọn</p>
+      <span class="text-[10px] t-muted mt-1">MP4, MOV · tối đa 200MB</span>
+    </div>
+
+    <div class="mt-4 space-y-3">
+      <input class="field px-3 py-2.5" placeholder="Tiêu đề video" type="text">
+      <div class="field flex items-center justify-between px-3 py-2.5">
+        <span class="font-medium t-variant">Đăng bằng tài khoản</span>
+        <span class="font-bold text-neon-deep">{{ currentUserName }}</span>
+      </div>
+      <textarea class="field px-3 py-2.5" rows="2" placeholder="Mô tả ngắn cho video của bạn..."></textarea>
+    </div>
+
+    <div class="mt-5 flex items-center justify-end gap-2">
+      <button class="btn btn-secondary px-4 py-2" (click)="closeUploadModal()">Hủy</button>
+      <button class="btn btn-primary px-4 py-2" (click)="submitVideoUpload()">Đăng ngay</button>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================================================= -->
+<!-- SHARE MODAL                                                               -->
+<!-- ========================================================================= -->
+<div
+  id="share-modal-backdrop"
+  class="modal-scrim fixed inset-0 z-50 flex items-center justify-center transition-all duration-300 ease-out"
+  [ngClass]="isShareModalOpen() ? 'modal-open' : 'modal-closed'"
+  (click)="closeShareModal()">
+
+  <div class="glass-3 modal-panel w-[90%] max-w-[420px] transition-all duration-300 ease-out" style="padding: 1.5rem" (click)="$event.stopPropagation()">
+    <div class="flex items-center justify-between pb-4 border-b hr-hair">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-xl text-neon">share</span>
+        <h3 class="font-head font-bold text-sm t-ink">Chia Sẻ Trải Nghiệm</h3>
+      </div>
+      <button class="icon-btn icon-btn-sm" (click)="closeShareModal()">
+        <span class="material-symbols-outlined text-sm">close</span>
+      </button>
+    </div>
+
+    <div class="grid grid-cols-4 gap-3 py-5">
+      <button class="share-wrap" (click)="copyLinkAction()">
+        <div class="share-tile"><span class="material-symbols-outlined text-xl">link</span></div>
+        <span class="text-[10px] font-semibold t-variant mt-1.5">{{ copyLabelText() }}</span>
+      </button>
+      <button class="share-wrap" (click)="submitVideoUpload()">
+        <div class="share-tile"><span class="material-symbols-outlined text-xl">facebook</span></div>
+        <span class="text-[10px] font-semibold t-variant mt-1.5">Facebook</span>
+      </button>
+      <button class="share-wrap" (click)="submitVideoUpload()">
+        <div class="share-tile"><span class="material-symbols-outlined text-xl">maps_ugc</span></div>
+        <span class="text-[10px] font-semibold t-variant mt-1.5">Messenger</span>
+      </button>
+      <button class="share-wrap" (click)="submitVideoUpload()">
+        <div class="share-tile"><span class="material-symbols-outlined text-xl">qr_code_2</span></div>
+        <span class="text-[10px] font-semibold t-variant mt-1.5">Mã QR</span>
+      </button>
+    </div>
+
+    <div class="field flex items-center gap-2 p-1.5">
+      <input class="copy-input truncate" readonly type="text" value="https://tripla.travel/community/amanoi-vinh-hy">
+      <button class="btn btn-primary px-3 py-1.5" (click)="copyLinkAction()">Sao Chép</button>
+    </div>
+  </div>
+</div>

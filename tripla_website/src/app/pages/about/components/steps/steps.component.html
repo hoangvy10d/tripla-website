@@ -1,0 +1,39 @@
+<section id="tam-nhin" class="sec">
+  <div class="orb o1" appParallax="-0.2" [pxX]="0.06"></div>
+  <div class="orb o2" appParallax="0.18" [pxX]="-0.05"></div>
+
+  <div class="container">
+    <div class="head">
+      <span class="badge" appReveal>
+        <span class="material-symbols-outlined" style="font-size: 18px">auto_awesome</span>✨ Kỷ nguyên video du lịch điện ảnh
+      </span>
+      <h2 class="h2" appReveal revealDelay="100">Trải Nghiệm 1 Màn Hình Liền Mạch — Không Bao Giờ Rời Mắt</h2>
+      <p class="lead" appReveal revealDelay="200">
+        Quy trình khép kín đột phá: từ khi được khơi gợi cảm xúc diệu kỳ đến khi hoàn tất đặt phòng chỉ trong vài giây.
+      </p>
+    </div>
+
+    <div class="grid">
+      @for (s of steps; track s.no) {
+        <!-- wrapper: reveal + parallax; article: hover -->
+        <div class="cell" appReveal [revealDelay]="$index * 150" [appParallax]="s.speed">
+          <article class="step glass" [class.amber]="s.tone === 'amber'">
+            <div class="glow"></div>
+            <div class="body">
+              <div class="row">
+                <span class="no">{{ s.no }}</span>
+                <div class="ico"><span class="material-symbols-outlined">{{ s.icon }}</span></div>
+              </div>
+              <h3>{{ s.title }}</h3>
+              <p>{{ s.text }}</p>
+            </div>
+            <div class="foot">
+              <span class="material-symbols-outlined">{{ s.footIcon }}</span>
+              <b>{{ s.foot }}</b>
+            </div>
+          </article>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,5 @@
+<router-outlet />
+<!-- POP-UP LOGIN TOÀN CỤC (Tự động hiển thị khi isModalOpen = true) -->
+@if (authService.isModalOpen()) {
+  <app-auth-modal></app-auth-modal>
+}
