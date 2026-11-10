@@ -1,0 +1,30 @@
+<section [attr.aria-busy]="loading()">
+  <div class="list-heading">
+    <div>
+      <span class="list-eyebrow">ĐIỂM ĐẾN CỦA BẠN</span>
+      <h2>Chỗ nghỉ tại {{ location() }}</h2>
+    </div>
+    <span class="destination-mark material-symbols-outlined" aria-hidden="true">location_on</span>
+  </div>
+  <p *ngIf="loading()" role="status">Đang tải kết quả…</p>
+  <div *ngIf="!loading() && !hotels().length" class="empty" role="status">
+    <div class="empty-landscape" aria-hidden="true">
+      <span class="landscape-label"
+        ><span class="material-symbols-outlined">explore</span>Mỗi hành trình, một chốn riêng.</span
+      >
+    </div>
+    <div class="empty-body">
+      <span class="empty-icon material-symbols-outlined" aria-hidden="true">hotel</span>
+      <h3>{{ demo() ? 'Chưa có mẫu tại điểm đến này' : 'Chưa có dữ liệu chỗ nghỉ' }}</h3>
+      <p *ngIf="demo()">Bạn có thể xem mẫu tại Đà Lạt, Đà Nẵng hoặc Phú Quốc.</p>
+      <p *ngIf="!demo()">
+        Điều kiện tìm kiếm đã được ghi nhận. Nguồn dữ liệu khách sạn chưa được kết nối; chưa thể xác
+        nhận giá, phòng trống hoặc số lượng kết quả.
+      </p>
+      <p>Bạn có thể sửa tìm kiếm hoặc bộ lọc ở trang này.</p>
+    </div>
+  </div>
+  <div *ngIf="!loading()" class="list">
+    <app-hotel-card *ngFor="let hotel of hotels()" [hotel]="hotel" />
+  </div>
+</section>

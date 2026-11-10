@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { DrawerKey, CommunityTab, NavItem } from '../../models/trip-shorts.models';
 import {  TripshortService } from '../../services/tripshort-service';
+import { SavedTrips } from '../../services/saved-trips';
 
 @Component({
   selector: 'app-tripshort',
@@ -12,6 +13,92 @@ import {  TripshortService } from '../../services/tripshort-service';
   styleUrls: ['./tripshort.css']
 })
 export class Tripshort{
+  galleryIndex = 0;
+  calendarOpen = false;
+  readonly today = new Date(new Date().setHours(0, 0, 0, 0));
+  calendarMonth = new Date(this.today.getFullYear(), this.today.getMonth(), 1);
+  stayStart = this.today;
+  visitDate = this.today;
+  stayEnd = new Date(this.today.getFullYear(), this.today.getMonth(), this.today.getDate() + 3);
+  draftStart: Date | null = null;
+  draftEnd: Date | null = null;
+  readonly weekdays = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'];
+
+  get galleryImages(): string[] {
+    return [...new Set([this.activeDrawerData().img, ...this.hubVideos
+      .filter(video => video.drawerKey === this.selectedDrawerKey()).map(video => video.media)])];
+  }
+  changeGallery(step: number): void {
+    this.galleryIndex = (this.galleryIndex + step + this.galleryImages.length) % this.galleryImages.length;
+  }
+  get stayNights(): number {
+    return Math.round((Date.UTC(this.stayEnd.getFullYear(), this.stayEnd.getMonth(), this.stayEnd.getDate()) -
+      Date.UTC(this.stayStart.getFullYear(), this.stayStart.getMonth(), this.stayStart.getDate())) / 86400000);
+  }
+  get calendarDays(): (Date | null)[] {
+    const year = this.calendarMonth.getFullYear(), month = this.calendarMonth.getMonth();
+    const offset = (new Date(year, month, 1).getDay() + 6) % 7;
+    return [...Array(offset).fill(null), ...Array.from({ length: new Date(year, month + 1, 0).getDate() }, (_, i) => new Date(year, month, i + 1))];
+  }
+  openCalendar(): void {
+    this.draftStart = null;
+    this.draftEnd = null;
+    const date = this.selectedDrawerKey() === 'yacht' ? this.visitDate : this.stayStart;
+    this.calendarMonth = new Date(date.getFullYear(), date.getMonth(), 1);
+    this.calendarOpen = !this.calendarOpen;
+  }
+  changeMonth(step: number): void {
+    this.calendarMonth = new Date(this.calendarMonth.getFullYear(), this.calendarMonth.getMonth() + step, 1);
+  }
+  selectStayDate(day: Date): void {
+    if (day < this.today) return;
+    if (this.selectedDrawerKey() === 'yacht') {
+      this.draftStart = day;
+      this.draftEnd = null;
+      return;
+    }
+    if (!this.draftStart || this.draftEnd || day <= this.draftStart) {
+      this.draftStart = day;
+      this.draftEnd = null;
+    } else this.draftEnd = day;
+  }
+  isRangeDay(day: Date): boolean {
+    return !!this.draftStart && !!this.draftEnd && day > this.draftStart && day < this.draftEnd;
+  }
+  confirmStayDates(): void {
+    if (this.selectedDrawerKey() === 'yacht' && this.draftStart) {
+      this.visitDate = this.draftStart;
+      this.calendarOpen = false;
+      return;
+    }
+    if (!this.draftStart || !this.draftEnd) return;
+    this.stayStart = this.draftStart;
+    this.stayEnd = this.draftEnd;
+    this.calendarOpen = false;
+  }
+  saveTripView: 'list' | 'create' | null = null;
+  newTripName = '';
+  private readonly savedTripStore = inject(SavedTrips);
+  get tripStorageError() { return this.savedTripStore.error(); }
+  get savedTrips() { return this.savedTripStore.trips(); }
+
+  openSaveTrips(): void {
+    this.savedTripStore.refresh();
+    this.saveTripView = 'list';
+  }
+
+  createTrip(): void {
+    const name = this.newTripName.trim();
+    if (!name || name.length > 100) return;
+    if (!this.savedTripStore.create(name)) return;
+    this.newTripName = '';
+    this.saveTripView = 'list';
+  }
+
+  toggleTripPlace(id: string): void {
+    const key = this.selectedDrawerKey();
+    this.savedTripStore.toggle(id, key);
+  }
   private lastWheelScrollAt = 0;
   private readonly router = inject(Router);
   readonly currentUserName = 'Victoria Chen';
@@ -199,6 +286,8 @@ export class Tripshort{
   openDrawerWithData(key: DrawerKey, event?: Event): void {
     event?.stopPropagation();
     this.closeAllDrawers();
+    this.galleryIndex = 0;
+    this.calendarOpen = false;
     this.isSlideDrawerOpen = true;
     this.store.selectedDrawerKey.set(key);
     this.store.drawerView.set('details');

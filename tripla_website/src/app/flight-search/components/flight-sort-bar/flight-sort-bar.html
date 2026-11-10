@@ -1,0 +1,11 @@
+<div class="sort-bar" role="group" aria-label="Sắp xếp chuyến bay">
+  <button
+    *ngFor="let option of options"
+    type="button"
+    [class.active]="sort() === option.id"
+    [attr.aria-pressed]="sort() === option.id"
+    (click)="sortChange.emit(option.id)"
+  >
+    {{ option.label }}
+  </button>
+</div>

@@ -1,0 +1,40 @@
+<form (ngSubmit)="submit()">
+  <div class="location" (keydown.escape)="open = false">
+    <label
+      ><span class="material-symbols-outlined" aria-hidden="true">location_on</span
+      ><input
+        name="location"
+        [(ngModel)]="draft.location"
+        aria-label="Điểm đến"
+        placeholder="Chọn một điểm đến"
+        autocomplete="off"
+        [attr.aria-expanded]="open"
+        aria-controls="activity-places"
+        (focus)="openPlaces()"
+        (click)="openPlaces()"
+        (input)="placeQuery = $any($event.target).value; open = true"
+    /></label>
+    <div *ngIf="open" id="activity-places" class="places">
+      <div class="place-heading">
+        <strong>{{ placeQuery.trim() ? 'Kết quả phù hợp' : 'Điểm đến phổ biến' }}</strong
+        ><button type="button" (click)="open = false">Đóng</button>
+      </div>
+      <button *ngFor="let place of places" type="button" class="place" (click)="choose(place.name)">
+        <span class="material-symbols-outlined" aria-hidden="true">location_on</span
+        ><span
+          >{{ place.name }}<small>{{ place.region }}</small></span
+        >
+      </button>
+      <p *ngIf="!places.length">Chưa có gợi ý phù hợp. Bạn vẫn có thể tìm bằng tên đã nhập.</p>
+    </div>
+  </div>
+  <label class="keyword"
+    ><span class="material-symbols-outlined" aria-hidden="true">search</span
+    ><input
+      name="query"
+      [(ngModel)]="draft.query"
+      placeholder="Tìm địa điểm hoặc hoạt động"
+      aria-label="Tìm địa điểm hoặc hoạt động" /></label
+  ><button class="submit" type="submit">Tìm trải nghiệm <span aria-hidden="true">↗</span></button>
+  <p *ngIf="error" role="alert">{{ error }}</p>
+</form>

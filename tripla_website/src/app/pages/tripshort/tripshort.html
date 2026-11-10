@@ -8,7 +8,7 @@
     <nav class="tripshort-nav" aria-label="Điều hướng chính">
       <button type="button" (click)="navigateToHome()">Khám phá</button>
       <button type="button" [class.is-active]="!isCommunityHubVisible()" (click)="switchToFeed()">TripShorts</button>
-      <button type="button" (click)="setActiveNav('nav-tripshop')">TripShop</button>
+      <button type="button" (click)="setActiveNav('nav-tripshop')">TripShop</button><a routerLink="/trip-planning">Trip Planning</a>
       <a routerLink="/about">Về TRIPLA</a>
     </nav>
     <button type="button" class="header-upload" (click)="triggerUploadModal()"><span class="material-symbols-outlined">add</span><span>Chia sẻ hành trình</span></button>
@@ -169,36 +169,6 @@
       <div class="stage-wash absolute inset-0 pointer-events-none"></div>
 
       <div class="journey-lines" aria-hidden="true"><span></span><span></span><span></span></div>
-      <aside class="feed-editorial" aria-label="Cảm hứng hành trình">
-        <p class="editorial-kicker"><span></span> TRIPLA FILM JOURNAL</p>
-        <h2>Đi một chút.<br /><em>Nhớ thật lâu.</em></h2>
-        <p class="editorial-description">Có những nơi, chỉ một thước phim cũng đủ khiến ta muốn lên đường.</p>
-        <div class="editorial-location">
-          <span class="material-symbols-outlined">explore</span>
-          <div><span>ĐANG KHÁM PHÁ</span><p>{{ currentVideo().location }}</p></div>
-        </div>
-        <button type="button" class="editorial-tag-toggle" (click)="handleVideoClick($event)">
-          <span class="material-symbols-outlined">{{ isTagsVisible() ? 'visibility_off' : 'location_on' }}</span>
-          {{ isTagsVisible() ? 'Ẩn địa điểm' : 'Khám phá địa điểm' }}
-          <span aria-hidden="true">↗</span>
-        </button>
-        <p class="editorial-footer">TRAVEL EASY — NOT BUSY</p>
-      </aside>
-
-      <aside class="feed-next" *ngIf="hubVideos.length > 1" aria-label="Hành trình tiếp theo">
-        <div class="next-heading"><span>TIẾP NỐI CẢM HỨNG</span><span aria-hidden="true">↗</span></div>
-        <button type="button" class="next-destination" (click)="openVideoFromHub((currentVideoIndex() + 1) % hubVideos.length)">
-          <div class="next-cover">
-            <img [src]="hubVideos[(currentVideoIndex() + 1) % hubVideos.length].media" alt="" loading="lazy" />
-            <span class="next-play material-symbols-outlined">play_arrow</span>
-            <span class="next-index">{{ (currentVideoIndex() + 1) % hubVideos.length + 1 < 10 ? '0' : '' }}{{ (currentVideoIndex() + 1) % hubVideos.length + 1 }} / {{ hubVideos.length }}</span>
-          </div>
-          <p>{{ hubVideos[(currentVideoIndex() + 1) % hubVideos.length].title }}</p>
-          <span class="next-location"><span class="material-symbols-outlined">location_on</span>{{ hubVideos[(currentVideoIndex() + 1) % hubVideos.length].location }}</span>
-        </button>
-        <button type="button" class="next-community" (click)="switchToCommunity()"><span>Ghé qua cộng đồng</span><span aria-hidden="true">→</span></button>
-        <div class="scroll-guide"><span class="material-symbols-outlined">swap_vert</span><p>Cuộn để khám phá<br /><span>Mỗi lần lướt, một góc nhìn mới.</span></p></div>
-      </aside>
 
       <!-- Header bar -->
       <div class="feed-toolbar absolute top-5 left-8 right-8 flex items-center justify-between z-20 pointer-events-auto">
@@ -231,7 +201,6 @@
         (click)="handleVideoClick($event)">
 
         <!-- Lớp media có cắt bo góc -->
-        <div class="film-marker" aria-hidden="true"><span class="film-dot"></span> TRIPSHORTS <span>{{ currentVideoIndex() + 1 < 10 ? '0' : '' }}{{ currentVideoIndex() + 1 }}</span></div>
         <div class="video-clip">
           <img [src]="currentVideo().media" [alt]="currentVideo().title" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
           <div class="video-shade absolute inset-0 pointer-events-none"></div>
@@ -244,7 +213,7 @@
         </div>
 
         <!-- Hotspot pins -->
-        <div *ngIf="activeNav() === 'nav-for-you'" class="absolute inset-0 z-30 tags-transition" [ngClass]="isTagsVisible() ? 'tags-visible' : 'tags-hidden'">
+        <div *ngIf="activeNav() === 'nav-for-you'" class="video-tags z-30 tags-transition" [ngClass]="isTagsVisible() ? 'tags-visible' : 'tags-hidden'">
 
           <div class="pin-hotspot hotspot-resort" (click)="openDrawerWithData('resort', $event)">
             <div class="relative flex items-center">
@@ -436,48 +405,105 @@
             {{ store.activeDrawerData().location }}
           </p>
         </div>
+        <button type="button" class="icon-btn" (click)="openSaveTrips()" title="Lưu vào chuyến đi" aria-label="Lưu vào chuyến đi">
+          <span class="material-symbols-outlined text-base">bookmark_add</span>
+        </button>
         <button class="icon-btn" (click)="closeDrawer()" title="Đóng bảng">
           <span class="material-symbols-outlined text-base">close</span>
         </button>
       </div>
 
-      <div class="flex-1 overflow-y-auto custom-scroll p-5 space-y-5">
-        <div class="media-frame">
-          <img [src]="store.activeDrawerData().img" [alt]="store.activeDrawerData().title" class="w-full h-44 object-cover">
-          <span class="chip chip-photo absolute bottom-2.5 right-2.5">1/8 Ảnh Thực Tế</span>
+      <div class="detail-content flex-1 overflow-y-auto custom-scroll">
+        <div class="media-frame detail-gallery">
+          <img [src]="galleryImages[galleryIndex]" [alt]="store.activeDrawerData().title" class="w-full object-cover">
+          <button *ngIf="galleryImages.length > 1" type="button" class="gallery-arrow gallery-prev icon-btn" aria-label="Ảnh trước" (click)="changeGallery(-1)"><span class="material-symbols-outlined">chevron_left</span></button>
+          <button *ngIf="galleryImages.length > 1" type="button" class="gallery-arrow gallery-next icon-btn" aria-label="Ảnh tiếp theo" (click)="changeGallery(1)"><span class="material-symbols-outlined">chevron_right</span></button>
+          <span class="chip chip-photo absolute bottom-2.5 right-2.5">{{ galleryIndex + 1 }}/{{ galleryImages.length }} Ảnh Thực Tế</span>
         </div>
 
-        <div class="glass-1 card-hover p-3.5 flex items-center justify-between">
+        <div *ngIf="selectedDrawerKey() !== 'dining'" class="detail-price glass-1 card-hover flex items-center justify-between">
           <div>
-            <span class="label-sm t-muted">Giá ưu đãi độc quyền</span>
+            <span class="label-sm t-muted">{{ selectedDrawerKey() === 'resort' ? 'Giá ưu đãi độc quyền' : 'Giá vé trải nghiệm' }}</span>
             <div class="flex items-baseline gap-1.5 mt-0.5">
               <span class="text-grad font-head font-extrabold text-2xl">{{ store.activeDrawerData().price }}</span>
-              <span class="text-xs t-variant font-medium">/ đêm</span>
+              <span class="text-xs t-variant font-medium">{{ selectedDrawerKey() === 'resort' ? '/ đêm' : '/ trải nghiệm' }}</span>
             </div>
           </div>
-          <span class="chip chip-neon">Tiết kiệm 22%</span>
+          <span *ngIf="selectedDrawerKey() === 'resort'" class="chip chip-neon">Tiết kiệm 22%</span>
         </div>
 
-        <div class="space-y-3">
-          <p class="label-sm t-muted">Cấu hình kỳ nghỉ</p>
+        <section class="detail-trip-info glass-1 card-hover" aria-labelledby="trip-info-title">
+          <h3 id="trip-info-title" class="label-sm t-muted">{{ selectedDrawerKey() === 'resort' ? 'Thông tin chuyến đi' : selectedDrawerKey() === 'dining' ? 'Thông tin quán' : 'Thông tin vui chơi' }}</h3>
+          <p class="font-head font-bold text-xs t-ink">{{ activeDrawerData().title }}</p>
+          <p class="trip-info-location"><span class="material-symbols-outlined">location_on</span>{{ activeDrawerData().location }}</p>
+          <p [ngSwitch]="selectedDrawerKey()">
+            <span *ngSwitchCase="'resort'">Kỳ nghỉ tại biệt thự hướng biển, tận hưởng không gian riêng tư bên vịnh Vĩnh Hy.</span>
+            <span *ngSwitchCase="'dining'">Trải nghiệm bàn tiệc riêng trên vách đá Núi Chúa, thưởng thức ẩm thực và ngắm hoàng hôn.</span>
+            <span *ngSwitchCase="'yacht'">Khám phá quần đảo An Thới, Phú Quốc trên hành trình du thuyền riêng.</span>
+          </p>
+        </section>
+
+        <ng-container *ngIf="selectedDrawerKey() === 'dining'">
+          <section class="detail-trip-info glass-1 card-hover">
+            <h3 class="label-sm t-muted">Ẩm thực &amp; không gian</h3>
+            <p><strong>Phục vụ:</strong> Thực đơn degustation 7 món.</p>
+            <p><strong>Phong cách:</strong> Bàn tiệc riêng trên vách đá, hướng biển và ngắm hoàng hôn.</p>
+            <p><strong>Phù hợp:</strong> Bữa tối riêng tư, hẹn hò và dịp kỷ niệm.</p>
+          </section>
+          <section class="detail-trip-info glass-1 card-hover">
+            <h3 class="label-sm t-muted">Thông tin ghé quán</h3>
+            <p class="trip-info-location"><span class="material-symbols-outlined">location_on</span>{{ activeDrawerData().location }}</p>
+            <p><strong>Giờ phục vụ:</strong> Chưa cập nhật.</p>
+            <p><strong>Liên hệ đặt bàn:</strong> Chưa cập nhật.</p>
+          </section>
+        </ng-container>
+
+        <ng-container *ngIf="selectedDrawerKey() === 'yacht'">
+          <section class="detail-trip-info glass-1 card-hover">
+            <h3 class="label-sm t-muted">Hoạt động trải nghiệm</h3>
+            <p class="trip-info-location"><span class="material-symbols-outlined">sailing</span>Du ngoạn bằng du thuyền Catamaran, khám phá quần đảo An Thới.</p>
+            <p class="trip-info-location"><span class="material-symbols-outlined">photo_camera</span>Ngắm cảnh biển đảo và chụp ảnh trên du thuyền.</p>
+          </section>
+          <section class="detail-trip-info glass-1 card-hover">
+            <h3 class="label-sm t-muted">Giờ hoạt động</h3>
+            <p><strong>Giờ mở cửa:</strong> Chưa cập nhật.</p>
+            <p><strong>Giờ đóng cửa:</strong> Chưa cập nhật.</p>
+            <p><strong>Điểm trải nghiệm:</strong> {{ activeDrawerData().location }}</p>
+          </section>
+        </ng-container>
+
+        <div *ngIf="selectedDrawerKey() !== 'dining'" class="detail-stay">
+          <p class="label-sm t-muted">{{ selectedDrawerKey() === 'yacht' ? 'Thời gian vui chơi' : 'Thời gian kỳ nghỉ' }}</p>
           <div class="glass-1 card-hover p-3 flex items-center justify-between">
             <div class="flex items-center gap-2.5">
               <span class="material-symbols-outlined text-neon text-lg">calendar_month</span>
               <div>
-                <p class="text-[10px] t-muted font-semibold">Lịch Trình Lưu Trú</p>
-                <p class="text-xs font-bold t-ink">18 Th10 – 21 Th10, 2025 (3 Đêm)</p>
+                <p class="text-[10px] t-muted font-semibold">{{ selectedDrawerKey() === 'yacht' ? 'Ngày sử dụng vé' : 'Lịch Trình Lưu Trú' }}</p>
+                <p class="text-xs font-bold t-ink"><ng-container *ngIf="selectedDrawerKey() === 'yacht'; else stayDates">{{ visitDate | date:'dd/MM/yyyy' }}</ng-container><ng-template #stayDates>{{ selectedDrawerKey() === 'yacht' ? (visitDate | date:'dd/MM/yyyy') : (stayStart | date:'dd/MM/yyyy') + ' – ' + (stayEnd | date:'dd/MM/yyyy') + ' (' + stayNights + ' Đêm)' }}</ng-template></p>
               </div>
             </div>
-            <button class="btn btn-ghost px-1 py-0.5 text-[11px]">Đổi ngày</button>
+            <button type="button" class="btn btn-ghost px-1 py-0.5 text-[11px]" [attr.aria-expanded]="calendarOpen" (click)="openCalendar()">Đổi ngày</button>
+          </div>
+          <div *ngIf="calendarOpen" class="stay-calendar">
+            <div class="calendar-heading"><strong>{{ selectedDrawerKey() === 'yacht' ? 'Chọn ngày sử dụng vé' : draftStart && !draftEnd ? 'Chọn ngày về' : 'Chọn ngày đi và ngày về' }}</strong><button type="button" class="icon-btn" aria-label="Đóng lịch" (click)="calendarOpen = false"><span class="material-symbols-outlined">close</span></button></div>
+            <div class="calendar-heading"><button type="button" class="icon-btn" aria-label="Tháng trước" (click)="changeMonth(-1)"><span class="material-symbols-outlined">chevron_left</span></button><strong>{{ calendarMonth | date:'MM/yyyy' }}</strong><button type="button" class="icon-btn" aria-label="Tháng sau" (click)="changeMonth(1)"><span class="material-symbols-outlined">chevron_right</span></button></div>
+            <div class="calendar-grid"><span *ngFor="let label of weekdays">{{ label }}</span><ng-container *ngFor="let day of calendarDays"><button *ngIf="day; else blankDay" type="button" [disabled]="day < today" [class.range-day]="isRangeDay(day)" [class.selected-day]="day.getTime() === draftStart?.getTime() || day.getTime() === draftEnd?.getTime()" [attr.aria-label]="day | date:'dd/MM/yyyy'" (click)="selectStayDate(day)">{{ day.getDate() }}</button><ng-template #blankDay><span></span></ng-template></ng-container></div>
+            <div class="calendar-heading"><small>{{ draftStart | date:'dd/MM/yyyy' }}<ng-container *ngIf="selectedDrawerKey() !== 'yacht'"> – {{ draftEnd | date:'dd/MM/yyyy' }}</ng-container></small><button type="button" class="icon-btn calendar-confirm" aria-label="Xác nhận ngày đã chọn" [disabled]="!draftStart || (selectedDrawerKey() !== 'yacht' && !draftEnd)" (click)="confirmStayDates()"><span class="material-symbols-outlined">check</span></button></div>
           </div>
         </div>
       </div>
 
       <div class="drawer-foot p-4">
-        <button class="btn btn-primary btn-lg w-full py-3.5 px-4" (click)="goToCheckout()">
-          <span>ĐẶT NGAY &amp; XÁC NHẬN PHÒNG</span>
+        <button *ngIf="selectedDrawerKey() !== 'dining'; else savePlaceButton" class="btn btn-primary btn-lg w-full py-3.5 px-4" (click)="goToCheckout()">
+          <span>{{ selectedDrawerKey() === 'yacht' ? 'ĐẶT NGAY' : 'ĐẶT NGAY & XÁC NHẬN PHÒNG' }}</span>
           <span class="material-symbols-outlined text-base">arrow_forward</span>
         </button>
+        <ng-template #savePlaceButton>
+          <button type="button" class="btn btn-primary btn-lg w-full py-3.5 px-4" (click)="openSaveTrips()">
+            <span class="material-symbols-outlined text-base">bookmark_add</span>
+            <span>LƯU VÀO CHUYẾN ĐI</span>
+          </button>
+        </ng-template>
       </div>
     </div>
 
@@ -503,8 +529,8 @@
           <img [src]="store.activeDrawerData().img" alt="Villa Thumb" class="thumb w-14 h-14">
           <div class="flex-1 min-w-0">
             <h4 class="font-head text-xs font-bold t-ink truncate">{{ store.activeDrawerData().title }}</h4>
-            <p class="text-[11px] t-variant">18 Th10 – 21 Th10 (3 Đêm)</p>
-            <p class="text-grad font-head text-xs font-extrabold mt-0.5">$3,600 USD</p>
+            <p class="text-[11px] t-variant">{{ selectedDrawerKey() === 'yacht' ? (visitDate | date:'dd/MM/yyyy') : (stayStart | date:'dd/MM/yyyy') + ' – ' + (stayEnd | date:'dd/MM/yyyy') + ' (' + stayNights + ' Đêm)' }}</p>
+            <p class="text-grad font-head text-xs font-extrabold mt-0.5">{{ selectedDrawerKey() === 'yacht' ? activeDrawerData().price + ' USD' : '$3,600 USD' }}</p>
           </div>
         </div>
 
@@ -517,10 +543,10 @@
         </div>
 
         <div class="glass-1 p-3 rounded-lg space-y-1.5 text-xs">
-          <div class="flex justify-between t-variant"><span>Tiền phòng (3 đêm)</span><span>$3,600</span></div>
-          <div class="flex justify-between t-variant"><span>Đưa đón trực thăng</span><span class="text-neon-deep font-bold">MIỄN PHÍ</span></div>
+          <div class="flex justify-between t-variant"><span>{{ selectedDrawerKey() === 'yacht' ? 'Vé trải nghiệm' : 'Tiền phòng (3 đêm)' }}</span><span>{{ selectedDrawerKey() === 'yacht' ? activeDrawerData().price : '$3,600' }}</span></div>
+          <div *ngIf="selectedDrawerKey() === 'resort'" class="flex justify-between t-variant"><span>Đưa đón trực thăng</span><span class="text-neon-deep font-bold">MIỄN PHÍ</span></div>
           <div class="border-t hr-hair pt-1.5 flex justify-between font-bold t-ink text-sm">
-            <span>Tổng cộng</span><span class="text-grad font-head font-extrabold">$3,960 USD</span>
+            <span>Tổng cộng</span><span class="text-grad font-head font-extrabold">{{ selectedDrawerKey() === 'yacht' ? activeDrawerData().price + ' USD' : '$3,960 USD' }}</span>
           </div>
         </div>
       </div>
@@ -528,7 +554,7 @@
       <div class="drawer-foot p-4">
         <button class="btn btn-primary btn-lg w-full py-3.5 px-4 neon-state" (click)="processFakePayment()">
           <span class="material-symbols-outlined text-base">lock</span>
-          <span>THANH TOÁN $3,960 &amp; GIỮ PHÒNG</span>
+          <span>{{ selectedDrawerKey() === 'yacht' ? 'THANH TOÁN ' + activeDrawerData().price + ' & ĐẶT VÉ' : 'THANH TOÁN $3,960 & GIỮ PHÒNG' }}</span>
         </button>
       </div>
     </div>
@@ -612,7 +638,7 @@
 
     <div class="dropzone mt-4 px-4 py-6 flex flex-col items-center justify-center text-center">
       <div class="tile mb-2"><span class="material-symbols-outlined text-2xl">cloud_upload</span></div>
-      <p class="text-[11px] font-medium t-variant">Kéo thả video 9:16 hoặc nhấp để chọn</p>
+      <p class="text-[11px] font-medium t-variant">Kéo thả video hoặc nhấp để chọn</p>
       <span class="text-[10px] t-muted mt-1">MP4, MOV · tối đa 200MB</span>
     </div>
 
@@ -676,4 +702,31 @@
       <button class="btn btn-primary px-3 py-1.5" (click)="copyLinkAction()">Sao Chép</button>
     </div>
   </div>
+</div>
+
+<div *ngIf="saveTripView" class="trip-save-backdrop" (click)="saveTripView = null">
+  <section class="trip-save-panel" role="dialog" aria-modal="true" aria-labelledby="trip-save-title" (click)="$event.stopPropagation()" (keydown.escape)="saveTripView = null">
+    <header class="trip-save-header">
+      <button *ngIf="saveTripView === 'create'" type="button" class="icon-btn" aria-label="Quay lại" (click)="saveTripView = 'list'"><span class="material-symbols-outlined">arrow_back</span></button>
+      <h2 id="trip-save-title">{{ saveTripView === 'list' ? 'Lưu vào chuyến đi' : 'Tạo chuyến đi mới' }}</h2>
+      <button type="button" class="icon-btn" aria-label="Đóng" (click)="saveTripView = null"><span class="material-symbols-outlined">close</span></button>
+    </header>
+    <p *ngIf="tripStorageError" role="alert" class="trip-save-message">{{ tripStorageError }}</p>
+    <div *ngIf="saveTripView === 'list'" class="trip-save-list">
+      <p *ngIf="!savedTrips.length" class="trip-save-message">Bạn chưa có chuyến đi nào. Tạo chuyến đi mới để lưu địa điểm yêu thích.</p>
+      <button *ngFor="let trip of savedTrips" type="button" class="trip-save-row" [attr.aria-pressed]="trip.places.includes(selectedDrawerKey())" (click)="toggleTripPlace(trip.id)">
+        <span class="trip-save-cover material-symbols-outlined">luggage</span>
+        <span class="trip-save-info"><strong>{{ trip.name }}</strong><small>{{ trip.createdAt | date:'dd/MM/yyyy' }} · {{ trip.places.length }} địa điểm</small></span>
+        <span class="material-symbols-outlined" [style.font-variation-settings]="trip.places.includes(selectedDrawerKey()) ? '\'FILL\' 1' : '\'FILL\' 0'">{{ trip.places.includes(selectedDrawerKey()) ? 'bookmark_added' : 'bookmark_add' }}</span>
+      </button>
+    </div>
+    <footer *ngIf="saveTripView === 'list'" class="trip-save-footer"><button type="button" class="btn btn-primary" (click)="saveTripView = 'create'; newTripName = ''"><span class="material-symbols-outlined">add</span> Chuyến đi mới</button></footer>
+    <form *ngIf="saveTripView === 'create'" class="trip-create-form" (submit)="$event.preventDefault(); createTrip()">
+      <p class="trip-save-message">Lưu các mục yêu thích vào chuyến đi để dễ dàng lên kế hoạch.</p>
+      <label for="new-trip-name">Tên chuyến đi</label>
+      <input id="new-trip-name" class="field" type="text" maxlength="100" required placeholder="Ví dụ: Đà Lạt 2026" [value]="newTripName" (input)="newTripName = $any($event.target).value">
+      <small>{{ newTripName.length }}/100 ký tự</small>
+      <button type="submit" class="btn btn-primary" [disabled]="!newTripName.trim()">Tạo</button>
+    </form>
+  </section>
 </div>

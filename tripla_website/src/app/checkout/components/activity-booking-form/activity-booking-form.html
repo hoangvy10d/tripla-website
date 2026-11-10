@@ -1,0 +1,59 @@
+<section class="form-section" [formGroup]="group()">
+  <div class="section-heading">
+    <span class="section-number">2</span>
+    <div>
+      <h2>Thông tin trải nghiệm</h2>
+      <p>Thông tin người sử dụng vé và yêu cầu bổ sung.</p>
+    </div>
+  </div>
+  <div class="selection-note">
+    {{ selection().ticketName }} · {{ selection().visitDate | date: 'dd/MM/yyyy' }} ·
+    {{ selection().quantity }} vé. Đổi ngày hoặc số vé tại trang địa điểm để kiểm tra lại giá.
+  </div>
+  <label class="checkbox"
+    ><input type="checkbox" formControlName="purchaserAttending" /><span
+      >Người mua cũng tham gia trải nghiệm</span
+    ></label
+  >
+  <p *ngIf="!selection().requiresParticipants" class="hint">
+    Gói này chưa yêu cầu tên từng người tham gia. Không cần nhập thông tin cá nhân bổ sung.
+  </p>
+  <div formArrayName="participants">
+    <fieldset
+      *ngFor="let participant of group().controls.participants.controls; let i = index"
+      [formGroupName]="i"
+    >
+      <legend>Người tham gia {{ i + 1 }}</legend>
+      <div class="field">
+        <label [for]="'activity-participant-' + i">Họ và tên *</label
+        ><input
+          [id]="'activity-participant-' + i"
+          formControlName="fullName"
+          maxlength="100"
+          required
+          [attr.aria-invalid]="invalid(participant.controls.fullName)"
+        />
+        <p *ngIf="invalid(participant.controls.fullName)" class="field-error">
+          Vui lòng nhập tên người tham gia.
+        </p>
+      </div>
+    </fieldset>
+  </div>
+  <p *ngIf="submitted() && group().hasError('participantCount')" class="field-error">
+    Số người tham gia không khớp số vé yêu cầu.
+  </p>
+  <div class="field" style="margin-top: 18px">
+    <label for="activity-notes">Ghi chú (không bắt buộc)</label
+    ><textarea
+      id="activity-notes"
+      formControlName="notes"
+      maxlength="500"
+      rows="3"
+      [attr.aria-invalid]="invalid(group().controls.notes)"
+    ></textarea>
+    <p *ngIf="invalid(group().controls.notes)" class="field-error">Ghi chú không quá 500 ký tự.</p>
+    <p class="hint">
+      Không nhập giấy tờ tùy thân hoặc dữ liệu thanh toán. Yêu cầu bổ sung không được đảm bảo.
+    </p>
+  </div>
+</section>

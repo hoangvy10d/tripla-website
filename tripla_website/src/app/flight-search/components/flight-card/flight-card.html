@@ -1,0 +1,16 @@
+﻿<article class="flight-card">
+  <div class="airline">
+    <div class="airline-logo"><img *ngIf="flight().airlineLogo && failedLogo() !== flight().airlineLogo; else logoFallback" [src]="flight().airlineLogo" [alt]="flight().airlineName" (error)="failedLogo.set(flight().airlineLogo || '')"><ng-template #logoFallback><span>{{ flight().airlineCode }}</span></ng-template></div>
+    <div class="airline-info"><strong>{{ flight().airlineName }}</strong><small *ngIf="flight().flightNumber" class="flight-number">{{ flight().flightNumber }}</small><small class="baggage" *ngIf="flight().baggageDescription; else baggageStatus"><span class="material-symbols-outlined" aria-hidden="true">luggage</span>{{ flight().baggageDescription }}</small><ng-template #baggageStatus><small class="baggage">{{ flight().checkedBaggageIncluded === true ? 'Có hành lý ký gửi' : flight().checkedBaggageIncluded === false ? 'Chưa gồm hành lý ký gửi' : 'Hành lý: xem điều kiện vé' }}</small></ng-template></div>
+  </div>
+  <div class="route">
+    <div class="time"><strong>{{ flight().departureAt.slice(11, 16) }}</strong><small>{{ flight().from }}</small></div>
+    <div class="journey"><span>{{ duration }}</span><span class="route-line" aria-hidden="true"><span class="material-symbols-outlined">flight</span></span><small>{{ flight().stops === 0 ? 'Bay thẳng' : flight().stops + ' điểm dừng' }}</small></div>
+    <div class="time arrival"><strong>{{ flight().arrivalAt.slice(11, 16) }}<sup *ngIf="dayOffset" [attr.aria-label]="'Chênh lệch ngày đến: ' + dayOffset">{{ dayOffset > 0 ? '+' : '' }}{{ dayOffset }} ngày</sup></strong><small>{{ flight().to }}</small></div>
+  </div>
+  <div class="fare">
+    <div class="fare-amount"><ng-container *ngIf="hasPrice; else noPrice"><strong class="current-price">{{ flight().price | currency:flight().currency || 'VND':'code':'1.0-0' }}</strong><del *ngIf="hasDiscount" class="original-price">{{ flight().originalPrice | currency:flight().currency || 'VND':'code':'1.0-0' }}</del><small class="discount-note" *ngIf="hasDiscount">Mức giá ưu đãi</small><small class="price-caption">{{ priceCaption }}</small></ng-container><ng-template #noPrice><small>Chưa có giá vé</small></ng-template></div>
+    <button type="button" class="select-flight" [disabled]="!hasPrice" [attr.aria-label]="'Chọn chuyến ' + (flight().flightNumber || flight().airlineName) + ' từ ' + flight().from + ' đến ' + flight().to" (click)="selected.emit(flight())">Chọn</button>
+  </div>
+  <div *ngIf="flight().promotions?.length" class="promotions" aria-label="Ưu đãi chuyến bay"><span *ngFor="let promotion of flight().promotions" class="promotion"><span class="material-symbols-outlined" aria-hidden="true">local_offer</span>{{ promotion.label }}</span></div>
+</article>

@@ -1,0 +1,70 @@
+<section class="selected-panel">
+  <header>
+    <h2>Bộ lọc đã chọn</h2>
+    <button type="button" (click)="reset()" [disabled]="!hasFilters">Đặt lại</button>
+  </header>
+  <div class="selected-chips">
+    <button
+      *ngFor="let category of criteria().categories"
+      type="button"
+      [attr.aria-label]="'Bỏ ' + category"
+      (click)="toggle(category)"
+    >
+      {{ category }} <span aria-hidden="true">×</span></button
+    ><button
+      *ngIf="criteria().minPrice !== undefined || criteria().maxPrice !== undefined"
+      type="button"
+      (click)="resetPrice()"
+    >
+      Khoảng giá <span aria-hidden="true">×</span>
+    </button>
+    <p *ngIf="!hasFilters">Chưa áp dụng bộ lọc</p>
+  </div>
+</section>
+<details open class="filter-panel">
+  <summary>Giá <span aria-hidden="true">⌃</span></summary>
+  <div class="price-body">
+    <label
+      >Giá tối thiểu<input
+        type="range"
+        aria-label="Giá tối thiểu"
+        min="0"
+        [max]="limit"
+        step="50000"
+        [value]="criteria().minPrice ?? 0"
+        (change)="price('min', $any($event.target).value)" /></label
+    ><label
+      >Giá tối đa<input
+        type="range"
+        aria-label="Giá tối đa"
+        min="0"
+        [max]="limit"
+        step="50000"
+        [value]="criteria().maxPrice ?? limit"
+        (change)="price('max', $any($event.target).value)"
+    /></label>
+    <div class="price-labels">
+      <span>{{ criteria().minPrice ?? 0 | number }} VND</span
+      ><span
+        >{{ criteria().maxPrice ?? limit | number }} VND{{
+          criteria().maxPrice === undefined ? '+' : ''
+        }}</span
+      >
+    </div>
+    <small>Giá minh họa / người</small>
+  </div>
+</details>
+<details open class="filter-panel">
+  <summary>Điểm tham quan &amp; Ẩm thực <span aria-hidden="true">⌃</span></summary>
+  <div class="category-body">
+    <button type="button" class="reset-categories" (click)="resetCategories()">
+      Đặt lại danh mục</button
+    ><label *ngFor="let category of categories"
+      ><input
+        type="checkbox"
+        [checked]="criteria().categories.includes(category)"
+        (change)="toggle(category)"
+      /><span>{{ category }}</span></label
+    >
+  </div>
+</details>

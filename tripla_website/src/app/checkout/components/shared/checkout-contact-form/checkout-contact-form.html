@@ -1,0 +1,78 @@
+<section class="form-section" [formGroup]="group()" aria-labelledby="contact-heading">
+  <div class="section-heading">
+    <span class="section-number" aria-hidden="true">1</span>
+    <div>
+      <h2 id="contact-heading">Thông tin liên hệ</h2>
+      <p>Thông tin để liên lạc về yêu cầu đặt chỗ của bạn.</p>
+    </div>
+  </div>
+  <div class="fields">
+    <div class="field full">
+      <label for="checkout-fullname">Họ và tên <span aria-hidden="true">*</span></label
+      ><input
+        id="checkout-fullname"
+        formControlName="fullName"
+        autocomplete="name"
+        maxlength="150"
+        required
+        [attr.aria-invalid]="invalid('fullName')"
+        aria-describedby="contact-name-error"
+      />
+      <p *ngIf="invalid('fullName')" id="contact-name-error" class="field-error">
+        Vui lòng nhập họ tên, tối đa 150 ký tự.
+      </p>
+    </div>
+    <div class="field full">
+      <label for="checkout-email">Email <span aria-hidden="true">*</span></label
+      ><input
+        id="checkout-email"
+        type="email"
+        formControlName="email"
+        autocomplete="email"
+        maxlength="254"
+        required
+        [attr.aria-invalid]="invalid('email')"
+        aria-describedby="contact-email-error"
+      />
+      <p *ngIf="invalid('email')" id="contact-email-error" class="field-error">
+        Vui lòng nhập địa chỉ email hợp lệ.
+      </p>
+    </div>
+    <div class="phone-fields full">
+      <div class="field">
+        <label for="checkout-calling-code">Mã quốc gia <span aria-hidden="true">*</span></label
+        ><select
+          id="checkout-calling-code"
+          formControlName="callingCode"
+          autocomplete="tel-country-code"
+          required
+          [attr.aria-invalid]="invalid('callingCode')"
+          aria-describedby="calling-code-error"
+        >
+          <option *ngFor="let item of callingCodes" [value]="item.code">{{ item.label }}</option>
+        </select>
+        <p *ngIf="invalid('callingCode')" id="calling-code-error" class="field-error">
+          Vui lòng chọn mã quốc gia.
+        </p>
+      </div>
+      <div class="field">
+        <label for="checkout-phone">Số điện thoại <span aria-hidden="true">*</span></label
+        ><input
+          id="checkout-phone"
+          type="tel"
+          inputmode="tel"
+          formControlName="phone"
+          autocomplete="tel-national"
+          maxlength="24"
+          required
+          [attr.aria-invalid]="phoneInvalid"
+          aria-describedby="contact-phone-error phone-hint"
+        />
+        <p *ngIf="phoneInvalid" id="contact-phone-error" class="field-error">
+          Số điện thoại không hợp lệ với mã quốc gia đã chọn.
+        </p>
+        <p id="phone-hint" class="hint">Nhập số nội địa; mã quốc gia được chọn riêng.</p>
+      </div>
+    </div>
+  </div>
+</section>

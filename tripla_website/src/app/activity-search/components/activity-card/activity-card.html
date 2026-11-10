@@ -1,0 +1,88 @@
+﻿<article>
+  <div class="photo">
+    <button
+      type="button"
+      class="save-activity"
+      [class.saved]="isSaved()"
+      aria-haspopup="dialog"
+      [attr.aria-label]="(isSaved() ? 'Đã lưu ' : 'Lưu ') + activity().name + ' vào chuyến đi'"
+      [title]="isSaved() ? 'Đã lưu · Chọn chuyến đi' : 'Lưu vào chuyến đi'"
+      (click)="saveOpen.set(true)"
+    >
+      <span class="material-symbols-outlined" aria-hidden="true">{{
+        isSaved() ? 'bookmark_added' : 'bookmark_add'
+      }}</span
+      ><span *ngIf="isSaved()" class="saved-label">Đã lưu</span>
+    </button>
+    <img
+      *ngIf="failedImage() !== activity().imageUrl; else fallback"
+      [src]="activity().imageUrl"
+      [alt]="'Ảnh minh họa cho ' + activity().name"
+      loading="lazy"
+      (error)="failedImage.set(activity().imageUrl)"
+    /><ng-template #fallback
+      ><span class="material-symbols-outlined placeholder" aria-hidden="true"
+        >landscape</span
+      ></ng-template
+    ><span class="photo-label">Ảnh minh họa</span
+    ><span
+      *ngIf="
+        activity().originalPrice != null &&
+        activity().priceFrom != null &&
+        activity().originalPrice! > activity().priceFrom!
+      "
+      class="discount"
+      >Ưu đãi</span
+    >
+  </div>
+  <div class="body">
+    <p class="location">
+      <span class="material-symbols-outlined" aria-hidden="true">location_on</span
+      >{{ activity().address || activity().city }}
+    </p>
+    <h3>
+      <a
+        class="card-link"
+        [routerLink]="['/activities', activity().id]"
+        queryParamsHandling="preserve"
+        >{{ activity().name }}</a
+      >
+    </h3>
+    <div class="tags">
+      <span>{{ activity().categories[0] }}</span>
+    </div>
+    <div class="reviews">
+      <ng-container *ngIf="activity().rating != null; else noReview"
+        ><span class="score">★ {{ activity().rating | number: '1.1-1' }}</span
+        ><span>{{ activity().reviewCount || 0 }} đánh giá mẫu</span></ng-container
+      ><ng-template #noReview><span>Chưa có đánh giá</span></ng-template>
+    </div>
+    <footer>
+      <div class="price">
+        <span class="price-label">Giá tham khảo từ</span>
+        <div>
+          <strong *ngIf="activity().priceFrom != null; else noPrice">{{
+            formatPrice(activity().priceFrom!, activity().currency)
+          }}</strong
+          ><ng-template #noPrice><small>Đang cập nhật</small></ng-template
+          ><del
+            *ngIf="
+              activity().originalPrice != null &&
+              activity().priceFrom != null &&
+              activity().originalPrice! > activity().priceFrom!
+            "
+            >{{ formatPrice(activity().originalPrice!, activity().currency) }}</del
+          >
+        </div>
+      </div>
+      <span class="per-person">/ người</span>
+    </footer>
+  </div>
+</article>
+<app-save-hotel-trip
+  *ngIf="saveOpen()"
+  itemType="activity"
+  [hotelId]="activity().id"
+  [hotelName]="activity().name"
+  (closed)="saveOpen.set(false)"
+/>

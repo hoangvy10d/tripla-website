@@ -1,0 +1,76 @@
+<form (ngSubmit)="submit()">
+  <div class="route-fields">
+    <label
+      ><span class="material-symbols-outlined" aria-hidden="true">trip_origin</span
+      ><input
+        name="from"
+        [(ngModel)]="draft.from"
+        list="bus-city-options"
+        aria-label="Điểm đi"
+        placeholder="Điểm đi"
+        required /></label
+    ><button type="button" class="swap" aria-label="Đổi điểm đi và đến" (click)="swap()">⇄</button
+    ><label
+      ><span class="material-symbols-outlined" aria-hidden="true">location_on</span
+      ><input
+        name="to"
+        [(ngModel)]="draft.to"
+        list="bus-city-options"
+        aria-label="Điểm đến"
+        placeholder="Điểm đến"
+        required
+    /></label>
+  </div>
+  <label class="date"
+    ><span class="material-symbols-outlined" aria-hidden="true">calendar_month</span
+    ><input
+      name="departure"
+      type="date"
+      aria-label="Ngày đi"
+      [(ngModel)]="draft.departureDate"
+      [min]="today"
+      required
+  /></label>
+  <div class="return">
+    <button *ngIf="!draft.returnDate" type="button" (click)="toggleReturn()">＋ Thêm ngày về</button
+    ><label *ngIf="draft.returnDate"
+      ><input
+        name="return"
+        type="date"
+        aria-label="Ngày về"
+        [(ngModel)]="draft.returnDate"
+        [min]="draft.departureDate"
+      /><button type="button" aria-label="Bỏ ngày về" (click)="toggleReturn()">×</button></label
+    >
+  </div>
+  <details class="guests">
+    <summary>
+      <span class="material-symbols-outlined" aria-hidden="true">group</span
+      >{{ draft.adults + draft.infants }} hành khách
+    </summary>
+    <div class="guest-panel">
+      <label
+        >Người lớn<input
+          name="adults"
+          type="number"
+          min="1"
+          max="4"
+          [(ngModel)]="draft.adults"
+          required /></label
+      ><label
+        >Em bé<input
+          name="infants"
+          type="number"
+          min="0"
+          [max]="draft.adults"
+          [(ngModel)]="draft.infants"
+          required /></label
+      ><small>Chính sách ghế và giá cho em bé chờ nhà xe xác nhận.</small>
+    </div>
+  </details>
+  <button type="submit" class="submit">Tìm vé <span aria-hidden="true">↗</span></button>
+  <p *ngIf="error" role="alert">{{ error }}</p>
+  <datalist id="bus-city-options">
+    <option *ngFor="let city of cities" [value]="city.name"></option>
+  </datalist>
+</form>

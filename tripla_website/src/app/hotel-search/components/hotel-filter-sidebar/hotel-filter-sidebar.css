@@ -1,0 +1,231 @@
+:host {
+  display: block;
+}
+aside {
+  display: grid;
+  gap: 12px;
+}
+.sidebar-heading,
+.filter-card header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+h2 {
+  font-size: 15px;
+  margin: 0;
+}
+h3 {
+  font-size: 12px;
+  margin: 0;
+}
+button {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  color: #30624b;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: left;
+}
+.filter-card {
+  min-width: 0;
+  background: #fffef9;
+  border: 1px solid #d4decd;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 3px 10px #173b3205;
+}
+.popular-card {
+  background: #edf3e5;
+  border-color: #c3d3b8;
+}
+summary {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 12px;
+  font-weight: 700;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+summary::after {
+  content: 'expand_more';
+  display: block;
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #e3edd8;
+  color: #30624b;
+  font-family: 'Material Symbols Outlined';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: normal;
+  text-transform: none;
+  text-align: center;
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+details[open] summary::after {
+  transform: rotate(180deg);
+}
+.filter-content {
+  display: grid;
+  gap: 10px;
+  padding-top: 14px;
+}
+.choice {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: #244b3e;
+  cursor: pointer;
+}
+input[type='checkbox'],
+input[type='radio'] {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  margin: 2px 0 0;
+  accent-color: #30624b;
+}
+.helper {
+  display: block;
+  font-size: 10px;
+  color: #65786b;
+  line-height: 1.6;
+  margin: 4px 0 0;
+}
+.price-sliders {
+  display: grid;
+  gap: 0;
+  margin: 12px 0;
+}
+.price-sliders input {
+  width: 100%;
+  accent-color: #30624b;
+  height: 16px;
+  cursor: pointer;
+}
+.price-inputs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+.price-inputs label {
+  min-width: 0;
+  padding: 5px 8px;
+  border: 1px solid #c3d3b8;
+  border-radius: 9px;
+  background: #fff;
+}
+.price-inputs span {
+  display: block;
+  font-size: 9px;
+  color: #65786b;
+}
+.price-inputs input {
+  width: 100%;
+  min-width: 0;
+  font-size: 10px;
+  color: #173b32;
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+}
+.text-input {
+  width: 100%;
+  min-width: 0;
+  padding: 9px;
+  border: 1px solid #c3d3b8;
+  border-radius: 7px;
+  font-size: 11px;
+  background: #fff;
+  color: #173b32;
+}
+.star {
+  color: #b78b29;
+}
+.rating-text {
+  color: #30624b;
+  font-weight: 600;
+}
+[role='alert'] {
+  color: #9a3624;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.sidebar-heading {
+  padding: 4px 2px 8px;
+}
+.sidebar-heading h2 {
+  font-size: 14px;
+  font-weight: 600;
+}
+.sidebar-heading button {
+  font-size: 10px;
+  color: #6b835d;
+}
+aside {
+  gap: 10px;
+}
+.filter-card {
+  border-color: #e2e7da;
+  padding: 15px;
+  border-radius: 13px;
+  box-shadow: 0 3px 12px #173b3203;
+}
+.popular-card {
+  background: #eaf0df;
+  border-color: #d7e2c9;
+}
+summary {
+  font-size: 11px;
+  line-height: 1.6;
+}
+summary::after {
+  background: #e9efdf;
+}
+.choice {
+  color: #526654;
+  font-size: 11px;
+}
+.choice:hover {
+  color: #173b32;
+}
+.filter-content {
+  gap: 9px;
+}
+.filter-content > button {
+  margin-top: 3px;
+  font-size: 10px;
+}
+input:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #6d8b5d;
+  outline-offset: 3px;
+}
+
+:host { font-family: var(--font-body); }
+.sidebar-heading h2 { font-family: var(--font-head); font-weight: 600; }
+.filter-card { background: var(--tripla-panel); border: 1px solid var(--tripla-panel-border); border-radius: 18px; box-shadow: var(--tripla-panel-shadow); }
+.popular-card { background: linear-gradient(135deg, #eef4d8, #dce8cf); border-color: #ffffffa0; }
+summary, .choice, button, input { font-family: var(--font-body); }
+summary { font-weight: 600; }
+.helper, .choice { color: var(--ink-2); }
+button { color: var(--leaf); font-weight: 500; }
+summary::after { font-family: 'Material Symbols Outlined'; }

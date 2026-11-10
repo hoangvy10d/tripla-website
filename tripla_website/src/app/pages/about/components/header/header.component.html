@@ -9,6 +9,7 @@
       @for (item of nav; track item.href) {
         <a [href]="item.href" (click)="goToSection(item.anchor, $event)">{{ item.label }}</a>
       }
+      <a routerLink="/trip-planning">Trip Planning</a>
     </nav>
 
     <div class="actions">

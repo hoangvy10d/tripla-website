@@ -1,0 +1,286 @@
+<div class="details-page">
+  <app-activity-navigation />
+  <main>
+    <p *ngIf="loading()" role="status" class="status">Đang tải địa điểm…</p>
+    <ng-container *ngIf="activity() as place">
+      <nav class="breadcrumbs" aria-label="Đường dẫn">
+        <a routerLink="/activity-search" queryParamsHandling="preserve">Hoạt động &amp; Vui chơi</a
+        ><span> / </span><span>{{ place.city }}</span
+        ><span> / </span><strong>{{ place.name }}</strong>
+      </nav>
+      <p class="demo-note">
+        BẢN XEM TRƯỚC · Ảnh, giá, đánh giá và gói vé đều là minh họa. Chưa xác nhận lịch hoạt động
+        hay vé trống.
+      </p>
+      <section class="gallery" aria-label="Thư viện ảnh minh họa">
+        <button
+          *ngFor="let image of place.images | slice: 0 : 6; let i = index"
+          type="button"
+          [class.cover]="i === 0"
+          (click)="showGallery(i)"
+          [attr.aria-label]="'Xem ảnh minh họa ' + (i + 1)"
+        >
+          <img [src]="image" alt="" [loading]="i === 0 ? 'eager' : 'lazy'" /><span
+            *ngIf="i === 5"
+            class="all-photos"
+            ><span class="material-symbols-outlined" aria-hidden="true">photo_library</span>Xem tất
+            cả ảnh</span
+          >
+        </button>
+      </section>
+      <div class="details-layout">
+        <div class="main-content">
+          <section class="intro">
+            <div class="name-row">
+              <div>
+                <span class="eyebrow">{{ place.categories.join(' · ') }}</span>
+                <h1>{{ place.name }}</h1>
+              </div>
+              <button
+                type="button"
+                class="save-button"
+                [class.saved]="isSaved()"
+                aria-haspopup="dialog"
+                (click)="saveOpen.set(true)"
+              >
+                <span class="material-symbols-outlined" aria-hidden="true">{{
+                  isSaved() ? 'bookmark_added' : 'bookmark_add'
+                }}</span
+                >{{ isSaved() ? 'Đã lưu' : 'Lưu chuyến đi' }}
+              </button>
+            </div>
+            <div class="info-chips">
+              <span
+                ><span class="material-symbols-outlined" aria-hidden="true">location_on</span
+                >{{ place.address || place.city }}</span
+              ><button type="button" (click)="scrollTo('practical')">
+                <span class="material-symbols-outlined" aria-hidden="true">schedule</span
+                >{{ place.openingHours || 'Giờ hoạt động: đang cập nhật' }}</button
+              ><button type="button" (click)="scrollTo('practical')">
+                <span class="material-symbols-outlined" aria-hidden="true">info</span>Thông tin
+                &amp; dịch vụ ↗
+              </button>
+            </div>
+          </section>
+          <nav class="section-tabs" aria-label="Nội dung địa điểm">
+            <button type="button" (click)="scrollTo('experience')">Trải nghiệm</button
+            ><button type="button" (click)="scrollTo('reviews')">Đánh giá</button
+            ><button type="button" (click)="scrollTo('tickets')">Chọn vé</button
+            ><button type="button" (click)="scrollTo('practical')">Thông tin cần biết</button>
+          </nav>
+          <div class="overview-grid">
+            <section id="experience" class="panel experience">
+              <span class="eyebrow">MỘT ĐIỀU MỚI ĐANG CHỜ BẠN</span>
+              <h2>Bạn sẽ trải nghiệm</h2>
+              <ul>
+                <li
+                  *ngFor="
+                    let highlight of place.highlights
+                      | slice: 0 : (expanded() ? place.highlights.length : 2)
+                  "
+                >
+                  {{ highlight }}
+                </li>
+              </ul>
+              <button
+                type="button"
+                class="text-button"
+                [attr.aria-expanded]="expanded()"
+                (click)="expanded.set(!expanded())"
+              >
+                {{ expanded() ? 'Thu gọn ↑' : 'Đọc thêm ↓' }}
+              </button>
+              <h3>Gợi ý cho hành trình</h3>
+              <div class="experience-rail">
+                <button
+                  *ngFor="let item of place.experiences; let i = index"
+                  type="button"
+                  (click)="showGallery(i)"
+                >
+                  <img [src]="item.imageUrl" alt="" loading="lazy" /><span>{{ item.title }}</span>
+                </button>
+              </div>
+            </section>
+            <section id="reviews" class="panel review-panel">
+              <span class="eyebrow">GÓC NHÌN TỪ DU KHÁCH · MẪU</span>
+              <div class="rating-summary">
+                <strong>{{ place.rating | number: '1.1-1' }}<small>/10</small></strong
+                ><span
+                  >Điểm đánh giá minh họa<small>{{ place.reviewCount }} đánh giá mẫu</small></span
+                >
+              </div>
+              <h3>Ấn tượng từ chuyến đi</h3>
+              <article *ngIf="review() as review" class="review-card">
+                <div class="review-author">
+                  <span class="avatar">{{ review.author.charAt(0) }}</span
+                  ><strong>{{ review.author }}</strong
+                  ><span class="review-score">{{ review.rating }}/10</span>
+                </div>
+                <p>{{ review.text }}</p>
+                <div class="review-controls">
+                  <small
+                    >{{ reviewIndex() + 1 }}/{{ place.reviews.length }} · Nội dung minh họa</small
+                  ><button type="button" aria-label="Đánh giá trước" (click)="nextReview(-1)">
+                    ←</button
+                  ><button type="button" aria-label="Đánh giá tiếp theo" (click)="nextReview(1)">
+                    →
+                  </button>
+                </div>
+              </article>
+            </section>
+          </div>
+          <section id="tickets" class="tickets-section">
+            <div class="section-heading">
+              <div>
+                <span class="eyebrow">LÊN LỊCH CHO MỘT NGÀY ĐÁNG NHỚ</span>
+                <h2>Chọn trải nghiệm của bạn</h2>
+              </div>
+              <span class="sample-tag">Gói vé minh họa</span>
+            </div>
+            <div class="date-options" role="group" aria-label="Ngày trải nghiệm">
+              <button
+                *ngFor="let date of dateOptions"
+                type="button"
+                [class.active]="visitDate === date.value"
+                [attr.aria-pressed]="visitDate === date.value"
+                (click)="visitDate = date.value"
+              >
+                {{ date.label }}</button
+              ><label
+                ><span class="material-symbols-outlined" aria-hidden="true">calendar_month</span
+                ><input
+                  type="date"
+                  aria-label="Chọn ngày trải nghiệm"
+                  [min]="today"
+                  [(ngModel)]="visitDate"
+              /></label>
+            </div>
+            <p class="availability-note">
+              Ngày chọn dùng để xem trước. Giá và suất trống chưa được nhà cung cấp xác nhận.
+            </p>
+            <div class="ticket-layout">
+              <nav class="ticket-groups" aria-label="Nhóm vé">
+                <button type="button" [class.active]="group() === 'all'" (click)="group.set('all')">
+                  Tất cả gói vé</button
+                ><button
+                  *ngFor="let item of groups()"
+                  type="button"
+                  [class.active]="group() === item"
+                  (click)="group.set(item)"
+                >
+                  {{ item }}
+                </button>
+              </nav>
+              <div class="ticket-list">
+                <article *ngFor="let ticket of tickets()" class="ticket-card">
+                  <header>{{ ticket.group }}<span>TRIPLA PICKS · MẪU</span></header>
+                  <div class="ticket-body">
+                    <div>
+                      <h3>{{ ticket.name }}</h3>
+                      <p>{{ ticket.description }}</p>
+                      <details>
+                        <summary>Chi tiết gói vé</summary>
+                        <ul>
+                          <li *ngFor="let inclusion of ticket.includes">{{ inclusion }}</li>
+                          <li *ngFor="let condition of ticket.conditions">{{ condition }}</li>
+                        </ul>
+                      </details>
+                    </div>
+                    <div class="ticket-price">
+                      <small>Giá minh họa / người</small
+                      ><strong>{{ formatPrice(ticket.price, ticket.currency) }}</strong
+                      ><button
+                        type="button"
+                        class="primary"
+                        [disabled]="!dateValid"
+                        (click)="chooseTicket(ticket)"
+                      >
+                        Chọn vé <span aria-hidden="true">↓</span>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+          <section id="practical" class="panel practical">
+            <h2>Thông tin cần biết</h2>
+            <div>
+              <p><strong>Địa điểm</strong>{{ place.address || place.city }}</p>
+              <p>
+                <strong>Giờ hoạt động</strong
+                >{{ place.openingHours || 'Chưa có giờ hoạt động được xác nhận.' }}
+              </p>
+              <p>
+                <strong>Liên hệ</strong
+                >{{ place.contact || 'Thông tin nhà cung cấp đang cập nhật.' }}
+              </p>
+            </div>
+            <ul>
+              <li *ngFor="let amenity of place.amenities">{{ amenity }}</li>
+            </ul>
+          </section>
+        </div>
+        <aside class="booking-panel">
+          <span class="eyebrow">DÀNH MỘT NGÀY CHO NIỀM VUI</span>
+          <h2>Đi và trải nghiệm.</h2>
+          <p>Thêm một dấu ấn mới cho hành trình tại {{ place.city }}.</p>
+          <small>Giá minh họa từ</small
+          ><strong>{{ formatPrice(place.priceFrom || 0, place.currency) }}</strong
+          ><small>/ người · Chưa xác nhận giá thực tế</small
+          ><button type="button" class="primary" (click)="scrollTo('tickets')">
+            Tìm vé <span aria-hidden="true">↓</span></button
+          ><span class="booking-footnote"
+            >Chọn ngày và tham khảo các gói trải nghiệm bên dưới.</span
+          >
+        </aside>
+      </div>
+      <app-save-hotel-trip
+        *ngIf="saveOpen()"
+        itemType="activity"
+        [hotelId]="place.id"
+        [hotelName]="place.name"
+        (closed)="saveOpen.set(false)"
+      />
+      <dialog #galleryDialog class="gallery-dialog">
+        <header>
+          <span>Thư viện ảnh minh họa · {{ galleryImage() + 1 }}/{{ place.images.length }}</span
+          ><button type="button" aria-label="Đóng thư viện ảnh" (click)="galleryDialog.close()">
+            ×
+          </button>
+        </header>
+        <img [src]="place.images[galleryImage()]" [alt]="'Ảnh minh họa ' + place.name" />
+        <footer>
+          <button type="button" (click)="changePhoto(-1)">← Ảnh trước</button
+          ><button type="button" (click)="changePhoto(1)">Ảnh tiếp →</button>
+        </footer>
+      </dialog>
+      <dialog #ticketDialog class="ticket-dialog">
+        <header>
+          <h2>Thông tin gói đã chọn</h2>
+          <button type="button" aria-label="Đóng gói vé" (click)="ticketDialog.close()">×</button>
+        </header>
+        <ng-container *ngIf="selectedTicket() as ticket"
+          ><span class="sample-tag">Chỉ xem trước · Không phải xác nhận đặt vé</span>
+          <h3>{{ ticket.name }}</h3>
+          <p>{{ place.name }} · {{ visitDate | date: 'dd/MM/yyyy' }}</p>
+          <label class="ticket-quantity">Số vé <input type="number" min="1" max="20" [(ngModel)]="ticketQuantity" aria-label="Số lượng vé"></label><p *ngIf="checkoutError()" role="alert">{{ checkoutError() }}</p><strong class="dialog-price">{{ formatPrice(ticket.price, ticket.currency) }}</strong>
+          <ul>
+            <li *ngFor="let item of ticket.includes">{{ item }}</li>
+          </ul>
+          <p>
+            Chưa kết nối lịch vé, giá thực tế và thanh toán. Gói này chưa được đặt hoặc giữ chỗ.
+          </p>
+          <button type="button" class="primary" (click)="startCheckout()">
+            Điền thông tin đặt vé
+          </button></ng-container
+        >
+      </dialog>
+    </ng-container>
+    <section *ngIf="!loading() && !activity()" class="status">
+      <h1>{{ error() || 'Chưa tìm thấy địa điểm này' }}</h1>
+      <p>Địa điểm có thể chưa có trong dữ liệu minh họa.</p>
+      <a routerLink="/activity-search" queryParamsHandling="preserve">← Quay lại danh sách</a>
+    </section>
+  </main>
+</div>

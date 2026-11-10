@@ -1,0 +1,68 @@
+<section class="form-section" [formGroup]="group()">
+  <div class="section-heading">
+    <span class="section-number">2</span>
+    <div>
+      <h2>Thông tin hành khách xe</h2>
+      <p>Mỗi người lớn gắn với một ghế đã chọn. Ghế chưa được giữ chỗ.</p>
+    </div>
+  </div>
+  <div class="selection-note">
+    {{ selection().from }} → {{ selection().to }} ·
+    {{ selection().departureAt.slice(0, 10) | date: 'dd/MM/yyyy' }} ·
+    {{ selection().departureAt.slice(11, 16) }}<br />Chỉ áp dụng cho chiều đang chọn; chưa bao gồm
+    vé chiều còn lại.
+  </div>
+  <div formArrayName="passengers">
+    <fieldset
+      *ngFor="let passenger of group().controls.passengers.controls; let i = index"
+      [formGroupName]="i"
+    >
+      <legend>Hành khách {{ i + 1 }} · Ghế {{ selection().seats[i]?.label }}</legend>
+      <div class="fields">
+        <div class="field">
+          <label [for]="'bus-name-' + i">Họ và tên *</label
+          ><input
+            [id]="'bus-name-' + i"
+            formControlName="fullName"
+            maxlength="100"
+            required
+            [attr.aria-invalid]="invalid(passenger.controls.fullName)"
+          />
+          <p *ngIf="invalid(passenger.controls.fullName)" class="field-error">
+            Vui lòng nhập họ tên hành khách.
+          </p>
+        </div>
+        <div class="field">
+          <label [for]="'bus-phone-' + i">Điện thoại (không bắt buộc)</label
+          ><input
+            [id]="'bus-phone-' + i"
+            formControlName="phone"
+            type="tel"
+            maxlength="24"
+            [attr.aria-invalid]="invalid(passenger.controls.phone)"
+          />
+          <p *ngIf="invalid(passenger.controls.phone)" class="field-error">
+            Số điện thoại không hợp lệ.
+          </p>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div class="fields">
+    <div class="field">
+      <label for="checkout-pickup">Điểm đón</label
+      ><input id="checkout-pickup" formControlName="pickup" readonly />
+    </div>
+    <div class="field">
+      <label for="checkout-dropoff">Điểm trả</label
+      ><input id="checkout-dropoff" formControlName="dropoff" readonly />
+    </div>
+  </div>
+  <p *ngIf="submitted() && group().hasError('seatAssignment')" class="field-error">
+    Thông tin ghế hoặc điểm đón/trả không khớp lựa chọn ban đầu.
+  </p>
+  <p *ngIf="selection().infants" class="hint">
+    Có {{ selection().infants }} em bé. Điều kiện đi cùng, bố trí ghế và phụ thu cần nhà xe xác
+    nhận; không tự gán ghế cho em bé.
+  </p>
+</section>

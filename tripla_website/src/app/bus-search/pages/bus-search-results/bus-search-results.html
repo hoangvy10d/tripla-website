@@ -1,0 +1,128 @@
+<div class="bus-page">
+  <app-activity-navigation activeService="bus" />
+  <main *ngIf="state() as s">
+    <div class="intro">
+      <span class="eyebrow">TRIPLA · MỖI CUNG ĐƯỜNG, MỘT CÂU CHUYỆN</span>
+      <h1>Lên xe, <em>đi tìm điều mới.</em></h1>
+      <p>Chọn chuyến xe phù hợp, tận hưởng hành trình theo cách riêng.</p>
+    </div>
+    <app-bus-search-bar [criteria]="s.criteria" (search)="search($event)" />
+    <p class="demo-note">
+      BẢN XEM TRƯỚC · Nhà xe, lịch chạy, giá và tiện ích là dữ liệu minh họa. Có mẫu cho Hồ Chí Minh
+      ↔ Đà Lạt, Hồ Chí Minh ↔ Nha Trang và Hà Nội ↔ Ninh Bình. Chưa hỗ trợ đặt vé.
+    </p>
+    <p *ngIf="error()" class="error" role="alert">{{ error() }}</p>
+    <div class="layout">
+      <app-bus-filter-sidebar
+        [filters]="s.filters"
+        [operators]="operators()"
+        (filtersChange)="filter($event)"
+      />
+      <section *ngIf="!error()" class="content">
+        <div class="journey-banner">
+          <span class="eyebrow">{{ s.leg === 'outbound' ? 'CHIỀU ĐI' : 'CHIỀU VỀ' }}</span>
+          <h2>
+            {{ s.leg === 'outbound' ? s.criteria.from : s.criteria.to }}
+            <span aria-hidden="true">→</span>
+            {{ s.leg === 'outbound' ? s.criteria.to : s.criteria.from }}
+          </h2>
+          <div *ngIf="s.criteria.returnDate" class="leg-tabs">
+            <button
+              type="button"
+              [class.active]="s.leg === 'outbound'"
+              (click)="changeLeg('outbound')"
+            >
+              Chuyến đi</button
+            ><button
+              type="button"
+              [class.active]="s.leg === 'inbound'"
+              (click)="changeLeg('inbound')"
+            >
+              Chuyến về
+            </button>
+          </div>
+          <div class="date-strip">
+            <button
+              type="button"
+              class="date-arrow"
+              aria-label="Ngày trước"
+              [disabled]="disabledDate(activeDate() ? dates()[1] : today)"
+              (click)="changeDate(dates()[1])"
+            >
+              ‹</button
+            ><button
+              *ngFor="let date of dates()"
+              type="button"
+              [disabled]="disabledDate(date)"
+              [class.active]="date === activeDate()"
+              [attr.aria-pressed]="date === activeDate()"
+              (click)="changeDate(date)"
+            >
+              <small>{{ date | date: 'EEE' }}</small
+              >{{ date | date: 'dd/MM' }}</button
+            ><button
+              type="button"
+              class="date-arrow"
+              aria-label="Ngày tiếp theo"
+              (click)="changeDate(dates()[3])"
+            >
+              ›
+            </button>
+          </div>
+        </div>
+        <div class="transport-row">
+          <div class="active">
+            <span class="material-symbols-outlined" aria-hidden="true">airport_shuttle</span
+            ><strong>Xe khách &amp; Limousine</strong
+            ><small *ngIf="summary() as info"
+              >Giá mẫu từ {{ price(info.price) }} · Nhanh nhất
+              {{ info.duration / 60 | number: '1.0-1' }} giờ</small
+            >
+          </div>
+          <div>
+            <span class="material-symbols-outlined" aria-hidden="true">train</span
+            ><strong>Tàu hỏa</strong><small>Chưa hỗ trợ</small>
+          </div>
+        </div>
+        <div class="results-heading">
+          <h2>{{ trips().length }} chuyến xe minh họa</h2>
+          <span>{{ s.criteria.adults + s.criteria.infants }} hành khách</span>
+        </div>
+        <div
+          *ngIf="selection().outbound || selection().inbound"
+          class="selected-summary"
+          role="status"
+        >
+          <strong>Chuyến đã chọn để xem thử</strong>
+          <p *ngIf="selection().outbound as trip">
+            Chiều đi: {{ trip.operatorName }} · {{ trip.departureAt.slice(11, 16) }} ·
+            {{ price(trip.price) }}
+          </p>
+          <p *ngIf="selection().inbound as trip">
+            Chiều về: {{ trip.operatorName }} · {{ trip.departureAt.slice(11, 16) }} ·
+            {{ price(trip.price) }}
+          </p>
+          <small>Chưa đặt vé hoặc giữ chỗ. Giá và chính sách em bé cần được xác nhận.</small>
+        </div>
+        <p *ngIf="loading()" role="status">Đang tìm chuyến xe…</p>
+        <div *ngIf="!loading() && !trips().length" class="empty" role="status">
+          <span class="material-symbols-outlined" aria-hidden="true">directions_bus</span>
+          <h3>Chưa có chuyến xe phù hợp</h3>
+          <p>
+            Thử thay đổi giờ khởi hành hoặc nhà xe. Tuyến bạn chọn có thể chưa có trong dữ liệu mẫu.
+          </p>
+          <button type="button" (click)="filter({ operators: [], departureBands: [] })">
+            Đặt lại bộ lọc
+          </button>
+        </div>
+        <div class="trip-list">
+          <app-bus-card
+            *ngFor="let trip of trips()"
+            [trip]="trip"
+            (selected)="openDetails($event)"
+          />
+        </div>
+      </section>
+    </div>
+  </main>
+</div>

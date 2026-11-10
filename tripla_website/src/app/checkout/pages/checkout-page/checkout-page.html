@@ -1,0 +1,96 @@
+<div class="checkout-page">
+  <header>
+    <a class="brand" routerLink="/trip-shop" aria-label="TRIPLA - TripShop"
+      ><img src="/images/logo (2).png" alt="" /><span>TRIPLA</span></a
+    ><span class="header-note"
+      ><span class="material-symbols-outlined" aria-hidden="true">edit_note</span>Thông tin đặt
+      chỗ</span
+    >
+  </header>
+  <app-checkout-stepper *ngIf="draft()" [detailsSaved]="draft()?.status === 'details-complete'" />
+  <main *ngIf="draft() as draft; else recovery">
+    <div class="intro">
+      <span class="eyebrow">TRIPLA · CHUẨN BỊ CHO KỲ NGHỈ</span>
+      <h1>Chỉ còn một chút,<br /><em>để hành trình sẵn sàng.</em></h1>
+      <p>Kiểm tra lựa chọn và điền thông tin đặt chỗ của bạn.</p>
+    </div>
+    <div class="session-note" role="note">
+      <span class="material-symbols-outlined" aria-hidden="true">info</span
+      ><span
+        >{{
+          draft.source === 'demo'
+            ? 'Bạn đang điền bản nháp minh họa, chưa có dịch vụ hoặc giá được xác nhận. '
+            : ''
+        }}Thông tin chỉ được giữ trong phiên hiện tại. Tải lại hoặc đóng trang sẽ mất bản nháp;
+        không nhập thông tin thanh toán hoặc giấy tờ tùy thân.</span
+      >
+    </div>
+    <form [formGroup]="form" (ngSubmit)="proceed()" novalidate>
+      <div class="checkout-layout">
+        <div class="forms-column">
+          <p *ngIf="submitted() && form.invalid" class="validation-summary" role="alert">
+            Vui lòng kiểm tra các trường được đánh dấu bên dưới trước khi tiếp tục.
+          </p>
+          <app-checkout-contact-form [group]="form.controls.contact" [submitted]="submitted()" />
+          @switch (draft.type) {
+            @case ('hotel') {
+              <app-hotel-booking-form
+                [group]="form.controls.hotel"
+                [submitted]="submitted()"
+                [adults]="draft.selection.criteria.adults"
+                [children]="draft.selection.criteria.children"
+                [rooms]="draft.selection.criteria.rooms"
+              />
+            }
+            @case ('flight') {
+              <app-flight-passenger-form
+                [group]="form.controls.flight"
+                [selection]="draft.selection"
+                [submitted]="submitted()"
+              />
+            }
+            @case ('activity') {
+              <app-activity-booking-form
+                [group]="form.controls.activity"
+                [selection]="draft.selection"
+                [submitted]="submitted()"
+              />
+            }
+            @case ('bus') {
+              <app-bus-passenger-form
+                [group]="form.controls.bus"
+                [selection]="draft.selection"
+                [submitted]="submitted()"
+              />
+            }
+          }
+          <p class="privacy-note">
+            Các trường có dấu * là bắt buộc. Yêu cầu đặc biệt là tùy chọn và không được đảm bảo.
+          </p>
+        </div>
+        <aside class="summary-column">
+          <app-checkout-booking-summary [draft]="draft" /><app-checkout-price-breakdown
+            [pricing]="draft.pricing"
+            [now]="store.now()"
+          />
+          <div *ngIf="notice()" class="saved-notice" role="status">{{ notice() }}</div>
+          <app-checkout-actions
+            [disabled]="!draft"
+            [saved]="draft.status === 'details-complete'"
+            (back)="back()"
+            [backLabel]="draft.type === 'hotel' ? 'Quay lại chọn phòng' : 'Quay lại lựa chọn'"
+            (proceed)="proceed()"
+          />
+        </aside>
+      </div>
+    </form>
+  </main>
+  <ng-template #recovery
+    ><main class="recovery">
+      <span class="material-symbols-outlined" aria-hidden="true">travel_explore</span>
+      <h1>Chưa thể mở thông tin đặt chỗ</h1>
+      <p>{{ recoveryMessage() }}</p>
+      <a routerLink="/trip-shop" [queryParams]="{ tab: recoveryTab() }">← Quay lại chọn dịch vụ</a>
+    </main></ng-template
+  >
+</div>

@@ -1,0 +1,86 @@
+<form (ngSubmit)="submit()" class="compact-search">
+  <div class="location-container" (keydown.escape)="destinationOpen = false" (focusout)="closeOnFocusOut($event)">
+  <label class="location-field"
+    ><span class="material-symbols-outlined">location_on</span
+    ><input
+      name="location"
+      [(ngModel)]="draft.location"
+      required
+      placeholder="Điểm đến"
+      aria-label="Điểm đến"
+      autocomplete="off"
+      [attr.aria-expanded]="destinationOpen"
+      aria-controls="results-destination-suggestions"
+      (focus)="openDestinations()"
+      (click)="openDestinations()"
+      (input)="destinationQuery = $any($event.target).value; destinationOpen = true; error = ''"
+  /></label>
+  <div *ngIf="destinationOpen" id="results-destination-suggestions" class="destination-suggestions">
+    <div class="destination-heading"><strong>Chọn điểm đến</strong><button type="button" (click)="destinationOpen = false">Đóng</button></div>
+    <h4>{{ destinationQuery.trim() ? 'Kết quả phù hợp' : 'Điểm đến phổ biến' }}</h4>
+    <div class="destination-options"><button *ngFor="let place of matchingDestinations" type="button" class="destination-option" (click)="chooseDestination(place.name)"><span class="material-symbols-outlined" aria-hidden="true">location_on</span><span><strong>{{ place.name }}</strong><small>{{ place.region }}</small></span></button></div>
+    <p *ngIf="!matchingDestinations.length" class="destination-empty">Không có gợi ý phù hợp. Bạn có thể tiếp tục nhập tên địa điểm hoặc khách sạn.</p>
+  </div>
+  </div>
+  <details class="search-dropdown">
+    <summary>
+      <span class="material-symbols-outlined">calendar_month</span
+      ><span
+        >{{ draft.checkIn | date: 'dd/MM/yyyy' }} – {{ draft.checkOut | date: 'dd/MM/yyyy' }} ({{
+          nights > 0 ? nights : 0
+        }}
+        đêm)</span
+      ><span class="material-symbols-outlined caret">expand_more</span>
+    </summary>
+    <div class="search-popover">
+      <label
+        >Nhận phòng<input
+          name="checkIn"
+          type="date"
+          [min]="today"
+          [(ngModel)]="draft.checkIn"
+          required /></label
+      ><label
+        >Trả phòng<input
+          name="checkOut"
+          type="date"
+          [min]="draft.checkIn"
+          [(ngModel)]="draft.checkOut"
+          required
+      /></label>
+    </div>
+  </details>
+  <details class="search-dropdown">
+    <summary>
+      <span class="material-symbols-outlined">group</span
+      ><span
+        >{{ draft.adults }} người lớn, {{ draft.children }} trẻ em, {{ draft.rooms }} phòng</span
+      ><span class="material-symbols-outlined caret">expand_more</span>
+    </summary>
+    <div class="search-popover guest-popover">
+      <label
+        >Người lớn<input
+          name="adults"
+          type="number"
+          min="1"
+          max="30"
+          [(ngModel)]="draft.adults"
+          required /></label
+      ><label
+        >Trẻ em<input
+          name="children"
+          type="number"
+          min="0"
+          max="10"
+          [(ngModel)]="draft.children"
+          required /></label
+      ><label
+        >Phòng<input name="rooms" type="number" min="1" max="10" [(ngModel)]="draft.rooms" required
+      /></label>
+    </div>
+  </details>
+  <button type="submit" class="search-submit">
+    Tìm khách sạn<span class="material-symbols-outlined">search</span>
+  </button>
+  <p *ngIf="error" role="alert">{{ error }}</p>
+</form>

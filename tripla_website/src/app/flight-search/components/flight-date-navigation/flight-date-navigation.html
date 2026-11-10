@@ -1,0 +1,22 @@
+<nav aria-label="Ngày bay lân cận">
+  <button
+    type="button"
+    class="arrow"
+    aria-label="Ngày trước"
+    [disabled]="date() <= today"
+    (click)="shift(-1)"
+  >
+    ‹</button
+  ><button
+    *ngFor="let day of dates"
+    type="button"
+    [disabled]="day < today"
+    [class.active]="day === date()"
+    [attr.aria-pressed]="day === date()"
+    (click)="dateChange.emit(day)"
+  >
+    <span>{{ day | date: 'EEE' }}</span
+    ><strong>{{ day | date: 'dd/MM/yyyy' }}</strong
+    ><small>{{ day === date() ? 'Ngày đang chọn' : 'Xem chuyến bay' }}</small></button
+  ><button type="button" class="arrow" aria-label="Ngày sau" (click)="shift(1)">›</button>
+</nav>

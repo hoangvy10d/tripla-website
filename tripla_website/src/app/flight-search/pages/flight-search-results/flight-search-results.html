@@ -1,0 +1,126 @@
+<div class="results-page">
+  <header class="page-header">
+    <a class="brand" routerLink="/home" aria-label="TRIPLA - Trang chủ">
+      <img src="/images/logo (2).png" alt="" />
+      <span>TRIPLA</span>
+    </a>
+    <nav class="main-nav" aria-label="Điều hướng chính">
+      <a routerLink="/home">Khám phá</a>
+      <a routerLink="/tripshort">TripShorts</a>
+      <a routerLink="/trip-shop" class="active">TripShop</a><a routerLink="/trip-planning">Trip Planning</a>
+      <a routerLink="/about">Về TRIPLA</a>
+    </nav>
+    <a class="header-return" routerLink="/trip-shop"
+      ><span class="material-symbols-outlined">arrow_back</span>TripShop</a
+    >
+  </header>
+  <nav class="service-nav" aria-label="Dịch vụ du lịch">
+    <a class="service-tab" routerLink="/trip-shop"
+      ><span class="material-symbols-outlined">hotel</span>Khách Sạn &amp; Resort</a
+    ><span class="service-tab selected" aria-current="page"
+      ><span class="material-symbols-outlined">flight</span>Vé Máy Bay</span
+    ><a class="service-tab" routerLink="/trip-shop" [queryParams]="{ tab: 'tour' }"
+      ><span class="material-symbols-outlined">tour</span>Hoạt động &amp; Vui chơi</a
+    ><a class="service-tab" routerLink="/trip-shop" [queryParams]="{ tab: 'bus' }"
+      ><span class="material-symbols-outlined">directions_bus</span>Vé Xe Khách</a
+    >
+  </nav>
+  <main *ngIf="state() as applied">
+    <div class="flight-intro">
+      <p class="eyebrow">TRIPLA · CHUYẾN ĐI CỦA BẠN</p>
+      <h1>Một chuyến bay<span>, mở ra hành trình mới.</span></h1>
+    </div>
+    <app-flight-search-bar [criteria]="applied.criteria" (search)="search($event)" />
+    <div class="demo-notice" role="status"><span>{{ demo() ? 'Đang xem chuyến bay, thời gian và giá minh họa. Không phải vé thật; chưa hỗ trợ đặt vé.' : 'Xem thử giao diện flight card trong khi chờ kết nối dữ liệu.' }}</span><button *ngIf="!demo()" type="button" (click)="previewDemo()">Xem giao diện mẫu</button><a *ngIf="demo()" routerLink="/flight-search-results" [queryParams]="{ demo: null }" queryParamsHandling="merge">Thoát xem mẫu</a></div>
+    <p *ngIf="error()" class="error" role="alert">
+      {{ error() }} Hãy điều chỉnh thông tin tìm kiếm.
+    </p>
+    <div class="results-layout">
+      <div class="filters-panel" [class.filters-expanded]="filtersExpanded()">
+        <button
+          class="mobile-filter-toggle"
+          type="button"
+          [attr.aria-expanded]="filtersExpanded()"
+          (click)="filtersExpanded.set(!filtersExpanded())"
+        >
+          <span class="material-symbols-outlined">tune</span>Bộ lọc chuyến bay</button
+        ><app-flight-filter-sidebar
+          [filters]="applied.filters"
+          [airlines]="airlines()"
+          (filtersChange)="filter($event)"
+          (reset)="resetFilters()"
+        />
+      </div>
+      <section *ngIf="!error()" class="flight-content">
+        <header class="journey-heading">
+          <div>
+            <p class="eyebrow">{{ applied.leg === 'outbound' ? 'CHUYẾN ĐI' : 'CHUYẾN VỀ' }}</p>
+            <h2>
+              {{
+                applied.leg === 'outbound' ? applied.criteria.from.city : applied.criteria.to.city
+              }}
+              <span aria-hidden="true">→</span>
+              {{
+                applied.leg === 'outbound' ? applied.criteria.to.city : applied.criteria.from.city
+              }}
+            </h2>
+            <p class="journey-note">
+              {{
+                applied.criteria.tripType === 'round-trip'
+                  ? 'Khứ hồi · Chọn riêng chuyến đi và chuyến về'
+                  : 'Một chiều'
+              }}
+              ·
+              {{
+                applied.criteria.adults + applied.criteria.children + applied.criteria.infants
+              }}
+              hành khách
+            </p>
+          </div>
+        </header>
+        <div
+          *ngIf="applied.criteria.tripType === 'round-trip'"
+          class="leg-tabs"
+          role="group"
+          aria-label="Chiều bay"
+        >
+          <button
+            type="button"
+            [class.active]="applied.leg === 'outbound'"
+            (click)="changeLeg('outbound')"
+          >
+            Chuyến đi · {{ applied.criteria.departureDate | date: 'dd/MM' }}</button
+          ><button
+            type="button"
+            [class.active]="applied.leg === 'inbound'"
+            (click)="changeLeg('inbound')"
+          >
+            Chuyến về · {{ applied.criteria.returnDate | date: 'dd/MM' }}
+          </button>
+        </div>
+        <p *ngIf="applied.criteria.tripType === 'round-trip'" class="selection-note" role="status">{{ applied.leg === 'outbound' ? 'Bước 1/2 · Chọn chuyến đi. Sau đó bạn sẽ chọn chuyến về.' : 'Bước 2/2 · Chọn chuyến về để xem thông tin hai chiều và các gói vé.' }}</p>
+        <app-flight-date-navigation
+          [date]="
+            applied.leg === 'outbound'
+              ? applied.criteria.departureDate
+              : applied.criteria.returnDate!
+          "
+          (dateChange)="changeDate($event)"
+        /><app-flight-sort-bar [sort]="applied.sort" (sortChange)="sort($event)" />
+        <p *ngIf="selection().outbound" class="selection-note" role="status">
+          Đã chọn chuyến đi: {{ selection().outbound!.airlineName
+          }}<span *ngIf="selection().inbound">
+            · Đã chọn chuyến về: {{ selection().inbound!.airlineName }}</span
+          >
+        </p>
+        <p *ngIf="checkoutError()" class="error" role="alert">{{ checkoutError() }}</p><app-flight-results-list
+          [flights]="flights()"
+          [loading]="loading()"
+          [hasSource]="data() !== null"
+          (selected)="openFlight($event)"
+        />
+      </section>
+    </div>
+    <app-flight-offer-dialog *ngIf="pendingFlight() as flight" [flight]="flight" [criteria]="applied.criteria" [leg]="applied.leg" [selection]="selection()" [demo]="demo()" (closed)="pendingFlight.set(null)" (confirmed)="chooseFare($event)" />
+  </main>
+</div>

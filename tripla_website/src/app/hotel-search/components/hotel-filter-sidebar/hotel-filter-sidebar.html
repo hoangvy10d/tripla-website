@@ -1,0 +1,195 @@
+<aside>
+  <header class="sidebar-heading">
+    <h2>Bộ lọc</h2>
+    <button type="button" (click)="reset.emit(); priceError = ''">Đặt lại tất cả</button>
+  </header>
+  <section class="filter-card price-card">
+    <header>
+      <h3>Khoảng giá</h3>
+      <button type="button" (click)="patch({ minPrice: null, maxPrice: null })">Đặt lại</button>
+    </header>
+    <p class="helper">1 phòng, 1 đêm · VND</p>
+    <div class="price-sliders">
+      <input
+        type="range"
+        aria-label="Giá tối thiểu"
+        min="0"
+        [max]="priceLimit"
+        step="100000"
+        [value]="filters().minPrice || 0"
+        (change)="price('minPrice', +$any($event.target).value)"
+      /><input
+        type="range"
+        aria-label="Giá tối đa"
+        min="0"
+        [max]="priceLimit"
+        step="100000"
+        [value]="filters().maxPrice ?? priceLimit"
+        (change)="price('maxPrice', +$any($event.target).value)"
+      />
+    </div>
+    <div class="price-inputs">
+      <label
+        ><span>Từ</span
+        ><input
+          type="number"
+          min="0"
+          aria-label="Giá từ"
+          [ngModel]="filters().minPrice"
+          placeholder="0"
+          (change)="
+            price('minPrice', $any($event.target).value === '' ? null : +$any($event.target).value)
+          " /></label
+      ><label
+        ><span>Đến</span
+        ><input
+          type="number"
+          min="0"
+          aria-label="Giá đến"
+          [ngModel]="filters().maxPrice"
+          placeholder="Không giới hạn"
+          (change)="
+            price('maxPrice', $any($event.target).value === '' ? null : +$any($event.target).value)
+          "
+      /></label>
+    </div>
+    <p *ngIf="priceError" role="alert">{{ priceError }}</p>
+  </section>
+  <details class="filter-card popular-card" open>
+    <summary>Lọc phổ biến</summary>
+    <div class="filter-content">
+      <label class="choice"
+        ><input
+          type="checkbox"
+          [checked]="filters().freeCancellation"
+          (change)="patch({ freeCancellation: $any($event.target).checked })"
+        />Miễn phí hủy phòng</label
+      ><label class="choice"
+        ><input
+          type="checkbox"
+          [checked]="filters().amenities.includes('mountainView')"
+          (change)="toggleAmenity('mountainView')"
+        />View núi</label
+      ><label class="choice"
+        ><input
+          type="checkbox"
+          [checked]="filters().minRating === 8"
+          (change)="patch({ minRating: $any($event.target).checked ? 8 : null })"
+        /><span class="rating-text">8+ · Ấn tượng</span></label
+      ><label *ngFor="let star of [4, 3]" class="choice"
+        ><input
+          type="checkbox"
+          [checked]="filters().stars.includes(star)"
+          (change)="toggleStar(star)"
+        />{{ star }} <span class="star">★</span></label
+      >
+    </div>
+  </details>
+  <details class="filter-card" open>
+    <summary>Khu vực</summary>
+    <div class="filter-content">
+      <label class="helper" for="hotel-area">Nhập khu vực tại điểm đến của bạn</label
+      ><input
+        id="hotel-area"
+        class="text-input"
+        placeholder="Quận, phường, bãi biển…"
+        [ngModel]="filters().area"
+        (change)="patch({ area: $any($event.target).value.trim() })"
+      />
+    </div>
+  </details>
+  <details class="filter-card" open>
+    <summary>Khuyến mãi &amp; Chính sách</summary>
+    <div class="filter-content">
+      <label class="choice"
+        ><input
+          type="checkbox"
+          [checked]="filters().dealsOnly"
+          (change)="patch({ dealsOnly: $any($event.target).checked })"
+        />Chỗ nghỉ có khuyến mãi</label
+      ><label class="choice"
+        ><input
+          type="checkbox"
+          [checked]="filters().freeCancellation"
+          (change)="patch({ freeCancellation: $any($event.target).checked })"
+        />Miễn phí hủy phòng</label
+      ><label class="choice"
+        ><input
+          type="checkbox"
+          [checked]="filters().payAtProperty"
+          (change)="patch({ payAtProperty: $any($event.target).checked })"
+        />Thanh toán tại chỗ</label
+      >
+    </div>
+  </details>
+  <details class="filter-card" open>
+    <summary>Đánh giá sao</summary>
+    <div class="filter-content">
+      <label *ngFor="let star of [1, 2, 3, 4, 5]" class="choice"
+        ><input
+          type="checkbox"
+          [checked]="filters().stars.includes(star)"
+          (change)="toggleStar(star)"
+        />{{ star }} <span class="star">★</span></label
+      >
+    </div>
+  </details>
+  <details class="filter-card" open>
+    <summary>Đánh giá từ khách</summary>
+    <div class="filter-content">
+      <label
+        *ngFor="
+          let rating of [
+            { value: 7, label: 'Thuận tiện' },
+            { value: 8, label: 'Ấn tượng' },
+            { value: 9, label: 'Tuyệt hảo' },
+          ]
+        "
+        class="choice"
+        ><input
+          type="radio"
+          name="hotel-rating"
+          [checked]="filters().minRating === rating.value"
+          (change)="patch({ minRating: rating.value })"
+        /><span class="rating-text">{{ rating.value }}+ · {{ rating.label }}</span></label
+      ><button
+        *ngIf="filters().minRating !== null"
+        type="button"
+        (click)="patch({ minRating: null })"
+      >
+        Bỏ chọn đánh giá
+      </button>
+    </div>
+  </details>
+  <details class="filter-card" open>
+    <summary>Loại hình lưu trú</summary>
+    <div class="filter-content">
+      <label *ngFor="let type of expanded.has('types') ? types : types.slice(0, 5)" class="choice"
+        ><input
+          type="radio"
+          name="hotel-accommodation"
+          [checked]="filters().accommodation === type"
+          (change)="patch({ accommodation: type })"
+        />{{ type }}</label
+      ><button type="button" (click)="toggleExpanded('types')">
+        {{ expanded.has('types') ? 'Thu gọn' : 'Xem tất cả' }}
+      </button>
+    </div>
+  </details>
+  <details *ngFor="let group of amenityGroups" class="filter-card" open>
+    <summary>{{ group.title }}</summary>
+    <div class="filter-content">
+      <label
+        *ngFor="let item of expanded.has(group.title) ? group.items : group.items.slice(0, 5)"
+        class="choice"
+        ><input
+          type="checkbox"
+          [checked]="filters().amenities.includes(item.id)"
+          (change)="toggleAmenity(item.id)"
+        />{{ item.label }}</label
+      ><button *ngIf="group.items.length > 5" type="button" (click)="toggleExpanded(group.title)">
+        {{ expanded.has(group.title) ? 'Thu gọn' : 'Xem tất cả' }}
+      </button>
+    </div>
+  </details>
+</aside>

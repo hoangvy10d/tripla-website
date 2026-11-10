@@ -1,0 +1,186 @@
+:host {
+  display: block;
+  color: var(--ink, #173b32);
+  font-family: var(--font-body, 'Tripla Sans', Arial, sans-serif);
+}
+button,
+input,
+select {
+  font-family: inherit;
+}
+button {
+  cursor: pointer;
+}
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #6d8b5d;
+  outline-offset: 3px;
+}
+form {
+  display: grid;
+  grid-template-columns: minmax(0, 2.3fr) minmax(130px, 1fr) minmax(130px, 1fr) minmax(
+      155px,
+      1.3fr
+    ) auto;
+  gap: 10px;
+  align-items: end;
+  padding: 16px;
+  background: linear-gradient(135deg, #fffff8ed, #faf6e8d9);
+  border: 1px solid #fff;
+  border-radius: 22px;
+  box-shadow: 0 20px 40px -30px #173b3240;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 10px;
+  font-weight: 600;
+  min-width: 0;
+}
+input:not([type='checkbox']),
+select,
+summary {
+  width: 100%;
+  min-width: 0;
+  height: 38px;
+  padding: 8px;
+  border: 1px solid #cad7bf;
+  border-radius: 9px;
+  background: #fffef9;
+  color: #173b32;
+  font-size: 11px;
+}
+input:disabled {
+  background: #e8ebe5;
+  color: #929b94;
+}
+.route-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 22px minmax(0, 1fr);
+  align-items: end;
+  min-width: 0;
+}
+.swap {
+  width: 28px;
+  height: 28px;
+  margin: 0 -3px 5px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  background: #173b32;
+  color: #fff;
+  z-index: 1;
+}
+.swap span {
+  font-size: 18px;
+}
+.return-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 16px;
+}
+input[type='checkbox'] {
+  accent-color: #30624b;
+  margin: 0;
+  width: 13px;
+  height: 13px;
+}
+details {
+  position: relative;
+  min-width: 0;
+}
+summary {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  list-style: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+summary span {
+  font-size: 18px;
+  flex: none;
+}
+.passenger-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  z-index: 10;
+  width: 280px;
+  padding: 16px;
+  border: 1px solid #cad7bf;
+  border-radius: 16px;
+  background: #fffef9;
+  box-shadow: 0 12px 35px #173b3230;
+  display: grid;
+  gap: 12px;
+}
+.passenger-panel label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.passenger-panel input {
+  width: 70px;
+}
+.passenger-panel select {
+  width: 160px;
+}
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 38px;
+  padding: 0 14px;
+  background: #173b32;
+  color: #fff;
+  border-radius: 99px;
+  font-size: 11px;
+}
+.search span {
+  font-size: 17px;
+}
+[role='alert'] {
+  grid-column: 1/-1;
+  color: #9a3624;
+  font-size: 12px;
+  margin: 0;
+}
+@media (max-width: 1050px) {
+  form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .route-fields {
+    grid-column: 1/-1;
+  }
+}
+@media (max-width: 550px) {
+  form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .passenger-panel {
+    left: 0;
+    right: auto;
+    max-width: calc(100vw - 70px);
+  }
+}
+
+/* Match Tripla's light surfaces and compact, softly rounded controls. */
+form { padding: 13px; border-color: var(--tripla-panel-border, #ffffffed); box-shadow: var(--tripla-panel-shadow, 0 16px 35px -25px #173b3240); }
+label { gap: 5px; line-height: 16px; font-weight: 500; }
+input:not([type='checkbox']), select, summary { font-family: var(--font-body); font-weight: 500; line-height: 18px; border-radius: 11px; border-color: #173b3220; }
+.route-fields { column-gap: 4px; grid-template-columns: minmax(0,1fr) 26px minmax(0,1fr); }
+.swap { display: grid; place-items: center; width: 28px; height: 28px; margin: 0 -1px 5px; padding: 0; border: 1px solid #a7be98; border-radius: 50%; background: #f6f8ed; color: #30624b; box-shadow: 0 2px 6px #173b3210, inset 0 1px 0 #fff; transition: background .2s, color .2s; }
+.swap svg { display: block; }
+.swap:hover { background: #173b32; color: #fffdf5; border-color: #173b32; }
+.search { font-weight: 500; line-height: 18px; transition: background .2s; }
+.search:hover { background: #30624b; }
+.passenger-panel { background: var(--tripla-panel, #fffef9); border-radius: 18px; }

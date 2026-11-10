@@ -1,0 +1,24 @@
+<section [attr.aria-busy]="loading()">
+  <div *ngIf="loading()" class="empty" role="status">Đang tải chuyến bay…</div>
+  <div *ngIf="!loading() && !flights().length" class="empty" role="status">
+    <div class="empty-art">
+      <span class="material-symbols-outlined">flight_takeoff</span
+      ><span class="flight-trail"></span>
+    </div>
+    <h2>{{ hasSource() ? 'Không có chuyến bay phù hợp' : 'Chưa có dữ liệu chuyến bay' }}</h2>
+    <p>
+      {{
+        hasSource()
+          ? 'Bạn có thể điều chỉnh ngày bay hoặc bộ lọc để tìm lại.'
+          : 'Điều kiện tìm kiếm đã được ghi nhận. Nguồn dữ liệu chuyến bay chưa được kết nối nên chưa thể hiển thị giá vé hay tình trạng chỗ.'
+      }}
+    </p>
+    <small *ngIf="!hasSource()">Bạn vẫn có thể điều chỉnh hành trình, ngày bay và bộ lọc.</small>
+  </div>
+  <ng-container *ngIf="!loading()"
+    ><app-flight-card
+      *ngFor="let flight of flights()"
+      [flight]="flight"
+      (selected)="selected.emit($event)"
+  /></ng-container>
+</section>

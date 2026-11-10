@@ -1,0 +1,98 @@
+<form (ngSubmit)="submit()">
+  <div class="route-fields">
+    <label
+      ><span>Từ</span
+      ><select
+        name="from"
+        aria-label="Sân bay đi"
+        [ngModel]="draft.from.code"
+        (ngModelChange)="setAirport('from', $event)"
+      >
+        <option value="" disabled>Chọn sân bay đi</option>
+        <option *ngFor="let a of airportOptions" [value]="a.code">
+          {{ a.city }} ({{ a.code }})
+        </option>
+      </select></label
+    ><button type="button" class="swap" aria-label="Đổi chiều" (click)="swap()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h15m-4-4 4 4-4 4M20 16H5m4-4-4 4 4 4" /></svg></button
+    ><label
+      ><span>Đến</span
+      ><select
+        name="to"
+        aria-label="Sân bay đến"
+        [ngModel]="draft.to.code"
+        (ngModelChange)="setAirport('to', $event)"
+      >
+        <option value="" disabled>Chọn sân bay đến</option>
+        <option *ngFor="let a of airportOptions" [value]="a.code">
+          {{ a.city }} ({{ a.code }})
+        </option>
+      </select></label
+    >
+  </div>
+  <label
+    ><span>Ngày đi</span
+    ><input
+      name="departure"
+      type="date"
+      [min]="today"
+      [(ngModel)]="draft.departureDate"
+      required /></label
+  ><label
+    ><span class="return-label"
+      ><input
+        name="roundTrip"
+        type="checkbox"
+        [ngModel]="draft.tripType === 'round-trip'"
+        (ngModelChange)="setRoundTrip($event)"
+      />Ngày về</span
+    ><input
+      name="return"
+      type="date"
+      [disabled]="draft.tripType === 'one-way'"
+      [min]="draft.departureDate"
+      [(ngModel)]="draft.returnDate"
+      [required]="draft.tripType === 'round-trip'"
+  /></label>
+  <details class="passengers">
+    <summary>
+      <span class="material-symbols-outlined">group</span
+      >{{ draft.adults + draft.children + draft.infants }} khách · {{ draft.cabin }}
+    </summary>
+    <div class="passenger-panel">
+      <label
+        >Người lớn<input
+          name="adults"
+          type="number"
+          min="1"
+          max="9"
+          [(ngModel)]="draft.adults"
+          required /></label
+      ><label
+        >Trẻ em<input
+          name="children"
+          type="number"
+          min="0"
+          [max]="9 - draft.adults"
+          [(ngModel)]="draft.children"
+          required /></label
+      ><label
+        >Em bé<input
+          name="infants"
+          type="number"
+          min="0"
+          [max]="draft.adults"
+          [(ngModel)]="draft.infants"
+          required /></label
+      ><label
+        >Hạng vé<select name="cabin" [(ngModel)]="draft.cabin">
+          <option *ngFor="let c of cabins">{{ c }}</option>
+        </select></label
+      >
+    </div>
+  </details>
+  <button class="search" type="submit">
+    <span class="material-symbols-outlined">search</span>Tìm kiếm
+  </button>
+  <p *ngIf="error" role="alert">{{ error }}</p>
+</form>

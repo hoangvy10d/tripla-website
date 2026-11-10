@@ -1,0 +1,74 @@
+section {
+  padding: 22px;
+  background: linear-gradient(140deg, #edf3e2, #fffefa);
+  border: 1px solid #d5e1c6;
+  border-radius: 16px;
+  box-shadow: 0 7px 20px -18px #2e4f3340;
+}
+h2 {
+  margin: 0 0 15px;
+  font: 500 21px var(--font-head, serif);
+  color: #43613c;
+}
+dl {
+  margin: 0;
+}
+dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  line-height: 1.8;
+  font-size: 11px;
+  padding: 9px 0;
+  border-bottom: 1px solid #e2e9d7;
+}
+dt {
+  color: #798f61;
+}
+dt small {
+  display: block;
+  color: #99a985;
+  font-size: 9px;
+  margin-top: 2px;
+}
+dd {
+  margin: 0;
+  flex-shrink: 0;
+  text-align: right;
+  color: #557444;
+}
+.unknown dd {
+  color: #98a78b;
+  font-size: 10px;
+}
+.total {
+  padding-top: 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: #7c945e;
+  font-size: 11px;
+}
+.total strong {
+  font-size: 25px;
+  font-weight: 500;
+  color: #a97542;
+  line-height: 1.5;
+}
+.notice {
+  font-size: 10px;
+  color: #899d72;
+  line-height: 1.9;
+  margin: 14px 0 0;
+}
+.payment-note {
+  font-size: 9px;
+  color: #9bad87;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+@media (max-width: 550px) {
+  section {
+    padding: 18px;
+  }
+}

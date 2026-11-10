@@ -1,0 +1,42 @@
+<div class="activity-page">
+  <app-activity-navigation />
+  <main>
+    <div class="hero">
+      <div>
+        <span class="eyebrow">TRIPLA · ĐI ĐỂ CÓ THÊM KỶ NIỆM</span>
+        <h1>Mỗi điểm đến,<br /><em>một niềm vui mới.</em></h1>
+        <p>
+          Những góc nhỏ đáng khám phá, những trải nghiệm đáng nhớ.<br />Chọn điều bạn thích và bắt
+          đầu hành trình của riêng mình.
+        </p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <span class="orbit"></span><span class="material-symbols-outlined">explore</span
+        ><span class="art-label">ĐI. CHƠI. KHÁM PHÁ.</span>
+      </div>
+    </div>
+    <app-activity-search-bar [criteria]="criteria()" (search)="search($event)" />
+    <p class="demo-note">
+      BẢN XEM TRƯỚC · Danh sách, ảnh, giá và đánh giá đều là dữ liệu minh họa. Chưa kết nối dữ liệu
+      vé, giá hoặc lịch hoạt động.
+    </p>
+    <p *ngIf="error()" class="error" role="alert">{{ error() }}</p>
+    <div class="layout">
+      <app-activity-filter-sidebar [criteria]="criteria()" (filtersChange)="search($event)" />
+      <div>
+        <div *ngIf="criteria().categories.length" class="applied">
+          <span>Đang khám phá: {{ criteria().categories.join(' · ') }}</span
+          ><button type="button" (click)="filter([])">Xóa danh mục</button>
+        </div>
+        <app-activity-results-list
+          *ngIf="!error()"
+          [activities]="activities()"
+          [location]="criteria().location"
+          [loading]="loading()"
+          [sort]="criteria().sort || 'relevant'"
+          (sortChange)="changeSort($event)"
+        />
+      </div>
+    </div>
+  </main>
+</div>

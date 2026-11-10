@@ -1,0 +1,35 @@
+<section [attr.aria-busy]="loading()">
+  <div class="heading">
+    <div>
+      <span class="eyebrow">THÊM TRẢI NGHIỆM, THÊM KỶ NIỆM</span>
+      <h2>Khám phá {{ location() }}</h2>
+    </div>
+    <span *ngIf="!loading()" class="count">{{ activities().length }} gợi ý</span>
+  </div>
+  <p *ngIf="loading()" role="status">Đang tìm trải nghiệm…</p>
+  <div class="sort-bar">
+    <label
+      >Xếp theo:
+      <select
+        aria-label="Sắp xếp địa điểm"
+        [value]="sort()"
+        (change)="sortChange.emit($any($event.target).value)"
+      >
+        <option value="relevant">Liên quan nhất</option>
+        <option value="price-asc">Giá thấp đến cao</option>
+        <option value="price-desc">Giá cao đến thấp</option>
+      </select></label
+    ><span class="material-symbols-outlined" aria-label="Hiển thị dạng lưới">grid_view</span>
+  </div>
+  <div *ngIf="!loading() && !activities().length" class="empty" role="status">
+    <span class="material-symbols-outlined" aria-hidden="true">travel_explore</span>
+    <h3>Chưa có gợi ý phù hợp</h3>
+    <p>
+      Thử bỏ bớt danh mục hoặc thay đổi từ khóa. Dữ liệu minh họa hiện có tại Đà Lạt, Hà Nội, Hồ Chí
+      Minh, Đà Nẵng, Phú Quốc và Ninh Bình.
+    </p>
+  </div>
+  <div *ngIf="!loading()" class="grid">
+    <app-activity-card *ngFor="let activity of activities()" [activity]="activity" />
+  </div>
+</section>

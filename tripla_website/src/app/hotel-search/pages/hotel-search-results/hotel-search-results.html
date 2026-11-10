@@ -1,0 +1,81 @@
+<div class="results-page">
+  <header class="page-header">
+    <a class="brand" routerLink="/home" aria-label="TRIPLA - Trang chủ">
+      <img src="/images/logo (2).png" alt="" />
+      <span>TRIPLA</span>
+    </a>
+    <nav class="main-nav" aria-label="Điều hướng chính">
+      <a routerLink="/home">Khám phá</a>
+      <a routerLink="/tripshort">TripShorts</a>
+      <a routerLink="/trip-shop" class="active">TripShop</a><a routerLink="/trip-planning">Trip Planning</a>
+      <a routerLink="/about">Về TRIPLA</a>
+    </nav>
+    <a class="header-return" routerLink="/trip-shop"
+      ><span class="material-symbols-outlined">arrow_back</span>TripShop</a
+    >
+  </header>
+  <nav class="service-nav" aria-label="Dịch vụ du lịch">
+    <span class="service-tab selected" aria-current="page"
+      ><span class="material-symbols-outlined">hotel</span>Khách Sạn &amp; Resort</span
+    >
+    <a class="service-tab" routerLink="/trip-shop" [queryParams]="{ tab: 'flight' }"
+      ><span class="material-symbols-outlined">flight</span>Vé Máy Bay</a
+    >
+    <a class="service-tab" routerLink="/trip-shop" [queryParams]="{ tab: 'tour' }"
+      ><span class="material-symbols-outlined">tour</span>Hoạt động &amp; Vui chơi</a
+    >
+    <a class="service-tab" routerLink="/trip-shop" [queryParams]="{ tab: 'bus' }"
+      ><span class="material-symbols-outlined">directions_bus</span>Vé Xe Khách</a
+    >
+  </nav>
+  <main *ngIf="state() as applied">
+    <div class="search-intro">
+      <div>
+        <p class="eyebrow">TRIPLA · CHỌN MỘT CHỐN DỪNG CHÂN</p>
+        <h1>Kỳ nghỉ của bạn<span>, bắt đầu từ đây.</span></h1>
+        <p class="intro-description">
+          Tìm chỗ nghỉ phù hợp với hành trình và cách bạn muốn tận hưởng.
+        </p>
+      </div>
+      <span class="intro-icon material-symbols-outlined" aria-hidden="true">travel_explore</span>
+    </div>
+    <app-hotel-search-bar [criteria]="applied.criteria" (search)="search($event)" />
+    <div class="demo-notice" role="status">
+      <span *ngIf="demo(); else demoInvitation">Đang xem dữ liệu và ảnh minh họa, không phải khách sạn hay giá đặt phòng thực tế. Có mẫu tại Đà Lạt, Đà Nẵng và Phú Quốc. Bộ lọc chưa áp dụng cho dữ liệu mẫu.</span>
+      <ng-template #demoInvitation><span>Khám phá giao diện khách sạn bằng dữ liệu minh họa.</span></ng-template>
+      <button *ngIf="!demo()" type="button" (click)="previewDemo()">Xem giao diện mẫu</button>
+      <a *ngIf="demo()" routerLink="/hotel-search" [queryParams]="{ demo: null }" queryParamsHandling="merge">Thoát xem mẫu</a>
+    </div>
+    <p *ngIf="error()" role="alert" class="error">
+      {{ error() }} Hãy điều chỉnh tìm kiếm phía trên.
+    </p>
+    <div class="results-layout">
+      <div class="filters-panel" [class.filters-expanded]="filtersExpanded()">
+        <button
+          type="button"
+          class="mobile-filter-toggle"
+          [attr.aria-expanded]="filtersExpanded()"
+          aria-controls="hotel-filter-content"
+          (click)="filtersExpanded.set(!filtersExpanded())"
+        >
+          <span class="material-symbols-outlined">tune</span>Bộ lọc tìm kiếm<span
+            class="material-symbols-outlined"
+            >{{ filtersExpanded() ? 'expand_less' : 'expand_more' }}</span
+          >
+        </button>
+        <app-hotel-filter-sidebar
+          id="hotel-filter-content"
+          [filters]="applied.filters"
+          (filtersChange)="filter($event)"
+          (reset)="resetFilters()"
+        />
+      </div>
+      <app-hotel-results-list
+        *ngIf="!error()"
+        [location]="applied.criteria.location"
+        [hotels]="hotels()"
+        [demo]="demo()"
+      />
+    </div>
+  </main>
+</div>

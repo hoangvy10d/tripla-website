@@ -1,0 +1,114 @@
+﻿.heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.eyebrow {
+  color: #8b9b7b;
+  font-size: 8px;
+  letter-spacing: 1.4px;
+}
+h2 {
+  font: 500 25px var(--font-head, serif);
+  color: #34533b;
+  margin: 6px 0 0;
+}
+.count {
+  padding: 6px 10px;
+  border: 1px solid #dfe6d4;
+  border-radius: 18px;
+  background: #edf2e5;
+  color: #6f865b;
+  font-size: 10px;
+  white-space: nowrap;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+.empty {
+  text-align: center;
+  padding: 50px 24px;
+  border: 1px dashed #d0dcc1;
+  background: #fffefa;
+  border-radius: 18px;
+}
+.empty > .material-symbols-outlined {
+  font-size: 40px;
+  color: #9eb286;
+}
+h3 {
+  font: 500 23px var(--font-head, serif);
+  color: #617951;
+}
+.empty p {
+  max-width: 440px;
+  margin: auto;
+  font-size: 12px;
+  color: #829271;
+  line-height: 1.9;
+}
+.sort-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 3px;
+  color: #7b8871;
+  font-size: 11px;
+}
+.sort-bar label {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+.sort-bar select {
+  background: #fff;
+  border: 1px solid #dce3d3;
+  border-radius: 9px;
+  padding: 9px 28px 9px 11px;
+  color: #587944;
+  font: 11px var(--font-body, sans-serif);
+  cursor: pointer;
+}
+.sort-bar > .material-symbols-outlined {
+  color: #8c9f7a;
+  font-size: 20px;
+}
+.sort-bar select:focus-visible {
+  outline: 2px solid #9cb583;
+  outline-offset: 2px;
+}
+@media (max-width: 1150px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 1050px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 850px) and (min-width: 701px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 550px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  .sort-bar {
+    justify-content: space-between;
+  }
+}

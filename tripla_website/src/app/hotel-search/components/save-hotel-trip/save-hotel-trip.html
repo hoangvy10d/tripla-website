@@ -1,0 +1,14 @@
+<dialog #dialog aria-labelledby="hotel-trip-title" (cancel)="$event.preventDefault(); closed.emit()" (click)="backdropClick($event)">
+  <header><button *ngIf="view === 'create'" type="button" class="icon" aria-label="Quay lại" (click)="view = 'list'">←</button><h2 id="hotel-trip-title">{{ view === 'list' ? 'Lưu vào chuyến đi' : 'Tạo chuyến đi mới' }}</h2><button type="button" class="icon" aria-label="Đóng" (click)="closed.emit()">×</button></header>
+  <p class="hotel-name">{{ hotelName() }}</p>
+  <p *ngIf="store.error()" class="message error" role="alert">{{ store.error() }}</p>
+  <p *ngIf="message && !store.error()" class="message" role="status">{{ message }}</p>
+  <div *ngIf="view === 'list'" class="trip-list">
+    <p *ngIf="!store.trips().length" class="empty">Bạn chưa có chuyến đi nào. Tạo chuyến đi mới để lưu {{ itemLabel }} yêu thích.</p>
+    <button *ngFor="let trip of store.trips()" type="button" class="trip-row" [attr.aria-pressed]="trip.places.includes(placeKey)" (click)="toggle(trip.id)">
+      <span class="cover material-symbols-outlined" aria-hidden="true">luggage</span><span class="info"><strong>{{ trip.name }}</strong><small>{{ trip.createdAt | date:'dd/MM/yyyy' }} · {{ trip.places.length }} địa điểm</small></span><span class="material-symbols-outlined" aria-hidden="true">{{ trip.places.includes(placeKey) ? 'bookmark_added' : 'bookmark_add' }}</span>
+    </button>
+  </div>
+  <footer *ngIf="view === 'list'"><button type="button" class="primary" (click)="view = 'create'; message = ''; newTripName = ''">＋ Chuyến đi mới</button></footer>
+  <form *ngIf="view === 'create'" (submit)="$event.preventDefault(); createTrip()"><label for="hotel-trip-name">Tên chuyến đi</label><input id="hotel-trip-name" type="text" maxlength="100" required placeholder="Ví dụ: Đà Lạt 2026" [value]="newTripName" (input)="newTripName = $any($event.target).value"><small>{{ newTripName.length }}/100 ký tự</small><button type="submit" class="primary" [disabled]="!newTripName.trim()">Tạo chuyến đi</button></form>
+</dialog>

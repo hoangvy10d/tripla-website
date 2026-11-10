@@ -1,0 +1,30 @@
+<section aria-labelledby="booking-summary-title">
+  <span class="eyebrow">LỰA CHỌN CỦA BẠN</span>
+  <h2 id="booking-summary-title">Thông tin đặt chỗ</h2>
+  <ng-container *ngIf="hotel() as hotel"
+    ><img
+      *ngIf="hotel.selection.imageUrl"
+      [src]="hotel.selection.imageUrl"
+      [alt]="hotel.selection.hotelName"
+      (error)="$any($event.target).hidden = true"
+    />
+    <p class="address">{{ hotel.selection.address }}</p></ng-container
+  >
+  <h3>{{ view().title }}</h3>
+  <p class="subtitle">{{ view().subtitle }}</p>
+  <dl>
+    <div *ngFor="let row of view().rows">
+      <dt>{{ row.label }}</dt>
+      <dd>{{ row.value }}</dd>
+    </div>
+  </dl>
+  <p
+    *ngIf="draft().type === 'hotel' && !hotel()?.selection?.cancellationPolicy"
+    class="policy-note"
+  >
+    Chính sách hủy phòng chưa được xác nhận. Không mặc định có hủy miễn phí.
+  </p>
+  <span *ngIf="draft().source === 'demo'" class="demo-tag"
+    >Lựa chọn minh họa · Chưa có xác nhận đặt chỗ</span
+  >
+</section>

@@ -1,0 +1,382 @@
+﻿<div class="planning-page">
+  <app-activity-navigation activeService="planning" />
+  <main>
+    <div class="intro">
+      <div>
+        <span class="eyebrow">TRIPLA · BIẾN Ý TƯỞNG THÀNH HÀNH TRÌNH</span>
+        <h1>Một chuyến đi, <em>theo cách của bạn.</em></h1>
+        <p>Kéo địa điểm vào lịch hoặc dùng bảng chi tiết để thêm hoạt động.</p>
+      </div>
+      <span class="phase-tag">{{
+        plan()?.dirty ? 'Có thay đổi chưa lưu' : 'Lịch trình của bạn'
+      }}</span>
+    </div>
+    <div *ngIf="store.error()" class="alert" role="alert">
+      {{ store.error() }}<button type="button" (click)="retry()">Đọc lại dữ liệu</button>
+    </div>
+    <div *ngIf="actionError() || plan()?.error" class="alert" role="alert">
+      {{ actionError() || plan()?.error }}
+    </div>
+    <p *ngIf="message()" class="save-message" role="status">{{ message() }}</p>
+    <div class="workspace">
+      <aside class="left-column">
+        <section class="panel trip-picker">
+          <span class="eyebrow">BẮT ĐẦU HÀNH TRÌNH</span>
+          <h2>Chọn chuyến đi</h2>
+          <label for="planning-trip">Chuyến đi đã lưu</label
+          ><select
+            id="planning-trip"
+            [disabled]="!store.trips().length || !!store.readError()"
+            [value]="trip()?.id || ''"
+            (change)="selectTrip($any($event.target).value)"
+          >
+            <option *ngIf="!trip()" value="">Chọn một chuyến đi</option>
+            <option *ngFor="let trip of store.trips()" [value]="trip.id">{{ trip.name }}</option>
+          </select>
+          <p *ngIf="!store.trips().length && !store.readError()" class="hint">
+            Chưa có chuyến đi. Tạo chuyến mới hoặc lưu địa điểm từ Tripshort và TripShop.
+          </p>
+          <details>
+            <summary>＋ Tạo chuyến đi mới</summary>
+            <form (ngSubmit)="createTrip()">
+              <label for="planning-trip-name">Tên chuyến đi</label
+              ><input
+                id="planning-trip-name"
+                name="tripName"
+                [(ngModel)]="newTripName"
+                maxlength="100"
+                required
+                placeholder="Đặt tên cho hành trình"
+              /><button type="submit" [disabled]="!newTripName.trim() || !!store.readError()">
+                Tạo chuyến đi
+              </button>
+            </form>
+          </details>
+        </section>
+        <section class="saved-places">
+          <div class="saved-heading">
+            <h2>Địa điểm đã lưu</h2>
+            <span>{{ places().length }}</span>
+          </div>
+          <p class="hint">
+            Kéo card sang lịch. Trên điện thoại, chọn card rồi dùng nút thêm ở cột chi tiết.
+          </p>
+          <p *ngIf="loading()" role="status">Đang đọc địa điểm…</p>
+          <div *ngIf="error()" class="alert" role="alert">
+            {{ error() }}<button type="button" (click)="retry()">Thử lại</button>
+          </div>
+          <p *ngIf="!loading() && !trip() && !store.readError()" class="empty-small">
+            {{
+              requestedTrip()
+                ? 'Không tìm thấy chuyến đi này. Hãy chọn một chuyến khác.'
+                : 'Chọn hoặc tạo chuyến đi để bắt đầu.'
+            }}
+          </p>
+          <div *ngIf="!loading() && trip() && !places().length && !error()" class="empty-small">
+            Chuyến đi chưa có địa điểm.<a routerLink="/trip-shop">Khám phá TripShop ↗</a>
+          </div>
+          <button
+            *ngFor="let place of places()"
+            type="button"
+            class="place-card"
+            draggable="true"
+            (dragstart)="startDrag($event, 'place', place.key)"
+            (dragend)="endDrag()"
+            [class.selected]="selectedPlace()?.key === place.key"
+            [attr.aria-pressed]="selectedPlace()?.key === place.key"
+            [attr.data-place-key]="place.key"
+            (click)="selectPlace(place)"
+          >
+            <img
+              *ngIf="place.imageUrl"
+              [src]="place.imageUrl"
+              alt=""
+              loading="lazy"
+              (error)="$any($event.target).hidden = true"
+            /><span class="place-body"
+              ><strong>{{ place.title }}</strong
+              ><small *ngIf="place.location">{{ place.location }}</small
+              ><span class="place-price">{{ place.priceLabel || 'Chưa có thông tin giá' }}</span
+              ><span *ngIf="place.kind === 'unavailable'" class="unavailable"
+                >Không còn tìm thấy trong nguồn dữ liệu</span
+              ></span
+            ><span class="drag-grip" aria-hidden="true">⠿</span>
+          </button>
+        </section>
+      </aside>
+      <section class="panel timetable" aria-labelledby="timetable-title">
+        <header>
+          <div>
+            <span class="eyebrow">KẾ HOẠCH CỦA BẠN</span>
+            <h2 id="timetable-title">{{ trip()?.name || 'Lịch trình chuyến đi' }}</h2>
+          </div>
+          <div class="calendar-actions">
+            <button
+              type="button"
+              class="add-day"
+              [disabled]="!trip() || view().dayCount >= 30"
+              (click)="addDay()"
+            >
+              ＋ Thêm ngày</button
+            ><button
+              type="button"
+              class="add-day"
+              [disabled]="!trip() || view().dayCount <= 1"
+              (click)="removeDay()"
+            >
+              Xóa ngày</button
+            ><button
+              type="button"
+              class="add-day"
+              [disabled]="!scheduleEntries().length"
+              (click)="clearSchedule()"
+            >
+              Xóa hoạt động
+            </button>
+          </div>
+        </header>
+        <label class="start-date"
+          >Ngày bắt đầu (không bắt buộc)<input
+            type="date"
+            [value]="plan()?.value?.startDate || ''"
+            [disabled]="!trip()"
+            (change)="setStartDate($any($event.target).value)"
+        /></label>
+        <div class="day-nav">
+          <button
+            type="button"
+            aria-label="Ngày trước"
+            [disabled]="!trip() || view().activeDay === 1"
+            (click)="changeDay(view().activeDay - 1)"
+          >
+            ‹
+          </button>
+          <div class="day-tabs" role="group" aria-label="Ngày trong chuyến đi">
+            <button
+              *ngFor="let day of days()"
+              type="button"
+              [class.active]="view().activeDay === day"
+              [attr.aria-pressed]="view().activeDay === day"
+              [disabled]="!trip()"
+              (click)="changeDay(day)"
+              (dragover)="$event.preventDefault()"
+              (drop)="dropOnDay($event, day)"
+            >
+              Ngày {{ day }}<small *ngIf="dayDate(day) as date">{{ date | date: 'dd/MM' }}</small>
+            </button>
+          </div>
+          <button
+            type="button"
+            aria-label="Ngày tiếp theo"
+            [disabled]="!trip() || view().activeDay === view().dayCount"
+            (click)="changeDay(view().activeDay + 1)"
+          >
+            ›
+          </button>
+        </div>
+        <div class="day-caption">
+          <strong>Ngày {{ view().activeDay }}</strong
+          ><span>{{ dayDate(view().activeDay) || 'Chưa gán ngày thực tế' }}</span
+          ><span>{{ dayEntries().length }} hoạt động</span>
+        </div>
+        <p class="schedule-note">
+          Thả theo mốc 15 phút. Kéo hoạt động sang tab ngày khác để đổi ngày; chỉnh giờ và thời
+          lượng trong bảng chi tiết. Không cho phép hoạt động chồng giờ.
+        </p>
+        <div class="hour-grid" aria-label="Khung lịch trình 24 giờ">
+          <div
+            class="timeline-canvas"
+            [class.dragging]="!!dragging()"
+            (dragover)="dragOver($event)"
+            (drop)="dropOnTimeline($event)"
+          >
+            <div
+              *ngFor="let hour of hours"
+              class="hour-row"
+              [attr.data-day]="view().activeDay"
+              [attr.data-start-minute]="hour * 60"
+            >
+              <time>{{ hourLabel(hour) }}</time>
+              <div class="time-slot">
+                <span *ngIf="hour === 8 && !dayEntries().length" class="empty-slot"
+                  >Thả địa điểm vào một khung giờ</span
+                >
+              </div>
+            </div>
+            <div class="events-layer">
+              <div
+                *ngIf="dropMinute() !== null"
+                class="drop-preview"
+                [style.top.px]="(dropMinute()! * rowHeight) / 60"
+              >
+                {{ time(dropMinute()!) }}
+              </div>
+              <article
+                *ngFor="let entry of dayEntries()"
+                class="calendar-entry"
+                [class.selected]="selectedEntry()?.id === entry.id"
+                [style.top.px]="(entry.startMinute * rowHeight) / 60"
+                [style.height.px]="(entry.durationMinutes * rowHeight) / 60"
+                draggable="true"
+                (dragstart)="startDrag($event, 'entry', entry.id)"
+                (dragend)="endDrag()"
+                role="button"
+                tabindex="0"
+                (click)="selectEntry(entry)"
+                (keydown.enter)="selectEntry(entry)"
+                [attr.aria-label]="title(entry) + ' ' + time(entry.startMinute)"
+              >
+                <div>
+                  <strong>{{ title(entry) }}</strong
+                  ><small
+                    >{{ time(entry.startMinute) }} –
+                    {{ time(entry.startMinute + entry.durationMinutes) }}</small
+                  >
+                </div>
+                <button
+                  type="button"
+                  [attr.aria-label]="'Xóa hoạt động ' + title(entry)"
+                  (click)="$event.stopPropagation(); deleteEntry(entry)"
+                >
+                  ×
+                </button>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <aside class="right-column">
+        <app-planning-map [place]="selectedPlace()" />
+        <section class="panel activity-details">
+          <span class="eyebrow">MỖI ĐIỂM DỪNG, MỘT CÂU CHUYỆN</span>
+          <h2>{{ selectedEntry() ? 'Chỉnh sửa hoạt động' : 'Chi tiết địa điểm' }}</h2>
+          <ng-container *ngIf="selectedPlace() as place; else noSelection"
+            ><h3>{{ place.title }}</h3>
+            <p>{{ place.description || 'Chưa có mô tả bổ sung từ nguồn dữ liệu.' }}</p>
+            <dl>
+              <div *ngIf="place.location">
+                <dt>Vị trí</dt>
+                <dd>{{ place.location }}</dd>
+              </div>
+              <div>
+                <dt>Giá từ nguồn</dt>
+                <dd>{{ place.priceLabel || 'Chưa có thông tin' }}</dd>
+              </div>
+            </dl>
+            <a
+              *ngIf="place.detailsPath"
+              [routerLink]="place.detailsPath"
+              [queryParams]="place.detailsQuery || {}"
+              >{{ place.kind === 'tripshort' ? 'Mở Tripshort' : 'Xem trang địa điểm' }} ↗</a
+            ></ng-container
+          ><ng-template #noSelection
+            ><p>Chọn một card đã lưu hoặc hoạt động trong lịch để xem chi tiết.</p></ng-template
+          >
+          <ng-container *ngIf="selectedEntry() as entry; else addActivity"
+            ><div class="entry-editor">
+              <label for="entry-title">Tên hiển thị (bỏ trống để dùng tên gốc)</label
+              ><input
+                id="entry-title"
+                maxlength="150"
+                [ngModel]="entry.title"
+                (ngModelChange)="editEntry({ title: $event })"
+              />
+              <div class="edit-grid">
+                <label
+                  >Ngày<select
+                    aria-label="Ngày của hoạt động"
+                    [ngModel]="entry.day"
+                    (ngModelChange)="editEntry({ day: +$event })"
+                  >
+                    <option *ngFor="let day of days()" [ngValue]="day">Ngày {{ day }}</option>
+                  </select></label
+                ><label
+                  >Giờ bắt đầu<input
+                    type="time"
+                    aria-label="Giờ bắt đầu hoạt động"
+                    [ngModel]="time(entry.startMinute)"
+                    (ngModelChange)="editTime($event)"
+                /></label>
+              </div>
+              <label for="entry-duration">Thời lượng (phút)</label
+              ><input
+                id="entry-duration"
+                type="number"
+                min="15"
+                max="1440"
+                [ngModel]="entry.durationMinutes"
+                (ngModelChange)="editEntry({ durationMinutes: $event })"
+              />
+              <p class="hint">
+                Kết thúc {{ time(entry.startMinute + entry.durationMinutes) }} · Không vượt 24:00.
+              </p>
+              <label for="entry-note">Ghi chú hoạt động</label
+              ><textarea
+                id="entry-note"
+                maxlength="2000"
+                rows="3"
+                [ngModel]="entry.note"
+                (ngModelChange)="editEntry({ note: $event })"
+              ></textarea
+              ><button type="button" class="remove-activity" (click)="deleteEntry(entry)">
+                Xóa khỏi lịch trình
+              </button>
+            </div></ng-container
+          ><ng-template #addActivity
+            ><div *ngIf="selectedPlace()" class="entry-editor">
+              <label for="add-time">Thêm vào ngày {{ view().activeDay }} lúc</label
+              ><input id="add-time" type="time" [(ngModel)]="addTime" /><label for="add-duration"
+                >Thời lượng (phút)</label
+              ><input
+                id="add-duration"
+                type="number"
+                min="15"
+                max="1440"
+                [(ngModel)]="addDuration"
+              /><button type="button" class="add-to-schedule" (click)="addSelected()">
+                ＋ Thêm vào lịch trình
+              </button>
+            </div></ng-template
+          >
+        </section>
+        <section class="panel notes-panel">
+          <h2>Ghi chú chuyến đi</h2>
+          <label for="planning-note">Ý tưởng, lưu ý cho hành trình</label
+          ><textarea
+            id="planning-note"
+            rows="4"
+            maxlength="2000"
+            [disabled]="!trip()"
+            [value]="view().note"
+            (input)="updateView({ note: $any($event.target).value })"
+            placeholder="Bạn muốn ghi nhớ điều gì?"
+          ></textarea>
+          <p class="hint">Nhấn Lưu lịch trình để giữ ghi chú sau khi tải lại.</p>
+        </section>
+        <section class="cost-panel">
+          <span class="eyebrow">LỊCH TRÌNH &amp; GHI CHÚ</span>
+          <h2>{{ plan()?.dirty ? 'Chưa lưu thay đổi' : 'Bản lịch trình của bạn' }}</h2>
+          <p>
+            {{ scheduleEntries().length }} hoạt động · {{ view().dayCount }} ngày. Dữ liệu lưu trên
+            trình duyệt hiện tại.
+          </p>
+          <p *ngIf="plan()?.value?.updatedAt">
+            Lưu gần nhất: {{ plan()?.value?.updatedAt | date: 'dd/MM/yyyy HH:mm' }}
+          </p>
+          <button
+            type="button"
+            class="save-itinerary"
+            [disabled]="!trip() || !!store.readError()"
+            (click)="save()"
+          >
+            Lưu lịch trình</button
+          ><button type="button" [disabled]="!trip()" (click)="reloadSaved()">
+            Mở lại bản đã lưu
+          </button>
+          <p>Giá từng địa điểm có đơn vị khác nhau, chưa tính tổng thanh toán.</p>
+          <button type="button" disabled>Thanh toán · Chưa triển khai</button>
+        </section>
+      </aside>
+    </div>
+  </main>
+</div>

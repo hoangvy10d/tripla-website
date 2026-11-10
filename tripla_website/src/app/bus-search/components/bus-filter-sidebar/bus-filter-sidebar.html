@@ -1,0 +1,27 @@
+<aside>
+  <header>
+    <h2>Bộ lọc xe khách</h2>
+    <button type="button" (click)="reset()">Đặt lại</button>
+  </header>
+  <p class="hint">Chọn chuyến phù hợp với hành trình của bạn.</p>
+  <details open>
+    <summary>Giờ khởi hành <span aria-hidden="true">⌃</span></summary>
+    <label *ngFor="let band of bands"
+      ><input
+        type="checkbox"
+        [checked]="filters().departureBands.includes(band.id)"
+        (change)="toggle('departureBands', band.id)"
+      />{{ band.label }}</label
+    >
+  </details>
+  <details open>
+    <summary>Nhà xe <span aria-hidden="true">⌃</span></summary>
+    <label *ngFor="let operator of operators()"
+      ><input
+        type="checkbox"
+        [checked]="filters().operators.includes(operator.id)"
+        (change)="toggle('operators', operator.id)"
+      />{{ operator.name }}</label
+    ><small *ngIf="!operators().length">Chưa có thông tin nhà xe cho hành trình này.</small>
+  </details>
+</aside>

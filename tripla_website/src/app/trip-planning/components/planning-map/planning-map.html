@@ -1,0 +1,22 @@
+<section>
+  <iframe
+    *ngIf="embedUrl() as url; else locationSearch"
+    [src]="url"
+    title="Bản đồ địa điểm đang chọn"
+    loading="lazy"
+    referrerpolicy="no-referrer"
+  ></iframe
+  ><ng-template #locationSearch
+    ><div class="map-search">
+      <span class="material-symbols-outlined" aria-hidden="true">map</span>
+      <h2>{{ place()?.title || 'Bản đồ hành trình' }}</h2>
+      <p>{{ place()?.location || 'Chưa có thông tin vị trí cho địa điểm này.' }}</p>
+      <a *ngIf="searchUrl() as url" [href]="url" target="_blank" rel="noopener noreferrer"
+        >Xem vị trí trên Google Maps ↗</a
+      ><small
+        >Chưa có tọa độ để ghim trong trang. Tìm kiếm dùng tên và vị trí từ dữ liệu nguồn; kết quả
+        cần kiểm tra lại.</small
+      >
+    </div></ng-template
+  >
+</section>

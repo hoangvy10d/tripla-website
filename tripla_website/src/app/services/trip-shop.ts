@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { 
   NavItem, 
@@ -15,7 +14,6 @@ import {
 export class TripShopService {
   private readonly API_URL = 'https://api.tripla.vn/v1/tripshop';
 
-  constructor(private http: HttpClient) {}
 
   getNavItems(): Observable<NavItem[]> {
     return of([

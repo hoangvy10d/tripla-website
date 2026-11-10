@@ -1,0 +1,86 @@
+<header>
+  <h2>Bộ lọc</h2>
+  <button type="button" (click)="reset.emit()">Đặt lại</button>
+</header>
+<details open>
+  <summary>Được đề xuất</summary>
+  <label
+    ><input type="checkbox" [checked]="filters().stops.includes(0)" (change)="toggleStop(0)" />Bay
+    thẳng</label
+  ><label
+    ><input
+      type="checkbox"
+      [checked]="filters().carryOn"
+      (change)="patch({ carryOn: $any($event.target).checked })"
+    />Hành lý xách tay</label
+  ><label
+    ><input
+      type="checkbox"
+      [checked]="filters().checkedBaggage"
+      (change)="patch({ checkedBaggage: $any($event.target).checked })"
+    />Bao gồm hành lý ký gửi</label
+  >
+</details>
+<details open>
+  <summary>Hãng hàng không</summary>
+  <p *ngIf="!airlines().length">Danh sách hãng sẽ xuất hiện khi có dữ liệu chuyến bay.</p>
+  <label *ngFor="let airline of airlines()"
+    ><input
+      type="checkbox"
+      [checked]="filters().airlines.includes(airline.code)"
+      (change)="toggleAirline(airline.code)"
+    />{{ airline.name }}</label
+  ><button
+    *ngIf="filters().airlines.length && !airlines().length"
+    type="button"
+    (click)="patch({ airlines: [] })"
+  >
+    Bỏ bộ lọc hãng đang lưu ({{ filters().airlines.length }})
+  </button>
+</details>
+<details open>
+  <summary>Số điểm dừng</summary>
+  <label *ngFor="let stop of [0, 1, 2]"
+    ><input
+      type="checkbox"
+      [checked]="filters().stops.includes(stop)"
+      (change)="toggleStop(stop)"
+    />{{ stop === 0 ? 'Bay thẳng' : stop === 1 ? '1 điểm dừng' : '2+ điểm dừng' }}</label
+  >
+</details>
+<details open>
+  <summary>Khung giờ khởi hành</summary>
+  <label *ngFor="let band of bands"
+    ><input
+      type="checkbox"
+      [checked]="filters().departureBands.includes(band.id)"
+      (change)="toggleBand('departureBands', band.id)"
+    />{{ band.label }}</label
+  >
+</details>
+<details open>
+  <summary>Khung giờ đến</summary>
+  <label *ngFor="let band of bands"
+    ><input
+      type="checkbox"
+      [checked]="filters().arrivalBands.includes(band.id)"
+      (change)="toggleBand('arrivalBands', band.id)"
+    />{{ band.label }}</label
+  >
+</details>
+<details open>
+  <summary>Hành lý</summary>
+  <label
+    ><input
+      type="checkbox"
+      [checked]="filters().carryOn"
+      (change)="patch({ carryOn: $any($event.target).checked })"
+    />Có hành lý xách tay</label
+  ><label
+    ><input
+      type="checkbox"
+      [checked]="filters().checkedBaggage"
+      (change)="patch({ checkedBaggage: $any($event.target).checked })"
+    />Có hành lý ký gửi</label
+  >
+</details>

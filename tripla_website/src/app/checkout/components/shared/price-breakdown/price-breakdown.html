@@ -1,0 +1,38 @@
+<section aria-labelledby="price-heading">
+  <h2 id="price-heading">Chi tiết giá</h2>
+  <ng-container *ngIf="usable() as price; else unavailable"
+    ><dl>
+      <div *ngFor="let line of price.lines">
+        <dt>
+          {{ line.label
+          }}<small *ngIf="line.quantity && line.unitAmount !== undefined"
+            >{{ line.quantity }} × {{ money(line.unitAmount!) }}</small
+          >
+        </dt>
+        <dd>{{ line.kind === 'discount' ? '− ' : '' }}{{ money(line.amount) }}</dd>
+      </div>
+      <div *ngFor="let item of missing()" class="unknown">
+        <dt>{{ item }}</dt>
+        <dd>Chưa xác nhận</dd>
+      </div>
+    </dl>
+    <div *ngIf="price.status === 'estimate'" class="total estimate">
+      <span>Tạm tính các khoản đã biết</span><strong>{{ money(knownAmount()) }}</strong>
+    </div>
+    <div *ngIf="verified()" class="total">
+      <span>Tổng theo báo giá</span><strong>{{ money(total()!) }}</strong>
+    </div>
+    <p *ngIf="price.status === 'verified' && !verified()" class="notice">
+      Báo giá không còn hợp lệ hoặc chưa đầy đủ. Cần xác nhận lại trước khi thanh toán.
+    </p>
+    <p *ngIf="price.status === 'estimate'" class="notice">
+      Đây là giá tham khảo, chưa phải số tiền thanh toán cuối cùng. Giá và phòng trống cần được nhà
+      cung cấp xác nhận.
+    </p>
+    <p class="payment-note">Thanh toán chưa được triển khai trong phiên bản này.</p></ng-container
+  ><ng-template #unavailable
+    ><p class="notice">
+      Chưa có dữ liệu giá hợp lệ. Không thể xác định số tiền thanh toán.
+    </p></ng-template
+  >
+</section>

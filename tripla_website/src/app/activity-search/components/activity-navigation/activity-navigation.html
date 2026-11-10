@@ -1,0 +1,37 @@
+<header class="page-header">
+  <a class="brand" routerLink="/home" aria-label="TRIPLA - Trang chủ"
+    ><img src="/images/logo (2).png" alt="" /><span>TRIPLA</span></a
+  >
+  <nav class="main-nav" aria-label="Điều hướng chính">
+    <a routerLink="/home">Khám phá</a><a routerLink="/tripshort">TripShorts</a
+    ><a [class.active]="activeService() !== 'planning'" routerLink="/trip-shop">TripShop</a
+    ><a
+      routerLink="/trip-planning"
+      [class.active]="activeService() === 'planning'"
+      [attr.aria-current]="activeService() === 'planning' ? 'page' : null"
+      >Trip Planning</a
+    ><a routerLink="/about">Về TRIPLA</a>
+  </nav>
+  <a
+    class="back"
+    routerLink="/trip-shop"
+    [queryParams]="{ tab: activeService() === 'planning' ? 'hotel' : activeService() }"
+    >← TripShop</a
+  >
+</header>
+<nav *ngIf="activeService() !== 'planning'" class="service-nav" aria-label="Dịch vụ du lịch">
+  <ng-container *ngFor="let service of services"
+    ><span
+      *ngIf="service.tab === activeService(); else serviceLink"
+      class="selected"
+      aria-current="page"
+      ><span class="material-symbols-outlined" aria-hidden="true">{{ service.icon }}</span
+      >{{ service.label }}</span
+    ><ng-template #serviceLink
+      ><a routerLink="/trip-shop" [queryParams]="{ tab: service.tab }"
+        ><span class="material-symbols-outlined" aria-hidden="true">{{ service.icon }}</span
+        >{{ service.label }}</a
+      ></ng-template
+    ></ng-container
+  >
+</nav>

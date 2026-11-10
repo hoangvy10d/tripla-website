@@ -1,0 +1,17 @@
+<div class="actions">
+  <button
+    type="button"
+    class="continue"
+    [disabled]="disabled() || loading()"
+    (click)="proceed.emit()"
+  >
+    {{ loading() ? 'Đang lưu…' : saved() ? 'Kiểm tra và lưu lại' : 'Tiếp tục' }}
+    <span aria-hidden="true">→</span></button
+  ><button type="button" class="back" [disabled]="loading()" (click)="back.emit()">
+    ← {{ backLabel() }}
+  </button>
+  <p>
+    Tiếp tục chỉ kiểm tra và lưu thông tin trong phiên này. Chưa đặt dịch vụ, giữ chỗ hoặc thanh
+    toán.
+  </p>
+</div>

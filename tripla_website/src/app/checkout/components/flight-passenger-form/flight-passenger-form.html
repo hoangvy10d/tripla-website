@@ -1,0 +1,88 @@
+<section class="form-section" [formGroup]="group()">
+  <div class="section-heading">
+    <span class="section-number">2</span>
+    <div>
+      <h2>Thông tin hành khách</h2>
+      <p>Nhập tên đúng theo giấy tờ sử dụng khi bay. Mỗi hành khách có thông tin riêng.</p>
+    </div>
+  </div>
+  <div formArrayName="passengers">
+    <fieldset
+      *ngFor="let passenger of group().controls.passengers.controls; let i = index"
+      [formGroupName]="i"
+    >
+      <legend>
+        Hành khách {{ i + 1 }} ·
+        {{
+          passenger.controls.type.value === 'adult'
+            ? 'Người lớn'
+            : passenger.controls.type.value === 'child'
+              ? 'Trẻ em'
+              : 'Em bé'
+        }}
+      </legend>
+      <div class="fields">
+        <div class="field">
+          <label [for]="'flight-last-' + i">Họ *</label
+          ><input
+            [id]="'flight-last-' + i"
+            formControlName="lastName"
+            maxlength="100"
+            required
+            [attr.aria-invalid]="invalid(passenger.controls.lastName)"
+          />
+          <p *ngIf="invalid(passenger.controls.lastName)" class="field-error">
+            Vui lòng nhập họ, tối đa 100 ký tự.
+          </p>
+        </div>
+        <div class="field">
+          <label [for]="'flight-first-' + i">Tên và tên đệm *</label
+          ><input
+            [id]="'flight-first-' + i"
+            formControlName="firstName"
+            maxlength="100"
+            required
+            [attr.aria-invalid]="invalid(passenger.controls.firstName)"
+          />
+          <p *ngIf="invalid(passenger.controls.firstName)" class="field-error">
+            Vui lòng nhập tên, tối đa 100 ký tự.
+          </p>
+        </div>
+        <div *ngIf="selection().requirements.dateOfBirth" class="field">
+          <label [for]="'flight-dob-' + i">Ngày sinh *</label
+          ><input
+            [id]="'flight-dob-' + i"
+            type="date"
+            formControlName="dateOfBirth"
+            [max]="today"
+            required
+            [attr.aria-invalid]="invalid(passenger.controls.dateOfBirth)"
+          />
+          <p *ngIf="invalid(passenger.controls.dateOfBirth)" class="field-error">
+            Ngày sinh không hợp lệ hoặc nằm trong tương lai.
+          </p>
+        </div>
+        <div *ngIf="selection().requirements.nationality" class="field">
+          <label [for]="'flight-nationality-' + i">Quốc tịch *</label
+          ><input
+            [id]="'flight-nationality-' + i"
+            formControlName="nationality"
+            maxlength="100"
+            required
+            [attr.aria-invalid]="invalid(passenger.controls.nationality)"
+          />
+          <p *ngIf="invalid(passenger.controls.nationality)" class="field-error">
+            Vui lòng nhập quốc tịch.
+          </p>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <p *ngIf="submitted() && group().hasError('passengerCount')" class="field-error">
+    Số lượng hoặc thứ tự hành khách không khớp lựa chọn chuyến bay.
+  </p>
+  <p class="hint">
+    Yêu cầu giấy tờ và điều kiện theo độ tuổi sẽ được xác nhận theo nhà cung cấp. Không thu thập hộ
+    chiếu trong bản này.
+  </p>
+</section>

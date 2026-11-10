@@ -20,7 +20,7 @@
       <button type="button" class="link" [attr.data-active]="activeNavPath === 'tripshorts' ? '' : null"
          (click)="setActiveNav('tripshorts'); goToTripshort()">TripShorts</button>
       <a class="link" [attr.data-active]="activeNavPath === 'tripshop' ? '' : null"
-         routerLink="/trip-shop">TripShop</a>
+         routerLink="/trip-shop">TripShop</a><a class="link" routerLink="/trip-planning">Trip Planning</a>
       <a class="link" [attr.data-active]="activeNavPath === 've-tripla' ? '' : null"
          (click)="setActiveNav('ve-tripla')" routerLink="/about">Về TRIPLA</a>
     </nav>

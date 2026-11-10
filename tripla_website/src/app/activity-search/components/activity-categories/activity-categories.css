@@ -1,0 +1,31 @@
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+button {
+  border: 1px solid #dfe5d7;
+  border-radius: 22px;
+  padding: 8px 12px;
+  background: #fffef9;
+  color: #75816b;
+  font: 10px var(--font-body, sans-serif);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+button:hover {
+  background: #f0f5e8;
+  border-color: #b6cda3;
+}
+button.selected {
+  background: #e4edd6;
+  border-color: #c2d5ab;
+  color: #426438;
+}
+button:focus-visible {
+  outline: 2px solid #8aa773;
+  outline-offset: 3px;
+}

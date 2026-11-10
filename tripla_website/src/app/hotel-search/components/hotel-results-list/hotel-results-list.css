@@ -1,0 +1,116 @@
+:host {
+  display: block;
+  min-width: 0;
+}
+.list-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 0 2px;
+}
+.list-eyebrow {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #7b8b70;
+}
+h2 {
+  font-size: clamp(19px, 2vw, 25px);
+  line-height: 1.5;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  margin: 5px 0 0;
+  overflow-wrap: anywhere;
+}
+.destination-mark {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #d6deca;
+  border-radius: 50%;
+  font-size: 19px;
+  color: #52764b;
+}
+.empty {
+  overflow: hidden;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  background: #fffef9;
+  box-shadow: 0 12px 35px -20px #173b3230;
+}
+.empty-landscape {
+  display: flex;
+  align-items: flex-end;
+  height: 220px;
+  padding: 22px;
+  background:
+    linear-gradient(0deg, #102f2c99, transparent 75%),
+    url('/resort-night-bg.png') center 55% / cover;
+}
+.landscape-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #fffdf0;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+}
+.landscape-label .material-symbols-outlined {
+  font-size: 18px;
+  color: #dfecb6;
+}
+.empty-body {
+  padding: 30px 30px 32px;
+  text-align: center;
+}
+.empty-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  font-size: 24px;
+  color: #52764b;
+  background: #eef2e5;
+  border: 1px solid #dde5d0;
+}
+.empty h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 17px 0 12px;
+}
+.empty p {
+  font-size: 12px;
+  line-height: 1.9;
+  color: #748171;
+  max-width: 450px;
+  margin: 10px auto;
+}
+.empty p:last-child {
+  font-size: 11px;
+  color: #526b50;
+}
+.list {
+  display: grid;
+  gap: 16px;
+}
+@media (max-width: 800px) {
+  .empty-landscape {
+    height: 180px;
+  }
+  .empty-body {
+    padding: 24px 18px;
+  }
+}
+
+:host { font-family: var(--font-body); }
+h2 { font-family: var(--font-head); font-weight: 400; letter-spacing: -.025em; }
+.list-eyebrow { font-weight: 500; font-size: 10px; letter-spacing: .12em; color: var(--leaf); }
+.empty { border-radius: 22px; border-color: var(--tripla-panel-border); background: var(--tripla-panel); box-shadow: var(--tripla-panel-shadow); }
+.empty h3 { font-family: var(--font-head); font-weight: 500; }
+.empty p { color: var(--ink-3); }
+.empty-icon { background: linear-gradient(135deg, #eef4d8, #c6d9b8); border: 1px solid #ffffffa0; color: var(--leaf); box-shadow: 0 5px 12px -7px #173b3250, inset 0 1px 0 #fff; }

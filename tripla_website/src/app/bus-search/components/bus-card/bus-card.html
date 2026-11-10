@@ -1,0 +1,43 @@
+<article>
+  <div class="operator">
+    <span class="bus-icon material-symbols-outlined" aria-hidden="true">airport_shuttle</span>
+    <div>
+      <h3>{{ trip().operatorName }}</h3>
+      <p>{{ trip().vehicle }}</p>
+      <span class="sample">Lịch chạy minh họa</span>
+    </div>
+  </div>
+  <div class="journey">
+    <div>
+      <strong>{{ trip().departureAt.slice(11, 16) }}</strong
+      ><small>{{ trip().from }}</small>
+    </div>
+    <div class="duration">
+      <span>{{ duration }}</span
+      ><span class="line" aria-hidden="true">→</span>
+    </div>
+    <div>
+      <strong>{{ trip().arrivalAt.slice(11, 16) }}</strong
+      ><small>{{ trip().to }}</small
+      ><small
+        *ngIf="trip().arrivalAt.slice(0, 10) !== trip().departureAt.slice(0, 10)"
+        class="next-day"
+        >+1 ngày</small
+      >
+    </div>
+  </div>
+  <div class="fare">
+    <small>Giá mẫu / ghế người lớn</small><strong>{{ price }}</strong
+    ><button type="button" (click)="selected.emit(trip())">Chọn chuyến ↗</button>
+  </div>
+  <div class="card-bottom">
+    <div class="amenities">
+      <span *ngFor="let amenity of trip().amenities">{{ amenity }}</span>
+    </div>
+    <details>
+      <summary>Điểm đón &amp; trả</summary>
+      <p>{{ trip().pickup }} → {{ trip().dropoff }}</p>
+      <small>Điểm cụ thể và thời gian đón cần xác nhận từ nhà xe.</small>
+    </details>
+  </div>
+</article>

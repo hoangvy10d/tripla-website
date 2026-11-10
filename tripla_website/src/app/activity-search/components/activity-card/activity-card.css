@@ -1,0 +1,236 @@
+﻿:host {
+  display: block;
+  min-width: 0;
+  height: 100%;
+}
+* {
+  box-sizing: border-box;
+}
+article {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e4e8e1;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 3px 12px #193d2d06;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+article:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px #193d2d12;
+}
+.photo {
+  position: relative;
+  aspect-ratio: 1.9;
+  overflow: hidden;
+  background: #ecf0e6;
+}
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s;
+}
+article:hover img {
+  transform: scale(1.04);
+}
+.placeholder {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  color: #95a78b;
+  font-size: 40px;
+}
+.photo-label {
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  background: #ffffffdc;
+  color: #566653;
+  font-size: 8px;
+  backdrop-filter: blur(6px);
+}
+.discount {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 7px;
+  background: #f4e8b4;
+  color: #756129;
+  padding: 4px 6px;
+  font-size: 9px;
+  font-weight: 500;
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  padding: 11px;
+  flex: 1;
+}
+.location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0 0 5px;
+  font-size: 10px;
+  color: #7a8576;
+  line-height: 1.5;
+}
+.location .material-symbols-outlined {
+  font-size: 14px;
+}
+h3 {
+  font: 600 13px/1.5 var(--font-body, sans-serif);
+  color: #263f32;
+  margin: 0 0 7px;
+  min-height: 39px;
+  overflow-wrap: anywhere;
+}
+.tags {
+  margin-bottom: 9px;
+}
+.tags span {
+  display: inline-block;
+  padding: 3px 6px;
+  border-radius: 5px;
+  background: #f1f5ec;
+  color: #6f805e;
+  font-size: 9px;
+  line-height: 1.5;
+}
+.reviews {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  color: #899183;
+  font-size: 10px;
+  margin-top: auto;
+  margin-bottom: 9px;
+}
+.score {
+  color: #527b44;
+  font-weight: 600;
+}
+footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 9px;
+  border-top: 1px solid #edf0e8;
+}
+.price-label {
+  display: block;
+  color: #919888;
+  font-size: 9px;
+  margin-bottom: 4px;
+}
+.price > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 7px;
+}
+.price strong {
+  color: #c16d46;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+.price del {
+  color: #9ca493;
+  font-size: 10px;
+}
+.price small {
+  color: #8c9782;
+  font-size: 11px;
+}
+.per-person {
+  color: #919b86;
+  font-size: 9px;
+  padding-bottom: 3px;
+  white-space: nowrap;
+}
+@media (max-width: 550px) {
+  .photo {
+    aspect-ratio: 2;
+  }
+  h3 {
+    min-height: 0;
+    font-size: 14px;
+  }
+  .body {
+    padding: 12px;
+  }
+}
+.save-activity {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 30px;
+  height: 30px;
+  padding: 0 7px;
+  border: 1px solid #ffffffb0;
+  border-radius: 9px;
+  background: #fffffff0;
+  color: #718761;
+  box-shadow: 0 2px 8px #24422d12;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+.save-activity .material-symbols-outlined {
+  font-size: 18px;
+}
+.save-activity:hover {
+  background: #eff5e7;
+}
+.save-activity.saved {
+  color: #466a35;
+  background: #edf4e4f0;
+}
+.save-activity.saved .material-symbols-outlined {
+  font-variation-settings: 'FILL' 1;
+}
+.saved-label {
+  font: 9px var(--font-body, sans-serif);
+}
+.save-activity:focus-visible {
+  outline: 2px solid #83a466;
+  outline-offset: 3px;
+}
+article {
+  position: relative;
+}
+.card-link {
+  color: inherit;
+  text-decoration: none;
+}
+.card-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.card-link:focus-visible {
+  outline: none;
+}
+.card-link:focus-visible::after {
+  outline: 2px solid #87a66b;
+  outline-offset: -3px;
+  border-radius: 12px;
+}
+.save-activity {
+  z-index: 2;
+}

@@ -1,0 +1,86 @@
+<section class="form-section" [formGroup]="group()" aria-labelledby="hotel-guest-heading">
+  <div class="section-heading">
+    <span class="section-number" aria-hidden="true">2</span>
+    <div>
+      <h2 id="hotel-guest-heading">Thông tin khách lưu trú</h2>
+      <p>Thông tin người đại diện nhận phòng.</p>
+    </div>
+  </div>
+  <div class="selection-note">
+    {{ adults() }} người lớn · {{ children() }} trẻ em · {{ rooms() }} phòng. Số lượng được giữ theo
+    lựa chọn đặt chỗ.
+  </div>
+  <div class="fields">
+    <div class="field">
+      <label for="hotel-guest-last">Họ <span aria-hidden="true">*</span></label
+      ><input
+        id="hotel-guest-last"
+        formControlName="lastName"
+        autocomplete="section-guest family-name"
+        maxlength="100"
+        required
+        [attr.aria-invalid]="invalid('lastName')"
+        aria-describedby="guest-last-error"
+      />
+      <p *ngIf="invalid('lastName')" id="guest-last-error" class="field-error">
+        Vui lòng nhập họ, tối đa 100 ký tự.
+      </p>
+    </div>
+    <div class="field">
+      <label for="hotel-guest-first">Tên và tên đệm <span aria-hidden="true">*</span></label
+      ><input
+        id="hotel-guest-first"
+        formControlName="firstName"
+        autocomplete="section-guest given-name"
+        maxlength="100"
+        required
+        [attr.aria-invalid]="invalid('firstName')"
+        aria-describedby="guest-first-error"
+      />
+      <p *ngIf="invalid('firstName')" id="guest-first-error" class="field-error">
+        Vui lòng nhập tên, tối đa 100 ký tự.
+      </p>
+    </div>
+    <label class="checkbox full"
+      ><input type="checkbox" formControlName="bookingForSomeoneElse" /><span
+        >Tôi đặt phòng cho người khác</span
+      ></label
+    >
+  </div>
+  <h3 class="request-title">Yêu cầu đặc biệt <small>(không bắt buộc)</small></h3>
+  <p class="hint">
+    Khách sạn sẽ xem xét tùy tình trạng thực tế. Các yêu cầu này không được đảm bảo.
+  </p>
+  <div class="requests">
+    <label class="checkbox"
+      ><input type="checkbox" formControlName="nonSmoking" /><span
+        >Phòng không hút thuốc</span
+      ></label
+    ><label class="checkbox"
+      ><input type="checkbox" formControlName="highFloor" /><span>Phòng tầng cao</span></label
+    ><label class="checkbox"
+      ><input type="checkbox" formControlName="connectingRooms" /><span
+        >Phòng thông nhau</span
+      ></label
+    >
+  </div>
+  <div class="field">
+    <label for="hotel-special-requests">Yêu cầu khác</label
+    ><textarea
+      id="hotel-special-requests"
+      formControlName="specialRequests"
+      rows="3"
+      maxlength="500"
+      placeholder="Ghi chú thêm cho khách sạn"
+      [attr.aria-invalid]="invalid('specialRequests')"
+      aria-describedby="requests-hint requests-error"
+    ></textarea
+    ><span class="count">{{ group().controls.specialRequests.value.length }}/500</span>
+    <p id="requests-hint" class="hint">
+      Không nhập thông tin thanh toán, giấy tờ tùy thân hoặc dữ liệu nhạy cảm.
+    </p>
+    <p *ngIf="invalid('specialRequests')" id="requests-error" class="field-error">
+      Yêu cầu khác không được quá 500 ký tự.
+    </p>
+  </div>
+</section>

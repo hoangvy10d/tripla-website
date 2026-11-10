@@ -1,0 +1,18 @@
+<div class="categories" role="group" aria-label="Danh mục hoạt động">
+  <button
+    type="button"
+    [class.selected]="!selected().length"
+    [attr.aria-pressed]="!selected().length"
+    (click)="selectionChange.emit([])"
+  >
+    Tất cả trải nghiệm</button
+  ><button
+    *ngFor="let category of categories"
+    type="button"
+    [class.selected]="selected().includes(category)"
+    [attr.aria-pressed]="selected().includes(category)"
+    (click)="toggle(category)"
+  >
+    {{ category }}<span *ngIf="selected().includes(category)" aria-hidden="true"> ✓</span>
+  </button>
+</div>
