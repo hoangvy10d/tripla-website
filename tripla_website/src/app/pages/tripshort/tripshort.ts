@@ -16,7 +16,7 @@ import { SiteHeaderComponent, SiteNavKey } from '../../shared/components/site-he
   templateUrl: './tripshort.html',
   styleUrls: ['./tripshort.css']
 })
-export class Tripshort{
+export class Tripshort {
   galleryIndex = 0;
   calendarOpen = false;
   readonly today = new Date(new Date().setHours(0, 0, 0, 0));
@@ -426,7 +426,7 @@ export class Tripshort{
   readonly bookmarkCountText = this.store.bookmarkCountText;
   readonly commentCountText = this.store.commentCountText;
 
-// Chuyển video bằng nút bấm
+  // Chuyển video bằng nút bấm
   nextVideo(event?: Event): void {
     event?.stopPropagation();
     this.store.nextVideo();
@@ -656,78 +656,78 @@ export class Tripshort{
     this.store.isShareModalOpen.set(false);
   }
 
- // Chuyển sang màn hình Xác nhận & Thanh toán (Hình 3)
-goToCheckout(): void {
-  this.authService.requireAuth(() => {
-    this.store.drawerView.set('checkout');
-  }, 'Vui lòng đăng nhập để đặt phòng hoặc trải nghiệm.');
-}
+  // Chuyển sang màn hình Xác nhận & Thanh toán (Hình 3)
+  goToCheckout(): void {
+    this.authService.requireAuth(() => {
+      this.store.drawerView.set('checkout');
+    }, 'Vui lòng đăng nhập để đặt phòng hoặc trải nghiệm.');
+  }
 
-// Điều hướng sang TripShop để đặt phòng/đặt chỗ thực tế với Venue từ MongoDB (Flow 2)
-navigateToTripShopWithVenue(event?: Event): void {
-  event?.stopPropagation();
-  const spot = this.activeDrawerData();
-  this.closeAllDrawers();
-  this.router.navigate(['/trip-shop'], {
-    queryParams: {
-      destination: spot.title,
-      location: spot.location,
-      type: this.selectedDrawerKey()
-    }
-  });
-}
+  // Điều hướng sang TripShop để đặt phòng/đặt chỗ thực tế với Venue từ MongoDB (Flow 2)
+  navigateToTripShopWithVenue(event?: Event): void {
+    event?.stopPropagation();
+    const spot = this.activeDrawerData();
+    this.closeAllDrawers();
+    this.router.navigate(['/trip-shop'], {
+      queryParams: {
+        destination: spot.title,
+        location: spot.location,
+        type: this.selectedDrawerKey()
+      }
+    });
+  }
 
-// Quay lại màn hình Chi tiết
-backToDetails(): void {
-  this.store.drawerView.set('details');
-}
+  // Quay lại màn hình Chi tiết
+  backToDetails(): void {
+    this.store.drawerView.set('details');
+  }
 
-// Chuyển sang màn hình Đặt chỗ thành công (Hình 4) & kích hoạt API `POST /api/v1/bookings` với khóa ngoại `user_id`, `room_id`, `hotel_id`, `location_id`
-processFakePayment(): void {
-  const currentUser = this.authService.currentUser();
-  if (!currentUser?.id) return;
+  // Chuyển sang màn hình Đặt chỗ thành công (Hình 4) & kích hoạt API `POST /api/v1/bookings` với khóa ngoại `user_id`, `room_id`, `hotel_id`, `location_id`
+  processFakePayment(): void {
+    const currentUser = this.authService.currentUser();
+    if (!currentUser?.id) return;
 
-  this.store.drawerView.set('success');
-  const activePoint = this.activeDrawerData();
-  const drawerKey = this.selectedDrawerKey();
-  const rooms = this.store.activeHotelRooms();
-  const selectedRoomId = activePoint?.room_id || rooms?.[0]?._id || null;
-  const totalPrice = this.checkoutTotalVnd;
+    this.store.drawerView.set('success');
+    const activePoint = this.activeDrawerData();
+    const drawerKey = this.selectedDrawerKey();
+    const rooms = this.store.activeHotelRooms();
+    const selectedRoomId = activePoint?.room_id || rooms?.[0]?._id || null;
+    const totalPrice = this.checkoutTotalVnd;
 
-  this.store.submitDrawerBooking({
-    user_id: currentUser.id,
-    room_id: selectedRoomId,
-    hotel_id: activePoint?.hotel_id || null,
-    location_id: activePoint?.location_id || null,
-    venueId: activePoint?.venueId || null,
-    bookingType: `tripshorts_${drawerKey}`,
-    title: activePoint?.title || 'Đặt chỗ TripShorts',
-    location: activePoint?.location || '',
-    customerName: this.currentUserName,
-    check_in: this.stayStart.toISOString().slice(0, 10),
-    check_out: this.stayEnd.toISOString().slice(0, 10),
-    checkIn: this.stayStart.toISOString().slice(0, 10),
-    checkOut: this.stayEnd.toISOString().slice(0, 10),
-    guests: 2,
-    total_price: totalPrice,
-    totalPriceVnd: totalPrice,
-    payment_method: 'e_wallet',
-    status: 'CONFIRMED',
-    details: {
-      drawerKey,
-      roomName: activePoint?.roomName || rooms?.[0]?.room_name || 'Ocean Pool Pavilion',
-      priceDisplay: activePoint?.price || '',
-      stayNights: Math.max(1, this.stayNights || 1),
-      visitDate: this.visitDate.toISOString().slice(0, 10)
-    }
-  });
-}
+    this.store.submitDrawerBooking({
+      user_id: currentUser.id,
+      room_id: selectedRoomId,
+      hotel_id: activePoint?.hotel_id || null,
+      location_id: activePoint?.location_id || null,
+      venueId: activePoint?.venueId || null,
+      bookingType: `tripshorts_${drawerKey}`,
+      title: activePoint?.title || 'Đặt chỗ TripShorts',
+      location: activePoint?.location || '',
+      customerName: this.currentUserName,
+      check_in: this.stayStart.toISOString().slice(0, 10),
+      check_out: this.stayEnd.toISOString().slice(0, 10),
+      checkIn: this.stayStart.toISOString().slice(0, 10),
+      checkOut: this.stayEnd.toISOString().slice(0, 10),
+      guests: 2,
+      total_price: totalPrice,
+      totalPriceVnd: totalPrice,
+      payment_method: 'e_wallet',
+      status: 'CONFIRMED',
+      details: {
+        drawerKey,
+        roomName: activePoint?.roomName || rooms?.[0]?.room_name || 'Ocean Pool Pavilion',
+        priceDisplay: activePoint?.price || '',
+        stayNights: Math.max(1, this.stayNights || 1),
+        visitDate: this.visitDate.toISOString().slice(0, 10)
+      }
+    });
+  }
 
-// Đóng bảng để lướt tiếp video
-closeDrawer(): void {
-  this.isSlideDrawerOpen = false;
-  this.store.isDrawerOpen.set(false);
-}
+  // Đóng bảng để lướt tiếp video
+  closeDrawer(): void {
+    this.isSlideDrawerOpen = false;
+    this.store.isDrawerOpen.set(false);
+  }
 
   copyLinkAction(): void {
     this.store.copyLabelText.set('Đã Chép!');
