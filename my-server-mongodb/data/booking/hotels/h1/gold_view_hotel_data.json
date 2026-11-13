@@ -1,0 +1,193 @@
+{
+    "hotel_info": {
+        "name_vi": "Khách Sạn Gold View Đà Lạt",
+        "name_en": "Gold View Dalat Hotel",
+        "stars": 2,
+        "built_year": 2021,
+        "renovated_year": 2024,
+        "floors": 4,
+        "total_rooms": 23,
+        "address": "33 Đặng Thái Thân, Phường 3, Thành phố Đà Lạt, Tỉnh Lâm Đồng, Việt Nam",
+        "phone": "0798777783",
+        "email": "goldview@dalatity.org",
+        "rating_score": "8.5/10",
+        "rating_text": "Rất tốt",
+        "base_price_vnd": 485000
+    },
+    "location_attractions": [
+        {
+            "name": "Khu Du Lịch Lá Phong Đà Lạt",
+            "distance_m": 400
+        },
+        {
+            "name": "Cáp treo Đà Lạt",
+            "distance_m": 1500,
+            "note": "Khoảng 866m đường chim bay"
+        },
+        {
+            "name": "Hồ Xuân Hương",
+            "distance_m": 1500,
+            "note": "5 phút di chuyển"
+        },
+        {
+            "name": "Quảng trường Lâm Viên",
+            "distance_m": 1800
+        },
+        {
+            "name": "Nhà thờ Con Gà (Nhà thờ Chánh Tòa)",
+            "distance_m": 2000
+        },
+        {
+            "name": "Dinh 2 Bảo Đại",
+            "distance_m": 1000
+        },
+        {
+            "name": "Chợ Đà Lạt",
+            "distance_m": 2500,
+            "note": "7 phút di chuyển"
+        },
+        {
+            "name": "Vườn hoa Đà Lạt",
+            "distance_m": 3400
+        },
+        {
+            "name": "Sân bay Liên Khương (DLI)",
+            "distance_m": 27000
+        }
+    ],
+    "hotel_amenities": {
+        "general": [
+            "WiFi miễn phí toàn bộ khuôn viên",
+            "Thang máy",
+            "Quầy tiếp tân 24/24",
+            "Nhân viên đa ngôn ngữ",
+            "Phòng không hút thuốc",
+            "Khu vực hút thuốc riêng",
+            "Chỗ cất hành lý"
+        ],
+        "dining_relaxation": [
+            "Nhà hàng",
+            "Quán café tại sảnh",
+            "Quầy bar / Lounge",
+            "Sân thượng / Sân hiên ngắm cảnh",
+            "Sân vườn"
+        ],
+        "services": [
+            "Dịch vụ giặt ủi / giặt khô",
+            "Trả phòng nhanh (Express check-out)",
+            "Đưa đón sân bay (có phụ phí)",
+            "Cho thuê xe máy / xe hơi"
+        ],
+        "parking": [
+            "Bãi đậu xe tự phục vụ miễn phí",
+            "Bãi đậu xe an ninh"
+        ],
+        "accessibility": [
+            "Phù hợp xe lăn",
+            "Bảng chỉ dẫn chữ nổi cho người khiếm thị"
+        ]
+    },
+    "room_types": [
+        {
+            "id": "ROOM_001",
+            "name_vi": "Phòng Tiêu Chuẩn Giường Đôi",
+            "name_en": "Standard Double Room",
+            "area_sqm": 25,
+            "bed_type": "1 giường đôi lớn",
+            "capacity": "2 người lớn",
+            "amenities": [
+                "TV màn hình phẳng",
+                "Tủ lạnh nhỏ (Mini-bar)",
+                "Ấm đun nước điện",
+                "Máy sấy tóc",
+                "Bàn ủi",
+                "Phòng tắm riêng",
+                "Vòi sen phun mưa",
+                "Nước nóng 24/24",
+                "Đồ dùng cá nhân miễn phí"
+            ]
+        },
+        {
+            "id": "ROOM_002",
+            "name_vi": "Phòng Tiêu Chuẩn Giường Đôi Có Quạt Máy",
+            "name_en": "Standard Double Room with Fan",
+            "area_sqm": 25,
+            "bed_type": "1 giường đôi cực lớn",
+            "capacity": "2 người lớn",
+            "amenities": [
+                "Quạt máy",
+                "TV màn hình phẳng",
+                "Mini-bar",
+                "Ấm đun nước điện",
+                "Máy sấy tóc",
+                "Phòng tắm riêng"
+            ]
+        },
+        {
+            "id": "ROOM_003",
+            "name_vi": "Phòng Superior Giường Đôi Hướng Thung Lũng",
+            "name_en": "Superior Double Valley View",
+            "area_sqm": 25,
+            "bed_type": "1 giường đôi lớn",
+            "capacity": "2 người lớn",
+            "view": "Hướng thung lũng / núi",
+            "amenities": [
+                "View đẹp",
+                "TV màn hình phẳng",
+                "Mini-bar",
+                "Ấm đun nước điện",
+                "Máy sấy tóc",
+                "Phòng tắm riêng",
+                "Vòi sen phun mưa"
+            ]
+        },
+        {
+            "id": "ROOM_004",
+            "name_vi": "Phòng Premier Deluxe",
+            "name_en": "Premier Deluxe Room",
+            "area_sqm": 32,
+            "bed_type": "1 giường đôi cực lớn hoặc 2 giường đơn",
+            "capacity": "2 người lớn + 1 trẻ em",
+            "view": "Toàn cảnh thung lũng núi",
+            "amenities": [
+                "Ban công / Cửa sổ lớn",
+                "Sofa mini",
+                "TV thông minh",
+                "Mini-bar",
+                "Ấm đun nước",
+                "Máy sấy tóc",
+                "Bồn tắm hoặc vòi sen đứng"
+            ]
+        }
+    ],
+    "policies": {
+        "check_in": "14:00 - 23:30",
+        "check_out": "10:00 - 12:00",
+        "min_check_in_age": 18,
+        "pets": "Không cho phép mang theo vật nuôi",
+        "events": "Không tổ chức tiệc tùng / sự kiện trong phòng",
+        "payment_methods": [
+            "Tiền mặt",
+            "Thẻ tín dụng",
+            "Thẻ ghi nợ",
+            "Chuyển khoản"
+        ]
+    },
+    "featured_reviews": [
+        {
+            "author": "Khách hàng Traveloka",
+            "score": 9.2,
+            "comment": "Phòng sạch đẹp, view thung lũng cực chill và nhân viên thân thiện, nhiệt tình. Vị trí không quá xa trung tâm nhưng rất yên tĩnh."
+        },
+        {
+            "author": "Khách hàng Traveloka",
+            "score": 8.8,
+            "comment": "Phòng thoáng mát, có gu, đẹp hơn trong hình. Dịch vụ hỗ trợ tốt, trời lạnh nhưng chăn êm đệm ấm nên ngủ rất ngon."
+        },
+        {
+            "author": "Khách hàng Traveloka",
+            "score": 8.5,
+            "comment": "Vệ sinh phòng được đảm bảo sạch sẽ, gọn gàng, từ ban công phòng có thể phóng tầm mắt ngắm thung lũng núi tuyệt đẹp."
+        }
+    ]
+}

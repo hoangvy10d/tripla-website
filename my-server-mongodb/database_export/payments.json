@@ -1,0 +1,112 @@
+[
+  {
+    "_id": "673000000000000000000701",
+    "booking_id": "673000000000000000000601",
+    "payment_method": "credit_card",
+    "transaction_id": "TXN-AMANOI-20261110-001",
+    "amount": 75000000,
+    "payment_status": "completed",
+    "paid_at": "2026-11-10T08:02:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000702",
+    "booking_id": "673000000000000000000602",
+    "payment_method": "e_wallet",
+    "transaction_id": "TXN-SIXSENSES-20261110-002",
+    "amount": 46500000,
+    "payment_status": "completed",
+    "paid_at": "2026-11-10T09:18:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000703",
+    "booking_id": "673000000000000000000603",
+    "payment_method": "bank_transfer",
+    "transaction_id": "TXN-REGENT-20261110-003",
+    "amount": 17800000,
+    "payment_status": "completed",
+    "paid_at": "2026-11-10T10:05:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000704",
+    "booking_id": "673000000000000000000604",
+    "payment_method": "e_wallet",
+    "transaction_id": "TXN-INTERCON-20261110-004",
+    "amount": 22500000,
+    "payment_status": "completed",
+    "paid_at": "2026-11-10T11:32:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000705",
+    "booking_id": "673000000000000000000605",
+    "payment_method": "credit_card",
+    "transaction_id": "TXN-HIST-2026-201",
+    "amount": 96000000,
+    "payment_status": "completed",
+    "paid_at": "2026-09-01T08:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000706",
+    "booking_id": "673000000000000000000606",
+    "payment_method": "e_wallet",
+    "transaction_id": "TXN-HIST-2026-202",
+    "amount": 44500000,
+    "payment_status": "completed",
+    "paid_at": "2026-09-12T08:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000707",
+    "booking_id": "673000000000000000000607",
+    "payment_method": "credit_card",
+    "transaction_id": "TXN-HIST-2026-203",
+    "amount": 31000000,
+    "payment_status": "completed",
+    "paid_at": "2026-09-25T10:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000708",
+    "booking_id": "673000000000000000000608",
+    "payment_method": "e_wallet",
+    "transaction_id": "TXN-HIST-2026-204",
+    "amount": 26700000,
+    "payment_status": "completed",
+    "paid_at": "2026-10-01T09:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000709",
+    "booking_id": "673000000000000000000609",
+    "payment_method": "credit_card",
+    "transaction_id": "TXN-HIST-2026-205",
+    "amount": 17800000,
+    "payment_status": "completed",
+    "paid_at": "2026-10-10T14:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000710",
+    "booking_id": "673000000000000000000610",
+    "payment_method": "e_wallet",
+    "transaction_id": "TXN-HIST-2026-206",
+    "amount": 33750000,
+    "payment_status": "completed",
+    "paid_at": "2026-10-15T11:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000711",
+    "booking_id": "673000000000000000000611",
+    "payment_method": "credit_card",
+    "transaction_id": "TXN-HIST-2026-207",
+    "amount": 22500000,
+    "payment_status": "completed",
+    "paid_at": "2026-10-20T09:00:00.000Z",
+    "__v": 0
+  }
+]

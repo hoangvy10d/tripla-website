@@ -1,0 +1,13 @@
+{
+  "id": "b5",
+  "operator": "Inter Bus Lines",
+  "busNumber": "29B-501.29",
+  "origin": "Hà Nội",
+  "destination": "Sa Pa",
+  "departureTime": "22:00",
+  "arrivalTime": "04:00+1",
+  "price": 450000,
+  "classType": "Limousine 34 Phòng VIP",
+  "seatsAvailable": 32,
+  "rating": 4.9
+}

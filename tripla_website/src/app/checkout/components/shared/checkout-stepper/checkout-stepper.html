@@ -8,11 +8,11 @@
         }}</small></span
       >
     </li>
-    <li aria-disabled="true">
-      <span class="number">2</span><span>Thanh toán<small>Chưa triển khai</small></span>
+    <li [class.current]="detailsSaved()" [attr.aria-disabled]="!detailsSaved()">
+      <span class="number">2</span><span>Thanh toán<small>{{ detailsSaved() ? 'Đã xác nhận' : 'Bước tiếp theo' }}</small></span>
     </li>
-    <li aria-disabled="true">
-      <span class="number">3</span><span>Hoàn tất<small>Chưa có đặt chỗ</small></span>
+    <li [class.current]="detailsSaved()" [attr.aria-disabled]="!detailsSaved()">
+      <span class="number">3</span><span>Hoàn tất<small>{{ detailsSaved() ? 'Đã lưu vào hệ thống' : 'Chờ xác nhận' }}</small></span>
     </li>
   </ol>
 </nav>

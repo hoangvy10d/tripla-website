@@ -1,4 +1,4 @@
-﻿:host { display:block; font-family:var(--font-body,sans-serif); color:#173b32; }
+:host { display:block; font-family:var(--font-body,sans-serif); color:#173b32; }
 * { box-sizing:border-box; }
 .hotel-card { display:grid; grid-template-columns:174px minmax(0,1fr) 180px; gap:18px; padding:10px; background:#fffef9; border:1px solid #dce3d6; border-radius:20px; box-shadow:0 3px 14px #173b3204; transition:box-shadow .2s,border-color .2s; }
 .hotel-card:hover { border-color:#b6c5a9; box-shadow:0 8px 24px #173b320b; }
@@ -18,3 +18,9 @@ h3 { font:500 20px/1.3 var(--font-head,serif); margin:5px 0 8px; overflow-wrap:a
 .muted { color:#758171; font-size:11px; }
 @media(max-width:1150px) { .hotel-card { grid-template-columns:150px minmax(0,1fr); gap:14px; }.price { grid-column:2; border:0; border-top:1px solid #edf0e6; padding:10px 0 0; }.hotel-photo { grid-row:span 2; }.save-button { margin:0 0 5px; padding:3px 0; } }
 @media(max-width:600px) { .hotel-card { grid-template-columns:108px minmax(0,1fr); gap:12px; padding:9px; border-radius:17px; }.hotel-photo { min-height:158px; grid-row:1; border-radius:11px; }.photo-placeholder { min-height:158px; text-align:center; padding:8px; }.photo-badge { font-size:8px; left:5px; right:5px; padding:5px; }h3 { font-size:18px; }.hotel-info { padding:2px 0; }.price { grid-column:1/-1; display:grid; grid-template-columns:minmax(0,1fr) auto; text-align:left; gap:5px 12px; padding:10px 3px 2px; }.price>span,.price>strong,.price>small { grid-column:1; }.save-button { grid-column:2; grid-row:1; justify-self:end; }.details-link { grid-column:2; grid-row:2/4; margin:0; align-self:center; }.price strong { font-size:19px; }.address { font-size:10px; }.amenities span { font-size:8px; }.reviews { margin-top:10px; } }
+:host-context(.grid-view) .hotel-card { display:flex; flex-direction:column; height:100%; padding:12px; gap:12px; }
+:host-context(.grid-view) .hotel-photo { min-height:185px; height:185px; }
+:host-context(.grid-view) .hotel-info { flex:1; }
+:host-context(.grid-view) .price { border-left:0; border-top:1px solid #edf0e6; padding:10px 4px 2px; flex-direction:column; align-items:stretch; text-align:left; gap:4px; }
+:host-context(.grid-view) .save-button { justify-content:flex-start; padding:2px 0 6px; margin-bottom:0; }
+:host-context(.grid-view) .details-link { justify-content:center; margin-top:8px; }

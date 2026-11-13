@@ -1,6 +1,7 @@
 import { ActivityCategory } from './activity-search.model';
 export interface Activity {
   id: string;
+  slug?: string;
   name: string;
   city: string;
   categories: ActivityCategory[];

@@ -1,5 +1,6 @@
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   font-family: var(--font-body, sans-serif);
   color: #3b593b;
@@ -9,8 +10,10 @@
   box-sizing: border-box;
 }
 .bus-page {
+  width: 100%;
+  flex: 1 0 auto;
   max-width: 1240px;
-  margin: auto;
+  margin: 0 auto;
   padding: 20px 32px 65px;
 }
 .intro {

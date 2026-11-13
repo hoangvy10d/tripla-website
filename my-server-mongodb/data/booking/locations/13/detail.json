@@ -1,0 +1,16 @@
+{
+  "id": "13",
+  "title": "Hoa Lo Prison",
+  "city": "Hà Nội",
+  "lat": 21.0253,
+  "lng": 105.8464,
+  "category": "attraction",
+  "description": "A historic prison built by French colonists, ironically nicknamed the 'Hanoi Hilton' by American POWs.",
+  "images": [
+    "https://images.unsplash.com/photo-1540959733332-eab4deceeaf7?w=800&auto=format&fit=crop&q=60"
+  ],
+  "rating": 4.7,
+  "reviewsCount": 2300,
+  "ticketPrice": 30000,
+  "openingHours": "08:00 - 17:00"
+}

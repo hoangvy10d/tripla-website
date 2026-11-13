@@ -1,0 +1,15 @@
+{
+  "id": "p2",
+  "userId": "u1",
+  "locationId": "5",
+  "title": "Hidden Gem: Reply 1988 Cafe",
+  "content": "For all KDrama and coffee enthusiasts, this cafe is an absolute hidden gem in Da Nang! The signature egg coffee is incredibly rich.",
+  "image": "https://images.unsplash.com/photo-1498804103079-a6351b050096?w=800&auto=format&fit=crop&q=60",
+  "likes": 128,
+  "comments": [
+    {
+      "userId": "u2",
+      "content": "Their coconut coffee is also amazing!"
+    }
+  ]
+}

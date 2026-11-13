@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, inject, signal } from '@angular/core';
+import { Component, DestroyRef, OnInit, OnDestroy, inject, signal, NgZone, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
@@ -8,9 +8,10 @@ import { HotelSearchDraft } from '../../hotel-search/services/hotel-search-draft
 import { FlightSearchCriteria, CabinClass, flightCriteriaParams, validateFlightCriteria } from '../../flight-search/models/flight-search-criteria.model';
 import { defaultFlightFilters, flightFilterParams } from '../../flight-search/models/flight-filter.model';
 import { FlightSearchDraft } from '../../flight-search/services/flight-search-draft';
-import { Subject, takeUntil } from 'rxjs';
+import { Subject, catchError, of, takeUntil } from 'rxjs';
 
 import { TripShopService } from '../../services/trip-shop';
+import { TripShortService } from '../../services/trip-short.service';
 import { matchesDestination, popularVietnamDestinations, vietnamDestinations } from '../../models/vietnam-destinations';
 import { ActivityCategory, activityCategories, activitySearchParams } from '../../activity-search/models/activity-search.model';
 import { BusCriteria,busSearchParams,validateBusCriteria } from '../../bus-search/models/bus-search.model';
@@ -24,12 +25,14 @@ import {
 import { AuthService } from '../../services/auth-service';
 import { ParallaxDirective } from '../home/directives/parallax.directive';
 import { RevealDirective } from '../home/directives/reveal.directive';
+import { SiteHeaderComponent } from '../../shared/components/site-header/site-header';
+import { SiteFooterComponent } from '../../shared/components/site-footer/site-footer';
 
 
 @Component({
   selector: 'app-trip-shop',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink, ParallaxDirective, RevealDirective],
+  imports: [CommonModule, FormsModule, RouterLink, ParallaxDirective, RevealDirective, SiteHeaderComponent, SiteFooterComponent],
   templateUrl: './trip-shop.html',
   styleUrls: ['./trip-shop.css']
 })
@@ -114,7 +117,9 @@ export class TripShopComponent implements OnInit, OnDestroy {
   readonly busRoutes = [
     { from: 'Hồ Chí Minh', to: 'Đà Lạt' }, { from: 'Hồ Chí Minh', to: 'Nha Trang' },
     { from: 'Hồ Chí Minh', to: 'Đà Nẵng' }, { from: 'Hồ Chí Minh', to: 'Bình Thuận' },
-    { from: 'Hà Nội', to: 'Đà Nẵng' }, { from: 'Hà Nội', to: 'Ninh Bình' }
+    { from: 'Hà Nội', to: 'Đà Nẵng' }, { from: 'Hà Nội', to: 'Ninh Bình' },
+    { from: 'Hà Nội', to: 'Sa Pa' }, { from: 'Hà Nội', to: 'Hạ Long' },
+    { from: 'Đà Nẵng', to: 'Huế' }
   ];
   get busPassengers(): number { return this.busAdults + this.busInfants; }
   get busSuggestedCities(): string[] {
@@ -398,10 +403,71 @@ export class TripShopComponent implements OnInit, OnDestroy {
     this.calendarOpen = false;
   }
 
-  beginBooking(destination: string): void {
-    this.searchDestination = destination;
-    document.getElementById('tripshop-booking')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    document.getElementById('tripshop-destination')?.focus({ preventScroll: true });
+  /**
+   * "Đặt ngay" / "Xem Phòng Trống" / "Tìm kiếm" on catalog cards.
+   * Opens the matching hotel detail page (with the current dates & guests) when the card
+   * maps to a hotel in MongoDB; otherwise runs a hotel search for the card's city/destination.
+   */
+  beginBooking(destination: string, location = '', matchHotel = true): void {
+    this.selectBookingTab('hotel');
+    const hotel = matchHotel ? this.matchCatalogHotel(destination) : null;
+    const city = location.split(',').pop()?.trim() || (matchHotel ? '' : this.knownDestination(destination));
+    const resolvedLocation = hotel ? hotel.name : city || destination;
+
+    let checkIn = this.checkIn;
+    let checkOut = this.checkOut;
+    if (!(checkIn instanceof Date) || Number.isNaN(checkIn.getTime()) || checkIn < this.bookingToday) {
+      checkIn = this.bookingToday;
+    }
+    if (!(checkOut instanceof Date) || Number.isNaN(checkOut.getTime()) || checkOut <= checkIn) {
+      checkOut = new Date(checkIn.getFullYear(), checkIn.getMonth(), checkIn.getDate() + 2);
+    }
+
+    const criteria: HotelSearchCriteria = {
+      service: 'hotel',
+      location: resolvedLocation,
+      checkIn: localDateString(checkIn),
+      checkOut: localDateString(checkOut),
+      adults: Math.max(1, this.adults || 2),
+      children: Math.max(0, this.children || 0),
+      rooms: Math.max(1, this.rooms || 1),
+    };
+    this.hotelSearchError = '';
+    const queryParams = hotelSearchParams(criteria, { ...this.hotelFilters, accommodation: this.accommodationType });
+    if (hotel) {
+      void this.router.navigate(hotel.slug ? ['/hotel', hotel.slug] : ['/hotels', hotel.id], { queryParams });
+    } else {
+      void this.router.navigate(['/hotel-search'], { queryParams });
+    }
+  }
+
+  /** Maps a marketing title like "Thị Trấn Sương Mù Sapa" to a known destination ("Sa Pa"). */
+  private knownDestination(title: string): string {
+    const squash = (s: string) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/gi, 'd').toLowerCase().replace(/[^a-z0-9]/g, '');
+    const t = squash(title);
+    return vietnamDestinations.find((d) => t.includes(squash(d.name)))?.name || '';
+  }
+
+  private hotelCatalog: { id: string; slug?: string; name: string }[] = [];
+  private matchCatalogHotel(cardName: string): { id: string; slug?: string; name: string } | null {
+    const generic = new Set(['the', 'hotel', 'hotels', 'resort', 'villa', 'villas', 'spa', 'luxury', 'private', 'beach', 'bay', 'club', 'cliff', 'dining']);
+    const fold = (s: string) =>
+      s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/gi, 'd').toLowerCase().split(/[^a-z0-9]+/).filter((t) => t.length >= 2 && !generic.has(t));
+    const cardTokens = fold(cardName);
+    if (!cardTokens.length) return null;
+    const primary = cardTokens[0];
+    let best: { id: string; slug?: string; name: string } | null = null;
+    let bestScore = 0;
+    for (const h of this.hotelCatalog) {
+      const hTokens = fold(h.name);
+      if (!hTokens.includes(primary)) continue;
+      const overlap = cardTokens.filter((t) => hTokens.includes(t)).length;
+      if (overlap > bestScore) {
+        bestScore = overlap;
+        best = h;
+      }
+    }
+    return best;
   }
 
   // Flash Countdown Timer Properties
@@ -412,7 +478,11 @@ export class TripShopComponent implements OnInit, OnDestroy {
   private secondsLeft: number = 5 * 3600 + 24 * 60 + 12;
   private timerInterval: any;
   private destroy$ = new Subject<void>();
-readonly authService = inject(AuthService);
+  private readonly destroyRef = inject(DestroyRef);
+  private readonly ngZone = inject(NgZone);
+  private readonly cdr = inject(ChangeDetectorRef);
+  readonly authService = inject(AuthService);
+  private readonly tripShortService = inject(TripShortService);
   constructor(private tripShopService: TripShopService) {}
 openAuthModal(): void {
     this.authService.openAuthModal();
@@ -447,6 +517,10 @@ openAuthModal(): void {
       this.accommodationType = saved.filters.accommodation;
       this.hotelFilters = saved.filters;
     }
+    const queryDestination = this.route.snapshot.queryParamMap.get('destination');
+    if (queryDestination) {
+      this.searchDestination = queryDestination;
+    }
     this.fetchData();
     this.startCountdown();
   }
@@ -474,6 +548,65 @@ openAuthModal(): void {
         this.luxuryStays = data;
         this.filteredLuxuryStays = data;
       });
+
+    this.tripShortService.getVenues()
+      .pipe(
+        catchError(() => of(null)),
+        takeUntil(this.destroy$),
+      )
+      .subscribe(res => {
+        if (res?.tripShopCatalog) {
+          if (res.tripShopCatalog.flashDeals?.length) {
+            this.flashDeals = res.tripShopCatalog.flashDeals;
+          }
+          if (res.tripShopCatalog.destinations?.length) {
+            this.destinations = res.tripShopCatalog.destinations;
+          }
+          if (res.tripShopCatalog.luxuryStays?.length) {
+            this.luxuryStays = res.tripShopCatalog.luxuryStays;
+            this.filterCategory(this.activeCategory);
+          }
+        }
+      });
+
+    // Đồng bộ trực tiếp danh sách Hotels & Rooms chuẩn ERD từ GET /api/v1/hotels
+    this.tripShortService.getHotels()
+      .pipe(
+        catchError(() => of(null)),
+        takeUntil(this.destroy$),
+      )
+      .subscribe(res => {
+        if (Array.isArray(res?.items)) {
+          this.hotelCatalog = res.items
+            .map((h: any) => ({
+              id: String(h.id || h._id),
+              slug: h.hotel_slug ? String(h.hotel_slug) : undefined,
+              name: String(h.hotel_name || h.name || ''),
+            }))
+            .filter((h: { id: string; slug?: string; name: string }) => h.id && h.name);
+        }
+        if (Array.isArray(res?.items) && res.items.length > 0 && this.luxuryStays.length === 0) {
+          this.luxuryStays = res.items.map((h: any) => ({
+            id: h._id || h.id,
+            name: h.hotel_name || h.name,
+            category: 'resort',
+            location: h.address || h.city,
+            rating: Number(h.rating || 9.8),
+            ratingText: 'Tuyệt đỉnh',
+            reviewCount: Number(h.reviewCount || 420),
+            description: h.description || '',
+            videoCount: 18,
+            perks: h.perks || ['Bữa sáng miễn phí', 'Quản gia 24/7'],
+            specialOffer: h.specialOffer || 'Đặc quyền TRIPLA VIP',
+            roomType: h.rooms?.[0]?.room_name || h.rooms?.[0]?.name || 'Ocean Pool Pavilion',
+            originalPrice: Number(h.originalPrice || 21000000),
+            discountPrice: Number(h.price_per_night || h.pricePerNight || 15000000),
+            isBestSeller: true,
+            imageUrl: h.image_url || h.imageUrl || h.images?.[0]
+          }));
+          this.filterCategory(this.activeCategory);
+        }
+      });
   }
 
   setActiveNav(selectedItem: NavItem): void {
@@ -490,27 +623,45 @@ openAuthModal(): void {
     }
   }
 
+  newsletterNotice = '';
+
   subscribeNewsletter(event: Event): void {
     event.preventDefault();
-    if (this.newsletterEmail) {
-      alert(`Cảm ơn bạn (${this.newsletterEmail}) đã đăng ký nhận đặc quyền TripShop VIP!`);
-      this.newsletterEmail = '';
+    const email = this.newsletterEmail.trim();
+    if (!email || !email.includes('@')) {
+      this.newsletterNotice = 'Vui lòng nhập địa chỉ email hợp lệ để nhận mã ưu đãi 15%.';
+      return;
     }
+    this.newsletterNotice = `Đã đăng ký VIP cho ${email}! Mã ưu đãi của bạn: TRIPLA15VIP.`;
+    this.newsletterEmail = '';
   }
 
   private startCountdown(): void {
-    this.timerInterval = setInterval(() => {
-      if (this.secondsLeft > 0) {
-        this.secondsLeft--;
-        const hrs = Math.floor(this.secondsLeft / 3600);
-        const mins = Math.floor((this.secondsLeft % 3600) / 60);
-        const secs = this.secondsLeft % 60;
+    if (this.timerInterval) {
+      clearInterval(this.timerInterval);
+      this.timerInterval = null;
+    }
+    this.ngZone.runOutsideAngular(() => {
+      this.timerInterval = setInterval(() => {
+        if (this.secondsLeft > 0) {
+          this.secondsLeft--;
+          const hrs = Math.floor(this.secondsLeft / 3600);
+          const mins = Math.floor((this.secondsLeft % 3600) / 60);
+          const secs = this.secondsLeft % 60;
 
-        this.countdownHours = hrs.toString().padStart(2, '0');
-        this.countdownMinutes = mins.toString().padStart(2, '0');
-        this.countdownSeconds = secs.toString().padStart(2, '0');
+          this.countdownHours = hrs.toString().padStart(2, '0');
+          this.countdownMinutes = mins.toString().padStart(2, '0');
+          this.countdownSeconds = secs.toString().padStart(2, '0');
+          this.cdr.markForCheck();
+        }
+      }, 1000);
+    });
+    this.destroyRef.onDestroy(() => {
+      if (this.timerInterval) {
+        clearInterval(this.timerInterval);
+        this.timerInterval = null;
       }
-    }, 1000);
+    });
   }
 
   ngOnDestroy(): void {

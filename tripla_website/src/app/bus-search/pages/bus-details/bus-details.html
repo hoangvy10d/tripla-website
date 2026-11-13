@@ -1,36 +1,32 @@
 <div class="details-page">
   <app-activity-navigation activeService="bus" />
   <main>
-    <a class="back" routerLink="/bus-search" queryParamsHandling="preserve"
-      >← Quay lại danh sách chuyến xe</a
-    >
-    <p class="demo-note">
+    <a class="back" routerLink="/bus-search" queryParamsHandling="preserve">← Quay lại danh sách chuyến xe</a>
+    <p *ngIf="!isMongoConnected()" class="demo-note">
       BẢN XEM TRƯỚC · Sơ đồ ghế, giá và trạng thái ghế là minh họa. Không giữ chỗ hoặc đặt vé thực
       tế.
     </p>
     <p *ngIf="loading()" role="status">Đang tải thông tin chuyến xe…</p>
-    <ng-container *ngIf="details() as data; else unavailable"
-      ><section class="trip-header">
+    <ng-container *ngIf="details() as data; else unavailable">
+      <section class="trip-header">
         <span class="bus-mark material-symbols-outlined" aria-hidden="true">airport_shuttle</span>
         <div>
           <span class="eyebrow">CHUYẾN ĐI CỦA BẠN</span>
           <h1>{{ data.trip.operatorName }}</h1>
           <p>{{ data.trip.from }} <span aria-hidden="true">→</span> {{ data.trip.to }}</p>
           <div class="tags">
-            <span
-              >{{ data.trip.departureAt.slice(11, 16) }} – {{ data.trip.arrivalAt.slice(11, 16)
+            <span>{{ data.trip.departureAt.slice(11, 16) }} – {{ data.trip.arrivalAt.slice(11, 16)
               }}{{
-                data.trip.departureAt.slice(0, 10) !== data.trip.arrivalAt.slice(0, 10)
-                  ? ' (+1 ngày)'
-                  : ''
-              }}</span
-            ><span>{{ data.trip.vehicle }}</span
-            ><span>Biển số: {{ data.licensePlate || 'Chưa xác nhận' }}</span>
+              data.trip.departureAt.slice(0, 10) !== data.trip.arrivalAt.slice(0, 10)
+              ? ' (+1 ngày)'
+              : ''
+              }}</span><span>{{ data.trip.vehicle }}</span><span>Biển số: {{ data.licensePlate || 'Chưa xác nhận'
+              }}</span>
           </div>
         </div>
         <div class="header-price">
-          <small>Giá mẫu / ghế người lớn</small><strong>{{ money(data.trip.price) }}</strong
-          ><span>{{ data.trip.departureAt.slice(0, 10) | date: 'dd/MM/yyyy' }}</span>
+          <small>Giá mẫu / ghế người lớn</small><strong>{{ money(data.trip.price) }}</strong><span>{{
+            data.trip.departureAt.slice(0, 10) | date: 'dd/MM/yyyy' }}</span>
         </div>
       </section>
       <div class="layout">
@@ -44,40 +40,28 @@
             <span class="seat-count">{{ selected().length }}/{{ requiredSeats() }} ghế</span>
           </div>
           <div class="legend">
-            <span><i class="available"></i>Còn trống (mẫu)</span
-            ><span><i class="chosen"></i>Đang chọn</span
-            ><span><i class="unavailable"></i>Không chọn được</span>
+            <span><i class="available"></i>Còn trống (mẫu)</span><span><i class="chosen"></i>Đang chọn</span><span><i
+                class="unavailable"></i>Không chọn được</span>
           </div>
           <div class="deck-tabs" role="group" aria-label="Chọn tầng xe">
-            <button
-              *ngFor="let deck of decks"
-              type="button"
-              [class.active]="activeDeck() === deck"
-              [attr.aria-pressed]="activeDeck() === deck"
-              (click)="activeDeck.set(deck)"
-            >
+            <button *ngFor="let deck of decks" type="button" [class.active]="activeDeck() === deck"
+              [attr.aria-pressed]="activeDeck() === deck" (click)="activeDeck.set(deck)">
               Tầng {{ deck === 1 ? 'dưới' : 'trên' }}
             </button>
           </div>
           <div class="bus-outline">
             <div class="driver">
-              <span class="material-symbols-outlined" aria-hidden="true">steering_wheel_heat</span
-              ><span>ĐẦU XE · TÀI XẾ</span>
+              <span class="material-symbols-outlined" aria-hidden="true">steering_wheel_heat</span><span>ĐẦU XE · TÀI
+                XẾ</span>
             </div>
             <div class="seat-grid">
-              <button
-                *ngFor="let seat of seats()"
-                type="button"
-                class="seat"
-                [class.chosen]="selected().includes(seat.id)"
-                [disabled]="!seat.available"
+              <button *ngFor="let seat of seats()" type="button" class="seat"
+                [class.chosen]="selected().includes(seat.id)" [disabled]="!seat.available"
                 [attr.aria-pressed]="selected().includes(seat.id)"
                 [attr.aria-label]="'Ghế ' + seat.label + (seat.available ? '' : ' không chọn được')"
-                (click)="toggle(seat)"
-              >
-                <span class="material-symbols-outlined" aria-hidden="true"
-                  >airline_seat_recline_extra</span
-                >{{ seat.available ? seat.label : '×' }}
+                (click)="toggle(seat)">
+                <span class="material-symbols-outlined" aria-hidden="true">airline_seat_recline_extra</span>{{
+                seat.available ? seat.label : '×' }}
               </button>
             </div>
             <span class="rear">CUỐI XE</span>
@@ -111,17 +95,15 @@
             <div>
               <dt>Hành khách</dt>
               <dd>
-                {{ state()!.criteria.adults }} người lớn<span *ngIf="state()!.criteria.infants"
-                  >, {{ state()!.criteria.infants }} em bé</span
-                >
+                {{ state()!.criteria.adults }} người lớn<span *ngIf="state()!.criteria.infants">, {{
+                  state()!.criteria.infants }} em bé</span>
               </dd>
             </div>
             <div>
               <dt>Chỗ đã chọn</dt>
               <dd class="selected-labels">
-                <ng-container *ngIf="selectedSeats().length; else noSeat"
-                  ><span *ngFor="let seat of selectedSeats()">{{ seat.label }}</span></ng-container
-                ><ng-template #noSeat>Chưa chọn</ng-template>
+                <ng-container *ngIf="selectedSeats().length; else noSeat"><span *ngFor="let seat of selectedSeats()">{{
+                    seat.label }}</span></ng-container><ng-template #noSeat>Chưa chọn</ng-template>
               </dd>
             </div>
             <div>
@@ -137,26 +119,24 @@
             thuế/phí, phụ thu chờ nhà xe xác nhận.
           </p>
           <button type="button" class="primary" [disabled]="!canContinue()" (click)="startCheckout()">
-            Thanh toán <span aria-hidden="true">→</span></button
-          ><small class="hint">Chọn đủ {{ requiredSeats() }} ghế để tiếp tục.</small>
+            Thanh toán <span aria-hidden="true">→</span></button><small class="hint">Chọn đủ {{ requiredSeats() }} ghế
+            để tiếp tục.</small>
           <div *ngIf="continued()" class="confirmation" role="status">
             <strong>Đã ghi nhận lựa chọn mẫu</strong>
             <p>Chưa giữ ghế, đặt vé hoặc thanh toán. Bạn có thể tiếp tục thay đổi chỗ ngồi.</p>
-            <button
-              *ngIf="state()!.criteria.returnDate && state()!.leg === 'outbound'"
-              type="button"
-              (click)="chooseReturn()"
-            >
+            <button *ngIf="state()!.criteria.returnDate && state()!.leg === 'outbound'" type="button"
+              (click)="chooseReturn()">
               Xem các chuyến về →
             </button>
           </div>
         </aside>
-      </div></ng-container
-    ><ng-template #unavailable
-      ><section *ngIf="!loading()" class="not-found">
+      </div>
+    </ng-container><ng-template #unavailable>
+      <section *ngIf="!loading()" class="not-found">
         <h1>Chưa có thông tin chuyến xe</h1>
         <p>{{ error() || 'Liên kết không hợp lệ hoặc chuyến này không có trong dữ liệu mẫu.' }}</p>
-      </section></ng-template
-    >
+      </section>
+    </ng-template>
   </main>
 </div>
+<app-site-footer variant="compact" />

@@ -1,0 +1,617 @@
+<div class="profile-shell">
+  <!-- Unified TRIPLA Floating Header -->
+  <app-site-header
+    variant="floating"
+    positionMode="sticky"
+    activeNav="profile"
+    subBrand="Hồ sơ"
+  >
+    <ng-container header-actions>
+      <a routerLink="/trip-planning" class="btn-forest header-cta">
+        <span class="material-symbols-outlined">route</span>
+        <span>Lập Lịch Trình</span>
+      </a>
+      <a
+        routerLink="/creator"
+        class="btn-ivory-pill"
+        title="Creator Studio">
+        <span class="material-symbols-outlined">video_call</span>
+        <span class="cta-label">Creator Studio</span>
+      </a>
+    </ng-container>
+  </app-site-header>
+
+  <div *ngIf="toastMessage" class="toast-banner glass-botanical" role="status">
+    <span class="material-symbols-outlined">check_circle</span>
+    <span>{{ toastMessage }}</span>
+  </div>
+
+  <!-- Loading & Not-Found States -->
+  <main class="profile-container" *ngIf="isLoading && !user">
+    <section class="empty-box botanical-card">
+      <span class="material-symbols-outlined empty-icon">hourglass_top</span>
+      <h3>Đang đồng bộ dữ liệu hành trình...</h3>
+      <p>Hệ thống đang tải thông tin hồ sơ, đơn đặt chỗ và lịch trình từ MongoDB.</p>
+    </section>
+  </main>
+
+  <main class="profile-container" *ngIf="!isLoading && notFoundError && !user">
+    <section class="empty-box botanical-card">
+      <span class="material-symbols-outlined empty-icon">person_off</span>
+      <h3>Không tìm thấy hồ sơ thành viên</h3>
+      <p>Tài khoản hoặc liên kết hồ sơ bạn đang truy cập không tồn tại hoặc đã bị gỡ bỏ.</p>
+      <a routerLink="/home" class="btn-forest">Quay về Trang chủ</a>
+    </section>
+  </main>
+
+  <!-- MAIN CONTAINER -->
+  <main class="profile-container" *ngIf="user">
+    <!-- COVER + HERO IDENTITY -->
+    <section class="profile-header-card">
+      <div
+        class="profile-cover"
+        [style.backgroundImage]="'url(' + (user.coverImage || '/images/trangan.jpg') + ')'">
+        <div class="cover-overlay"></div>
+        <div class="cover-top-badge">
+          <span class="material-symbols-outlined">eco</span>
+          <span>{{ isOwnProfile ? 'KHÔNG GIAN HÀNH TRÌNH CÁ NHÂN' : 'HỒ SƠ CỘNG ĐỒNG TRIPLA' }}</span>
+        </div>
+        <div class="cover-actions">
+          <button
+            *ngIf="isOwnProfile && authService.isLoggedIn()"
+            type="button"
+            class="cover-pill"
+            (click)="openEditProfile()">
+            <span class="material-symbols-outlined">edit</span>
+            <span>Chỉnh sửa hồ sơ</span>
+          </button>
+          <a
+            *ngIf="user.role === 'admin' && isOwnProfile"
+            routerLink="/admin"
+            class="cover-pill is-admin-pill">
+            <span class="material-symbols-outlined">shield_person</span>
+            <span>Bảng điều khiển Admin</span>
+          </a>
+          <a routerLink="/creator" class="cover-pill is-forest-pill">
+            <span class="material-symbols-outlined">video_call</span>
+            <span>Creator Studio</span>
+          </a>
+          <button
+            *ngIf="isOwnProfile && authService.isLoggedIn()"
+            type="button"
+            class="cover-pill is-danger-pill"
+            (click)="logout()">
+            <span class="material-symbols-outlined">logout</span>
+            <span>Đăng xuất</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="profile-info-bar">
+        <div class="avatar-wrapper">
+          <img
+            *ngIf="user.avatar"
+            [src]="user.avatar"
+            [alt]="userDisplayName"
+            class="profile-avatar"
+            onerror="this.style.display='none'" />
+          <div *ngIf="!user.avatar" class="profile-avatar-fallback" aria-hidden="true">
+            {{ userInitials }}
+          </div>
+          <span class="level-badge">{{ user.level || user.membershipTier || 'Thành viên Mới' }}</span>
+        </div>
+
+        <div class="profile-identity">
+          <div class="name-row">
+            <h1>{{ userDisplayName }}</h1>
+            <span class="role-chip" [class.is-admin]="user.role === 'admin'">
+              {{
+                user.role === 'admin'
+                  ? 'Quản trị viên TRIPLA'
+                  : user.role === 'provider'
+                    ? 'Đối tác cung cấp'
+                    : 'Nhà du hành TRIPLA'
+              }}
+            </span>
+          </div>
+          <p class="handle-text">
+            {{ user.handle ? user.handle + ' · ' : '' }}{{ user.email }}
+            <span *ngIf="user.location"> · {{ user.location }}</span>
+          </p>
+          <p class="bio-text">
+            {{ user.bio || 'Thành viên chính thức của cộng đồng du lịch trải nghiệm TRIPLA.' }}
+          </p>
+        </div>
+
+        <div class="profile-stats-box">
+          <div class="stat-col">
+            <strong>{{ (user.followers ?? 0) | number }}</strong>
+            <span>Người theo dõi</span>
+          </div>
+          <div class="stat-col">
+            <strong>{{ (user.following ?? 0) | number }}</strong>
+            <span>Đang theo dõi</span>
+          </div>
+          <div class="stat-col highlight">
+            <strong>{{ (user.points ?? 0) | number }}</strong>
+            <span>Điểm thưởng</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2-COLUMN GRID -->
+    <div class="profile-grid">
+      <!-- LEFT SIDEBAR -->
+      <aside class="profile-sidebar">
+        <div class="sidebar-card">
+          <h3>Giới thiệu &amp; Liên hệ</h3>
+          <ul class="info-list">
+            <li>
+              <span class="material-symbols-outlined">location_on</span>
+              <span>
+                Khu vực: <strong>{{ user.location || 'Chưa cập nhật địa điểm' }}</strong>
+              </span>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">mail</span>
+              <span>{{ user.email || 'Chưa cập nhật email' }}</span>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">call</span>
+              <span>{{ user.phone_number || 'Chưa cập nhật số điện thoại' }}</span>
+            </li>
+            <li *ngIf="user.socials?.facebook">
+              <span class="material-symbols-outlined">public</span>
+              <span>fb.com/{{ user.socials.facebook }}</span>
+            </li>
+            <li *ngIf="user.socials?.instagram">
+              <span class="material-symbols-outlined">photo_camera</span>
+              <span>{{ user.socials.instagram }}</span>
+            </li>
+          </ul>
+
+          <div class="sidebar-section">
+            <h4>Hoạt động thực tế</h4>
+            <div class="quick-summary-grid">
+              <div class="quick-summary-cell">
+                <strong>{{ bookings.length }}</strong>
+                <span>Đơn đặt chỗ</span>
+              </div>
+              <div class="quick-summary-cell">
+                <strong>{{ tripPlans.length }}</strong>
+                <span>Lịch trình</span>
+              </div>
+              <div class="quick-summary-cell">
+                <strong>{{ savedTotalCount }}</strong>
+                <span>Đã lưu</span>
+              </div>
+              <div class="quick-summary-cell">
+                <strong>{{ contents.length }}</strong>
+                <span>Thước phim</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-section" *ngIf="user.interests?.length">
+            <h4>Sở thích du lịch</h4>
+            <div class="tags-wrap">
+              <span class="interest-tag" *ngFor="let tag of user.interests">{{ tag }}</span>
+            </div>
+          </div>
+
+          <div class="sidebar-section" *ngIf="user.badges?.length">
+            <h4>Huy hiệu đạt được</h4>
+            <div class="badges-grid">
+              <div class="badge-item" *ngFor="let b of user.badges">
+                <span class="badge-icon">{{ b.icon }}</span>
+                <span class="badge-name">{{ b.label || b.name }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT MAIN CONTENT -->
+      <section class="profile-main">
+        <div class="profile-tabs" role="tablist">
+          <button
+            type="button"
+            class="tab-btn"
+            [class.active]="activeTab === 'bookings'"
+            (click)="setTab('bookings')">
+            <span class="material-symbols-outlined">luggage</span>
+            <span>Chuyến đi &amp; Đặt chỗ ({{ bookings.length + tripPlans.length + myTrips.length }})</span>
+          </button>
+          <button
+            type="button"
+            class="tab-btn"
+            [class.active]="activeTab === 'saved'"
+            (click)="setTab('saved')">
+            <span class="material-symbols-outlined">bookmark</span>
+            <span>Đã lưu ({{ savedTotalCount }})</span>
+          </button>
+          <button
+            type="button"
+            class="tab-btn"
+            [class.active]="activeTab === 'posts'"
+            (click)="setTab('posts')">
+            <span class="material-symbols-outlined">movie</span>
+            <span>Bài viết &amp; Reels ({{ contents.length }})</span>
+          </button>
+          <button
+            type="button"
+            class="tab-btn"
+            [class.active]="activeTab === 'reviews'"
+            (click)="setTab('reviews')">
+            <span class="material-symbols-outlined">forum</span>
+            <span>Bình luận ({{ comments.length }})</span>
+          </button>
+          <button
+            *ngIf="isOwnProfile && authService.isLoggedIn()"
+            type="button"
+            class="tab-btn"
+            [class.active]="activeTab === 'notifications'"
+            (click)="setTab('notifications')">
+            <span class="material-symbols-outlined">notifications</span>
+            <span>Thông báo ({{ unreadNotificationsCount || notifications.length }})</span>
+          </button>
+        </div>
+
+        <!-- Inline Edit Profile Form -->
+        <section *ngIf="editProfileOpen && isOwnProfile" class="edit-profile-panel">
+          <h3>Cập nhật thông tin cá nhân</h3>
+          <div class="edit-form-grid">
+            <label>
+              <span>Họ và tên</span>
+              <input type="text" [(ngModel)]="editFullName" placeholder="Nhập họ và tên" />
+            </label>
+            <label>
+              <span>Số điện thoại</span>
+              <input type="text" [(ngModel)]="editPhone" placeholder="Ví dụ: 0909 123 456" />
+            </label>
+            <label>
+              <span>Khu vực sinh sống</span>
+              <input type="text" [(ngModel)]="editLocation" placeholder="Ví dụ: TP. Hồ Chí Minh, Việt Nam" />
+            </label>
+            <label class="full-span">
+              <span>Giới thiệu ngắn</span>
+              <textarea rows="2" [(ngModel)]="editBio" placeholder="Chia sẻ phong cách du lịch của bạn..."></textarea>
+            </label>
+          </div>
+          <div class="edit-form-actions">
+            <button type="button" class="btn-forest" [disabled]="savingProfile" (click)="saveProfile()">
+              {{ savingProfile ? 'Đang lưu...' : 'Lưu thay đổi' }}
+            </button>
+            <button type="button" class="btn-outline-sm" (click)="editProfileOpen = false">Hủy</button>
+          </div>
+        </section>
+
+        <!-- TAB 1: BOOKINGS & TRIP PLANS -->
+        <div class="tab-panel" *ngIf="activeTab === 'bookings'">
+          <div class="booking-filter-bar" *ngIf="isOwnProfile && authService.isLoggedIn()">
+            <button
+              type="button"
+              class="filter-pill"
+              [class.active]="bookingStatusFilter === 'all'"
+              (click)="setBookingStatusFilter('all')">
+              Tất cả
+            </button>
+            <button
+              type="button"
+              class="filter-pill"
+              [class.active]="bookingStatusFilter === 'pending'"
+              (click)="setBookingStatusFilter('pending')">
+              Chờ thanh toán
+            </button>
+            <button
+              type="button"
+              class="filter-pill"
+              [class.active]="bookingStatusFilter === 'confirmed'"
+              (click)="setBookingStatusFilter('confirmed')">
+              Đã xác nhận
+            </button>
+            <button
+              type="button"
+              class="filter-pill"
+              [class.active]="bookingStatusFilter === 'checked_in'"
+              (click)="setBookingStatusFilter('checked_in')">
+              Đang lưu trú
+            </button>
+            <button
+              type="button"
+              class="filter-pill"
+              [class.active]="bookingStatusFilter === 'checked_out'"
+              (click)="setBookingStatusFilter('checked_out')">
+              Hoàn tất
+            </button>
+            <button
+              type="button"
+              class="filter-pill"
+              [class.active]="bookingStatusFilter === 'cancelled'"
+              (click)="setBookingStatusFilter('cancelled')">
+              Đã hủy
+            </button>
+          </div>
+
+          <h3 class="panel-subtitle">Đơn đặt chỗ khách sạn &amp; dịch vụ ({{ bookings.length }})</h3>
+
+          <div *ngIf="bookings.length === 0" class="empty-box">
+            <span class="material-symbols-outlined empty-icon">hotel</span>
+            <p>Chưa có đơn đặt chỗ nào cho tài khoản này.</p>
+            <a routerLink="/trip-shop" class="btn-forest">Khám phá Khách sạn &amp; Dịch vụ</a>
+          </div>
+
+          <div class="booking-list">
+            <article class="booking-item-card" *ngFor="let b of bookings">
+              <img
+                [src]="b.hotel_id?.image_url || b.hotel_id?.images?.[0] || b.location_id?.image_url || '/images/trangan.jpg'"
+                class="booking-thumb"
+                [alt]="b.title || b.hotel_id?.hotel_name || 'Đặt chỗ TRIPLA'"
+                onerror="this.src='/images/trangan.jpg'" />
+              <div class="booking-body">
+                <div class="booking-top">
+                  <span class="booking-code-pill">#{{ b.booking_code || b.bookingCode || b._id }}</span>
+                  <span class="status-badge" [attr.data-status]="b.booking_status || 'confirmed'">
+                    {{ bookingStatusLabel(b.booking_status) }}
+                  </span>
+                </div>
+                <h4>{{ b.title || b.hotel_id?.hotel_name || b.location_id?.name || 'Đặt chỗ TRIPLA' }}</h4>
+                <p class="booking-meta">
+                  <span class="material-symbols-outlined meta-ico">location_on</span>
+                  {{ b.location || b.hotel_id?.address || 'Việt Nam' }}
+                  <span *ngIf="b.check_in">
+                    · {{ b.check_in | date:'dd/MM/yyyy' }} → {{ b.check_out | date:'dd/MM/yyyy' }}
+                  </span>
+                </p>
+                <div class="booking-bottom">
+                  <strong class="booking-price">{{ formatVnd(b.total_price || b.totalPriceVnd) }}</strong>
+                  <div class="booking-actions">
+                    <a
+                      *ngIf="b.booking_code || b.bookingCode"
+                      [routerLink]="['/bookings/detail', b.booking_code || b.bookingCode]"
+                      class="btn-outline-sm">
+                      Xem E-Voucher
+                    </a>
+                    <a
+                      *ngIf="b.hotel_id?._id || b.hotel_id?.hotel_slug"
+                      [routerLink]="b.hotel_id.hotel_slug ? ['/hotel', b.hotel_id.hotel_slug] : ['/hotels', b.hotel_id._id]"
+                      class="btn-outline-sm">
+                      Xem chỗ nghỉ
+                    </a>
+                    <button
+                      *ngIf="canCancelBooking(b.booking_status)"
+                      type="button"
+                      class="btn-danger-sm"
+                      (click)="cancelBooking(b.booking_code || b.bookingCode || b._id, b.title || b.hotel_id?.hotel_name || 'Đơn đặt chỗ')">
+                      Hủy đặt phòng
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <h3 class="panel-subtitle" style="margin-top: 28px;">Kế hoạch Lịch trình AI ({{ tripPlans.length }})</h3>
+          <div *ngIf="tripPlans.length === 0" class="empty-box compact">
+            <p>Chưa có kế hoạch lịch trình nào được lưu.</p>
+            <a routerLink="/trip-planning" class="btn-outline-sm">Mở Trip Planning</a>
+          </div>
+          <div class="booking-list" *ngIf="tripPlans.length > 0">
+            <article class="booking-item-card" *ngFor="let plan of tripPlans">
+              <div class="booking-body">
+                <div class="booking-top">
+                  <span class="booking-code-pill">TRIP PLAN</span>
+                  <span class="status-badge" data-status="confirmed">
+                    Ngân sách: {{ formatVnd(plan.estimated_budget) }}
+                  </span>
+                </div>
+                <h4>{{ plan.plan_name }}</h4>
+                <p class="booking-meta">{{ plan.note || 'Lịch trình cá nhân hóa đã đồng bộ MongoDB' }}</p>
+                <div class="booking-bottom">
+                  <span>{{ plan.start_date | date:'dd/MM/yyyy' }} – {{ plan.end_date | date:'dd/MM/yyyy' }}</span>
+                  <a
+                    routerLink="/trip-planning"
+                    [queryParams]="{ plan: plan._id, trip: plan._id }"
+                    class="btn-outline-sm">
+                    Mở trong Trip Planner
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <h3 *ngIf="myTrips.length > 0" class="panel-subtitle" style="margin-top: 28px;">
+            Chuyến đi đã xác nhận ({{ myTrips.length }})
+          </h3>
+          <div *ngIf="myTrips.length > 0" class="booking-list">
+            <article class="booking-item-card" *ngFor="let t of myTrips">
+              <div class="booking-body">
+                <div class="booking-top">
+                  <span class="booking-code-pill">MY TRIP</span>
+                  <span class="status-badge" data-status="confirmed">{{ t.trip_status }}</span>
+                </div>
+                <h4>{{ t.plan_id?.plan_name || 'Chuyến đi TRIPLA' }}</h4>
+                <p class="booking-meta" *ngIf="t.note">{{ t.note }}</p>
+                <div class="booking-bottom">
+                  <strong class="booking-price" *ngIf="t.plan_id?.estimated_budget !== undefined">
+                    {{ formatVnd(t.plan_id.estimated_budget) }}
+                  </strong>
+                  <a
+                    *ngIf="t.plan_id?._id"
+                    routerLink="/trip-planning"
+                    [queryParams]="{ plan: t.plan_id._id, trip: t.plan_id._id }"
+                    class="btn-outline-sm">
+                    Mở Trip Planner
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- TAB 2: SAVED WISHLISTS & BOOKMARKED REELS -->
+        <div class="tab-panel" *ngIf="activeTab === 'saved'">
+          <div *ngIf="wishlists.length === 0 && bookmarkedReels.length === 0" class="empty-box">
+            <span class="material-symbols-outlined empty-icon">bookmark_border</span>
+            <p>Bạn chưa lưu địa điểm hoặc thước phim nào.</p>
+            <div class="empty-actions">
+              <a routerLink="/map" class="btn-forest">Khám phá Bản đồ</a>
+              <a routerLink="/tripshort" class="btn-outline-sm">Xem TripShorts</a>
+            </div>
+          </div>
+
+          <ng-container *ngIf="wishlists.length > 0">
+            <h3 class="panel-subtitle">Địa điểm &amp; Chỗ nghỉ đã ghim vào kế hoạch ({{ wishlists.length }})</h3>
+            <div class="saved-grid">
+              <article class="saved-card" *ngFor="let w of wishlists">
+                <img
+                  [src]="w.location_id?.image_url || w.hotel_id?.image_url || '/images/Grassland.jpeg'"
+                  [alt]="w.location_id?.name || w.hotel_id?.hotel_name || 'Địa điểm TRIPLA'"
+                  onerror="this.src='/images/Grassland.jpeg'" />
+                <div class="saved-card-body">
+                  <span class="saved-cat">{{ w.location_id?.location_category || 'Điểm đến yêu thích' }}</span>
+                  <h4>{{ w.location_id?.name || w.hotel_id?.hotel_name || 'Địa điểm TRIPLA' }}</h4>
+                  <p>{{ w.location_id?.address || w.hotel_id?.address || 'Việt Nam' }}</p>
+                  <div class="saved-card-foot">
+                    <strong>{{ formatVnd(w.location_id?.entry_fee || w.hotel_id?.price_per_night || 0) }}</strong>
+                    <div class="saved-foot-actions">
+                      <a
+                        *ngIf="w.plan_id?._id"
+                        routerLink="/trip-planning"
+                        [queryParams]="{ plan: w.plan_id._id }"
+                        class="btn-outline-sm">
+                        Lịch trình
+                      </a>
+                      <a routerLink="/map" class="btn-outline-sm">Bản đồ</a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </ng-container>
+
+          <ng-container *ngIf="bookmarkedReels.length > 0">
+            <h3 class="panel-subtitle" style="margin-top: 24px;">
+              Thước phim đã lưu trên TripShorts ({{ bookmarkedReels.length }})
+            </h3>
+            <div class="reels-mini-grid">
+              <article class="reel-mini-card" *ngFor="let r of bookmarkedReels">
+                <div class="reel-mini-media">
+                  <video
+                    [src]="r.video_url || r.videoSrc"
+                    [poster]="r.image_url || '/images/trangan.jpg'"
+                    muted
+                    loop
+                    playsinline
+                    onmouseover="this.play()"
+                    onmouseout="this.pause()"></video>
+                  <span class="reel-views-badge">▶ {{ (r.stats?.views ?? 0) | number }}</span>
+                </div>
+                <div class="reel-mini-info">
+                  <h4>{{ r.content_title || r.title }}</h4>
+                  <p>{{ r.location_name || r.location || 'Việt Nam' }} · ❤️ {{ (r.stats?.likes ?? 0) | number }}</p>
+                  <a routerLink="/tripshort" class="btn-outline-sm">Mở trong TripShorts</a>
+                </div>
+              </article>
+            </div>
+          </ng-container>
+        </div>
+
+        <!-- TAB 3: REELS & POSTS -->
+        <div class="tab-panel" *ngIf="activeTab === 'posts'">
+          <div class="posts-header-bar">
+            <span>Tổng cộng {{ contents.length }} thước phim &amp; bài đăng cộng đồng</span>
+            <a routerLink="/creator" class="btn-forest">+ Đăng Video Reel mới</a>
+          </div>
+          <div *ngIf="contents.length === 0" class="empty-box">
+            <span class="material-symbols-outlined empty-icon">videocam_off</span>
+            <p>Chưa có thước phim hoặc bài đăng nào được tạo từ tài khoản này.</p>
+            <a routerLink="/tripshort" class="btn-outline-sm">Chia sẻ ngay tại TripShorts</a>
+          </div>
+          <div class="reels-mini-grid" *ngIf="contents.length > 0">
+            <article class="reel-mini-card" *ngFor="let c of contents">
+              <div class="reel-mini-media">
+                <video
+                  [src]="c.video_url || c.videoSrc"
+                  [poster]="c.image_url || '/images/trangan.jpg'"
+                  muted
+                  loop
+                  playsinline
+                  onmouseover="this.play()"
+                  onmouseout="this.pause()"></video>
+                <span class="reel-views-badge">▶ {{ (c.stats?.views ?? 0) | number }}</span>
+              </div>
+              <div class="reel-mini-info">
+                <h4>{{ c.content_title || c.title }}</h4>
+                <p>{{ c.location_name || c.location || 'Việt Nam' }} · ❤️ {{ (c.stats?.likes ?? 0) | number }}</p>
+                <a routerLink="/tripshort" class="btn-outline-sm">Mở trong TripShorts</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- TAB 4: REAL COMMENTS & REVIEWS FROM MONGODB -->
+        <div class="tab-panel" *ngIf="activeTab === 'reviews'">
+          <div *ngIf="comments.length === 0" class="empty-box">
+            <span class="material-symbols-outlined empty-icon">chat_bubble_outline</span>
+            <p>Chưa có bình luận hoặc đánh giá nào trên cộng đồng TRIPLA.</p>
+            <a routerLink="/tripshort" class="btn-forest">Khám phá &amp; Bình luận trên TripShorts</a>
+          </div>
+          <div class="review-list" *ngIf="comments.length > 0">
+            <article class="review-card" *ngFor="let cmt of comments">
+              <div class="review-head">
+                <strong>{{ cmt.contentTitle || 'Bài viết cộng đồng TRIPLA' }}</strong>
+                <span class="booking-code-pill">{{ cmt.locationName || 'TripShorts' }}</span>
+              </div>
+              <p>"{{ cmt.text }}"</p>
+              <div class="review-foot">
+                <span class="review-date">{{ cmt.createdAt | date:'dd/MM/yyyy HH:mm' }}</span>
+                <a routerLink="/tripshort" class="btn-outline-sm">Xem thước phim</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- TAB 5: NOTIFICATIONS -->
+        <div class="tab-panel" *ngIf="activeTab === 'notifications' && isOwnProfile && authService.isLoggedIn()">
+          <div class="posts-header-bar" style="margin-bottom: 14px;">
+            <span>Thông báo hệ thống ({{ unreadNotificationsCount }} chưa đọc)</span>
+            <button
+              *ngIf="unreadNotificationsCount > 0"
+              type="button"
+              class="btn-outline-sm"
+              (click)="markAllNotificationsRead()">
+              Đánh dấu tất cả đã đọc
+            </button>
+          </div>
+          <div *ngIf="notifications.length === 0" class="empty-box compact">
+            <p>Bạn chưa có thông báo mới nào.</p>
+          </div>
+          <div class="booking-list">
+            <article class="booking-item-card" *ngFor="let n of notifications" [style.opacity]="n.is_read ? 0.72 : 1">
+              <div class="booking-body">
+                <div class="booking-top">
+                  <span class="booking-code-pill">{{ n.type || 'SYSTEM' }}</span>
+                  <span class="status-badge" [attr.data-status]="n.is_read ? 'checked_out' : 'confirmed'">
+                    {{ n.is_read ? 'Đã đọc' : 'Mới' }}
+                  </span>
+                </div>
+                <h4>{{ n.title }}</h4>
+                <p class="booking-meta">{{ n.content }}</p>
+                <div class="booking-bottom">
+                  <span>{{ n.created_at | date:'dd/MM/yyyy HH:mm' }}</span>
+                  <button *ngIf="!n.is_read" type="button" class="btn-outline-sm" (click)="markNotificationRead(n._id)">
+                    Đánh dấu đã đọc
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <app-site-footer variant="full"></app-site-footer>
+</div>

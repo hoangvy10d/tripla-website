@@ -1,0 +1,183 @@
+{
+  "hotel_info": {
+    "name_vi": "Fusion Suites Saigon",
+    "name_en": "Fusion Suites Saigon",
+    "stars": 5,
+    "built_year": 2021,
+    "renovated_year": 2024,
+    "floors": 4,
+    "total_rooms": 23,
+    "address": "Số 8 Đường Trần Phú, Trung tâm, Hồ Chí Minh",
+    "phone": "0798777783",
+    "email": "goldview@dalatity.org",
+    "rating_score": "9.2/10",
+    "rating_text": "Tuyệt hảo",
+    "base_price_vnd": 2375000
+  },
+  "location_attractions": [
+    {
+      "name": "Khu Du Lịch Lá Phong Đà Lạt",
+      "distance_m": 400
+    },
+    {
+      "name": "Cáp treo Đà Lạt",
+      "distance_m": 1500,
+      "note": "Khoảng 866m đường chim bay"
+    },
+    {
+      "name": "Hồ Xuân Hương",
+      "distance_m": 1500,
+      "note": "5 phút di chuyển"
+    },
+    {
+      "name": "Quảng trường Lâm Viên",
+      "distance_m": 1800
+    },
+    {
+      "name": "Nhà thờ Con Gà (Nhà thờ Chánh Tòa)",
+      "distance_m": 2000
+    },
+    {
+      "name": "Dinh 2 Bảo Đại",
+      "distance_m": 1000
+    },
+    {
+      "name": "Chợ Đà Lạt",
+      "distance_m": 2500,
+      "note": "7 phút di chuyển"
+    },
+    {
+      "name": "Vườn hoa Đà Lạt",
+      "distance_m": 3400
+    },
+    {
+      "name": "Sân bay Liên Khương (DLI)",
+      "distance_m": 27000
+    }
+  ],
+  "hotel_amenities": {
+    "general": [
+      "WiFi miễn phí toàn bộ khuôn viên",
+      "Thang máy",
+      "Quầy tiếp tân 24/24",
+      "Nhân viên đa ngôn ngữ",
+      "Phòng không hút thuốc",
+      "Khu vực hút thuốc riêng",
+      "Chỗ cất hành lý"
+    ],
+    "dining_relaxation": [
+      "Nhà hàng",
+      "Quán café tại sảnh",
+      "Quầy bar / Lounge",
+      "Sân thượng / Sân hiên ngắm cảnh",
+      "Sân vườn"
+    ],
+    "services": [
+      "Dịch vụ giặt ủi / giặt khô",
+      "Trả phòng nhanh (Express check-out)",
+      "Đưa đón sân bay (có phụ phí)",
+      "Cho thuê xe máy / xe hơi"
+    ],
+    "parking": [
+      "Bãi đậu xe tự phục vụ miễn phí",
+      "Bãi đậu xe an ninh"
+    ],
+    "accessibility": [
+      "Phù hợp xe lăn",
+      "Bảng chỉ dẫn chữ nổi cho người khiếm thị"
+    ]
+  },
+  "room_types": [
+    {
+      "id": "room_0",
+      "name_vi": "Suite",
+      "name_en": "Suite",
+      "area_sqm": 36,
+      "bed_type": "1 giường đôi lớn",
+      "capacity": "2 người lớn",
+      "view": "Thành phố",
+      "price": 2375000,
+      "amenities": [
+        "Ban công",
+        "Điều hòa",
+        "TV màn hình phẳng",
+        "Minibar",
+        "Phòng tắm riêng"
+      ],
+      "images": []
+    },
+    {
+      "id": "room_1",
+      "name_vi": "Corner Suite",
+      "name_en": "Corner Suite",
+      "area_sqm": 26,
+      "bed_type": "2 giường đơn",
+      "capacity": "2 người lớn",
+      "view": "Thành phố",
+      "price": 3325000,
+      "amenities": [
+        "Ban công",
+        "Điều hòa",
+        "TV màn hình phẳng",
+        "Minibar",
+        "Phòng tắm riêng"
+      ],
+      "images": []
+    },
+    {
+      "id": "room_2",
+      "name_vi": "Family Suite",
+      "name_en": "Family Suite",
+      "area_sqm": 48,
+      "bed_type": "1 giường đôi lớn",
+      "capacity": "3 người lớn",
+      "view": "Hướng thung lũng / núi",
+      "price": 4275000,
+      "amenities": [
+        "Ban công",
+        "Điều hòa",
+        "TV màn hình phẳng",
+        "Minibar",
+        "Phòng tắm riêng"
+      ],
+      "images": []
+    }
+  ],
+  "policies": {
+    "check_in": "14:00 - 23:30",
+    "check_out": "10:00 - 12:00",
+    "min_check_in_age": 18,
+    "pets": "Không cho phép mang theo vật nuôi",
+    "events": "Không tổ chức tiệc tùng / sự kiện trong phòng",
+    "payment_methods": [
+      "Tiền mặt",
+      "Thẻ tín dụng",
+      "Thẻ ghi nợ",
+      "Chuyển khoản"
+    ]
+  },
+  "featured_reviews": [
+    {
+      "author": "Khách hàng Traveloka",
+      "score": 9.2,
+      "comment": "Phòng sạch đẹp, view thung lũng cực chill và nhân viên thân thiện, nhiệt tình. Vị trí không quá xa trung tâm nhưng rất yên tĩnh."
+    },
+    {
+      "author": "Khách hàng Traveloka",
+      "score": 8.8,
+      "comment": "Phòng thoáng mát, có gu, đẹp hơn trong hình. Dịch vụ hỗ trợ tốt, trời lạnh nhưng chăn êm đệm ấm nên ngủ rất ngon."
+    },
+    {
+      "author": "Khách hàng Traveloka",
+      "score": 8.5,
+      "comment": "Vệ sinh phòng được đảm bảo sạch sẽ, gọn gàng, từ ban công phòng có thể phóng tầm mắt ngắm thung lũng núi tuyệt đẹp."
+    }
+  ],
+  "images": [
+    "https://images.unsplash.com/photo-1568495248636-6432b97bd949?w=800&auto=format&fit=crop&q=60",
+    "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&auto=format&fit=crop&q=60",
+    "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&auto=format&fit=crop&q=60",
+    "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&auto=format&fit=crop&q=60",
+    "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&auto=format&fit=crop&q=60"
+  ]
+}

@@ -16,7 +16,7 @@
       </div>
     </div>
     <app-activity-search-bar [criteria]="criteria()" (search)="search($event)" />
-    <p class="demo-note">
+    <p *ngIf="!isMongoConnected()" class="demo-note">
       BẢN XEM TRƯỚC · Danh sách, ảnh, giá và đánh giá đều là dữ liệu minh họa. Chưa kết nối dữ liệu
       vé, giá hoặc lịch hoạt động.
     </p>
@@ -40,3 +40,4 @@
     </div>
   </main>
 </div>
+<app-site-footer variant="compact" />

@@ -1,0 +1,5028 @@
+[
+  {
+    "_id": "673000000000000000000801",
+    "code": "reel_yt_01",
+    "user_id": "673000000000000000000110",
+    "content_title": "Vietnam Timeless Charm — Vẻ đẹp bất tận Việt Nam 🇻🇳✨",
+    "content_description": "Hành trình chạm đến tinh hoa văn hóa, vịnh biển ngọc bích và nhịp sống thanh bình khắp dải đất hình chữ S.",
+    "caption": "Hành trình chạm đến tinh hoa văn hóa, vịnh biển ngọc bích và nhịp sống thanh bình khắp dải đất hình chữ S.",
+    "image_url": "https://img.youtube.com/vi/AYLnGs2n9Xg/maxresdefault.jpg",
+    "video_url": "https://youtu.be/AYLnGs2n9Xg",
+    "location_name": "Việt Nam",
+    "drawerKey": "resort",
+    "category": "trending",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000411",
+        "room_id": "673000000000000000000501",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d15"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000301",
+        "_id": "6af67f9df19f299713ce2d16"
+      },
+      {
+        "tag_type": "yacht",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "_id": "6af67f9df19f299713ce2d17"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000411",
+        "room_id": "673000000000000000000501",
+        "location_id": null,
+        "venueId": "673000000000000000000411",
+        "key": "resort",
+        "tag": "4 Sao Tuyệt Đỉnh • Phòng Tiêu chuẩn View Đồi Thông",
+        "title": "Nhà Bên Rừng",
+        "location": "Đà Lạt, Lâm Đồng",
+        "price": "850.000₫",
+        "unit": "/ đêm",
+        "rating": "9.2",
+        "reviews": "128",
+        "desc": "Phòng Tiêu chuẩn View Đồi Thông diện tích 28m², 1 giường đôi, bao gồm trà chiều & quản gia riêng.",
+        "img": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1000&q=80",
+        "image": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1000&q=80",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Phòng Tiêu chuẩn View Đồi Thông"
+          },
+          {
+            "icon": "spa",
+            "label": "Wi-Fi"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000301",
+        "venueId": "673000000000000000000301",
+        "key": "dining",
+        "tag": "Ẩm Thực Michelin Cliff",
+        "title": "The Cliff Dining Pavilion • Amanoi Vĩnh Hy",
+        "location": "Đỉnh Vách Đá Vịnh Vĩnh Hy, Vườn Quốc Gia Núi Chúa, Ninh Thuận",
+        "price": "4.200.000₫",
+        "unit": "/ thực khách",
+        "rating": "4.97",
+        "reviews": "342",
+        "desc": "Thực đơn 9 món Fine Dining Omakase & Hải sản địa phương kèm rượu vang Grand Cru trên vách đá nhìn thẳng ra vịnh Vĩnh Hy lúc hoàng hôn.",
+        "img": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "restaurant_menu",
+            "label": "Thực đơn degustation 9 món hải sản Vĩnh Hy"
+          },
+          {
+            "icon": "wine_bar",
+            "label": "Sommelier riêng & Rượu vang Grand Cru"
+          },
+          {
+            "icon": "wb_twilight",
+            "label": "Bàn vách đá riêng tư ngắm hoàng hôn"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "venueId": "673000000000000000000302",
+        "key": "yacht",
+        "tag": "Siêu Du Thuyền Riêng Tư",
+        "title": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+        "location": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+        "price": "18.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.99",
+        "reviews": "215",
+        "desc": "Hải trình 4 tiếng trên siêu du thuyền hai thân Catamaran 68ft riêng tư: Lặn ngắm san hô nguyên sinh, thưởng thức Champagne Dom Pérignon & Tôm hùm nướng.",
+        "img": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "sailing",
+            "label": "Thuê trọn gói Catamaran 68ft kèm Thuyền trưởng"
+          },
+          {
+            "icon": "liquor",
+            "label": "Champagne Dom Pérignon & Canapé thượng hạng"
+          },
+          {
+            "icon": "scuba_diving",
+            "label": "Thiết bị lặn biển & Seabob chuyên nghiệp"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 128500,
+      "likes": 24600,
+      "commentsCount": 520,
+      "bookmarks": 8900
+    },
+    "isLiked": false,
+    "isBookmarked": false,
+    "created_at": "2026-11-13T03:10:21.081Z",
+    "createdAt": "2026-11-13T03:10:21.081Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000802",
+    "code": "reel_yt_02",
+    "user_id": "673000000000000000000111",
+    "content_title": "VIETNAM | My Home — Bản hòa ca cảnh sắc & con người Việt Nam 🎶🏔️",
+    "content_description": "Thước phim âm nhạc và thị giác bùng nổ của Masew, MyoMouse & Nguyen Loi tôn vinh non sông gấm vóc quê hương.",
+    "caption": "Thước phim âm nhạc và thị giác bùng nổ của Masew, MyoMouse & Nguyen Loi tôn vinh non sông gấm vóc quê hương.",
+    "image_url": "https://img.youtube.com/vi/NSnkb1IAjbE/maxresdefault.jpg",
+    "video_url": "https://youtu.be/NSnkb1IAjbE",
+    "location_name": "Việt Nam",
+    "drawerKey": "resort",
+    "category": "trending",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000412",
+        "room_id": "673000000000000000000503",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d19"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000303",
+        "_id": "6af67f9df19f299713ce2d1a"
+      },
+      {
+        "tag_type": "yacht",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000304",
+        "_id": "6af67f9df19f299713ce2d1b"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000412",
+        "room_id": "673000000000000000000503",
+        "location_id": null,
+        "venueId": "673000000000000000000412",
+        "key": "resort",
+        "tag": "3 Sao Tuyệt Đỉnh • Phòng Tiêu chuẩn Sân Vườn",
+        "title": "An Nhiên Garden Stay",
+        "location": "Đà Lạt, Lâm Đồng",
+        "price": "620.000₫",
+        "unit": "/ đêm",
+        "rating": "8.7",
+        "reviews": "86",
+        "desc": "Phòng Tiêu chuẩn Sân Vườn diện tích 26m², 1 giường đôi, bao gồm trà chiều & quản gia riêng.",
+        "img": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+        "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Phòng Tiêu chuẩn Sân Vườn"
+          },
+          {
+            "icon": "spa",
+            "label": "Wi-Fi"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000303",
+        "venueId": "673000000000000000000303",
+        "key": "dining",
+        "tag": "Fine Dining Omakase",
+        "title": "Oku Contemporary Japanese & Salon de Boeuf",
+        "location": "Bãi Trường, Regent Phú Quốc, Tỉnh Kiên Giang",
+        "price": "3.800.000₫",
+        "unit": "/ thực khách",
+        "rating": "4.96",
+        "reviews": "290",
+        "desc": "Không gian ẩm thực Nhật - Pháp đương đại với bò Wagyu A5 Miyazaki nướng than Binchotan và quầy Omakase trực diện biển Phú Quốc.",
+        "img": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "set_meal",
+            "label": "Wagyu A5 Miyazaki & Omakase 12 món"
+          },
+          {
+            "icon": "local_bar",
+            "label": "Cocktail thủ công tại Bar Jade"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000304",
+        "venueId": "673000000000000000000304",
+        "key": "yacht",
+        "tag": "Du Thuyền Di Sản",
+        "title": "Du Thuyền Serenity Emperor 5 Sao Vịnh Hạ Long & Lan Hạ",
+        "location": "Cảng Tàu Khách Quốc Tế Tuần Châu, Hạ Long, Quảng Ninh",
+        "price": "14.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.95",
+        "reviews": "418",
+        "desc": "Du ngoạn vịnh di sản trên siêu du thuyền Serenity với bể sục Jacuzzi trên boong thượng, chèo Kayak hang Sáng Tối và tiệc tối dưới ánh nến.",
+        "img": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "directions_boat",
+            "label": "Hải trình riêng qua Vịnh Lan Hạ & Hang Sáng Tối"
+          },
+          {
+            "icon": "hot_tub",
+            "label": "Bể sục Jacuzzi vô cực ngắm hoàng hôn"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 342000,
+      "likes": 58200,
+      "commentsCount": 1420,
+      "bookmarks": 16500
+    },
+    "isLiked": false,
+    "isBookmarked": false,
+    "created_at": "2026-11-13T02:10:21.081Z",
+    "createdAt": "2026-11-13T02:10:21.081Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000803",
+    "code": "reel_yt_03",
+    "user_id": "673000000000000000000112",
+    "content_title": "Vịnh Hạ Long 4K — Tuyệt tác đá vôi & biển ngọc di sản UNESCO 🛳️🌊",
+    "content_description": "Chiêm ngưỡng toàn cảnh kỳ quan thiên nhiên thế giới Vịnh Hạ Long từ trên cao, len lỏi giữa hàng nghìn đảo đá vôi kỳ vĩ.",
+    "caption": "Chiêm ngưỡng toàn cảnh kỳ quan thiên nhiên thế giới Vịnh Hạ Long từ trên cao, len lỏi giữa hàng nghìn đảo đá vôi kỳ vĩ.",
+    "image_url": "https://img.youtube.com/vi/vt9OL_sJ5gA/maxresdefault.jpg",
+    "video_url": "https://youtu.be/vt9OL_sJ5gA",
+    "location_name": "Hạ Long, Quảng Ninh",
+    "drawerKey": "yacht",
+    "category": "for-you",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000413",
+        "room_id": "673000000000000000000505",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d1d"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000301",
+        "_id": "6af67f9df19f299713ce2d1e"
+      },
+      {
+        "tag_type": "yacht",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "_id": "6af67f9df19f299713ce2d1f"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000413",
+        "room_id": "673000000000000000000505",
+        "location_id": null,
+        "venueId": "673000000000000000000413",
+        "key": "resort",
+        "tag": "4 Sao Tuyệt Đỉnh • Phòng Tiêu chuẩn Hướng Biển",
+        "title": "Gió Biển Retreat Đà Nẵng",
+        "location": "Bán đảo Sơn Trà, Đà Nẵng",
+        "price": "1.250.000₫",
+        "unit": "/ đêm",
+        "rating": "9.1",
+        "reviews": "204",
+        "desc": "Phòng Tiêu chuẩn Hướng Biển diện tích 32m², 1 giường đôi, bao gồm trà chiều & quản gia riêng.",
+        "img": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1000&q=80",
+        "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1000&q=80",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Phòng Tiêu chuẩn Hướng Biển"
+          },
+          {
+            "icon": "spa",
+            "label": "Wi-Fi"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000301",
+        "venueId": "673000000000000000000301",
+        "key": "dining",
+        "tag": "Ẩm Thực Michelin Cliff",
+        "title": "The Cliff Dining Pavilion • Amanoi Vĩnh Hy",
+        "location": "Đỉnh Vách Đá Vịnh Vĩnh Hy, Vườn Quốc Gia Núi Chúa, Ninh Thuận",
+        "price": "4.200.000₫",
+        "unit": "/ thực khách",
+        "rating": "4.97",
+        "reviews": "342",
+        "desc": "Thực đơn 9 món Fine Dining Omakase & Hải sản địa phương kèm rượu vang Grand Cru trên vách đá nhìn thẳng ra vịnh Vĩnh Hy lúc hoàng hôn.",
+        "img": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "restaurant_menu",
+            "label": "Thực đơn degustation 9 món hải sản Vĩnh Hy"
+          },
+          {
+            "icon": "wine_bar",
+            "label": "Sommelier riêng & Rượu vang Grand Cru"
+          },
+          {
+            "icon": "wb_twilight",
+            "label": "Bàn vách đá riêng tư ngắm hoàng hôn"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "venueId": "673000000000000000000302",
+        "key": "yacht",
+        "tag": "Siêu Du Thuyền Riêng Tư",
+        "title": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+        "location": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+        "price": "18.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.99",
+        "reviews": "215",
+        "desc": "Hải trình 4 tiếng trên siêu du thuyền hai thân Catamaran 68ft riêng tư: Lặn ngắm san hô nguyên sinh, thưởng thức Champagne Dom Pérignon & Tôm hùm nướng.",
+        "img": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "sailing",
+            "label": "Thuê trọn gói Catamaran 68ft kèm Thuyền trưởng"
+          },
+          {
+            "icon": "liquor",
+            "label": "Champagne Dom Pérignon & Canapé thượng hạng"
+          },
+          {
+            "icon": "scuba_diving",
+            "label": "Thiết bị lặn biển & Seabob chuyên nghiệp"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 195000,
+      "likes": 31200,
+      "commentsCount": 680,
+      "bookmarks": 9400
+    },
+    "isLiked": false,
+    "isBookmarked": false,
+    "created_at": "2026-11-13T01:10:21.081Z",
+    "createdAt": "2026-11-13T01:10:21.081Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000804",
+    "code": "reel_yt_04",
+    "user_id": "673000000000000000000113",
+    "content_title": "Kỳ quan Sơn Đoòng — Khám phá hang động lớn nhất hành tinh ⛰️🔦",
+    "content_description": "Thám hiểm thế giới ngầm kỳ ảo trong lòng Vườn Quốc Gia Phong Nha - Kẻ Bàng, nơi có mây trôi và rừng rậm nguyên sinh.",
+    "caption": "Thám hiểm thế giới ngầm kỳ ảo trong lòng Vườn Quốc Gia Phong Nha - Kẻ Bàng, nơi có mây trôi và rừng rậm nguyên sinh.",
+    "image_url": "https://img.youtube.com/vi/og_1u8RFmuI/maxresdefault.jpg",
+    "video_url": "https://youtu.be/og_1u8RFmuI",
+    "location_name": "Phong Nha, Quảng Bình",
+    "drawerKey": "resort",
+    "category": "for-you",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000414",
+        "room_id": "673000000000000000000507",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d21"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000303",
+        "_id": "6af67f9df19f299713ce2d22"
+      },
+      {
+        "tag_type": "yacht",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000304",
+        "_id": "6af67f9df19f299713ce2d23"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000414",
+        "room_id": "673000000000000000000507",
+        "location_id": null,
+        "venueId": "673000000000000000000414",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Phòng Ocean Suite Tiêu chuẩn",
+        "title": "Đảo Xanh Resort Phú Quốc",
+        "location": "Bãi Trường, Phú Quốc, Kiên Giang",
+        "price": "2.100.000₫",
+        "unit": "/ đêm",
+        "rating": "9.4",
+        "reviews": "312",
+        "desc": "Phòng Ocean Suite Tiêu chuẩn diện tích 45m², 1 giường đôi, bao gồm trà chiều & quản gia riêng.",
+        "img": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1000&q=80",
+        "image": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1000&q=80",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Phòng Ocean Suite Tiêu chuẩn"
+          },
+          {
+            "icon": "spa",
+            "label": "Wi-Fi"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000303",
+        "venueId": "673000000000000000000303",
+        "key": "dining",
+        "tag": "Fine Dining Omakase",
+        "title": "Oku Contemporary Japanese & Salon de Boeuf",
+        "location": "Bãi Trường, Regent Phú Quốc, Tỉnh Kiên Giang",
+        "price": "3.800.000₫",
+        "unit": "/ thực khách",
+        "rating": "4.96",
+        "reviews": "290",
+        "desc": "Không gian ẩm thực Nhật - Pháp đương đại với bò Wagyu A5 Miyazaki nướng than Binchotan và quầy Omakase trực diện biển Phú Quốc.",
+        "img": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "set_meal",
+            "label": "Wagyu A5 Miyazaki & Omakase 12 món"
+          },
+          {
+            "icon": "local_bar",
+            "label": "Cocktail thủ công tại Bar Jade"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000304",
+        "venueId": "673000000000000000000304",
+        "key": "yacht",
+        "tag": "Du Thuyền Di Sản",
+        "title": "Du Thuyền Serenity Emperor 5 Sao Vịnh Hạ Long & Lan Hạ",
+        "location": "Cảng Tàu Khách Quốc Tế Tuần Châu, Hạ Long, Quảng Ninh",
+        "price": "14.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.95",
+        "reviews": "418",
+        "desc": "Du ngoạn vịnh di sản trên siêu du thuyền Serenity với bể sục Jacuzzi trên boong thượng, chèo Kayak hang Sáng Tối và tiệc tối dưới ánh nến.",
+        "img": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "directions_boat",
+            "label": "Hải trình riêng qua Vịnh Lan Hạ & Hang Sáng Tối"
+          },
+          {
+            "icon": "hot_tub",
+            "label": "Bể sục Jacuzzi vô cực ngắm hoàng hôn"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 248000,
+      "likes": 45000,
+      "commentsCount": 890,
+      "bookmarks": 12200
+    },
+    "isLiked": false,
+    "isBookmarked": false,
+    "created_at": "2026-11-13T00:10:21.081Z",
+    "createdAt": "2026-11-13T00:10:21.081Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000805",
+    "code": "reel_yt_05",
+    "user_id": "673000000000000000000114",
+    "content_title": "Thung lũng thác nước Lauterbrunnen đẹp như cổ tích Thụy Sĩ 🇨🇭🏞️",
+    "content_description": "Lạc bước vào thiên đường giữa trần gian với 72 ngọn thác đổ từ vách đá dựng đứng giữa thung lũng tuyết trắng Thụy Sĩ.",
+    "caption": "Lạc bước vào thiên đường giữa trần gian với 72 ngọn thác đổ từ vách đá dựng đứng giữa thung lũng tuyết trắng Thụy Sĩ.",
+    "image_url": "https://img.youtube.com/vi/Ux2zKPR6RD0/hqdefault.jpg",
+    "video_url": "https://youtube.com/shorts/Ux2zKPR6RD0",
+    "location_name": "Lauterbrunnen, Thụy Sĩ",
+    "drawerKey": "resort",
+    "category": "latest",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000401",
+        "room_id": "673000000000000000000509",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d25"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000301",
+        "_id": "6af67f9df19f299713ce2d26"
+      },
+      {
+        "tag_type": "yacht",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "_id": "6af67f9df19f299713ce2d27"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000401",
+        "room_id": "673000000000000000000509",
+        "location_id": null,
+        "venueId": "673000000000000000000401",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Ocean Pavilion",
+        "title": "Amanoi Ocean Pool Residence",
+        "location": "Vịnh Vĩnh Hy, Ninh Thuận",
+        "price": "25.000.000₫",
+        "unit": "/ đêm",
+        "rating": "9.9",
+        "reviews": "328",
+        "desc": "Ocean Pavilion diện tích 95m², 1 giường King, bao gồm trà chiều & quản gia riêng.",
+        "img": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1000&q=80",
+        "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1000&q=80",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Ocean Pavilion"
+          },
+          {
+            "icon": "spa",
+            "label": "Wi-Fi"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000301",
+        "venueId": "673000000000000000000301",
+        "key": "dining",
+        "tag": "Ẩm Thực Michelin Cliff",
+        "title": "The Cliff Dining Pavilion • Amanoi Vĩnh Hy",
+        "location": "Đỉnh Vách Đá Vịnh Vĩnh Hy, Vườn Quốc Gia Núi Chúa, Ninh Thuận",
+        "price": "4.200.000₫",
+        "unit": "/ thực khách",
+        "rating": "4.97",
+        "reviews": "342",
+        "desc": "Thực đơn 9 món Fine Dining Omakase & Hải sản địa phương kèm rượu vang Grand Cru trên vách đá nhìn thẳng ra vịnh Vĩnh Hy lúc hoàng hôn.",
+        "img": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "restaurant_menu",
+            "label": "Thực đơn degustation 9 món hải sản Vĩnh Hy"
+          },
+          {
+            "icon": "wine_bar",
+            "label": "Sommelier riêng & Rượu vang Grand Cru"
+          },
+          {
+            "icon": "wb_twilight",
+            "label": "Bàn vách đá riêng tư ngắm hoàng hôn"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "venueId": "673000000000000000000302",
+        "key": "yacht",
+        "tag": "Siêu Du Thuyền Riêng Tư",
+        "title": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+        "location": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+        "price": "18.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.99",
+        "reviews": "215",
+        "desc": "Hải trình 4 tiếng trên siêu du thuyền hai thân Catamaran 68ft riêng tư: Lặn ngắm san hô nguyên sinh, thưởng thức Champagne Dom Pérignon & Tôm hùm nướng.",
+        "img": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "sailing",
+            "label": "Thuê trọn gói Catamaran 68ft kèm Thuyền trưởng"
+          },
+          {
+            "icon": "liquor",
+            "label": "Champagne Dom Pérignon & Canapé thượng hạng"
+          },
+          {
+            "icon": "scuba_diving",
+            "label": "Thiết bị lặn biển & Seabob chuyên nghiệp"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 88000,
+      "likes": 16500,
+      "commentsCount": 310,
+      "bookmarks": 4200
+    },
+    "isLiked": false,
+    "isBookmarked": false,
+    "created_at": "2026-11-12T23:10:21.082Z",
+    "createdAt": "2026-11-12T23:10:21.082Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000806",
+    "code": "reel_yt_06",
+    "user_id": "673000000000000000000110",
+    "content_title": "Chinh phục đại ngàn & hồ băng xanh ngắt tại Canada 🇨🇦🌲",
+    "content_description": "Hải trình trekking xuyên qua những cánh rừng thông ngút ngàn và mặt hồ màu ngọc bích phẳng lặng như gương tại Canada.",
+    "caption": "Hải trình trekking xuyên qua những cánh rừng thông ngút ngàn và mặt hồ màu ngọc bích phẳng lặng như gương tại Canada.",
+    "image_url": "https://img.youtube.com/vi/pWpNAEvTOb8/hqdefault.jpg",
+    "video_url": "https://youtube.com/shorts/pWpNAEvTOb8",
+    "location_name": "British Columbia, Canada",
+    "drawerKey": "dining",
+    "category": "latest",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000405",
+        "room_id": "673000000000000000000511",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d29"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000303",
+        "_id": "6af67f9df19f299713ce2d2a"
+      },
+      {
+        "tag_type": "yacht",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000304",
+        "_id": "6af67f9df19f299713ce2d2b"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000405",
+        "room_id": "673000000000000000000511",
+        "location_id": null,
+        "venueId": "673000000000000000000405",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Premier Suite",
+        "title": "Capella Hanoi Opera Boutique",
+        "location": "Hoàn Kiếm, Hà Nội",
+        "price": "8.900.000₫",
+        "unit": "/ đêm",
+        "rating": "9.8",
+        "reviews": "289",
+        "desc": "Premier Suite diện tích 48m², 1 giường King, bao gồm trà chiều & quản gia riêng.",
+        "img": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+        "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Premier Suite"
+          },
+          {
+            "icon": "spa",
+            "label": "Wi-Fi"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000303",
+        "venueId": "673000000000000000000303",
+        "key": "dining",
+        "tag": "Fine Dining Omakase",
+        "title": "Oku Contemporary Japanese & Salon de Boeuf",
+        "location": "Bãi Trường, Regent Phú Quốc, Tỉnh Kiên Giang",
+        "price": "3.800.000₫",
+        "unit": "/ thực khách",
+        "rating": "4.96",
+        "reviews": "290",
+        "desc": "Không gian ẩm thực Nhật - Pháp đương đại với bò Wagyu A5 Miyazaki nướng than Binchotan và quầy Omakase trực diện biển Phú Quốc.",
+        "img": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "set_meal",
+            "label": "Wagyu A5 Miyazaki & Omakase 12 món"
+          },
+          {
+            "icon": "local_bar",
+            "label": "Cocktail thủ công tại Bar Jade"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000304",
+        "venueId": "673000000000000000000304",
+        "key": "yacht",
+        "tag": "Du Thuyền Di Sản",
+        "title": "Du Thuyền Serenity Emperor 5 Sao Vịnh Hạ Long & Lan Hạ",
+        "location": "Cảng Tàu Khách Quốc Tế Tuần Châu, Hạ Long, Quảng Ninh",
+        "price": "14.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.95",
+        "reviews": "418",
+        "desc": "Du ngoạn vịnh di sản trên siêu du thuyền Serenity với bể sục Jacuzzi trên boong thượng, chèo Kayak hang Sáng Tối và tiệc tối dưới ánh nến.",
+        "img": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "directions_boat",
+            "label": "Hải trình riêng qua Vịnh Lan Hạ & Hang Sáng Tối"
+          },
+          {
+            "icon": "hot_tub",
+            "label": "Bể sục Jacuzzi vô cực ngắm hoàng hôn"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 76000,
+      "likes": 14200,
+      "commentsCount": 280,
+      "bookmarks": 3900
+    },
+    "isLiked": false,
+    "isBookmarked": false,
+    "created_at": "2026-11-12T22:10:21.082Z",
+    "createdAt": "2026-11-12T22:10:21.082Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000807",
+    "code": "reel_yt_07",
+    "user_id": "673000000000000000000111",
+    "content_title": "Mùa đông tuyết trắng xứ thần tiên tại Vườn Quốc Gia Banff ❄️🏔️",
+    "content_description": "Khoảnh khắc yên bình đến nghẹt thở khi cả thị trấn Banff chìm trong lớp tuyết mịn màng giữa rặng núi Rocky hùng vĩ.",
+    "caption": "Khoảnh khắc yên bình đến nghẹt thở khi cả thị trấn Banff chìm trong lớp tuyết mịn màng giữa rặng núi Rocky hùng vĩ.",
+    "image_url": "https://img.youtube.com/vi/OP5JtPSfP0g/hqdefault.jpg",
+    "video_url": "https://youtube.com/shorts/OP5JtPSfP0g",
+    "location_name": "Banff National Park, Canada",
+    "drawerKey": "resort",
+    "category": "for-you",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000406",
+        "room_id": "673000000000000000000512",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d2d"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000301",
+        "_id": "6af67f9df19f299713ce2d2e"
+      },
+      {
+        "tag_type": "yacht",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "_id": "6af67f9df19f299713ce2d2f"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000406",
+        "room_id": "673000000000000000000512",
+        "location_id": null,
+        "venueId": "673000000000000000000406",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Classic King Săn Mây",
+        "title": "Hotel de la Coupole - MGallery Sapa",
+        "location": "Thị xã Sa Pa, Lào Cai",
+        "price": "5.400.000₫",
+        "unit": "/ đêm",
+        "rating": "9.6",
+        "reviews": "518",
+        "desc": "Classic King Săn Mây diện tích 36m², 1 giường King, bao gồm trà chiều & quản gia riêng.",
+        "img": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1000&q=80",
+        "image": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1000&q=80",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Classic King Săn Mây"
+          },
+          {
+            "icon": "spa",
+            "label": "Wi-Fi"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000301",
+        "venueId": "673000000000000000000301",
+        "key": "dining",
+        "tag": "Ẩm Thực Michelin Cliff",
+        "title": "The Cliff Dining Pavilion • Amanoi Vĩnh Hy",
+        "location": "Đỉnh Vách Đá Vịnh Vĩnh Hy, Vườn Quốc Gia Núi Chúa, Ninh Thuận",
+        "price": "4.200.000₫",
+        "unit": "/ thực khách",
+        "rating": "4.97",
+        "reviews": "342",
+        "desc": "Thực đơn 9 món Fine Dining Omakase & Hải sản địa phương kèm rượu vang Grand Cru trên vách đá nhìn thẳng ra vịnh Vĩnh Hy lúc hoàng hôn.",
+        "img": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "restaurant_menu",
+            "label": "Thực đơn degustation 9 món hải sản Vĩnh Hy"
+          },
+          {
+            "icon": "wine_bar",
+            "label": "Sommelier riêng & Rượu vang Grand Cru"
+          },
+          {
+            "icon": "wb_twilight",
+            "label": "Bàn vách đá riêng tư ngắm hoàng hôn"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "venueId": "673000000000000000000302",
+        "key": "yacht",
+        "tag": "Siêu Du Thuyền Riêng Tư",
+        "title": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+        "location": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+        "price": "18.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.99",
+        "reviews": "215",
+        "desc": "Hải trình 4 tiếng trên siêu du thuyền hai thân Catamaran 68ft riêng tư: Lặn ngắm san hô nguyên sinh, thưởng thức Champagne Dom Pérignon & Tôm hùm nướng.",
+        "img": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "sailing",
+            "label": "Thuê trọn gói Catamaran 68ft kèm Thuyền trưởng"
+          },
+          {
+            "icon": "liquor",
+            "label": "Champagne Dom Pérignon & Canapé thượng hạng"
+          },
+          {
+            "icon": "scuba_diving",
+            "label": "Thiết bị lặn biển & Seabob chuyên nghiệp"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 92000,
+      "likes": 19800,
+      "commentsCount": 410,
+      "bookmarks": 5600
+    },
+    "isLiked": false,
+    "isBookmarked": false,
+    "created_at": "2026-11-12T21:10:21.082Z",
+    "createdAt": "2026-11-12T21:10:21.082Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000808",
+    "code": "reel_01",
+    "user_id": "673000000000000000000112",
+    "content_title": "Bình minh Vĩnh Hy nhìn từ hồ bơi vô cực vách đá Amanoi 🌊✨",
+    "content_description": "Trải nghiệm thức giấc giữa tầng mây và biển xanh ngọc bích tại Amanoi Ocean Pool Villa, thưởng thức bữa tối vách đá The Cliff Dining Club và hải trình Catamaran đón hoàng hôn.",
+    "caption": "Trải nghiệm thức giấc giữa tầng mây và biển xanh ngọc bích tại Amanoi Ocean Pool Villa, thưởng thức bữa tối vách đá The Cliff Dining Club và hải trình Catamaran đón hoàng hôn.",
+    "image_url": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=900&q=85",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-seashore-with-rocks-1090-large.mp4",
+    "location_name": "Vĩnh Hy, Ninh Thuận",
+    "drawerKey": "yacht",
+    "category": "for-you",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000402",
+        "room_id": "673000000000000000000513",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d31"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000303",
+        "_id": "6af67f9df19f299713ce2d32"
+      },
+      {
+        "tag_type": "yacht",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000304",
+        "_id": "6af67f9df19f299713ce2d33"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000402",
+        "room_id": "673000000000000000000513",
+        "location_id": null,
+        "venueId": "673000000000000000000402",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Rock Pool Villa Trên Ghềnh Đá",
+        "title": "Six Senses Ninh Van Bay",
+        "location": "Vịnh Ninh Vân, Nha Trang, Khánh Hòa",
+        "price": "15.500.000₫",
+        "unit": "/ đêm",
+        "rating": "9.8",
+        "reviews": "412",
+        "desc": "Rock Pool Villa Trên Ghềnh Đá diện tích 158m², 1 giường King, bao gồm trà chiều & quản gia riêng.",
+        "img": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80",
+        "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Rock Pool Villa Trên Ghềnh Đá"
+          },
+          {
+            "icon": "spa",
+            "label": "Wi-Fi"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000303",
+        "venueId": "673000000000000000000303",
+        "key": "dining",
+        "tag": "Fine Dining Omakase",
+        "title": "Oku Contemporary Japanese & Salon de Boeuf",
+        "location": "Bãi Trường, Regent Phú Quốc, Tỉnh Kiên Giang",
+        "price": "3.800.000₫",
+        "unit": "/ thực khách",
+        "rating": "4.96",
+        "reviews": "290",
+        "desc": "Không gian ẩm thực Nhật - Pháp đương đại với bò Wagyu A5 Miyazaki nướng than Binchotan và quầy Omakase trực diện biển Phú Quốc.",
+        "img": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "set_meal",
+            "label": "Wagyu A5 Miyazaki & Omakase 12 món"
+          },
+          {
+            "icon": "local_bar",
+            "label": "Cocktail thủ công tại Bar Jade"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000304",
+        "venueId": "673000000000000000000304",
+        "key": "yacht",
+        "tag": "Du Thuyền Di Sản",
+        "title": "Du Thuyền Serenity Emperor 5 Sao Vịnh Hạ Long & Lan Hạ",
+        "location": "Cảng Tàu Khách Quốc Tế Tuần Châu, Hạ Long, Quảng Ninh",
+        "price": "14.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.95",
+        "reviews": "418",
+        "desc": "Du ngoạn vịnh di sản trên siêu du thuyền Serenity với bể sục Jacuzzi trên boong thượng, chèo Kayak hang Sáng Tối và tiệc tối dưới ánh nến.",
+        "img": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "directions_boat",
+            "label": "Hải trình riêng qua Vịnh Lan Hạ & Hang Sáng Tối"
+          },
+          {
+            "icon": "hot_tub",
+            "label": "Bể sục Jacuzzi vô cực ngắm hoàng hôn"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 85400,
+      "likes": 14200,
+      "commentsCount": 342,
+      "bookmarks": 3800
+    },
+    "isLiked": false,
+    "isBookmarked": true,
+    "created_at": "2026-11-01T06:30:00.000Z",
+    "createdAt": "2026-11-01T06:30:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000809",
+    "code": "reel_02",
+    "user_id": "673000000000000000000113",
+    "content_title": "Hoàng hôn tím trên du thuyền Serenity Phú Quốc & Sky Pool Villa ⛵🥂",
+    "content_description": "Không gì sánh bằng cảm giác nhâm nhi Champagne Billecart-Salmon trên boong tàu Serenity khi mặt trời lặn xuống Bãi Trường, rồi trở về Regent Sky Pool Villa.",
+    "caption": "Không gì sánh bằng cảm giác nhâm nhi Champagne Billecart-Salmon trên boong tàu Serenity khi mặt trời lặn xuống Bãi Trường, rồi trở về Regent Sky Pool Villa.",
+    "image_url": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=900&q=85",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-sailing-boat-on-the-sea-at-sunset-4149-large.mp4",
+    "location_name": "Đảo Ngọc, Phú Quốc",
+    "drawerKey": "dining",
+    "category": "trending",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000420",
+        "room_id": "673000000000000000000514",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d35"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000301",
+        "_id": "6af67f9df19f299713ce2d36"
+      },
+      {
+        "tag_type": "yacht",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "_id": "6af67f9df19f299713ce2d37"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000420",
+        "room_id": "673000000000000000000514",
+        "location_id": null,
+        "venueId": "673000000000000000000420",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Classic Room",
+        "title": "InterContinental Danang",
+        "location": "Số 71 Đường Trần Phú, Trung tâm, Đà Nẵng",
+        "price": "11.250.000₫",
+        "unit": "/ đêm",
+        "rating": "9.8",
+        "reviews": "2446",
+        "desc": "Classic Room (42m²) • 1 giường đôi lớn • Miễn phí hủy trước 2 ngày.",
+        "img": "http://localhost:3000/data/booking/hotels/h1/images/10025678-f1b63600354e13d056571f18e3ecf359.webp",
+        "image": "http://localhost:3000/data/booking/hotels/h1/images/10025678-f1b63600354e13d056571f18e3ecf359.webp",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Classic Room"
+          },
+          {
+            "icon": "spa",
+            "label": "Bãi biển riêng"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000301",
+        "venueId": "673000000000000000000301",
+        "key": "dining",
+        "tag": "Ẩm Thực Michelin Cliff",
+        "title": "The Cliff Dining Pavilion • Amanoi Vĩnh Hy",
+        "location": "Đỉnh Vách Đá Vịnh Vĩnh Hy, Vườn Quốc Gia Núi Chúa, Ninh Thuận",
+        "price": "4.200.000₫",
+        "unit": "/ thực khách",
+        "rating": "4.97",
+        "reviews": "342",
+        "desc": "Thực đơn 9 món Fine Dining Omakase & Hải sản địa phương kèm rượu vang Grand Cru trên vách đá nhìn thẳng ra vịnh Vĩnh Hy lúc hoàng hôn.",
+        "img": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "restaurant_menu",
+            "label": "Thực đơn degustation 9 món hải sản Vĩnh Hy"
+          },
+          {
+            "icon": "wine_bar",
+            "label": "Sommelier riêng & Rượu vang Grand Cru"
+          },
+          {
+            "icon": "wb_twilight",
+            "label": "Bàn vách đá riêng tư ngắm hoàng hôn"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "venueId": "673000000000000000000302",
+        "key": "yacht",
+        "tag": "Siêu Du Thuyền Riêng Tư",
+        "title": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+        "location": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+        "price": "18.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.99",
+        "reviews": "215",
+        "desc": "Hải trình 4 tiếng trên siêu du thuyền hai thân Catamaran 68ft riêng tư: Lặn ngắm san hô nguyên sinh, thưởng thức Champagne Dom Pérignon & Tôm hùm nướng.",
+        "img": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "sailing",
+            "label": "Thuê trọn gói Catamaran 68ft kèm Thuyền trưởng"
+          },
+          {
+            "icon": "liquor",
+            "label": "Champagne Dom Pérignon & Canapé thượng hạng"
+          },
+          {
+            "icon": "scuba_diving",
+            "label": "Thiết bị lặn biển & Seabob chuyên nghiệp"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 62100,
+      "likes": 9800,
+      "commentsCount": 215,
+      "bookmarks": 2400
+    },
+    "isLiked": true,
+    "isBookmarked": false,
+    "created_at": "2026-11-02T10:15:00.000Z",
+    "createdAt": "2026-11-02T10:15:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000810",
+    "code": "reel_03",
+    "user_id": "673000000000000000000114",
+    "content_title": "Private Onsen & Biệt thự Pháp cổ giữa rừng thông Đà Lạt sương mù 🌲♨️",
+    "content_description": "5 giờ sáng ngâm hồ nước ấm nhìn sương mù trôi qua đồi thông Lê Lai tại Ana Mandara Villas Dalat, chiều thưởng thức tiệc rượu vang cổ điển.",
+    "caption": "5 giờ sáng ngâm hồ nước ấm nhìn sương mù trôi qua đồi thông Lê Lai tại Ana Mandara Villas Dalat, chiều thưởng thức tiệc rượu vang cổ điển.",
+    "image_url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=900&q=85",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-foggy-forest-in-mountains-41566-large.mp4",
+    "location_name": "Đà Lạt, Lâm Đồng",
+    "drawerKey": "resort",
+    "category": "for-you",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000421",
+        "room_id": "673000000000000000000517",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d39"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000303",
+        "_id": "6af67f9df19f299713ce2d3a"
+      },
+      {
+        "tag_type": "yacht",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000304",
+        "_id": "6af67f9df19f299713ce2d3b"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000421",
+        "room_id": "673000000000000000000517",
+        "location_id": null,
+        "venueId": "673000000000000000000421",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Superior",
+        "title": "Novotel Danang Han River",
+        "location": "Số 65 Đường Trần Phú, Trung tâm, Đà Nẵng",
+        "price": "2.750.000₫",
+        "unit": "/ đêm",
+        "rating": "9.2",
+        "reviews": "1413",
+        "desc": "Superior (60m²) • 1 giường đôi lớn • Miễn phí hủy trước 2 ngày.",
+        "img": "http://localhost:3000/data/booking/hotels/h2/images/20020070-b5360b527dad0709a04cd0b9ac25ef27.webp",
+        "image": "http://localhost:3000/data/booking/hotels/h2/images/20020070-b5360b527dad0709a04cd0b9ac25ef27.webp",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Superior"
+          },
+          {
+            "icon": "spa",
+            "label": "View Sông Hàn"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000303",
+        "venueId": "673000000000000000000303",
+        "key": "dining",
+        "tag": "Fine Dining Omakase",
+        "title": "Oku Contemporary Japanese & Salon de Boeuf",
+        "location": "Bãi Trường, Regent Phú Quốc, Tỉnh Kiên Giang",
+        "price": "3.800.000₫",
+        "unit": "/ thực khách",
+        "rating": "4.96",
+        "reviews": "290",
+        "desc": "Không gian ẩm thực Nhật - Pháp đương đại với bò Wagyu A5 Miyazaki nướng than Binchotan và quầy Omakase trực diện biển Phú Quốc.",
+        "img": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "set_meal",
+            "label": "Wagyu A5 Miyazaki & Omakase 12 món"
+          },
+          {
+            "icon": "local_bar",
+            "label": "Cocktail thủ công tại Bar Jade"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000304",
+        "venueId": "673000000000000000000304",
+        "key": "yacht",
+        "tag": "Du Thuyền Di Sản",
+        "title": "Du Thuyền Serenity Emperor 5 Sao Vịnh Hạ Long & Lan Hạ",
+        "location": "Cảng Tàu Khách Quốc Tế Tuần Châu, Hạ Long, Quảng Ninh",
+        "price": "14.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.95",
+        "reviews": "418",
+        "desc": "Du ngoạn vịnh di sản trên siêu du thuyền Serenity với bể sục Jacuzzi trên boong thượng, chèo Kayak hang Sáng Tối và tiệc tối dưới ánh nến.",
+        "img": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "directions_boat",
+            "label": "Hải trình riêng qua Vịnh Lan Hạ & Hang Sáng Tối"
+          },
+          {
+            "icon": "hot_tub",
+            "label": "Bể sục Jacuzzi vô cực ngắm hoàng hôn"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 120800,
+      "likes": 21500,
+      "commentsCount": 518,
+      "bookmarks": 6200
+    },
+    "isLiked": false,
+    "isBookmarked": true,
+    "created_at": "2026-11-03T08:00:00.000Z",
+    "createdAt": "2026-11-03T08:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000811",
+    "code": "reel_04",
+    "user_id": "673000000000000000000110",
+    "content_title": "Bay thủy phi cơ & Nghỉ đêm trên Siêu du thuyền Hoàng Đế Hạ Long 🚁🛳️",
+    "content_description": "Góc nhìn từ độ cao 300m xuống 1.969 hòn đảo đá vôi Vịnh Hạ Long trước khi đáp xuống du thuyền 5 sao Emperor Cruises Legacy.",
+    "caption": "Góc nhìn từ độ cao 300m xuống 1.969 hòn đảo đá vôi Vịnh Hạ Long trước khi đáp xuống du thuyền 5 sao Emperor Cruises Legacy.",
+    "image_url": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=900&q=85",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-islands-in-the-sea-41471-large.mp4",
+    "location_name": "Vịnh Hạ Long, Quảng Ninh",
+    "drawerKey": "yacht",
+    "category": "trending",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000422",
+        "room_id": "673000000000000000000520",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d3d"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000301",
+        "_id": "6af67f9df19f299713ce2d3e"
+      },
+      {
+        "tag_type": "yacht",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "_id": "6af67f9df19f299713ce2d3f"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000422",
+        "room_id": "673000000000000000000520",
+        "location_id": null,
+        "venueId": "673000000000000000000422",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • City View",
+        "title": "Haian Beach Hotel & Spa",
+        "location": "Số 28 Đường Trần Phú, Trung tâm, Đà Nẵng",
+        "price": "2.125.000₫",
+        "unit": "/ đêm",
+        "rating": "9.4",
+        "reviews": "2126",
+        "desc": "City View (39m²) • 1 giường đôi lớn • Miễn phí hủy trước 2 ngày.",
+        "img": "http://localhost:3000/data/booking/hotels/h3/images/20097595-0f9cb554d0aff7e81ce8c6d33fe68c2d.webp",
+        "image": "http://localhost:3000/data/booking/hotels/h3/images/20097595-0f9cb554d0aff7e81ce8c6d33fe68c2d.webp",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "City View"
+          },
+          {
+            "icon": "spa",
+            "label": "Hồ bơi vô cực"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000301",
+        "venueId": "673000000000000000000301",
+        "key": "dining",
+        "tag": "Ẩm Thực Michelin Cliff",
+        "title": "The Cliff Dining Pavilion • Amanoi Vĩnh Hy",
+        "location": "Đỉnh Vách Đá Vịnh Vĩnh Hy, Vườn Quốc Gia Núi Chúa, Ninh Thuận",
+        "price": "4.200.000₫",
+        "unit": "/ thực khách",
+        "rating": "4.97",
+        "reviews": "342",
+        "desc": "Thực đơn 9 món Fine Dining Omakase & Hải sản địa phương kèm rượu vang Grand Cru trên vách đá nhìn thẳng ra vịnh Vĩnh Hy lúc hoàng hôn.",
+        "img": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "restaurant_menu",
+            "label": "Thực đơn degustation 9 món hải sản Vĩnh Hy"
+          },
+          {
+            "icon": "wine_bar",
+            "label": "Sommelier riêng & Rượu vang Grand Cru"
+          },
+          {
+            "icon": "wb_twilight",
+            "label": "Bàn vách đá riêng tư ngắm hoàng hôn"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "venueId": "673000000000000000000302",
+        "key": "yacht",
+        "tag": "Siêu Du Thuyền Riêng Tư",
+        "title": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+        "location": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+        "price": "18.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.99",
+        "reviews": "215",
+        "desc": "Hải trình 4 tiếng trên siêu du thuyền hai thân Catamaran 68ft riêng tư: Lặn ngắm san hô nguyên sinh, thưởng thức Champagne Dom Pérignon & Tôm hùm nướng.",
+        "img": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "sailing",
+            "label": "Thuê trọn gói Catamaran 68ft kèm Thuyền trưởng"
+          },
+          {
+            "icon": "liquor",
+            "label": "Champagne Dom Pérignon & Canapé thượng hạng"
+          },
+          {
+            "icon": "scuba_diving",
+            "label": "Thiết bị lặn biển & Seabob chuyên nghiệp"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 210500,
+      "likes": 33100,
+      "commentsCount": 890,
+      "bookmarks": 11200
+    },
+    "isLiked": false,
+    "isBookmarked": false,
+    "created_at": "2026-11-04T09:20:00.000Z",
+    "createdAt": "2026-11-04T09:20:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000812",
+    "code": "reel_05",
+    "user_id": "673000000000000000000111",
+    "content_title": "Fine Dining trong hang đá tự nhiên tại Six Senses Ninh Vân Bay 🍷🕯️",
+    "content_description": "Đi tàu cao tốc riêng qua vịnh Ninh Vân, ở biệt thự Rock Pool Villa trên ghềnh đá và dùng bữa tối dưới ánh nến trong hang đá tự nhiên.",
+    "caption": "Đi tàu cao tốc riêng qua vịnh Ninh Vân, ở biệt thự Rock Pool Villa trên ghềnh đá và dùng bữa tối dưới ánh nến trong hang đá tự nhiên.",
+    "image_url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=85",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-waiter-serving-red-wine-in-a-restaurant-42622-large.mp4",
+    "location_name": "Ninh Vân Bay, Khánh Hòa",
+    "drawerKey": "dining",
+    "category": "latest",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000423",
+        "room_id": "673000000000000000000523",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d41"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000303",
+        "_id": "6af67f9df19f299713ce2d42"
+      },
+      {
+        "tag_type": "yacht",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000304",
+        "_id": "6af67f9df19f299713ce2d43"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000423",
+        "room_id": "673000000000000000000523",
+        "location_id": null,
+        "venueId": "673000000000000000000423",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Standard",
+        "title": "Sala Danang Beach Hotel",
+        "location": "Số 11 Đường Trần Phú, Trung tâm, Đà Nẵng",
+        "price": "1.750.000₫",
+        "unit": "/ đêm",
+        "rating": "9",
+        "reviews": "200",
+        "desc": "Standard (49m²) • 1 giường đôi lớn • Miễn phí hủy trước 2 ngày.",
+        "img": "http://localhost:3000/data/booking/hotels/h4/images/20012109-4c65e4e808a2cf0c2bfee7a8e6e233fe.webp",
+        "image": "http://localhost:3000/data/booking/hotels/h4/images/20012109-4c65e4e808a2cf0c2bfee7a8e6e233fe.webp",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Standard"
+          },
+          {
+            "icon": "spa",
+            "label": "Hồ bơi vô cực trên cao"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000303",
+        "venueId": "673000000000000000000303",
+        "key": "dining",
+        "tag": "Fine Dining Omakase",
+        "title": "Oku Contemporary Japanese & Salon de Boeuf",
+        "location": "Bãi Trường, Regent Phú Quốc, Tỉnh Kiên Giang",
+        "price": "3.800.000₫",
+        "unit": "/ thực khách",
+        "rating": "4.96",
+        "reviews": "290",
+        "desc": "Không gian ẩm thực Nhật - Pháp đương đại với bò Wagyu A5 Miyazaki nướng than Binchotan và quầy Omakase trực diện biển Phú Quốc.",
+        "img": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "set_meal",
+            "label": "Wagyu A5 Miyazaki & Omakase 12 món"
+          },
+          {
+            "icon": "local_bar",
+            "label": "Cocktail thủ công tại Bar Jade"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000304",
+        "venueId": "673000000000000000000304",
+        "key": "yacht",
+        "tag": "Du Thuyền Di Sản",
+        "title": "Du Thuyền Serenity Emperor 5 Sao Vịnh Hạ Long & Lan Hạ",
+        "location": "Cảng Tàu Khách Quốc Tế Tuần Châu, Hạ Long, Quảng Ninh",
+        "price": "14.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.95",
+        "reviews": "418",
+        "desc": "Du ngoạn vịnh di sản trên siêu du thuyền Serenity với bể sục Jacuzzi trên boong thượng, chèo Kayak hang Sáng Tối và tiệc tối dưới ánh nến.",
+        "img": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "directions_boat",
+            "label": "Hải trình riêng qua Vịnh Lan Hạ & Hang Sáng Tối"
+          },
+          {
+            "icon": "hot_tub",
+            "label": "Bể sục Jacuzzi vô cực ngắm hoàng hôn"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 94000,
+      "likes": 18400,
+      "commentsCount": 409,
+      "bookmarks": 5100
+    },
+    "isLiked": true,
+    "isBookmarked": true,
+    "created_at": "2026-11-05T11:40:00.000Z",
+    "createdAt": "2026-11-05T11:40:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000813",
+    "code": "reel_06",
+    "user_id": "673000000000000000000112",
+    "content_title": "Đêm đèn lồng Hội An & Bữa tối 1 Sao Michelin tại Bán đảo Sơn Trà 🏮✨",
+    "content_description": "Một hành trình kết nối di sản miền Trung: Sáng thức giấc tại InterContinental Danang Sun Peninsula, tối thả hoa đăng trên dòng sông Hoài Hội An.",
+    "caption": "Một hành trình kết nối di sản miền Trung: Sáng thức giấc tại InterContinental Danang Sun Peninsula, tối thả hoa đăng trên dòng sông Hoài Hội An.",
+    "image_url": "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=900&q=85",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-waves-coming-to-the-beach-5016-large.mp4",
+    "location_name": "Phố Cổ Hội An, Quảng Nam",
+    "drawerKey": "resort",
+    "category": "latest",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000424",
+        "room_id": "673000000000000000000526",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d45"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000301",
+        "_id": "6af67f9df19f299713ce2d46"
+      },
+      {
+        "tag_type": "yacht",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "_id": "6af67f9df19f299713ce2d47"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000424",
+        "room_id": "673000000000000000000526",
+        "location_id": null,
+        "venueId": "673000000000000000000424",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Luxury",
+        "title": "Sofitel Legend Metropole",
+        "location": "Số 79 Đường Trần Phú, Trung tâm, Hà Nội",
+        "price": "8.750.000₫",
+        "unit": "/ đêm",
+        "rating": "9.8",
+        "reviews": "1162",
+        "desc": "Luxury (60m²) • 1 giường đôi lớn • Miễn phí hủy trước 2 ngày.",
+        "img": "http://localhost:3000/data/booking/hotels/h5/images/10019543-42d1ed72750e9677555c12ec379acd43.webp",
+        "image": "http://localhost:3000/data/booking/hotels/h5/images/10019543-42d1ed72750e9677555c12ec379acd43.webp",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Luxury"
+          },
+          {
+            "icon": "spa",
+            "label": "Kiến trúc Pháp cổ"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000301",
+        "venueId": "673000000000000000000301",
+        "key": "dining",
+        "tag": "Ẩm Thực Michelin Cliff",
+        "title": "The Cliff Dining Pavilion • Amanoi Vĩnh Hy",
+        "location": "Đỉnh Vách Đá Vịnh Vĩnh Hy, Vườn Quốc Gia Núi Chúa, Ninh Thuận",
+        "price": "4.200.000₫",
+        "unit": "/ thực khách",
+        "rating": "4.97",
+        "reviews": "342",
+        "desc": "Thực đơn 9 món Fine Dining Omakase & Hải sản địa phương kèm rượu vang Grand Cru trên vách đá nhìn thẳng ra vịnh Vĩnh Hy lúc hoàng hôn.",
+        "img": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "restaurant_menu",
+            "label": "Thực đơn degustation 9 món hải sản Vĩnh Hy"
+          },
+          {
+            "icon": "wine_bar",
+            "label": "Sommelier riêng & Rượu vang Grand Cru"
+          },
+          {
+            "icon": "wb_twilight",
+            "label": "Bàn vách đá riêng tư ngắm hoàng hôn"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "venueId": "673000000000000000000302",
+        "key": "yacht",
+        "tag": "Siêu Du Thuyền Riêng Tư",
+        "title": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+        "location": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+        "price": "18.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.99",
+        "reviews": "215",
+        "desc": "Hải trình 4 tiếng trên siêu du thuyền hai thân Catamaran 68ft riêng tư: Lặn ngắm san hô nguyên sinh, thưởng thức Champagne Dom Pérignon & Tôm hùm nướng.",
+        "img": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "sailing",
+            "label": "Thuê trọn gói Catamaran 68ft kèm Thuyền trưởng"
+          },
+          {
+            "icon": "liquor",
+            "label": "Champagne Dom Pérignon & Canapé thượng hạng"
+          },
+          {
+            "icon": "scuba_diving",
+            "label": "Thiết bị lặn biển & Seabob chuyên nghiệp"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 73200,
+      "likes": 12000,
+      "commentsCount": 276,
+      "bookmarks": 3300
+    },
+    "isLiked": false,
+    "isBookmarked": false,
+    "created_at": "2026-11-05T15:10:00.000Z",
+    "createdAt": "2026-11-05T15:10:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000814",
+    "code": "reel_07",
+    "user_id": "673000000000000000000113",
+    "content_title": "Bên trong Dinh thự Ngọc Trai Hồng Pink Pearl & JW Marriott Bãi Khem 🦩🍾",
+    "content_description": "Khám phá ngôi trường đại học giả tưởng Lamarck của kiến trúc sư Bill Bensley và bữa tối Pháp thượng hạng tại Pink Pearl by Olivier Elzer.",
+    "caption": "Khám phá ngôi trường đại học giả tưởng Lamarck của kiến trúc sư Bill Bensley và bữa tối Pháp thượng hạng tại Pink Pearl by Olivier Elzer.",
+    "image_url": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=900&q=85",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-woman-walking-on-the-edge-of-an-infinity-pool-4336-large.mp4",
+    "location_name": "Bãi Khem, Phú Quốc",
+    "drawerKey": "yacht",
+    "category": "for-you",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000425",
+        "room_id": "673000000000000000000529",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d49"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000303",
+        "_id": "6af67f9df19f299713ce2d4a"
+      },
+      {
+        "tag_type": "yacht",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000304",
+        "_id": "6af67f9df19f299713ce2d4b"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000425",
+        "room_id": "673000000000000000000529",
+        "location_id": null,
+        "venueId": "673000000000000000000425",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Deluxe",
+        "title": "Lotte Hotel Hanoi",
+        "location": "Số 56 Đường Trần Phú, Trung tâm, Hà Nội",
+        "price": "3.500.000₫",
+        "unit": "/ đêm",
+        "rating": "9.6",
+        "reviews": "1740",
+        "desc": "Deluxe (49m²) • 1 giường đôi lớn • Miễn phí hủy trước 2 ngày.",
+        "img": "http://localhost:3000/data/booking/hotels/h6/images/20056907-be4ea64eec9fe6efa95e0c25a39d1ecd.webp",
+        "image": "http://localhost:3000/data/booking/hotels/h6/images/20056907-be4ea64eec9fe6efa95e0c25a39d1ecd.webp",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Deluxe"
+          },
+          {
+            "icon": "spa",
+            "label": "View toàn cảnh thành phố"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000303",
+        "venueId": "673000000000000000000303",
+        "key": "dining",
+        "tag": "Fine Dining Omakase",
+        "title": "Oku Contemporary Japanese & Salon de Boeuf",
+        "location": "Bãi Trường, Regent Phú Quốc, Tỉnh Kiên Giang",
+        "price": "3.800.000₫",
+        "unit": "/ thực khách",
+        "rating": "4.96",
+        "reviews": "290",
+        "desc": "Không gian ẩm thực Nhật - Pháp đương đại với bò Wagyu A5 Miyazaki nướng than Binchotan và quầy Omakase trực diện biển Phú Quốc.",
+        "img": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "set_meal",
+            "label": "Wagyu A5 Miyazaki & Omakase 12 món"
+          },
+          {
+            "icon": "local_bar",
+            "label": "Cocktail thủ công tại Bar Jade"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000304",
+        "venueId": "673000000000000000000304",
+        "key": "yacht",
+        "tag": "Du Thuyền Di Sản",
+        "title": "Du Thuyền Serenity Emperor 5 Sao Vịnh Hạ Long & Lan Hạ",
+        "location": "Cảng Tàu Khách Quốc Tế Tuần Châu, Hạ Long, Quảng Ninh",
+        "price": "14.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.95",
+        "reviews": "418",
+        "desc": "Du ngoạn vịnh di sản trên siêu du thuyền Serenity với bể sục Jacuzzi trên boong thượng, chèo Kayak hang Sáng Tối và tiệc tối dưới ánh nến.",
+        "img": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "directions_boat",
+            "label": "Hải trình riêng qua Vịnh Lan Hạ & Hang Sáng Tối"
+          },
+          {
+            "icon": "hot_tub",
+            "label": "Bể sục Jacuzzi vô cực ngắm hoàng hôn"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 138000,
+      "likes": 24600,
+      "commentsCount": 462,
+      "bookmarks": 7400
+    },
+    "isLiked": false,
+    "isBookmarked": true,
+    "created_at": "2026-11-06T07:45:00.000Z",
+    "createdAt": "2026-11-06T07:45:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000815",
+    "code": "reel_08",
+    "user_id": "673000000000000000000114",
+    "content_title": "Săn biển mây Sapa từ ban công Hotel de la Coupole - MGallery ☁️🏔️",
+    "content_description": "Thức dậy giữa lâu đài thời trang Pháp thập niên 1920, bơi trong hồ nước nóng Le Grand Bassin và đi tàu hỏa Mường Hoa xuyên qua biển mây.",
+    "caption": "Thức dậy giữa lâu đài thời trang Pháp thập niên 1920, bơi trong hồ nước nóng Le Grand Bassin và đi tàu hỏa Mường Hoa xuyên qua biển mây.",
+    "image_url": "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=900&q=85",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-clouds-moving-over-the-mountains-41569-large.mp4",
+    "location_name": "Thị xã Sa Pa, Lào Cai",
+    "drawerKey": "dining",
+    "category": "trending",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000426",
+        "room_id": "673000000000000000000532",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d4d"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000301",
+        "_id": "6af67f9df19f299713ce2d4e"
+      },
+      {
+        "tag_type": "yacht",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "_id": "6af67f9df19f299713ce2d4f"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000426",
+        "room_id": "673000000000000000000532",
+        "location_id": null,
+        "venueId": "673000000000000000000426",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Deluxe",
+        "title": "The Reverie Saigon",
+        "location": "Số 2 Đường Trần Phú, Trung tâm, Hồ Chí Minh",
+        "price": "8.000.000₫",
+        "unit": "/ đêm",
+        "rating": "9.8",
+        "reviews": "2191",
+        "desc": "Deluxe (55m²) • 1 giường đôi lớn • Miễn phí hủy trước 2 ngày.",
+        "img": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&auto=format&fit=crop&q=60",
+        "image": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&auto=format&fit=crop&q=60",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Deluxe"
+          },
+          {
+            "icon": "spa",
+            "label": "Thiết kế chuẩn Ý"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000301",
+        "venueId": "673000000000000000000301",
+        "key": "dining",
+        "tag": "Ẩm Thực Michelin Cliff",
+        "title": "The Cliff Dining Pavilion • Amanoi Vĩnh Hy",
+        "location": "Đỉnh Vách Đá Vịnh Vĩnh Hy, Vườn Quốc Gia Núi Chúa, Ninh Thuận",
+        "price": "4.200.000₫",
+        "unit": "/ thực khách",
+        "rating": "4.97",
+        "reviews": "342",
+        "desc": "Thực đơn 9 món Fine Dining Omakase & Hải sản địa phương kèm rượu vang Grand Cru trên vách đá nhìn thẳng ra vịnh Vĩnh Hy lúc hoàng hôn.",
+        "img": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "restaurant_menu",
+            "label": "Thực đơn degustation 9 món hải sản Vĩnh Hy"
+          },
+          {
+            "icon": "wine_bar",
+            "label": "Sommelier riêng & Rượu vang Grand Cru"
+          },
+          {
+            "icon": "wb_twilight",
+            "label": "Bàn vách đá riêng tư ngắm hoàng hôn"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "venueId": "673000000000000000000302",
+        "key": "yacht",
+        "tag": "Siêu Du Thuyền Riêng Tư",
+        "title": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+        "location": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+        "price": "18.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.99",
+        "reviews": "215",
+        "desc": "Hải trình 4 tiếng trên siêu du thuyền hai thân Catamaran 68ft riêng tư: Lặn ngắm san hô nguyên sinh, thưởng thức Champagne Dom Pérignon & Tôm hùm nướng.",
+        "img": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "sailing",
+            "label": "Thuê trọn gói Catamaran 68ft kèm Thuyền trưởng"
+          },
+          {
+            "icon": "liquor",
+            "label": "Champagne Dom Pérignon & Canapé thượng hạng"
+          },
+          {
+            "icon": "scuba_diving",
+            "label": "Thiết bị lặn biển & Seabob chuyên nghiệp"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 112400,
+      "likes": 19300,
+      "commentsCount": 395,
+      "bookmarks": 5800
+    },
+    "isLiked": false,
+    "isBookmarked": false,
+    "created_at": "2026-11-06T14:20:00.000Z",
+    "createdAt": "2026-11-06T14:20:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000816",
+    "code": "reel_09",
+    "user_id": "673000000000000000000110",
+    "content_title": "Zannier Bãi San Hô Phú Yên — Tuyệt tác kiến trúc bản địa 98 hecta 🌾🏝️",
+    "content_description": "Nơi những cánh đồng lúa chín vàng chạm thẳng ra vịnh san hô xanh biếc tại Phú Yên. Một trong những resort kín tiếng và đẳng cấp nhất châu Á.",
+    "caption": "Nơi những cánh đồng lúa chín vàng chạm thẳng ra vịnh san hô xanh biếc tại Phú Yên. Một trong những resort kín tiếng và đẳng cấp nhất châu Á.",
+    "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-top-aerial-shot-of-seashore-with-rocks-1090-large.mp4",
+    "location_name": "Sông Cầu, Phú Yên",
+    "drawerKey": "resort",
+    "category": "for-you",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000427",
+        "room_id": "673000000000000000000535",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d51"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000303",
+        "_id": "6af67f9df19f299713ce2d52"
+      },
+      {
+        "tag_type": "yacht",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000304",
+        "_id": "6af67f9df19f299713ce2d53"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000427",
+        "room_id": "673000000000000000000535",
+        "location_id": null,
+        "venueId": "673000000000000000000427",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Suite",
+        "title": "Fusion Suites Saigon",
+        "location": "Số 8 Đường Trần Phú, Trung tâm, Hồ Chí Minh",
+        "price": "2.375.000₫",
+        "unit": "/ đêm",
+        "rating": "9.2",
+        "reviews": "191",
+        "desc": "Suite (36m²) • 1 giường đôi lớn • Miễn phí hủy trước 2 ngày.",
+        "img": "https://images.unsplash.com/photo-1568495248636-6432b97bd949?w=800&auto=format&fit=crop&q=60",
+        "image": "https://images.unsplash.com/photo-1568495248636-6432b97bd949?w=800&auto=format&fit=crop&q=60",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Suite"
+          },
+          {
+            "icon": "spa",
+            "label": "Bao gồm Spa hàng ngày"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000303",
+        "venueId": "673000000000000000000303",
+        "key": "dining",
+        "tag": "Fine Dining Omakase",
+        "title": "Oku Contemporary Japanese & Salon de Boeuf",
+        "location": "Bãi Trường, Regent Phú Quốc, Tỉnh Kiên Giang",
+        "price": "3.800.000₫",
+        "unit": "/ thực khách",
+        "rating": "4.96",
+        "reviews": "290",
+        "desc": "Không gian ẩm thực Nhật - Pháp đương đại với bò Wagyu A5 Miyazaki nướng than Binchotan và quầy Omakase trực diện biển Phú Quốc.",
+        "img": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "set_meal",
+            "label": "Wagyu A5 Miyazaki & Omakase 12 món"
+          },
+          {
+            "icon": "local_bar",
+            "label": "Cocktail thủ công tại Bar Jade"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000304",
+        "venueId": "673000000000000000000304",
+        "key": "yacht",
+        "tag": "Du Thuyền Di Sản",
+        "title": "Du Thuyền Serenity Emperor 5 Sao Vịnh Hạ Long & Lan Hạ",
+        "location": "Cảng Tàu Khách Quốc Tế Tuần Châu, Hạ Long, Quảng Ninh",
+        "price": "14.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.95",
+        "reviews": "418",
+        "desc": "Du ngoạn vịnh di sản trên siêu du thuyền Serenity với bể sục Jacuzzi trên boong thượng, chèo Kayak hang Sáng Tối và tiệc tối dưới ánh nến.",
+        "img": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "directions_boat",
+            "label": "Hải trình riêng qua Vịnh Lan Hạ & Hang Sáng Tối"
+          },
+          {
+            "icon": "hot_tub",
+            "label": "Bể sục Jacuzzi vô cực ngắm hoàng hôn"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 164300,
+      "likes": 28900,
+      "commentsCount": 612,
+      "bookmarks": 9500
+    },
+    "isLiked": true,
+    "isBookmarked": true,
+    "created_at": "2026-11-07T06:00:00.000Z",
+    "createdAt": "2026-11-07T06:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000817",
+    "code": "reel_10",
+    "user_id": "673000000000000000000111",
+    "content_title": "Một đêm sống như ngôi sao Opera thập niên 1920 tại Capella Hanoi 🎭🥂",
+    "content_description": "Trải nghiệm Teppanyaki 1 sao Michelin tại Hibana by Koki và nhâm nhi cocktail thủ công tại Diva's Lounge giữa lòng phố cổ Hà Nội.",
+    "caption": "Trải nghiệm Teppanyaki 1 sao Michelin tại Hibana by Koki và nhâm nhi cocktail thủ công tại Diva's Lounge giữa lòng phố cổ Hà Nội.",
+    "image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=85",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-bartender-serving-a-cocktail-in-a-glass-42615-large.mp4",
+    "location_name": "Hoàn Kiếm, Hà Nội",
+    "drawerKey": "yacht",
+    "category": "latest",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000428",
+        "room_id": "673000000000000000000538",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d55"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000301",
+        "_id": "6af67f9df19f299713ce2d56"
+      },
+      {
+        "tag_type": "yacht",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "_id": "6af67f9df19f299713ce2d57"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000428",
+        "room_id": "673000000000000000000538",
+        "location_id": null,
+        "venueId": "673000000000000000000428",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Standard",
+        "title": "Sol by Meliá Phu Quoc",
+        "location": "Số 54 Đường Trần Phú, Trung tâm, Phú Quốc",
+        "price": "2.250.000₫",
+        "unit": "/ đêm",
+        "rating": "9.2",
+        "reviews": "504",
+        "desc": "Standard (55m²) • 1 giường đôi lớn • Miễn phí hủy trước 2 ngày.",
+        "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&auto=format&fit=crop&q=60",
+        "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&auto=format&fit=crop&q=60",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Standard"
+          },
+          {
+            "icon": "spa",
+            "label": "Bãi biển riêng"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000301",
+        "venueId": "673000000000000000000301",
+        "key": "dining",
+        "tag": "Ẩm Thực Michelin Cliff",
+        "title": "The Cliff Dining Pavilion • Amanoi Vĩnh Hy",
+        "location": "Đỉnh Vách Đá Vịnh Vĩnh Hy, Vườn Quốc Gia Núi Chúa, Ninh Thuận",
+        "price": "4.200.000₫",
+        "unit": "/ thực khách",
+        "rating": "4.97",
+        "reviews": "342",
+        "desc": "Thực đơn 9 món Fine Dining Omakase & Hải sản địa phương kèm rượu vang Grand Cru trên vách đá nhìn thẳng ra vịnh Vĩnh Hy lúc hoàng hôn.",
+        "img": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "restaurant_menu",
+            "label": "Thực đơn degustation 9 món hải sản Vĩnh Hy"
+          },
+          {
+            "icon": "wine_bar",
+            "label": "Sommelier riêng & Rượu vang Grand Cru"
+          },
+          {
+            "icon": "wb_twilight",
+            "label": "Bàn vách đá riêng tư ngắm hoàng hôn"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "venueId": "673000000000000000000302",
+        "key": "yacht",
+        "tag": "Siêu Du Thuyền Riêng Tư",
+        "title": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+        "location": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+        "price": "18.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.99",
+        "reviews": "215",
+        "desc": "Hải trình 4 tiếng trên siêu du thuyền hai thân Catamaran 68ft riêng tư: Lặn ngắm san hô nguyên sinh, thưởng thức Champagne Dom Pérignon & Tôm hùm nướng.",
+        "img": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "sailing",
+            "label": "Thuê trọn gói Catamaran 68ft kèm Thuyền trưởng"
+          },
+          {
+            "icon": "liquor",
+            "label": "Champagne Dom Pérignon & Canapé thượng hạng"
+          },
+          {
+            "icon": "scuba_diving",
+            "label": "Thiết bị lặn biển & Seabob chuyên nghiệp"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 88900,
+      "likes": 15700,
+      "commentsCount": 310,
+      "bookmarks": 4600
+    },
+    "isLiked": false,
+    "isBookmarked": false,
+    "created_at": "2026-11-07T18:30:00.000Z",
+    "createdAt": "2026-11-07T18:30:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000818",
+    "code": "reel_11",
+    "user_id": "673000000000000000000112",
+    "content_title": "Biệt thự hồ bơi vô cực lưng đồi nhìn trọn vịnh Lăng Cô tại Banyan Tree 🌊🏯",
+    "content_description": "Nằm giữa Cố đô Huế và Đà Nẵng, Banyan Tree Lăng Cô là nơi bạn vừa ngắm biển Đông vừa nghe tiếng chim rừng Trường Sơn mỗi sớm mai.",
+    "caption": "Nằm giữa Cố đô Huế và Đà Nẵng, Banyan Tree Lăng Cô là nơi bạn vừa ngắm biển Đông vừa nghe tiếng chim rừng Trường Sơn mỗi sớm mai.",
+    "image_url": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=900&q=85",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-woman-swimming-in-an-infinity-pool-4335-large.mp4",
+    "location_name": "Vịnh Lăng Cô, Huế",
+    "drawerKey": "dining",
+    "category": "for-you",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000429",
+        "room_id": "673000000000000000000541",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d59"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000303",
+        "_id": "6af67f9df19f299713ce2d5a"
+      },
+      {
+        "tag_type": "yacht",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000304",
+        "_id": "6af67f9df19f299713ce2d5b"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000429",
+        "room_id": "673000000000000000000541",
+        "location_id": null,
+        "venueId": "673000000000000000000429",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Emerald Bay View",
+        "title": "JW Marriott Phu Quoc",
+        "location": "Số 39 Đường Trần Phú, Trung tâm, Phú Quốc",
+        "price": "8.750.000₫",
+        "unit": "/ đêm",
+        "rating": "9.8",
+        "reviews": "645",
+        "desc": "Emerald Bay View (51m²) • 1 giường đôi lớn • Miễn phí hủy trước 2 ngày.",
+        "img": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&auto=format&fit=crop&q=60",
+        "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&auto=format&fit=crop&q=60",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Emerald Bay View"
+          },
+          {
+            "icon": "spa",
+            "label": "Bãi Khem"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000303",
+        "venueId": "673000000000000000000303",
+        "key": "dining",
+        "tag": "Fine Dining Omakase",
+        "title": "Oku Contemporary Japanese & Salon de Boeuf",
+        "location": "Bãi Trường, Regent Phú Quốc, Tỉnh Kiên Giang",
+        "price": "3.800.000₫",
+        "unit": "/ thực khách",
+        "rating": "4.96",
+        "reviews": "290",
+        "desc": "Không gian ẩm thực Nhật - Pháp đương đại với bò Wagyu A5 Miyazaki nướng than Binchotan và quầy Omakase trực diện biển Phú Quốc.",
+        "img": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "set_meal",
+            "label": "Wagyu A5 Miyazaki & Omakase 12 món"
+          },
+          {
+            "icon": "local_bar",
+            "label": "Cocktail thủ công tại Bar Jade"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000304",
+        "venueId": "673000000000000000000304",
+        "key": "yacht",
+        "tag": "Du Thuyền Di Sản",
+        "title": "Du Thuyền Serenity Emperor 5 Sao Vịnh Hạ Long & Lan Hạ",
+        "location": "Cảng Tàu Khách Quốc Tế Tuần Châu, Hạ Long, Quảng Ninh",
+        "price": "14.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.95",
+        "reviews": "418",
+        "desc": "Du ngoạn vịnh di sản trên siêu du thuyền Serenity với bể sục Jacuzzi trên boong thượng, chèo Kayak hang Sáng Tối và tiệc tối dưới ánh nến.",
+        "img": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "directions_boat",
+            "label": "Hải trình riêng qua Vịnh Lan Hạ & Hang Sáng Tối"
+          },
+          {
+            "icon": "hot_tub",
+            "label": "Bể sục Jacuzzi vô cực ngắm hoàng hôn"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 95200,
+      "likes": 16800,
+      "commentsCount": 284,
+      "bookmarks": 4900
+    },
+    "isLiked": false,
+    "isBookmarked": true,
+    "created_at": "2026-11-08T05:45:00.000Z",
+    "createdAt": "2026-11-08T05:45:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000819",
+    "code": "reel_12",
+    "user_id": "673000000000000000000113",
+    "content_title": "Bữa sáng trên bàn Nón Lá lơ lửng độ cao 100m tại Citron Đà Nẵng 🥐☕",
+    "content_description": "Bí kíp đặt được chiếc bàn Nón Lá ngoài trời đẹp nhất tại nhà hàng Citron — InterContinental Danang Sun Peninsula.",
+    "caption": "Bí kíp đặt được chiếc bàn Nón Lá ngoài trời đẹp nhất tại nhà hàng Citron — InterContinental Danang Sun Peninsula.",
+    "image_url": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=900&q=85",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-couple-having-breakfast-by-the-pool-4338-large.mp4",
+    "location_name": "Bán đảo Sơn Trà, Đà Nẵng",
+    "drawerKey": "resort",
+    "category": "trending",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000411",
+        "room_id": "673000000000000000000501",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d5d"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000301",
+        "_id": "6af67f9df19f299713ce2d5e"
+      },
+      {
+        "tag_type": "yacht",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "_id": "6af67f9df19f299713ce2d5f"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000411",
+        "room_id": "673000000000000000000501",
+        "location_id": null,
+        "venueId": "673000000000000000000411",
+        "key": "resort",
+        "tag": "4 Sao Tuyệt Đỉnh • Phòng Tiêu chuẩn View Đồi Thông",
+        "title": "Nhà Bên Rừng",
+        "location": "Đà Lạt, Lâm Đồng",
+        "price": "850.000₫",
+        "unit": "/ đêm",
+        "rating": "9.2",
+        "reviews": "128",
+        "desc": "Phòng Tiêu chuẩn View Đồi Thông diện tích 28m², 1 giường đôi, bao gồm trà chiều & quản gia riêng.",
+        "img": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1000&q=80",
+        "image": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1000&q=80",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Phòng Tiêu chuẩn View Đồi Thông"
+          },
+          {
+            "icon": "spa",
+            "label": "Wi-Fi"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000301",
+        "venueId": "673000000000000000000301",
+        "key": "dining",
+        "tag": "Ẩm Thực Michelin Cliff",
+        "title": "The Cliff Dining Pavilion • Amanoi Vĩnh Hy",
+        "location": "Đỉnh Vách Đá Vịnh Vĩnh Hy, Vườn Quốc Gia Núi Chúa, Ninh Thuận",
+        "price": "4.200.000₫",
+        "unit": "/ thực khách",
+        "rating": "4.97",
+        "reviews": "342",
+        "desc": "Thực đơn 9 món Fine Dining Omakase & Hải sản địa phương kèm rượu vang Grand Cru trên vách đá nhìn thẳng ra vịnh Vĩnh Hy lúc hoàng hôn.",
+        "img": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "restaurant_menu",
+            "label": "Thực đơn degustation 9 món hải sản Vĩnh Hy"
+          },
+          {
+            "icon": "wine_bar",
+            "label": "Sommelier riêng & Rượu vang Grand Cru"
+          },
+          {
+            "icon": "wb_twilight",
+            "label": "Bàn vách đá riêng tư ngắm hoàng hôn"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "venueId": "673000000000000000000302",
+        "key": "yacht",
+        "tag": "Siêu Du Thuyền Riêng Tư",
+        "title": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+        "location": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+        "price": "18.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.99",
+        "reviews": "215",
+        "desc": "Hải trình 4 tiếng trên siêu du thuyền hai thân Catamaran 68ft riêng tư: Lặn ngắm san hô nguyên sinh, thưởng thức Champagne Dom Pérignon & Tôm hùm nướng.",
+        "img": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "sailing",
+            "label": "Thuê trọn gói Catamaran 68ft kèm Thuyền trưởng"
+          },
+          {
+            "icon": "liquor",
+            "label": "Champagne Dom Pérignon & Canapé thượng hạng"
+          },
+          {
+            "icon": "scuba_diving",
+            "label": "Thiết bị lặn biển & Seabob chuyên nghiệp"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 156000,
+      "likes": 27400,
+      "commentsCount": 540,
+      "bookmarks": 8900
+    },
+    "isLiked": true,
+    "isBookmarked": false,
+    "created_at": "2026-11-08T10:00:00.000Z",
+    "createdAt": "2026-11-08T10:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000820",
+    "code": "reel_13",
+    "user_id": "673000000000000000000114",
+    "content_title": "Thuê trọn du thuyền Catamaran 4 tiếng lặn san hô Vịnh Vĩnh Hy 🦞🤿",
+    "content_description": "Nước biển Vĩnh Hy trong vắt thấy đáy ở độ sâu 8m! Sau khi lặn ngắm san hô là đại tiệc tôm hùm nướng bơ tỏi và rượu vang trắng trên lưới Catamaran.",
+    "caption": "Nước biển Vĩnh Hy trong vắt thấy đáy ở độ sâu 8m! Sau khi lặn ngắm san hô là đại tiệc tôm hùm nướng bơ tỏi và rượu vang trắng trên lưới Catamaran.",
+    "image_url": "https://images.unsplash.com/photo-1540946485063-a40da27545f8?auto=format&fit=crop&w=900&q=85",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-coral-reef-and-fish-underwater-41465-large.mp4",
+    "location_name": "Bến Du Thuyền Vĩnh Hy",
+    "drawerKey": "yacht",
+    "category": "latest",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000412",
+        "room_id": "673000000000000000000503",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d61"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000303",
+        "_id": "6af67f9df19f299713ce2d62"
+      },
+      {
+        "tag_type": "yacht",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000304",
+        "_id": "6af67f9df19f299713ce2d63"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000412",
+        "room_id": "673000000000000000000503",
+        "location_id": null,
+        "venueId": "673000000000000000000412",
+        "key": "resort",
+        "tag": "3 Sao Tuyệt Đỉnh • Phòng Tiêu chuẩn Sân Vườn",
+        "title": "An Nhiên Garden Stay",
+        "location": "Đà Lạt, Lâm Đồng",
+        "price": "620.000₫",
+        "unit": "/ đêm",
+        "rating": "8.7",
+        "reviews": "86",
+        "desc": "Phòng Tiêu chuẩn Sân Vườn diện tích 26m², 1 giường đôi, bao gồm trà chiều & quản gia riêng.",
+        "img": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+        "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Phòng Tiêu chuẩn Sân Vườn"
+          },
+          {
+            "icon": "spa",
+            "label": "Wi-Fi"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000303",
+        "venueId": "673000000000000000000303",
+        "key": "dining",
+        "tag": "Fine Dining Omakase",
+        "title": "Oku Contemporary Japanese & Salon de Boeuf",
+        "location": "Bãi Trường, Regent Phú Quốc, Tỉnh Kiên Giang",
+        "price": "3.800.000₫",
+        "unit": "/ thực khách",
+        "rating": "4.96",
+        "reviews": "290",
+        "desc": "Không gian ẩm thực Nhật - Pháp đương đại với bò Wagyu A5 Miyazaki nướng than Binchotan và quầy Omakase trực diện biển Phú Quốc.",
+        "img": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "set_meal",
+            "label": "Wagyu A5 Miyazaki & Omakase 12 món"
+          },
+          {
+            "icon": "local_bar",
+            "label": "Cocktail thủ công tại Bar Jade"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000304",
+        "venueId": "673000000000000000000304",
+        "key": "yacht",
+        "tag": "Du Thuyền Di Sản",
+        "title": "Du Thuyền Serenity Emperor 5 Sao Vịnh Hạ Long & Lan Hạ",
+        "location": "Cảng Tàu Khách Quốc Tế Tuần Châu, Hạ Long, Quảng Ninh",
+        "price": "14.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.95",
+        "reviews": "418",
+        "desc": "Du ngoạn vịnh di sản trên siêu du thuyền Serenity với bể sục Jacuzzi trên boong thượng, chèo Kayak hang Sáng Tối và tiệc tối dưới ánh nến.",
+        "img": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "directions_boat",
+            "label": "Hải trình riêng qua Vịnh Lan Hạ & Hang Sáng Tối"
+          },
+          {
+            "icon": "hot_tub",
+            "label": "Bể sục Jacuzzi vô cực ngắm hoàng hôn"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 79500,
+      "likes": 13600,
+      "commentsCount": 248,
+      "bookmarks": 4100
+    },
+    "isLiked": false,
+    "isBookmarked": false,
+    "created_at": "2026-11-08T16:15:00.000Z",
+    "createdAt": "2026-11-08T16:15:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000821",
+    "code": "reel_14",
+    "user_id": "673000000000000000000110",
+    "content_title": "Chèo Kayak xuyên hang đá vôi nguyên sơ Vịnh Bái Tử Long 🛶🌿",
+    "content_description": "Hải trình riêng biệt của Emperor Cruises đưa bạn rời xa đám đông để chạm vào làn nước ngọc lục bảo tĩnh lặng của Vịnh Bái Tử Long.",
+    "caption": "Hải trình riêng biệt của Emperor Cruises đưa bạn rời xa đám đông để chạm vào làn nước ngọc lục bảo tĩnh lặng của Vịnh Bái Tử Long.",
+    "image_url": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=900&q=85",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-kayaking-in-a-calm-lake-at-sunset-41504-large.mp4",
+    "location_name": "Vịnh Bái Tử Long, Quảng Ninh",
+    "drawerKey": "dining",
+    "category": "for-you",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000413",
+        "room_id": "673000000000000000000505",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d65"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000301",
+        "_id": "6af67f9df19f299713ce2d66"
+      },
+      {
+        "tag_type": "yacht",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "_id": "6af67f9df19f299713ce2d67"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000413",
+        "room_id": "673000000000000000000505",
+        "location_id": null,
+        "venueId": "673000000000000000000413",
+        "key": "resort",
+        "tag": "4 Sao Tuyệt Đỉnh • Phòng Tiêu chuẩn Hướng Biển",
+        "title": "Gió Biển Retreat Đà Nẵng",
+        "location": "Bán đảo Sơn Trà, Đà Nẵng",
+        "price": "1.250.000₫",
+        "unit": "/ đêm",
+        "rating": "9.1",
+        "reviews": "204",
+        "desc": "Phòng Tiêu chuẩn Hướng Biển diện tích 32m², 1 giường đôi, bao gồm trà chiều & quản gia riêng.",
+        "img": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1000&q=80",
+        "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1000&q=80",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Phòng Tiêu chuẩn Hướng Biển"
+          },
+          {
+            "icon": "spa",
+            "label": "Wi-Fi"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000301",
+        "venueId": "673000000000000000000301",
+        "key": "dining",
+        "tag": "Ẩm Thực Michelin Cliff",
+        "title": "The Cliff Dining Pavilion • Amanoi Vĩnh Hy",
+        "location": "Đỉnh Vách Đá Vịnh Vĩnh Hy, Vườn Quốc Gia Núi Chúa, Ninh Thuận",
+        "price": "4.200.000₫",
+        "unit": "/ thực khách",
+        "rating": "4.97",
+        "reviews": "342",
+        "desc": "Thực đơn 9 món Fine Dining Omakase & Hải sản địa phương kèm rượu vang Grand Cru trên vách đá nhìn thẳng ra vịnh Vĩnh Hy lúc hoàng hôn.",
+        "img": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "restaurant_menu",
+            "label": "Thực đơn degustation 9 món hải sản Vĩnh Hy"
+          },
+          {
+            "icon": "wine_bar",
+            "label": "Sommelier riêng & Rượu vang Grand Cru"
+          },
+          {
+            "icon": "wb_twilight",
+            "label": "Bàn vách đá riêng tư ngắm hoàng hôn"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "venueId": "673000000000000000000302",
+        "key": "yacht",
+        "tag": "Siêu Du Thuyền Riêng Tư",
+        "title": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+        "location": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+        "price": "18.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.99",
+        "reviews": "215",
+        "desc": "Hải trình 4 tiếng trên siêu du thuyền hai thân Catamaran 68ft riêng tư: Lặn ngắm san hô nguyên sinh, thưởng thức Champagne Dom Pérignon & Tôm hùm nướng.",
+        "img": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "sailing",
+            "label": "Thuê trọn gói Catamaran 68ft kèm Thuyền trưởng"
+          },
+          {
+            "icon": "liquor",
+            "label": "Champagne Dom Pérignon & Canapé thượng hạng"
+          },
+          {
+            "icon": "scuba_diving",
+            "label": "Thiết bị lặn biển & Seabob chuyên nghiệp"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 67800,
+      "likes": 11400,
+      "commentsCount": 192,
+      "bookmarks": 3100
+    },
+    "isLiked": false,
+    "isBookmarked": false,
+    "created_at": "2026-11-09T07:10:00.000Z",
+    "createdAt": "2026-11-09T07:10:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000822",
+    "code": "reel_15",
+    "user_id": "673000000000000000000111",
+    "content_title": "Yoga trên thủy đình giữa hồ sen tại Aman Spa Vĩnh Hy 🪷🧘‍♀️",
+    "content_description": "Căn pavilion nằm độc lập giữa mặt hồ sen tĩnh lặng tại Amanoi — nơi mọi muộn phiền tan biến ngay khi tiếng chuông xoay Himalaya ngân vang.",
+    "caption": "Căn pavilion nằm độc lập giữa mặt hồ sen tĩnh lặng tại Amanoi — nơi mọi muộn phiền tan biến ngay khi tiếng chuông xoay Himalaya ngân vang.",
+    "image_url": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=900&q=85",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-woman-meditating-by-the-lake-at-sunset-41520-large.mp4",
+    "location_name": "Aman Spa, Vĩnh Hy",
+    "drawerKey": "resort",
+    "category": "for-you",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000414",
+        "room_id": "673000000000000000000507",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d69"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000303",
+        "_id": "6af67f9df19f299713ce2d6a"
+      },
+      {
+        "tag_type": "yacht",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000304",
+        "_id": "6af67f9df19f299713ce2d6b"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000414",
+        "room_id": "673000000000000000000507",
+        "location_id": null,
+        "venueId": "673000000000000000000414",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Phòng Ocean Suite Tiêu chuẩn",
+        "title": "Đảo Xanh Resort Phú Quốc",
+        "location": "Bãi Trường, Phú Quốc, Kiên Giang",
+        "price": "2.100.000₫",
+        "unit": "/ đêm",
+        "rating": "9.4",
+        "reviews": "312",
+        "desc": "Phòng Ocean Suite Tiêu chuẩn diện tích 45m², 1 giường đôi, bao gồm trà chiều & quản gia riêng.",
+        "img": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1000&q=80",
+        "image": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1000&q=80",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Phòng Ocean Suite Tiêu chuẩn"
+          },
+          {
+            "icon": "spa",
+            "label": "Wi-Fi"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000303",
+        "venueId": "673000000000000000000303",
+        "key": "dining",
+        "tag": "Fine Dining Omakase",
+        "title": "Oku Contemporary Japanese & Salon de Boeuf",
+        "location": "Bãi Trường, Regent Phú Quốc, Tỉnh Kiên Giang",
+        "price": "3.800.000₫",
+        "unit": "/ thực khách",
+        "rating": "4.96",
+        "reviews": "290",
+        "desc": "Không gian ẩm thực Nhật - Pháp đương đại với bò Wagyu A5 Miyazaki nướng than Binchotan và quầy Omakase trực diện biển Phú Quốc.",
+        "img": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "set_meal",
+            "label": "Wagyu A5 Miyazaki & Omakase 12 món"
+          },
+          {
+            "icon": "local_bar",
+            "label": "Cocktail thủ công tại Bar Jade"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000304",
+        "venueId": "673000000000000000000304",
+        "key": "yacht",
+        "tag": "Du Thuyền Di Sản",
+        "title": "Du Thuyền Serenity Emperor 5 Sao Vịnh Hạ Long & Lan Hạ",
+        "location": "Cảng Tàu Khách Quốc Tế Tuần Châu, Hạ Long, Quảng Ninh",
+        "price": "14.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.95",
+        "reviews": "418",
+        "desc": "Du ngoạn vịnh di sản trên siêu du thuyền Serenity với bể sục Jacuzzi trên boong thượng, chèo Kayak hang Sáng Tối và tiệc tối dưới ánh nến.",
+        "img": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "directions_boat",
+            "label": "Hải trình riêng qua Vịnh Lan Hạ & Hang Sáng Tối"
+          },
+          {
+            "icon": "hot_tub",
+            "label": "Bể sục Jacuzzi vô cực ngắm hoàng hôn"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 129000,
+      "likes": 22100,
+      "commentsCount": 430,
+      "bookmarks": 7800
+    },
+    "isLiked": true,
+    "isBookmarked": true,
+    "created_at": "2026-11-09T12:00:00.000Z",
+    "createdAt": "2026-11-09T12:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000823",
+    "code": "reel_16",
+    "user_id": "673000000000000000000112",
+    "content_title": "Hồ bơi vô cực tầng thượng Fu Bar — Điểm ngắm hoàng hôn đỉnh nhất Phú Quốc 🍸🌅",
+    "content_description": "Đặt phòng Sky Pool Villa tại Regent Phú Quốc để có đặc quyền lên Fu Bar tầng thượng, vừa bơi vừa ngắm du thuyền Serenity lướt qua đường chân trời.",
+    "caption": "Đặt phòng Sky Pool Villa tại Regent Phú Quốc để có đặc quyền lên Fu Bar tầng thượng, vừa bơi vừa ngắm du thuyền Serenity lướt qua đường chân trời.",
+    "image_url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=85",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-friends-toasting-with-cocktails-at-sunset-42620-large.mp4",
+    "location_name": "Bãi Trường, Phú Quốc",
+    "drawerKey": "yacht",
+    "category": "trending",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000401",
+        "room_id": "673000000000000000000509",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d6d"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000301",
+        "_id": "6af67f9df19f299713ce2d6e"
+      },
+      {
+        "tag_type": "yacht",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "_id": "6af67f9df19f299713ce2d6f"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000401",
+        "room_id": "673000000000000000000509",
+        "location_id": null,
+        "venueId": "673000000000000000000401",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Ocean Pavilion",
+        "title": "Amanoi Ocean Pool Residence",
+        "location": "Vịnh Vĩnh Hy, Ninh Thuận",
+        "price": "25.000.000₫",
+        "unit": "/ đêm",
+        "rating": "9.9",
+        "reviews": "328",
+        "desc": "Ocean Pavilion diện tích 95m², 1 giường King, bao gồm trà chiều & quản gia riêng.",
+        "img": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1000&q=80",
+        "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1000&q=80",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Ocean Pavilion"
+          },
+          {
+            "icon": "spa",
+            "label": "Wi-Fi"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000301",
+        "venueId": "673000000000000000000301",
+        "key": "dining",
+        "tag": "Ẩm Thực Michelin Cliff",
+        "title": "The Cliff Dining Pavilion • Amanoi Vĩnh Hy",
+        "location": "Đỉnh Vách Đá Vịnh Vĩnh Hy, Vườn Quốc Gia Núi Chúa, Ninh Thuận",
+        "price": "4.200.000₫",
+        "unit": "/ thực khách",
+        "rating": "4.97",
+        "reviews": "342",
+        "desc": "Thực đơn 9 món Fine Dining Omakase & Hải sản địa phương kèm rượu vang Grand Cru trên vách đá nhìn thẳng ra vịnh Vĩnh Hy lúc hoàng hôn.",
+        "img": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "restaurant_menu",
+            "label": "Thực đơn degustation 9 món hải sản Vĩnh Hy"
+          },
+          {
+            "icon": "wine_bar",
+            "label": "Sommelier riêng & Rượu vang Grand Cru"
+          },
+          {
+            "icon": "wb_twilight",
+            "label": "Bàn vách đá riêng tư ngắm hoàng hôn"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "venueId": "673000000000000000000302",
+        "key": "yacht",
+        "tag": "Siêu Du Thuyền Riêng Tư",
+        "title": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+        "location": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+        "price": "18.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.99",
+        "reviews": "215",
+        "desc": "Hải trình 4 tiếng trên siêu du thuyền hai thân Catamaran 68ft riêng tư: Lặn ngắm san hô nguyên sinh, thưởng thức Champagne Dom Pérignon & Tôm hùm nướng.",
+        "img": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "sailing",
+            "label": "Thuê trọn gói Catamaran 68ft kèm Thuyền trưởng"
+          },
+          {
+            "icon": "liquor",
+            "label": "Champagne Dom Pérignon & Canapé thượng hạng"
+          },
+          {
+            "icon": "scuba_diving",
+            "label": "Thiết bị lặn biển & Seabob chuyên nghiệp"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 104200,
+      "likes": 17900,
+      "commentsCount": 318,
+      "bookmarks": 5300
+    },
+    "isLiked": false,
+    "isBookmarked": false,
+    "created_at": "2026-11-09T17:45:00.000Z",
+    "createdAt": "2026-11-09T17:45:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000824",
+    "code": "reel_17",
+    "user_id": "673000000000000000000113",
+    "content_title": "Đi tàu kéo Nam Trâm xuyên rừng nguyên sinh đến nhà hàng 1★ Michelin 🚋🍽️",
+    "content_description": "Trải nghiệm có 1-0-2 tại Đà Nẵng: Ngồi tàu cáp kéo Nam Trâm từ tầng Heaven xuống dinh thự Pháp La Maison 1888 thưởng thức thực đơn của bếp trưởng 3 sao Michelin.",
+    "caption": "Trải nghiệm có 1-0-2 tại Đà Nẵng: Ngồi tàu cáp kéo Nam Trâm từ tầng Heaven xuống dinh thự Pháp La Maison 1888 thưởng thức thực đơn của bếp trưởng 3 sao Michelin.",
+    "image_url": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=900&q=85",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-chef-decorating-a-gourmet-dish-with-sauce-42626-large.mp4",
+    "location_name": "La Maison 1888, Đà Nẵng",
+    "drawerKey": "dining",
+    "category": "latest",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000405",
+        "room_id": "673000000000000000000511",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d71"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000303",
+        "_id": "6af67f9df19f299713ce2d72"
+      },
+      {
+        "tag_type": "yacht",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000304",
+        "_id": "6af67f9df19f299713ce2d73"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000405",
+        "room_id": "673000000000000000000511",
+        "location_id": null,
+        "venueId": "673000000000000000000405",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Premier Suite",
+        "title": "Capella Hanoi Opera Boutique",
+        "location": "Hoàn Kiếm, Hà Nội",
+        "price": "8.900.000₫",
+        "unit": "/ đêm",
+        "rating": "9.8",
+        "reviews": "289",
+        "desc": "Premier Suite diện tích 48m², 1 giường King, bao gồm trà chiều & quản gia riêng.",
+        "img": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+        "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Premier Suite"
+          },
+          {
+            "icon": "spa",
+            "label": "Wi-Fi"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000303",
+        "venueId": "673000000000000000000303",
+        "key": "dining",
+        "tag": "Fine Dining Omakase",
+        "title": "Oku Contemporary Japanese & Salon de Boeuf",
+        "location": "Bãi Trường, Regent Phú Quốc, Tỉnh Kiên Giang",
+        "price": "3.800.000₫",
+        "unit": "/ thực khách",
+        "rating": "4.96",
+        "reviews": "290",
+        "desc": "Không gian ẩm thực Nhật - Pháp đương đại với bò Wagyu A5 Miyazaki nướng than Binchotan và quầy Omakase trực diện biển Phú Quốc.",
+        "img": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "set_meal",
+            "label": "Wagyu A5 Miyazaki & Omakase 12 món"
+          },
+          {
+            "icon": "local_bar",
+            "label": "Cocktail thủ công tại Bar Jade"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000304",
+        "venueId": "673000000000000000000304",
+        "key": "yacht",
+        "tag": "Du Thuyền Di Sản",
+        "title": "Du Thuyền Serenity Emperor 5 Sao Vịnh Hạ Long & Lan Hạ",
+        "location": "Cảng Tàu Khách Quốc Tế Tuần Châu, Hạ Long, Quảng Ninh",
+        "price": "14.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.95",
+        "reviews": "418",
+        "desc": "Du ngoạn vịnh di sản trên siêu du thuyền Serenity với bể sục Jacuzzi trên boong thượng, chèo Kayak hang Sáng Tối và tiệc tối dưới ánh nến.",
+        "img": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "directions_boat",
+            "label": "Hải trình riêng qua Vịnh Lan Hạ & Hang Sáng Tối"
+          },
+          {
+            "icon": "hot_tub",
+            "label": "Bể sục Jacuzzi vô cực ngắm hoàng hôn"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 89300,
+      "likes": 15100,
+      "commentsCount": 267,
+      "bookmarks": 4700
+    },
+    "isLiked": false,
+    "isBookmarked": true,
+    "created_at": "2026-11-10T04:00:00.000Z",
+    "createdAt": "2026-11-10T04:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000825",
+    "code": "reel_18",
+    "user_id": "673000000000000000000114",
+    "content_title": "Ngắm hoàng hôn buông xuống ghềnh đá nguyên sơ tại Rock Pool Villa 🌅🪨",
+    "content_description": "Căn biệt thự số 5 tại Six Senses Ninh Van Bay với hồ bơi được tạc прямо vào vách đá hoa cương tự nhiên triệu năm tuổi.",
+    "caption": "Căn biệt thự số 5 tại Six Senses Ninh Van Bay với hồ bơi được tạc прямо vào vách đá hoa cương tự nhiên triệu năm tuổi.",
+    "image_url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=85",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-sun-setting-over-the-ocean-waves-4148-large.mp4",
+    "location_name": "Vịnh Ninh Vân, Nha Trang",
+    "drawerKey": "resort",
+    "category": "trending",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000406",
+        "room_id": "673000000000000000000512",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d75"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000301",
+        "_id": "6af67f9df19f299713ce2d76"
+      },
+      {
+        "tag_type": "yacht",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "_id": "6af67f9df19f299713ce2d77"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000406",
+        "room_id": "673000000000000000000512",
+        "location_id": null,
+        "venueId": "673000000000000000000406",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Classic King Săn Mây",
+        "title": "Hotel de la Coupole - MGallery Sapa",
+        "location": "Thị xã Sa Pa, Lào Cai",
+        "price": "5.400.000₫",
+        "unit": "/ đêm",
+        "rating": "9.6",
+        "reviews": "518",
+        "desc": "Classic King Săn Mây diện tích 36m², 1 giường King, bao gồm trà chiều & quản gia riêng.",
+        "img": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1000&q=80",
+        "image": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1000&q=80",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Classic King Săn Mây"
+          },
+          {
+            "icon": "spa",
+            "label": "Wi-Fi"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000301",
+        "venueId": "673000000000000000000301",
+        "key": "dining",
+        "tag": "Ẩm Thực Michelin Cliff",
+        "title": "The Cliff Dining Pavilion • Amanoi Vĩnh Hy",
+        "location": "Đỉnh Vách Đá Vịnh Vĩnh Hy, Vườn Quốc Gia Núi Chúa, Ninh Thuận",
+        "price": "4.200.000₫",
+        "unit": "/ thực khách",
+        "rating": "4.97",
+        "reviews": "342",
+        "desc": "Thực đơn 9 món Fine Dining Omakase & Hải sản địa phương kèm rượu vang Grand Cru trên vách đá nhìn thẳng ra vịnh Vĩnh Hy lúc hoàng hôn.",
+        "img": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "restaurant_menu",
+            "label": "Thực đơn degustation 9 món hải sản Vĩnh Hy"
+          },
+          {
+            "icon": "wine_bar",
+            "label": "Sommelier riêng & Rượu vang Grand Cru"
+          },
+          {
+            "icon": "wb_twilight",
+            "label": "Bàn vách đá riêng tư ngắm hoàng hôn"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "venueId": "673000000000000000000302",
+        "key": "yacht",
+        "tag": "Siêu Du Thuyền Riêng Tư",
+        "title": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+        "location": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+        "price": "18.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.99",
+        "reviews": "215",
+        "desc": "Hải trình 4 tiếng trên siêu du thuyền hai thân Catamaran 68ft riêng tư: Lặn ngắm san hô nguyên sinh, thưởng thức Champagne Dom Pérignon & Tôm hùm nướng.",
+        "img": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "sailing",
+            "label": "Thuê trọn gói Catamaran 68ft kèm Thuyền trưởng"
+          },
+          {
+            "icon": "liquor",
+            "label": "Champagne Dom Pérignon & Canapé thượng hạng"
+          },
+          {
+            "icon": "scuba_diving",
+            "label": "Thiết bị lặn biển & Seabob chuyên nghiệp"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 188400,
+      "likes": 31200,
+      "commentsCount": 674,
+      "bookmarks": 10300
+    },
+    "isLiked": true,
+    "isBookmarked": true,
+    "created_at": "2026-11-10T06:00:00.000Z",
+    "createdAt": "2026-11-10T06:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000830",
+    "code": "legacy_r1_0",
+    "user_id": "673000000000000000000112",
+    "content_title": "Golden Bridge (Ba Na Hills) • Da Nang",
+    "content_description": "Mờ ảo và hùng vĩ giữa mây trời Bà Nà Hills - Cầu Vàng đúng là một kiệt tác!",
+    "caption": "Mờ ảo và hùng vĩ giữa mây trời Bà Nà Hills - Cầu Vàng đúng là một kiệt tác!",
+    "image_url": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&auto=format&fit=crop&q=60",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-luxury-resort-by-the-sea-41471-large.mp4",
+    "location_name": "Golden Bridge (Ba Na Hills), Da Nang",
+    "drawerKey": "resort",
+    "category": "trending",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000420",
+        "room_id": "673000000000000000000514",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d79"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000320",
+        "_id": "6af67f9df19f299713ce2d7a"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000420",
+        "room_id": "673000000000000000000514",
+        "location_id": null,
+        "venueId": "673000000000000000000420",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Classic Room",
+        "title": "InterContinental Danang",
+        "location": "Số 71 Đường Trần Phú, Trung tâm, Đà Nẵng",
+        "price": "11.250.000₫",
+        "unit": "/ đêm",
+        "rating": "9.8",
+        "reviews": "2446",
+        "desc": "Classic Room (42m²) • 1 giường đôi lớn • Miễn phí hủy trước 2 ngày.",
+        "img": "http://localhost:3000/data/booking/hotels/h1/images/10025678-f1b63600354e13d056571f18e3ecf359.webp",
+        "image": "http://localhost:3000/data/booking/hotels/h1/images/10025678-f1b63600354e13d056571f18e3ecf359.webp",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Classic Room"
+          },
+          {
+            "icon": "spa",
+            "label": "Bãi biển riêng"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000320",
+        "venueId": "673000000000000000000320",
+        "key": "dining",
+        "tag": "Điểm Tham Quan",
+        "title": "Golden Bridge (Ba Na Hills)",
+        "location": "Golden Bridge (Ba Na Hills), Da Nang",
+        "price": "900.000₫",
+        "unit": "/ khách",
+        "rating": "4.8",
+        "reviews": "1250",
+        "desc": "A 150-metre-long pedestrian bridge in the Ba Na Hills resort, near Da Nang, Vietnam. It is designed to connect the cable car station with the gardens and to provide a scenic overlook and tourist attraction.",
+        "img": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&auto=format&fit=crop&q=60",
+        "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&auto=format&fit=crop&q=60",
+        "features": [
+          {
+            "icon": "schedule",
+            "label": "Giờ mở cửa: 07:00 - 22:00"
+          },
+          {
+            "icon": "place",
+            "label": "Thành phố: Da Nang"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "venueId": "673000000000000000000302",
+        "key": "yacht",
+        "tag": "Siêu Du Thuyền Riêng Tư",
+        "title": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+        "location": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+        "price": "18.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.99",
+        "reviews": "215",
+        "desc": "Hải trình 4 tiếng trên siêu du thuyền hai thân Catamaran 68ft riêng tư: Lặn ngắm san hô nguyên sinh, thưởng thức Champagne Dom Pérignon & Tôm hùm nướng.",
+        "img": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "sailing",
+            "label": "Thuê trọn gói Catamaran 68ft kèm Thuyền trưởng"
+          },
+          {
+            "icon": "liquor",
+            "label": "Champagne Dom Pérignon & Canapé thượng hạng"
+          },
+          {
+            "icon": "scuba_diving",
+            "label": "Thiết bị lặn biển & Seabob chuyên nghiệp"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 250000,
+      "likes": 5600,
+      "commentsCount": 48,
+      "bookmarks": 1400
+    },
+    "isLiked": false,
+    "isBookmarked": false,
+    "created_at": "2026-11-12T07:10:21.087Z",
+    "createdAt": "2026-11-12T07:10:21.087Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000831",
+    "code": "legacy_r2_1",
+    "user_id": "673000000000000000000111",
+    "content_title": "Dragon Bridge • Da Nang",
+    "content_description": "Nước biển xanh trong vắt ở Cù Lao Chàm. Lặn ngắm san hô cực đã!",
+    "caption": "Nước biển xanh trong vắt ở Cù Lao Chàm. Lặn ngắm san hô cực đã!",
+    "image_url": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&auto=format&fit=crop&q=60",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-coral-reef-and-fish-underwater-41465-large.mp4",
+    "location_name": "Dragon Bridge, Da Nang",
+    "drawerKey": "resort",
+    "category": "latest",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000421",
+        "room_id": "673000000000000000000517",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d7c"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000322",
+        "_id": "6af67f9df19f299713ce2d7d"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000421",
+        "room_id": "673000000000000000000517",
+        "location_id": null,
+        "venueId": "673000000000000000000421",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Superior",
+        "title": "Novotel Danang Han River",
+        "location": "Số 65 Đường Trần Phú, Trung tâm, Đà Nẵng",
+        "price": "2.750.000₫",
+        "unit": "/ đêm",
+        "rating": "9.2",
+        "reviews": "1413",
+        "desc": "Superior (60m²) • 1 giường đôi lớn • Miễn phí hủy trước 2 ngày.",
+        "img": "http://localhost:3000/data/booking/hotels/h2/images/20020070-b5360b527dad0709a04cd0b9ac25ef27.webp",
+        "image": "http://localhost:3000/data/booking/hotels/h2/images/20020070-b5360b527dad0709a04cd0b9ac25ef27.webp",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Superior"
+          },
+          {
+            "icon": "spa",
+            "label": "View Sông Hàn"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000322",
+        "venueId": "673000000000000000000322",
+        "key": "dining",
+        "tag": "Điểm Tham Quan",
+        "title": "Dragon Bridge",
+        "location": "Dragon Bridge, Da Nang",
+        "price": "Miễn phí vé vào",
+        "unit": "/ khách",
+        "rating": "4.9",
+        "reviews": "3200",
+        "desc": "A bridge over the River Hàn at Da Nang, Vietnam, shaped like a dragon. It breathes fire and water every Saturday and Sunday night.",
+        "img": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&auto=format&fit=crop&q=60",
+        "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&auto=format&fit=crop&q=60",
+        "features": [
+          {
+            "icon": "schedule",
+            "label": "Giờ mở cửa: 24/7"
+          },
+          {
+            "icon": "place",
+            "label": "Thành phố: Da Nang"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "venueId": "673000000000000000000302",
+        "key": "yacht",
+        "tag": "Siêu Du Thuyền Riêng Tư",
+        "title": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+        "location": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+        "price": "18.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.99",
+        "reviews": "215",
+        "desc": "Hải trình 4 tiếng trên siêu du thuyền hai thân Catamaran 68ft riêng tư: Lặn ngắm san hô nguyên sinh, thưởng thức Champagne Dom Pérignon & Tôm hùm nướng.",
+        "img": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "sailing",
+            "label": "Thuê trọn gói Catamaran 68ft kèm Thuyền trưởng"
+          },
+          {
+            "icon": "liquor",
+            "label": "Champagne Dom Pérignon & Canapé thượng hạng"
+          },
+          {
+            "icon": "scuba_diving",
+            "label": "Thiết bị lặn biển & Seabob chuyên nghiệp"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 150000,
+      "likes": 3200,
+      "commentsCount": 53,
+      "bookmarks": 800
+    },
+    "isLiked": false,
+    "isBookmarked": false,
+    "created_at": "2026-11-12T06:10:21.087Z",
+    "createdAt": "2026-11-12T06:10:21.087Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000832",
+    "code": "legacy_r3_2",
+    "user_id": "673000000000000000000113",
+    "content_title": "Marble Mountains • Da Nang",
+    "content_description": "Một góc Hội An yên bình về đêm. Phố cổ lồng đèn lung linh.",
+    "caption": "Một góc Hội An yên bình về đêm. Phố cổ lồng đèn lung linh.",
+    "image_url": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&auto=format&fit=crop&q=60",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-sailing-boat-on-the-sea-at-sunset-4149-large.mp4",
+    "location_name": "Marble Mountains, Da Nang",
+    "drawerKey": "resort",
+    "category": "trending",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000422",
+        "room_id": "673000000000000000000520",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d7f"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000321",
+        "_id": "6af67f9df19f299713ce2d80"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000422",
+        "room_id": "673000000000000000000520",
+        "location_id": null,
+        "venueId": "673000000000000000000422",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • City View",
+        "title": "Haian Beach Hotel & Spa",
+        "location": "Số 28 Đường Trần Phú, Trung tâm, Đà Nẵng",
+        "price": "2.125.000₫",
+        "unit": "/ đêm",
+        "rating": "9.4",
+        "reviews": "2126",
+        "desc": "City View (39m²) • 1 giường đôi lớn • Miễn phí hủy trước 2 ngày.",
+        "img": "http://localhost:3000/data/booking/hotels/h3/images/20097595-0f9cb554d0aff7e81ce8c6d33fe68c2d.webp",
+        "image": "http://localhost:3000/data/booking/hotels/h3/images/20097595-0f9cb554d0aff7e81ce8c6d33fe68c2d.webp",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "City View"
+          },
+          {
+            "icon": "spa",
+            "label": "Hồ bơi vô cực"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000321",
+        "venueId": "673000000000000000000321",
+        "key": "dining",
+        "tag": "Điểm Tham Quan",
+        "title": "Marble Mountains",
+        "location": "Marble Mountains, Da Nang",
+        "price": "40.000₫",
+        "unit": "/ khách",
+        "rating": "4.6",
+        "reviews": "840",
+        "desc": "A cluster of five marble and limestone hills located in Ngu Hanh Son District, south of Da Nang city in Vietnam. The five mountains are named after the five elements: Kim (metal), Thuy (water), Moc (wood), Hoa (fire) and Tho (earth).",
+        "img": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&auto=format&fit=crop&q=60",
+        "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&auto=format&fit=crop&q=60",
+        "features": [
+          {
+            "icon": "schedule",
+            "label": "Giờ mở cửa: 07:00 - 17:30"
+          },
+          {
+            "icon": "place",
+            "label": "Thành phố: Da Nang"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "venueId": "673000000000000000000302",
+        "key": "yacht",
+        "tag": "Siêu Du Thuyền Riêng Tư",
+        "title": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+        "location": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+        "price": "18.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.99",
+        "reviews": "215",
+        "desc": "Hải trình 4 tiếng trên siêu du thuyền hai thân Catamaran 68ft riêng tư: Lặn ngắm san hô nguyên sinh, thưởng thức Champagne Dom Pérignon & Tôm hùm nướng.",
+        "img": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "sailing",
+            "label": "Thuê trọn gói Catamaran 68ft kèm Thuyền trưởng"
+          },
+          {
+            "icon": "liquor",
+            "label": "Champagne Dom Pérignon & Canapé thượng hạng"
+          },
+          {
+            "icon": "scuba_diving",
+            "label": "Thiết bị lặn biển & Seabob chuyên nghiệp"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 550000,
+      "likes": 12400,
+      "commentsCount": 58,
+      "bookmarks": 3100
+    },
+    "isLiked": false,
+    "isBookmarked": false,
+    "created_at": "2026-11-12T05:10:21.087Z",
+    "createdAt": "2026-11-12T05:10:21.087Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000833",
+    "code": "legacy_r4_3",
+    "user_id": "673000000000000000000112",
+    "content_title": "My Khe Beach • Da Nang",
+    "content_description": "Hà Nội mùa này đẹp lạ lùng. Trà chanh chém gió Hồ Gươm thôi anh em!",
+    "caption": "Hà Nội mùa này đẹp lạ lùng. Trà chanh chém gió Hồ Gươm thôi anh em!",
+    "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=60",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-seashore-with-rocks-1090-large.mp4",
+    "location_name": "My Khe Beach, Da Nang",
+    "drawerKey": "resort",
+    "category": "latest",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000423",
+        "room_id": "673000000000000000000523",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d82"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000323",
+        "_id": "6af67f9df19f299713ce2d83"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000423",
+        "room_id": "673000000000000000000523",
+        "location_id": null,
+        "venueId": "673000000000000000000423",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Standard",
+        "title": "Sala Danang Beach Hotel",
+        "location": "Số 11 Đường Trần Phú, Trung tâm, Đà Nẵng",
+        "price": "1.750.000₫",
+        "unit": "/ đêm",
+        "rating": "9",
+        "reviews": "200",
+        "desc": "Standard (49m²) • 1 giường đôi lớn • Miễn phí hủy trước 2 ngày.",
+        "img": "http://localhost:3000/data/booking/hotels/h4/images/20012109-4c65e4e808a2cf0c2bfee7a8e6e233fe.webp",
+        "image": "http://localhost:3000/data/booking/hotels/h4/images/20012109-4c65e4e808a2cf0c2bfee7a8e6e233fe.webp",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Standard"
+          },
+          {
+            "icon": "spa",
+            "label": "Hồ bơi vô cực trên cao"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000323",
+        "venueId": "673000000000000000000323",
+        "key": "dining",
+        "tag": "Điểm Tham Quan",
+        "title": "My Khe Beach",
+        "location": "My Khe Beach, Da Nang",
+        "price": "Miễn phí vé vào",
+        "unit": "/ khách",
+        "rating": "4.5",
+        "reviews": "5400",
+        "desc": "Famous for its blue sky, smooth white sand, gentle slope, clear & warm water year round and beautiful areas surrounded by coconut trees.",
+        "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=60",
+        "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=60",
+        "features": [
+          {
+            "icon": "schedule",
+            "label": "Giờ mở cửa: 24/7"
+          },
+          {
+            "icon": "place",
+            "label": "Thành phố: Da Nang"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "venueId": "673000000000000000000302",
+        "key": "yacht",
+        "tag": "Siêu Du Thuyền Riêng Tư",
+        "title": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+        "location": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+        "price": "18.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.99",
+        "reviews": "215",
+        "desc": "Hải trình 4 tiếng trên siêu du thuyền hai thân Catamaran 68ft riêng tư: Lặn ngắm san hô nguyên sinh, thưởng thức Champagne Dom Pérignon & Tôm hùm nướng.",
+        "img": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "sailing",
+            "label": "Thuê trọn gói Catamaran 68ft kèm Thuyền trưởng"
+          },
+          {
+            "icon": "liquor",
+            "label": "Champagne Dom Pérignon & Canapé thượng hạng"
+          },
+          {
+            "icon": "scuba_diving",
+            "label": "Thiết bị lặn biển & Seabob chuyên nghiệp"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 320000,
+      "likes": 8900,
+      "commentsCount": 63,
+      "bookmarks": 2225
+    },
+    "isLiked": false,
+    "isBookmarked": false,
+    "created_at": "2026-11-12T04:10:21.087Z",
+    "createdAt": "2026-11-12T04:10:21.087Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000834",
+    "code": "legacy_r5_4",
+    "user_id": "673000000000000000000111",
+    "content_title": "Reply 1988 Cafe • Da Nang",
+    "content_description": "Đà Lạt chưa bao giờ làm mình thất vọng. Không khí se lạnh quá tuyệt vời.",
+    "caption": "Đà Lạt chưa bao giờ làm mình thất vọng. Không khí se lạnh quá tuyệt vời.",
+    "image_url": "https://images.unsplash.com/photo-1498804103079-a6351b050096?w=800&auto=format&fit=crop&q=60",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-foggy-forest-in-mountains-41566-large.mp4",
+    "location_name": "Reply 1988 Cafe, Da Nang",
+    "drawerKey": "resort",
+    "category": "trending",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000424",
+        "room_id": "673000000000000000000526",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d85"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000324",
+        "_id": "6af67f9df19f299713ce2d86"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000424",
+        "room_id": "673000000000000000000526",
+        "location_id": null,
+        "venueId": "673000000000000000000424",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Luxury",
+        "title": "Sofitel Legend Metropole",
+        "location": "Số 79 Đường Trần Phú, Trung tâm, Hà Nội",
+        "price": "8.750.000₫",
+        "unit": "/ đêm",
+        "rating": "9.8",
+        "reviews": "1162",
+        "desc": "Luxury (60m²) • 1 giường đôi lớn • Miễn phí hủy trước 2 ngày.",
+        "img": "http://localhost:3000/data/booking/hotels/h5/images/10019543-42d1ed72750e9677555c12ec379acd43.webp",
+        "image": "http://localhost:3000/data/booking/hotels/h5/images/10019543-42d1ed72750e9677555c12ec379acd43.webp",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Luxury"
+          },
+          {
+            "icon": "spa",
+            "label": "Kiến trúc Pháp cổ"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000324",
+        "venueId": "673000000000000000000324",
+        "key": "dining",
+        "tag": "Cafe Check-in",
+        "title": "Reply 1988 Cafe",
+        "location": "Reply 1988 Cafe, Da Nang",
+        "price": "Miễn phí vé vào",
+        "unit": "/ khách",
+        "rating": "4.7",
+        "reviews": "420",
+        "desc": "A cozy, retro-themed cafe inspired by the Korean drama Reply 1988. Famous for its amazing egg coffee and rustic interior design.",
+        "img": "https://images.unsplash.com/photo-1498804103079-a6351b050096?w=800&auto=format&fit=crop&q=60",
+        "image": "https://images.unsplash.com/photo-1498804103079-a6351b050096?w=800&auto=format&fit=crop&q=60",
+        "features": [
+          {
+            "icon": "schedule",
+            "label": "Giờ mở cửa: 07:00 - 23:00"
+          },
+          {
+            "icon": "place",
+            "label": "Thành phố: Da Nang"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "venueId": "673000000000000000000302",
+        "key": "yacht",
+        "tag": "Siêu Du Thuyền Riêng Tư",
+        "title": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+        "location": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+        "price": "18.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.99",
+        "reviews": "215",
+        "desc": "Hải trình 4 tiếng trên siêu du thuyền hai thân Catamaran 68ft riêng tư: Lặn ngắm san hô nguyên sinh, thưởng thức Champagne Dom Pérignon & Tôm hùm nướng.",
+        "img": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "sailing",
+            "label": "Thuê trọn gói Catamaran 68ft kèm Thuyền trưởng"
+          },
+          {
+            "icon": "liquor",
+            "label": "Champagne Dom Pérignon & Canapé thượng hạng"
+          },
+          {
+            "icon": "scuba_diving",
+            "label": "Thiết bị lặn biển & Seabob chuyên nghiệp"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 420000,
+      "likes": 11000,
+      "commentsCount": 68,
+      "bookmarks": 2750
+    },
+    "isLiked": false,
+    "isBookmarked": false,
+    "created_at": "2026-11-12T03:10:21.087Z",
+    "createdAt": "2026-11-12T03:10:21.087Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000835",
+    "code": "legacy_r6_5",
+    "user_id": "673000000000000000000113",
+    "content_title": "I-Resort Mud Bath • Nha Trang",
+    "content_description": "Trải nghiệm ngâm bùn khoáng nóng ở Nha Trang.",
+    "caption": "Trải nghiệm ngâm bùn khoáng nóng ở Nha Trang.",
+    "image_url": "https://images.unsplash.com/photo-1544816155-12df9643f363?w=800&auto=format&fit=crop&q=60",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-woman-swimming-in-an-infinity-pool-4335-large.mp4",
+    "location_name": "I-Resort Mud Bath, Nha Trang",
+    "drawerKey": "resort",
+    "category": "latest",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000402",
+        "room_id": "673000000000000000000513",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d88"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000333",
+        "_id": "6af67f9df19f299713ce2d89"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000402",
+        "room_id": "673000000000000000000513",
+        "location_id": null,
+        "venueId": "673000000000000000000402",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Rock Pool Villa Trên Ghềnh Đá",
+        "title": "Six Senses Ninh Van Bay",
+        "location": "Vịnh Ninh Vân, Nha Trang, Khánh Hòa",
+        "price": "15.500.000₫",
+        "unit": "/ đêm",
+        "rating": "9.8",
+        "reviews": "412",
+        "desc": "Rock Pool Villa Trên Ghềnh Đá diện tích 158m², 1 giường King, bao gồm trà chiều & quản gia riêng.",
+        "img": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80",
+        "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Rock Pool Villa Trên Ghềnh Đá"
+          },
+          {
+            "icon": "spa",
+            "label": "Wi-Fi"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000333",
+        "venueId": "673000000000000000000333",
+        "key": "dining",
+        "tag": "Điểm Tham Quan",
+        "title": "I-Resort Mud Bath",
+        "location": "I-Resort Mud Bath, Nha Trang",
+        "price": "250.000₫",
+        "unit": "/ khách",
+        "rating": "4.7",
+        "reviews": "640",
+        "desc": "Relax in hot mineral springs and mud baths set in a beautiful tropical environment with waterfalls and pools.",
+        "img": "https://images.unsplash.com/photo-1544816155-12df9643f363?w=800&auto=format&fit=crop&q=60",
+        "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?w=800&auto=format&fit=crop&q=60",
+        "features": [
+          {
+            "icon": "schedule",
+            "label": "Giờ mở cửa: 08:00 - 18:00"
+          },
+          {
+            "icon": "place",
+            "label": "Thành phố: Nha Trang"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "venueId": "673000000000000000000302",
+        "key": "yacht",
+        "tag": "Siêu Du Thuyền Riêng Tư",
+        "title": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+        "location": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+        "price": "18.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.99",
+        "reviews": "215",
+        "desc": "Hải trình 4 tiếng trên siêu du thuyền hai thân Catamaran 68ft riêng tư: Lặn ngắm san hô nguyên sinh, thưởng thức Champagne Dom Pérignon & Tôm hùm nướng.",
+        "img": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "sailing",
+            "label": "Thuê trọn gói Catamaran 68ft kèm Thuyền trưởng"
+          },
+          {
+            "icon": "liquor",
+            "label": "Champagne Dom Pérignon & Canapé thượng hạng"
+          },
+          {
+            "icon": "scuba_diving",
+            "label": "Thiết bị lặn biển & Seabob chuyên nghiệp"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 22400,
+      "likes": 1420,
+      "commentsCount": 73,
+      "bookmarks": 355
+    },
+    "isLiked": false,
+    "isBookmarked": false,
+    "created_at": "2026-11-12T02:10:21.087Z",
+    "createdAt": "2026-11-12T02:10:21.087Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000836",
+    "code": "legacy_r10_6",
+    "user_id": "673000000000000000000113",
+    "content_title": "Thia Go Restaurant • Da Nang",
+    "content_description": "Trải nghiệm khó quên cùng Tripla! #CHUAHANOI",
+    "caption": "Trải nghiệm khó quên cùng Tripla! #CHUAHANOI",
+    "image_url": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&auto=format&fit=crop&q=60",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-clouds-moving-over-the-mountains-41569-large.mp4",
+    "location_name": "Thia Go Restaurant, Da Nang",
+    "drawerKey": "resort",
+    "category": "trending",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000426",
+        "room_id": "673000000000000000000532",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d8b"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000325",
+        "_id": "6af67f9df19f299713ce2d8c"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000426",
+        "room_id": "673000000000000000000532",
+        "location_id": null,
+        "venueId": "673000000000000000000426",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Deluxe",
+        "title": "The Reverie Saigon",
+        "location": "Số 2 Đường Trần Phú, Trung tâm, Hồ Chí Minh",
+        "price": "8.000.000₫",
+        "unit": "/ đêm",
+        "rating": "9.8",
+        "reviews": "2191",
+        "desc": "Deluxe (55m²) • 1 giường đôi lớn • Miễn phí hủy trước 2 ngày.",
+        "img": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&auto=format&fit=crop&q=60",
+        "image": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&auto=format&fit=crop&q=60",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Deluxe"
+          },
+          {
+            "icon": "spa",
+            "label": "Thiết kế chuẩn Ý"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000325",
+        "venueId": "673000000000000000000325",
+        "key": "dining",
+        "tag": "Ẩm Thực Địa Phương",
+        "title": "Thia Go Restaurant",
+        "location": "Thia Go Restaurant, Da Nang",
+        "price": "Miễn phí vé vào",
+        "unit": "/ khách",
+        "rating": "4.7",
+        "reviews": "610",
+        "desc": "Outstanding Central Vietnamese food including Mi Quang, Banh Xeo, and lemongrass pork. A must-visit for food lovers.",
+        "img": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&auto=format&fit=crop&q=60",
+        "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&auto=format&fit=crop&q=60",
+        "features": [
+          {
+            "icon": "schedule",
+            "label": "Giờ mở cửa: 10:00 - 22:00"
+          },
+          {
+            "icon": "place",
+            "label": "Thành phố: Da Nang"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "venueId": "673000000000000000000302",
+        "key": "yacht",
+        "tag": "Siêu Du Thuyền Riêng Tư",
+        "title": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+        "location": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+        "price": "18.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.99",
+        "reviews": "215",
+        "desc": "Hải trình 4 tiếng trên siêu du thuyền hai thân Catamaran 68ft riêng tư: Lặn ngắm san hô nguyên sinh, thưởng thức Champagne Dom Pérignon & Tôm hùm nướng.",
+        "img": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "sailing",
+            "label": "Thuê trọn gói Catamaran 68ft kèm Thuyền trưởng"
+          },
+          {
+            "icon": "liquor",
+            "label": "Champagne Dom Pérignon & Canapé thượng hạng"
+          },
+          {
+            "icon": "scuba_diving",
+            "label": "Thiết bị lặn biển & Seabob chuyên nghiệp"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 463501,
+      "likes": 6090,
+      "commentsCount": 78,
+      "bookmarks": 1523
+    },
+    "isLiked": false,
+    "isBookmarked": false,
+    "created_at": "2026-11-12T01:10:21.088Z",
+    "createdAt": "2026-11-12T01:10:21.088Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000837",
+    "code": "legacy_r11_7",
+    "user_id": "673000000000000000000112",
+    "content_title": "VinWonders Phu Quoc • Phu Quoc",
+    "content_description": "Trải nghiệm khó quên cùng Tripla! #CVHANOI",
+    "caption": "Trải nghiệm khó quên cùng Tripla! #CVHANOI",
+    "image_url": "https://images.unsplash.com/photo-1513553404607-988bf2703777?w=800&auto=format&fit=crop&q=60",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-kayaking-in-a-calm-lake-at-sunset-41504-large.mp4",
+    "location_name": "VinWonders Phu Quoc, Phu Quoc",
+    "drawerKey": "resort",
+    "category": "latest",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000427",
+        "room_id": "673000000000000000000535",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d8e"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000326",
+        "_id": "6af67f9df19f299713ce2d8f"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000427",
+        "room_id": "673000000000000000000535",
+        "location_id": null,
+        "venueId": "673000000000000000000427",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Suite",
+        "title": "Fusion Suites Saigon",
+        "location": "Số 8 Đường Trần Phú, Trung tâm, Hồ Chí Minh",
+        "price": "2.375.000₫",
+        "unit": "/ đêm",
+        "rating": "9.2",
+        "reviews": "191",
+        "desc": "Suite (36m²) • 1 giường đôi lớn • Miễn phí hủy trước 2 ngày.",
+        "img": "https://images.unsplash.com/photo-1568495248636-6432b97bd949?w=800&auto=format&fit=crop&q=60",
+        "image": "https://images.unsplash.com/photo-1568495248636-6432b97bd949?w=800&auto=format&fit=crop&q=60",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Suite"
+          },
+          {
+            "icon": "spa",
+            "label": "Bao gồm Spa hàng ngày"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000326",
+        "venueId": "673000000000000000000326",
+        "key": "dining",
+        "tag": "Điểm Tham Quan",
+        "title": "VinWonders Phu Quoc",
+        "location": "VinWonders Phu Quoc, Phu Quoc",
+        "price": "880.000₫",
+        "unit": "/ khách",
+        "rating": "4.8",
+        "reviews": "1150",
+        "desc": "The largest theme park in Vietnam with dozens of outdoor rides, an indoor game center, an aquarium, and a water park.",
+        "img": "https://images.unsplash.com/photo-1513553404607-988bf2703777?w=800&auto=format&fit=crop&q=60",
+        "image": "https://images.unsplash.com/photo-1513553404607-988bf2703777?w=800&auto=format&fit=crop&q=60",
+        "features": [
+          {
+            "icon": "schedule",
+            "label": "Giờ mở cửa: 09:00 - 19:30"
+          },
+          {
+            "icon": "place",
+            "label": "Thành phố: Phu Quoc"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "venueId": "673000000000000000000302",
+        "key": "yacht",
+        "tag": "Siêu Du Thuyền Riêng Tư",
+        "title": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+        "location": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+        "price": "18.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.99",
+        "reviews": "215",
+        "desc": "Hải trình 4 tiếng trên siêu du thuyền hai thân Catamaran 68ft riêng tư: Lặn ngắm san hô nguyên sinh, thưởng thức Champagne Dom Pérignon & Tôm hùm nướng.",
+        "img": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "sailing",
+            "label": "Thuê trọn gói Catamaran 68ft kèm Thuyền trưởng"
+          },
+          {
+            "icon": "liquor",
+            "label": "Champagne Dom Pérignon & Canapé thượng hạng"
+          },
+          {
+            "icon": "scuba_diving",
+            "label": "Thiết bị lặn biển & Seabob chuyên nghiệp"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 233406,
+      "likes": 4874,
+      "commentsCount": 83,
+      "bookmarks": 1219
+    },
+    "isLiked": false,
+    "isBookmarked": false,
+    "created_at": "2026-11-12T00:10:21.088Z",
+    "createdAt": "2026-11-12T00:10:21.088Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000838",
+    "code": "legacy_r12_8",
+    "user_id": "673000000000000000000111",
+    "content_title": "Thia Go Restaurant • Da Nang",
+    "content_description": "Trải nghiệm khó quên cùng Tripla! #DL1",
+    "caption": "Trải nghiệm khó quên cùng Tripla! #DL1",
+    "image_url": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&auto=format&fit=crop&q=60",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-woman-walking-on-the-edge-of-an-infinity-pool-4336-large.mp4",
+    "location_name": "Thia Go Restaurant, Da Nang",
+    "drawerKey": "resort",
+    "category": "trending",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000428",
+        "room_id": "673000000000000000000538",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d91"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000325",
+        "_id": "6af67f9df19f299713ce2d92"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000428",
+        "room_id": "673000000000000000000538",
+        "location_id": null,
+        "venueId": "673000000000000000000428",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Standard",
+        "title": "Sol by Meliá Phu Quoc",
+        "location": "Số 54 Đường Trần Phú, Trung tâm, Phú Quốc",
+        "price": "2.250.000₫",
+        "unit": "/ đêm",
+        "rating": "9.2",
+        "reviews": "504",
+        "desc": "Standard (55m²) • 1 giường đôi lớn • Miễn phí hủy trước 2 ngày.",
+        "img": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&auto=format&fit=crop&q=60",
+        "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&auto=format&fit=crop&q=60",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Standard"
+          },
+          {
+            "icon": "spa",
+            "label": "Bãi biển riêng"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000325",
+        "venueId": "673000000000000000000325",
+        "key": "dining",
+        "tag": "Ẩm Thực Địa Phương",
+        "title": "Thia Go Restaurant",
+        "location": "Thia Go Restaurant, Da Nang",
+        "price": "Miễn phí vé vào",
+        "unit": "/ khách",
+        "rating": "4.7",
+        "reviews": "610",
+        "desc": "Outstanding Central Vietnamese food including Mi Quang, Banh Xeo, and lemongrass pork. A must-visit for food lovers.",
+        "img": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&auto=format&fit=crop&q=60",
+        "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&auto=format&fit=crop&q=60",
+        "features": [
+          {
+            "icon": "schedule",
+            "label": "Giờ mở cửa: 10:00 - 22:00"
+          },
+          {
+            "icon": "place",
+            "label": "Thành phố: Da Nang"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "venueId": "673000000000000000000302",
+        "key": "yacht",
+        "tag": "Siêu Du Thuyền Riêng Tư",
+        "title": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+        "location": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+        "price": "18.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.99",
+        "reviews": "215",
+        "desc": "Hải trình 4 tiếng trên siêu du thuyền hai thân Catamaran 68ft riêng tư: Lặn ngắm san hô nguyên sinh, thưởng thức Champagne Dom Pérignon & Tôm hùm nướng.",
+        "img": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "sailing",
+            "label": "Thuê trọn gói Catamaran 68ft kèm Thuyền trưởng"
+          },
+          {
+            "icon": "liquor",
+            "label": "Champagne Dom Pérignon & Canapé thượng hạng"
+          },
+          {
+            "icon": "scuba_diving",
+            "label": "Thiết bị lặn biển & Seabob chuyên nghiệp"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 292132,
+      "likes": 1046,
+      "commentsCount": 88,
+      "bookmarks": 262
+    },
+    "isLiked": false,
+    "isBookmarked": false,
+    "created_at": "2026-11-11T23:10:21.088Z",
+    "createdAt": "2026-11-11T23:10:21.088Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000839",
+    "code": "legacy_r13_9",
+    "user_id": "673000000000000000000113",
+    "content_title": "My Khe Beach • Da Nang",
+    "content_description": "Trải nghiệm khó quên cùng Tripla! #DL11",
+    "caption": "Trải nghiệm khó quên cùng Tripla! #DL11",
+    "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=60",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-sun-setting-over-the-ocean-waves-4148-large.mp4",
+    "location_name": "My Khe Beach, Da Nang",
+    "drawerKey": "resort",
+    "category": "latest",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000429",
+        "room_id": "673000000000000000000541",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d94"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000323",
+        "_id": "6af67f9df19f299713ce2d95"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000429",
+        "room_id": "673000000000000000000541",
+        "location_id": null,
+        "venueId": "673000000000000000000429",
+        "key": "resort",
+        "tag": "5 Sao Tuyệt Đỉnh • Emerald Bay View",
+        "title": "JW Marriott Phu Quoc",
+        "location": "Số 39 Đường Trần Phú, Trung tâm, Phú Quốc",
+        "price": "8.750.000₫",
+        "unit": "/ đêm",
+        "rating": "9.8",
+        "reviews": "645",
+        "desc": "Emerald Bay View (51m²) • 1 giường đôi lớn • Miễn phí hủy trước 2 ngày.",
+        "img": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&auto=format&fit=crop&q=60",
+        "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&auto=format&fit=crop&q=60",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Emerald Bay View"
+          },
+          {
+            "icon": "spa",
+            "label": "Bãi Khem"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000323",
+        "venueId": "673000000000000000000323",
+        "key": "dining",
+        "tag": "Điểm Tham Quan",
+        "title": "My Khe Beach",
+        "location": "My Khe Beach, Da Nang",
+        "price": "Miễn phí vé vào",
+        "unit": "/ khách",
+        "rating": "4.5",
+        "reviews": "5400",
+        "desc": "Famous for its blue sky, smooth white sand, gentle slope, clear & warm water year round and beautiful areas surrounded by coconut trees.",
+        "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=60",
+        "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=60",
+        "features": [
+          {
+            "icon": "schedule",
+            "label": "Giờ mở cửa: 24/7"
+          },
+          {
+            "icon": "place",
+            "label": "Thành phố: Da Nang"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "venueId": "673000000000000000000302",
+        "key": "yacht",
+        "tag": "Siêu Du Thuyền Riêng Tư",
+        "title": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+        "location": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+        "price": "18.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.99",
+        "reviews": "215",
+        "desc": "Hải trình 4 tiếng trên siêu du thuyền hai thân Catamaran 68ft riêng tư: Lặn ngắm san hô nguyên sinh, thưởng thức Champagne Dom Pérignon & Tôm hùm nướng.",
+        "img": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "sailing",
+            "label": "Thuê trọn gói Catamaran 68ft kèm Thuyền trưởng"
+          },
+          {
+            "icon": "liquor",
+            "label": "Champagne Dom Pérignon & Canapé thượng hạng"
+          },
+          {
+            "icon": "scuba_diving",
+            "label": "Thiết bị lặn biển & Seabob chuyên nghiệp"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 465965,
+      "likes": 1392,
+      "commentsCount": 93,
+      "bookmarks": 348
+    },
+    "isLiked": false,
+    "isBookmarked": false,
+    "created_at": "2026-11-11T22:10:21.088Z",
+    "createdAt": "2026-11-11T22:10:21.088Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000840",
+    "code": "legacy_r14_10",
+    "user_id": "673000000000000000000114",
+    "content_title": "My Khe Beach • Da Nang",
+    "content_description": "Trải nghiệm khó quên cùng Tripla! #DL13",
+    "caption": "Trải nghiệm khó quên cùng Tripla! #DL13",
+    "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=60",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-friends-toasting-with-cocktails-at-sunset-42620-large.mp4",
+    "location_name": "My Khe Beach, Da Nang",
+    "drawerKey": "resort",
+    "category": "trending",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000411",
+        "room_id": "673000000000000000000501",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d97"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000323",
+        "_id": "6af67f9df19f299713ce2d98"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000411",
+        "room_id": "673000000000000000000501",
+        "location_id": null,
+        "venueId": "673000000000000000000411",
+        "key": "resort",
+        "tag": "4 Sao Tuyệt Đỉnh • Phòng Tiêu chuẩn View Đồi Thông",
+        "title": "Nhà Bên Rừng",
+        "location": "Đà Lạt, Lâm Đồng",
+        "price": "850.000₫",
+        "unit": "/ đêm",
+        "rating": "9.2",
+        "reviews": "128",
+        "desc": "Phòng Tiêu chuẩn View Đồi Thông diện tích 28m², 1 giường đôi, bao gồm trà chiều & quản gia riêng.",
+        "img": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1000&q=80",
+        "image": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1000&q=80",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Phòng Tiêu chuẩn View Đồi Thông"
+          },
+          {
+            "icon": "spa",
+            "label": "Wi-Fi"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000323",
+        "venueId": "673000000000000000000323",
+        "key": "dining",
+        "tag": "Điểm Tham Quan",
+        "title": "My Khe Beach",
+        "location": "My Khe Beach, Da Nang",
+        "price": "Miễn phí vé vào",
+        "unit": "/ khách",
+        "rating": "4.5",
+        "reviews": "5400",
+        "desc": "Famous for its blue sky, smooth white sand, gentle slope, clear & warm water year round and beautiful areas surrounded by coconut trees.",
+        "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=60",
+        "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=60",
+        "features": [
+          {
+            "icon": "schedule",
+            "label": "Giờ mở cửa: 24/7"
+          },
+          {
+            "icon": "place",
+            "label": "Thành phố: Da Nang"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "venueId": "673000000000000000000302",
+        "key": "yacht",
+        "tag": "Siêu Du Thuyền Riêng Tư",
+        "title": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+        "location": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+        "price": "18.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.99",
+        "reviews": "215",
+        "desc": "Hải trình 4 tiếng trên siêu du thuyền hai thân Catamaran 68ft riêng tư: Lặn ngắm san hô nguyên sinh, thưởng thức Champagne Dom Pérignon & Tôm hùm nướng.",
+        "img": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "sailing",
+            "label": "Thuê trọn gói Catamaran 68ft kèm Thuyền trưởng"
+          },
+          {
+            "icon": "liquor",
+            "label": "Champagne Dom Pérignon & Canapé thượng hạng"
+          },
+          {
+            "icon": "scuba_diving",
+            "label": "Thiết bị lặn biển & Seabob chuyên nghiệp"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 475964,
+      "likes": 2080,
+      "commentsCount": 98,
+      "bookmarks": 520
+    },
+    "isLiked": false,
+    "isBookmarked": false,
+    "created_at": "2026-11-11T21:10:21.088Z",
+    "createdAt": "2026-11-11T21:10:21.088Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000841",
+    "code": "legacy_r15_11",
+    "user_id": "673000000000000000000113",
+    "content_title": "Thia Go Restaurant • Da Nang",
+    "content_description": "Trải nghiệm khó quên cùng Tripla! #DL14",
+    "caption": "Trải nghiệm khó quên cùng Tripla! #DL14",
+    "image_url": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&auto=format&fit=crop&q=60",
+    "video_url": "https://assets.mixkit.co/videos/preview/mixkit-waves-coming-to-the-beach-5016-large.mp4",
+    "location_name": "Thia Go Restaurant, Da Nang",
+    "drawerKey": "resort",
+    "category": "latest",
+    "location_tags": [
+      {
+        "tag_type": "resort",
+        "hotel_id": "673000000000000000000412",
+        "room_id": "673000000000000000000503",
+        "location_id": null,
+        "_id": "6af67f9df19f299713ce2d9a"
+      },
+      {
+        "tag_type": "dining",
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000325",
+        "_id": "6af67f9df19f299713ce2d9b"
+      }
+    ],
+    "hotspots": {
+      "resort": {
+        "hotel_id": "673000000000000000000412",
+        "room_id": "673000000000000000000503",
+        "location_id": null,
+        "venueId": "673000000000000000000412",
+        "key": "resort",
+        "tag": "3 Sao Tuyệt Đỉnh • Phòng Tiêu chuẩn Sân Vườn",
+        "title": "An Nhiên Garden Stay",
+        "location": "Đà Lạt, Lâm Đồng",
+        "price": "620.000₫",
+        "unit": "/ đêm",
+        "rating": "8.7",
+        "reviews": "86",
+        "desc": "Phòng Tiêu chuẩn Sân Vườn diện tích 26m², 1 giường đôi, bao gồm trà chiều & quản gia riêng.",
+        "img": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+        "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+        "features": [
+          {
+            "icon": "pool",
+            "label": "Phòng Tiêu chuẩn Sân Vườn"
+          },
+          {
+            "icon": "spa",
+            "label": "Wi-Fi"
+          },
+          {
+            "icon": "flight_land",
+            "label": "Đưa đón chuyên cơ / Limousine riêng"
+          }
+        ]
+      },
+      "dining": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000325",
+        "venueId": "673000000000000000000325",
+        "key": "dining",
+        "tag": "Ẩm Thực Địa Phương",
+        "title": "Thia Go Restaurant",
+        "location": "Thia Go Restaurant, Da Nang",
+        "price": "Miễn phí vé vào",
+        "unit": "/ khách",
+        "rating": "4.7",
+        "reviews": "610",
+        "desc": "Outstanding Central Vietnamese food including Mi Quang, Banh Xeo, and lemongrass pork. A must-visit for food lovers.",
+        "img": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&auto=format&fit=crop&q=60",
+        "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&auto=format&fit=crop&q=60",
+        "features": [
+          {
+            "icon": "schedule",
+            "label": "Giờ mở cửa: 10:00 - 22:00"
+          },
+          {
+            "icon": "place",
+            "label": "Thành phố: Da Nang"
+          }
+        ]
+      },
+      "yacht": {
+        "hotel_id": null,
+        "room_id": null,
+        "location_id": "673000000000000000000302",
+        "venueId": "673000000000000000000302",
+        "key": "yacht",
+        "tag": "Siêu Du Thuyền Riêng Tư",
+        "title": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+        "location": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+        "price": "18.500.000₫",
+        "unit": "/ hải trình",
+        "rating": "4.99",
+        "reviews": "215",
+        "desc": "Hải trình 4 tiếng trên siêu du thuyền hai thân Catamaran 68ft riêng tư: Lặn ngắm san hô nguyên sinh, thưởng thức Champagne Dom Pérignon & Tôm hùm nướng.",
+        "img": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+        "features": [
+          {
+            "icon": "sailing",
+            "label": "Thuê trọn gói Catamaran 68ft kèm Thuyền trưởng"
+          },
+          {
+            "icon": "liquor",
+            "label": "Champagne Dom Pérignon & Canapé thượng hạng"
+          },
+          {
+            "icon": "scuba_diving",
+            "label": "Thiết bị lặn biển & Seabob chuyên nghiệp"
+          }
+        ]
+      }
+    },
+    "stats": {
+      "views": 59344,
+      "likes": 5513,
+      "commentsCount": 103,
+      "bookmarks": 1378
+    },
+    "isLiked": false,
+    "isBookmarked": false,
+    "created_at": "2026-11-11T20:10:21.088Z",
+    "createdAt": "2026-11-11T20:10:21.088Z",
+    "__v": 0
+  }
+]

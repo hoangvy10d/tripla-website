@@ -1,0 +1,87 @@
+[
+  {
+    "_id": "live_01",
+    "id": "l1",
+    "title": "Tour thực tế Presidential Villa 300m² sát biển Vĩnh Hy",
+    "host": "@minh_wanderlust",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
+    "viewers": "1.8K đang xem",
+    "viewerCount": 1820,
+    "location": "Amanoi, Ninh Thuận",
+    "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=700&q=80",
+    "pinnedVenueId": "venue_amanoi_01",
+    "voucherCode": "AMANOIVIP15",
+    "status": "LIVE"
+  },
+  {
+    "_id": "live_02",
+    "id": "l2",
+    "title": "Đón hoàng hôn trên boong siêu du thuyền 6 sao Phú Quốc",
+    "host": "@linh.luxtravel",
+    "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80",
+    "viewers": "940 đang xem",
+    "viewerCount": 940,
+    "location": "An Thới, Phú Quốc",
+    "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=700&q=80",
+    "pinnedVenueId": "venue_yacht_serenity_pq_14",
+    "voucherCode": "SERENITY20",
+    "status": "LIVE"
+  },
+  {
+    "_id": "live_03",
+    "id": "l3",
+    "title": "Q&A: Kinh nghiệm săn mây Sapa & Đặt phòng MGallery giá tốt",
+    "host": "@alex_skyview",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
+    "viewers": "620 đang xem",
+    "viewerCount": 620,
+    "location": "Sa Pa, Lào Cai",
+    "image": "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=700&q=80",
+    "pinnedVenueId": "venue_hotel_de_la_coupole_09",
+    "voucherCode": "SAPACLOUD10",
+    "status": "LIVE"
+  },
+  {
+    "_id": "live_04",
+    "id": "l4",
+    "title": "Trải nghiệm trực tiếp bàn Nón Lá Citron & La Maison 1888 Đà Nẵng",
+    "host": "@duc_luxury",
+    "avatar": "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=150&q=80",
+    "viewers": "1.2K đang xem",
+    "viewerCount": 1240,
+    "location": "Bán đảo Sơn Trà, Đà Nẵng",
+    "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=700&q=80",
+    "pinnedVenueId": "venue_intercon_danang_06",
+    "voucherCode": "SONTRAVIP",
+    "status": "LIVE"
+  },
+  {
+    "_id": "live_05",
+    "id": "l5",
+    "title": "Review thực tế Zannier Bãi San Hô — Mở bán Flash Deal 24h",
+    "host": "@quynh_atelier",
+    "avatar": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=150&q=80",
+    "viewers": "1.5K đang xem",
+    "viewerCount": 1510,
+    "location": "Sông Cầu, Phú Yên",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=80",
+    "pinnedVenueId": "venue_zannier_bai_san_ho_08",
+    "voucherCode": "ZANNIER25",
+    "status": "LIVE"
+  },
+  {
+    "_id": "live_06",
+    "id": "l6",
+    "title": "Bữa tối trong hang đá Six Senses Ninh Vân Bay có gì đặc biệt?",
+    "host": "@chef_duy",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
+    "viewers": "890 đang xem",
+    "viewerCount": 890,
+    "location": "Vịnh Ninh Vân, Nha Trang",
+    "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=700&q=80",
+    "pinnedVenueId": "venue_six_senses_ninh_van_02",
+    "voucherCode": "SIXSENSES45",
+    "status": "LIVE"
+  }
+]
+

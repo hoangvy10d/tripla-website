@@ -1,0 +1,20 @@
+[
+  {
+    "_id": "673000000000000000001301",
+    "plan_id": "673000000000000000001001",
+    "user_id": "673000000000000000000111",
+    "trip_status": "upcoming",
+    "confirmed_at": "2026-11-10T08:05:00.000Z",
+    "note": "Đã xác nhận toàn bộ vé máy bay, biệt thự Amanoi và du thuyền Catamaran.",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000001302",
+    "plan_id": "673000000000000000001002",
+    "user_id": "673000000000000000000112",
+    "trip_status": "upcoming",
+    "confirmed_at": "2026-11-10T09:20:00.000Z",
+    "note": "Đã xác nhận đặt phòng InterContinental Đà Nẵng.",
+    "__v": 0
+  }
+]

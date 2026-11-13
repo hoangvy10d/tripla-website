@@ -1,0 +1,16 @@
+{
+  "id": "9",
+  "title": "Hon Thom Cable Car",
+  "city": "Phu Quoc",
+  "lat": 10.0272,
+  "lng": 104.0152,
+  "category": "attraction",
+  "description": "The world's longest sea-crossing cable car, providing a breathtaking view of the An Thoi archipelago.",
+  "images": [
+    "https://images.unsplash.com/photo-1473163928189-364b2c4e1135?w=800&auto=format&fit=crop&q=60"
+  ],
+  "rating": 4.9,
+  "reviewsCount": 2100,
+  "ticketPrice": 500000,
+  "openingHours": "08:30 - 17:00"
+}

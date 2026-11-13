@@ -1,0 +1,13 @@
+[
+  {
+    "_id": "673000000000000000001401",
+    "content_id": "673000000000000000000801",
+    "reporter_id": "673000000000000000000113",
+    "reason": "other",
+    "details": "Yêu cầu xác minh thông tin giá ưu đãi mùa lễ hội tại Amanoi Vĩnh Hy.",
+    "status": "resolved",
+    "handled_by": "673000000000000000000110",
+    "created_at": "2026-11-09T11:00:00.000Z",
+    "__v": 0
+  }
+]

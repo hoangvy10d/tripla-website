@@ -1,0 +1,94 @@
+<footer class="sf-shell" [class.is-compact]="variant() === 'compact'">
+  @if (variant() === 'full') {
+    <div class="sf-mark" aria-hidden="true">TRIPLA</div>
+
+    <div class="sf-container">
+      <div class="sf-cols">
+        <div class="sf-about">
+          <a class="sf-brand" routerLink="/home" aria-label="TRIPLA - Trang chủ">
+            <span class="sf-logo"><span class="material-symbols-outlined">explore</span></span>
+            <span class="sf-name">TRIPLA</span>
+          </a>
+          <p class="sf-desc">
+            Nền tảng giải trí và phong cách du lịch thượng lưu thế hệ mới. Đồng bộ cảm hứng điện ảnh TripShorts, đặt dịch vụ TripShop và lập lịch trình thông minh trong một hệ sinh thái thống nhất.
+          </p>
+        </div>
+
+        <nav class="sf-col" aria-label="Hệ sinh thái TRIPLA">
+          <span class="sf-title">Hệ Sinh Thái</span>
+          @for (item of ecosystemLinks; track item.route) {
+            <a [routerLink]="item.route">{{ item.label }}</a>
+          }
+        </nav>
+
+        <nav class="sf-col" aria-label="Dịch vụ du lịch TRIPLA">
+          <span class="sf-title">Dịch Vụ &amp; Trải Nghiệm</span>
+          @for (item of serviceLinks; track item.route) {
+            <a [routerLink]="item.route">{{ item.label }}</a>
+          }
+        </nav>
+
+        <div class="sf-col">
+          <span class="sf-title">Liên Hệ &amp; Hỗ Trợ 24/7</span>
+          <div class="sf-hotline">
+            <span class="sf-hl-label">Concierge Hotline</span>
+            <strong class="sf-hl-num">{{ hotline }}</strong>
+          </div>
+          <p class="sf-ct">
+            <span class="material-symbols-outlined">mail</span>
+            <span>{{ email }}</span>
+          </p>
+          <p class="sf-ct">
+            <span class="material-symbols-outlined">pin_drop</span>
+            <span>{{ hubs }}</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="sf-bottom">
+        <p class="sf-copy">© 2026 TRIPLA Luxury Travel Ecosystem. Bản quyền được bảo lưu.</p>
+        <div class="sf-legal">
+          @for (item of legalLinks; track item.label) {
+            <a [routerLink]="item.route" [fragment]="item.fragment">{{ item.label }}</a>
+          }
+        </div>
+      </div>
+    </div>
+  } @else {
+    <div class="sf-container sf-compact-inner">
+      <div class="sf-compact-top">
+        <div class="sf-compact-brand">
+          <a class="sf-brand" routerLink="/home" aria-label="TRIPLA - Trang chủ">
+            <span class="sf-logo sf-logo-sm"><span class="material-symbols-outlined">explore</span></span>
+            <span class="sf-name sf-name-sm">TRIPLA</span>
+          </a>
+          <span class="sf-tag">{{ compactLabel() }}</span>
+        </div>
+
+        <nav class="sf-compact-nav" aria-label="Điều hướng chân trang">
+          @for (item of compactLinks; track item.route) {
+            <a [routerLink]="item.route">{{ item.label }}</a>
+          }
+        </nav>
+
+        <div class="sf-compact-support">
+          <span class="sf-support-pill">
+            <span class="material-symbols-outlined">support_agent</span>
+            <span>{{ hotline }}</span>
+          </span>
+          <span class="sf-support-mail">{{ email }}</span>
+        </div>
+      </div>
+
+      <div class="sf-bottom sf-bottom-compact">
+        <p class="sf-copy">© 2026 TRIPLA Luxury Travel Ecosystem.</p>
+        <div class="sf-legal">
+          @for (item of legalLinks; track item.label) {
+            <a [routerLink]="item.route" [fragment]="item.fragment">{{ item.label }}</a>
+          }
+        </div>
+      </div>
+    </div>
+  }
+</footer>
+

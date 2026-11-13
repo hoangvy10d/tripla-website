@@ -1,0 +1,16 @@
+{
+  "id": "7",
+  "title": "VinWonders Phu Quoc",
+  "city": "Phu Quoc",
+  "lat": 10.3342,
+  "lng": 103.8561,
+  "category": "attraction",
+  "description": "The largest theme park in Vietnam with dozens of outdoor rides, an indoor game center, an aquarium, and a water park.",
+  "images": [
+    "https://images.unsplash.com/photo-1513553404607-988bf2703777?w=800&auto=format&fit=crop&q=60"
+  ],
+  "rating": 4.8,
+  "reviewsCount": 1150,
+  "ticketPrice": 880000,
+  "openingHours": "09:00 - 19:30"
+}

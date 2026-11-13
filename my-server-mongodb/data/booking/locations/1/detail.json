@@ -1,0 +1,16 @@
+{
+  "id": "1",
+  "title": "Golden Bridge (Ba Na Hills)",
+  "city": "Da Nang",
+  "lat": 15.9961,
+  "lng": 107.9897,
+  "category": "attraction",
+  "description": "A 150-metre-long pedestrian bridge in the Ba Na Hills resort, near Da Nang, Vietnam. It is designed to connect the cable car station with the gardens and to provide a scenic overlook and tourist attraction.",
+  "images": [
+    "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&auto=format&fit=crop&q=60"
+  ],
+  "rating": 4.8,
+  "reviewsCount": 1250,
+  "ticketPrice": 900000,
+  "openingHours": "07:00 - 22:00"
+}

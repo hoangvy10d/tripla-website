@@ -1,5 +1,6 @@
 export interface BusTrip {
   id: string;
+  slug?: string;
   operatorId: string;
   operatorName: string;
   vehicle: string;

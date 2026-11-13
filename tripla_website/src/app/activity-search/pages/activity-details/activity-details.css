@@ -1,5 +1,6 @@
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   background: radial-gradient(ellipse at 100% 0%, #e3ecd5bb, transparent 45%), #f7f7f0;
   color: #35513c;
@@ -27,9 +28,11 @@ summary:focus-visible {
   outline-offset: 3px;
 }
 .details-page {
+  width: 100%;
+  flex: 1 0 auto;
   max-width: 1240px;
   padding: 20px 32px 65px;
-  margin: auto;
+  margin: 0 auto;
 }
 .breadcrumbs {
   display: flex;

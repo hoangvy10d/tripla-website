@@ -1,5 +1,6 @@
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   background: radial-gradient(ellipse at 100% 0%, #dae6cb90, transparent 50%), #f2f4ed;
   color: #304f38;
@@ -9,9 +10,11 @@
   box-sizing: border-box;
 }
 .details-page {
+  width: 100%;
+  flex: 1 0 auto;
   max-width: 1160px;
   padding: 20px 30px 65px;
-  margin: auto;
+  margin: 0 auto;
 }
 .back {
   display: inline-block;

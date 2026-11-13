@@ -1,0 +1,47 @@
+<div class="policies-shell">
+  <app-site-header
+    variant="floating"
+    positionMode="sticky"
+    activeNav="policies"
+    subBrand="Chính sách"
+  />
+
+  <div class="policies-layout">
+    <aside class="policies-toc">
+      <p class="toc-title">MỤC LỤC</p>
+      <button
+        type="button"
+        *ngFor="let a of articles"
+        [class.active]="activeAnchor === a.anchor"
+        (click)="scrollTo(a.anchor)">
+        {{ navLabels[a.anchor] }}
+      </button>
+    </aside>
+
+    <main class="policies-container">
+      <div class="policies-header">
+        <h1>ĐIỀU KHOẢN DỊCH VỤ VÀ CHÍNH SÁCH VẬN HÀNH NỀN TẢNG TRIPLA</h1>
+        <p>
+          Văn bản này quy định các điều khoản, chính sách thanh toán, hoàn hủy, kiểm duyệt nội dung và bảo mật thông tin
+          áp dụng cho toàn bộ cá nhân, tổ chức truy cập, sử dụng dịch vụ hoặc tham gia sáng tạo nội dung trên nền tảng công
+          nghệ du lịch Tripla (sau đây gọi tắt là "Nền tảng"). Bằng việc khởi tạo tài khoản hoặc thực hiện giao dịch, Người
+          dùng thiết lập một thỏa thuận pháp lý mang tính ràng buộc và cam kết tuân thủ các quy định dưới đây.
+        </p>
+      </div>
+
+      <section class="policy-section" *ngFor="let a of articles" [id]="a.anchor">
+        <h2>{{ a.title }}</h2>
+        <div class="policy-subsection" *ngFor="let s of a.subs">
+          <h3>{{ s.title }}</h3>
+          <p *ngFor="let p of s.paragraphs">{{ p }}</p>
+          <ul *ngIf="s.items?.length">
+            <li *ngFor="let it of s.items"><strong>{{ it.label }}</strong> {{ it.text }}</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <app-site-footer variant="full"></app-site-footer>
+</div>
+

@@ -1,0 +1,42 @@
+[
+  {
+    "_id": "booking_lum_88921",
+    "bookingCode": "LUM-88921-VN",
+    "userId": "user_victoria_chen",
+    "type": "hotel",
+    "itemTitle": "Amanoi Ocean Pool Villa",
+    "location": "Vĩnh Hy, Ninh Thuận",
+    "checkIn": "2026-11-15",
+    "checkOut": "2026-11-18",
+    "guests": { "adults": 2, "children": 0, "rooms": 1 },
+    "totalAmount": 75000000,
+    "currency": "VND",
+    "status": "CONFIRMED",
+    "contact": {
+      "fullName": "Victoria Chen",
+      "email": "victoria.chen@tripla.vip",
+      "phone": "0909888999"
+    },
+    "createdAt": "2026-11-09T14:20:00.000Z"
+  },
+  {
+    "_id": "booking_lum_88922",
+    "bookingCode": "LUM-88922-VN",
+    "userId": "user_victoria_chen",
+    "type": "yacht",
+    "itemTitle": "Private Sunset Catamaran Vĩnh Hy",
+    "location": "Bến Du Thuyền Vĩnh Hy",
+    "checkIn": "2026-11-16",
+    "guests": { "adults": 4, "children": 0, "rooms": 1 },
+    "totalAmount": 18000000,
+    "currency": "VND",
+    "status": "CONFIRMED",
+    "contact": {
+      "fullName": "Victoria Chen",
+      "email": "victoria.chen@tripla.vip",
+      "phone": "0909888999"
+    },
+    "createdAt": "2026-11-10T06:00:00.000Z"
+  }
+]
+

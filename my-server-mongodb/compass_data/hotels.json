@@ -1,0 +1,336 @@
+[
+  {
+    "_id": "demo-pine",
+    "id": "demo-pine",
+    "name": "Nhà Bên Rừng",
+    "address": "Đà Lạt, Lâm Đồng",
+    "city": "Đà Lạt",
+    "stars": 4,
+    "rating": 9.2,
+    "reviewCount": 128,
+    "pricePerNight": 850000,
+    "currency": "VND",
+    "accommodationType": "Homestay",
+    "imageUrl": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1000&q=80",
+    "amenities": ["Wi-Fi", "Bữa sáng", "Sân vườn", "Bãi đỗ xe"],
+    "freeCancellation": true,
+    "description": "Một chốn dừng chân thư thái giữa rừng thông Đà Lạt, nơi bạn có thể chậm lại và tận hưởng kỳ nghỉ theo cách riêng.",
+    "images": [
+      "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1000&q=80",
+      "/images/Grassland.jpeg",
+      "/images/trangan.jpg"
+    ],
+    "policies": [
+      "Nhận phòng từ 14:00, trả phòng trước 12:00.",
+      "Miễn phí hủy phòng trước 48 giờ nhận phòng.",
+      "Bao gồm trà chiều thảo mộc Đà Lạt mỗi ngày."
+    ],
+    "rooms": [
+      {
+        "id": "demo-pine-standard",
+        "name": "Phòng Tiêu chuẩn View Đồi Thông",
+        "size": 28,
+        "bed": "1 giường đôi",
+        "guests": 2,
+        "pricePerNight": 850000,
+        "breakfast": false
+      },
+      {
+        "id": "demo-pine-deluxe",
+        "name": "Phòng Deluxe có ban công săn mây",
+        "size": 38,
+        "bed": "1 giường King",
+        "guests": 2,
+        "pricePerNight": 1200000,
+        "breakfast": true
+      }
+    ]
+  },
+  {
+    "_id": "demo-garden",
+    "id": "demo-garden",
+    "name": "An Nhiên Garden Stay",
+    "address": "Đà Lạt, Lâm Đồng",
+    "city": "Đà Lạt",
+    "stars": 3,
+    "rating": 8.7,
+    "reviewCount": 86,
+    "pricePerNight": 620000,
+    "currency": "VND",
+    "accommodationType": "Nhà nghỉ",
+    "imageUrl": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+    "amenities": ["Wi-Fi", "Bãi đỗ xe", "Sân vườn"],
+    "freeCancellation": true,
+    "description": "Khu vườn hồng cổ yên bình ngay gần trung tâm Đà Lạt, phù hợp cho cặp đôi và gia đình nhỏ.",
+    "images": [
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+      "/resort-night-bg.png",
+      "/images/Grassland.jpeg"
+    ],
+    "policies": [
+      "Nhận phòng từ 14:00, trả phòng trước 12:00.",
+      "Không hút thuốc trong phòng nghỉ."
+    ],
+    "rooms": [
+      {
+        "id": "demo-garden-standard",
+        "name": "Phòng Tiêu chuẩn Sân Vườn",
+        "size": 26,
+        "bed": "1 giường đôi",
+        "guests": 2,
+        "pricePerNight": 620000,
+        "breakfast": false
+      },
+      {
+        "id": "demo-garden-deluxe",
+        "name": "Phòng Deluxe có ban công",
+        "size": 35,
+        "bed": "1 giường King",
+        "guests": 2,
+        "pricePerNight": 970000,
+        "breakfast": true
+      }
+    ]
+  },
+  {
+    "_id": "demo-coast",
+    "id": "demo-coast",
+    "name": "Gió Biển Retreat Đà Nẵng",
+    "address": "Bán đảo Sơn Trà, Đà Nẵng",
+    "city": "Đà Nẵng",
+    "stars": 4,
+    "rating": 9.1,
+    "reviewCount": 204,
+    "pricePerNight": 1250000,
+    "currency": "VND",
+    "accommodationType": "Khách sạn",
+    "imageUrl": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1000&q=80",
+    "amenities": ["Wi-Fi", "Hồ bơi", "Bữa sáng", "Spa"],
+    "freeCancellation": true,
+    "description": "Khách sạn nghỉ dưỡng ven biển Mỹ Khê & bán đảo Sơn Trà với hồ bơi vô cực hướng thẳng ra đại dương.",
+    "images": [
+      "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1000&q=80",
+      "/resort-night-bg.png",
+      "/images/trangan.jpg"
+    ],
+    "policies": [
+      "Nhận phòng từ 14:00, trả phòng trước 12:00.",
+      "Bao gồm hồ bơi vô cực và phòng gym 24/7."
+    ],
+    "rooms": [
+      {
+        "id": "demo-coast-standard",
+        "name": "Phòng Tiêu chuẩn Hướng Biển",
+        "size": 32,
+        "bed": "1 giường đôi",
+        "guests": 2,
+        "pricePerNight": 1250000,
+        "breakfast": false
+      },
+      {
+        "id": "demo-coast-deluxe",
+        "name": "Phòng Deluxe có ban công biển",
+        "size": 42,
+        "bed": "1 giường King",
+        "guests": 2,
+        "pricePerNight": 1600000,
+        "breakfast": true
+      }
+    ]
+  },
+  {
+    "_id": "demo-island",
+    "id": "demo-island",
+    "name": "Đảo Xanh Resort Phú Quốc",
+    "address": "Bãi Trường, Phú Quốc, Kiên Giang",
+    "city": "Phú Quốc",
+    "stars": 5,
+    "rating": 9.4,
+    "reviewCount": 312,
+    "pricePerNight": 2100000,
+    "currency": "VND",
+    "accommodationType": "Khu nghỉ dưỡng",
+    "imageUrl": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1000&q=80",
+    "amenities": ["Wi-Fi", "Hồ bơi", "Spa", "Bữa sáng", "Đưa đón sân bay"],
+    "freeCancellation": true,
+    "description": "Khu nghỉ dưỡng 5 sao sở hữu bãi biển riêng tại Phú Quốc với biệt thự hồ bơi và nhà hàng hải sản sát biển.",
+    "images": [
+      "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1000&q=80",
+      "/resort-night-bg.png",
+      "/images/trangan.jpg"
+    ],
+    "policies": [
+      "Nhận phòng từ 14:00, trả phòng trước 12:00.",
+      "Miễn phí xe đón tiễn sân bay Quốc tế Phú Quốc."
+    ],
+    "rooms": [
+      {
+        "id": "demo-island-standard",
+        "name": "Phòng Ocean Suite Tiêu chuẩn",
+        "size": 45,
+        "bed": "1 giường đôi",
+        "guests": 2,
+        "pricePerNight": 2100000,
+        "breakfast": true
+      },
+      {
+        "id": "demo-island-deluxe",
+        "name": "Biệt thự Hồ bơi Hướng Biển",
+        "size": 85,
+        "bed": "1 giường King",
+        "guests": 4,
+        "pricePerNight": 3850000,
+        "breakfast": true
+      }
+    ]
+  },
+  {
+    "_id": "hotel-amanoi-vinh-hy",
+    "id": "hotel-amanoi-vinh-hy",
+    "name": "Amanoi Ocean Pool Residence",
+    "address": "Vịnh Vĩnh Hy, Ninh Thuận",
+    "city": "Ninh Thuận",
+    "stars": 5,
+    "rating": 9.9,
+    "reviewCount": 328,
+    "pricePerNight": 25000000,
+    "currency": "VND",
+    "accommodationType": "Khu nghỉ dưỡng",
+    "imageUrl": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1000&q=80",
+    "amenities": ["Wi-Fi", "Hồ bơi", "Spa", "Bữa sáng", "Đưa đón sân bay"],
+    "freeCancellation": true,
+    "description": "Khu nghỉ dưỡng 6 sao đầu tiên tại Việt Nam nằm giữa Vườn Quốc gia Núi Chúa và vịnh Vĩnh Hy.",
+    "images": [
+      "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "policies": [
+      "Quản gia riêng phục vụ 24/7.",
+      "Bao gồm bữa sáng à la carte và trà chiều mỗi ngày."
+    ],
+    "rooms": [
+      {
+        "id": "hotel-amanoi-pavilion",
+        "name": "Ocean Pavilion",
+        "size": 95,
+        "bed": "1 giường King",
+        "guests": 2,
+        "pricePerNight": 25000000,
+        "breakfast": true
+      },
+      {
+        "id": "hotel-amanoi-pool-villa",
+        "name": "Ocean Pool Villa Vách Đá",
+        "size": 125,
+        "bed": "1 giường King",
+        "guests": 3,
+        "pricePerNight": 32000000,
+        "breakfast": true
+      }
+    ]
+  },
+  {
+    "_id": "hotel-capella-hanoi",
+    "id": "hotel-capella-hanoi",
+    "name": "Capella Hanoi Opera Boutique",
+    "address": "Hoàn Kiếm, Hà Nội",
+    "city": "Hà Nội",
+    "stars": 5,
+    "rating": 9.8,
+    "reviewCount": 289,
+    "pricePerNight": 8900000,
+    "currency": "VND",
+    "accommodationType": "Khách sạn",
+    "imageUrl": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+    "amenities": ["Wi-Fi", "Hồ bơi", "Spa", "Bữa sáng"],
+    "freeCancellation": true,
+    "description": "Khách sạn boutique nghệ thuật Opera của kiến trúc sư Bill Bensley ngay trung tâm Hoàn Kiếm, Hà Nội.",
+    "images": [
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "policies": [
+      "Bao gồm quyền sử dụng The Living Room & Diva's Lounge.",
+      "Miễn phí hủy trước 24 giờ."
+    ],
+    "rooms": [
+      {
+        "id": "hotel-capella-premier",
+        "name": "Premier Suite",
+        "size": 48,
+        "bed": "1 giường King",
+        "guests": 2,
+        "pricePerNight": 8900000,
+        "breakfast": true
+      }
+    ]
+  },
+  {
+    "_id": "hotel-coupole-sapa",
+    "id": "hotel-coupole-sapa",
+    "name": "Hotel de la Coupole - MGallery Sapa",
+    "address": "Thị xã Sa Pa, Lào Cai",
+    "city": "Sa Pa",
+    "stars": 5,
+    "rating": 9.6,
+    "reviewCount": 518,
+    "pricePerNight": 5400000,
+    "currency": "VND",
+    "accommodationType": "Khách sạn",
+    "imageUrl": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1000&q=80",
+    "amenities": ["Wi-Fi", "Hồ bơi", "Spa", "Bữa sáng"],
+    "freeCancellation": true,
+    "description": "Tuyệt tác kiến trúc Pháp Haute Couture giữa biển mây Sa Pa, kết nối trực tiếp ga tàu hỏa leo núi Mường Hoa.",
+    "images": [
+      "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "policies": [
+      "Miễn phí sử dụng hồ bơi nước nóng Le Grand Bassin."
+    ],
+    "rooms": [
+      {
+        "id": "hotel-coupole-classic",
+        "name": "Classic King Săn Mây",
+        "size": 36,
+        "bed": "1 giường King",
+        "guests": 2,
+        "pricePerNight": 5400000,
+        "breakfast": true
+      }
+    ]
+  },
+  {
+    "_id": "hotel-six-senses-nhatrang",
+    "id": "hotel-six-senses-nhatrang",
+    "name": "Six Senses Ninh Van Bay",
+    "address": "Vịnh Ninh Vân, Nha Trang, Khánh Hòa",
+    "city": "Nha Trang",
+    "stars": 5,
+    "rating": 9.8,
+    "reviewCount": 412,
+    "pricePerNight": 15500000,
+    "currency": "VND",
+    "accommodationType": "Khu nghỉ dưỡng",
+    "imageUrl": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80",
+    "amenities": ["Wi-Fi", "Hồ bơi", "Spa", "Bữa sáng", "Đưa đón sân bay"],
+    "freeCancellation": true,
+    "description": "Biệt thự ghềnh đá biệt lập chỉ có thể tiếp cận bằng tàu cao tốc riêng tại vịnh Ninh Vân, Nha Trang.",
+    "images": [
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "policies": [
+      "Bao gồm tàu cao tốc khứ hồi ra vịnh Ninh Vân."
+    ],
+    "rooms": [
+      {
+        "id": "hotel-six-senses-rock-villa",
+        "name": "Rock Pool Villa Trên Ghềnh Đá",
+        "size": 158,
+        "bed": "1 giường King",
+        "guests": 2,
+        "pricePerNight": 15500000,
+        "breakfast": true
+      }
+    ]
+  }
+]
+

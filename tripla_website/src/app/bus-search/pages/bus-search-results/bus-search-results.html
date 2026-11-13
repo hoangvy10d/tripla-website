@@ -7,7 +7,7 @@
       <p>Chọn chuyến xe phù hợp, tận hưởng hành trình theo cách riêng.</p>
     </div>
     <app-bus-search-bar [criteria]="s.criteria" (search)="search($event)" />
-    <p class="demo-note">
+    <p *ngIf="!isMongoConnected()" class="demo-note">
       BẢN XEM TRƯỚC · Nhà xe, lịch chạy, giá và tiện ích là dữ liệu minh họa. Có mẫu cho Hồ Chí Minh
       ↔ Đà Lạt, Hồ Chí Minh ↔ Nha Trang và Hà Nội ↔ Ninh Bình. Chưa hỗ trợ đặt vé.
     </p>
@@ -126,3 +126,4 @@
     </div>
   </main>
 </div>
+<app-site-footer variant="compact" />

@@ -6,8 +6,11 @@ import { TripCard } from '../../models/home.model';
 import { StatPill } from '../../models/home.model';
 import { MOCK_STAT_PILLS, MOCK_TRIP_CARDS } from '../../mock/home.mock';
 import { AuthService } from '../../services/auth-service';
+import { HomeService } from '../../services/home-service';
 import { ParallaxDirective } from './directives/parallax.directive';
 import { RevealDirective } from './directives/reveal.directive';
+import { SiteHeaderComponent } from '../../shared/components/site-header/site-header';
+import { SiteFooterComponent } from '../../shared/components/site-footer/site-footer';
 
 /* ---- Hằng số chuyển động (giây hoặc tỉ lệ cuộn p: 0 → 1) ---- */
 const HERO_PHOTO = '/images/ruongbacthangedit.jpeg';
@@ -41,7 +44,7 @@ const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink, ParallaxDirective, RevealDirective],
+  imports: [CommonModule, FormsModule, RouterLink, ParallaxDirective, RevealDirective, SiteHeaderComponent, SiteFooterComponent],
   templateUrl: './home.html',
   styleUrls: ['./home.css']
 })
@@ -68,6 +71,7 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   private readonly router = inject(Router);
   private readonly zone = inject(NgZone);
   private readonly changeDetector = inject(ChangeDetectorRef);
+  private readonly homeService = inject(HomeService);
   readonly authService = inject(AuthService); // public để dùng thẳng ở HTML
   isOceanScene = false;
   private audioRequested = true;
@@ -108,6 +112,18 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngOnInit(): void {
     this.syncActiveNavFromUrl();
+    this.homeService.getTripCards().subscribe((trips) => {
+      if (trips && trips.length > 0) {
+        this.trips = trips;
+        this.changeDetector.markForCheck();
+      }
+    });
+    this.homeService.getStatPills().subscribe((pills) => {
+      if (pills && pills.length > 0) {
+        this.statPills = pills;
+        this.changeDetector.markForCheck();
+      }
+    });
   }
 
   private syncActiveNavFromUrl(): void {
@@ -441,6 +457,71 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     const currentStatus = trip.isSelected;
     this.trips.forEach(t => t.isSelected = false);
     trip.isSelected = !currentStatus;
+  }
+
+  private defaultHotelDates(): { checkIn: string; checkOut: string } {
+    const tomorrow = new Date(Date.now() + 86400000);
+    const out = new Date(Date.now() + 3 * 86400000);
+    const iso = (d: Date) =>
+      `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    return { checkIn: iso(tomorrow), checkOut: iso(out) };
+  }
+
+  searchHoliday(): void {
+    const rawDest = (this.searchDestination || '').trim();
+    const location = rawDest.includes(',') ? rawDest.split(',').pop()!.trim() : rawDest || 'Phú Quốc';
+    const guestMatch = (this.searchGuestInfo || '').match(/(\d+)/);
+    const adults = Math.max(1, Math.min(10, Number(guestMatch?.[1] || 2)));
+    const { checkIn, checkOut } = this.defaultHotelDates();
+    void this.router.navigate(['/hotel-search'], {
+      queryParams: { location, checkIn, checkOut, adults, children: 0, rooms: 1 }
+    });
+  }
+
+  formatReviewCount(count: number | string | undefined): string {
+    if (!count) return '(100+)';
+    const s = String(count).trim();
+    return s.startsWith('(') ? s : `(${s})`;
+  }
+
+  bookFeaturedTrip(trip: TripCard, event: Event): void {
+    event.stopPropagation();
+    const fold = (s: string) =>
+      s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/gi, 'd').toLowerCase();
+    const title = fold(trip.title || '');
+    const loc = fold(trip.location || '');
+    const { checkIn, checkOut } = this.defaultHotelDates();
+    const queryParams: Record<string, string | number> = {
+      checkIn,
+      checkOut,
+      adults: 2,
+      children: 0,
+      rooms: 1
+    };
+
+    if (trip.hotelSlug) {
+      void this.router.navigate(['/hotel', trip.hotelSlug], { queryParams });
+      return;
+    }
+
+    if (title.includes('amanoi') || loc.includes('vinh hy') || loc.includes('ninh thuan')) {
+      void this.router.navigate(['/hotel', 'amanoi-ocean-pool-residence'], { queryParams });
+      return;
+    }
+    if (title.includes('six senses')) {
+      void this.router.navigate(['/hotel', 'six-senses-ninh-van-bay'], { queryParams });
+      return;
+    }
+    if (title.includes('nam hai') || loc.includes('hoi an') || loc.includes('da nang')) {
+      void this.router.navigate(['/hotel-search'], {
+        queryParams: { ...queryParams, location: 'Đà Nẵng' }
+      });
+      return;
+    }
+    const city = trip.location?.includes(',') ? trip.location.split(',').pop()!.trim() : trip.location || trip.title;
+    void this.router.navigate(['/hotel-search'], {
+      queryParams: { ...queryParams, location: city }
+    });
   }
 
 }

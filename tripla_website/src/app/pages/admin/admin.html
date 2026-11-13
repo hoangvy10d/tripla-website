@@ -1,0 +1,480 @@
+<div class="admin-shell">
+  <!-- SIDEBAR -->
+  <aside class="admin-sidebar">
+    <a routerLink="/home" class="admin-brand">
+      <img src="images/logo (2).png" alt="" />
+      <div>
+        <strong>TRIPLA</strong>
+        <span>Admin Console</span>
+      </div>
+    </a>
+
+    <nav class="admin-nav">
+      <button type="button" [class.active]="activeTab === 'overview'" (click)="setTab('overview')">
+        <span class="material-symbols-outlined">dashboard</span> Tổng quan
+      </button>
+      <button type="button" [class.active]="activeTab === 'data'" (click)="setTab('data')">
+        <span class="material-symbols-outlined">database</span> Quản lý Dữ liệu
+      </button>
+      <button type="button" [class.active]="activeTab === 'bookings'" (click)="setTab('bookings')">
+        <span class="material-symbols-outlined">receipt_long</span> Quản lý Đặt chỗ
+        <span class="nav-count" *ngIf="pendingBookings">{{ pendingBookings }}</span>
+      </button>
+      <button type="button" [class.active]="activeTab === 'community'" (click)="setTab('community')">
+        <span class="material-symbols-outlined">shield</span> Kiểm duyệt Cộng đồng
+        <span class="nav-count" *ngIf="stats.pendingReportsCount">{{ stats.pendingReportsCount }}</span>
+      </button>
+    </nav>
+
+    <div class="admin-sidebar-foot">
+      <a routerLink="/profile/a1">
+        <span class="material-symbols-outlined">account_circle</span> {{ adminDisplayName }}
+      </a>
+      <a routerLink="/home">
+        <span class="material-symbols-outlined">home</span> Về trang chủ
+      </a>
+      <button type="button" class="admin-logout-btn" (click)="logoutAdmin()">
+        <span class="material-symbols-outlined">logout</span> Đăng xuất
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="admin-main">
+    <header class="admin-header">
+      <div>
+        <p class="admin-kicker">BẢNG ĐIỀU KHIỂN</p>
+        <h1>
+          {{ activeTab === 'overview' ? 'Tổng quan hệ thống'
+            : activeTab === 'data' ? 'Quản lý Dữ liệu'
+            : activeTab === 'bookings' ? 'Quản lý Đặt chỗ'
+            : 'Kiểm duyệt Cộng đồng' }}
+        </h1>
+      </div>
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <button type="button" class="btn-sm" (click)="loadAdminStats()">
+          Đồng bộ KPI (/stats)
+        </button>
+        <button type="button" class="btn-refresh" (click)="loadDashboard()" [disabled]="isLoading">
+          <span class="material-symbols-outlined">refresh</span>
+          {{ isLoading ? 'Đang tải...' : 'Làm mới' }}
+        </button>
+      </div>
+    </header>
+
+    <div class="admin-error" *ngIf="errorMessage">
+      <span class="material-symbols-outlined">error</span> {{ errorMessage }}
+    </div>
+
+    <!-- TAB: OVERVIEW -->
+    <section *ngIf="activeTab === 'overview'">
+      <div class="stat-grid">
+        <div class="stat-card">
+          <span class="material-symbols-outlined stat-icon blue">group</span>
+          <div><p>Người dùng</p><strong>{{ stats.usersCount }}</strong></div>
+        </div>
+        <div class="stat-card">
+          <span class="material-symbols-outlined stat-icon green">payments</span>
+          <div><p>Tổng doanh thu</p><strong>{{ formatVnd(stats.totalRevenue) }}</strong></div>
+        </div>
+        <div class="stat-card">
+          <span class="material-symbols-outlined stat-icon purple">movie</span>
+          <div><p>Nội dung / Reels</p><strong>{{ stats.contentsCount }}</strong></div>
+        </div>
+        <div class="stat-card">
+          <span class="material-symbols-outlined stat-icon amber">confirmation_number</span>
+          <div><p>Đơn đặt chỗ</p><strong>{{ stats.bookingsCount }}</strong></div>
+        </div>
+      </div>
+
+      <div class="overview-grid">
+        <div class="panel">
+          <h3>Đặt chỗ gần đây</h3>
+          <table class="admin-table">
+            <thead><tr><th>Mã</th><th>Khách</th><th>Dịch vụ</th><th>Tổng</th><th>Trạng thái</th></tr></thead>
+            <tbody>
+              <tr *ngFor="let b of recentBookings">
+                <td class="mono">#{{ b.booking_code || b.bookingCode }}</td>
+                <td>{{ b.user_id?.full_name || b.customerName }}</td>
+                <td>{{ bookingTitle(b) }}</td>
+                <td>{{ formatVnd(b.total_price || b.totalPriceVnd) }}</td>
+                <td><span class="status-pill" [attr.data-status]="b.booking_status">{{ statusLabel(b.booking_status) }}</span></td>
+              </tr>
+              <tr *ngIf="!recentBookings.length"><td colspan="5" class="empty-cell">Chưa có đơn đặt chỗ.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="panel">
+          <h3>Kho dữ liệu MongoDB</h3>
+          <ul class="inventory-list">
+            <li><span>📍 Điểm đến (locations)</span><strong>{{ locations.length }}</strong></li>
+            <li><span>🏨 Khách sạn (hotels)</span><strong>{{ hotels.length }}</strong></li>
+            <li><span>🚌 Tuyến xe (bus_trips)</span><strong>{{ busTrips.length }}</strong></li>
+            <li><span>🎬 Nội dung (contents)</span><strong>{{ contents.length }}</strong></li>
+            <li><span>🚩 Báo cáo (reports)</span><strong>{{ reports.length }}</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Q9: Customer Recognition Report (Top 5 Checked-out Tourists) -->
+      <div class="panel top-customers-panel">
+        <div class="panel-head-row">
+          <div>
+            <h3>Top 5 Du Khách Chi Tiêu Cao Nhất</h3>
+            <p class="muted">Tổng hợp từ {{ totalCheckedOutBookings }} đơn đặt phòng đã hoàn thành (checked_out)</p>
+          </div>
+          <button type="button" class="btn-sm" (click)="loadTopCustomers()">Cập nhật BXH</button>
+        </div>
+
+        <div class="top-customers-layout" *ngIf="topCustomers.length; else emptyTopCustomers">
+          <div class="chart-box">
+            <canvas #topCustomersCanvas width="540" height="220" aria-label="Biểu đồ Top 5 khách hàng chi tiêu cao nhất"></canvas>
+          </div>
+
+          <div class="leaderboard-box">
+            <table class="admin-table top-customers-table">
+              <thead>
+                <tr>
+                  <th>Hạng</th>
+                  <th>Du khách</th>
+                  <th>Số đơn</th>
+                  <th>Tổng chi tiêu</th>
+                  <th>Tỷ trọng</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let c of topCustomers" class="leaderboard-row">
+                  <td><span class="rank-badge" [attr.data-rank]="c.rank">#{{ c.rank }}</span></td>
+                  <td>
+                    <strong>{{ c.full_name }}</strong>
+                    <div class="muted small">{{ c.email }}</div>
+                  </td>
+                  <td>{{ c.completed_bookings }} đơn</td>
+                  <td class="spending-cell"><strong>{{ formatVnd(c.total_spending) }}</strong></td>
+                  <td>
+                    <div class="spend-bar-track">
+                      <div class="spend-bar-fill" [style.width.%]="(c.total_spending / maxCustomerSpending) * 100"></div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <ng-template #emptyTopCustomers>
+          <p class="empty-cell">Chưa có dữ liệu đơn hoàn thành (checked_out).</p>
+        </ng-template>
+      </div>
+    </section>
+
+    <!-- TAB: DATA -->
+    <section *ngIf="activeTab === 'data'">
+      <div class="toolbar">
+        <div class="segmented">
+          <button type="button" [class.active]="dataCategory === 'locations'" (click)="setCategory('locations')">Điểm đến ({{ locations.length }})</button>
+          <button type="button" [class.active]="dataCategory === 'hotels'" (click)="setCategory('hotels')">Khách sạn ({{ hotels.length }})</button>
+          <button type="button" [class.active]="dataCategory === 'buses'" (click)="setCategory('buses')">Xe khách ({{ busTrips.length }})</button>
+        </div>
+        <div class="toolbar-actions">
+          <select
+            *ngIf="dataCategory === 'locations'"
+            class="status-select"
+            [(ngModel)]="locationCategoryFilter"
+            name="locationCategoryFilter">
+            <option value="all">Tất cả danh mục</option>
+            <option *ngFor="let cat of locationCategories" [value]="cat.value">{{ cat.label }}</option>
+          </select>
+          <input type="search" class="search-input" placeholder="Tìm theo tên, địa chỉ..." [(ngModel)]="searchText" />
+          <button
+            *ngIf="dataCategory === 'locations'"
+            type="button"
+            class="btn-add-hotel"
+            (click)="openAddLocationModal()">
+            + Thêm Địa điểm
+          </button>
+          <button
+            *ngIf="dataCategory === 'hotels'"
+            type="button"
+            class="btn-add-hotel"
+            (click)="openAddHotelModal()">
+            + Thêm Khách sạn
+          </button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <table class="admin-table">
+          <thead><tr><th></th><th>Tên</th><th>Mô tả</th><th>Giá</th><th class="right">Thao tác</th></tr></thead>
+          <tbody>
+            <tr *ngFor="let row of dataRows">
+              <td class="thumb-cell"><img *ngIf="row.image" [src]="row.image" alt="" /></td>
+              <td>
+                <input *ngIf="editingRow?.id === row.id; else nameView" class="inline-input" [(ngModel)]="editName" />
+                <ng-template #nameView><strong>{{ row.name }}</strong></ng-template>
+              </td>
+              <td class="muted">{{ row.sub }}</td>
+              <td>
+                <input *ngIf="editingRow?.id === row.id; else priceView" type="number" class="inline-input short" [(ngModel)]="editPrice" />
+                <ng-template #priceView>{{ formatVnd(row.price) }}</ng-template>
+              </td>
+              <td class="right actions-cell">
+                <ng-container *ngIf="editingRow?.id === row.id; else rowActions">
+                  <button type="button" class="btn-sm primary" (click)="saveEdit()">Lưu</button>
+                  <button type="button" class="btn-sm" (click)="cancelEdit()">Hủy</button>
+                </ng-container>
+                <ng-template #rowActions>
+                  <button type="button" class="btn-sm" (click)="startEdit(row)">Sửa</button>
+                  <button type="button" class="btn-sm danger" (click)="deleteItem(row)">Xóa</button>
+                </ng-template>
+              </td>
+            </tr>
+            <tr *ngIf="!dataRows.length"><td colspan="5" class="empty-cell">Không có dữ liệu.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TAB: BOOKINGS -->
+    <section *ngIf="activeTab === 'bookings'">
+      <div class="toolbar" style="margin-bottom: 14px;">
+        <div class="toolbar-actions" style="width: 100%; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+          <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+            <input
+              type="search"
+              class="search-input"
+              placeholder="Tìm mã đơn, tên khách, email, khách sạn..."
+              [(ngModel)]="bookingKeyword"
+              (keyup.enter)="applyBookingFilter()" />
+            <select class="status-select" [(ngModel)]="bookingStatusFilter" (ngModelChange)="applyBookingFilter()">
+              <option value="all">Tất cả trạng thái</option>
+              <option *ngFor="let s of statusOptions" [value]="s.value">{{ s.label }}</option>
+            </select>
+            <button type="button" class="btn-sm primary" (click)="applyBookingFilter()">Lọc đơn</button>
+          </div>
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <span class="muted small">Tổng: {{ bookingTotal || bookings.length }} đơn • Trang {{ bookingPage }} / {{ bookingTotalPages }}</span>
+            <button type="button" class="btn-sm" [disabled]="bookingPage <= 1" (click)="prevBookingPage()">← Trước</button>
+            <button type="button" class="btn-sm" [disabled]="bookingPage >= bookingTotalPages" (click)="nextBookingPage()">Sau →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <table class="admin-table">
+          <thead><tr><th>Mã đơn</th><th>Khách hàng</th><th>Dịch vụ</th><th>Thời gian</th><th>Tổng tiền</th><th>Trạng thái</th></tr></thead>
+          <tbody>
+            <tr *ngFor="let b of bookings">
+              <td class="mono">#{{ b.booking_code || b.bookingCode }}</td>
+              <td>
+                <strong>{{ b.user_id?.full_name || b.customerName }}</strong>
+                <div class="muted small">{{ b.user_id?.email || b.customerEmail }}</div>
+              </td>
+              <td>{{ bookingTitle(b) }}</td>
+              <td class="small">{{ b.check_in | date:'dd/MM/yyyy' }} → {{ b.check_out | date:'dd/MM/yyyy' }}</td>
+              <td>{{ formatVnd(b.total_price || b.totalPriceVnd) }}</td>
+              <td>
+                <select class="status-select" [attr.data-status]="b.booking_status"
+                        [ngModel]="(b.booking_status || 'confirmed').toLowerCase()"
+                        (ngModelChange)="updateBookingStatus(b, $event)">
+                  <option *ngFor="let s of statusOptions" [value]="s.value">{{ s.label }}</option>
+                </select>
+              </td>
+            </tr>
+            <tr *ngIf="!bookings.length"><td colspan="6" class="empty-cell">Chưa có đơn đặt chỗ.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TAB: COMMUNITY -->
+    <section *ngIf="activeTab === 'community'">
+      <div class="panel">
+        <div class="panel-head-row" style="margin-bottom: 12px;">
+          <h3>🚩 Báo cáo vi phạm ({{ reports.length }})</h3>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button type="button" class="btn-sm" [class.primary]="reportStatusFilter === 'all'" (click)="filterReports('all')">Tất cả</button>
+            <button type="button" class="btn-sm" [class.primary]="reportStatusFilter === 'pending'" (click)="filterReports('pending')">Chờ xử lý</button>
+            <button type="button" class="btn-sm" [class.primary]="reportStatusFilter === 'resolved'" (click)="filterReports('resolved')">Đã xử lý</button>
+            <button type="button" class="btn-sm" [class.primary]="reportStatusFilter === 'dismissed'" (click)="filterReports('dismissed')">Đã bỏ qua</button>
+          </div>
+        </div>
+        <ul class="report-list" *ngIf="reports.length; else emptyReportsTpl">
+          <li *ngFor="let r of reports" style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;">
+            <div>
+              <strong>{{ r.content_id?.content_title || 'Nội dung' }}</strong>
+              <span class="muted"> — {{ r.reason || r.report_reason || 'Không rõ lý do' }} • bởi {{ r.reporter_id?.full_name || 'Ẩn danh' }}</span>
+              <span class="status-pill" [attr.data-status]="r.status || r.report_status" style="margin-left: 8px;">{{ r.status || r.report_status || 'pending' }}</span>
+            </div>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+              <button type="button" class="btn-sm" (click)="updateReportStatus(r, 'dismissed')">Bỏ qua</button>
+              <button type="button" class="btn-sm primary" (click)="updateReportStatus(r, 'resolved')">Đánh dấu đã xử lý</button>
+              <button type="button" class="btn-sm danger" (click)="deleteReportedContent(r)">Xóa nội dung vi phạm</button>
+            </div>
+          </li>
+        </ul>
+        <ng-template #emptyReportsTpl>
+          <p class="empty-cell">Không có báo cáo nào phù hợp bộ lọc.</p>
+        </ng-template>
+      </div>
+
+      <div class="content-grid">
+        <article class="content-card" *ngFor="let c of contents">
+          <div class="content-media">
+            <video *ngIf="c.video_url || c.videoSrc" [src]="c.video_url || c.videoSrc" muted playsinline preload="metadata"></video>
+            <img *ngIf="!(c.video_url || c.videoSrc)" [src]="c.image_url" alt="" />
+          </div>
+          <div class="content-body">
+            <h4>{{ c.content_title || c.title }}</h4>
+            <p class="muted small">👤 {{ creatorName(c) }} • 📍 {{ c.location_name || c.location }}</p>
+            <p class="muted small">▶ {{ c.stats?.views || 0 | number }} • ❤️ {{ c.stats?.likes || 0 | number }} • 💬 {{ c.stats?.commentsCount || 0 }}</p>
+            <button type="button" class="btn-sm danger full" (click)="deleteContent(c)">Gỡ nội dung</button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Q7: Add / Edit Hotel Modal -->
+  <div class="hotel-modal-backdrop" *ngIf="isHotelModalOpen" (click)="closeHotelModal()">
+    <div class="hotel-modal" (click)="$event.stopPropagation()" role="dialog" aria-modal="true">
+      <div class="hotel-modal-head">
+        <h3>{{ editingHotelId ? 'Chỉnh sửa Khách sạn' : 'Thêm Khách sạn mới' }}</h3>
+        <button type="button" class="btn-sm" (click)="closeHotelModal()">✕</button>
+      </div>
+
+      <div class="admin-error" *ngIf="hotelFormError">{{ hotelFormError }}</div>
+
+      <div class="hotel-form-grid">
+        <label class="form-field full">
+          <span>Tên khách sạn *</span>
+          <input type="text" [(ngModel)]="hotelForm.hotel_name" name="hotelName" placeholder="VD: Amanoi Ocean Villa" />
+        </label>
+
+        <label class="form-field full">
+          <span>Nhà cung cấp (Provider — chỉ hiển thị Approved) *</span>
+          <select [(ngModel)]="hotelForm.provider_id" name="hotelProvider">
+            <option value="">-- Chọn nhà cung cấp đã duyệt --</option>
+            <option *ngFor="let p of approvedProviders" [value]="p.provider_id || p._id">
+              {{ p.business_name }} ({{ p.verification_status }})
+            </option>
+          </select>
+        </label>
+
+        <label class="form-field">
+          <span>Địa chỉ *</span>
+          <input type="text" [(ngModel)]="hotelForm.address" name="hotelAddress" placeholder="Số nhà, đường, quận..." />
+        </label>
+
+        <label class="form-field">
+          <span>Thành phố / Khu vực</span>
+          <input type="text" [(ngModel)]="hotelForm.city" name="hotelCity" placeholder="Đà Nẵng, Phú Quốc..." />
+        </label>
+
+        <label class="form-field">
+          <span>Giá mỗi đêm (VNĐ)</span>
+          <input type="number" [(ngModel)]="hotelForm.price_per_night" name="hotelPrice" min="0" />
+        </label>
+
+        <label class="form-field">
+          <span>Hạng sao (1–5)</span>
+          <input type="number" [(ngModel)]="hotelForm.star_rating" name="hotelStars" min="1" max="5" />
+        </label>
+
+        <label class="form-field" *ngIf="!editingHotelId">
+          <span>Số phòng khởi tạo (Stock)</span>
+          <input type="number" [(ngModel)]="hotelForm.initial_stock" name="hotelStock" min="1" />
+        </label>
+
+        <label class="form-field" [class.full]="!!editingHotelId">
+          <span>URL Hình ảnh</span>
+          <input type="text" [(ngModel)]="hotelForm.image_url" name="hotelImage" placeholder="https://..." />
+        </label>
+
+        <label class="form-field full">
+          <span>Mô tả</span>
+          <textarea [(ngModel)]="hotelForm.description" name="hotelDescription" rows="3" placeholder="Giới thiệu nổi bật về khách sạn..."></textarea>
+        </label>
+      </div>
+
+      <div class="hotel-modal-foot">
+        <button type="button" class="btn-sm" (click)="closeHotelModal()">Hủy</button>
+        <button type="button" class="btn-sm primary" (click)="saveHotelForm()" [disabled]="isSavingHotel">
+          {{ isSavingHotel ? 'Đang lưu...' : editingHotelId ? 'Cập nhật Khách sạn' : 'Tạo Khách sạn' }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q20: Add / Edit Location Modal -->
+  <div class="hotel-modal-backdrop" *ngIf="isLocationModalOpen" (click)="closeLocationModal()">
+    <div class="hotel-modal" (click)="$event.stopPropagation()" role="dialog" aria-modal="true">
+      <div class="hotel-modal-head">
+        <h3>{{ editingLocationId ? 'Chỉnh sửa Địa điểm' : 'Thêm Địa điểm mới' }}</h3>
+        <button type="button" class="btn-sm" (click)="closeLocationModal()">✕</button>
+      </div>
+
+      <div class="admin-error" *ngIf="locationFormError">{{ locationFormError }}</div>
+
+      <div class="hotel-form-grid">
+        <label class="form-field full">
+          <span>Tên địa điểm *</span>
+          <input type="text" [(ngModel)]="locationForm.name" name="locationName" placeholder="VD: Đỉnh Bàn Cờ Sơn Trà" />
+        </label>
+
+        <label class="form-field full">
+          <span>Danh mục (location_category) *</span>
+          <select [(ngModel)]="locationForm.location_category" name="locationCategory">
+            <option *ngFor="let c of locationCategories" [value]="c.value">{{ c.label }}</option>
+          </select>
+        </label>
+
+        <label class="form-field">
+          <span>Địa chỉ *</span>
+          <input type="text" [(ngModel)]="locationForm.address" name="locationAddress" placeholder="Phường, Quận / Huyện..." />
+        </label>
+
+        <label class="form-field">
+          <span>Thành phố</span>
+          <input type="text" [(ngModel)]="locationForm.city" name="locationCity" placeholder="Đà Nẵng, Hội An..." />
+        </label>
+
+        <label class="form-field">
+          <span>Vĩ độ (Latitude: -90..90)</span>
+          <input type="number" step="0.0001" [(ngModel)]="locationForm.latitude" name="locationLat" />
+        </label>
+
+        <label class="form-field">
+          <span>Kinh độ (Longitude: -180..180)</span>
+          <input type="number" step="0.0001" [(ngModel)]="locationForm.longitude" name="locationLng" />
+        </label>
+
+        <label class="form-field">
+          <span>Phí tham quan (VNĐ)</span>
+          <input type="number" [(ngModel)]="locationForm.entry_fee" name="locationFee" min="0" />
+        </label>
+
+        <label class="form-field">
+          <span>URL Hình ảnh</span>
+          <input type="text" [(ngModel)]="locationForm.image_url" name="locationImage" placeholder="https://..." />
+        </label>
+
+        <label class="form-field full">
+          <span>Mô tả địa điểm</span>
+          <textarea [(ngModel)]="locationForm.location_description" name="locationDesc" rows="3" placeholder="Giới thiệu điểm đến..."></textarea>
+        </label>
+      </div>
+
+      <div class="hotel-modal-foot">
+        <button type="button" class="btn-sm" (click)="closeLocationModal()">Hủy</button>
+        <button type="button" class="btn-sm primary" (click)="saveLocationForm()" [disabled]="isSavingLocation">
+          {{ isSavingLocation ? 'Đang lưu...' : editingLocationId ? 'Cập nhật Địa điểm' : 'Tạo Địa điểm' }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" *ngIf="toastMessage">{{ toastMessage }}</div>
+</div>
+

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cmt_1",
+    "targetId": "p1",
+    "userId": "u1",
+    "content": "This picture is so dreamlike!",
+    "timestamp": "2026-07-07T09:07:04.709613Z"
+  },
+  {
+    "id": "cmt_2",
+    "targetId": "p2",
+    "userId": "u2",
+    "content": "Their coconut coffee is also amazing!",
+    "timestamp": "2026-07-07T09:07:04.709805Z"
+  }
+]

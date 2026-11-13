@@ -1,0 +1,16 @@
+{
+  "id": "16",
+  "title": "Hồ Gươm (Hoàn Kiếm)",
+  "city": "Ha Noi",
+  "lat": 21.0285,
+  "lng": 105.8523,
+  "category": "attraction",
+  "description": "Biểu tượng của thủ đô Hà Nội ngàn năm văn hiến, với Tháp Rùa cổ kính nằm giữa hồ nước xanh trong.",
+  "images": [
+    "https://images.unsplash.com/photo-1590487988256-9ed24133863e?w=800&auto=format&fit=crop&q=60"
+  ],
+  "rating": 4.9,
+  "reviewsCount": 15000,
+  "ticketPrice": 0,
+  "openingHours": "24/7"
+}

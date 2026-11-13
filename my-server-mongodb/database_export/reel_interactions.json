@@ -1,0 +1,48 @@
+[
+  {
+    "_id": "inter_01",
+    "reelId": "reel_01",
+    "userId": "guest_demo_user",
+    "isLiked": false,
+    "isBookmarked": true,
+    "watchCount": 3,
+    "maxWatchDurationSec": 24,
+    "completionRate": 1,
+    "clickedHotspotKeys": [
+      "resort",
+      "yacht"
+    ],
+    "updatedAt": "2026-11-10T06:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "inter_02",
+    "reelId": "reel_02",
+    "userId": "guest_demo_user",
+    "isLiked": true,
+    "isBookmarked": false,
+    "watchCount": 2,
+    "maxWatchDurationSec": 18,
+    "completionRate": 1,
+    "clickedHotspotKeys": [
+      "yacht"
+    ],
+    "updatedAt": "2026-11-10T06:10:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "inter_03",
+    "reelId": "reel_03",
+    "userId": "guest_demo_user",
+    "isLiked": false,
+    "isBookmarked": true,
+    "watchCount": 4,
+    "maxWatchDurationSec": 29,
+    "completionRate": 0.94,
+    "clickedHotspotKeys": [
+      "resort"
+    ],
+    "updatedAt": "2026-11-10T06:20:00.000Z",
+    "__v": 0
+  }
+]

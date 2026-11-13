@@ -11,6 +11,10 @@ import { HotelDetails } from '../hotel-search/pages/hotel-details/hotel-details'
 import { HotelBookingInput } from './adapters/hotel-booking-draft';
 import { demoHotels } from '../hotel-search/services/hotel-demo';
 import { PriceBreakdown } from './components/shared/price-breakdown/price-breakdown';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting, HttpTestingController } from '@angular/common/http/testing';
+import { AuthService } from '../services/auth-service';
+import { BookingCartService } from '../services/booking-cart.service';
 
 const input = (): HotelBookingInput => ({
   hotel: demoHotels[0],
@@ -189,5 +193,111 @@ describe('Checkout pricing UI', () => {
     });
     fixture.detectChanges();
     expect(fixture.nativeElement.querySelector('.total')).toBeNull();
+  });
+});
+
+describe('Q15 Simulated Payment Gateway & Cart Checkout', () => {
+  it('handles cart checkout, failed payment retry preservation, and completed E-Voucher issuance', async () => {
+    await TestBed.configureTestingModule({
+      providers: [
+        provideHttpClient(),
+        provideHttpClientTesting(),
+        provideRouter([{ path: 'checkout/:bookingType', component: CheckoutPage }]),
+        provideLocationMocks(),
+        {
+          provide: AuthService,
+          useValue: {
+            isLoggedIn: () => true,
+            currentUser: () => ({
+              id: 'u-q15',
+              fullName: 'Nguyen Q15',
+              email: 'q15@tripla.vn',
+              phone_number: '0901234567',
+              role: 'tourist',
+            }),
+            getAuthHeaders: () => ({ Authorization: 'Bearer q15-token' }),
+            requireAuth: (cb: () => void) => cb(),
+          },
+        },
+      ],
+    }).compileComponents();
+
+    const httpMock = TestBed.inject(HttpTestingController);
+    const cart = TestBed.inject(BookingCartService);
+    cart.addToCart({
+      hotel_id: 'h1',
+      hotel_name: 'Amanoi Vinh Hy',
+      room_id: 'r1',
+      room_name: 'Ocean Pavilion',
+      unit_price: 1200000,
+      quantity: 1,
+      check_in: '2026-12-01',
+      check_out: '2026-12-03',
+      availableStock: 4,
+    }).subscribe();
+
+    const harness = await RouterTestingHarness.create();
+    const page = await harness.navigateByUrl('/checkout/hotel?fromCart=true', CheckoutPage);
+    harness.detectChanges();
+
+    expect(page.fromCartMode()).toBe(true);
+    expect(harness.routeNativeElement!.textContent).toContain('Amanoi Vinh Hy');
+
+    page.proceed();
+    const bookingReq = httpMock.expectOne('http://localhost:3000/api/v1/bookings');
+    expect(bookingReq.request.body.fromCart).toBe(true);
+    expect(bookingReq.request.body.awaitPayment).toBe(true);
+    bookingReq.flush({
+      success: true,
+      booking_code: 'TRP-Q15',
+      booking: {
+        _id: 'b-q15',
+        booking_code: 'TRP-Q15',
+        booking_status: 'pending',
+        total_price: 2400000,
+        items: cart.items(),
+      },
+    });
+    harness.detectChanges();
+    expect(page.pendingBooking()?.booking_code).toBe('TRP-Q15');
+
+    // Simulate failed payment: cart remains intact and booking remains pending
+    page.selectPaymentMethod('bank_transfer');
+    page.simulatePayment('failed');
+    const failReq = httpMock.expectOne('http://localhost:3000/api/v1/payments');
+    expect(failReq.request.body.payment_method).toBe('bank_transfer');
+    expect(failReq.request.body.simulateResult).toBe('failed');
+    failReq.flush(
+      { success: false, message: 'Thanh toán thất bại từ cổng mô phỏng.' },
+      { status: 402, statusText: 'Payment Required' },
+    );
+    harness.detectChanges();
+    expect(page.paymentError()).toContain('Thanh toán thất bại');
+    expect(cart.items().length).toBe(1);
+    expect(page.pendingBooking()).not.toBeNull();
+
+    // Retry with credit_card and succeed -> clears cart and issues E-Voucher
+    page.selectPaymentMethod('credit_card');
+    page.simulatePayment('success');
+    const okReq = httpMock.expectOne('http://localhost:3000/api/v1/payments');
+    expect(okReq.request.body.payment_method).toBe('credit_card');
+    expect(okReq.request.body.simulateResult).toBe('success');
+    okReq.flush({
+      success: true,
+      booking: { _id: 'b-q15', booking_code: 'TRP-Q15', booking_status: 'confirmed', total_price: 2400000 },
+      payment: {
+        payment_method: 'credit_card',
+        payment_status: 'completed',
+        transaction_id: 'TXN-Q15-999',
+        paid_at: '2026-11-11T10:00:00Z',
+        amount: 2400000,
+      },
+    });
+    harness.detectChanges();
+    expect(cart.items().length).toBe(0);
+    expect(page.paymentVoucher()?.payment.transaction_id).toBe('TXN-Q15-999');
+    expect(harness.routeNativeElement!.textContent).toContain('TXN-Q15-999');
+    expect(harness.routeNativeElement!.textContent).toContain('TRP-Q15');
+    httpMock.verify();
   });
 });

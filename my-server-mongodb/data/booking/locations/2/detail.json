@@ -1,0 +1,16 @@
+{
+  "id": "2",
+  "title": "Marble Mountains",
+  "city": "Da Nang",
+  "lat": 16.0028,
+  "lng": 108.2638,
+  "category": "attraction",
+  "description": "A cluster of five marble and limestone hills located in Ngu Hanh Son District, south of Da Nang city in Vietnam. The five mountains are named after the five elements: Kim (metal), Thuy (water), Moc (wood), Hoa (fire) and Tho (earth).",
+  "images": [
+    "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&auto=format&fit=crop&q=60"
+  ],
+  "rating": 4.6,
+  "reviewsCount": 840,
+  "ticketPrice": 40000,
+  "openingHours": "07:00 - 17:30"
+}

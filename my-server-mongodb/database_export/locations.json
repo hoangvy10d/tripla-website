@@ -1,0 +1,1020 @@
+[
+  {
+    "_id": "673000000000000000000301",
+    "slug": "venue_dining_cliff_01",
+    "name": "The Cliff Dining Pavilion • Amanoi Vĩnh Hy",
+    "location_category": "restaurant",
+    "address": "Đỉnh Vách Đá Vịnh Vĩnh Hy, Vườn Quốc Gia Núi Chúa, Ninh Thuận",
+    "city": "Ninh Thuận",
+    "latitude": 11.7158,
+    "longitude": 109.1945,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        109.1945,
+        11.7158
+      ]
+    },
+    "entry_fee": 4200000,
+    "requires_reservation": true,
+    "reservation_duration": 150,
+    "location_description": "Thực đơn 9 món Fine Dining Omakase & Hải sản địa phương kèm rượu vang Grand Cru trên vách đá nhìn thẳng ra vịnh Vĩnh Hy lúc hoàng hôn.",
+    "image_url": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=85",
+    "rating": 4.97,
+    "review_count": 342,
+    "unit": "/ thực khách",
+    "tag": "Ẩm Thực Michelin Cliff",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "restaurant_menu",
+        "label": "Thực đơn degustation 9 món hải sản Vĩnh Hy",
+        "_id": "6af67f9df19f299713ce2c8b"
+      },
+      {
+        "icon": "wine_bar",
+        "label": "Sommelier riêng & Rượu vang Grand Cru",
+        "_id": "6af67f9df19f299713ce2c8c"
+      },
+      {
+        "icon": "wb_twilight",
+        "label": "Bàn vách đá riêng tư ngắm hoàng hôn",
+        "_id": "6af67f9df19f299713ce2c8d"
+      }
+    ],
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.358Z",
+    "updatedAt": "2026-11-13T03:10:21.358Z"
+  },
+  {
+    "_id": "673000000000000000000302",
+    "slug": "venue_yacht_catamaran_01",
+    "name": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+    "location_category": "attraction",
+    "address": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+    "city": "Ninh Thuận",
+    "latitude": 11.712,
+    "longitude": 109.198,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        109.198,
+        11.712
+      ]
+    },
+    "entry_fee": 18500000,
+    "requires_reservation": true,
+    "reservation_duration": 240,
+    "location_description": "Hải trình 4 tiếng trên siêu du thuyền hai thân Catamaran 68ft riêng tư: Lặn ngắm san hô nguyên sinh, thưởng thức Champagne Dom Pérignon & Tôm hùm nướng.",
+    "image_url": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=1200&q=85",
+    "rating": 4.99,
+    "review_count": 215,
+    "unit": "/ hải trình",
+    "tag": "Siêu Du Thuyền Riêng Tư",
+    "drawerKey": "yacht",
+    "features": [
+      {
+        "icon": "sailing",
+        "label": "Thuê trọn gói Catamaran 68ft kèm Thuyền trưởng",
+        "_id": "6af67f9df19f299713ce2c8f"
+      },
+      {
+        "icon": "liquor",
+        "label": "Champagne Dom Pérignon & Canapé thượng hạng",
+        "_id": "6af67f9df19f299713ce2c90"
+      },
+      {
+        "icon": "scuba_diving",
+        "label": "Thiết bị lặn biển & Seabob chuyên nghiệp",
+        "_id": "6af67f9df19f299713ce2c91"
+      }
+    ],
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.359Z",
+    "updatedAt": "2026-11-13T03:10:21.359Z"
+  },
+  {
+    "_id": "673000000000000000000303",
+    "slug": "venue_dining_oki_02",
+    "name": "Oku Contemporary Japanese & Salon de Boeuf",
+    "location_category": "restaurant",
+    "address": "Bãi Trường, Regent Phú Quốc, Tỉnh Kiên Giang",
+    "city": "Phú Quốc",
+    "latitude": 10.1235,
+    "longitude": 103.9812,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        103.9812,
+        10.1235
+      ]
+    },
+    "entry_fee": 3800000,
+    "requires_reservation": true,
+    "reservation_duration": 120,
+    "location_description": "Không gian ẩm thực Nhật - Pháp đương đại với bò Wagyu A5 Miyazaki nướng than Binchotan và quầy Omakase trực diện biển Phú Quốc.",
+    "image_url": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
+    "rating": 4.96,
+    "review_count": 290,
+    "unit": "/ thực khách",
+    "tag": "Fine Dining Omakase",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "set_meal",
+        "label": "Wagyu A5 Miyazaki & Omakase 12 món",
+        "_id": "6af67f9df19f299713ce2c93"
+      },
+      {
+        "icon": "local_bar",
+        "label": "Cocktail thủ công tại Bar Jade",
+        "_id": "6af67f9df19f299713ce2c94"
+      }
+    ],
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.359Z",
+    "updatedAt": "2026-11-13T03:10:21.359Z"
+  },
+  {
+    "_id": "673000000000000000000304",
+    "slug": "venue_yacht_serenity_02",
+    "name": "Du Thuyền Serenity Emperor 5 Sao Vịnh Hạ Long & Lan Hạ",
+    "location_category": "attraction",
+    "address": "Cảng Tàu Khách Quốc Tế Tuần Châu, Hạ Long, Quảng Ninh",
+    "city": "Hạ Long",
+    "latitude": 20.9185,
+    "longitude": 106.9892,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.9892,
+        20.9185
+      ]
+    },
+    "entry_fee": 14500000,
+    "requires_reservation": true,
+    "reservation_duration": 300,
+    "location_description": "Du ngoạn vịnh di sản trên siêu du thuyền Serenity với bể sục Jacuzzi trên boong thượng, chèo Kayak hang Sáng Tối và tiệc tối dưới ánh nến.",
+    "image_url": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
+    "rating": 4.95,
+    "review_count": 418,
+    "unit": "/ hải trình",
+    "tag": "Du Thuyền Di Sản",
+    "drawerKey": "yacht",
+    "features": [
+      {
+        "icon": "directions_boat",
+        "label": "Hải trình riêng qua Vịnh Lan Hạ & Hang Sáng Tối",
+        "_id": "6af67f9df19f299713ce2c96"
+      },
+      {
+        "icon": "hot_tub",
+        "label": "Bể sục Jacuzzi vô cực ngắm hoàng hôn",
+        "_id": "6af67f9df19f299713ce2c97"
+      }
+    ],
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.359Z",
+    "updatedAt": "2026-11-13T03:10:21.359Z"
+  },
+  {
+    "_id": "673000000000000000000305",
+    "slug": "venue_attraction_nuichua_01",
+    "name": "Khu Dự Trữ Sinh Quyển Thế Giới Núi Chúa & Hang Rái",
+    "location_category": "nature",
+    "address": "Vĩnh Hải, Ninh Hải, Ninh Thuận",
+    "city": "Ninh Thuận",
+    "latitude": 11.7312,
+    "longitude": 109.2105,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        109.2105,
+        11.7312
+      ]
+    },
+    "entry_fee": 850000,
+    "requires_reservation": true,
+    "reservation_duration": 180,
+    "location_description": "Trekking bình minh cùng hướng dẫn viên bản địa khám phá thềm san hô cổ hàng triệu năm tuổi tại Hang Rái và rừng khô hạn Núi Chúa.",
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=85",
+    "rating": 4.92,
+    "review_count": 510,
+    "unit": "/ người",
+    "tag": "Thiên Nhiên Nguyên Sinh",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "hiking",
+        "label": "Private Trekking cùng chuyên gia sinh thái",
+        "_id": "6af67f9df19f299713ce2c99"
+      },
+      {
+        "icon": "photo_camera",
+        "label": "Điểm săn bình minh đẹp nhất Việt Nam",
+        "_id": "6af67f9df19f299713ce2c9a"
+      }
+    ],
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.359Z",
+    "updatedAt": "2026-11-13T03:10:21.359Z"
+  },
+  {
+    "_id": "673000000000000000000306",
+    "slug": "venue_attraction_banahills_02",
+    "name": "Cầu Vàng & Làng Pháp Sun World Bà Nà Hills VIP Pass",
+    "location_category": "attraction",
+    "address": "Thôn An Sơn, Hòa Ninh, Hòa Vang, Đà Nẵng",
+    "city": "Đà Nẵng",
+    "latitude": 15.9977,
+    "longitude": 107.9881,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        107.9881,
+        15.9977
+      ]
+    },
+    "entry_fee": 1650000,
+    "requires_reservation": true,
+    "reservation_duration": 240,
+    "location_description": "Lối đi ưu tiên WOW Pass không xếp hàng cáp treo, thưởng thức tiệc trưa hầm rượu cổ Debay và dạo bước trên Cầu Vàng.",
+    "image_url": "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1200&q=85",
+    "rating": 4.91,
+    "review_count": 680,
+    "unit": "/ khách",
+    "tag": "Đặc Quyền WOW Pass",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "confirmation_number",
+        "label": "Lối đi VIP Cáp treo không chờ đợi",
+        "_id": "6af67f9df19f299713ce2c9c"
+      },
+      {
+        "icon": "wine_bar",
+        "label": "Tham quan & Thử rượu Hầm rượu cổ Debay",
+        "_id": "6af67f9df19f299713ce2c9d"
+      }
+    ],
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.359Z",
+    "updatedAt": "2026-11-13T03:10:21.359Z"
+  },
+  {
+    "_id": "673000000000000000000320",
+    "slug": "loc_1_0",
+    "name": "Golden Bridge (Ba Na Hills)",
+    "location_category": "attraction",
+    "address": "Golden Bridge (Ba Na Hills), Da Nang",
+    "city": "Da Nang",
+    "latitude": 15.9961,
+    "longitude": 107.9897,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        107.9897,
+        15.9961
+      ]
+    },
+    "entry_fee": 900000,
+    "requires_reservation": true,
+    "reservation_duration": 120,
+    "location_description": "A 150-metre-long pedestrian bridge in the Ba Na Hills resort, near Da Nang, Vietnam. It is designed to connect the cable car station with the gardens and to provide a scenic overlook and tourist attraction.",
+    "image_url": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&auto=format&fit=crop&q=60",
+    "rating": 4.8,
+    "review_count": 1250,
+    "unit": "/ khách",
+    "tag": "Điểm Tham Quan",
+    "drawerKey": "yacht",
+    "features": [
+      {
+        "icon": "schedule",
+        "label": "Giờ mở cửa: 07:00 - 22:00",
+        "_id": "6af67f9df19f299713ce2c9f"
+      },
+      {
+        "icon": "place",
+        "label": "Thành phố: Da Nang",
+        "_id": "6af67f9df19f299713ce2ca0"
+      }
+    ],
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.359Z",
+    "updatedAt": "2026-11-13T03:10:21.359Z"
+  },
+  {
+    "_id": "673000000000000000000321",
+    "slug": "loc_2_1",
+    "name": "Marble Mountains",
+    "location_category": "attraction",
+    "address": "Marble Mountains, Da Nang",
+    "city": "Da Nang",
+    "latitude": 16.0028,
+    "longitude": 108.2638,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.2638,
+        16.0028
+      ]
+    },
+    "entry_fee": 40000,
+    "requires_reservation": true,
+    "reservation_duration": 120,
+    "location_description": "A cluster of five marble and limestone hills located in Ngu Hanh Son District, south of Da Nang city in Vietnam. The five mountains are named after the five elements: Kim (metal), Thuy (water), Moc (wood), Hoa (fire) and Tho (earth).",
+    "image_url": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&auto=format&fit=crop&q=60",
+    "rating": 4.6,
+    "review_count": 840,
+    "unit": "/ khách",
+    "tag": "Điểm Tham Quan",
+    "drawerKey": "yacht",
+    "features": [
+      {
+        "icon": "schedule",
+        "label": "Giờ mở cửa: 07:00 - 17:30",
+        "_id": "6af67f9df19f299713ce2ca2"
+      },
+      {
+        "icon": "place",
+        "label": "Thành phố: Da Nang",
+        "_id": "6af67f9df19f299713ce2ca3"
+      }
+    ],
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.359Z",
+    "updatedAt": "2026-11-13T03:10:21.359Z"
+  },
+  {
+    "_id": "673000000000000000000322",
+    "slug": "loc_3_2",
+    "name": "Dragon Bridge",
+    "location_category": "attraction",
+    "address": "Dragon Bridge, Da Nang",
+    "city": "Da Nang",
+    "latitude": 16.0611,
+    "longitude": 108.2275,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.2275,
+        16.0611
+      ]
+    },
+    "entry_fee": 0,
+    "requires_reservation": false,
+    "reservation_duration": 120,
+    "location_description": "A bridge over the River Hàn at Da Nang, Vietnam, shaped like a dragon. It breathes fire and water every Saturday and Sunday night.",
+    "image_url": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&auto=format&fit=crop&q=60",
+    "rating": 4.9,
+    "review_count": 3200,
+    "unit": "/ khách",
+    "tag": "Điểm Tham Quan",
+    "drawerKey": "yacht",
+    "features": [
+      {
+        "icon": "schedule",
+        "label": "Giờ mở cửa: 24/7",
+        "_id": "6af67f9df19f299713ce2ca5"
+      },
+      {
+        "icon": "place",
+        "label": "Thành phố: Da Nang",
+        "_id": "6af67f9df19f299713ce2ca6"
+      }
+    ],
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.359Z",
+    "updatedAt": "2026-11-13T03:10:21.359Z"
+  },
+  {
+    "_id": "673000000000000000000323",
+    "slug": "loc_4_3",
+    "name": "My Khe Beach",
+    "location_category": "nature",
+    "address": "My Khe Beach, Da Nang",
+    "city": "Da Nang",
+    "latitude": 16.0656,
+    "longitude": 108.2483,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.2483,
+        16.0656
+      ]
+    },
+    "entry_fee": 0,
+    "requires_reservation": false,
+    "reservation_duration": 120,
+    "location_description": "Famous for its blue sky, smooth white sand, gentle slope, clear & warm water year round and beautiful areas surrounded by coconut trees.",
+    "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=60",
+    "rating": 4.5,
+    "review_count": 5400,
+    "unit": "/ khách",
+    "tag": "Điểm Tham Quan",
+    "drawerKey": "yacht",
+    "features": [
+      {
+        "icon": "schedule",
+        "label": "Giờ mở cửa: 24/7",
+        "_id": "6af67f9df19f299713ce2ca8"
+      },
+      {
+        "icon": "place",
+        "label": "Thành phố: Da Nang",
+        "_id": "6af67f9df19f299713ce2ca9"
+      }
+    ],
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.359Z",
+    "updatedAt": "2026-11-13T03:10:21.359Z"
+  },
+  {
+    "_id": "673000000000000000000324",
+    "slug": "loc_5_4",
+    "name": "Reply 1988 Cafe",
+    "location_category": "cafe",
+    "address": "Reply 1988 Cafe, Da Nang",
+    "city": "Da Nang",
+    "latitude": 16.0592,
+    "longitude": 108.2223,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.2223,
+        16.0592
+      ]
+    },
+    "entry_fee": 0,
+    "requires_reservation": false,
+    "reservation_duration": 120,
+    "location_description": "A cozy, retro-themed cafe inspired by the Korean drama Reply 1988. Famous for its amazing egg coffee and rustic interior design.",
+    "image_url": "https://images.unsplash.com/photo-1498804103079-a6351b050096?w=800&auto=format&fit=crop&q=60",
+    "rating": 4.7,
+    "review_count": 420,
+    "unit": "/ khách",
+    "tag": "Cafe Check-in",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "schedule",
+        "label": "Giờ mở cửa: 07:00 - 23:00",
+        "_id": "6af67f9df19f299713ce2cab"
+      },
+      {
+        "icon": "place",
+        "label": "Thành phố: Da Nang",
+        "_id": "6af67f9df19f299713ce2cac"
+      }
+    ],
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.359Z",
+    "updatedAt": "2026-11-13T03:10:21.359Z"
+  },
+  {
+    "_id": "673000000000000000000325",
+    "slug": "loc_6_5",
+    "name": "Thia Go Restaurant",
+    "location_category": "restaurant",
+    "address": "Thia Go Restaurant, Da Nang",
+    "city": "Da Nang",
+    "latitude": 16.0605,
+    "longitude": 108.2421,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.2421,
+        16.0605
+      ]
+    },
+    "entry_fee": 0,
+    "requires_reservation": false,
+    "reservation_duration": 120,
+    "location_description": "Outstanding Central Vietnamese food including Mi Quang, Banh Xeo, and lemongrass pork. A must-visit for food lovers.",
+    "image_url": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&auto=format&fit=crop&q=60",
+    "rating": 4.7,
+    "review_count": 610,
+    "unit": "/ khách",
+    "tag": "Ẩm Thực Địa Phương",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "schedule",
+        "label": "Giờ mở cửa: 10:00 - 22:00",
+        "_id": "6af67f9df19f299713ce2cae"
+      },
+      {
+        "icon": "place",
+        "label": "Thành phố: Da Nang",
+        "_id": "6af67f9df19f299713ce2caf"
+      }
+    ],
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.360Z",
+    "updatedAt": "2026-11-13T03:10:21.360Z"
+  },
+  {
+    "_id": "673000000000000000000326",
+    "slug": "loc_7_6",
+    "name": "VinWonders Phu Quoc",
+    "location_category": "attraction",
+    "address": "VinWonders Phu Quoc, Phu Quoc",
+    "city": "Phu Quoc",
+    "latitude": 10.3342,
+    "longitude": 103.8561,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        103.8561,
+        10.3342
+      ]
+    },
+    "entry_fee": 880000,
+    "requires_reservation": true,
+    "reservation_duration": 120,
+    "location_description": "The largest theme park in Vietnam with dozens of outdoor rides, an indoor game center, an aquarium, and a water park.",
+    "image_url": "https://images.unsplash.com/photo-1513553404607-988bf2703777?w=800&auto=format&fit=crop&q=60",
+    "rating": 4.8,
+    "review_count": 1150,
+    "unit": "/ khách",
+    "tag": "Điểm Tham Quan",
+    "drawerKey": "yacht",
+    "features": [
+      {
+        "icon": "schedule",
+        "label": "Giờ mở cửa: 09:00 - 19:30",
+        "_id": "6af67f9df19f299713ce2cb1"
+      },
+      {
+        "icon": "place",
+        "label": "Thành phố: Phu Quoc",
+        "_id": "6af67f9df19f299713ce2cb2"
+      }
+    ],
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.360Z",
+    "updatedAt": "2026-11-13T03:10:21.360Z"
+  },
+  {
+    "_id": "673000000000000000000327",
+    "slug": "loc_8_7",
+    "name": "Vinpearl Safari",
+    "location_category": "attraction",
+    "address": "Vinpearl Safari, Phu Quoc",
+    "city": "Phu Quoc",
+    "latitude": 10.3245,
+    "longitude": 103.8711,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        103.8711,
+        10.3245
+      ]
+    },
+    "entry_fee": 650000,
+    "requires_reservation": true,
+    "reservation_duration": 120,
+    "location_description": "Vietnam's first open zoo with over 150 species of rare animals from around the world.",
+    "image_url": "https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?w=800&auto=format&fit=crop&q=60",
+    "rating": 4.7,
+    "review_count": 980,
+    "unit": "/ khách",
+    "tag": "Điểm Tham Quan",
+    "drawerKey": "yacht",
+    "features": [
+      {
+        "icon": "schedule",
+        "label": "Giờ mở cửa: 09:00 - 16:00",
+        "_id": "6af67f9df19f299713ce2cb4"
+      },
+      {
+        "icon": "place",
+        "label": "Thành phố: Phu Quoc",
+        "_id": "6af67f9df19f299713ce2cb5"
+      }
+    ],
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.360Z",
+    "updatedAt": "2026-11-13T03:10:21.360Z"
+  },
+  {
+    "_id": "673000000000000000000328",
+    "slug": "loc_9_8",
+    "name": "Hon Thom Cable Car",
+    "location_category": "attraction",
+    "address": "Hon Thom Cable Car, Phu Quoc",
+    "city": "Phu Quoc",
+    "latitude": 10.0272,
+    "longitude": 104.0152,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        104.0152,
+        10.0272
+      ]
+    },
+    "entry_fee": 500000,
+    "requires_reservation": true,
+    "reservation_duration": 120,
+    "location_description": "The world's longest sea-crossing cable car, providing a breathtaking view of the An Thoi archipelago.",
+    "image_url": "https://images.unsplash.com/photo-1473163928189-364b2c4e1135?w=800&auto=format&fit=crop&q=60",
+    "rating": 4.9,
+    "review_count": 2100,
+    "unit": "/ khách",
+    "tag": "Điểm Tham Quan",
+    "drawerKey": "yacht",
+    "features": [
+      {
+        "icon": "schedule",
+        "label": "Giờ mở cửa: 08:30 - 17:00",
+        "_id": "6af67f9df19f299713ce2cb7"
+      },
+      {
+        "icon": "place",
+        "label": "Thành phố: Phu Quoc",
+        "_id": "6af67f9df19f299713ce2cb8"
+      }
+    ],
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.360Z",
+    "updatedAt": "2026-11-13T03:10:21.360Z"
+  },
+  {
+    "_id": "673000000000000000000329",
+    "slug": "loc_10_9",
+    "name": "Saigon Skydeck",
+    "location_category": "attraction",
+    "address": "Saigon Skydeck, Hồ Chí Minh",
+    "city": "Hồ Chí Minh",
+    "latitude": 10.7716,
+    "longitude": 106.7044,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.7044,
+        10.7716
+      ]
+    },
+    "entry_fee": 200000,
+    "requires_reservation": true,
+    "reservation_duration": 120,
+    "location_description": "Enjoy a 360-degree bird's-eye view of Ho Chi Minh City from the 49th floor of the iconic Bitexco Financial Tower.",
+    "image_url": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1000&q=80",
+    "rating": 4.6,
+    "review_count": 850,
+    "unit": "/ khách",
+    "tag": "Điểm Tham Quan",
+    "drawerKey": "yacht",
+    "features": [
+      {
+        "icon": "schedule",
+        "label": "Giờ mở cửa: 09:30 - 21:30",
+        "_id": "6af67f9df19f299713ce2cba"
+      },
+      {
+        "icon": "place",
+        "label": "Thành phố: Hồ Chí Minh",
+        "_id": "6af67f9df19f299713ce2cbb"
+      }
+    ],
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.360Z",
+    "updatedAt": "2026-11-13T03:10:21.360Z"
+  },
+  {
+    "_id": "673000000000000000000330",
+    "slug": "loc_11_10",
+    "name": "A O Show",
+    "location_category": "attraction",
+    "address": "A O Show, Hồ Chí Minh",
+    "city": "Hồ Chí Minh",
+    "latitude": 10.7766,
+    "longitude": 106.7032,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.7032,
+        10.7766
+      ]
+    },
+    "entry_fee": 630000,
+    "requires_reservation": true,
+    "reservation_duration": 120,
+    "location_description": "A spectacular cultural performance at the Saigon Opera House, blending visual theater, acrobatics, and contemporary dance.",
+    "image_url": "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=800&auto=format&fit=crop&q=60",
+    "rating": 4.8,
+    "review_count": 720,
+    "unit": "/ khách",
+    "tag": "Điểm Tham Quan",
+    "drawerKey": "yacht",
+    "features": [
+      {
+        "icon": "schedule",
+        "label": "Giờ mở cửa: 18:00 - 20:00",
+        "_id": "6af67f9df19f299713ce2cbd"
+      },
+      {
+        "icon": "place",
+        "label": "Thành phố: Hồ Chí Minh",
+        "_id": "6af67f9df19f299713ce2cbe"
+      }
+    ],
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.360Z",
+    "updatedAt": "2026-11-13T03:10:21.360Z"
+  },
+  {
+    "_id": "673000000000000000000331",
+    "slug": "loc_12_11",
+    "name": "Water Puppet Theatre",
+    "location_category": "attraction",
+    "address": "Water Puppet Theatre, Hà Nội",
+    "city": "Hà Nội",
+    "latitude": 21.0315,
+    "longitude": 105.8528,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        105.8528,
+        21.0315
+      ]
+    },
+    "entry_fee": 100000,
+    "requires_reservation": true,
+    "reservation_duration": 120,
+    "location_description": "Experience the ancient Vietnamese art of water puppetry accompanied by a live traditional orchestra.",
+    "image_url": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&auto=format&fit=crop&q=60",
+    "rating": 4.5,
+    "review_count": 1500,
+    "unit": "/ khách",
+    "tag": "Điểm Tham Quan",
+    "drawerKey": "yacht",
+    "features": [
+      {
+        "icon": "schedule",
+        "label": "Giờ mở cửa: 15:00 - 20:00",
+        "_id": "6af67f9df19f299713ce2cc0"
+      },
+      {
+        "icon": "place",
+        "label": "Thành phố: Hà Nội",
+        "_id": "6af67f9df19f299713ce2cc1"
+      }
+    ],
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.360Z",
+    "updatedAt": "2026-11-13T03:10:21.360Z"
+  },
+  {
+    "_id": "673000000000000000000332",
+    "slug": "loc_13_12",
+    "name": "Hoa Lo Prison",
+    "location_category": "attraction",
+    "address": "Hoa Lo Prison, Hà Nội",
+    "city": "Hà Nội",
+    "latitude": 21.0253,
+    "longitude": 105.8464,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        105.8464,
+        21.0253
+      ]
+    },
+    "entry_fee": 30000,
+    "requires_reservation": true,
+    "reservation_duration": 120,
+    "location_description": "A historic prison built by French colonists, ironically nicknamed the 'Hanoi Hilton' by American POWs.",
+    "image_url": "https://images.unsplash.com/photo-1555921015-5532091f6026?auto=format&fit=crop&w=1000&q=80",
+    "rating": 4.7,
+    "review_count": 2300,
+    "unit": "/ khách",
+    "tag": "Điểm Tham Quan",
+    "drawerKey": "yacht",
+    "features": [
+      {
+        "icon": "schedule",
+        "label": "Giờ mở cửa: 08:00 - 17:00",
+        "_id": "6af67f9df19f299713ce2cc3"
+      },
+      {
+        "icon": "place",
+        "label": "Thành phố: Hà Nội",
+        "_id": "6af67f9df19f299713ce2cc4"
+      }
+    ],
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.360Z",
+    "updatedAt": "2026-11-13T03:10:21.360Z"
+  },
+  {
+    "_id": "673000000000000000000333",
+    "slug": "loc_14_13",
+    "name": "I-Resort Mud Bath",
+    "location_category": "attraction",
+    "address": "I-Resort Mud Bath, Nha Trang",
+    "city": "Nha Trang",
+    "latitude": 12.2829,
+    "longitude": 109.1869,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        109.1869,
+        12.2829
+      ]
+    },
+    "entry_fee": 250000,
+    "requires_reservation": true,
+    "reservation_duration": 120,
+    "location_description": "Relax in hot mineral springs and mud baths set in a beautiful tropical environment with waterfalls and pools.",
+    "image_url": "https://images.unsplash.com/photo-1544816155-12df9643f363?w=800&auto=format&fit=crop&q=60",
+    "rating": 4.7,
+    "review_count": 640,
+    "unit": "/ khách",
+    "tag": "Điểm Tham Quan",
+    "drawerKey": "yacht",
+    "features": [
+      {
+        "icon": "schedule",
+        "label": "Giờ mở cửa: 08:00 - 18:00",
+        "_id": "6af67f9df19f299713ce2cc6"
+      },
+      {
+        "icon": "place",
+        "label": "Thành phố: Nha Trang",
+        "_id": "6af67f9df19f299713ce2cc7"
+      }
+    ],
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.360Z",
+    "updatedAt": "2026-11-13T03:10:21.360Z"
+  },
+  {
+    "_id": "673000000000000000000334",
+    "slug": "loc_15_14",
+    "name": "Guinness Seaside Restaurant",
+    "location_category": "restaurant",
+    "address": "Guinness Seaside Restaurant, Phu Quoc",
+    "city": "Phu Quoc",
+    "latitude": 10.0272,
+    "longitude": 104.0152,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        104.0152,
+        10.0272
+      ]
+    },
+    "entry_fee": 0,
+    "requires_reservation": false,
+    "reservation_duration": 120,
+    "location_description": "Awarded a Guinness World Record for being the largest coastal restaurant. Specializes in fresh, local seafood.",
+    "image_url": "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&auto=format&fit=crop&q=60",
+    "rating": 4.6,
+    "review_count": 350,
+    "unit": "/ khách",
+    "tag": "Ẩm Thực Địa Phương",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "schedule",
+        "label": "Giờ mở cửa: 10:00 - 23:00",
+        "_id": "6af67f9df19f299713ce2cc9"
+      },
+      {
+        "icon": "place",
+        "label": "Thành phố: Phu Quoc",
+        "_id": "6af67f9df19f299713ce2cca"
+      }
+    ],
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.360Z",
+    "updatedAt": "2026-11-13T03:10:21.360Z"
+  },
+  {
+    "_id": "673000000000000000000335",
+    "slug": "loc_16_15",
+    "name": "Cai Rang Floating Market",
+    "location_category": "attraction",
+    "address": "Cai Rang Floating Market, Cần Thơ",
+    "city": "Cần Thơ",
+    "latitude": 10.005,
+    "longitude": 105.7469,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        105.7469,
+        10.005
+      ]
+    },
+    "entry_fee": 0,
+    "requires_reservation": false,
+    "reservation_duration": 120,
+    "location_description": "The largest and most bustling floating market in the Mekong Delta. A vibrant display of local culture and commerce.",
+    "image_url": "https://images.unsplash.com/photo-1528127269322-539801943592?w=800&auto=format&fit=crop&q=60",
+    "rating": 4.8,
+    "review_count": 980,
+    "unit": "/ khách",
+    "tag": "Điểm Tham Quan",
+    "drawerKey": "yacht",
+    "features": [
+      {
+        "icon": "schedule",
+        "label": "Giờ mở cửa: 04:00 - 09:00",
+        "_id": "6af67f9df19f299713ce2ccc"
+      },
+      {
+        "icon": "place",
+        "label": "Thành phố: Cần Thơ",
+        "_id": "6af67f9df19f299713ce2ccd"
+      }
+    ],
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.360Z",
+    "updatedAt": "2026-11-13T03:10:21.360Z"
+  },
+  {
+    "_id": "673000000000000000000336",
+    "slug": "loc_16_16",
+    "name": "Hồ Gươm (Hoàn Kiếm)",
+    "location_category": "attraction",
+    "address": "Hồ Gươm (Hoàn Kiếm), Ha Noi",
+    "city": "Ha Noi",
+    "latitude": 21.0285,
+    "longitude": 105.8523,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        105.8523,
+        21.0285
+      ]
+    },
+    "entry_fee": 0,
+    "requires_reservation": false,
+    "reservation_duration": 120,
+    "location_description": "Biểu tượng của thủ đô Hà Nội ngàn năm văn hiến, với Tháp Rùa cổ kính nằm giữa hồ nước xanh trong.",
+    "image_url": "https://images.unsplash.com/photo-1590487988256-9ed24133863e?w=800&auto=format&fit=crop&q=60",
+    "rating": 4.9,
+    "review_count": 15000,
+    "unit": "/ khách",
+    "tag": "Điểm Tham Quan",
+    "drawerKey": "yacht",
+    "features": [
+      {
+        "icon": "schedule",
+        "label": "Giờ mở cửa: 24/7",
+        "_id": "6af67f9df19f299713ce2ccf"
+      },
+      {
+        "icon": "place",
+        "label": "Thành phố: Ha Noi",
+        "_id": "6af67f9df19f299713ce2cd0"
+      }
+    ],
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.360Z",
+    "updatedAt": "2026-11-13T03:10:21.360Z"
+  },
+  {
+    "_id": "673000000000000000000337",
+    "slug": "loc_17_17",
+    "name": "Hồ Xuân Hương",
+    "location_category": "nature",
+    "address": "Hồ Xuân Hương, Da Lat",
+    "city": "Da Lat",
+    "latitude": 11.9404,
+    "longitude": 108.4383,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.4383,
+        11.9404
+      ]
+    },
+    "entry_fee": 0,
+    "requires_reservation": false,
+    "reservation_duration": 120,
+    "location_description": "Trái tim của Đà Lạt mộng mơ. Thích hợp để đạp vịt, chạy bộ hoặc nhâm nhi ly cà phê sáng sớm.",
+    "image_url": "https://images.unsplash.com/photo-1509233725247-49e657c54213?auto=format&fit=crop&w=1000&q=80",
+    "rating": 4.8,
+    "review_count": 8500,
+    "unit": "/ khách",
+    "tag": "Điểm Tham Quan",
+    "drawerKey": "yacht",
+    "features": [
+      {
+        "icon": "schedule",
+        "label": "Giờ mở cửa: 24/7",
+        "_id": "6af67f9df19f299713ce2cd2"
+      },
+      {
+        "icon": "place",
+        "label": "Thành phố: Da Lat",
+        "_id": "6af67f9df19f299713ce2cd3"
+      }
+    ],
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.360Z",
+    "updatedAt": "2026-11-13T03:10:21.360Z"
+  }
+]

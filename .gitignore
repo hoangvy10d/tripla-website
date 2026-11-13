@@ -1,3 +1,34 @@
-/*
-!/tripla_website/
-!/.gitignore
+# Dependencies
+node_modules/
+*/node_modules/
+tripla_website/node_modules/
+my-server-mongodb/node_modules/
+
+# Build & Cache
+.angular/
+*/.angular/
+dist/
+*/dist/
+.vscode/
+.idea/
+
+# Environment & Local Configuration
+.env
+*.env
+.env.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Exclude heavy local raw videos if any
+*.mp4
+!tripla_website/public/ocean.mp4
+
+# OS & Editor Files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo

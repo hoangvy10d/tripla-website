@@ -1,37 +1,12 @@
 <div class="results-page">
-  <header class="page-header">
-    <a class="brand" routerLink="/home" aria-label="TRIPLA - Trang chủ">
-      <img src="/images/logo (2).png" alt="" />
-      <span>TRIPLA</span>
-    </a>
-    <nav class="main-nav" aria-label="Điều hướng chính">
-      <a routerLink="/home">Khám phá</a>
-      <a routerLink="/tripshort">TripShorts</a>
-      <a routerLink="/trip-shop" class="active">TripShop</a><a routerLink="/trip-planning">Trip Planning</a>
-      <a routerLink="/about">Về TRIPLA</a>
-    </nav>
-    <a class="header-return" routerLink="/trip-shop"
-      ><span class="material-symbols-outlined">arrow_back</span>TripShop</a
-    >
-  </header>
-  <nav class="service-nav" aria-label="Dịch vụ du lịch">
-    <a class="service-tab" routerLink="/trip-shop"
-      ><span class="material-symbols-outlined">hotel</span>Khách Sạn &amp; Resort</a
-    ><span class="service-tab selected" aria-current="page"
-      ><span class="material-symbols-outlined">flight</span>Vé Máy Bay</span
-    ><a class="service-tab" routerLink="/trip-shop" [queryParams]="{ tab: 'tour' }"
-      ><span class="material-symbols-outlined">tour</span>Hoạt động &amp; Vui chơi</a
-    ><a class="service-tab" routerLink="/trip-shop" [queryParams]="{ tab: 'bus' }"
-      ><span class="material-symbols-outlined">directions_bus</span>Vé Xe Khách</a
-    >
-  </nav>
+  <app-activity-navigation activeService="flight" />
   <main *ngIf="state() as applied">
     <div class="flight-intro">
       <p class="eyebrow">TRIPLA · CHUYẾN ĐI CỦA BẠN</p>
       <h1>Một chuyến bay<span>, mở ra hành trình mới.</span></h1>
     </div>
     <app-flight-search-bar [criteria]="applied.criteria" (search)="search($event)" />
-    <div class="demo-notice" role="status"><span>{{ demo() ? 'Đang xem chuyến bay, thời gian và giá minh họa. Không phải vé thật; chưa hỗ trợ đặt vé.' : 'Xem thử giao diện flight card trong khi chờ kết nối dữ liệu.' }}</span><button *ngIf="!demo()" type="button" (click)="previewDemo()">Xem giao diện mẫu</button><a *ngIf="demo()" routerLink="/flight-search-results" [queryParams]="{ demo: null }" queryParamsHandling="merge">Thoát xem mẫu</a></div>
+    <div *ngIf="!isMongoConnected()" class="demo-notice" role="status"><span>{{ demo() ? 'Đang xem chuyến bay, thời gian và giá minh họa. Không phải vé thật; chưa hỗ trợ đặt vé.' : 'Xem thử giao diện flight card trong khi chờ kết nối dữ liệu.' }}</span><button *ngIf="!demo()" type="button" (click)="previewDemo()">Xem giao diện mẫu</button><a *ngIf="demo()" routerLink="/flight-search-results" [queryParams]="{ demo: null }" queryParamsHandling="merge">Thoát xem mẫu</a></div>
     <p *ngIf="error()" class="error" role="alert">
       {{ error() }} Hãy điều chỉnh thông tin tìm kiếm.
     </p>
@@ -124,3 +99,4 @@
     <app-flight-offer-dialog *ngIf="pendingFlight() as flight" [flight]="flight" [criteria]="applied.criteria" [leg]="applied.leg" [selection]="selection()" [demo]="demo()" (closed)="pendingFlight.set(null)" (confirmed)="chooseFare($event)" />
   </main>
 </div>
+<app-site-footer variant="compact" />

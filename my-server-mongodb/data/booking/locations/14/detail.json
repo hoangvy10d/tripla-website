@@ -1,0 +1,16 @@
+{
+  "id": "14",
+  "title": "I-Resort Mud Bath",
+  "city": "Nha Trang",
+  "lat": 12.2829,
+  "lng": 109.1869,
+  "category": "attraction",
+  "description": "Relax in hot mineral springs and mud baths set in a beautiful tropical environment with waterfalls and pools.",
+  "images": [
+    "https://images.unsplash.com/photo-1544816155-12df9643f363?w=800&auto=format&fit=crop&q=60"
+  ],
+  "rating": 4.7,
+  "reviewsCount": 640,
+  "ticketPrice": 250000,
+  "openingHours": "08:00 - 18:00"
+}

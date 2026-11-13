@@ -1,0 +1,1209 @@
+[
+  {
+    "_id": "reel_01",
+    "id": "v1",
+    "slug": "binh-minh-vinh-hy-amanoi-ocean-pool-villa",
+    "title": "Bình minh Vĩnh Hy nhìn từ hồ bơi vô cực vách đá Amanoi 🌊✨",
+    "caption": "Trải nghiệm thức giấc giữa tầng mây và biển xanh ngọc bích tại Amanoi Ocean Pool Villa, thưởng thức bữa tối vách đá The Cliff Dining Club và hải trình Catamaran đón hoàng hôn.",
+    "hashtags": ["amanoi", "vinhhy", "ninhthuan", "luxuryresort", "tripshort"],
+    "author": "@minh_wanderlust",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
+    "creator": {
+      "userId": "user_minh_01",
+      "handle": "@minh_wanderlust",
+      "displayName": "Minh Wanderlust",
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
+      "isVerified": true
+    },
+    "media": {
+      "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-seashore-with-rocks-1090-large.mp4",
+      "posterUrl": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=900&q=85",
+      "durationSec": 24,
+      "aspectRatio": "9:16",
+      "resolution": "1080x1920"
+    },
+    "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=900&q=85",
+    "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-seashore-with-rocks-1090-large.mp4",
+    "duration": "0:24",
+    "location": "Vĩnh Hy, Ninh Thuận",
+    "locationGeo": {
+      "name": "Vịnh Vĩnh Hy, Ninh Thuận",
+      "city": "Ninh Thuận",
+      "country": "Vietnam",
+      "geo": {
+        "type": "Point",
+        "coordinates": [109.1932, 11.7145]
+      }
+    },
+    "music": {
+      "trackName": "Ocean Breeze Acoustic — TRIPLA Original",
+      "artist": "Tripla Soundscape"
+    },
+    "hotspotVenueIds": {
+      "resort": "venue_amanoi_01",
+      "dining": "venue_dining_cliff_01",
+      "yacht": "venue_yacht_catamaran_01"
+    },
+    "likes": "14.2K",
+    "views": "85.4K",
+    "commentsCount": 342,
+    "shares": "1.2K",
+    "bookmarks": "3.8K",
+    "isLiked": false,
+    "isBookmarked": true,
+    "category": "for-you",
+    "stats": {
+      "views": 85400,
+      "likes": 14200,
+      "commentsCount": 342,
+      "shares": 1200,
+      "bookmarks": 3800
+    },
+    "ranking": {
+      "trendingScore": 99.4,
+      "engagementRate": 0.228,
+      "status": "ACTIVE"
+    },
+    "createdAt": "2026-11-01T06:30:00.000Z"
+  },
+  {
+    "_id": "reel_02",
+    "id": "v2",
+    "slug": "hoang-hon-du-thuyen-serenity-phu-quoc-regent",
+    "title": "Hoàng hôn tím trên du thuyền Serenity Phú Quốc & Sky Pool Villa ⛵🥂",
+    "caption": "Không gì sánh bằng cảm giác nhâm nhi Champagne Billecart-Salmon trên boong tàu Serenity khi mặt trời lặn xuống Bãi Trường, rồi trở về Regent Sky Pool Villa.",
+    "hashtags": ["phuquoc", "regentphuquoc", "luxuryyacht", "sunset", "tripshort"],
+    "author": "@linh.luxtravel",
+    "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80",
+    "creator": {
+      "userId": "user_linh_02",
+      "handle": "@linh.luxtravel",
+      "displayName": "Linh LuxTravel",
+      "avatarUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80",
+      "isVerified": true
+    },
+    "media": {
+      "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-sailing-boat-on-the-sea-at-sunset-4149-large.mp4",
+      "posterUrl": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=900&q=85",
+      "durationSec": 18,
+      "aspectRatio": "9:16",
+      "resolution": "1080x1920"
+    },
+    "image": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=900&q=85",
+    "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-sailing-boat-on-the-sea-at-sunset-4149-large.mp4",
+    "duration": "0:18",
+    "location": "Đảo Ngọc, Phú Quốc",
+    "locationGeo": {
+      "name": "Bãi Trường, Phú Quốc",
+      "city": "Phú Quốc",
+      "country": "Vietnam",
+      "geo": {
+        "type": "Point",
+        "coordinates": [103.9840, 10.1292]
+      }
+    },
+    "music": {
+      "trackName": "Sunset Riviera Violin",
+      "artist": "Laurent & Strings"
+    },
+    "hotspotVenueIds": {
+      "resort": "venue_regent_phu_quoc_04",
+      "dining": "venue_dining_pink_pearl_12",
+      "yacht": "venue_yacht_serenity_pq_14"
+    },
+    "likes": "9.8K",
+    "views": "62.1K",
+    "commentsCount": 215,
+    "shares": "890",
+    "bookmarks": "2.4K",
+    "isLiked": true,
+    "isBookmarked": false,
+    "category": "trending",
+    "stats": {
+      "views": 62100,
+      "likes": 9800,
+      "commentsCount": 215,
+      "shares": 890,
+      "bookmarks": 2400
+    },
+    "ranking": {
+      "trendingScore": 97.8,
+      "engagementRate": 0.214,
+      "status": "ACTIVE"
+    },
+    "createdAt": "2026-11-02T10:15:00.000Z"
+  },
+  {
+    "_id": "reel_03",
+    "id": "v3",
+    "slug": "private-onsen-giua-rung-thong-da-lat-suong-mu",
+    "title": "Private Onsen & Biệt thự Pháp cổ giữa rừng thông Đà Lạt sương mù 🌲♨️",
+    "caption": "5 giờ sáng ngâm hồ nước ấm nhìn sương mù trôi qua đồi thông Lê Lai tại Ana Mandara Villas Dalat, chiều thưởng thức tiệc rượu vang cổ điển.",
+    "hashtags": ["dalat", "anamandara", "pineforest", "onsen", "luxuryvilla"],
+    "author": "@kiet.foodie",
+    "avatar": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&q=80",
+    "creator": {
+      "userId": "user_kiet_03",
+      "handle": "@kiet.foodie",
+      "displayName": "Kiệt Foodie & Stay",
+      "avatarUrl": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&q=80",
+      "isVerified": true
+    },
+    "media": {
+      "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-foggy-forest-in-mountains-41566-large.mp4",
+      "posterUrl": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=900&q=85",
+      "durationSec": 31,
+      "aspectRatio": "9:16",
+      "resolution": "1080x1920"
+    },
+    "image": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=900&q=85",
+    "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-foggy-forest-in-mountains-41566-large.mp4",
+    "duration": "0:31",
+    "location": "Đà Lạt, Lâm Đồng",
+    "locationGeo": {
+      "name": "Đồi Thông Lê Lai, Đà Lạt",
+      "city": "Đà Lạt",
+      "country": "Vietnam",
+      "geo": {
+        "type": "Point",
+        "coordinates": [108.4235, 11.9478]
+      }
+    },
+    "music": {
+      "trackName": "Misty Pine Morning Jazz",
+      "artist": "Dalat Trio"
+    },
+    "hotspotVenueIds": {
+      "resort": "venue_dalat_palace_pine_10",
+      "dining": "venue_dining_cliff_01",
+      "yacht": "venue_yacht_catamaran_01"
+    },
+    "likes": "21.5K",
+    "views": "120.8K",
+    "commentsCount": 518,
+    "shares": "3.1K",
+    "bookmarks": "6.2K",
+    "isLiked": false,
+    "isBookmarked": true,
+    "category": "for-you",
+    "stats": {
+      "views": 120800,
+      "likes": 21500,
+      "commentsCount": 518,
+      "shares": 3100,
+      "bookmarks": 6200
+    },
+    "ranking": {
+      "trendingScore": 99.1,
+      "engagementRate": 0.259,
+      "status": "ACTIVE"
+    },
+    "createdAt": "2026-11-03T08:00:00.000Z"
+  },
+  {
+    "_id": "reel_04",
+    "id": "v4",
+    "slug": "bay-truc-thang-ngam-toan-canh-vinh-ha-long-emperor-cruises",
+    "title": "Bay thủy phi cơ & Nghỉ đêm trên Siêu du thuyền Hoàng Đế Hạ Long 🚁🛳️",
+    "caption": "Góc nhìn từ độ cao 300m xuống 1.969 hòn đảo đá vôi Vịnh Hạ Long trước khi đáp xuống du thuyền 5 sao Emperor Cruises Legacy.",
+    "hashtags": ["halongbay", "emperorcruises", "seaplane", "luxurycruise", "quangninh"],
+    "author": "@alex_skyview",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
+    "creator": {
+      "userId": "user_alex_04",
+      "handle": "@alex_skyview",
+      "displayName": "Alex Skyview",
+      "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
+      "isVerified": true
+    },
+    "media": {
+      "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-islands-in-the-sea-41471-large.mp4",
+      "posterUrl": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=900&q=85",
+      "durationSec": 45,
+      "aspectRatio": "9:16",
+      "resolution": "1080x1920"
+    },
+    "image": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=900&q=85",
+    "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-islands-in-the-sea-41471-large.mp4",
+    "duration": "0:45",
+    "location": "Vịnh Hạ Long, Quảng Ninh",
+    "locationGeo": {
+      "name": "Vịnh Hạ Long, Quảng Ninh",
+      "city": "Hạ Long",
+      "country": "Vietnam",
+      "geo": {
+        "type": "Point",
+        "coordinates": [107.0462, 20.9505]
+      }
+    },
+    "music": {
+      "trackName": "Emerald Heritage Orchestral",
+      "artist": "Symphony VN"
+    },
+    "hotspotVenueIds": {
+      "resort": "venue_capella_hanoi_03",
+      "dining": "venue_dining_maison_1888_11",
+      "yacht": "venue_yacht_emperor_halong_13"
+    },
+    "likes": "33.1K",
+    "views": "210.5K",
+    "commentsCount": 890,
+    "shares": "5.4K",
+    "bookmarks": "11.2K",
+    "isLiked": false,
+    "isBookmarked": false,
+    "category": "trending",
+    "stats": {
+      "views": 210500,
+      "likes": 33100,
+      "commentsCount": 890,
+      "shares": 5400,
+      "bookmarks": 11200
+    },
+    "ranking": {
+      "trendingScore": 99.8,
+      "engagementRate": 0.240,
+      "status": "ACTIVE"
+    },
+    "createdAt": "2026-11-04T09:20:00.000Z"
+  },
+  {
+    "_id": "reel_05",
+    "id": "v5",
+    "slug": "fine-dining-trong-hang-da-tu-nhien-six-senses-ninh-van-bay",
+    "title": "Fine Dining trong hang đá tự nhiên tại Six Senses Ninh Vân Bay 🍷🕯️",
+    "caption": "Đi tàu cao tốc riêng qua vịnh Ninh Vân, ở biệt thự Rock Pool Villa trên ghềnh đá và dùng bữa tối dưới ánh nến trong hang đá tự nhiên.",
+    "hashtags": ["sixsenses", "ninhvanbay", "nhatrang", "cavedining", "ecoluxury"],
+    "author": "@chef_duy",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
+    "creator": {
+      "userId": "user_duy_05",
+      "handle": "@chef_duy",
+      "displayName": "Chef Duy Nguyễn",
+      "avatarUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
+      "isVerified": true
+    },
+    "media": {
+      "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-waiter-serving-red-wine-in-a-restaurant-42622-large.mp4",
+      "posterUrl": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=85",
+      "durationSec": 27,
+      "aspectRatio": "9:16",
+      "resolution": "1080x1920"
+    },
+    "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=85",
+    "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-waiter-serving-red-wine-in-a-restaurant-42622-large.mp4",
+    "duration": "0:27",
+    "location": "Ninh Vân Bay, Khánh Hòa",
+    "locationGeo": {
+      "name": "Vịnh Ninh Vân, Nha Trang",
+      "city": "Nha Trang",
+      "country": "Vietnam",
+      "geo": {
+        "type": "Point",
+        "coordinates": [109.2478, 12.3562]
+      }
+    },
+    "music": {
+      "trackName": "Candlelight Cello Suite",
+      "artist": "Yo-Yo Lounge"
+    },
+    "hotspotVenueIds": {
+      "resort": "venue_six_senses_ninh_van_02",
+      "dining": "venue_dining_cliff_01",
+      "yacht": "venue_yacht_catamaran_01"
+    },
+    "likes": "18.4K",
+    "views": "94.0K",
+    "commentsCount": 409,
+    "shares": "2.0K",
+    "bookmarks": "5.1K",
+    "isLiked": true,
+    "isBookmarked": true,
+    "category": "latest",
+    "stats": {
+      "views": 94000,
+      "likes": 18400,
+      "commentsCount": 409,
+      "shares": 2000,
+      "bookmarks": 5100
+    },
+    "ranking": {
+      "trendingScore": 96.5,
+      "engagementRate": 0.275,
+      "status": "ACTIVE"
+    },
+    "createdAt": "2026-11-05T11:40:00.000Z"
+  },
+  {
+    "_id": "reel_06",
+    "id": "v6",
+    "slug": "dem-den-long-hoi-an-va-biet-thu-ven-song-thu-bon",
+    "title": "Đêm đèn lồng Hội An & Bữa tối 1 Sao Michelin tại Bán đảo Sơn Trà 🏮✨",
+    "caption": "Một hành trình kết nối di sản miền Trung: Sáng thức giấc tại InterContinental Danang Sun Peninsula, tối thả hoa đăng trên dòng sông Hoài Hội An.",
+    "hashtags": ["hoian", "danang", "intercontinentaldanang", "lamaison1888", "michelin"],
+    "author": "@thao.aesthetic",
+    "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80",
+    "creator": {
+      "userId": "user_thao_06",
+      "handle": "@thao.aesthetic",
+      "displayName": "Thảo Aesthetic",
+      "avatarUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80",
+      "isVerified": true
+    },
+    "media": {
+      "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-waves-coming-to-the-beach-5016-large.mp4",
+      "posterUrl": "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=900&q=85",
+      "durationSec": 22,
+      "aspectRatio": "9:16",
+      "resolution": "1080x1920"
+    },
+    "image": "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=900&q=85",
+    "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-waves-coming-to-the-beach-5016-large.mp4",
+    "duration": "0:22",
+    "location": "Phố Cổ Hội An, Quảng Nam",
+    "locationGeo": {
+      "name": "Bán đảo Sơn Trà & Phố cổ Hội An",
+      "city": "Đà Nẵng",
+      "country": "Vietnam",
+      "geo": {
+        "type": "Point",
+        "coordinates": [108.3280, 15.8801]
+      }
+    },
+    "music": {
+      "trackName": "Lantern Reflections",
+      "artist": "An Nam Acoustic"
+    },
+    "hotspotVenueIds": {
+      "resort": "venue_intercon_danang_06",
+      "dining": "venue_dining_maison_1888_11",
+      "yacht": "venue_yacht_catamaran_01"
+    },
+    "likes": "12.0K",
+    "views": "73.2K",
+    "commentsCount": 276,
+    "shares": "950",
+    "bookmarks": "3.3K",
+    "isLiked": false,
+    "isBookmarked": false,
+    "category": "latest",
+    "stats": {
+      "views": 73200,
+      "likes": 12000,
+      "commentsCount": 276,
+      "shares": 950,
+      "bookmarks": 3300
+    },
+    "ranking": {
+      "trendingScore": 94.2,
+      "engagementRate": 0.225,
+      "status": "ACTIVE"
+    },
+    "createdAt": "2026-11-05T15:10:00.000Z"
+  },
+  {
+    "_id": "reel_07",
+    "id": "v7",
+    "slug": "jw-marriott-phu-quoc-bai-khem-va-dinh-thu-ngoc-trai-hong",
+    "title": "Bên trong Dinh thự Ngọc Trai Hồng Pink Pearl & JW Marriott Bãi Khem 🦩🍾",
+    "caption": "Khám phá ngôi trường đại học giả tưởng Lamarck của kiến trúc sư Bill Bensley và bữa tối Pháp thượng hạng tại Pink Pearl by Olivier Elzer.",
+    "hashtags": ["jwmarriottphuquoc", "pinkpearl", "baikhem", "billbensley", "phuquoc"],
+    "author": "@chloe.in.vietnam",
+    "avatar": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=150&q=80",
+    "creator": {
+      "userId": "user_chloe_07",
+      "handle": "@chloe.in.vietnam",
+      "displayName": "Chloe In Vietnam",
+      "avatarUrl": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=150&q=80",
+      "isVerified": true
+    },
+    "media": {
+      "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-woman-walking-on-the-edge-of-an-infinity-pool-4336-large.mp4",
+      "posterUrl": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=900&q=85",
+      "durationSec": 26,
+      "aspectRatio": "9:16",
+      "resolution": "1080x1920"
+    },
+    "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=900&q=85",
+    "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-woman-walking-on-the-edge-of-an-infinity-pool-4336-large.mp4",
+    "duration": "0:26",
+    "location": "Bãi Khem, Phú Quốc",
+    "locationGeo": {
+      "name": "Bãi Khem, Nam Phú Quốc",
+      "city": "Phú Quốc",
+      "country": "Vietnam",
+      "geo": {
+        "type": "Point",
+        "coordinates": [104.0315, 10.0384]
+      }
+    },
+    "music": {
+      "trackName": "La Vie En Rose (Lofi Remix)",
+      "artist": "Parisian Velvet"
+    },
+    "hotspotVenueIds": {
+      "resort": "venue_jw_marriott_pq_05",
+      "dining": "venue_dining_pink_pearl_12",
+      "yacht": "venue_yacht_serenity_pq_14"
+    },
+    "likes": "24.6K",
+    "views": "138.0K",
+    "commentsCount": 462,
+    "shares": "2.8K",
+    "bookmarks": "7.4K",
+    "isLiked": false,
+    "isBookmarked": true,
+    "category": "for-you",
+    "stats": {
+      "views": 138000,
+      "likes": 24600,
+      "commentsCount": 462,
+      "shares": 2800,
+      "bookmarks": 7400
+    },
+    "ranking": {
+      "trendingScore": 98.4,
+      "engagementRate": 0.255,
+      "status": "ACTIVE"
+    },
+    "createdAt": "2026-11-06T07:45:00.000Z"
+  },
+  {
+    "_id": "reel_08",
+    "id": "v8",
+    "slug": "san-may-sapa-hotel-de-la-coupole-mgallery",
+    "title": "Săn biển mây Sapa từ ban công Hotel de la Coupole - MGallery ☁️🏔️",
+    "caption": "Thức dậy giữa lâu đài thời trang Pháp thập niên 1920, bơi trong hồ nước nóng Le Grand Bassin và đi tàu hỏa Mường Hoa xuyên qua biển mây.",
+    "hashtags": ["sapa", "hoteldelacoupole", "mgallery", "cloudhunting", "taybac"],
+    "author": "@hoang_adventure",
+    "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80",
+    "creator": {
+      "userId": "user_hoang_08",
+      "handle": "@hoang_adventure",
+      "displayName": "Hoàng Adventure",
+      "avatarUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80",
+      "isVerified": true
+    },
+    "media": {
+      "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-clouds-moving-over-the-mountains-41569-large.mp4",
+      "posterUrl": "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=900&q=85",
+      "durationSec": 29,
+      "aspectRatio": "9:16",
+      "resolution": "1080x1920"
+    },
+    "image": "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=900&q=85",
+    "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-clouds-moving-over-the-mountains-41569-large.mp4",
+    "duration": "0:29",
+    "location": "Thị xã Sa Pa, Lào Cai",
+    "locationGeo": {
+      "name": "Đỉnh Fansipan & Sa Pa, Lào Cai",
+      "city": "Sa Pa",
+      "country": "Vietnam",
+      "geo": {
+        "type": "Point",
+        "coordinates": [103.8419, 22.3348]
+      }
+    },
+    "music": {
+      "trackName": "Highland Flute & Piano",
+      "artist": "Northwest Echo"
+    },
+    "hotspotVenueIds": {
+      "resort": "venue_hotel_de_la_coupole_09",
+      "dining": "venue_dining_maison_1888_11",
+      "yacht": "venue_yacht_emperor_halong_13"
+    },
+    "likes": "19.3K",
+    "views": "112.4K",
+    "commentsCount": 395,
+    "shares": "2.1K",
+    "bookmarks": "5.8K",
+    "isLiked": false,
+    "isBookmarked": false,
+    "category": "trending",
+    "stats": {
+      "views": 112400,
+      "likes": 19300,
+      "commentsCount": 395,
+      "shares": 2100,
+      "bookmarks": 5800
+    },
+    "ranking": {
+      "trendingScore": 97.2,
+      "engagementRate": 0.245,
+      "status": "ACTIVE"
+    },
+    "createdAt": "2026-11-06T14:20:00.000Z"
+  },
+  {
+    "_id": "reel_09",
+    "id": "v9",
+    "slug": "zannier-bai-san-ho-phu-yen-thien-duong-an-minh",
+    "title": "Zannier Bãi San Hô Phú Yên — Tuyệt tác kiến trúc bản địa 98 hecta 🌾🏝️",
+    "caption": "Nơi những cánh đồng lúa chín vàng chạm thẳng ra vịnh san hô xanh biếc tại Phú Yên. Một trong những resort kín tiếng và đẳng cấp nhất châu Á.",
+    "hashtags": ["zannierhotels", "baisanho", "phuyen", "quietluxury", "vietnamtravel"],
+    "author": "@quynh_atelier",
+    "avatar": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=150&q=80",
+    "creator": {
+      "userId": "user_quynh_09",
+      "handle": "@quynh_atelier",
+      "displayName": "Quỳnh Atelier",
+      "avatarUrl": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=150&q=80",
+      "isVerified": true
+    },
+    "media": {
+      "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-top-aerial-shot-of-seashore-with-rocks-1090-large.mp4",
+      "posterUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85",
+      "durationSec": 33,
+      "aspectRatio": "9:16",
+      "resolution": "1080x1920"
+    },
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85",
+    "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-top-aerial-shot-of-seashore-with-rocks-1090-large.mp4",
+    "duration": "0:33",
+    "location": "Sông Cầu, Phú Yên",
+    "locationGeo": {
+      "name": "Bãi San Hô, Sông Cầu, Phú Yên",
+      "city": "Phú Yên",
+      "country": "Vietnam",
+      "geo": {
+        "type": "Point",
+        "coordinates": [109.2752, 13.5246]
+      }
+    },
+    "music": {
+      "trackName": "Quiet Luxury Ambient",
+      "artist": "Zannier Sound"
+    },
+    "hotspotVenueIds": {
+      "resort": "venue_zannier_bai_san_ho_08",
+      "dining": "venue_dining_cliff_01",
+      "yacht": "venue_yacht_catamaran_01"
+    },
+    "likes": "28.9K",
+    "views": "164.3K",
+    "commentsCount": 612,
+    "shares": "4.2K",
+    "bookmarks": "9.5K",
+    "isLiked": true,
+    "isBookmarked": true,
+    "category": "for-you",
+    "stats": {
+      "views": 164300,
+      "likes": 28900,
+      "commentsCount": 612,
+      "shares": 4200,
+      "bookmarks": 9500
+    },
+    "ranking": {
+      "trendingScore": 98.9,
+      "engagementRate": 0.263,
+      "status": "ACTIVE"
+    },
+    "createdAt": "2026-11-07T06:00:00.000Z"
+  },
+  {
+    "_id": "reel_10",
+    "id": "v10",
+    "slug": "capella-hanoi-dem-nhac-opera-va-hibana-by-koki-michelin",
+    "title": "Một đêm sống như ngôi sao Opera thập niên 1920 tại Capella Hanoi 🎭🥂",
+    "caption": "Trải nghiệm Teppanyaki 1 sao Michelin tại Hibana by Koki và nhâm nhi cocktail thủ công tại Diva's Lounge giữa lòng phố cổ Hà Nội.",
+    "hashtags": ["capellahanoi", "michelinhanoi", "hibanabykoki", "boutiquehotel", "hanoi"],
+    "author": "@nam.connoisseur",
+    "avatar": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=150&q=80",
+    "creator": {
+      "userId": "user_nam_10",
+      "handle": "@nam.connoisseur",
+      "displayName": "Nam Connoisseur",
+      "avatarUrl": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=150&q=80",
+      "isVerified": true
+    },
+    "media": {
+      "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-bartender-serving-a-cocktail-in-a-glass-42615-large.mp4",
+      "posterUrl": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=85",
+      "durationSec": 21,
+      "aspectRatio": "9:16",
+      "resolution": "1080x1920"
+    },
+    "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=85",
+    "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-bartender-serving-a-cocktail-in-a-glass-42615-large.mp4",
+    "duration": "0:21",
+    "location": "Hoàn Kiếm, Hà Nội",
+    "locationGeo": {
+      "name": "Capella Hanoi, Hoàn Kiếm",
+      "city": "Hà Nội",
+      "country": "Vietnam",
+      "geo": {
+        "type": "Point",
+        "coordinates": [105.8568, 21.0247]
+      }
+    },
+    "music": {
+      "trackName": "1920s Opera Jazz",
+      "artist": "Hanoi Brass Club"
+    },
+    "hotspotVenueIds": {
+      "resort": "venue_capella_hanoi_03",
+      "dining": "venue_dining_maison_1888_11",
+      "yacht": "venue_yacht_emperor_halong_13"
+    },
+    "likes": "15.7K",
+    "views": "88.9K",
+    "commentsCount": 310,
+    "shares": "1.5K",
+    "bookmarks": "4.6K",
+    "isLiked": false,
+    "isBookmarked": false,
+    "category": "latest",
+    "stats": {
+      "views": 88900,
+      "likes": 15700,
+      "commentsCount": 310,
+      "shares": 1500,
+      "bookmarks": 4600
+    },
+    "ranking": {
+      "trendingScore": 95.6,
+      "engagementRate": 0.248,
+      "status": "ACTIVE"
+    },
+    "createdAt": "2026-11-07T18:30:00.000Z"
+  },
+  {
+    "_id": "reel_11",
+    "id": "v11",
+    "slug": "banyan-tree-lang-co-biet-thu-ho-boi-vo-cuc-lung-doi",
+    "title": "Biệt thự hồ bơi vô cực lưng đồi nhìn trọn vịnh Lăng Cô tại Banyan Tree 🌊🏯",
+    "caption": "Nằm giữa Cố đô Huế và Đà Nẵng, Banyan Tree Lăng Cô là nơi bạn vừa ngắm biển Đông vừa nghe tiếng chim rừng Trường Sơn mỗi sớm mai.",
+    "hashtags": ["banyantreelangco", "hue", "langcobay", "poolvilla", "luxurytravel"],
+    "author": "@my.journeys",
+    "avatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80",
+    "creator": {
+      "userId": "user_my_11",
+      "handle": "@my.journeys",
+      "displayName": "My Journeys",
+      "avatarUrl": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80",
+      "isVerified": true
+    },
+    "media": {
+      "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-woman-swimming-in-an-infinity-pool-4335-large.mp4",
+      "posterUrl": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=900&q=85",
+      "durationSec": 25,
+      "aspectRatio": "9:16",
+      "resolution": "1080x1920"
+    },
+    "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=900&q=85",
+    "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-woman-swimming-in-an-infinity-pool-4335-large.mp4",
+    "duration": "0:25",
+    "location": "Vịnh Lăng Cô, Huế",
+    "locationGeo": {
+      "name": "Vịnh Lăng Cô, Thừa Thiên Huế",
+      "city": "Huế",
+      "country": "Vietnam",
+      "geo": {
+        "type": "Point",
+        "coordinates": [107.9815, 16.3046]
+      }
+    },
+    "music": {
+      "trackName": "Imperial Lagoon",
+      "artist": "Hue Royal Ensemble"
+    },
+    "hotspotVenueIds": {
+      "resort": "venue_banyan_tree_lang_co_07",
+      "dining": "venue_dining_maison_1888_11",
+      "yacht": "venue_yacht_catamaran_01"
+    },
+    "likes": "16.8K",
+    "views": "95.2K",
+    "commentsCount": 284,
+    "shares": "1.7K",
+    "bookmarks": "4.9K",
+    "isLiked": false,
+    "isBookmarked": true,
+    "category": "for-you",
+    "stats": {
+      "views": 95200,
+      "likes": 16800,
+      "commentsCount": 284,
+      "shares": 1700,
+      "bookmarks": 4900
+    },
+    "ranking": {
+      "trendingScore": 96.1,
+      "engagementRate": 0.246,
+      "status": "ACTIVE"
+    },
+    "createdAt": "2026-11-08T05:45:00.000Z"
+  },
+  {
+    "_id": "reel_12",
+    "id": "v12",
+    "slug": "bua-sang-non-la-lo-lung-tren-bien-citron-intercontinental-danang",
+    "title": "Bữa sáng trên bàn Nón Lá lơ lửng độ cao 100m tại Citron Đà Nẵng 🥐☕",
+    "caption": "Bí kíp đặt được chiếc bàn Nón Lá ngoài trời đẹp nhất tại nhà hàng Citron — InterContinental Danang Sun Peninsula.",
+    "hashtags": ["citron", "intercontinentaldanang", "sontra", "danangtrip", "breakfastwithaview"],
+    "author": "@duc_luxury",
+    "avatar": "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=150&q=80",
+    "creator": {
+      "userId": "user_duc_12",
+      "handle": "@duc_luxury",
+      "displayName": "Đức Luxury",
+      "avatarUrl": "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=150&q=80",
+      "isVerified": true
+    },
+    "media": {
+      "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-couple-having-breakfast-by-the-pool-4338-large.mp4",
+      "posterUrl": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=900&q=85",
+      "durationSec": 20,
+      "aspectRatio": "9:16",
+      "resolution": "1080x1920"
+    },
+    "image": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=900&q=85",
+    "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-couple-having-breakfast-by-the-pool-4338-large.mp4",
+    "duration": "0:20",
+    "location": "Bán đảo Sơn Trà, Đà Nẵng",
+    "locationGeo": {
+      "name": "Bán đảo Sơn Trà, Đà Nẵng",
+      "city": "Đà Nẵng",
+      "country": "Vietnam",
+      "geo": {
+        "type": "Point",
+        "coordinates": [108.3082, 16.1211]
+      }
+    },
+    "music": {
+      "trackName": "Morning Espresso Bossa",
+      "artist": "Riviera Cafe"
+    },
+    "hotspotVenueIds": {
+      "resort": "venue_intercon_danang_06",
+      "dining": "venue_dining_maison_1888_11",
+      "yacht": "venue_yacht_catamaran_01"
+    },
+    "likes": "27.4K",
+    "views": "156.0K",
+    "commentsCount": 540,
+    "shares": "3.6K",
+    "bookmarks": "8.9K",
+    "isLiked": true,
+    "isBookmarked": false,
+    "category": "trending",
+    "stats": {
+      "views": 156000,
+      "likes": 27400,
+      "commentsCount": 540,
+      "shares": 3600,
+      "bookmarks": 8900
+    },
+    "ranking": {
+      "trendingScore": 98.7,
+      "engagementRate": 0.258,
+      "status": "ACTIVE"
+    },
+    "createdAt": "2026-11-08T10:00:00.000Z"
+  },
+  {
+    "_id": "reel_13",
+    "id": "v13",
+    "slug": "lan-ngam-san-ho-va-tiec-tom-hum-catamaran-vinh-hy",
+    "title": "Thuê trọn du thuyền Catamaran 4 tiếng lặn san hô Vịnh Vĩnh Hy 🦞🤿",
+    "caption": "Nước biển Vĩnh Hy trong vắt thấy đáy ở độ sâu 8m! Sau khi lặn ngắm san hô là đại tiệc tôm hùm nướng bơ tỏi và rượu vang trắng trên lưới Catamaran.",
+    "hashtags": ["catamaran", "vinhhy", "snorkeling", "privateyacht", "ninhthuan"],
+    "author": "@ocean_tuan",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
+    "creator": {
+      "userId": "user_tuan_13",
+      "handle": "@ocean_tuan",
+      "displayName": "Tuấn Ocean",
+      "avatarUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
+      "isVerified": true
+    },
+    "media": {
+      "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-coral-reef-and-fish-underwater-41465-large.mp4",
+      "posterUrl": "https://images.unsplash.com/photo-1540946485063-a40da27545f8?auto=format&fit=crop&w=900&q=85",
+      "durationSec": 28,
+      "aspectRatio": "9:16",
+      "resolution": "1080x1920"
+    },
+    "image": "https://images.unsplash.com/photo-1540946485063-a40da27545f8?auto=format&fit=crop&w=900&q=85",
+    "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-coral-reef-and-fish-underwater-41465-large.mp4",
+    "duration": "0:28",
+    "location": "Bến Du Thuyền Vĩnh Hy",
+    "locationGeo": {
+      "name": "Bến Du Thuyền Vịnh Vĩnh Hy",
+      "city": "Ninh Thuận",
+      "country": "Vietnam",
+      "geo": {
+        "type": "Point",
+        "coordinates": [109.2015, 11.7204]
+      }
+    },
+    "music": {
+      "trackName": "Deep Blue Tropics",
+      "artist": "Coral Beats"
+    },
+    "hotspotVenueIds": {
+      "resort": "venue_amanoi_01",
+      "dining": "venue_dining_cliff_01",
+      "yacht": "venue_yacht_catamaran_01"
+    },
+    "likes": "13.6K",
+    "views": "79.5K",
+    "commentsCount": 248,
+    "shares": "1.1K",
+    "bookmarks": "4.1K",
+    "isLiked": false,
+    "isBookmarked": false,
+    "category": "latest",
+    "stats": {
+      "views": 79500,
+      "likes": 13600,
+      "commentsCount": 248,
+      "shares": 1100,
+      "bookmarks": 4100
+    },
+    "ranking": {
+      "trendingScore": 94.8,
+      "engagementRate": 0.239,
+      "status": "ACTIVE"
+    },
+    "createdAt": "2026-11-08T16:15:00.000Z"
+  },
+  {
+    "_id": "reel_14",
+    "id": "v14",
+    "slug": "cheo-kayak-xuyen-hang-sang-toi-vinh-bai-tu-long",
+    "title": "Chèo Kayak xuyên hang đá vôi nguyên sơ Vịnh Bái Tử Long 🛶🌿",
+    "caption": "Hải trình riêng biệt của Emperor Cruises đưa bạn rời xa đám đông để chạm vào làn nước ngọc lục bảo tĩnh lặng của Vịnh Bái Tử Long.",
+    "hashtags": ["baitulong", "halong", "kayaking", "emperorcruises", "vietnam"],
+    "author": "@hannah.escapes",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
+    "creator": {
+      "userId": "user_hannah_14",
+      "handle": "@hannah.escapes",
+      "displayName": "Hannah Escapes",
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
+      "isVerified": true
+    },
+    "media": {
+      "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-kayaking-in-a-calm-lake-at-sunset-41504-large.mp4",
+      "posterUrl": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=900&q=85",
+      "durationSec": 23,
+      "aspectRatio": "9:16",
+      "resolution": "1080x1920"
+    },
+    "image": "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=900&q=85",
+    "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-kayaking-in-a-calm-lake-at-sunset-41504-large.mp4",
+    "duration": "0:23",
+    "location": "Vịnh Bái Tử Long, Quảng Ninh",
+    "locationGeo": {
+      "name": "Vịnh Bái Tử Long, Quảng Ninh",
+      "city": "Hạ Long",
+      "country": "Vietnam",
+      "geo": {
+        "type": "Point",
+        "coordinates": [107.1850, 20.9820]
+      }
+    },
+    "music": {
+      "trackName": "Calm Waters Harp",
+      "artist": "Serenity Notes"
+    },
+    "hotspotVenueIds": {
+      "resort": "venue_capella_hanoi_03",
+      "dining": "venue_dining_maison_1888_11",
+      "yacht": "venue_yacht_emperor_halong_13"
+    },
+    "likes": "11.4K",
+    "views": "67.8K",
+    "commentsCount": 192,
+    "shares": "820",
+    "bookmarks": "3.1K",
+    "isLiked": false,
+    "isBookmarked": false,
+    "category": "for-you",
+    "stats": {
+      "views": 67800,
+      "likes": 11400,
+      "commentsCount": 192,
+      "shares": 820,
+      "bookmarks": 3100
+    },
+    "ranking": {
+      "trendingScore": 93.7,
+      "engagementRate": 0.228,
+      "status": "ACTIVE"
+    },
+    "createdAt": "2026-11-09T07:10:00.000Z"
+  },
+  {
+    "_id": "reel_15",
+    "id": "v15",
+    "slug": "aman-spa-lake-pavilion-thien-dinh-giua-ho-sen-amanoi",
+    "title": "Yoga trên thủy đình giữa hồ sen tại Aman Spa Vĩnh Hy 🪷🧘‍♀️",
+    "caption": "Căn pavilion nằm độc lập giữa mặt hồ sen tĩnh lặng tại Amanoi — nơi mọi muộn phiền tan biến ngay khi tiếng chuông xoay Himalaya ngân vang.",
+    "hashtags": ["amanspa", "amanoi", "wellnessretreat", "yoga", "vinhhy"],
+    "author": "@vy.wellness",
+    "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80",
+    "creator": {
+      "userId": "user_vy_15",
+      "handle": "@vy.wellness",
+      "displayName": "Vy Wellness & Retreat",
+      "avatarUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80",
+      "isVerified": true
+    },
+    "media": {
+      "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-woman-meditating-by-the-lake-at-sunset-41520-large.mp4",
+      "posterUrl": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=900&q=85",
+      "durationSec": 30,
+      "aspectRatio": "9:16",
+      "resolution": "1080x1920"
+    },
+    "image": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=900&q=85",
+    "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-woman-meditating-by-the-lake-at-sunset-41520-large.mp4",
+    "duration": "0:30",
+    "location": "Aman Spa, Vĩnh Hy",
+    "locationGeo": {
+      "name": "Aman Spa, Vịnh Vĩnh Hy",
+      "city": "Ninh Thuận",
+      "country": "Vietnam",
+      "geo": {
+        "type": "Point",
+        "coordinates": [109.1918, 11.7130]
+      }
+    },
+    "music": {
+      "trackName": "Tibetan Singing Bowls & Rain",
+      "artist": "Aman Zen"
+    },
+    "hotspotVenueIds": {
+      "resort": "venue_amanoi_01",
+      "dining": "venue_dining_cliff_01",
+      "yacht": "venue_yacht_catamaran_01"
+    },
+    "likes": "22.1K",
+    "views": "129.0K",
+    "commentsCount": 430,
+    "shares": "2.9K",
+    "bookmarks": "7.8K",
+    "isLiked": true,
+    "isBookmarked": true,
+    "category": "for-you",
+    "stats": {
+      "views": 129000,
+      "likes": 22100,
+      "commentsCount": 430,
+      "shares": 2900,
+      "bookmarks": 7800
+    },
+    "ranking": {
+      "trendingScore": 98.1,
+      "engagementRate": 0.257,
+      "status": "ACTIVE"
+    },
+    "createdAt": "2026-11-09T12:00:00.000Z"
+  },
+  {
+    "_id": "reel_16",
+    "id": "v16",
+    "slug": "rooftop-bar-fu-bar-regent-phu-quoc-ho-boi-vo-cuc-tang-thuong",
+    "title": "Hồ bơi vô cực tầng thượng Fu Bar — Điểm ngắm hoàng hôn đỉnh nhất Phú Quốc 🍸🌅",
+    "caption": "Đặt phòng Sky Pool Villa tại Regent Phú Quốc để có đặc quyền lên Fu Bar tầng thượng, vừa bơi vừa ngắm du thuyền Serenity lướt qua đường chân trời.",
+    "hashtags": ["fubar", "regentphuquoc", "rooftoppool", "phuquocisland", "tripshort"],
+    "author": "@kevin.jetset",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
+    "creator": {
+      "userId": "user_kevin_16",
+      "handle": "@kevin.jetset",
+      "displayName": "Kevin Jetset",
+      "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
+      "isVerified": true
+    },
+    "media": {
+      "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-friends-toasting-with-cocktails-at-sunset-42620-large.mp4",
+      "posterUrl": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=85",
+      "durationSec": 19,
+      "aspectRatio": "9:16",
+      "resolution": "1080x1920"
+    },
+    "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=85",
+    "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-friends-toasting-with-cocktails-at-sunset-42620-large.mp4",
+    "duration": "0:19",
+    "location": "Bãi Trường, Phú Quốc",
+    "locationGeo": {
+      "name": "Fu Bar, Regent Phú Quốc",
+      "city": "Phú Quốc",
+      "country": "Vietnam",
+      "geo": {
+        "type": "Point",
+        "coordinates": [103.9845, 10.1296]
+      }
+    },
+    "music": {
+      "trackName": "Golden Hour Deep House",
+      "artist": "Phu Quoc Sunset Club"
+    },
+    "hotspotVenueIds": {
+      "resort": "venue_regent_phu_quoc_04",
+      "dining": "venue_dining_pink_pearl_12",
+      "yacht": "venue_yacht_serenity_pq_14"
+    },
+    "likes": "17.9K",
+    "views": "104.2K",
+    "commentsCount": 318,
+    "shares": "1.9K",
+    "bookmarks": "5.3K",
+    "isLiked": false,
+    "isBookmarked": false,
+    "category": "trending",
+    "stats": {
+      "views": 104200,
+      "likes": 17900,
+      "commentsCount": 318,
+      "shares": 1900,
+      "bookmarks": 5300
+    },
+    "ranking": {
+      "trendingScore": 96.9,
+      "engagementRate": 0.244,
+      "status": "ACTIVE"
+    },
+    "createdAt": "2026-11-09T17:45:00.000Z"
+  },
+  {
+    "_id": "reel_17",
+    "id": "v17",
+    "slug": "tau-keo-nam-tram-xuyen-rung-son-tra-den-la-maison-1888",
+    "title": "Đi tàu kéo Nam Trâm xuyên rừng nguyên sinh đến nhà hàng 1★ Michelin 🚋🍽️",
+    "caption": "Trải nghiệm có 1-0-2 tại Đà Nẵng: Ngồi tàu cáp kéo Nam Trâm từ tầng Heaven xuống dinh thự Pháp La Maison 1888 thưởng thức thực đơn của bếp trưởng 3 sao Michelin.",
+    "hashtags": ["lamaison1888", "michelindanang", "sontrapeninsula", "finedining", "tripshort"],
+    "author": "@gourmet_lan",
+    "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80",
+    "creator": {
+      "userId": "user_lan_17",
+      "handle": "@gourmet_lan",
+      "displayName": "Lan Gourmet",
+      "avatarUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80",
+      "isVerified": true
+    },
+    "media": {
+      "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-chef-decorating-a-gourmet-dish-with-sauce-42626-large.mp4",
+      "posterUrl": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=900&q=85",
+      "durationSec": 26,
+      "aspectRatio": "9:16",
+      "resolution": "1080x1920"
+    },
+    "image": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=900&q=85",
+    "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-chef-decorating-a-gourmet-dish-with-sauce-42626-large.mp4",
+    "duration": "0:26",
+    "location": "La Maison 1888, Đà Nẵng",
+    "locationGeo": {
+      "name": "La Maison 1888, Bán đảo Sơn Trà",
+      "city": "Đà Nẵng",
+      "country": "Vietnam",
+      "geo": {
+        "type": "Point",
+        "coordinates": [108.3088, 16.1215]
+      }
+    },
+    "music": {
+      "trackName": "Le Squer Symphony",
+      "artist": "Chamber Strings"
+    },
+    "hotspotVenueIds": {
+      "resort": "venue_intercon_danang_06",
+      "dining": "venue_dining_maison_1888_11",
+      "yacht": "venue_yacht_catamaran_01"
+    },
+    "likes": "15.1K",
+    "views": "89.3K",
+    "commentsCount": 267,
+    "shares": "1.4K",
+    "bookmarks": "4.7K",
+    "isLiked": false,
+    "isBookmarked": true,
+    "category": "latest",
+    "stats": {
+      "views": 89300,
+      "likes": 15100,
+      "commentsCount": 267,
+      "shares": 1400,
+      "bookmarks": 4700
+    },
+    "ranking": {
+      "trendingScore": 95.3,
+      "engagementRate": 0.240,
+      "status": "ACTIVE"
+    },
+    "createdAt": "2026-11-10T04:00:00.000Z"
+  },
+  {
+    "_id": "reel_18",
+    "id": "v18",
+    "slug": "rock-pool-villa-six-senses-ninh-van-bay-hoang-hon-ghenh-da",
+    "title": "Ngắm hoàng hôn buông xuống ghềnh đá nguyên sơ tại Rock Pool Villa 🌅🪨",
+    "caption": "Căn biệt thự số 5 tại Six Senses Ninh Van Bay với hồ bơi được tạc прямо vào vách đá hoa cương tự nhiên triệu năm tuổi.",
+    "hashtags": ["rockpoolvilla", "sixsensesninhvanbay", "nhatrang", "luxuryhideaway", "tripshort"],
+    "author": "@minh_wanderlust",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
+    "creator": {
+      "userId": "user_minh_01",
+      "handle": "@minh_wanderlust",
+      "displayName": "Minh Wanderlust",
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
+      "isVerified": true
+    },
+    "media": {
+      "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-sun-setting-over-the-ocean-waves-4148-large.mp4",
+      "posterUrl": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=85",
+      "durationSec": 27,
+      "aspectRatio": "9:16",
+      "resolution": "1080x1920"
+    },
+    "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=85",
+    "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-sun-setting-over-the-ocean-waves-4148-large.mp4",
+    "duration": "0:27",
+    "location": "Vịnh Ninh Vân, Nha Trang",
+    "locationGeo": {
+      "name": "Rock Pool Villa, Six Senses Ninh Vân Bay",
+      "city": "Nha Trang",
+      "country": "Vietnam",
+      "geo": {
+        "type": "Point",
+        "coordinates": [109.2478, 12.3562]
+      }
+    },
+    "music": {
+      "trackName": "Ocean Twilight Guitar",
+      "artist": "Ninh Van Acoustic"
+    },
+    "hotspotVenueIds": {
+      "resort": "venue_six_senses_ninh_van_02",
+      "dining": "venue_dining_cliff_01",
+      "yacht": "venue_yacht_catamaran_01"
+    },
+    "likes": "31.2K",
+    "views": "188.4K",
+    "commentsCount": 674,
+    "shares": "4.8K",
+    "bookmarks": "10.3K",
+    "isLiked": true,
+    "isBookmarked": true,
+    "category": "trending",
+    "stats": {
+      "views": 188400,
+      "likes": 31200,
+      "commentsCount": 674,
+      "shares": 4800,
+      "bookmarks": 10300
+    },
+    "ranking": {
+      "trendingScore": 99.6,
+      "engagementRate": 0.249,
+      "status": "ACTIVE"
+    },
+    "createdAt": "2026-11-10T06:00:00.000Z"
+  }
+]
+

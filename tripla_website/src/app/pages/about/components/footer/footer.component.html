@@ -16,7 +16,7 @@
 
       <div class="col">
         <span class="title">Hệ Sinh Thái Điện Ảnh</span>
-        @for (l of ecosystem; track l) { <a href="#">{{ l }}</a> }
+        @for (l of ecosystem; track l.label) { <a [routerLink]="l.route">{{ l.label }}</a> }
       </div>
 
       <div class="col">
@@ -29,7 +29,7 @@
     <div class="bottom">
       <p>© 2025 TRIPLA Cinematic Travel Ecosystem. All rights reserved.</p>
       <div class="legal">
-        @for (l of legal; track l) { <a href="#">{{ l }}</a> }
+        @for (l of legal; track l.label) { <a [routerLink]="l.route" [fragment]="l.fragment">{{ l.label }}</a> }
       </div>
     </div>
   </div>

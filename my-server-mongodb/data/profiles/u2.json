@@ -1,0 +1,33 @@
+{
+  "id": "u2",
+  "bio": "Yêu thích nhiếp ảnh và khám phá những vùng đất mới 🏞️📸",
+  "location": "Đà Nẵng, Việt Nam",
+  "coverImage": "data/profiles/user_images/Ngô Minh Thùy.jpg",
+  "points": 900,
+  "followers": 40,
+  "following": 500,
+  "socials": {
+    "youtube": "mthuyvlog",
+    "instagram": "@_nmthuyyy426_"
+  },
+  "interests": [
+    "Resort",
+    "Biển",
+    "Vlog"
+  ],
+  "badges": [
+    {
+      "icon": "🎥",
+      "label": "Top Creator"
+    },
+    {
+      "icon": "💎",
+      "label": "Thành viên VIP"
+    }
+  ],
+  "name": "Ngô Minh Thùy",
+  "avatar": "data/profiles/user_images/Ngô Minh Thùy.jpg",
+  "role": "traveler",
+  "email": "thuynmk24411e@st.uel.edu.vn",
+  "level": "Hạng Kim Cương"
+}

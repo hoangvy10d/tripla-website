@@ -1,0 +1,351 @@
+[
+  {
+    "id": "1",
+    "title": "Golden Bridge (Ba Na Hills)",
+    "city": "Da Nang",
+    "lat": 15.9961,
+    "lng": 107.9897,
+    "category": "attraction",
+    "description": "A 150-metre-long pedestrian bridge in the Ba Na Hills resort, near Da Nang, Vietnam. It is designed to connect the cable car station with the gardens and to provide a scenic overlook and tourist attraction.",
+    "images": [
+      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&auto=format&fit=crop&q=60"
+    ],
+    "rating": 4.8,
+    "reviewsCount": 1250,
+    "ticketPrice": 900000,
+    "openingHours": "07:00 - 22:00"
+  },
+  {
+    "id": "2",
+    "title": "Marble Mountains",
+    "city": "Da Nang",
+    "lat": 16.0028,
+    "lng": 108.2638,
+    "category": "attraction",
+    "description": "A cluster of five marble and limestone hills located in Ngu Hanh Son District, south of Da Nang city in Vietnam. The five mountains are named after the five elements: Kim (metal), Thuy (water), Moc (wood), Hoa (fire) and Tho (earth).",
+    "images": [
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&auto=format&fit=crop&q=60"
+    ],
+    "rating": 4.6,
+    "reviewsCount": 840,
+    "ticketPrice": 40000,
+    "openingHours": "07:00 - 17:30"
+  },
+  {
+    "id": "3",
+    "title": "Dragon Bridge",
+    "city": "Da Nang",
+    "lat": 16.0611,
+    "lng": 108.2275,
+    "category": "attraction",
+    "description": "A bridge over the River Hàn at Da Nang, Vietnam, shaped like a dragon. It breathes fire and water every Saturday and Sunday night.",
+    "images": [
+      "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&auto=format&fit=crop&q=60"
+    ],
+    "rating": 4.9,
+    "reviewsCount": 3200,
+    "ticketPrice": 0,
+    "openingHours": "24/7"
+  },
+  {
+    "id": "4",
+    "title": "My Khe Beach",
+    "city": "Da Nang",
+    "lat": 16.0656,
+    "lng": 108.2483,
+    "category": "destination",
+    "description": "Famous for its blue sky, smooth white sand, gentle slope, clear & warm water year round and beautiful areas surrounded by coconut trees.",
+    "images": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=60"
+    ],
+    "rating": 4.5,
+    "reviewsCount": 5400,
+    "ticketPrice": 0,
+    "openingHours": "24/7"
+  },
+  {
+    "id": "5",
+    "title": "Reply 1988 Cafe",
+    "city": "Da Nang",
+    "lat": 16.0592,
+    "lng": 108.2223,
+    "category": "cafe",
+    "description": "A cozy, retro-themed cafe inspired by the Korean drama Reply 1988. Famous for its amazing egg coffee and rustic interior design.",
+    "images": [
+      "https://images.unsplash.com/photo-1498804103079-a6351b050096?w=800&auto=format&fit=crop&q=60"
+    ],
+    "rating": 4.7,
+    "reviewsCount": 420,
+    "ticketPrice": 0,
+    "openingHours": "07:00 - 23:00"
+  },
+  {
+    "id": "6",
+    "title": "Thia Go Restaurant",
+    "city": "Da Nang",
+    "lat": 16.0605,
+    "lng": 108.2421,
+    "category": "restaurant",
+    "description": "Outstanding Central Vietnamese food including Mi Quang, Banh Xeo, and lemongrass pork. A must-visit for food lovers.",
+    "images": [
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&auto=format&fit=crop&q=60"
+    ],
+    "rating": 4.7,
+    "reviewsCount": 610,
+    "ticketPrice": 0,
+    "openingHours": "10:00 - 22:00"
+  },
+  {
+    "id": "7",
+    "title": "VinWonders Phu Quoc",
+    "city": "Phu Quoc",
+    "lat": 10.3342,
+    "lng": 103.8561,
+    "category": "attraction",
+    "description": "The largest theme park in Vietnam with dozens of outdoor rides, an indoor game center, an aquarium, and a water park.",
+    "images": [
+      "https://images.unsplash.com/photo-1513553404607-988bf2703777?w=800&auto=format&fit=crop&q=60"
+    ],
+    "rating": 4.8,
+    "reviewsCount": 1150,
+    "ticketPrice": 880000,
+    "openingHours": "09:00 - 19:30"
+  },
+  {
+    "id": "8",
+    "title": "Vinpearl Safari",
+    "city": "Phu Quoc",
+    "lat": 10.3245,
+    "lng": 103.8711,
+    "category": "attraction",
+    "description": "Vietnam's first open zoo with over 150 species of rare animals from around the world.",
+    "images": [
+      "https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?w=800&auto=format&fit=crop&q=60"
+    ],
+    "rating": 4.7,
+    "reviewsCount": 980,
+    "ticketPrice": 650000,
+    "openingHours": "09:00 - 16:00"
+  },
+  {
+    "id": "9",
+    "title": "Hon Thom Cable Car",
+    "city": "Phu Quoc",
+    "lat": 10.0272,
+    "lng": 104.0152,
+    "category": "attraction",
+    "description": "The world's longest sea-crossing cable car, providing a breathtaking view of the An Thoi archipelago.",
+    "images": [
+      "https://images.unsplash.com/photo-1473163928189-364b2c4e1135?w=800&auto=format&fit=crop&q=60"
+    ],
+    "rating": 4.9,
+    "reviewsCount": 2100,
+    "ticketPrice": 500000,
+    "openingHours": "08:30 - 17:00"
+  },
+  {
+    "id": "10",
+    "title": "Saigon Skydeck",
+    "city": "Hồ Chí Minh",
+    "lat": 10.7716,
+    "lng": 106.7044,
+    "category": "attraction",
+    "description": "Enjoy a 360-degree bird's-eye view of Ho Chi Minh City from the 49th floor of the iconic Bitexco Financial Tower.",
+    "images": [
+      "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "rating": 4.6,
+    "reviewsCount": 850,
+    "ticketPrice": 200000,
+    "openingHours": "09:30 - 21:30"
+  },
+  {
+    "id": "11",
+    "title": "A O Show",
+    "city": "Hồ Chí Minh",
+    "lat": 10.7766,
+    "lng": 106.7032,
+    "category": "attraction",
+    "description": "A spectacular cultural performance at the Saigon Opera House, blending visual theater, acrobatics, and contemporary dance.",
+    "images": [
+      "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=800&auto=format&fit=crop&q=60"
+    ],
+    "rating": 4.8,
+    "reviewsCount": 720,
+    "ticketPrice": 630000,
+    "openingHours": "18:00 - 20:00"
+  },
+  {
+    "id": "12",
+    "title": "Water Puppet Theatre",
+    "city": "Hà Nội",
+    "lat": 21.0315,
+    "lng": 105.8528,
+    "category": "attraction",
+    "description": "Experience the ancient Vietnamese art of water puppetry accompanied by a live traditional orchestra.",
+    "images": [
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&auto=format&fit=crop&q=60"
+    ],
+    "rating": 4.5,
+    "reviewsCount": 1500,
+    "ticketPrice": 100000,
+    "openingHours": "15:00 - 20:00"
+  },
+  {
+    "id": "13",
+    "title": "Hoa Lo Prison",
+    "city": "Hà Nội",
+    "lat": 21.0253,
+    "lng": 105.8464,
+    "category": "attraction",
+    "description": "A historic prison built by French colonists, ironically nicknamed the 'Hanoi Hilton' by American POWs.",
+    "images": [
+      "https://images.unsplash.com/photo-1555921015-5532091f6026?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "rating": 4.7,
+    "reviewsCount": 2300,
+    "ticketPrice": 30000,
+    "openingHours": "08:00 - 17:00"
+  },
+  {
+    "id": "14",
+    "title": "I-Resort Mud Bath",
+    "city": "Nha Trang",
+    "lat": 12.2829,
+    "lng": 109.1869,
+    "category": "attraction",
+    "description": "Relax in hot mineral springs and mud baths set in a beautiful tropical environment with waterfalls and pools.",
+    "images": [
+      "https://images.unsplash.com/photo-1544816155-12df9643f363?w=800&auto=format&fit=crop&q=60"
+    ],
+    "rating": 4.7,
+    "reviewsCount": 640,
+    "ticketPrice": 250000,
+    "openingHours": "08:00 - 18:00"
+  },
+  {
+    "id": "15",
+    "title": "Guinness Seaside Restaurant",
+    "city": "Phu Quoc",
+    "lat": 10.0272,
+    "lng": 104.0152,
+    "category": "restaurant",
+    "description": "Awarded a Guinness World Record for being the largest coastal restaurant. Specializes in fresh, local seafood.",
+    "images": [
+      "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&auto=format&fit=crop&q=60"
+    ],
+    "rating": 4.6,
+    "reviewsCount": 350,
+    "ticketPrice": 0,
+    "openingHours": "10:00 - 23:00"
+  },
+  {
+    "id": "16",
+    "title": "Cai Rang Floating Market",
+    "city": "Cần Thơ",
+    "lat": 10.005,
+    "lng": 105.7469,
+    "category": "attraction",
+    "description": "The largest and most bustling floating market in the Mekong Delta. A vibrant display of local culture and commerce.",
+    "images": [
+      "https://images.unsplash.com/photo-1528127269322-539801943592?w=800&auto=format&fit=crop&q=60"
+    ],
+    "rating": 4.8,
+    "reviewsCount": 980,
+    "ticketPrice": 0,
+    "openingHours": "04:00 - 09:00"
+  },
+  {
+    "id": "16",
+    "title": "Hồ Gươm (Hoàn Kiếm)",
+    "city": "Ha Noi",
+    "lat": 21.0285,
+    "lng": 105.8523,
+    "category": "attraction",
+    "description": "Biểu tượng của thủ đô Hà Nội ngàn năm văn hiến, với Tháp Rùa cổ kính nằm giữa hồ nước xanh trong.",
+    "images": [
+      "https://images.unsplash.com/photo-1590487988256-9ed24133863e?w=800&auto=format&fit=crop&q=60"
+    ],
+    "rating": 4.9,
+    "reviewsCount": 15000,
+    "ticketPrice": 0,
+    "openingHours": "24/7"
+  },
+  {
+    "id": "17",
+    "title": "Hồ Xuân Hương",
+    "city": "Da Lat",
+    "lat": 11.9404,
+    "lng": 108.4383,
+    "category": "destination",
+    "description": "Trái tim của Đà Lạt mộng mơ. Thích hợp để đạp vịt, chạy bộ hoặc nhâm nhi ly cà phê sáng sớm.",
+    "images": [
+      "https://images.unsplash.com/photo-1509233725247-49e657c54213?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "rating": 4.8,
+    "reviewsCount": 8500,
+    "ticketPrice": 0,
+    "openingHours": "24/7"
+  },
+  {
+    "id": "99",
+    "title": "Grand Du Lac Boutique Saigon",
+    "city": "Hồ Chí Minh",
+    "lat": 10.7711,
+    "lng": 106.7022,
+    "category": "hotel",
+    "description": "Grand Du Lac Boutique Saigon mang đến trải nghiệm nghỉ dưỡng sang trọng giữa lòng Sài Gòn. Tọa lạc tại Quận 1, khách sạn có thiết kế kết hợp kiến trúc cổ điển Pháp và nét hiện đại, cung cấp phòng ốc tiện nghi với view nhìn ra toàn cảnh thành phố.",
+    "images": [
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=800&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1522792065601-5e6e1802f0d0?w=800&auto=format&fit=crop&q=60"
+    ],
+    "rating": 4.9,
+    "reviewsCount": 1284,
+    "ticketPrice": 0,
+    "openingHours": "24/7",
+    "address": "15 Nguyễn Huệ, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh",
+    "amenities": [
+      "Hồ bơi ngoài trời",
+      "WiFi miễn phí",
+      "Xe đưa đón sân bay",
+      "Trung tâm Spa",
+      "Nhà hàng",
+      "Lễ tân 24h"
+    ],
+    "roomTypes": [
+      {
+        "id": "r1",
+        "name": "Phòng Superior Giường Đôi",
+        "capacity": 2,
+        "size": "25 m²",
+        "bed": "1 giường đôi lớn",
+        "price": 1850000,
+        "left": 5,
+        "image": "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=400&auto=format&fit=crop&q=60"
+      },
+      {
+        "id": "r2",
+        "name": "Phòng Deluxe City View",
+        "capacity": 2,
+        "size": "32 m²",
+        "bed": "1 giường đôi cực lớn",
+        "price": 2400000,
+        "left": 2,
+        "image": "https://images.unsplash.com/photo-1590490359683-658d3d23f972?w=400&auto=format&fit=crop&q=60"
+      },
+      {
+        "id": "r3",
+        "name": "Suite Gia Đình Có Ban Công",
+        "capacity": 4,
+        "size": "55 m²",
+        "bed": "2 giường đôi lớn",
+        "price": 4200000,
+        "left": 1,
+        "image": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=400&auto=format&fit=crop&q=60"
+      }
+    ]
+  }
+]

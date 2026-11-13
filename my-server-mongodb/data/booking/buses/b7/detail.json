@@ -1,0 +1,13 @@
+{
+  "id": "b7",
+  "operator": "Vân Đồn Xanh",
+  "busNumber": "14B-099.11",
+  "origin": "Hạ Long",
+  "destination": "Hà Nội",
+  "departureTime": "14:00",
+  "arrivalTime": "17:00",
+  "price": 260000,
+  "classType": "Limousine 9 Ghế Massage",
+  "seatsAvailable": 8,
+  "rating": 4.8
+}

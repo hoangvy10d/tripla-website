@@ -1,0 +1,184 @@
+{
+  "hotel_info": {
+    "name_vi": "Haian Beach Hotel & Spa",
+    "name_en": "Haian Beach Hotel & Spa",
+    "stars": 5,
+    "built_year": 2021,
+    "renovated_year": 2024,
+    "floors": 4,
+    "total_rooms": 23,
+    "address": "Số 28 Đường Trần Phú, Trung tâm, Đà Nẵng",
+    "phone": "0798777783",
+    "email": "goldview@dalatity.org",
+    "rating_score": "9.4/10",
+    "rating_text": "Tuyệt hảo",
+    "base_price_vnd": 2125000
+  },
+  "location_attractions": [
+    {
+      "name": "Khu Du Lịch Lá Phong Đà Lạt",
+      "distance_m": 400
+    },
+    {
+      "name": "Cáp treo Đà Lạt",
+      "distance_m": 1500,
+      "note": "Khoảng 866m đường chim bay"
+    },
+    {
+      "name": "Hồ Xuân Hương",
+      "distance_m": 1500,
+      "note": "5 phút di chuyển"
+    },
+    {
+      "name": "Quảng trường Lâm Viên",
+      "distance_m": 1800
+    },
+    {
+      "name": "Nhà thờ Con Gà (Nhà thờ Chánh Tòa)",
+      "distance_m": 2000
+    },
+    {
+      "name": "Dinh 2 Bảo Đại",
+      "distance_m": 1000
+    },
+    {
+      "name": "Chợ Đà Lạt",
+      "distance_m": 2500,
+      "note": "7 phút di chuyển"
+    },
+    {
+      "name": "Vườn hoa Đà Lạt",
+      "distance_m": 3400
+    },
+    {
+      "name": "Sân bay Liên Khương (DLI)",
+      "distance_m": 27000
+    }
+  ],
+  "hotel_amenities": {
+    "general": [
+      "WiFi miễn phí toàn bộ khuôn viên",
+      "Thang máy",
+      "Quầy tiếp tân 24/24",
+      "Nhân viên đa ngôn ngữ",
+      "Phòng không hút thuốc",
+      "Khu vực hút thuốc riêng",
+      "Chỗ cất hành lý"
+    ],
+    "dining_relaxation": [
+      "Nhà hàng",
+      "Quán café tại sảnh",
+      "Quầy bar / Lounge",
+      "Sân thượng / Sân hiên ngắm cảnh",
+      "Sân vườn"
+    ],
+    "services": [
+      "Dịch vụ giặt ủi / giặt khô",
+      "Trả phòng nhanh (Express check-out)",
+      "Đưa đón sân bay (có phụ phí)",
+      "Cho thuê xe máy / xe hơi"
+    ],
+    "parking": [
+      "Bãi đậu xe tự phục vụ miễn phí",
+      "Bãi đậu xe an ninh"
+    ],
+    "accessibility": [
+      "Phù hợp xe lăn",
+      "Bảng chỉ dẫn chữ nổi cho người khiếm thị"
+    ]
+  },
+  "room_types": [
+    {
+      "id": "room_0",
+      "name_vi": "City View",
+      "name_en": "City View",
+      "area_sqm": 39,
+      "bed_type": "1 giường đôi lớn",
+      "capacity": "2 người lớn",
+      "view": "Thành phố",
+      "price": 2125000,
+      "amenities": [
+        "Ban công",
+        "Điều hòa",
+        "TV màn hình phẳng",
+        "Minibar",
+        "Phòng tắm riêng"
+      ],
+      "images": []
+    },
+    {
+      "id": "room_1",
+      "name_vi": "Partial Ocean View",
+      "name_en": "Partial Ocean View",
+      "area_sqm": 59,
+      "bed_type": "2 giường đơn",
+      "capacity": "2 người lớn",
+      "view": "Thành phố",
+      "price": 2975000,
+      "amenities": [
+        "Ban công",
+        "Điều hòa",
+        "TV màn hình phẳng",
+        "Minibar",
+        "Phòng tắm riêng"
+      ],
+      "images": []
+    },
+    {
+      "id": "room_2",
+      "name_vi": "Beach Front Suite",
+      "name_en": "Beach Front Suite",
+      "area_sqm": 46,
+      "bed_type": "1 giường đôi lớn",
+      "capacity": "3 người lớn",
+      "view": "Hướng thung lũng / núi",
+      "price": 3825000,
+      "amenities": [
+        "Ban công",
+        "Điều hòa",
+        "TV màn hình phẳng",
+        "Minibar",
+        "Phòng tắm riêng"
+      ],
+      "images": []
+    }
+  ],
+  "policies": {
+    "check_in": "14:00 - 23:30",
+    "check_out": "10:00 - 12:00",
+    "min_check_in_age": 18,
+    "pets": "Không cho phép mang theo vật nuôi",
+    "events": "Không tổ chức tiệc tùng / sự kiện trong phòng",
+    "payment_methods": [
+      "Tiền mặt",
+      "Thẻ tín dụng",
+      "Thẻ ghi nợ",
+      "Chuyển khoản"
+    ]
+  },
+  "featured_reviews": [
+    {
+      "author": "Khách hàng Traveloka",
+      "score": 9.2,
+      "comment": "Phòng sạch đẹp, view thung lũng cực chill và nhân viên thân thiện, nhiệt tình. Vị trí không quá xa trung tâm nhưng rất yên tĩnh."
+    },
+    {
+      "author": "Khách hàng Traveloka",
+      "score": 8.8,
+      "comment": "Phòng thoáng mát, có gu, đẹp hơn trong hình. Dịch vụ hỗ trợ tốt, trời lạnh nhưng chăn êm đệm ấm nên ngủ rất ngon."
+    },
+    {
+      "author": "Khách hàng Traveloka",
+      "score": 8.5,
+      "comment": "Vệ sinh phòng được đảm bảo sạch sẽ, gọn gàng, từ ban công phòng có thể phóng tầm mắt ngắm thung lũng núi tuyệt đẹp."
+    }
+  ],
+  "images": [
+    "data/booking/hotels/h3/images/20097595-005e5a2ecbbbb2cb4dc78fe5d3cdd5e3.webp",
+    "data/booking/hotels/h3/images/20097595-00a95a3e7ea93412579029a7f802e22b.webp",
+    "data/booking/hotels/h3/images/20097595-0f9cb554d0aff7e81ce8c6d33fe68c2d.webp",
+    "data/booking/hotels/h3/images/20097595-2cbb06319b8e4987bbc5a560ac6e2794.webp",
+    "data/booking/hotels/h3/images/20097595-ef4e83e15e86bf293af10661b128d744.webp",
+    "data/booking/hotels/h3/images/680059665-3125f1a3bcd77c0d0328569338325d58.webp"
+  ]
+}

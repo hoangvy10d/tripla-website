@@ -1,0 +1,13 @@
+{
+  "id": "b3",
+  "operator": "Lạc Hồng Limousine",
+  "busNumber": "49B-015.42",
+  "origin": "Đà Lạt",
+  "destination": "Sài Gòn",
+  "departureTime": "10:00",
+  "arrivalTime": "17:00",
+  "price": 350000,
+  "classType": "Limousine 9 Ghế Massage",
+  "seatsAvailable": 9,
+  "rating": 4.6
+}

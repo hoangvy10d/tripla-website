@@ -1,0 +1,13 @@
+{
+  "id": "b2",
+  "operator": "Thành Bưởi",
+  "busNumber": "51B-302.11",
+  "origin": "Sài Gòn",
+  "destination": "Đà Lạt",
+  "departureTime": "23:00",
+  "arrivalTime": "06:00+1",
+  "price": 380000,
+  "classType": "Limousine 34 Phòng VIP",
+  "seatsAvailable": 34,
+  "rating": 4.8
+}

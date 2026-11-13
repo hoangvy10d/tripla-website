@@ -1,0 +1,328 @@
+<div class="creator-shell">
+  <app-site-header
+    variant="studio"
+    positionMode="sticky"
+    activeNav="creator"
+    subBrand="Creator Studio"
+    [showAuthControls]="false"
+  >
+    <div header-actions class="creator-switch">
+      <div class="channel-pill">
+        <span class="material-symbols-outlined channel-icon">switch_account</span>
+        <label for="creator-select" class="visually-hidden">Chọn kênh sáng tạo</label>
+        <select id="creator-select" [ngModel]="activeCreatorCode" (ngModelChange)="switchCreator($event)">
+          <option *ngFor="let c of creators" [value]="c.code">{{ c.name }}</option>
+        </select>
+      </div>
+      <a [routerLink]="['/profile', activeCreatorCode]" class="hdr-btn-ghost">
+        <span class="material-symbols-outlined">badge</span>
+        <span>Hồ sơ</span>
+      </a>
+      <a routerLink="/tripshort" class="hdr-btn-ghost">
+        <span class="material-symbols-outlined">play_circle</span>
+        <span>TripShorts</span>
+      </a>
+    </div>
+  </app-site-header>
+
+  <main class="creator-main">
+    <div class="creator-error" *ngIf="errorMessage">
+      <span class="material-symbols-outlined">error</span>
+      <span>{{ errorMessage }}</span>
+    </div>
+
+    <section class="creator-hero" *ngIf="user">
+      <div class="hero-left">
+        <div class="avatar-wrap">
+          <img
+            [src]="user.avatar || '/images/Grassland.jpeg'"
+            (error)="user.avatar = '/images/Grassland.jpeg'"
+            [alt]="user.full_name || 'Nhà sáng tạo'"
+            class="creator-avatar"
+          />
+          <span class="verified-badge" title="Đã xác minh">
+            <span class="material-symbols-outlined">verified</span>
+          </span>
+        </div>
+        <div class="creator-info">
+          <div class="hero-kicker-row">
+            <span class="botanical-tag">CREATOR STUDIO 2026</span>
+            <span class="status-indicator"><span class="dot"></span> Đang hoạt động</span>
+          </div>
+          <h1>{{ user.full_name }}</h1>
+          <p class="creator-bio">{{ user.bio || 'Chia sẻ hành trình trải nghiệm, gắn thẻ khách sạn & địa điểm, nhận hoa hồng từ mỗi lượt booking.' }}</p>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <button type="button" class="btn-create-reel" (click)="openUpload()">
+          <span class="material-symbols-outlined">video_call</span>
+          <span>Đăng Video Reel mới</span>
+          <span class="arrow">→</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="metric-grid">
+      <div class="metric-card">
+        <div class="metric-top">
+          <div class="metric-icon-box">
+            <span class="material-symbols-outlined">visibility</span>
+          </div>
+          <span class="metric-badge">Tương tác</span>
+        </div>
+        <p class="metric-label">Tổng lượt xem</p>
+        <strong class="metric-value">{{ totalViews | number }}</strong>
+        <span class="metric-hint">Lượt xem trên tất cả Reels</span>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-top">
+          <div class="metric-icon-box">
+            <span class="material-symbols-outlined">favorite</span>
+          </div>
+          <span class="metric-badge">Yêu thích</span>
+        </div>
+        <p class="metric-label">Tổng lượt thích</p>
+        <strong class="metric-value">{{ totalLikes | number }}</strong>
+        <span class="metric-hint">Từ cộng đồng du lịch</span>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-top">
+          <div class="metric-icon-box">
+            <span class="material-symbols-outlined">group</span>
+          </div>
+          <span class="metric-badge">Cộng đồng</span>
+        </div>
+        <p class="metric-label">Người theo dõi</p>
+        <strong class="metric-value">{{ (user?.followers || 0) | number }}</strong>
+        <span class="metric-hint">Fan & lữ khách theo dõi</span>
+      </div>
+
+      <div class="metric-card accent">
+        <div class="metric-top">
+          <div class="metric-icon-box accent">
+            <span class="material-symbols-outlined">payments</span>
+          </div>
+          <span class="metric-badge accent">Hoa hồng</span>
+        </div>
+        <p class="metric-label">Doanh thu Affiliate (ước tính)</p>
+        <strong class="metric-value accent">{{ formatVnd(estimatedRevenue) }}</strong>
+        <span class="metric-hint accent">Từ các lượt đặt phòng & tour</span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div class="panel-title-group">
+          <h2>Bộ sưu tập Reels của bạn</h2>
+          <span class="counter-badge">{{ contents.length }} video</span>
+        </div>
+        <div class="panel-actions">
+          <span class="muted small" *ngIf="isLoading">Đang đồng bộ...</span>
+          <button type="button" class="btn-outline-pill" (click)="openUpload()">
+            <span class="material-symbols-outlined">add</span>
+            <span>Thêm Reel</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="empty" *ngIf="!isLoading && !contents.length">
+        <div class="empty-icon-wrap">
+          <span class="material-symbols-outlined">movie</span>
+        </div>
+        <h3>Kênh này chưa có video nào</h3>
+        <p>Bắt đầu đăng tải những thước phim hành trình đầu tiên để tiếp cận hàng triệu du khách.</p>
+        <button type="button" class="btn-create-reel" (click)="openUpload()">
+          <span class="material-symbols-outlined">video_call</span>
+          <span>Đăng video đầu tiên</span>
+          <span class="arrow">→</span>
+        </button>
+      </div>
+
+      <div class="content-grid" *ngIf="contents.length">
+        <article class="content-card" *ngFor="let c of contents">
+          <div class="content-media">
+            <!-- Nhúng YouTube iframe nếu là link YouTube -->
+            <iframe
+              *ngIf="isYouTubeVideo(c.video_url || c.videoSrc)"
+              [src]="getYouTubeEmbedUrl(c.video_url || c.videoSrc)"
+              class="w-full h-full object-cover border-0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              title="Creator Video"
+            ></iframe>
+
+            <!-- Video HTML5 cho file MP4 trực tiếp -->
+            <video
+              *ngIf="!isYouTubeVideo(c.video_url || c.videoSrc)"
+              [src]="c.video_url || c.videoSrc"
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              onmouseover="this.play()"
+              onmouseout="this.pause()"
+            ></video>
+            <div class="media-overlay">
+              <span class="views-badge">
+                <span class="material-symbols-outlined play-ico">play_arrow</span>
+                {{ (c.stats?.views || 0) | number }}
+              </span>
+            </div>
+          </div>
+          <div class="content-body">
+            <h3 [title]="c.content_title || c.title">{{ c.content_title || c.title }}</h3>
+
+            <div class="content-location" *ngIf="c.location_name || c.location">
+              <span class="material-symbols-outlined pin-ico">location_on</span>
+              <span>{{ c.location_name || c.location }}</span>
+            </div>
+
+            <div class="content-stats">
+              <span><span class="material-symbols-outlined">favorite</span> {{ (c.stats?.likes || 0) | number }}</span>
+              <span><span class="material-symbols-outlined">chat_bubble</span> {{ c.stats?.commentsCount || 0 }}</span>
+              <span><span class="material-symbols-outlined">bookmark</span> {{ c.stats?.bookmarks || 0 }}</span>
+            </div>
+
+            <div class="hotspot-tags" *ngIf="c.hotspots?.resort?.hotel_id?.hotel_name || c.hotspots?.dining?.location_id?.name">
+              <span class="hotspot-pill" *ngIf="c.hotspots?.resort?.hotel_id?.hotel_name">
+                <span class="material-symbols-outlined">hotel</span>
+                {{ c.hotspots.resort.hotel_id.hotel_name }}
+              </span>
+              <span class="hotspot-pill" *ngIf="c.hotspots?.dining?.location_id?.name">
+                <span class="material-symbols-outlined">restaurant</span>
+                {{ c.hotspots.dining.location_id.name }}
+              </span>
+            </div>
+
+            <div class="card-footer-row">
+              <button type="button" class="btn-delete" (click)="deleteContent(c)" title="Xóa Reel này">
+                <span class="material-symbols-outlined">delete</span>
+                <span>Xóa</span>
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- UPLOAD MODAL -->
+  <div class="modal-overlay" *ngIf="isUploadOpen" (click)="closeUpload()">
+    <form class="modal" (click)="$event.stopPropagation()" (ngSubmit)="submitContent()">
+      <header class="modal-head">
+        <div class="modal-title-box">
+          <span class="botanical-tag">SÁNG TẠO NỘI DUNG</span>
+          <h2>Đăng Video Reel mới</h2>
+        </div>
+        <button type="button" class="icon-btn-close" (click)="closeUpload()" aria-label="Đóng">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </header>
+
+      <div class="modal-body-scroll">
+        <label class="form-group">
+          <span class="label-text">Tiêu đề Reel <strong class="req">*</strong></span>
+          <input
+            name="title"
+            [(ngModel)]="form.title"
+            required
+            placeholder="VD: Hoàng hôn tuyệt đẹp trên Vịnh Vĩnh Hy"
+            class="form-control"
+          />
+        </label>
+
+        <label class="form-group">
+          <span class="label-text">Mô tả / Caption</span>
+          <textarea
+            name="caption"
+            rows="3"
+            [(ngModel)]="form.caption"
+            placeholder="Kể câu chuyện hành trình đầy cảm hứng của bạn..."
+            class="form-control"
+          ></textarea>
+        </label>
+
+        <label class="form-group">
+          <span class="label-text">Video Reel</span>
+          <div class="file-row">
+            <input
+              name="video_url"
+              [(ngModel)]="form.video_url"
+              placeholder="Dán URL video .mp4"
+              class="form-control"
+            />
+            <label class="file-btn">
+              <span class="material-symbols-outlined">upload_file</span>
+              {{ isUploadingFile ? 'Đang tải...' : 'Chọn file' }}
+              <input type="file" accept="video/*" hidden (change)="onFileSelected($event)" />
+            </label>
+          </div>
+        </label>
+
+        <div class="two-col">
+          <label class="form-group">
+            <span class="label-text">🏨 Gắn khách sạn (Hotspot)</span>
+            <select name="hotel_id" [(ngModel)]="form.hotel_id" class="form-control">
+              <option value="">— Không gắn / Tự động —</option>
+              <option *ngFor="let h of hotels" [value]="h._id">{{ hotelName(h) }}</option>
+            </select>
+          </label>
+          <label class="form-group">
+            <span class="label-text">📍 Gắn địa điểm</span>
+            <select name="location_id" [(ngModel)]="form.location_id" class="form-control">
+              <option value="">— Không gắn / Tự động —</option>
+              <option *ngFor="let l of locations" [value]="l._id">{{ l.name }}</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="form-group">
+          <span class="label-text">Hashtags</span>
+          <input
+            name="hashtags"
+            [(ngModel)]="form.hashtags"
+            placeholder="#Tripla #VietnamTravel #LuxuryResort"
+            class="form-control"
+          />
+        </label>
+
+        <div class="preview-wrap" *ngIf="form.video_url">
+          <span class="preview-label">Xem trước video:</span>
+          <iframe
+            *ngIf="isYouTubeVideo(form.video_url)"
+            [src]="getYouTubeEmbedUrl(form.video_url)"
+            class="preview"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            title="Video Preview"
+          ></iframe>
+          <video
+            *ngIf="!isYouTubeVideo(form.video_url)"
+            class="preview"
+            [src]="form.video_url"
+            controls
+            muted
+          ></video>
+        </div>
+      </div>
+
+      <footer class="modal-foot">
+        <button type="button" class="btn-modal-ghost" (click)="closeUpload()">Hủy bỏ</button>
+        <button type="submit" class="btn-modal-primary" [disabled]="isSubmitting">
+          <span class="material-symbols-outlined" *ngIf="!isSubmitting">publish</span>
+          <span>{{ isSubmitting ? 'Đang đăng tải...' : 'Đăng lên TripShorts' }}</span>
+        </button>
+      </footer>
+    </form>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" *ngIf="toastMessage">
+    <span class="material-symbols-outlined toast-icon">check_circle</span>
+    <span>{{ toastMessage }}</span>
+  </div>
+
+  <app-site-footer variant="compact" compactLabel="Creator Studio &amp; Cộng đồng TripShorts" />
+</div>

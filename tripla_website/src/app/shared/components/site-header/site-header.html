@@ -1,0 +1,149 @@
+<header
+  class="site-hdr"
+  [ngClass]="[
+    'hdr-' + variant(),
+    'pos-' + positionMode(),
+    scrolled() ? 'is-scrolled' : '',
+    variant() === 'hero' ? 'theme-' + heroTheme() : ''
+  ]"
+  [attr.data-theme]="variant() === 'hero' ? heroTheme() : null"
+>
+  <div class="header-bar">
+    <!-- Brand -->
+    <a class="brand" routerLink="/home" aria-label="TRIPLA - Trang chủ" (click)="onNavItemClick('home')">
+      <span class="brand-logo">
+        <img src="/images/logo (2).png" alt="TRIPLA Logo" />
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">TRIPLA</span>
+        @if (subBrand()) {
+          <span class="brand-sub">{{ subBrand() }}</span>
+        }
+      </span>
+    </a>
+
+    <!-- Primary Ecosystem Navigation -->
+    @if (showMainNav() && variant() !== 'checkout') {
+      <nav class="top-nav main-nav" aria-label="Điều hướng hệ sinh thái TRIPLA">
+        @for (item of navItems; track item.key) {
+          <a
+            [routerLink]="item.route"
+            [class.active]="activeNav() === item.key"
+            [attr.aria-current]="activeNav() === item.key ? 'page' : null"
+            (click)="onNavItemClick(item.key)"
+          >
+            {{ item.label }}
+          </a>
+        }
+      </nav>
+    }
+
+    <!-- Custom Center Slot (for checkout status or sub-module info) -->
+    <div class="center-slot">
+      <ng-content select="[header-center]"></ng-content>
+    </div>
+
+    <!-- Right Actions -->
+    <div class="header-actions">
+      @if (backLabel() && backRoute()) {
+        <a
+          class="back back-pill"
+          [routerLink]="backRoute()"
+          [queryParams]="backPreserveQuery() ? null : backQueryParams()"
+          [queryParamsHandling]="backPreserveQuery() ? 'preserve' : null"
+        >
+          {{ backLabel() }}
+        </a>
+      }
+
+      <ng-content select="[header-actions]"></ng-content>
+
+      @if (showAuthControls()) {
+        @if (currentUser(); as user) {
+          <a
+            routerLink="/profile"
+            class="user-pill"
+            [class.active]="activeNav() === 'profile'"
+            [attr.aria-current]="activeNav() === 'profile' ? 'page' : null"
+            [title]="'Hồ sơ của ' + userShortName()"
+          >
+            <span class="user-avatar">
+              @if (user.avatar && !avatarFailed()) {
+                <img [src]="user.avatar" [alt]="userShortName()" (error)="avatarFailed.set(true)" />
+              } @else {
+                <span>{{ userInitials() }}</span>
+              }
+            </span>
+            <span class="user-name">{{ userShortName() }}</span>
+          </a>
+          <button
+            type="button"
+            class="icon-btn logout-btn"
+            aria-label="Đăng xuất"
+            title="Đăng xuất"
+            (click)="logout()"
+          >
+            <span class="material-symbols-outlined">logout</span>
+          </button>
+        } @else {
+          <button type="button" class="login-pill" (click)="openLogin()">
+            Đăng nhập
+          </button>
+          <a
+            routerLink="/profile"
+            class="avatar-btn"
+            [class.active]="activeNav() === 'profile'"
+            aria-label="Hồ sơ của tôi"
+            title="Hồ sơ của tôi"
+          >
+            <span class="material-symbols-outlined">person</span>
+          </a>
+        }
+      }
+
+      @if (showMainNav() && variant() !== 'checkout') {
+        <button
+          type="button"
+          class="mobile-menu-btn"
+          [attr.aria-expanded]="mobileMenuOpen()"
+          aria-label="Mở menu điều hướng"
+          (click)="toggleMobileMenu()"
+        >
+          <span class="material-symbols-outlined">{{ mobileMenuOpen() ? 'close' : 'menu' }}</span>
+        </button>
+      }
+    </div>
+  </div>
+
+  <!-- Optional secondary anchor pill bar (e.g. /about section jump bar) -->
+  <div class="sub-anchors-slot">
+    <ng-content select="[header-anchors]"></ng-content>
+  </div>
+
+  <!-- Responsive mobile dropdown nav -->
+  @if (mobileMenuOpen() && showMainNav() && variant() !== 'checkout') {
+    <div class="mobile-nav-drawer" role="region" aria-label="Menu điều hướng nhanh">
+      @for (item of navItems; track item.key) {
+        <a
+          [routerLink]="item.route"
+          [class.active]="activeNav() === item.key"
+          [attr.aria-current]="activeNav() === item.key ? 'page' : null"
+          (click)="onNavItemClick(item.key)"
+        >
+          {{ item.label }}
+        </a>
+      }
+      @if (backLabel() && backRoute()) {
+        <a
+          class="mobile-back"
+          [routerLink]="backRoute()"
+          [queryParams]="backPreserveQuery() ? null : backQueryParams()"
+          [queryParamsHandling]="backPreserveQuery() ? 'preserve' : null"
+          (click)="mobileMenuOpen.set(false)"
+        >
+          {{ backLabel() }}
+        </a>
+      }
+    </div>
+  }
+</header>

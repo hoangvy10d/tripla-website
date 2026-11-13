@@ -1,4 +1,4 @@
-﻿<div class="planning-page">
+<div class="planning-page">
   <app-activity-navigation activeService="planning" />
   <main>
     <div class="intro">
@@ -17,22 +17,39 @@
     <div *ngIf="actionError() || plan()?.error" class="alert" role="alert">
       {{ actionError() || plan()?.error }}
     </div>
-    <p *ngIf="message()" class="save-message" role="status">{{ message() }}</p>
+    <p *ngIf="message()" class="save-message" role="status">
+      {{ message() }}
+      <a *ngIf="confirmedBookingCode()" routerLink="/profile" class="status-profile-link">
+        Xem trong Hồ sơ ↗
+      </a>
+    </p>
     <div class="workspace">
       <aside class="left-column">
         <section class="panel trip-picker">
           <span class="eyebrow">BẮT ĐẦU HÀNH TRÌNH</span>
           <h2>Chọn chuyến đi</h2>
-          <label for="planning-trip">Chuyến đi đã lưu</label
-          ><select
-            id="planning-trip"
-            [disabled]="!store.trips().length || !!store.readError()"
-            [value]="trip()?.id || ''"
-            (change)="selectTrip($any($event.target).value)"
-          >
-            <option *ngIf="!trip()" value="">Chọn một chuyến đi</option>
-            <option *ngFor="let trip of store.trips()" [value]="trip.id">{{ trip.name }}</option>
-          </select>
+          <label for="planning-trip">Chuyến đi đã lưu</label>
+          <div style="display:flex;gap:8px;align-items:center;">
+            <select
+              id="planning-trip"
+              style="flex:1;"
+              [disabled]="!store.trips().length || !!store.readError()"
+              [value]="trip()?.id || ''"
+              (change)="selectTrip($any($event.target).value)"
+            >
+              <option *ngIf="!trip()" value="">Chọn một chuyến đi</option>
+              <option *ngFor="let trip of store.trips()" [value]="trip.id">{{ trip.name }}</option>
+            </select>
+            <button
+              *ngIf="trip()"
+              type="button"
+              title="Xóa chuyến đi này"
+              (click)="deleteCurrentTrip()"
+              style="background:none;border:1px solid #fecaca;color:#dc2626;border-radius:8px;padding:6px 10px;cursor:pointer;font-size:13px;"
+            >
+              <span class="material-symbols-outlined" style="font-size:18px;vertical-align:middle;">delete</span>
+            </button>
+          </div>
           <p *ngIf="!store.trips().length && !store.readError()" class="hint">
             Chưa có chuyến đi. Tạo chuyến mới hoặc lưu địa điểm từ Tripshort và TripShop.
           </p>
@@ -75,33 +92,43 @@
           <div *ngIf="!loading() && trip() && !places().length && !error()" class="empty-small">
             Chuyến đi chưa có địa điểm.<a routerLink="/trip-shop">Khám phá TripShop ↗</a>
           </div>
-          <button
-            *ngFor="let place of places()"
-            type="button"
-            class="place-card"
-            draggable="true"
-            (dragstart)="startDrag($event, 'place', place.key)"
-            (dragend)="endDrag()"
-            [class.selected]="selectedPlace()?.key === place.key"
-            [attr.aria-pressed]="selectedPlace()?.key === place.key"
-            [attr.data-place-key]="place.key"
-            (click)="selectPlace(place)"
-          >
-            <img
-              *ngIf="place.imageUrl"
-              [src]="place.imageUrl"
-              alt=""
-              loading="lazy"
-              (error)="$any($event.target).hidden = true"
-            /><span class="place-body"
-              ><strong>{{ place.title }}</strong
-              ><small *ngIf="place.location">{{ place.location }}</small
-              ><span class="place-price">{{ place.priceLabel || 'Chưa có thông tin giá' }}</span
-              ><span *ngIf="place.kind === 'unavailable'" class="unavailable"
-                >Không còn tìm thấy trong nguồn dữ liệu</span
-              ></span
-            ><span class="drag-grip" aria-hidden="true">⠿</span>
-          </button>
+          <div *ngFor="let place of places()" class="place-card-row">
+            <button
+              type="button"
+              class="place-card"
+              draggable="true"
+              (dragstart)="startDrag($event, 'place', place.key)"
+              (dragend)="endDrag()"
+              [class.selected]="selectedPlace()?.key === place.key"
+              [attr.aria-pressed]="selectedPlace()?.key === place.key"
+              [attr.data-place-key]="place.key"
+              (click)="selectPlace(place)"
+            >
+              <img
+                *ngIf="place.imageUrl"
+                [src]="place.imageUrl"
+                alt=""
+                loading="lazy"
+                (error)="$any($event.target).hidden = true"
+              /><span class="place-body"
+                ><strong>{{ place.title }}</strong
+                ><small *ngIf="place.location">{{ place.location }}</small
+                ><span class="place-price">{{ place.priceLabel || 'Chưa có thông tin giá' }}</span
+                ><span *ngIf="place.kind === 'unavailable'" class="unavailable"
+                  >Không còn tìm thấy trong nguồn dữ liệu</span
+                ></span
+              ><span class="drag-grip" aria-hidden="true">⠿</span>
+            </button>
+            <button
+              type="button"
+              class="place-remove"
+              [attr.aria-label]="'Bỏ địa điểm ' + place.title"
+              title="Bỏ khỏi chuyến đi"
+              (click)="removeSavedPlace(place.key, $event)"
+            >
+              ×
+            </button>
+          </div>
         </section>
       </aside>
       <section class="panel timetable" aria-labelledby="timetable-title">
@@ -212,7 +239,7 @@
                 {{ time(dropMinute()!) }}
               </div>
               <article
-                *ngFor="let entry of dayEntries()"
+                *ngFor="let entry of dayEntries(); let seq = index"
                 class="calendar-entry"
                 [class.selected]="selectedEntry()?.id === entry.id"
                 [style.top.px]="(entry.startMinute * rowHeight) / 60"
@@ -227,26 +254,38 @@
                 [attr.aria-label]="title(entry) + ' ' + time(entry.startMinute)"
               >
                 <div>
-                  <strong>{{ title(entry) }}</strong
+                  <strong>#{{ seq + 1 }} {{ title(entry) }}</strong
                   ><small
                     >{{ time(entry.startMinute) }} –
                     {{ time(entry.startMinute + entry.durationMinutes) }}</small
                   >
                 </div>
-                <button
-                  type="button"
-                  [attr.aria-label]="'Xóa hoạt động ' + title(entry)"
-                  (click)="$event.stopPropagation(); deleteEntry(entry)"
-                >
-                  ×
-                </button>
+                <div style="display:flex;align-items:center;gap:2px;">
+                  <button
+                    type="button"
+                    title="Đưa lên trước"
+                    (click)="moveEntryOrder(entry, -1, $event)"
+                  >▲</button>
+                  <button
+                    type="button"
+                    title="Đưa xuống sau"
+                    (click)="moveEntryOrder(entry, 1, $event)"
+                  >▼</button>
+                  <button
+                    type="button"
+                    [attr.aria-label]="'Xóa hoạt động ' + title(entry)"
+                    (click)="$event.stopPropagation(); deleteEntry(entry)"
+                  >
+                    ×
+                  </button>
+                </div>
               </article>
             </div>
           </div>
         </div>
       </section>
       <aside class="right-column">
-        <app-planning-map [place]="selectedPlace()" />
+        <app-planning-map [place]="selectedPlace()" [route]="dayRoute()" />
         <section class="panel activity-details">
           <span class="eyebrow">MỖI ĐIỂM DỪNG, MỘT CÂU CHUYỆN</span>
           <h2>{{ selectedEntry() ? 'Chỉnh sửa hoạt động' : 'Chi tiết địa điểm' }}</h2>
@@ -263,12 +302,22 @@
                 <dd>{{ place.priceLabel || 'Chưa có thông tin' }}</dd>
               </div>
             </dl>
-            <a
-              *ngIf="place.detailsPath"
-              [routerLink]="place.detailsPath"
-              [queryParams]="place.detailsQuery || {}"
-              >{{ place.kind === 'tripshort' ? 'Mở Tripshort' : 'Xem trang địa điểm' }} ↗</a
-            ></ng-container
+            <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:6px;">
+              <a
+                *ngIf="place.detailsPath"
+                [routerLink]="place.detailsPath"
+                [queryParams]="place.detailsQuery || {}"
+                >{{ place.kind === 'tripshort' ? 'Mở Tripshort' : 'Xem trang địa điểm' }} ↗</a
+              >
+              <button
+                type="button"
+                class="add-to-schedule"
+                style="padding:5px 12px;font-size:12px;"
+                (click)="bookStop(place, $event)"
+              >
+                Đặt chỗ
+              </button>
+            </div></ng-container
           ><ng-template #noSelection
             ><p>Chọn một card đã lưu hoặc hoạt động trong lịch để xem chi tiết.</p></ng-template
           >
@@ -373,10 +422,34 @@
           ><button type="button" [disabled]="!trip()" (click)="reloadSaved()">
             Mở lại bản đã lưu
           </button>
-          <p>Giá từng địa điểm có đơn vị khác nhau, chưa tính tổng thanh toán.</p>
-          <button type="button" disabled>Thanh toán · Chưa triển khai</button>
+          <p *ngIf="isMongoConnected() || scheduleEntries().length">
+            Ước tính chi phí: <strong>{{ formatVnd(estimatedTotal()) }}</strong>
+          </p>
+          <p *ngIf="!isMongoConnected() && !scheduleEntries().length">Giá từng địa điểm có đơn vị khác nhau, chọn hoạt động để xem ước tính VND.</p>
+          <button
+            *ngIf="isMongoConnected()"
+            type="button"
+            class="save-itinerary"
+            [disabled]="!trip() || !scheduleEntries().length || bookingSubmitting()"
+            (click)="confirmAndBookItinerary()"
+          >
+            {{ bookingSubmitting() ? 'Đang xác nhận đặt lịch…' : 'Xác nhận & Đặt lịch hoạt động (' + scheduleEntries().length + ')' }}
+          </button>
+          <button
+            *ngIf="trip()"
+            type="button"
+            class="save-itinerary"
+            style="margin-top:6px;background:#173b32;"
+            (click)="bookAllInPlan()"
+          >
+            Đặt tất cả
+          </button>
+          <a *ngIf="confirmedBookingCode()" routerLink="/profile" class="view-profile-booking">
+            Xem đơn #{{ confirmedBookingCode() }} trong Hồ sơ ↗
+          </a>
         </section>
       </aside>
     </div>
   </main>
 </div>
+<app-site-footer variant="compact" compactLabel="Lập lịch trình hành trình thông minh" />

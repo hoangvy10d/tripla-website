@@ -1,12 +1,12 @@
-﻿<article class="hotel-card">
-  <a class="hotel-photo" [routerLink]="['/hotels', hotel().id]" queryParamsHandling="preserve" [attr.aria-label]="'Xem ' + hotel().name">
+<article class="hotel-card">
+  <a class="hotel-photo" [routerLink]="hotel().hotel_slug ? ['/hotel', hotel().hotel_slug] : ['/hotels', hotel().id]" queryParamsHandling="preserve" [attr.aria-label]="'Xem ' + hotel().name">
     <img *ngIf="hotel().imageUrl && failedImage() !== hotel().imageUrl; else placeholder" [src]="hotel().imageUrl" [alt]="hotel().name" loading="lazy" (error)="failedImage.set(hotel().imageUrl || '')" />
     <ng-template #placeholder><div class="photo-placeholder"><span class="material-symbols-outlined" aria-hidden="true">hotel</span><span>Ảnh đang cập nhật</span></div></ng-template>
     <span *ngIf="hotel().freeCancellation" class="photo-badge">Hủy miễn phí theo gói</span>
   </a>
   <div class="hotel-info">
     <span *ngIf="hotel().stars" class="stars" [attr.aria-label]="hotel().stars + ' sao'">{{ '★'.repeat(hotel().stars!) }}</span>
-    <h3><a [routerLink]="['/hotels', hotel().id]" queryParamsHandling="preserve">{{ hotel().name }}</a></h3>
+    <h3><a [routerLink]="hotel().hotel_slug ? ['/hotel', hotel().hotel_slug] : ['/hotels', hotel().id]" queryParamsHandling="preserve">{{ hotel().name }}</a></h3>
     <p class="address"><span class="material-symbols-outlined" aria-hidden="true">location_on</span>{{ hotel().address }}</p>
     <div class="amenities"><span *ngFor="let amenity of hotel().amenities | slice:0:3">{{ amenity }}</span></div>
     <div *ngIf="hotel().rating != null; else noReviews" class="reviews"><strong>{{ hotel().rating | number:'1.1-1' }}</strong><span>{{ hotel().rating! >= 9 ? 'Tuyệt vời' : hotel().rating! >= 8 ? 'Rất tốt' : 'Điểm đánh giá' }}<small>{{ hotel().reviewCount != null ? hotel().reviewCount + ' đánh giá' : 'Thang điểm 10' }}</small></span></div>
@@ -14,9 +14,9 @@
   </div>
   <div class="price">
     <button type="button" class="save-button" [class.saved]="isSaved" [attr.aria-label]="'Lưu ' + hotel().name + ' vào chuyến đi'" (click)="saveOpen.set(true)"><span class="material-symbols-outlined" aria-hidden="true">{{ isSaved ? 'bookmark_added' : 'bookmark_add' }}</span>{{ isSaved ? 'Đã lưu' : 'Lưu vào chuyến đi' }}</button>
-    <ng-container *ngIf="hotel().pricePerNight != null; else noPrice"><span>Giá tham khảo từ</span><strong>{{ hotel().pricePerNight | currency: hotel().currency || 'VND' : 'symbol' : '1.0-0' }}</strong><small>/ phòng / đêm · Chưa gồm thuế, phí</small></ng-container>
+    <ng-container *ngIf="(hotel().lowestPrice ?? hotel().pricePerNight) != null; else noPrice"><span>Giá thấp nhất từ</span><strong>{{ (hotel().lowestPrice ?? hotel().pricePerNight) | currency: hotel().currency || 'VND' : 'symbol' : '1.0-0' }}</strong><small>/ phòng / đêm · Còn {{ hotel().stock ?? 5 }} phòng</small></ng-container>
     <ng-template #noPrice><strong>Giá đang cập nhật</strong></ng-template>
-    <a class="details-link" [routerLink]="['/hotels', hotel().id]" queryParamsHandling="preserve">Xem chi tiết <span aria-hidden="true">↗</span></a>
+    <a class="details-link" [routerLink]="hotel().hotel_slug ? ['/hotel', hotel().hotel_slug] : ['/hotels', hotel().id]" queryParamsHandling="preserve">Xem chi tiết <span aria-hidden="true">↗</span></a>
   </div>
 </article>
 <app-save-hotel-trip *ngIf="saveOpen()" [hotelId]="hotel().id" [hotelName]="hotel().name" (closed)="saveOpen.set(false)" />

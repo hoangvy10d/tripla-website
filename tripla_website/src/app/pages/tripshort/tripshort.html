@@ -1,18 +1,19 @@
 <div class="h-screen w-screen flex select-none antialiased overflow-hidden relative app-canvas t-ink" data-mode="connect"
   [class.drawer-open]="isDrawerOpen() || isCommentDrawerOpen">
 
-  <header class="tripshort-header">
-    <button type="button" class="tripshort-brand" (click)="navigateToHome()" aria-label="TRIPLA trang chủ">
-      <img src="images/logo (2).png" alt="" /><span>TRIPLA</span>
+  <app-site-header
+    variant="floating"
+    positionMode="absolute"
+    activeNav="tripshort"
+    subBrand="TripShorts"
+    style="--sh-z: 40"
+    (navClick)="onTopNavClick($event)"
+  >
+    <button header-actions type="button" class="header-upload" (click)="triggerUploadModal()">
+      <span class="material-symbols-outlined">add</span>
+      <span>Chia sẻ hành trình</span>
     </button>
-    <nav class="tripshort-nav" aria-label="Điều hướng chính">
-      <button type="button" (click)="navigateToHome()">Khám phá</button>
-      <button type="button" [class.is-active]="!isCommunityHubVisible()" (click)="switchToFeed()">TripShorts</button>
-      <button type="button" (click)="setActiveNav('nav-tripshop')">TripShop</button><a routerLink="/trip-planning">Trip Planning</a>
-      <a routerLink="/about">Về TRIPLA</a>
-    </nav>
-    <button type="button" class="header-upload" (click)="triggerUploadModal()"><span class="material-symbols-outlined">add</span><span>Chia sẻ hành trình</span></button>
-  </header>
+  </app-site-header>
 
   <!-- ========================================================================= -->
   <!-- 1. LEFT SIDEBAR  (Glass Level 1)                                          -->
@@ -24,7 +25,7 @@
 
     <button
       id="sidebar-toggle-btn"
-      class="icon-btn icon-btn-sm absolute -right-3.5 top-8 z-40"
+      class="icon-btn icon-btn-sm absolute -right-3.5 top-24 z-40"
       (click)="toggleSidebar()"
       title="Thu gọn / Mở rộng Sidebar">
       <span class="material-symbols-outlined text-base">{{ isSidebarCollapsed() ? 'chevron_right' : 'chevron_left' }}</span>
@@ -42,7 +43,7 @@
             <p class="label-sm t-muted">Travel EASY - NOT BUSY</p>
           </div>
         </div>
-        <span class="sidebar-expanded-content chip chip-gold"><span class="live-dot"></span>VIP</span>
+        <span class="sidebar-expanded-content chip chip-gold"><span class="live-dot"></span>Reels</span>
       </div>
 
       <!-- Upload (Primary Kinetic) -->
@@ -59,7 +60,7 @@
       <!-- Search -->
       <div class="relative mb-5 sidebar-expanded-content">
         <span class="material-symbols-outlined absolute left-3 top-2 text-lg t-muted pointer-events-none">search</span>
-        <input class="field pl-9 pr-3 py-2" placeholder="Tìm biệt thự, vịnh đảo..." type="text">
+        <input class="field pl-9 pr-3 py-2" placeholder="Tìm biệt thự, vịnh đảo..." type="text" [value]="searchInput" (input)="onSearchReelsInput($any($event.target).value)" (keydown.enter)="applyReelsSearch()">
       </div>
 
       <button
@@ -102,7 +103,7 @@
             <span class="material-symbols-outlined text-lg shrink-0">grid_view</span>
             <span class="sidebar-expanded-content">Community Hub</span>
           </div>
-          <span class="sidebar-expanded-content chip chip-gold">6 Mới</span>
+          <span class="sidebar-expanded-content chip chip-gold">{{ hubVideos.length }} Video</span>
         </button>
 
         <button
@@ -124,7 +125,7 @@
             <span class="material-symbols-outlined text-lg shrink-0">bookmark</span>
             <span class="sidebar-expanded-content">Bộ Sưu Tập</span>
           </div>
-          <span class="count-badge sidebar-expanded-content" [class.on]="activeNav() === 'nav-saved'">4</span>
+          <span class="count-badge sidebar-expanded-content" [class.on]="activeNav() === 'nav-saved'">{{ savedCollectionCount }}</span>
         </button>
       </nav>
 
@@ -132,28 +133,62 @@
       <div class="mt-6 sidebar-expanded-content">
         <p class="label-sm t-muted px-3 mb-2.5">Bộ lọc độc quyền</p>
         <div class="flex flex-wrap gap-1.5 px-1">
-          <button class="chip-filter is-on">Miền Bắc</button>
-          <button class="chip-filter">Miền Trung</button>
-          <button class="chip-filter">Miền Nam</button>
+          <button type="button" class="chip-filter" [class.is-on]="activeRegion === 'Miền Bắc'" (click)="filterByRegion('Miền Bắc')">Miền Bắc</button>
+          <button type="button" class="chip-filter" [class.is-on]="activeRegion === 'Miền Trung'" (click)="filterByRegion('Miền Trung')">Miền Trung</button>
+          <button type="button" class="chip-filter" [class.is-on]="activeRegion === 'Miền Nam'" (click)="filterByRegion('Miền Nam')">Miền Nam</button>
         </div>
       </div>
     </div>
 
     <!-- User card -->
     <div class="sidebar-account pt-4 border-t hr-hair">
-      <div class="glass-1 card-hover flex items-center gap-3 p-2 cursor-pointer sidebar-icon-center">
+      <a
+        *ngIf="isLoggedIn"
+        routerLink="/profile"
+        class="glass-1 card-hover flex items-center gap-3 p-2 cursor-pointer sidebar-icon-center"
+        aria-label="Hồ sơ cá nhân">
         <div class="relative shrink-0">
-          <img alt="Profile Avatar" class="avatar w-10 h-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqnBTgROwYczNTkYPnbGk2lCefl-CeXgnMmDig2W-bxDiKURUmPkgKhRKivdUUjQ-aMOrO71jdjoAdXee3Iar90dXUeTYeR-btyblgRZxl0pc837uGxP7U47AVFhzY50eO2N9ref7kpCJnemb1U6x5aFHGfnqZ8zLSJ_oUnyAEJ5uMZAaSPRJWpWJYvQ6VyJN80IP_tHxIG5YavuwVM77FQZ0uQzKvoUwip7-IyxEf">
+          <img
+            *ngIf="currentUser?.avatar"
+            [alt]="currentUserName"
+            class="avatar w-10 h-10 object-cover"
+            [src]="currentUser?.avatar"
+            onerror="this.style.display='none'">
+          <div
+            *ngIf="!currentUser?.avatar"
+            class="avatar w-10 h-10 flex items-center justify-center font-head font-bold text-xs text-white"
+            style="background: #173b32;">
+            {{ currentUserInitials }}
+          </div>
           <span class="status-dot"></span>
         </div>
         <div class="flex-1 min-w-0 sidebar-expanded-content">
-          <div class="flex items-center justify-between">
-            <h4 class="font-head text-xs font-bold t-ink truncate">Victoria Chen</h4>
-            <span class="material-symbols-outlined text-sm text-gold">verified</span>
+          <div class="flex items-center justify-between gap-1">
+            <h4 class="font-head text-xs font-bold t-ink truncate">{{ currentUserName }}</h4>
+            <span *ngIf="currentUser?.role === 'admin' || currentUser?.role === 'provider'" class="material-symbols-outlined text-sm text-gold">verified</span>
           </div>
-          <span class="chip chip-gold" style="padding: 0 6px; font-size: 9px">Elite Platinum</span>
+          <span class="chip chip-gold" style="padding: 0 6px; font-size: 9px">{{ currentUserBadge }}</span>
         </div>
-      </div>
+      </a>
+
+      <button
+        *ngIf="!isLoggedIn"
+        type="button"
+        (click)="openProfileOrLogin()"
+        class="glass-1 card-hover w-full flex items-center gap-3 p-2 cursor-pointer sidebar-icon-center text-left"
+        aria-label="Đăng nhập hoặc xem hồ sơ">
+        <div class="relative shrink-0">
+          <div
+            class="avatar w-10 h-10 flex items-center justify-center font-head font-bold text-xs"
+            style="background: rgba(23, 59, 50, 0.12); color: #173b32;">
+            <span class="material-symbols-outlined text-lg">person</span>
+          </div>
+        </div>
+        <div class="flex-1 min-w-0 sidebar-expanded-content">
+          <h4 class="font-head text-xs font-bold t-ink truncate">Khách tham quan</h4>
+          <span class="chip chip-neon" style="padding: 0 6px; font-size: 9px">Đăng nhập TRIPLA</span>
+        </div>
+      </button>
     </div>
   </aside>
 
@@ -164,7 +199,7 @@
     (click)="closeDrawersOnBackdrop($event)">
 
     <!-- VIEW 1: SINGLE VERTICAL VIDEO CANVAS -->
-    <div *ngIf="!isCommunityHubVisible()" id="single-video-view" class="w-full h-full relative flex items-center justify-center transition-all duration-500">
+    <div *ngIf="!isCommunityHubVisible() && hubVideos.length > 0" id="single-video-view" class="w-full h-full relative flex items-center justify-center transition-all duration-500">
       <div id="ambient-backdrop" class="absolute inset-0 bg-cover bg-center blur-2xl opacity-40 scale-110 pointer-events-none transition-all duration-700" [style.background-image]="'url(\'' + currentVideo().media + '\')'"></div>
       <div class="stage-wash absolute inset-0 pointer-events-none"></div>
 
@@ -202,7 +237,36 @@
 
         <!-- Lớp media có cắt bo góc -->
         <div class="video-clip">
-          <img [src]="currentVideo().media" [alt]="currentVideo().title" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+          <!-- 1. Trình phát YouTube Embed nếu là link YouTube -->
+          <iframe
+            *ngIf="isYouTubeVideo(currentVideo().videoUrl)"
+            [src]="getYouTubeEmbedUrl(currentVideo().videoUrl)"
+            class="w-full h-full object-cover border-0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            title="TripShort Video Player"
+          ></iframe>
+
+          <!-- 2. Trình phát HTML5 Video nếu là video MP4/WebM (có thanh tua và mở âm thanh theo cài đặt) -->
+          <video
+            *ngIf="!isYouTubeVideo(currentVideo().videoUrl) && currentVideo().videoUrl"
+            [src]="currentVideo().videoUrl"
+            autoplay
+            [muted]="!isAudioOn()"
+            controls
+            loop
+            playsinline
+            class="w-full h-full object-cover"
+          ></video>
+
+          <!-- 3. Fallback hình ảnh poster nếu chưa có video stream -->
+          <img
+            *ngIf="!currentVideo().videoUrl"
+            [src]="currentVideo().media"
+            [alt]="currentVideo().title"
+            class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          >
+
           <div class="video-shade absolute inset-0 pointer-events-none"></div>
 
           <div class="play-overlay absolute inset-0 flex items-center justify-center pointer-events-none" [class.opacity-0]="!isPlayOverlayVisible()">
@@ -252,20 +316,20 @@
         <!-- Creator info -->
         <div class="creator-info absolute bottom-4 left-4 right-14 text-white z-20 pointer-events-auto">
           <div class="creator-header mb-2">
-            <img [src]="currentVideo().creatorAvatar" alt="Creator Avatar" class="avatar-ring w-9 h-9">
+            <img [src]="currentVideo().creatorAvatar || 'images/logo (2).png'" [alt]="currentVideo().creator" class="avatar-ring w-9 h-9" onerror="this.src='images/logo (2).png'">
             <div class="creator-details">
               <div class="creator-name flex items-center gap-1">
                 <span class="font-head font-bold text-xs tracking-wide">{{ currentVideo().creator }}</span>
                 <span class="material-symbols-outlined text-gold text-xs">verified</span>
               </div>
-              <p class="text-[10px] text-white/75">Chuyên gia giám tuyển Luminous</p>
+              <p class="text-[10px] text-white/75">{{ currentVideo().creatorTitle || 'Thành viên TRIPLA' }}</p>
             </div>
             <button class="btn-follow" (click)="$event.stopPropagation()">THEO DÕI</button>
           </div>
           <p class="text-xs text-white/90 leading-snug line-clamp-2 mb-2">{{ currentVideo().desc }}</p>
           <div class="creator-audio glass-photo flex items-center gap-2 text-[11px] px-2.5 py-1 rounded-lg w-fit">
             <span class="material-symbols-outlined text-xs text-gold animate-spin" style="animation-duration: 4s;">music_note</span>
-            <span class="truncate max-w-[190px]">Luminous Waves • 3D Binaural Soundscape</span>
+            <span class="truncate max-w-[190px]">{{ currentVideo().musicName || 'Âm thanh gốc TRIPLA' }}</span>
           </div>
         </div>
 
@@ -290,7 +354,7 @@
 
           <button class="action-wrap" (click)="openCommentDrawer($event)">
             <div class="action-btn"><span class="material-symbols-outlined text-xl">chat_bubble</span></div>
-            <span class="action-count">1,420</span>
+            <span class="action-count">{{ commentCountText() }}</span>
           </button>
 
           <button class="action-wrap" (click)="toggleBookmark($event)">
@@ -305,6 +369,11 @@
             <span class="action-count">Chia sẻ</span>
           </button>
 
+          <button type="button" class="action-wrap" (click)="openReportModal($event)" title="Báo cáo bài viết">
+            <div class="action-btn"><span class="material-symbols-outlined text-xl">flag</span></div>
+            <span class="action-count">Báo cáo</span>
+          </button>
+
           <div class="disc animate-spin mt-2" style="animation-duration: 8s;">
             <img alt="Audio Cover" [src]="currentVideo().creatorAvatar">
           </div>
@@ -314,67 +383,189 @@
 
     <!-- VIEW 2: COMMUNITY HUB -->
     <div
-      class="hub-surface w-full h-full absolute inset-0 z-20 flex flex-col p-8 overflow-y-auto custom-scroll transition-opacity duration-300"
-      [class.hidden]="!isCommunityHubVisible()">
-
-      <!-- Hub header -->
-      <div class="flex items-center justify-between mb-6 pb-4 border-b hr-hair">
-        <div class="flex items-center gap-3">
-          <div class="brand-mark" style="width: 40px; height: 40px">
-            <span class="material-symbols-outlined text-xl">grid_view</span>
+      class="hub-surface w-full h-full absolute inset-0 z-20 overflow-y-auto custom-scroll transition-opacity duration-300"
+      [class.hidden]="!isCommunityHubVisible()"
+      (scroll)="onHubScroll($event)">
+      <div class="hub-container">
+        <!-- Hub header -->
+        <header class="hub-header">
+          <div class="hub-header-copy">
+            <span class="hub-kicker">TRIPLA COMMUNITY</span>
+            <h2 class="hub-heading">Những hành trình <em>đáng nhớ.</em></h2>
+            <p class="hub-sub">
+              Khám phá những thước phim thực tế từ cộng đồng du khách &amp; giám tuyển thượng lưu.
+            </p>
           </div>
-          <div>
-            <div class="flex items-center gap-2">
-              <h2 class="hub-heading t-ink">Những hành trình <em>đáng nhớ.</em></h2>
-              <span class="chip chip-gold">TRIPLA Curated</span>
+
+          <div class="hub-controls">
+            <div class="hub-tabs" role="tablist" aria-label="Bộ lọc Community Hub">
+              <button
+                type="button"
+                class="hub-tab"
+                [class.is-active]="activeCommunityTab() === 'trending'"
+                (click)="switchCommunityTab('trending')">
+                Xu Hướng
+              </button>
+              <button
+                type="button"
+                class="hub-tab"
+                [class.is-active]="activeCommunityTab() === 'latest'"
+                (click)="switchCommunityTab('latest')">
+                Mới Nhất
+              </button>
+              <button
+                type="button"
+                class="hub-tab"
+                [class.is-active]="activeCommunityTab() === 'saved'"
+                (click)="switchCommunityTab('saved')">
+                Được Lưu Nhiều
+              </button>
+              <button
+                type="button"
+                class="hub-tab hub-tab-live"
+                [class.is-active]="activeCommunityTab() === 'live'"
+                (click)="switchCommunityTab('live')">
+                <span class="live-dot"></span>
+                <span>Trực Tiếp</span>
+                <span class="hub-live-pill">LIVE</span>
+              </button>
             </div>
-            <p class="text-xs t-variant">Khám phá các video shorts thực tế từ cộng đồng du khách &amp; giám tuyển thượng lưu</p>
-          </div>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <div class="hub-tabs glass-1">
-            <button class="hub-tab" [class.is-active]="activeCommunityTab() === 'trending'" (click)="switchCommunityTab('trending')">Xu Hướng</button>
-            <button class="hub-tab" [class.is-active]="activeCommunityTab() === 'latest'" (click)="switchCommunityTab('latest')">Mới Nhất</button>
-            <button class="hub-tab" [class.is-active]="activeCommunityTab() === 'saved'" (click)="switchCommunityTab('saved')">Được Lưu Nhiều</button>
-            <button class="hub-tab" [class.is-active]="activeCommunityTab() === 'live'" (click)="switchCommunityTab('live')">
-              <span class="live-dot"></span>
-              <span>Trực Tiếp</span>
-              <span class="chip chip-neon" style="padding: 0 5px; font-size: 9px">LIVE</span>
+            <button type="button" class="hub-upload-btn" (click)="triggerUploadModal()">
+              <span class="material-symbols-outlined">add</span>
+              <span>Đăng Video Mới</span>
             </button>
           </div>
-          <button class="btn btn-primary px-3.5 py-2" (click)="triggerUploadModal()">
-            <span class="material-symbols-outlined text-base">add</span>
-            <span>Đăng Video Mới</span>
+        </header>
+
+        <!-- Hub video grid (Xu Hướng / Mới Nhất / Được Lưu Nhiều) -->
+        <div class="hub-grid" *ngIf="activeCommunityTab() !== 'live' && hubVideos.length > 0">
+          <article
+            *ngFor="let video of hubVideos; let i = index"
+            class="hub-card"
+            (click)="openVideoFromHub(i)">
+            <div class="hub-card-media">
+              <img
+                [src]="video.media || '/images/trangan.jpg'"
+                [alt]="video.title"
+                class="hub-card-img"
+                loading="lazy"
+                (error)="onHubImageError($event)" />
+              <div class="hub-card-shade"></div>
+
+              <div class="hub-pill hub-pill-loc">
+                <span class="material-symbols-outlined fill hub-pill-gold">location_on</span>
+                <span>{{ video.location || pointDataMap[video.drawerKey].title }}</span>
+              </div>
+
+              <div class="hub-pill hub-pill-stat">
+                <span class="material-symbols-outlined fill hub-pill-gold">visibility</span>
+                <span>{{ video.views || '1.2K' }}</span>
+              </div>
+            </div>
+
+            <div class="hub-card-body">
+              <div class="hub-card-copy">
+                <h3 class="hub-card-title">{{ video.title }}</h3>
+                <div class="hub-card-meta">
+                  <img
+                    [src]="video.creatorAvatar || 'images/logo (2).png'"
+                    [alt]="video.creator"
+                    class="hub-card-avatar"
+                    (error)="onHubImageError($event, true)" />
+                  <span class="hub-card-sub">
+                    {{ video.creator }} &bull; {{ pointDataMap[video.drawerKey].title }}
+                  </span>
+                </div>
+              </div>
+
+              <div class="hub-card-foot">
+                <div class="hub-metric">
+                  <span class="hub-metric-num">{{ video.likes || video.likeCount || 0 }}</span>
+                  <span class="hub-metric-unit">lượt thích</span>
+                </div>
+                <span class="hub-card-cta">
+                  <span>Xem ngay</span>
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Hub Live grid (Trực Tiếp) -->
+        <div class="hub-grid" *ngIf="activeCommunityTab() === 'live' && liveCards.length > 0">
+          <article
+            *ngFor="let live of liveCards"
+            class="hub-card"
+            (click)="openLiveStream(live)">
+            <div class="hub-card-media">
+              <img
+                [src]="live.coverImage || '/images/trangan.jpg'"
+                [alt]="live.title"
+                class="hub-card-img"
+                loading="lazy"
+                (error)="onHubImageError($event)" />
+              <div class="hub-card-shade"></div>
+
+              <div class="hub-pill hub-pill-loc">
+                <span class="hub-live-dot-badge"></span>
+                <span>LIVE &bull; {{ live.location }}</span>
+              </div>
+
+              <div class="hub-pill hub-pill-stat">
+                <span class="material-symbols-outlined fill hub-pill-gold">visibility</span>
+                <span>{{ live.viewerCount }}</span>
+              </div>
+            </div>
+
+            <div class="hub-card-body">
+              <div class="hub-card-copy">
+                <h3 class="hub-card-title">{{ live.title }}</h3>
+                <div class="hub-card-meta">
+                  <img
+                    [src]="live.hostAvatar || 'images/logo (2).png'"
+                    [alt]="live.hostName"
+                    class="hub-card-avatar"
+                    (error)="onHubImageError($event, true)" />
+                  <span class="hub-card-sub">{{ live.hostName }} &bull; Đang phát trực tiếp</span>
+                </div>
+              </div>
+
+              <div class="hub-card-foot">
+                <div class="hub-metric">
+                  <span class="hub-metric-num">{{ live.viewerCount }}</span>
+                  <span class="hub-metric-unit">người xem</span>
+                </div>
+                <span class="hub-card-cta">
+                  <span>Tham gia</span>
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Hub empty state -->
+        <div
+          *ngIf="(activeCommunityTab() !== 'live' && hubVideos.length === 0) || (activeCommunityTab() === 'live' && liveCards.length === 0)"
+          class="hub-empty">
+          <span class="material-symbols-outlined hub-empty-icon">movie</span>
+          <h3>Chưa có thước phim nào</h3>
+          <p>Không tìm thấy video phù hợp hoặc bộ sưu tập của bạn chưa có mục nào được lưu.</p>
+          <button type="button" class="hub-upload-btn" (click)="switchToFeed()">
+            Khám phá Dành Cho Bạn
           </button>
         </div>
       </div>
+    </div>
 
-      <!-- Hub grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto w-full pb-8" [class.hidden]="activeCommunityTab() === 'live'">
-        <div *ngFor="let video of hubVideos; let i = index" class="hub-card card-hover group relative cursor-pointer flex flex-col h-[340px]" (click)="openVideoFromHub(i)">
-          <div class="relative w-full h-full overflow-hidden">
-            <img [src]="video.media" [alt]="video.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
-            <div class="hub-shade absolute inset-0"></div>
-            <div class="absolute top-3 left-3 right-3 flex items-center justify-between">
-              <span class="chip chip-photo">
-                <span class="material-symbols-outlined text-xs text-gold">visibility</span>
-                <span>1.2M lượt xem</span>
-              </span>
-              <span class="chip chip-light">
-                <span class="material-symbols-outlined text-xs">hotel</span>
-                <span>{{ pointDataMap[video.drawerKey].title }}</span>
-              </span>
-            </div>
-            <div class="absolute bottom-3 left-3 right-3 text-white">
-              <div class="flex items-center gap-2 mb-1.5">
-                <img [src]="video.creatorAvatar" [alt]="video.creator" class="avatar-ring w-6 h-6" style="box-shadow: 0 0 0 1.5px var(--gold)">
-                <span class="font-head font-bold text-xs text-white/95">{{ video.creator }}</span>
-              </div>
-              <h3 class="hub-title font-head font-bold text-sm line-clamp-1">{{ video.title }}</h3>
-            </div>
-          </div>
-        </div>
+    <!-- Empty feed state when single-video view has 0 items -->
+    <div *ngIf="!isCommunityHubVisible() && hubVideos.length === 0" class="w-full h-full flex items-center justify-center p-6">
+      <div class="glass-1 p-8 text-center max-w-md">
+        <span class="material-symbols-outlined text-4xl t-muted mb-2">bookmark_border</span>
+        <h3 class="font-head font-bold text-lg t-ink mb-1">Chưa có thước phim trong mục này</h3>
+        <p class="text-xs t-variant mb-5">Hãy thả tim, lưu thước phim hoặc tìm kiếm điểm đến khác để xem lại tại đây.</p>
+        <button type="button" class="btn btn-primary px-5 py-2.5 text-xs" (click)="switchToFeed()">Quay lại Dành Cho Bạn</button>
       </div>
     </div>
   </main>
@@ -392,11 +583,11 @@
       <div class="drawer-head p-5 pb-3 flex items-start justify-between">
         <div>
           <div class="flex items-center gap-2 mb-1.5">
-            <span class="chip chip-gold">Xác Thực Luminous</span>
+            <span class="chip chip-gold">{{ store.activeDrawerData().tag || 'Xác thực TRIPLA' }}</span>
             <div class="flex items-center text-xs font-bold">
               <span class="material-symbols-outlined text-sm text-gold" style="font-variation-settings: 'FILL' 1;">star</span>
-              <span class="ml-0.5 t-ink">4.95</span>
-              <span class="t-muted font-normal ml-1">(280 đánh giá)</span>
+              <span class="ml-0.5 t-ink">{{ store.activeDrawerData().rating || '4.9' }}</span>
+              <span class="t-muted font-normal ml-1">({{ store.activeDrawerData().reviews || '0' }} đánh giá)</span>
             </div>
           </div>
           <h2 class="font-head font-extrabold text-xl t-ink leading-tight">{{ store.activeDrawerData().title }}</h2>
@@ -493,7 +684,7 @@
         </div>
       </div>
 
-      <div class="drawer-foot p-4">
+      <div class="drawer-foot p-4 space-y-2">
         <button *ngIf="selectedDrawerKey() !== 'dining'; else savePlaceButton" class="btn btn-primary btn-lg w-full py-3.5 px-4" (click)="goToCheckout()">
           <span>{{ selectedDrawerKey() === 'yacht' ? 'ĐẶT NGAY' : 'ĐẶT NGAY & XÁC NHẬN PHÒNG' }}</span>
           <span class="material-symbols-outlined text-base">arrow_forward</span>
@@ -504,6 +695,10 @@
             <span>LƯU VÀO CHUYẾN ĐI</span>
           </button>
         </ng-template>
+        <button type="button" class="btn btn-secondary w-full py-2 px-3 text-xs" (click)="navigateToTripShopWithVenue($event)">
+          <span class="material-symbols-outlined text-sm">shopping_bag</span>
+          <span>Mở trên TripShop ({{ store.activeDrawerData().title }})</span>
+        </button>
       </div>
     </div>
 
@@ -530,23 +725,26 @@
           <div class="flex-1 min-w-0">
             <h4 class="font-head text-xs font-bold t-ink truncate">{{ store.activeDrawerData().title }}</h4>
             <p class="text-[11px] t-variant">{{ selectedDrawerKey() === 'yacht' ? (visitDate | date:'dd/MM/yyyy') : (stayStart | date:'dd/MM/yyyy') + ' – ' + (stayEnd | date:'dd/MM/yyyy') + ' (' + stayNights + ' Đêm)' }}</p>
-            <p class="text-grad font-head text-xs font-extrabold mt-0.5">{{ selectedDrawerKey() === 'yacht' ? activeDrawerData().price + ' USD' : '$3,600 USD' }}</p>
+            <p class="text-grad font-head text-xs font-extrabold mt-0.5">{{ formatVnd(checkoutTotalVnd) }}</p>
           </div>
         </div>
 
         <div>
           <p class="label-sm t-muted mb-2">Thanh toán 1 chạm</p>
           <button class="btn btn-pay w-full py-2.5" (click)="processFakePayment()">
-            <span class="font-semibold tracking-wide text-sm">Apple Pay</span>
-            <span class="text-[11px] text-white/60 font-normal">| Xác thực FaceID</span>
+            <span class="font-semibold tracking-wide text-sm">Ví điện tử TRIPLA</span>
+            <span class="text-[11px] text-white/60 font-normal">| Xác nhận tức thì</span>
           </button>
         </div>
 
         <div class="glass-1 p-3 rounded-lg space-y-1.5 text-xs">
-          <div class="flex justify-between t-variant"><span>{{ selectedDrawerKey() === 'yacht' ? 'Vé trải nghiệm' : 'Tiền phòng (3 đêm)' }}</span><span>{{ selectedDrawerKey() === 'yacht' ? activeDrawerData().price : '$3,600' }}</span></div>
-          <div *ngIf="selectedDrawerKey() === 'resort'" class="flex justify-between t-variant"><span>Đưa đón trực thăng</span><span class="text-neon-deep font-bold">MIỄN PHÍ</span></div>
+          <div class="flex justify-between t-variant">
+            <span>{{ selectedDrawerKey() === 'resort' ? 'Tiền phòng (' + stayNights + ' đêm)' : 'Chi phí trải nghiệm' }}</span>
+            <span>{{ formatVnd(checkoutTotalVnd) }}</span>
+          </div>
+          <div *ngIf="selectedDrawerKey() === 'resort'" class="flex justify-between t-variant"><span>Dịch vụ concierge</span><span class="text-neon-deep font-bold">MIỄN PHÍ</span></div>
           <div class="border-t hr-hair pt-1.5 flex justify-between font-bold t-ink text-sm">
-            <span>Tổng cộng</span><span class="text-grad font-head font-extrabold">{{ selectedDrawerKey() === 'yacht' ? activeDrawerData().price + ' USD' : '$3,960 USD' }}</span>
+            <span>Tổng cộng</span><span class="text-grad font-head font-extrabold">{{ formatVnd(checkoutTotalVnd) }}</span>
           </div>
         </div>
       </div>
@@ -554,7 +752,7 @@
       <div class="drawer-foot p-4">
         <button class="btn btn-primary btn-lg w-full py-3.5 px-4 neon-state" (click)="processFakePayment()">
           <span class="material-symbols-outlined text-base">lock</span>
-          <span>{{ selectedDrawerKey() === 'yacht' ? 'THANH TOÁN ' + activeDrawerData().price + ' & ĐẶT VÉ' : 'THANH TOÁN $3,960 & GIỮ PHÒNG' }}</span>
+          <span>THANH TOÁN {{ formatVnd(checkoutTotalVnd) }} &amp; ĐẶT CHỖ</span>
         </button>
       </div>
     </div>
@@ -565,7 +763,8 @@
         <span class="material-symbols-outlined text-3xl">check</span>
       </div>
       <h3 class="font-head font-extrabold text-xl t-ink mb-1">Cắm Mốc &amp; Đặt Chỗ Thành Công!</h3>
-      <p class="text-xs t-variant mb-6 max-w-xs">Mã vé: <strong class="text-neon-deep">LUM-88921-VN</strong>. Concierge Luminous sẽ liên hệ trong 15 phút.</p>
+      <p class="text-xs t-variant mb-4 max-w-xs">Mã đặt chỗ: <strong class="text-neon-deep">{{ store.lastBookingCode() || 'Đang đồng bộ...' }}</strong>. Chi tiết đặt chỗ đã được lưu trong Hồ sơ TRIPLA của bạn.</p>
+      <a routerLink="/profile" class="text-xs font-semibold underline text-neon-deep mb-4 inline-block">Xem trong Hồ sơ ↗</a>
       <button class="btn btn-primary w-full py-3" (click)="closeDrawer()">
         Khám phá trải nghiệm khác
       </button>
@@ -583,7 +782,7 @@
       <div class="drawer-head p-5 pb-3 flex items-center justify-between">
         <div class="flex items-center gap-2">
           <span class="material-symbols-outlined text-neon text-xl">forum</span>
-          <h3 class="font-head font-bold text-base t-ink">Bình luận <span class="t-muted font-normal text-xs">(1,420)</span></h3>
+          <h3 class="font-head font-bold text-base t-ink">Bình luận <span class="t-muted font-normal text-xs">({{ commentCountText() }})</span></h3>
         </div>
         <button class="icon-btn" (click)="closeCommentDrawer()" title="Đóng">
           <span class="material-symbols-outlined text-base">close</span>
@@ -605,8 +804,8 @@
 
       <div class="drawer-foot p-4">
         <div class="flex items-center gap-2">
-          <input class="field px-3 py-2" placeholder="Viết bình luận của bạn..." type="text">
-          <button class="icon-btn icon-btn-primary">
+          <input class="field px-3 py-2" placeholder="Viết bình luận của bạn..." type="text" [value]="newCommentText" (input)="newCommentText = $any($event.target).value" (keydown.enter)="submitComment($event)">
+          <button type="button" class="icon-btn icon-btn-primary" (click)="submitComment($event)" aria-label="Gửi bình luận">
             <span class="material-symbols-outlined text-sm">arrow_upward</span>
           </button>
         </div>
@@ -643,17 +842,22 @@
     </div>
 
     <div class="mt-4 space-y-3">
-      <input class="field px-3 py-2.5" placeholder="Tiêu đề video" type="text">
+      <input class="field px-3 py-2.5 w-full" placeholder="Tiêu đề thước phim *" type="text" [(ngModel)]="uploadTitle">
+      <input class="field px-3 py-2.5 w-full" placeholder="Địa điểm (vd: Vịnh Vĩnh Hy, Đà Lạt...)" type="text" [(ngModel)]="uploadLocation">
+      <input class="field px-3 py-2.5 w-full" placeholder="URL video (tùy chọn)" type="url" [(ngModel)]="uploadVideoUrl">
       <div class="field flex items-center justify-between px-3 py-2.5">
         <span class="font-medium t-variant">Đăng bằng tài khoản</span>
         <span class="font-bold text-neon-deep">{{ currentUserName }}</span>
       </div>
-      <textarea class="field px-3 py-2.5" rows="2" placeholder="Mô tả ngắn cho video của bạn..."></textarea>
+      <textarea class="field px-3 py-2.5 w-full" rows="2" placeholder="Mô tả ngắn cho video của bạn..." [(ngModel)]="uploadCaption"></textarea>
     </div>
 
+    <p *ngIf="uploadStatus" class="mt-3 text-xs font-semibold text-neon-deep" role="status">{{ uploadStatus }}</p>
     <div class="mt-5 flex items-center justify-end gap-2">
-      <button class="btn btn-secondary px-4 py-2" (click)="closeUploadModal()">Hủy</button>
-      <button class="btn btn-primary px-4 py-2" (click)="submitVideoUpload()">Đăng ngay</button>
+      <button type="button" class="btn btn-secondary px-4 py-2" (click)="closeUploadModal()">Hủy</button>
+      <button type="button" class="btn btn-primary px-4 py-2" [disabled]="isUploadingReel" (click)="submitVideoUpload()">
+        {{ isUploadingReel ? 'Đang đăng...' : 'Đăng ngay' }}
+      </button>
     </div>
   </div>
 </div>
@@ -679,27 +883,28 @@
     </div>
 
     <div class="grid grid-cols-4 gap-3 py-5">
-      <button class="share-wrap" (click)="copyLinkAction()">
+      <button type="button" class="share-wrap" (click)="copyLinkAction()">
         <div class="share-tile"><span class="material-symbols-outlined text-xl">link</span></div>
         <span class="text-[10px] font-semibold t-variant mt-1.5">{{ copyLabelText() }}</span>
       </button>
-      <button class="share-wrap" (click)="submitVideoUpload()">
+      <button type="button" class="share-wrap" (click)="shareViaChannel('Facebook')">
         <div class="share-tile"><span class="material-symbols-outlined text-xl">facebook</span></div>
         <span class="text-[10px] font-semibold t-variant mt-1.5">Facebook</span>
       </button>
-      <button class="share-wrap" (click)="submitVideoUpload()">
+      <button type="button" class="share-wrap" (click)="shareViaChannel('Messenger')">
         <div class="share-tile"><span class="material-symbols-outlined text-xl">maps_ugc</span></div>
         <span class="text-[10px] font-semibold t-variant mt-1.5">Messenger</span>
       </button>
-      <button class="share-wrap" (click)="submitVideoUpload()">
+      <button type="button" class="share-wrap" (click)="shareViaChannel('Mã QR')">
         <div class="share-tile"><span class="material-symbols-outlined text-xl">qr_code_2</span></div>
         <span class="text-[10px] font-semibold t-variant mt-1.5">Mã QR</span>
       </button>
     </div>
 
+    <p *ngIf="shareNotice" class="mb-3 text-xs font-semibold text-neon-deep" role="status">{{ shareNotice }}</p>
     <div class="field flex items-center gap-2 p-1.5">
       <input class="copy-input truncate" readonly type="text" value="https://tripla.travel/community/amanoi-vinh-hy">
-      <button class="btn btn-primary px-3 py-1.5" (click)="copyLinkAction()">Sao Chép</button>
+      <button type="button" class="btn btn-primary px-3 py-1.5" (click)="copyLinkAction()">Sao Chép</button>
     </div>
   </div>
 </div>
@@ -712,8 +917,17 @@
       <button type="button" class="icon-btn" aria-label="Đóng" (click)="saveTripView = null"><span class="material-symbols-outlined">close</span></button>
     </header>
     <p *ngIf="tripStorageError" role="alert" class="trip-save-message">{{ tripStorageError }}</p>
+    <p *ngIf="saveTripToast" role="status" class="trip-save-message" style="color:#166534;background:#ecfdf5;border-radius:8px;padding:6px 10px;">{{ saveTripToast }}</p>
     <div *ngIf="saveTripView === 'list'" class="trip-save-list">
-      <p *ngIf="!savedTrips.length" class="trip-save-message">Bạn chưa có chuyến đi nào. Tạo chuyến đi mới để lưu địa điểm yêu thích.</p>
+      <button *ngFor="let plan of backendPlans" type="button" class="trip-save-row" [attr.aria-pressed]="isLocationInBackendPlan(plan._id)" (click)="toggleBackendPlanWishlist(plan._id)">
+        <span class="trip-save-cover material-symbols-outlined">cloud_done</span>
+        <span class="trip-save-info">
+          <strong>{{ plan.plan_name }}</strong>
+          <small>{{ plan.start_date | date:'dd/MM' }} – {{ plan.end_date | date:'dd/MM/yyyy' }}</small>
+        </span>
+        <span class="material-symbols-outlined" [style.font-variation-settings]="isLocationInBackendPlan(plan._id) ? '\'FILL\' 1' : '\'FILL\' 0'">{{ isLocationInBackendPlan(plan._id) ? 'bookmark_added' : 'bookmark_add' }}</span>
+      </button>
+      <p *ngIf="!savedTrips.length && !backendPlans.length" class="trip-save-message">Bạn chưa có chuyến đi nào. Tạo chuyến đi mới để lưu địa điểm yêu thích.</p>
       <button *ngFor="let trip of savedTrips" type="button" class="trip-save-row" [attr.aria-pressed]="trip.places.includes(selectedDrawerKey())" (click)="toggleTripPlace(trip.id)">
         <span class="trip-save-cover material-symbols-outlined">luggage</span>
         <span class="trip-save-info"><strong>{{ trip.name }}</strong><small>{{ trip.createdAt | date:'dd/MM/yyyy' }} · {{ trip.places.length }} địa điểm</small></span>
@@ -725,8 +939,41 @@
       <p class="trip-save-message">Lưu các mục yêu thích vào chuyến đi để dễ dàng lên kế hoạch.</p>
       <label for="new-trip-name">Tên chuyến đi</label>
       <input id="new-trip-name" class="field" type="text" maxlength="100" required placeholder="Ví dụ: Đà Lạt 2026" [value]="newTripName" (input)="newTripName = $any($event.target).value">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0;">
+        <div>
+          <label for="new-trip-start" style="font-size:12px;">Từ ngày</label>
+          <input id="new-trip-start" class="field" type="date" [value]="newPlanStartDate" (change)="newPlanStartDate = $any($event.target).value">
+        </div>
+        <div>
+          <label for="new-trip-end" style="font-size:12px;">Đến ngày</label>
+          <input id="new-trip-end" class="field" type="date" [value]="newPlanEndDate" (change)="newPlanEndDate = $any($event.target).value">
+        </div>
+      </div>
       <small>{{ newTripName.length }}/100 ký tự</small>
-      <button type="submit" class="btn btn-primary" [disabled]="!newTripName.trim()">Tạo</button>
+      <button type="submit" class="btn btn-primary" [disabled]="!newTripName.trim()">Tạo &amp; Lưu</button>
+    </form>
+  </section>
+</div>
+
+<div *ngIf="reportModalOpen" class="trip-save-backdrop" (click)="reportModalOpen = false">
+  <section class="trip-save-panel" role="dialog" aria-modal="true" aria-labelledby="report-modal-title" (click)="$event.stopPropagation()">
+    <header class="trip-save-header">
+      <h2 id="report-modal-title">Báo cáo nội dung vi phạm</h2>
+      <button type="button" class="icon-btn" aria-label="Đóng" (click)="reportModalOpen = false"><span class="material-symbols-outlined">close</span></button>
+    </header>
+    <form class="trip-create-form" (submit)="submitContentReport($event)">
+      <label for="report-reason">Lý do báo cáo</label>
+      <select id="report-reason" class="field" [value]="reportReason" (change)="reportReason = $any($event.target).value">
+        <option value="spam">Spam / Quảng cáo rác</option>
+        <option value="inappropriate">Nội dung không phù hợp</option>
+        <option value="false_info">Thông tin sai sự thật</option>
+        <option value="copyright">Vi phạm bản quyền</option>
+        <option value="other">Lý do khác</option>
+      </select>
+      <label for="report-details" style="margin-top:8px;">Chi tiết bổ sung</label>
+      <textarea id="report-details" class="field" rows="3" maxlength="500" placeholder="Mô tả vấn đề bạn gặp phải..." [value]="reportDetails" (input)="reportDetails = $any($event.target).value"></textarea>
+      <p *ngIf="reportStatusMsg" role="status" class="trip-save-message">{{ reportStatusMsg }}</p>
+      <button type="submit" class="btn btn-primary" [disabled]="reportSubmitting">{{ reportSubmitting ? 'Đang gửi...' : 'Gửi báo cáo' }}</button>
     </form>
   </section>
 </div>

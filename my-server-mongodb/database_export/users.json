@@ -1,0 +1,375 @@
+[
+  {
+    "_id": "673000000000000000000110",
+    "code": "a1",
+    "full_name": "Trần Duy Thanh",
+    "fullName": "Trần Duy Thanh",
+    "email": "admin@tripla.com",
+    "password": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+    "phone_number": "0909000110",
+    "avatar": "http://localhost:3000/data/profiles/admin_images/Tr%E1%BA%A7n%20Duy%20Thanh.png",
+    "role": "admin",
+    "handle": "@a1",
+    "bio": "Tài khoản quản trị chính thức của hệ thống Tripla.",
+    "location": "Việt Nam",
+    "coverImage": "http://localhost:3000/data/profiles/admin_images/Tr%E1%BA%A7n%20Duy%20Thanh.png",
+    "level": "Hạng Huyền Thoại",
+    "membershipTier": "Hạng Huyền Thoại",
+    "points": 99999,
+    "followers": 999,
+    "following": 80,
+    "socials": {
+      "facebook": "TriplaOfficial"
+    },
+    "interests": [
+      "Tripla System",
+      "Khách hàng",
+      "Dịch vụ"
+    ],
+    "badges": [
+      {
+        "icon": "👑",
+        "label": "Quản Trị Viên",
+        "_id": "6af67f9df19f299713ce2c71"
+      }
+    ],
+    "created_at": "2026-01-20T08:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000111",
+    "code": "u1",
+    "full_name": "Nguyễn Hoàng Vy",
+    "fullName": "Nguyễn Hoàng Vy",
+    "email": "vynhk24411e@st.uel.edu.vn",
+    "password": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+    "phone_number": "0909111001",
+    "avatar": "http://localhost:3000/data/profiles/user_images/Nguy%E1%BB%85n%20Ho%C3%A0ng%20Vy.png",
+    "role": "tourist",
+    "handle": "@hvy0209",
+    "bio": "Content Creator đam mê xê dịch. Đi để học hỏi và chia sẻ 🌍✈️",
+    "location": "Hà Nội, Việt Nam",
+    "coverImage": "http://localhost:3000/data/profiles/user_images/Nguy%E1%BB%85n%20Ho%C3%A0ng%20Vy.png",
+    "level": "Hạng Vàng",
+    "membershipTier": "Hạng Vàng",
+    "points": 3450,
+    "followers": 1205,
+    "following": 45,
+    "socials": {
+      "instagram": "@hvy0209",
+      "tiktok": "@hvy0209"
+    },
+    "interests": [
+      "Nhiếp ảnh",
+      "Cắm trại",
+      "Khám phá"
+    ],
+    "badges": [
+      {
+        "icon": "📸",
+        "label": "Nhiếp ảnh gia",
+        "_id": "6af67f9df19f299713ce2c73"
+      },
+      {
+        "icon": "🌟",
+        "label": "Reviewer Uy tín",
+        "_id": "6af67f9df19f299713ce2c74"
+      }
+    ],
+    "created_at": "2026-01-20T08:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000112",
+    "code": "u2",
+    "full_name": "Ngô Minh Thùy",
+    "fullName": "Ngô Minh Thùy",
+    "email": "thuynmk24411e@st.uel.edu.vn",
+    "password": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+    "phone_number": "0909111002",
+    "avatar": "http://localhost:3000/data/profiles/user_images/Ng%C3%B4%20Minh%20Th%C3%B9y.jpg",
+    "role": "tourist",
+    "handle": "@_nmthuyyy426_",
+    "bio": "Yêu thích nhiếp ảnh và khám phá những vùng đất mới 🏞️📸",
+    "location": "Đà Nẵng, Việt Nam",
+    "coverImage": "http://localhost:3000/data/profiles/user_images/Ng%C3%B4%20Minh%20Th%C3%B9y.jpg",
+    "level": "Hạng Kim Cương",
+    "membershipTier": "Hạng Kim Cương",
+    "points": 900,
+    "followers": 40,
+    "following": 500,
+    "socials": {
+      "youtube": "mthuyvlog",
+      "instagram": "@_nmthuyyy426_"
+    },
+    "interests": [
+      "Resort",
+      "Biển",
+      "Vlog"
+    ],
+    "badges": [
+      {
+        "icon": "🎥",
+        "label": "Top Creator",
+        "_id": "6af67f9df19f299713ce2c76"
+      },
+      {
+        "icon": "💎",
+        "label": "Thành viên VIP",
+        "_id": "6af67f9df19f299713ce2c77"
+      }
+    ],
+    "created_at": "2026-01-20T08:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000113",
+    "code": "u3",
+    "full_name": "Trần Thị Nhật Minh",
+    "fullName": "Trần Thị Nhật Minh",
+    "email": "minhttnk24411e@st.uel.edu.vn",
+    "password": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+    "phone_number": "0909111003",
+    "avatar": "http://localhost:3000/data/profiles/user_images/Tr%E1%BA%A7n%20Th%E1%BB%8B%20Nh%E1%BA%ADt%20Minh.jpg",
+    "role": "tourist",
+    "handle": "@embe_foodie",
+    "bio": "Thích đi du lịch nghỉ dưỡng và ăn uống.",
+    "location": "TP HCM, Việt Nam",
+    "coverImage": "http://localhost:3000/data/profiles/user_images/Tr%E1%BA%A7n%20Th%E1%BB%8B%20Nh%E1%BA%ADt%20Minh.jpg",
+    "level": "Hạng Bạc",
+    "membershipTier": "Hạng Bạc",
+    "points": 1200,
+    "followers": 340,
+    "following": 250,
+    "socials": {
+      "instagram": "@embe_foodie"
+    },
+    "interests": [
+      "Food Tour",
+      "Nghỉ dưỡng"
+    ],
+    "badges": [
+      {
+        "icon": "🍔",
+        "label": "Foodie Tâm Huyết",
+        "_id": "6af67f9df19f299713ce2c79"
+      }
+    ],
+    "created_at": "2026-01-20T08:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000114",
+    "code": "u4",
+    "full_name": "Võ Lê Quỳnh Nga",
+    "fullName": "Võ Lê Quỳnh Nga",
+    "email": "ngavlqk24411e@st.uel.edu.vn",
+    "password": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+    "phone_number": "0909111004",
+    "avatar": "http://localhost:3000/data/profiles/user_images/V%C3%B5%20L%C3%AA%20Qu%E1%BB%B3nh%20Nga.jpg",
+    "role": "tourist",
+    "handle": "@u4",
+    "bio": "Đại lý du lịch, chuyên review các tour tuyến độc lạ.",
+    "location": "Nha Trang, Việt Nam",
+    "coverImage": "http://localhost:3000/data/profiles/user_images/V%C3%B5%20L%C3%AA%20Qu%E1%BB%B3nh%20Nga.jpg",
+    "level": "Hạng Vàng",
+    "membershipTier": "Hạng Vàng",
+    "points": 15000,
+    "followers": 8900,
+    "following": 15,
+    "socials": {
+      "facebook": "ThankTrip Agency"
+    },
+    "interests": [
+      "Tour Du Lịch",
+      "Cảnh quan thiên nhiên"
+    ],
+    "badges": [
+      {
+        "icon": "🏆",
+        "label": "Đối tác tin cậy",
+        "_id": "6af67f9df19f299713ce2c7b"
+      }
+    ],
+    "created_at": "2026-01-20T08:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000101",
+    "code": "user_provider_aman",
+    "full_name": "Amanoi & Six Senses Luxury Hospitality",
+    "fullName": "Amanoi & Six Senses Luxury Hospitality",
+    "email": "partner.amanoi@tripla.vn",
+    "password": "9b2c10630357580c811cc0ffa701ac91901c9075b00dd0e0c9cb240b7b27f898",
+    "phone_number": "0901888999",
+    "avatar": "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80",
+    "role": "provider",
+    "handle": "@amanoi_official",
+    "bio": "Đối tác cung cấp khu nghỉ dưỡng 5 sao & biệt thự biển hàng đầu Việt Nam.",
+    "location": "Ninh Thuận, Việt Nam",
+    "coverImage": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80",
+    "level": "Đối Tác Kim Cương",
+    "membershipTier": "PARTNER DIAMOND",
+    "points": 95000,
+    "followers": 15400,
+    "following": 12,
+    "interests": [
+      "Luxury Resort",
+      "Wellness",
+      "Private Villa"
+    ],
+    "badges": [
+      {
+        "icon": "🏨",
+        "label": "Đối tác Khách sạn 5 Sao",
+        "_id": "6af67f9df19f299713ce2c7d"
+      }
+    ],
+    "created_at": "2026-01-10T08:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000102",
+    "code": "user_provider_sun_marriott",
+    "full_name": "Sun & Regent Luxury Resorts Vietnam",
+    "fullName": "Sun & Regent Luxury Resorts Vietnam",
+    "email": "partner.regent@tripla.vn",
+    "password": "9b2c10630357580c811cc0ffa701ac91901c9075b00dd0e0c9cb240b7b27f898",
+    "phone_number": "0902777888",
+    "avatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&q=80",
+    "role": "provider",
+    "handle": "@regent_hospitality",
+    "bio": "Hệ thống khách sạn, cáp treo và du thuyền cao cấp.",
+    "location": "Phú Quốc & Đà Nẵng",
+    "coverImage": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
+    "level": "Đối Tác Kim Cương",
+    "membershipTier": "PARTNER DIAMOND",
+    "points": 88000,
+    "followers": 12800,
+    "following": 18,
+    "interests": [
+      "Resort",
+      "Yacht",
+      "Fine Dining"
+    ],
+    "badges": [
+      {
+        "icon": "⛵",
+        "label": "Đối tác Du thuyền & Resort",
+        "_id": "6af67f9df19f299713ce2c7f"
+      }
+    ],
+    "created_at": "2026-01-12T08:30:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000103",
+    "code": "user_victoria_chen",
+    "full_name": "Victoria Chen",
+    "fullName": "Victoria Chen",
+    "email": "victoria.chen@tripla.vn",
+    "password": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+    "phone_number": "0909123456",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+    "role": "tourist",
+    "handle": "@victoria_chen_vip",
+    "bio": "Luxury Travel Curator & Visual Storyteller.",
+    "location": "TP. Hồ Chí Minh, Việt Nam",
+    "coverImage": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    "level": "Hạng Kim Cương",
+    "membershipTier": "PLATINUM VIP",
+    "points": 42500,
+    "followers": 28400,
+    "following": 145,
+    "interests": [
+      "Luxury Stay",
+      "Fine Dining",
+      "Yachting"
+    ],
+    "badges": [
+      {
+        "icon": "💎",
+        "label": "VIP Curator",
+        "_id": "6af67f9df19f299713ce2c81"
+      }
+    ],
+    "created_at": "2026-02-01T09:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000104",
+    "code": "user_marcus_vu",
+    "full_name": "Marcus Vũ • Bespoke Explorer",
+    "fullName": "Marcus Vũ • Bespoke Explorer",
+    "email": "marcus.vu@tripla.vn",
+    "password": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+    "phone_number": "0908654321",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+    "role": "tourist",
+    "handle": "@marcus_bespoke",
+    "bio": "Khám phá những cung đường biển đảo và ẩm thực bản địa Việt Nam.",
+    "location": "Đà Nẵng, Việt Nam",
+    "coverImage": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    "level": "Hạng Bạch Kim",
+    "membershipTier": "PLATINUM VIP",
+    "points": 31800,
+    "followers": 19200,
+    "following": 210,
+    "interests": [
+      "Nhiếp ảnh",
+      "Biển đảo",
+      "Trekking"
+    ],
+    "badges": [
+      {
+        "icon": "🎥",
+        "label": "Top Video Creator",
+        "_id": "6af67f9df19f299713ce2c83"
+      }
+    ],
+    "created_at": "2026-02-05T10:15:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000105",
+    "code": "user_khanh_linh",
+    "full_name": "Nguyễn Khánh Linh",
+    "fullName": "Nguyễn Khánh Linh",
+    "email": "khanhlinh.nguyen@tripla.vn",
+    "password": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+    "phone_number": "0912345678",
+    "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80",
+    "role": "tourist",
+    "handle": "@khanhlinh_wander",
+    "level": "Hạng Vàng",
+    "membershipTier": "GOLD VIP",
+    "points": 18500,
+    "followers": 0,
+    "following": 0,
+    "interests": [],
+    "created_at": "2026-02-15T14:00:00.000Z",
+    "badges": [],
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000000106",
+    "code": "user_admin_tripla",
+    "full_name": "Ban Quản Trị Hệ Thống TRIPLA",
+    "fullName": "Ban Quản Trị Hệ Thống TRIPLA",
+    "email": "thanh.tran@tripla.vn",
+    "password": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+    "phone_number": "0900000111",
+    "avatar": "http://localhost:3000/data/profiles/admin_images/Tr%E1%BA%A7n%20Duy%20Thanh.png",
+    "role": "admin",
+    "handle": "@tripla_admin",
+    "level": "Hạng Huyền Thoại",
+    "membershipTier": "SYSTEM ADMIN",
+    "points": 99999,
+    "followers": 0,
+    "following": 0,
+    "interests": [],
+    "created_at": "2026-01-01T00:00:00.000Z",
+    "badges": [],
+    "__v": 0
+  }
+]

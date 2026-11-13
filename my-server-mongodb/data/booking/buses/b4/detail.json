@@ -1,0 +1,13 @@
+{
+  "id": "b4",
+  "operator": "Sao Việt",
+  "busNumber": "29B-192.84",
+  "origin": "Hà Nội",
+  "destination": "Sa Pa",
+  "departureTime": "07:00",
+  "arrivalTime": "13:00",
+  "price": 320000,
+  "classType": "Giường nằm 40 chỗ",
+  "seatsAvailable": 35,
+  "rating": 4.5
+}

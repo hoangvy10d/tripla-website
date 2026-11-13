@@ -8,7 +8,7 @@
         ><span> / </span><span>{{ place.city }}</span
         ><span> / </span><strong>{{ place.name }}</strong>
       </nav>
-      <p class="demo-note">
+      <p *ngIf="!isMongoConnected()" class="demo-note">
         BẢN XEM TRƯỚC · Ảnh, giá, đánh giá và gói vé đều là minh họa. Chưa xác nhận lịch hoạt động
         hay vé trống.
       </p>
@@ -135,7 +135,8 @@
                 <span class="eyebrow">LÊN LỊCH CHO MỘT NGÀY ĐÁNG NHỚ</span>
                 <h2>Chọn trải nghiệm của bạn</h2>
               </div>
-              <span class="sample-tag">Gói vé minh họa</span>
+              <span *ngIf="!isMongoConnected()" class="sample-tag">Gói vé minh họa</span>
+              <span *ngIf="isMongoConnected()" class="sample-tag">Xác nhận vé QR tức thì</span>
             </div>
             <div class="date-options" role="group" aria-label="Ngày trải nghiệm">
               <button
@@ -155,8 +156,11 @@
                   [(ngModel)]="visitDate"
               /></label>
             </div>
-            <p class="availability-note">
+            <p *ngIf="!isMongoConnected()" class="availability-note">
               Ngày chọn dùng để xem trước. Giá và suất trống chưa được nhà cung cấp xác nhận.
+            </p>
+            <p *ngIf="isMongoConnected()" class="availability-note">
+              Đang mở lịch đặt vé cho ngày {{ visitDate | date: 'dd/MM/yyyy' }} · Miễn phí đổi lịch trước 24 giờ.
             </p>
             <div class="ticket-layout">
               <nav class="ticket-groups" aria-label="Nhóm vé">
@@ -173,7 +177,7 @@
               </nav>
               <div class="ticket-list">
                 <article *ngFor="let ticket of tickets()" class="ticket-card">
-                  <header>{{ ticket.group }}<span>TRIPLA PICKS · MẪU</span></header>
+                  <header>{{ ticket.group }}<span>{{ isMongoConnected() ? 'TRIPLA VERIFIED' : 'TRIPLA PICKS · MẪU' }}</span></header>
                   <div class="ticket-body">
                     <div>
                       <h3>{{ ticket.name }}</h3>
@@ -187,7 +191,7 @@
                       </details>
                     </div>
                     <div class="ticket-price">
-                      <small>Giá minh họa / người</small
+                      <small>{{ isMongoConnected() ? 'Giá / người' : 'Giá minh họa / người' }}</small
                       ><strong>{{ formatPrice(ticket.price, ticket.currency) }}</strong
                       ><button
                         type="button"
@@ -261,15 +265,33 @@
           <button type="button" aria-label="Đóng gói vé" (click)="ticketDialog.close()">×</button>
         </header>
         <ng-container *ngIf="selectedTicket() as ticket"
-          ><span class="sample-tag">Chỉ xem trước · Không phải xác nhận đặt vé</span>
+          ><span *ngIf="!isMongoConnected()" class="sample-tag">Chỉ xem trước · Không phải xác nhận đặt vé</span>
+          <span *ngIf="isMongoConnected()" class="sample-tag">Đặt lịch trực tuyến · Xác nhận tức thì</span>
           <h3>{{ ticket.name }}</h3>
-          <p>{{ place.name }} · {{ visitDate | date: 'dd/MM/yyyy' }}</p>
-          <label class="ticket-quantity">Số vé <input type="number" min="1" max="20" [(ngModel)]="ticketQuantity" aria-label="Số lượng vé"></label><p *ngIf="checkoutError()" role="alert">{{ checkoutError() }}</p><strong class="dialog-price">{{ formatPrice(ticket.price, ticket.currency) }}</strong>
+          <p>{{ place.name }} · Ngày {{ visitDate | date: 'dd/MM/yyyy' }}</p>
+          <label class="ticket-quantity"
+            >Ngày tham gia
+            <input
+              type="date"
+              [min]="today"
+              [(ngModel)]="visitDate"
+              aria-label="Ngày tham gia hoạt động"
+          /></label>
+          <label class="ticket-quantity"
+            >Khung giờ
+            <select [(ngModel)]="visitTimeSlot" aria-label="Khung giờ tham gia">
+              <option *ngFor="let slot of timeSlots" [value]="slot">{{ slot }}</option>
+            </select>
+          </label>
+          <label class="ticket-quantity">Số vé <input type="number" min="1" max="20" [(ngModel)]="ticketQuantity" aria-label="Số lượng vé"></label><p *ngIf="checkoutError()" role="alert">{{ checkoutError() }}</p><strong class="dialog-price">{{ formatPrice(ticket.price * ticketQuantity, ticket.currency) }}</strong>
           <ul>
             <li *ngFor="let item of ticket.includes">{{ item }}</li>
           </ul>
-          <p>
+          <p *ngIf="!isMongoConnected()">
             Chưa kết nối lịch vé, giá thực tế và thanh toán. Gói này chưa được đặt hoặc giữ chỗ.
+          </p>
+          <p *ngIf="isMongoConnected()">
+            Khung giờ đã chọn: <strong>{{ visitTimeSlot }}</strong> · Tổng cộng {{ ticketQuantity }} vé.
           </p>
           <button type="button" class="primary" (click)="startCheckout()">
             Điền thông tin đặt vé
@@ -284,3 +306,4 @@
     </section>
   </main>
 </div>
+<app-site-footer variant="compact" />

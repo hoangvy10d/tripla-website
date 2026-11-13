@@ -1,0 +1,16 @@
+{
+  "id": "10",
+  "title": "Saigon Skydeck",
+  "city": "Hồ Chí Minh",
+  "lat": 10.7716,
+  "lng": 106.7044,
+  "category": "attraction",
+  "description": "Enjoy a 360-degree bird's-eye view of Ho Chi Minh City from the 49th floor of the iconic Bitexco Financial Tower.",
+  "images": [
+    "https://images.unsplash.com/photo-1509060464153-4466739f78d0?w=800&auto=format&fit=crop&q=60"
+  ],
+  "rating": 4.6,
+  "reviewsCount": 850,
+  "ticketPrice": 200000,
+  "openingHours": "09:30 - 21:30"
+}

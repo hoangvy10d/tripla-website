@@ -18,11 +18,13 @@ import { BusSearchBar } from '../../components/bus-search-bar/bus-search-bar';
 import { BusFilterSidebar } from '../../components/bus-filter-sidebar/bus-filter-sidebar';
 import { BusCard } from '../../components/bus-card/bus-card';
 import { ActivityNavigation } from '../../../activity-search/components/activity-navigation/activity-navigation';
+import { SiteFooterComponent } from '../../../shared/components/site-footer/site-footer';
 import { localDateString } from '../../../hotel-search/models/hotel-search-criteria.model';
+import { injectLiveHttp } from '../../../services/live-http';
 @Component({
   selector: 'app-bus-search-results',
   standalone: true,
-  imports: [CommonModule, BusSearchBar, BusFilterSidebar, BusCard, ActivityNavigation],
+  imports: [CommonModule, BusSearchBar, BusFilterSidebar, BusCard, ActivityNavigation, SiteFooterComponent],
   templateUrl: './bus-search-results.html',
   styleUrl: './bus-search-results.css',
 })
@@ -30,6 +32,7 @@ export class BusSearchResults {
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
   private readonly source = inject(BusSearchService);
+  readonly isMongoConnected = signal(!!injectLiveHttp());
   readonly state = signal<BusSearchState | null>(null);
   readonly rawTrips = signal<BusTrip[]>([]);
   readonly loading = signal(false);
@@ -138,7 +141,7 @@ export class BusSearchResults {
     if (state.leg === 'outbound' && state.criteria.returnDate) this.changeLeg('inbound');
   }
   openDetails(trip: BusTrip): void {
-    void this.router.navigate(['/buses', trip.id], { queryParams: busSearchParams(this.state()!) });
+    void this.router.navigate(['/buses', trip.slug || trip.id], { queryParams: busSearchParams(this.state()!) });
   }
   price(value: number): string {
     return new Intl.NumberFormat('vi-VN', {

@@ -1,0 +1,135 @@
+[
+  {
+    "_id": "cmt_01",
+    "reelId": "reel_01",
+    "reelShortId": "v1",
+    "user": "Hoàng Bách",
+    "time": "2 giờ trước",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80",
+    "text": "Góc quay lúc mặt trời mọc ở Amanoi đỉnh thật sự! Cho mình hỏi chi phí thuê Catamaran riêng tính theo giờ hay theo chuyến vậy?",
+    "likes": 48,
+    "createdAt": "2026-11-10T05:00:00.000Z"
+  },
+  {
+    "_id": "cmt_02",
+    "reelId": "reel_01",
+    "reelShortId": "v1",
+    "user": "Khánh Vy",
+    "time": "5 giờ trước",
+    "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80",
+    "text": "Mình vừa đặt Ocean Pool Villa qua nút Hotspot trên TRIPLA tuần trước, được tặng thêm buổi trà chiều vách đá siêu xịn 😍",
+    "likes": 19,
+    "createdAt": "2026-11-10T02:00:00.000Z"
+  },
+  {
+    "_id": "cmt_03",
+    "reelId": "reel_01",
+    "reelShortId": "v1",
+    "user": "David Nguyễn",
+    "time": "1 ngày trước",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80",
+    "text": "Nước biển Vĩnh Hy tháng này trong vắt như pha lê luôn, đáng đồng tiền bát gạo.",
+    "likes": 12,
+    "createdAt": "2026-11-09T07:00:00.000Z"
+  },
+  {
+    "_id": "cmt_04",
+    "reelId": "reel_02",
+    "reelShortId": "v2",
+    "user": "Bảo Trân",
+    "time": "1 giờ trước",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80",
+    "text": "Du thuyền Serenity của Regent Phú Quốc ngoài đời đẹp hơn trong hình gấp 10 lần! Champagne uống thoải mái luôn 🥂",
+    "likes": 63,
+    "createdAt": "2026-11-10T06:00:00.000Z"
+  },
+  {
+    "_id": "cmt_05",
+    "reelId": "reel_02",
+    "reelShortId": "v2",
+    "user": "Minh Quân",
+    "time": "3 giờ trước",
+    "avatar": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=100&q=80",
+    "text": "Bấm vào pin Du Thuyền ở góc trái video là ra đúng gói hoàng hôn 19,5 triệu luôn, tiện thật.",
+    "likes": 27,
+    "createdAt": "2026-11-10T04:00:00.000Z"
+  },
+  {
+    "_id": "cmt_06",
+    "reelId": "reel_03",
+    "reelShortId": "v3",
+    "user": "Thùy Tiên",
+    "time": "45 phút trước",
+    "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=100&q=80",
+    "text": "Đà Lạt mùa sương mù mà ở Ana Mandara có hồ bơi nước ấm giữa đồi thông thế này thì hết nước chấm 🌲☕",
+    "likes": 84,
+    "createdAt": "2026-11-10T06:15:00.000Z"
+  },
+  {
+    "_id": "cmt_07",
+    "reelId": "reel_04",
+    "reelShortId": "v4",
+    "user": "Tuấn Kiệt",
+    "time": "2 giờ trước",
+    "avatar": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=100&q=80",
+    "text": "Emperor Cruises có quản gia riêng từng phòng chu đáo cực kỳ, hải trình Bái Tử Long vắng tàu khác nên rất yên tĩnh.",
+    "likes": 52,
+    "createdAt": "2026-11-10T05:10:00.000Z"
+  },
+  {
+    "_id": "cmt_08",
+    "reelId": "reel_05",
+    "reelShortId": "v5",
+    "user": "Ngọc Hân",
+    "time": "4 giờ trước",
+    "avatar": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=100&q=80",
+    "text": "Bữa tối trong hang đá tại Six Senses Ninh Vân Bay phải đặt trước ít nhất 1 tuần nha mọi người!",
+    "likes": 39,
+    "createdAt": "2026-11-10T03:00:00.000Z"
+  },
+  {
+    "_id": "cmt_09",
+    "reelId": "reel_06",
+    "reelShortId": "v6",
+    "user": "Lê Hiếu",
+    "time": "6 giờ trước",
+    "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80",
+    "text": "Từ InterContinental Đà Nẵng đi xe riêng vào phố cổ Hội An mất tầm 40 phút thôi, kết hợp cả hai quá hợp lý.",
+    "likes": 21,
+    "createdAt": "2026-11-10T01:00:00.000Z"
+  },
+  {
+    "_id": "cmt_10",
+    "reelId": "reel_07",
+    "reelShortId": "v7",
+    "user": "Phương Linh",
+    "time": "30 phút trước",
+    "avatar": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=100&q=80",
+    "text": "Dinh thự Pink Pearl màu hồng phấn lên hình góc nào cũng như tạp chí Vogue Pháp luôn 🦩✨",
+    "likes": 76,
+    "createdAt": "2026-11-10T06:30:00.000Z"
+  },
+  {
+    "_id": "cmt_11",
+    "reelId": "reel_08",
+    "reelShortId": "v8",
+    "user": "Quốc Anh",
+    "time": "3 giờ trước",
+    "avatar": "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=100&q=80",
+    "text": "Hồ bơi nước nóng Le Grand Bassin ở Hotel de la Coupole Sapa bơi mùa đông ấm cực kỳ, kiến trúc đỉnh cao!",
+    "likes": 44,
+    "createdAt": "2026-11-10T03:45:00.000Z"
+  },
+  {
+    "_id": "cmt_12",
+    "reelId": "reel_09",
+    "reelShortId": "v9",
+    "user": "Hà My",
+    "time": "1 giờ trước",
+    "avatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=100&q=80",
+    "text": "Zannier Bãi San Hô đúng chuẩn Quiet Luxury, bãi biển riêng dài cả cây số không một bóng người lạ.",
+    "likes": 91,
+    "createdAt": "2026-11-10T05:50:00.000Z"
+  }
+]
+

@@ -1,0 +1,16 @@
+{
+  "id": "6",
+  "title": "Thia Go Restaurant",
+  "city": "Da Nang",
+  "lat": 16.0605,
+  "lng": 108.2421,
+  "category": "restaurant",
+  "description": "Outstanding Central Vietnamese food including Mi Quang, Banh Xeo, and lemongrass pork. A must-visit for food lovers.",
+  "images": [
+    "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&auto=format&fit=crop&q=60"
+  ],
+  "rating": 4.7,
+  "reviewsCount": 610,
+  "ticketPrice": 0,
+  "openingHours": "10:00 - 22:00"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "5",
+  "title": "Reply 1988 Cafe",
+  "city": "Da Nang",
+  "lat": 16.0592,
+  "lng": 108.2223,
+  "category": "cafe",
+  "description": "A cozy, retro-themed cafe inspired by the Korean drama Reply 1988. Famous for its amazing egg coffee and rustic interior design.",
+  "images": [
+    "https://images.unsplash.com/photo-1498804103079-a6351b050096?w=800&auto=format&fit=crop&q=60"
+  ],
+  "rating": 4.7,
+  "reviewsCount": 420,
+  "ticketPrice": 0,
+  "openingHours": "07:00 - 23:00"
+}

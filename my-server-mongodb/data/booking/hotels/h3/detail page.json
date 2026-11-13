@@ -1,0 +1,111 @@
+{
+    "hotel_info": {
+        "name_vi": "An Boutique Da Nang Hotel",
+        "name_en": "An Boutique Da Nang Hotel",
+        "stars": 4.0,
+        "floors": 5,
+        "total_rooms": 7,
+        "address": "6 Lê Văn Quý, Phường An Hải Bắc, Quận Sơn Trà, Thành phố Đà Lạt / Đà Nẵng, Việt Nam",
+        "rating_score": "9.2/10",
+        "rating_text": "Tuyệt vời",
+        "destination_tags": ["Khách sạn ở Đà Nẵng", "Khách sạn ở Sơn Trà", "Khách sạn ở An Hải Bắc"]
+    },
+    "location_attractions": [
+        {
+            "name": "Biển Phạm Văn Đồng / Biển Mỹ Khê",
+            "distance_m": 880,
+            "note": "Khoảng 760m - 939m tùy tuyến đường đi bộ"
+        },
+        {
+            "name": "Cầu Sông Hàn",
+            "distance_m": 1550,
+            "note": "Khoảng 1.6 km"
+        },
+        {
+            "name": "Bến du thuyền DHC Marina",
+            "distance_m": 1400
+        },
+        {
+            "name": "Cầu Rồng",
+            "distance_m": 1720,
+            "note": "Khoảng 1.73 km"
+        },
+        {
+            "name": "Nhà thờ Chính Tòa Đà Nẵng",
+            "distance_m": 1770
+        },
+        {
+            "name": "Chợ Đêm Sơn Trà",
+            "distance_m": 1500
+        },
+        {
+            "name": "Four Points by Sheraton Danang",
+            "distance_m": 946
+        },
+        {
+            "name": "Trường Đại học Sư Phạm Kỹ thuật - Đại học Đà Nẵng",
+            "distance_m": 2760
+        }
+    ],
+    "hotel_amenities": {
+        "general": [
+            "WiFi miễn phí phủ khắp khu vực chung",
+            "Quầy tiếp tân phục vụ 24 giờ",
+            "Khu vực an ninh tốt",
+            "Thiết kế phong cách Boutique",
+            "Chỗ cất/giữ hành lý"
+        ],
+        "relaxation_dining": [
+            "Hồ bơi ngoài trời phục vụ khách lưu trú",
+            "Nhà hàng ăn uống trong khuôn viên"
+        ],
+        "parking": [
+            "Có cung cấp chỗ đậu xe tiện lợi"
+        ],
+        "room_features": [
+            "Thiết kế dạng căn hộ / Studio tích hợp",
+            "Có khu vực bếp nhỏ (Kitchen) tiện lợi",
+            "Không gian phòng gia đình (Family room)"
+        ]
+    },
+    "room_types": [
+        {
+            "id": "ROOM_AN_001",
+            "name_vi": "Phòng Double Studio",
+            "name_en": "Double Studio Room",
+            "bed_type": "1 giường đôi lớn",
+            "capacity": "2 người lớn",
+            "features": ["Phòng ngủ kết hợp góc làm việc và tiện nghi cơ bản"]
+        },
+        {
+            "id": "ROOM_AN_002",
+            "name_vi": "Phòng Double Suite",
+            "name_en": "Double Suite",
+            "bed_type": "1 giường đôi cực lớn",
+            "capacity": "2 người lớn",
+            "features": ["Không gian rộng rãi hơn, thiết kế tinh tế dạng Suite cao cấp"]
+        },
+        {
+            "id": "ROOM_AN_003",
+            "name_vi": "Căn Hộ Tầng Trệt",
+            "name_en": "Apartment - Ground Floor",
+            "bed_type": "Giường đôi lớn",
+            "capacity": "2 - 3 người",
+            "features": ["Nằm ở tầng trệt, lối đi thuận tiện, không gian căn hộ sinh hoạt thoải mái"]
+        },
+        {
+            "id": "ROOM_AN_004",
+            "name_vi": "Căn Hộ Cấp Cao Executive",
+            "name_en": "Executive Apartment",
+            "bed_type": "Giường cỡ lớn cao cấp",
+            "capacity": "2 người lớn + 1 trẻ em",
+            "features": ["Hạng căn hộ cao cấp nhất, diện tích rộng, đầy đủ tiện nghi bếp và phòng khách riêng biệt"]
+        }
+    ],
+    "policies": {
+        "check_in": "Từ 14:00",
+        "check_out": "Trước 12:00",
+        "front_desk": "Hoạt động 24/7",
+        "stay_rules": "Tuân thủ quy định chung của khách sạn về giữ gìn vệ sinh và an ninh khu vực"
+    }
+}

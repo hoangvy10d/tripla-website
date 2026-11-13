@@ -1,17 +1,19 @@
-import { Component, DestroyRef, ElementRef, inject } from '@angular/core';
+import { Component, DestroyRef, ElementRef, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AmbientAudioService } from '../../services/ambient-audio.service';
 import { ParallaxService } from '../../services/parallax.service';
+import { SiteHeaderComponent } from '../../../../shared/components/site-header/site-header';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, SiteHeaderComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
   readonly audio = inject(AmbientAudioService);
+  readonly isScrolled = signal(false);
 
   readonly nav = [
     { label: 'Câu Chuyện', href: '#top', anchor: 'top' },
@@ -39,9 +41,12 @@ export class HeaderComponent {
   }
 
   constructor() {
-    // Thu gọn header khi cuộn (đổi class trực tiếp, không kích hoạt change detection)
     const host = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
-    const off = inject(ParallaxService).subscribe((s) => host.classList.toggle('scrolled', s.scroll > 40));
+    const off = inject(ParallaxService).subscribe((s) => {
+      const scrolled = s.scroll > 40;
+      this.isScrolled.set(scrolled);
+      host.classList.toggle('scrolled', scrolled);
+    });
     inject(DestroyRef).onDestroy(off);
     inject(DestroyRef).onDestroy(() => this.audio.stop());
   }

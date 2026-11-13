@@ -1,0 +1,13 @@
+{
+  "id": "b1",
+  "operator": "Phương Trang (FUTA)",
+  "busNumber": "51B-281.93",
+  "origin": "Sài Gòn",
+  "destination": "Đà Lạt",
+  "departureTime": "08:00",
+  "arrivalTime": "15:00",
+  "price": 300000,
+  "classType": "Giường nằm 40 chỗ",
+  "seatsAvailable": 38,
+  "rating": 4.7
+}

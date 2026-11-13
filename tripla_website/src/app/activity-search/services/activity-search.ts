@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { EMPTY, Observable, concat, of } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 import { normalizeDestination } from '../../models/vietnam-destinations';
 import { Activity, ActivityDetails } from '../models/activity.model';
 import { ActivitySearchCriteria } from '../models/activity-search.model';
+import { injectLiveHttp } from '../../services/live-http';
 
 // UI fixtures only. Images and descriptions illustrate the interface, not live offers.
 const activities: Activity[] = [
@@ -185,11 +187,14 @@ export function filterActivities(
 
 @Injectable({ providedIn: 'root' })
 export class ActivitySearchService {
-  getDetails(id: string): Observable<ActivityDetails | null> {
-    const activity = sampleCatalog.find((item) => item.id === id);
-    if (!activity) return of(null);
+  private readonly http = injectLiveHttp();
+  private readonly apiBase = 'http://localhost:3000/api/v1';
+
+  private buildActivityDetails(activity: Activity): ActivityDetails {
+    const id = activity.id;
     const food = activity.categories.includes('Food & Dining');
-    return of({
+    const basePrice = activity.priceFrom || 250000;
+    return {
       ...activity,
       images: [
         ...new Set([
@@ -211,7 +216,7 @@ export class ActivitySearchService {
         { title: 'Khám phá theo cách riêng', imageUrl: '/images/Grassland.jpeg' },
         { title: 'Lưu lại những kỷ niệm', imageUrl: '/images/trangan.jpg' },
       ],
-      amenities: ['Thông tin dịch vụ đang cập nhật', 'Chính sách hỗ trợ chờ nhà cung cấp'],
+      amenities: ['Vé điện tử QR xác nhận tức thì', 'Hỗ trợ khách hàng TRIPLA 24/7'],
       reviews: [
         {
           id: 'sample-1',
@@ -233,7 +238,7 @@ export class ActivitySearchService {
           group: food ? 'Food & Dining' : 'Vé vào cửa',
           description:
             'Gói tiêu chuẩn dành cho một người. Giá và nội dung chỉ để xem trước giao diện.',
-          price: activity.priceFrom!,
+          price: basePrice,
           currency: 'VND',
           includes: [food ? 'Suất trải nghiệm mẫu' : 'Vé tham quan mẫu cho một người'],
           conditions: [
@@ -247,7 +252,7 @@ export class ActivitySearchService {
           group: 'Combo trải nghiệm',
           description:
             'Kết hợp trải nghiệm và ẩm thực trong một hành trình. Nội dung minh họa, chưa phải gói vé bán thực tế.',
-          price: activity.priceFrom! + 180000,
+          price: basePrice + 180000,
           currency: 'VND',
           includes: ['Trải nghiệm theo gói minh họa', 'Bữa ăn minh họa'],
           conditions: [
@@ -261,15 +266,98 @@ export class ActivitySearchService {
           group: 'Dịch vụ bổ sung',
           description:
             'Gợi ý một gói trải nghiệm có dịch vụ đưa đón. Chỉ dùng để minh họa giao diện.',
-          price: activity.priceFrom! + 250000,
+          price: basePrice + 250000,
           currency: 'VND',
           includes: ['Trải nghiệm minh họa', 'Dịch vụ đưa đón minh họa'],
           conditions: ['Điểm đón và lịch vận hành chưa được xác nhận.'],
         },
       ],
-    });
+    };
   }
+
+  getDetails(id: string): Observable<ActivityDetails | null> {
+    const localActivity = sampleCatalog.find((item) => item.id === id || item.slug === id);
+    const localDetails = localActivity ? this.buildActivityDetails(localActivity) : null;
+
+    if (!this.http || id.startsWith('demo-')) {
+      return of(localDetails);
+    }
+
+    const remote$ = this.http
+      .get<{ success: boolean; activity?: Record<string, unknown> }>(
+        `${this.apiBase}/activities/${encodeURIComponent(id)}`,
+      )
+      .pipe(
+        map((res) => {
+          const raw = res?.activity;
+          if (!raw) return localDetails;
+          const mapped: Activity = {
+            id: String(raw['id'] || raw['_id'] || id),
+            slug: raw['slug'] ? String(raw['slug']) : localActivity?.slug,
+            name: String(raw['name'] || localActivity?.name || 'Trải nghiệm TRIPLA'),
+            city: String(raw['city'] || localActivity?.city || 'Việt Nam'),
+            categories: Array.isArray(raw['categories'])
+              ? (raw['categories'] as Activity['categories'])
+              : localActivity?.categories || ['Vé tham quan'],
+            description: String(
+              raw['description'] ||
+                localActivity?.description ||
+                'Trải nghiệm đặc sắc tại điểm đến.',
+            ),
+            imageUrl: String(raw['imageUrl'] || raw['image'] || localActivity?.imageUrl || '/images/trangan.jpg'),
+            priceFrom: Number(raw['priceFrom'] || raw['price'] || localActivity?.priceFrom || 250000),
+            currency: 'VND',
+            originalPrice: raw['originalPrice'] ? Number(raw['originalPrice']) : undefined,
+            rating: Number(raw['rating'] || localActivity?.rating || 9.0),
+            reviewCount: Number(raw['reviewCount'] || localActivity?.reviewCount || 180),
+          };
+          return this.buildActivityDetails(mapped);
+        }),
+        catchError(() => EMPTY),
+      );
+
+    return localDetails ? concat(of(localDetails), remote$) : remote$.pipe(catchError(() => of(null)));
+  }
+
   search(criteria: ActivitySearchCriteria): Observable<Activity[]> {
-    return of(filterActivities(sampleCatalog, criteria));
+    const localResults = filterActivities(sampleCatalog, criteria);
+    if (!this.http) {
+      return of(localResults);
+    }
+
+    const remote$ = this.http
+      .get<{ success: boolean; items?: Record<string, unknown>[] }>(`${this.apiBase}/activities`)
+      .pipe(
+        map((res) => {
+          const items = res?.items || [];
+          const mappedMongo: Activity[] = items.map((raw, idx) => ({
+            id: String(raw['id'] || raw['_id'] || `act-${idx}`),
+            slug: raw['slug'] ? String(raw['slug']) : undefined,
+            name: String(raw['name'] || 'Trải nghiệm du lịch'),
+            city: String(raw['city'] || 'Đà Lạt'),
+            categories: Array.isArray(raw['categories'])
+              ? (raw['categories'] as Activity['categories'])
+              : ['Vé tham quan'],
+            description: String(raw['description'] || 'Khám phá điểm đến hấp dẫn cùng TRIPLA.'),
+            imageUrl: String(raw['imageUrl'] || raw['image'] || '/images/trangan.jpg'),
+            priceFrom: Number(raw['priceFrom'] || raw['price'] || 250000),
+            currency: 'VND',
+            originalPrice: raw['originalPrice'] ? Number(raw['originalPrice']) : undefined,
+            rating: Number(raw['rating'] || 9.0),
+            reviewCount: Number(raw['reviewCount'] || 210),
+          }));
+          const mergedMap = new Map<string, Activity>();
+          for (const item of [...mappedMongo, ...sampleCatalog]) {
+            const key = normalizeDestination(item.name) || item.id;
+            if (!mergedMap.has(key)) {
+              mergedMap.set(key, item);
+            }
+          }
+          return filterActivities(Array.from(mergedMap.values()), criteria);
+        }),
+        catchError(() => EMPTY),
+      );
+
+    return concat(of(localResults), remote$);
   }
 }

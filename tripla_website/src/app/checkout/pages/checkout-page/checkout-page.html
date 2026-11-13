@@ -1,20 +1,24 @@
 <div class="checkout-page">
-  <header>
-    <a class="brand" routerLink="/trip-shop" aria-label="TRIPLA - TripShop"
-      ><img src="/images/logo (2).png" alt="" /><span>TRIPLA</span></a
-    ><span class="header-note"
+  <app-site-header
+    variant="checkout"
+    positionMode="static"
+    subBrand="Đặt chỗ & Thanh toán"
+    backLabel="← TripShop"
+    backRoute="/trip-shop"
+  >
+    <span header-actions class="header-note"
       ><span class="material-symbols-outlined" aria-hidden="true">edit_note</span>Thông tin đặt
       chỗ</span
     >
-  </header>
-  <app-checkout-stepper *ngIf="draft()" [detailsSaved]="draft()?.status === 'details-complete'" />
-  <main *ngIf="draft() as draft; else recovery">
+  </app-site-header>
+  <app-checkout-stepper *ngIf="draft() || fromCartMode()" [detailsSaved]="draft()?.status === 'details-complete' || !!pendingBooking() || !!paymentVoucher()" />
+  <main *ngIf="draft() as draft; else cartOrRecovery">
     <div class="intro">
       <span class="eyebrow">TRIPLA · CHUẨN BỊ CHO KỲ NGHỈ</span>
       <h1>Chỉ còn một chút,<br /><em>để hành trình sẵn sàng.</em></h1>
       <p>Kiểm tra lựa chọn và điền thông tin đặt chỗ của bạn.</p>
     </div>
-    <div class="session-note" role="note">
+    <div *ngIf="!isMongoConnected()" class="session-note" role="note">
       <span class="material-symbols-outlined" aria-hidden="true">info</span
       ><span
         >{{
@@ -73,7 +77,59 @@
             [pricing]="draft.pricing"
             [now]="store.now()"
           />
-          <div *ngIf="notice()" class="saved-notice" role="status">{{ notice() }}</div>
+          <div *ngIf="notice()" class="saved-notice" role="status">
+            <div style="font-weight: 600; line-height: 1.5;">{{ notice() }}</div>
+            <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;">
+              <a *ngIf="bookingCode()" [routerLink]="['/bookings/detail', bookingCode()]" class="btn btn-primary" style="padding:8px 14px;font-size:13px;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;background:#173b32;color:#fff;">
+                <span class="material-symbols-outlined" style="font-size:18px;">confirmation_number</span> Chi tiết đơn #{{ bookingCode() }}
+              </a>
+              <a routerLink="/trip-planning" class="btn btn-primary" style="padding:8px 14px;font-size:13px;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;background:#2563eb;color:#fff;">
+                <span class="material-symbols-outlined" style="font-size:18px;">calendar_month</span> Mở Trip Planning
+              </a>
+              <a routerLink="/profile" class="btn btn-outline" style="padding:8px 14px;font-size:13px;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #cbd5e1;color:#1e293b;">
+                <span class="material-symbols-outlined" style="font-size:18px;">receipt_long</span> Xem trong Hồ sơ
+              </a>
+            </div>
+          </div>
+
+          <section *ngIf="draft.source !== 'demo' && pendingBooking() as pb" class="payment-gateway-card" style="margin-top: 16px; padding: 18px; border: 1px solid #d7e3d6; border-radius: 14px; background: #fbfdf9;">
+            <h3 style="margin: 0 0 10px;">Cổng thanh toán (Mô phỏng) — Đơn #{{ pb.booking_code || pb.bookingCode }}</h3>
+            <p style="margin: 0 0 12px; color: #475569;">Tổng thanh toán: <strong>{{ formatVnd(pb.total_price ?? pb.totalPriceVnd) }}</strong></p>
+            <div style="display: grid; gap: 8px; margin-bottom: 12px;">
+              <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                <input type="radio" name="pmLive" [checked]="paymentMethod() === 'bank_transfer'" (change)="selectPaymentMethod('bank_transfer')" />
+                Chuyển khoản ngân hàng / VietQR (<code>bank_transfer</code>)
+              </label>
+              <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                <input type="radio" name="pmLive" [checked]="paymentMethod() === 'e_wallet'" (change)="selectPaymentMethod('e_wallet')" />
+                Ví điện tử MoMo / ZaloPay (<code>e_wallet</code>)
+              </label>
+              <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                <input type="radio" name="pmLive" [checked]="paymentMethod() === 'credit_card'" (change)="selectPaymentMethod('credit_card')" />
+                Thẻ quốc tế Visa / Mastercard (<code>credit_card</code>)
+              </label>
+            </div>
+            <p *ngIf="paymentError()" class="validation-summary" role="alert">{{ paymentError() }}</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+              <button type="button" class="primary" [disabled]="paymentSubmitting()" (click)="simulatePayment('success')">
+                {{ paymentSubmitting() ? 'Đang xử lý...' : 'Thanh toán thành công' }}
+              </button>
+              <button type="button" class="secondary" [disabled]="paymentSubmitting()" (click)="simulatePayment('failed')">
+                Giả lập thanh toán thất bại
+              </button>
+            </div>
+          </section>
+
+          <section *ngIf="draft.source !== 'demo' && paymentVoucher() as voucher" class="voucher-card" style="margin-top: 16px; padding: 18px; border: 1.5px solid #2d6a4f; border-radius: 14px; background: #f0fdf4;">
+            <h3 style="margin: 0 0 8px; color: #1b4332;">E-Voucher xác nhận đặt chỗ thành công</h3>
+            <p style="margin: 4px 0;">Mã đặt chỗ: <strong>{{ voucher.booking.booking_code }}</strong></p>
+            <p style="margin: 4px 0;">Mã giao dịch: <strong>{{ voucher.payment.transaction_id }}</strong> · Phương thức: <code>{{ voucher.payment.payment_method }}</code></p>
+            <p style="margin: 4px 0;">Đã thanh toán: <strong>{{ formatVnd(voucher.payment.amount) }}</strong> ({{ voucher.payment.paid_at | date:'dd/MM/yyyy HH:mm' }})</p>
+            <div style="display: flex; gap: 12px; margin-top: 12px;">
+              <a [routerLink]="['/bookings/detail', voucher.booking.booking_code]">Xem chi tiết E-Voucher →</a>
+              <a routerLink="/profile">Về Hồ sơ</a>
+            </div>
+          </section>
           <app-checkout-actions
             [disabled]="!draft"
             [saved]="draft.status === 'details-complete'"
@@ -85,6 +141,91 @@
       </div>
     </form>
   </main>
+  <ng-template #cartOrRecovery>
+    <main *ngIf="fromCartMode(); else recovery" class="checkout-shell-main" style="max-width: 1120px; margin: 24px auto; padding: 0 20px;">
+      <section *ngIf="paymentVoucher() as voucher" class="voucher-card" style="padding: 24px; border: 1.5px solid #2d6a4f; border-radius: 16px; background: #f0fdf4;">
+        <h2 style="margin: 0 0 12px; color: #1b4332;">Thanh toán thành công — E-Voucher TRIPLA</h2>
+        <p style="margin: 6px 0;">Mã đặt phòng: <strong>{{ voucher.booking.booking_code }}</strong></p>
+        <p style="margin: 6px 0;">Mã giao dịch: <strong>{{ voucher.payment.transaction_id }}</strong> · Phương thức: <code>{{ voucher.payment.payment_method }}</code></p>
+        <p style="margin: 6px 0;">Số tiền thanh toán: <strong>{{ formatVnd(voucher.payment.amount) }}</strong></p>
+        <p style="margin: 6px 0;">Thời gian thanh toán: {{ voucher.payment.paid_at | date:'dd/MM/yyyy HH:mm:ss' }}</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 16px;">
+          <a [routerLink]="['/bookings/detail', voucher.booking.booking_code]" style="font-weight: 700; color: #1b4332;">Xem chi tiết E-Voucher →</a>
+          <a routerLink="/profile" style="font-weight: 600;">Xem trong Hồ sơ của tôi</a>
+        </div>
+      </section>
+
+      <div *ngIf="!paymentVoucher() && !cart.items().length && !pendingBooking()" class="recovery">
+        <h2>Giỏ đặt phòng đang trống</h2>
+        <p>Vui lòng chọn phòng khách sạn trước khi thanh toán.</p>
+        <a routerLink="/hotel-search">← Tìm khách sạn TRIPLA</a>
+      </div>
+
+      <form *ngIf="!paymentVoucher() && (cart.items().length || pendingBooking())" [formGroup]="form" (ngSubmit)="proceed()" novalidate style="display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(280px, 1fr); gap: 24px; align-items: start;">
+        <div class="forms-column">
+          <p *ngIf="submitted() && form.controls.contact.invalid" class="validation-summary" role="alert">
+            Vui lòng điền đầy đủ Họ tên, Số điện thoại và Email hợp lệ trước khi thanh toán.
+          </p>
+          <app-checkout-contact-form [group]="form.controls.contact" [submitted]="submitted()" />
+          <app-hotel-booking-form [group]="form.controls.hotel" [submitted]="submitted()" [adults]="2" [children]="0" [rooms]="cart.totalQuantity() || 1" />
+
+          <div *ngIf="notice()" class="saved-notice" role="status" style="margin-top: 12px;">
+            <div style="font-weight: 600;">{{ notice() }}</div>
+          </div>
+
+          <section *ngIf="pendingBooking() as pb; else createOrderBtn" class="payment-gateway-card" style="margin-top: 16px; padding: 18px; border: 1px solid #d7e3d6; border-radius: 14px; background: #fbfdf9;">
+            <h3 style="margin: 0 0 10px;">Cổng thanh toán (Mô phỏng) — Đơn #{{ pb.booking_code || pb.bookingCode }}</h3>
+            <p style="margin: 0 0 12px; color: #475569;">Tổng cộng: <strong>{{ formatVnd(pb.total_price ?? cart.grandTotal()) }}</strong></p>
+            <div style="display: grid; gap: 8px; margin-bottom: 14px;">
+              <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                <input type="radio" name="pmCart" [checked]="paymentMethod() === 'bank_transfer'" (change)="selectPaymentMethod('bank_transfer')" />
+                Chuyển khoản ngân hàng / QR (<code>bank_transfer</code>)
+              </label>
+              <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                <input type="radio" name="pmCart" [checked]="paymentMethod() === 'e_wallet'" (change)="selectPaymentMethod('e_wallet')" />
+                Ví điện tử (<code>e_wallet</code>)
+              </label>
+              <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                <input type="radio" name="pmCart" [checked]="paymentMethod() === 'credit_card'" (change)="selectPaymentMethod('credit_card')" />
+                Thẻ tín dụng / ghi nợ (<code>credit_card</code>)
+              </label>
+            </div>
+            <p *ngIf="paymentError()" class="validation-summary" role="alert">{{ paymentError() }}</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+              <button type="button" [disabled]="paymentSubmitting()" (click)="simulatePayment('success')" style="padding: 10px 18px; border-radius: 10px; border: none; background: #1b4332; color: #fff; font-weight: 700; cursor: pointer;">
+                {{ paymentSubmitting() ? 'Đang xử lý...' : 'Thanh toán thành công' }}
+              </button>
+              <button type="button" [disabled]="paymentSubmitting()" (click)="simulatePayment('failed')" style="padding: 10px 16px; border-radius: 10px; border: 1px solid #cbd5e1; background: #fff; color: #b91c1c; font-weight: 600; cursor: pointer;">
+                Giả lập thanh toán thất bại
+              </button>
+            </div>
+          </section>
+
+          <ng-template #createOrderBtn>
+            <div style="margin-top: 16px; display: flex; gap: 12px;">
+              <button type="submit" [disabled]="paymentSubmitting()" style="padding: 12px 22px; border-radius: 10px; border: none; background: #1b4332; color: #fff; font-weight: 700; cursor: pointer;">
+                {{ paymentSubmitting() ? 'Đang tạo đơn...' : 'Tiếp tục chọn phương thức thanh toán' }}
+              </button>
+            </div>
+          </ng-template>
+        </div>
+
+        <aside style="padding: 18px; border: 1px solid #e2e8f0; border-radius: 14px; background: #fff;">
+          <h3 style="margin: 0 0 12px;">Tóm tắt giỏ đặt phòng</h3>
+          <div *ngFor="let item of (pendingBooking()?.items || cart.items())" style="padding: 10px 0; border-bottom: 1px solid #f1f5f9;">
+            <div style="font-weight: 700;">{{ item.hotel_name || 'Khách sạn TRIPLA' }}</div>
+            <div style="font-size: 0.9rem; color: #475569;">{{ item.room_name }} · {{ item.quantity }} phòng × {{ item.nights }} đêm</div>
+            <div style="font-weight: 600; color: #1b4332;">{{ formatVnd(item.line_total ?? item.subtotal) }}</div>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 1.05rem; font-weight: 700;">
+            <span>Tổng thanh toán</span>
+            <span>{{ formatVnd(pendingBooking()?.total_price ?? cart.grandTotal()) }}</span>
+          </div>
+        </aside>
+      </form>
+    </main>
+  </ng-template>
+
   <ng-template #recovery
     ><main class="recovery">
       <span class="material-symbols-outlined" aria-hidden="true">travel_explore</span>
@@ -94,3 +235,4 @@
     </main></ng-template
   >
 </div>
+<app-site-footer variant="compact" compactLabel="Thanh toán an toàn &amp; Hỗ trợ 24/7" />

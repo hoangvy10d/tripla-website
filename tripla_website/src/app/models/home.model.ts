@@ -1,5 +1,6 @@
 export interface TripCard {
   id: string;
+  hotelSlug?: string;
   title: string;
   subtitle: string;
   location: string;

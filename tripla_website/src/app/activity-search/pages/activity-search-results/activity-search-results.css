@@ -1,5 +1,6 @@
-﻿:host {
-  display: block;
+:host {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   color: #294936;
   font-family: var(--font-body, sans-serif);
@@ -13,8 +14,10 @@ a {
   text-decoration: none;
 }
 .activity-page {
+  width: 100%;
+  flex: 1 0 auto;
   max-width: 1240px;
-  margin: auto;
+  margin: 0 auto;
   padding: 20px 32px 65px;
 }
 .page-header {

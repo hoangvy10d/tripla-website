@@ -1,0 +1,28 @@
+{
+  "id": "a1",
+  "bio": "Tài khoản quản trị chính thức của hệ thống Tripla.",
+  "location": "Việt Nam",
+  "coverImage": "data/profiles/admin_images/Trần Duy Thanh.png",
+  "points": 99999,
+  "followers": 999,
+  "following": 0,
+  "socials": {
+    "facebook": "TriplaOfficial"
+  },
+  "interests": [
+    "Tripla System",
+    "Khách hàng",
+    "Dịch vụ"
+  ],
+  "badges": [
+    {
+      "icon": "👑",
+      "label": "Quản Trị Viên"
+    }
+  ],
+  "name": "Trần Duy Thanh",
+  "avatar": "data/profiles/admin_images/Trần Duy Thanh.png",
+  "role": "admin",
+  "email": "admin@tripla.com",
+  "level": "Hạng Huyền Thoại"
+}

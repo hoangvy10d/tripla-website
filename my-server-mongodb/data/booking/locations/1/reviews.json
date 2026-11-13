@@ -1,0 +1,14 @@
+[
+  {
+    "locationId": "1",
+    "userId": "u1",
+    "rating": 5,
+    "content": "Absolutely breathtaking! The hands supporting the bridge look incredibly realistic."
+  },
+  {
+    "locationId": "1",
+    "userId": "u2",
+    "rating": 4,
+    "content": "Amazing photo spots, but arrive early to avoid the crowds!"
+  }
+]

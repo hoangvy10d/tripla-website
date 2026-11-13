@@ -2,7 +2,7 @@
   <section class="auth-panel" role="dialog" aria-modal="true" aria-labelledby="auth-title">
     <header class="auth-header">
       <div class="auth-brand"><img src="images/logo (2).png" alt="" /><span>TRIPLA</span><span class="member-badge">Hội viên</span></div>
-      <button type="button" class="auth-close" (click)="closeModal()" aria-label="Đóng hộp đăng nhập"><span class="material-symbols-outlined">close</span></button>
+      <button type="button" class="auth-close" (click)="closeModal(true)" aria-label="Đóng hộp đăng nhập"><span class="material-symbols-outlined">close</span></button>
     </header>
     <div class="auth-body">
       <div class="auth-tabs" role="group" aria-label="Chọn đăng nhập hoặc đăng ký">
@@ -14,8 +14,25 @@
         <h2 id="auth-title">{{ currentAuthMode === 'login' ? 'Chào mừng trở lại.' : 'Lên đường cùng TRIPLA.' }}</h2>
         <p class="auth-quote">Một chạm, mở những chân trời.</p>
         <p class="auth-description">{{ currentAuthMode === 'login' ? 'Tiếp tục khám phá những điểm đến yêu thích và tận hưởng đặc quyền dành riêng cho hội viên.' : 'Trở thành hội viên tinh hoa để mở khóa kho villa độc bản và nhận 2.000.000₫ trải nghiệm.' }}</p>
+        <p *ngIf="authService.pendingNotice()" class="auth-forgot-hint" style="background:#f3f7eb;border:1px solid #8aa45a;border-radius:10px;padding:8px 12px;color:#173b32;margin-top:8px;" role="status">
+          {{ authService.pendingNotice() }}
+        </p>
       </div>
       <form class="auth-form" (submit)="handleAuthSubmit($event)">
+        <div class="auth-field" *ngIf="currentAuthMode === 'register'">
+          <label for="register-fullname">Họ và tên</label>
+          <div class="auth-input-wrap">
+            <span class="material-symbols-outlined field-symbol" aria-hidden="true">person</span>
+            <input id="register-fullname" name="fullName" [(ngModel)]="authData.fullName" type="text" placeholder="Nguyễn Văn A" />
+          </div>
+        </div>
+        <div class="auth-field" *ngIf="currentAuthMode === 'register'">
+          <label for="register-phone">Số điện thoại</label>
+          <div class="auth-input-wrap">
+            <span class="material-symbols-outlined field-symbol" aria-hidden="true">call</span>
+            <input id="register-phone" name="phoneNumber" [(ngModel)]="authData.phoneNumber" type="tel" placeholder="09xxxxxxxx" />
+          </div>
+        </div>
         <div class="auth-field">
           <label for="identifier">Email hoặc số điện thoại</label>
           <div class="auth-input-wrap">
@@ -24,15 +41,28 @@
           </div>
         </div>
         <div class="auth-field">
-          <div class="auth-label-row"><label for="auth-password">Mật khẩu</label><a *ngIf="currentAuthMode === 'login'" href="#">Quên mật khẩu?</a></div>
+          <div class="auth-label-row"><label for="auth-password">Mật khẩu</label><button *ngIf="currentAuthMode === 'login'" type="button" class="auth-forgot-btn" (click)="handleForgotPassword()">Quên mật khẩu?</button></div>
           <div class="auth-input-wrap">
             <span class="material-symbols-outlined field-symbol" aria-hidden="true">lock</span>
             <input id="auth-password" name="password" [(ngModel)]="authData.password" [type]="isPasswordVisible ? 'text' : 'password'" [attr.autocomplete]="currentAuthMode === 'login' ? 'current-password' : 'new-password'" placeholder="Nhập mật khẩu của bạn" required />
             <button type="button" class="password-toggle" (click)="togglePasswordVisibility()" [attr.aria-label]="isPasswordVisible ? 'Ẩn mật khẩu' : 'Hiện mật khẩu'" [attr.aria-pressed]="isPasswordVisible"><span class="material-symbols-outlined">{{ isPasswordVisible ? 'visibility_off' : 'visibility' }}</span></button>
           </div>
+          <p *ngIf="forgotNotice" class="auth-forgot-hint" role="status">{{ forgotNotice }}</p>
+          <p *ngIf="authError" class="auth-forgot-hint" style="color:#b91c1c;" role="alert">{{ authError }}</p>
         </div>
         <button type="submit" class="auth-submit" [disabled]="isSubmitting" [attr.aria-busy]="isSubmitting"><span>{{ isSubmitting ? 'Đang xác thực...' : (currentAuthMode === 'login' ? 'Đăng nhập' : 'Tạo tài khoản & nhận voucher') }}</span><span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></button>
       </form>
+      <div class="quick-accounts" *ngIf="currentAuthMode === 'login'" style="display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;align-items:center;font-size:12px;">
+        <span style="opacity:.7;">Đăng nhập nhanh:</span>
+        <button type="button" *ngFor="let acc of quickAccounts" (click)="useQuickAccount(acc.email)"
+          style="border:1px solid currentColor;background:transparent;color:inherit;border-radius:999px;padding:4px 10px;cursor:pointer;font-size:12px;opacity:.85;">
+          {{ acc.name }}
+        </button>
+        <button type="button" (click)="goToAdminLogin()"
+          style="border:1px dashed currentColor;background:transparent;color:inherit;border-radius:999px;padding:4px 10px;cursor:pointer;font-size:12px;opacity:.85;">
+          Cổng Admin →
+        </button>
+      </div>
       <p class="auth-footnote"><span></span> TRAVEL EASY — NOT BUSY <span></span></p>
     </div>
   </section>

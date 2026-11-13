@@ -1,0 +1,250 @@
+<div class="map-shell" [class.panel-collapsed]="!panelOpen">
+  <div #mapEl class="map-canvas"></div>
+
+  <!-- Unified TRIPLA Floating Header -->
+  <app-site-header
+    variant="floating"
+    positionMode="absolute"
+    activeNav="map"
+    subBrand="Bản đồ"
+    style="--sh-z: 600"
+  >
+    <a header-actions routerLink="/trip-planning" class="btn-forest header-cta">
+      <span class="material-symbols-outlined">route</span>
+      <span>Lập Lịch Trình</span>
+    </a>
+  </app-site-header>
+
+  <!-- Quick top-right map legend & recenter toolbar -->
+  <div class="map-toolbar" aria-label="Công cụ bản đồ">
+    <div class="legend-group glass-botanical">
+      <span class="legend-item">
+        <i class="legend-dot location"></i>
+        <span>Điểm đến</span>
+      </span>
+      <span class="legend-item">
+        <i class="legend-dot hotel"></i>
+        <span>Khách sạn</span>
+      </span>
+      <span class="legend-item">
+        <i class="legend-dot activity"></i>
+        <span>Hoạt động</span>
+      </span>
+    </div>
+    <button type="button" class="tool-pill glass-botanical" (click)="fitAllPlaces()" title="Hiển thị toàn bộ điểm phù hợp">
+      <span class="material-symbols-outlined">my_location</span>
+      <span>Xem toàn bộ</span>
+    </button>
+  </div>
+
+  <!-- Reopen button when sidebar is collapsed -->
+  <button
+    *ngIf="!panelOpen"
+    type="button"
+    class="panel-reopen glass-botanical"
+    (click)="togglePanel()"
+    aria-label="Mở danh sách địa điểm">
+    <span class="material-symbols-outlined">tune</span>
+    <span>Khám phá {{ filteredPlaces.length }} điểm</span>
+  </button>
+
+  <!-- Floating botanical glass explorer panel -->
+  <aside class="map-panel glass-botanical" [class.collapsed]="!panelOpen" aria-label="Bộ lọc và danh sách địa điểm">
+    <div class="panel-head">
+      <div class="eco-badge">
+        <span class="material-symbols-outlined fill">eco</span>
+        <span>HỆ SINH THÁI TRIPLA</span>
+        <span class="live-dot"></span>
+      </div>
+      <button
+        type="button"
+        class="collapse-btn"
+        (click)="togglePanel()"
+        aria-label="Thu gọn bảng tìm kiếm"
+        title="Thu gọn bảng tìm kiếm">
+        <span class="material-symbols-outlined">chevron_left</span>
+      </button>
+    </div>
+
+    <div class="panel-title-block">
+      <h1>
+        Bản Đồ <span class="editorial-accent">Hành Trình</span>
+      </h1>
+      <p class="panel-sub">Chọn điểm đến, chạm để ghim vị trí và lưu thẳng vào lịch trình của bạn.</p>
+    </div>
+
+    <div class="search-box">
+      <span class="material-symbols-outlined">search</span>
+      <input
+        type="search"
+        placeholder="Tìm điểm đến, khách sạn, vùng..."
+        aria-label="Tìm điểm đến hoặc khách sạn"
+        [(ngModel)]="searchText"
+        (ngModelChange)="onSearchChange()" />
+      <button
+        *ngIf="searchText"
+        type="button"
+        class="clear-input"
+        (click)="clearSearch()"
+        aria-label="Xóa từ khóa tìm kiếm">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <!-- Quick destination city pills -->
+    <div class="city-row" *ngIf="quickCities.length">
+      <button type="button" class="city-chip" [class.active]="!activeCity" (click)="setCity('')">
+        Toàn quốc
+      </button>
+      <button
+        type="button"
+        class="city-chip"
+        *ngFor="let city of quickCities"
+        [class.active]="activeCity === city.name"
+        (click)="setCity(city.name)">
+        {{ city.name }}
+      </button>
+    </div>
+
+    <!-- Category filter pills -->
+    <div class="pill-row">
+      <button
+        type="button"
+        *ngFor="let c of categories"
+        [class.active]="activeCategory === c"
+        (click)="setCategory(c)">
+        <span class="material-symbols-outlined pill-ico">{{ categoryIcon('location', c) }}</span>
+        <span>{{ categoryLabel(c) }}</span>
+        <span class="pill-num">{{ categoryCount(c) }}</span>
+      </button>
+    </div>
+
+    <div class="result-bar">
+      <p class="result-count">
+        {{ isLoading ? 'Đang tải tọa độ từ MongoDB...' : filteredPlaces.length + ' địa điểm phù hợp' }}
+      </p>
+      <button
+        *ngIf="searchText || activeCity || activeCategory !== 'Tất cả'"
+        type="button"
+        class="reset-link"
+        (click)="clearFilters()">
+        Đặt lại
+      </button>
+    </div>
+
+    <p class="map-error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <div class="loading-skeletons" *ngIf="isLoading">
+      <div class="skeleton-card" *ngFor="let item of [1, 2, 3, 4]"></div>
+    </div>
+
+    <div class="empty-state" *ngIf="!isLoading && !errorMessage && filteredPlaces.length === 0">
+      <span class="material-symbols-outlined">travel_explore</span>
+      <p>Không tìm thấy điểm đến phù hợp với bộ lọc hiện tại.</p>
+      <button type="button" class="btn-outline-forest" (click)="clearFilters()">Xem tất cả địa điểm</button>
+    </div>
+
+    <ul class="place-list" *ngIf="!isLoading && filteredPlaces.length > 0">
+      <li
+        *ngFor="let p of filteredPlaces"
+        [class.active]="selected?.id === p.id"
+        (click)="selectPlace(p)">
+        <div class="place-thumb" [class.no-img]="!p.image">
+          <img *ngIf="p.image" [src]="p.image" [alt]="p.name" loading="lazy" />
+          <span *ngIf="!p.image" class="material-symbols-outlined">{{ categoryIcon(p.kind, p.category) }}</span>
+        </div>
+        <div class="place-info">
+          <div class="place-meta-top">
+            <span class="kind-chip" [ngClass]="p.kind">
+              <span class="material-symbols-outlined">{{ categoryIcon(p.kind, p.category) }}</span>
+              {{ categoryLabel(p.category) }}
+            </span>
+            <span *ngIf="p.rating" class="place-rate">
+              <span class="material-symbols-outlined fill">star</span>
+              {{ p.rating | number:'1.1-1' }}
+            </span>
+          </div>
+          <strong>{{ p.name }}</strong>
+          <span class="addr">
+            <span class="material-symbols-outlined">location_on</span>
+            {{ p.address || p.city }}
+          </span>
+          <span class="place-price" *ngIf="p.price > 0">Từ {{ formatVnd(p.price) }}</span>
+        </div>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- Botanical glass detail card -->
+  <section class="detail-card glass-botanical" *ngIf="selected" aria-label="Chi tiết địa điểm đã chọn">
+    <div class="detail-media" [class.no-img]="!selected.image">
+      <img *ngIf="selected.image" [src]="selected.image" [alt]="selected.name" />
+      <div class="detail-fade"></div>
+
+      <span class="detail-cat" [ngClass]="selected.kind">
+        <span class="material-symbols-outlined">{{ categoryIcon(selected.kind, selected.category) }}</span>
+        {{ categoryLabel(selected.category) }}
+      </span>
+
+      <button type="button" class="close-btn" (click)="closeDetail()" aria-label="Đóng chi tiết địa điểm">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+
+      <div class="detail-media-caption">
+        <h3>{{ selected.name }}</h3>
+        <div class="detail-badges">
+          <span *ngIf="selected.rating" class="rating-pill">
+            <span class="material-symbols-outlined fill">star</span>
+            {{ selected.rating | number:'1.1-1' }}
+          </span>
+          <a *ngIf="selected.reelCount" routerLink="/tripshort" class="reel-pill">
+            <span class="material-symbols-outlined">movie</span>
+            {{ selected.reelCount }} TripShorts
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-body">
+      <p class="detail-addr">
+        <span class="material-symbols-outlined">location_on</span>
+        <span>{{ selected.address || selected.city || 'Việt Nam' }}</span>
+      </p>
+
+      <div class="detail-foot">
+        <div class="price-row">
+          <div class="price-box">
+            <small>{{ selected.kind === 'hotel' ? 'Giá từ / đêm' : selected.kind === 'activity' ? 'Giá từ / người' : 'Phí vào cửa' }}</small>
+            <strong>{{ formatVnd(selected.price) }}</strong>
+          </div>
+          <a
+            class="gmaps-pill"
+            [href]="googleMapsUrl(selected)"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Mở chỉ đường trên Google Maps">
+            <span>Google Maps</span>
+            <span class="material-symbols-outlined">open_in_new</span>
+          </a>
+        </div>
+
+        <div class="detail-actions">
+          <button type="button" class="btn-save" [class.saved]="isSelectedSaved" (click)="saveSelectedToTrip()">
+            <span class="material-symbols-outlined">{{ isSelectedSaved ? 'bookmark_added' : 'bookmark_add' }}</span>
+            <span>{{ isSelectedSaved ? 'Đã lưu' : 'Lưu chuyến đi' }}</span>
+          </button>
+
+          <button type="button" class="btn-forest detail-book-btn" (click)="bookSelected()">
+            <span>{{ selected.kind === 'hotel' ? 'Xem & đặt phòng' : selected.kind === 'activity' ? 'Xem & đặt vé' : 'Tìm hoạt động' }}</span>
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+
+      <div *ngIf="saveNotice" class="save-msg" role="status">
+        <span>{{ saveNotice }}</span>
+        <a routerLink="/trip-planning" class="plan-jump">Mở Trip Planning →</a>
+      </div>
+    </div>
+  </section>
+</div>

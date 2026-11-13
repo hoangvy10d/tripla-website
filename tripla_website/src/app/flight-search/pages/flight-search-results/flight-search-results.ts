@@ -1,7 +1,9 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpParams } from '@angular/common/http';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { injectLiveHttp } from '../../../services/live-http';
 import { FlightSearchBar } from '../../components/flight-search-bar/flight-search-bar';
 import { FlightFilterSidebar } from '../../components/flight-filter-sidebar/flight-filter-sidebar';
 import { FlightDateNavigation } from '../../components/flight-date-navigation/flight-date-navigation';
@@ -29,6 +31,8 @@ import { demoFlightData } from '../../services/flight-demo';
 import { CheckoutStateService } from '../../../checkout/services/checkout-state.service';
 import { FlightOfferDialog, FlightFareOption } from '../../components/flight-offer-dialog/flight-offer-dialog';
 import { FlightFare } from '../../models/flight.model';
+import { ActivityNavigation } from '../../../activity-search/components/activity-navigation/activity-navigation';
+import { SiteFooterComponent } from '../../../shared/components/site-footer/site-footer';
 interface AppliedFlightSearch {
   criteria: FlightSearchCriteria;
   filters: FlightFilter;
@@ -41,6 +45,8 @@ interface AppliedFlightSearch {
   imports: [
     CommonModule,
     RouterLink,
+    ActivityNavigation,
+    SiteFooterComponent,
     FlightSearchBar,
     FlightFilterSidebar,
     FlightDateNavigation,
@@ -54,6 +60,8 @@ interface AppliedFlightSearch {
 export class FlightSearchResults {
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
+  private readonly http = injectLiveHttp();
+  private readonly apiBase = 'http://localhost:3000/api/v1';
   private readonly checkout=inject(CheckoutStateService);
   readonly checkoutError=signal('');
   readonly state = signal<AppliedFlightSearch | null>(null);
@@ -63,6 +71,7 @@ export class FlightSearchResults {
   readonly data = signal<FlightSearchData | null>(null);
   readonly loading = signal(false);
   readonly demo = signal(false);
+  readonly isMongoConnected = signal(false);
   readonly pendingFlight = signal<Flight | null>(null);
   readonly fareSelection = signal<{ outbound: FlightFare | null; inbound: FlightFare | null }>({ outbound: null, inbound: null });
   readonly selection = signal<FlightSelection>({ outbound: null, inbound: null });
@@ -110,6 +119,39 @@ export class FlightSearchResults {
         this.data.set(null);
         this.selection.set({ outbound: null, inbound: null });
         this.fareSelection.set({ outbound: null, inbound: null });
+      }
+      this.isMongoConnected.set(false);
+      this.loading.set(false);
+      if (this.http && !this.error() && !this.demo() && next.criteria.from.code && next.criteria.to.code) {
+        this.loading.set(true);
+        const httpParams = new HttpParams()
+          .set('from', next.criteria.from.code)
+          .set('to', next.criteria.to.code)
+          .set('departureDate', next.criteria.departureDate)
+          .set('returnDate', next.criteria.returnDate || next.criteria.departureDate)
+          .set('tripType', next.criteria.tripType);
+        this.http
+          .get<{ success: boolean; outbound?: Flight[]; inbound?: Flight[] }>(
+            `${this.apiBase}/flights`,
+            { params: httpParams },
+          )
+          .subscribe({
+            next: (res) => {
+              this.loading.set(false);
+              this.isMongoConnected.set(true);
+              if (res?.outbound && res.outbound.length > 0) {
+                this.data.set({
+                  outbound: res.outbound,
+                  inbound: res.inbound || [],
+                });
+                this.demo.set(false);
+              }
+            },
+            error: () => {
+              this.loading.set(false);
+              this.isMongoConnected.set(false);
+            },
+          });
       }
     });
   }
@@ -191,7 +233,7 @@ export class FlightSearchResults {
     if(!state||!selection.outbound||!fares.outbound)return;
     if(state.criteria.tripType==='round-trip'&&(!selection.inbound||!fares.inbound)){this.checkoutError.set('Chọn gói giá cho cả hai chiều trước khi tiếp tục.');return;}
     try{const draft=this.checkout.startFlight({criteria:state.criteria,outbound:selection.outbound,inbound:selection.inbound||undefined,
-      fares:{outbound:fares.outbound,inbound:fares.inbound||undefined},source:this.demo()?'demo':'catalog'});
+      fares:{outbound:fares.outbound,inbound:fares.inbound||undefined},source:(this.demo() || !this.isMongoConnected())?'demo':'catalog'});
       this.checkoutError.set('');void this.router.navigate(['/checkout','flight'],{queryParams:{draft:draft.id}});
     }catch(error){this.checkoutError.set(error instanceof Error?error.message:'Không thể tạo bản nháp chuyến bay.');}
   }

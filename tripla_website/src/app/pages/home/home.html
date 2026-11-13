@@ -8,30 +8,14 @@
   <!-- ===================================================================== -->
   <!-- HEADER                                                                  -->
   <!-- ===================================================================== -->
-  <header class="nav intro-item" style="--at: 1.15s" [attr.data-theme]="navDark ? 'dark' : 'light'">
-    <a href="#featured-trips" class="logo" aria-label="TRIPLA trang chủ">
-      <span class="logo-disc"><img src="images/logo (2).png" alt="" /></span>
-      <span class="logo-name">TRIPLA</span>
-    </a>
-
-    <nav class="links glass" aria-label="Điều hướng chính" id="main-nav-bar">
-      <a class="link" [attr.data-active]="activeNavPath === 'kham-pha' ? '' : null"
-         (click)="setActiveNav('kham-pha')" href="#featured-trips">Khám phá</a>
-      <button type="button" class="link" [attr.data-active]="activeNavPath === 'tripshorts' ? '' : null"
-         (click)="setActiveNav('tripshorts'); goToTripshort()">TripShorts</button>
-      <a class="link" [attr.data-active]="activeNavPath === 'tripshop' ? '' : null"
-         routerLink="/trip-shop">TripShop</a><a class="link" routerLink="/trip-planning">Trip Planning</a>
-      <a class="link" [attr.data-active]="activeNavPath === 've-tripla' ? '' : null"
-         (click)="setActiveNav('ve-tripla')" routerLink="/about">Về TRIPLA</a>
-    </nav>
-
-    <div class="actions">
-      <button type="button" class="account glass" (click)="openAuthModal()">
-        <span class="material-symbols-outlined">person</span><span class="label">Tài khoản</span>
-      </button>
-      <button type="button" class="nav-cta" (click)="openAuthModal()"><span class="label">Đăng nhập</span></button>
-    </div>
-  </header>
+  <app-site-header
+    variant="floating"
+    positionMode="fixed"
+    activeNav="home"
+    subBrand="Trang chủ"
+    [scrolled]="navDark"
+    style="--sh-z: 60"
+  />
 
   <!-- ===================================================================== -->
   <!-- HERO — cổng thẻ kính trong cảnh thiên nhiên (ghim khi cuộn)             -->
@@ -133,7 +117,7 @@
         </div>
 
         <div class="console-action">
-          <button class="btn btn-primary btn-xl" type="button">
+          <button class="btn btn-primary btn-xl" type="button" (click)="searchHoliday()">
             <span>Tìm kỳ nghỉ</span>
             <span class="material-symbols-outlined">arrow_forward</span>
           </button>
@@ -192,7 +176,7 @@
               <div class="chip-light trip-rate">
                 <span class="material-symbols-outlined fill gold">star</span>
                 <b>{{ trip.rating }}</b>
-                <span class="muted">{{ trip.reviewCount }}</span>
+                <span class="muted">{{ formatReviewCount(trip.reviewCount) }}</span>
               </div>
             </div>
 
@@ -203,10 +187,10 @@
               </div>
               <div class="trip-foot">
                 <div class="price">
-                  <span class="price-num">VNĐ {{ trip.price }}</span>
-                  <span class="price-unit">/ khách</span>
+                  <span class="price-num">{{ trip.price | number:'1.0-0' }} ₫</span>
+                  <span class="price-unit">/ đêm</span>
                 </div>
-                <button class="trip-book" type="button">
+                <button class="trip-book" type="button" (click)="bookFeaturedTrip(trip, $event)">
                   <span>Đặt ngay</span>
                   <span class="material-symbols-outlined">arrow_forward</span>
                 </button>
@@ -231,15 +215,7 @@
     </div><span class="forest-mark" aria-hidden="true">TRIPLA</span>
   </section>
   </div>
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <span class="footer-name">TRIPLA</span>
-        <span class="footer-tag">Nghệ thuật du lịch thượng lưu</span>
-      </div>
-      <div class="footer-copy">© 2026 TRIPLA Luxury Travel Connoisseurs. Bản quyền được bảo lưu.</div>
-    </div>
-  </footer>
+  <app-site-footer variant="full"></app-site-footer>
 
   <div class="cursor" #cursor data-visible="false" aria-hidden="true"></div>
 </div>

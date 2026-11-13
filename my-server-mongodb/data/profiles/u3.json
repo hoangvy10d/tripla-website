@@ -1,0 +1,27 @@
+{
+  "id": "u3",
+  "bio": "Thích đi du lịch nghỉ dưỡng và ăn uống.",
+  "location": "TP HCM, Việt Nam",
+  "coverImage": "data/profiles/user_images/Trần Thị Nhật Minh.jpg",
+  "points": 1200,
+  "followers": 340,
+  "following": 250,
+  "socials": {
+    "instagram": "@embe_foodie"
+  },
+  "interests": [
+    "Food Tour",
+    "Nghỉ dưỡng"
+  ],
+  "badges": [
+    {
+      "icon": "🍔",
+      "label": "Foodie Tâm Huyết"
+    }
+  ],
+  "name": "Trần Thị Nhật Minh",
+  "avatar": "data/profiles/user_images/Trần Thị Nhật Minh.jpg",
+  "role": "traveler",
+  "email": "minhttnk24411e@st.uel.edu.vn",
+  "level": "Hạng Bạc"
+}

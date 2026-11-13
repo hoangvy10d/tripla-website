@@ -1,0 +1,16 @@
+{
+  "id": "15",
+  "title": "Guinness Seaside Restaurant",
+  "city": "Phu Quoc",
+  "lat": 10.0272,
+  "lng": 104.0152,
+  "category": "restaurant",
+  "description": "Awarded a Guinness World Record for being the largest coastal restaurant. Specializes in fresh, local seafood.",
+  "images": [
+    "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&auto=format&fit=crop&q=60"
+  ],
+  "rating": 4.6,
+  "reviewsCount": 350,
+  "ticketPrice": 0,
+  "openingHours": "10:00 - 23:00"
+}

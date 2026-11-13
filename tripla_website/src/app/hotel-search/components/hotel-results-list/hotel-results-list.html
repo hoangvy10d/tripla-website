@@ -2,10 +2,60 @@
   <div class="list-heading">
     <div>
       <span class="list-eyebrow">ĐIỂM ĐẾN CỦA BẠN</span>
-      <h2>Chỗ nghỉ tại {{ location() }}</h2>
+      <h2>Chỗ nghỉ tại {{ location() || 'Việt Nam' }} <small *ngIf="total() > 0" class="total-badge">({{ total() }} khách sạn)</small></h2>
     </div>
     <span class="destination-mark material-symbols-outlined" aria-hidden="true">location_on</span>
   </div>
+
+  <!-- Q3: Synchronous Search by Hotel Name, Sort by Lowest Room Price, and Grid/List View Switch -->
+  <div class="catalog-toolbar" role="search" aria-label="Tìm kiếm và sắp xếp khách sạn">
+    <form class="keyword-form" (submit)="$event.preventDefault(); submitKeyword(kwInput.value)">
+      <span class="material-symbols-outlined" aria-hidden="true">search</span>
+      <input
+        #kwInput
+        type="search"
+        [value]="keyword()"
+        placeholder="Tìm theo tên khách sạn (vd: Amanoi, Capella...)"
+        aria-label="Tìm khách sạn theo tên"
+      />
+      <button type="submit" class="toolbar-btn">Tìm</button>
+    </form>
+
+    <div class="toolbar-controls">
+      <label class="sort-select-wrap">
+        <span>Sắp xếp giá:</span>
+        <select
+          aria-label="Sắp xếp theo giá phòng thấp nhất"
+          [ngModel]="sortByPrice()"
+          (ngModelChange)="sortChange.emit($event)"
+        >
+          <option value="">Mặc định</option>
+          <option value="asc">Giá thấp → cao</option>
+          <option value="desc">Giá cao → thấp</option>
+        </select>
+      </label>
+
+      <div class="view-toggle" role="group" aria-label="Chế độ hiển thị">
+        <button
+          type="button"
+          [class.active]="viewMode() === 'grid'"
+          (click)="viewModeChange.emit('grid')"
+          title="Grid View"
+        >
+          <span class="material-symbols-outlined">grid_view</span> Grid
+        </button>
+        <button
+          type="button"
+          [class.active]="viewMode() === 'list'"
+          (click)="viewModeChange.emit('list')"
+          title="List View"
+        >
+          <span class="material-symbols-outlined">view_agenda</span> List
+        </button>
+      </div>
+    </div>
+  </div>
+
   <p *ngIf="loading()" role="status">Đang tải kết quả…</p>
   <div *ngIf="!loading() && !hotels().length" class="empty" role="status">
     <div class="empty-landscape" aria-hidden="true">
@@ -18,13 +68,47 @@
       <h3>{{ demo() ? 'Chưa có mẫu tại điểm đến này' : 'Chưa có dữ liệu chỗ nghỉ' }}</h3>
       <p *ngIf="demo()">Bạn có thể xem mẫu tại Đà Lạt, Đà Nẵng hoặc Phú Quốc.</p>
       <p *ngIf="!demo()">
-        Điều kiện tìm kiếm đã được ghi nhận. Nguồn dữ liệu khách sạn chưa được kết nối; chưa thể xác
-        nhận giá, phòng trống hoặc số lượng kết quả.
+        Chưa tìm thấy chỗ nghỉ khớp hoàn toàn với bộ lọc hiện tại. Hãy thử điều chỉnh khoảng giá hoặc từ khóa địa điểm.
       </p>
       <p>Bạn có thể sửa tìm kiếm hoặc bộ lọc ở trang này.</p>
     </div>
   </div>
-  <div *ngIf="!loading()" class="list">
+
+  <div *ngIf="!loading() && hotels().length" class="list" [class.grid-view]="viewMode() === 'grid'">
     <app-hotel-card *ngFor="let hotel of hotels()" [hotel]="hotel" />
   </div>
+
+  <!-- Q3: Pagination bar -->
+  <nav *ngIf="!loading() && totalPages() > 1" class="pagination-bar" aria-label="Phân trang danh sách khách sạn">
+    <button
+      type="button"
+      class="page-btn"
+      [disabled]="page() <= 1"
+      (click)="pageChange.emit(page() - 1)"
+    >
+      ← Trang trước
+    </button>
+
+    <div class="page-numbers">
+      <button
+        *ngFor="let p of pageNumbers()"
+        type="button"
+        class="page-num"
+        [class.active]="p === page()"
+        [attr.aria-current]="p === page() ? 'page' : null"
+        (click)="pageChange.emit(p)"
+      >
+        {{ p }}
+      </button>
+    </div>
+
+    <button
+      type="button"
+      class="page-btn"
+      [disabled]="page() >= totalPages()"
+      (click)="pageChange.emit(page() + 1)"
+    >
+      Trang sau →
+    </button>
+  </nav>
 </section>

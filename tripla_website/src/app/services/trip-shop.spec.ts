@@ -1,13 +1,16 @@
 import { TestBed } from '@angular/core/testing';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { TripShopService } from './trip-shop';
 
-import { TripShopComponent } from '../pages/trip-shop/trip-shop';
-
-describe('TripShop', () => {
-  let service: TripShopComponent;
+describe('TripShopService', () => {
+  let service: TripShopService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(TripShopComponent);
+    TestBed.configureTestingModule({
+      providers: [TripShopService, provideHttpClient(), provideHttpClientTesting()],
+    });
+    service = TestBed.inject(TripShopService);
   });
 
   it('should be created', () => {

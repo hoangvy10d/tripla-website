@@ -1,0 +1,61 @@
+{
+  "id": "99",
+  "title": "Grand Du Lac Boutique Saigon",
+  "city": "Hồ Chí Minh",
+  "lat": 10.7711,
+  "lng": 106.7022,
+  "category": "hotel",
+  "description": "Grand Du Lac Boutique Saigon mang đến trải nghiệm nghỉ dưỡng sang trọng giữa lòng Sài Gòn. Tọa lạc tại Quận 1, khách sạn có thiết kế kết hợp kiến trúc cổ điển Pháp và nét hiện đại, cung cấp phòng ốc tiện nghi với view nhìn ra toàn cảnh thành phố.",
+  "images": [
+    "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&auto=format&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&auto=format&fit=crop&q=60",
+    "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&auto=format&fit=crop&q=60",
+    "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=800&auto=format&fit=crop&q=60",
+    "https://images.unsplash.com/photo-1522792065601-5e6e1802f0d0?w=800&auto=format&fit=crop&q=60"
+  ],
+  "rating": 4.9,
+  "reviewsCount": 1284,
+  "ticketPrice": 0,
+  "openingHours": "24/7",
+  "address": "15 Nguyễn Huệ, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh",
+  "amenities": [
+    "Hồ bơi ngoài trời",
+    "WiFi miễn phí",
+    "Xe đưa đón sân bay",
+    "Trung tâm Spa",
+    "Nhà hàng",
+    "Lễ tân 24h"
+  ],
+  "roomTypes": [
+    {
+      "id": "r1",
+      "name": "Phòng Superior Giường Đôi",
+      "capacity": 2,
+      "size": "25 m²",
+      "bed": "1 giường đôi lớn",
+      "price": 1850000,
+      "left": 5,
+      "image": "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=400&auto=format&fit=crop&q=60"
+    },
+    {
+      "id": "r2",
+      "name": "Phòng Deluxe City View",
+      "capacity": 2,
+      "size": "32 m²",
+      "bed": "1 giường đôi cực lớn",
+      "price": 2400000,
+      "left": 2,
+      "image": "https://images.unsplash.com/photo-1590490359683-658d3d23f972?w=400&auto=format&fit=crop&q=60"
+    },
+    {
+      "id": "r3",
+      "name": "Suite Gia Đình Có Ban Công",
+      "capacity": 4,
+      "size": "55 m²",
+      "bed": "2 giường đôi lớn",
+      "price": 4200000,
+      "left": 1,
+      "image": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=400&auto=format&fit=crop&q=60"
+    }
+  ]
+}

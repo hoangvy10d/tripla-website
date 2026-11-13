@@ -1,0 +1,27 @@
+[
+  {
+    "_id": "user_victoria_chen",
+    "handle": "@victoriachen",
+    "fullName": "Victoria Chen",
+    "email": "victoria.chen@tripla.vip",
+    "phone": "0909888999",
+    "passwordHash": "tripla_vip_2026",
+    "tier": "Elite Platinum",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
+    "isVerified": true,
+    "createdAt": "2026-01-15T08:00:00.000Z"
+  },
+  {
+    "_id": "user_minh_01",
+    "handle": "@minh_wanderlust",
+    "fullName": "Minh Wanderlust",
+    "email": "minh@tripla.vip",
+    "phone": "0901234567",
+    "passwordHash": "tripla_creator_2026",
+    "tier": "Luminous Curator",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
+    "isVerified": true,
+    "createdAt": "2026-02-10T08:00:00.000Z"
+  }
+]
+

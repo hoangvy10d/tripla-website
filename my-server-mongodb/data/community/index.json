@@ -1,0 +1,658 @@
+{
+  "reels": [
+    {
+      "id": "r1",
+      "userId": "u2",
+      "locationId": "1",
+      "videoUrl": "data/community/reels/r1/BANAHILL.mp4",
+      "caption": "Mờ ảo và hùng vĩ giữa mây trời Bà Nà Hills - Cầu Vàng đúng là một kiệt tác!",
+      "hashtags": [
+        "danang",
+        "vietnam",
+        "banahills"
+      ],
+      "likes": 5600,
+      "views": 250000
+    },
+    {
+      "id": "r2",
+      "userId": "u1",
+      "locationId": "3",
+      "videoUrl": "data/community/reels/r2/CÙ LAO CHÀM.mp4",
+      "caption": "Nước biển xanh trong vắt ở Cù Lao Chàm. Lặn ngắm san hô cực đã!",
+      "hashtags": [
+        "culaocham",
+        "danang",
+        "travel"
+      ],
+      "likes": 3200,
+      "views": 150000
+    },
+    {
+      "id": "r3",
+      "userId": "u3",
+      "locationId": "2",
+      "videoUrl": "data/community/reels/r3/HA.mp4",
+      "caption": "Một góc Hội An yên bình về đêm. Phố cổ lồng đèn lung linh.",
+      "hashtags": [
+        "hoian",
+        "vietnamtravel",
+        "peace"
+      ],
+      "likes": 12400,
+      "views": 550000
+    },
+    {
+      "id": "r4",
+      "userId": "u2",
+      "locationId": "4",
+      "videoUrl": "data/community/reels/r4/HÀ NỘI.mp4",
+      "caption": "Hà Nội mùa này đẹp lạ lùng. Trà chanh chém gió Hồ Gươm thôi anh em!",
+      "hashtags": [
+        "hanoi",
+        "vibes",
+        "hoguom"
+      ],
+      "likes": 8900,
+      "views": 320000
+    },
+    {
+      "id": "r5",
+      "userId": "u1",
+      "locationId": "5",
+      "videoUrl": "data/community/reels/r5/DL.mp4",
+      "caption": "Đà Lạt chưa bao giờ làm mình thất vọng. Không khí se lạnh quá tuyệt vời.",
+      "hashtags": [
+        "dalat",
+        "chill",
+        "travel"
+      ],
+      "likes": 11000,
+      "views": 420000
+    },
+    {
+      "id": "r6",
+      "userId": "u3",
+      "locationId": "14",
+      "videoUrl": "data/community/reels/r6/mixkit-hand-dripping-water-in-a-spa-pool-42526-large.mp4",
+      "caption": "Trải nghiệm ngâm bùn khoáng nóng ở Nha Trang.",
+      "hashtags": [
+        "hotspring",
+        "mudbath",
+        "nhatrang"
+      ],
+      "likes": 1420,
+      "views": 22400
+    },
+    {
+      "id": "r10",
+      "userId": "u3",
+      "locationId": "6",
+      "videoUrl": "data/community/reels/r10/CHUAHANOI.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #CHUAHANOI",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 6090,
+      "views": 463501
+    },
+    {
+      "id": "r11",
+      "userId": "u2",
+      "locationId": "7",
+      "videoUrl": "data/community/reels/r11/CVHANOI.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #CVHANOI",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 4874,
+      "views": 233406
+    },
+    {
+      "id": "r12",
+      "userId": "u1",
+      "locationId": "6",
+      "videoUrl": "data/community/reels/r12/DL1.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #DL1",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 1046,
+      "views": 292132
+    },
+    {
+      "id": "r13",
+      "userId": "u3",
+      "locationId": "4",
+      "videoUrl": "data/community/reels/r13/DL11.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #DL11",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 1392,
+      "views": 465965
+    },
+    {
+      "id": "r14",
+      "userId": "u4",
+      "locationId": "4",
+      "videoUrl": "data/community/reels/r14/DL13.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #DL13",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 2080,
+      "views": 475964
+    },
+    {
+      "id": "r15",
+      "userId": "u3",
+      "locationId": "6",
+      "videoUrl": "data/community/reels/r15/DL14.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #DL14",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 5513,
+      "views": 59344
+    },
+    {
+      "id": "r16",
+      "userId": "u3",
+      "locationId": "4",
+      "videoUrl": "data/community/reels/r16/DL15.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #DL15",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 8751,
+      "views": 495066
+    },
+    {
+      "id": "r17",
+      "userId": "u3",
+      "locationId": "7",
+      "videoUrl": "data/community/reels/r17/DL2.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #DL2",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 3736,
+      "views": 294288
+    },
+    {
+      "id": "r18",
+      "userId": "u2",
+      "locationId": "6",
+      "videoUrl": "data/community/reels/r18/DL3.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #DL3",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 4722,
+      "views": 362905
+    },
+    {
+      "id": "r19",
+      "userId": "u5",
+      "locationId": "2",
+      "videoUrl": "data/community/reels/r19/DL5.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #DL5",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 5962,
+      "views": 467409
+    },
+    {
+      "id": "r20",
+      "userId": "u3",
+      "locationId": "2",
+      "videoUrl": "data/community/reels/r20/DL7.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #DL7",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 3022,
+      "views": 19342
+    },
+    {
+      "id": "r21",
+      "userId": "u4",
+      "locationId": "2",
+      "videoUrl": "data/community/reels/r21/DL8.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #DL8",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 7358,
+      "views": 440005
+    },
+    {
+      "id": "r22",
+      "userId": "u2",
+      "locationId": "7",
+      "videoUrl": "data/community/reels/r22/DL9.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #DL9",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 3098,
+      "views": 157624
+    },
+    {
+      "id": "r23",
+      "userId": "u4",
+      "locationId": "7",
+      "videoUrl": "data/community/reels/r23/DLHOME.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #DLHOME",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 3232,
+      "views": 311864
+    },
+    {
+      "id": "r24",
+      "userId": "u3",
+      "locationId": "1",
+      "videoUrl": "data/community/reels/r24/DN.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #DN",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 4097,
+      "views": 404623
+    },
+    {
+      "id": "r25",
+      "userId": "u3",
+      "locationId": "1",
+      "videoUrl": "data/community/reels/r25/DN10.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #DN10",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 2520,
+      "views": 339372
+    },
+    {
+      "id": "r26",
+      "userId": "u4",
+      "locationId": "3",
+      "videoUrl": "data/community/reels/r26/DN5.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #DN5",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 1006,
+      "views": 64337
+    },
+    {
+      "id": "r27",
+      "userId": "u2",
+      "locationId": "1",
+      "videoUrl": "data/community/reels/r27/DN7.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #DN7",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 8766,
+      "views": 335035
+    },
+    {
+      "id": "r28",
+      "userId": "u4",
+      "locationId": "7",
+      "videoUrl": "data/community/reels/r28/DN8.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #DN8",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 4471,
+      "views": 167254
+    },
+    {
+      "id": "r29",
+      "userId": "u1",
+      "locationId": "3",
+      "videoUrl": "data/community/reels/r29/DNA.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #DNA",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 1073,
+      "views": 197118
+    },
+    {
+      "id": "r30",
+      "userId": "u5",
+      "locationId": "7",
+      "videoUrl": "data/community/reels/r30/DNANA .mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #DNANA ",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 4531,
+      "views": 459452
+    },
+    {
+      "id": "r31",
+      "userId": "u3",
+      "locationId": "2",
+      "videoUrl": "data/community/reels/r31/DNG.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #DNG",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 8853,
+      "views": 406285
+    },
+    {
+      "id": "r32",
+      "userId": "u5",
+      "locationId": "7",
+      "videoUrl": "data/community/reels/r32/DNXHANOI.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #DNXHANOI",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 9448,
+      "views": 375123
+    },
+    {
+      "id": "r33",
+      "userId": "u2",
+      "locationId": "7",
+      "videoUrl": "data/community/reels/r33/GBDN.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #GBDN",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 6510,
+      "views": 89715
+    },
+    {
+      "id": "r34",
+      "userId": "u1",
+      "locationId": "7",
+      "videoUrl": "data/community/reels/r34/HANOI10.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #HANOI10",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 8885,
+      "views": 83286
+    },
+    {
+      "id": "r35",
+      "userId": "u2",
+      "locationId": "4",
+      "videoUrl": "data/community/reels/r35/HANOI13.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #HANOI13",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 1660,
+      "views": 433088
+    },
+    {
+      "id": "r36",
+      "userId": "u4",
+      "locationId": "7",
+      "videoUrl": "data/community/reels/r36/HANOI2.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #HANOI2",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 7541,
+      "views": 295480
+    },
+    {
+      "id": "r37",
+      "userId": "u5",
+      "locationId": "4",
+      "videoUrl": "data/community/reels/r37/HANOI3.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #HANOI3",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 5683,
+      "views": 377621
+    },
+    {
+      "id": "r38",
+      "userId": "u3",
+      "locationId": "1",
+      "videoUrl": "data/community/reels/r38/HANOI4.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #HANOI4",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 4319,
+      "views": 258163
+    },
+    {
+      "id": "r39",
+      "userId": "u4",
+      "locationId": "5",
+      "videoUrl": "data/community/reels/r39/HANOI5.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #HANOI5",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 6157,
+      "views": 163901
+    },
+    {
+      "id": "r40",
+      "userId": "u3",
+      "locationId": "6",
+      "videoUrl": "data/community/reels/r40/HANOI6.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #HANOI6",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 8787,
+      "views": 205014
+    },
+    {
+      "id": "r41",
+      "userId": "u1",
+      "locationId": "6",
+      "videoUrl": "data/community/reels/r41/HODONGHANOI.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #HODONGHANOI",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 9884,
+      "views": 146047
+    },
+    {
+      "id": "r42",
+      "userId": "u3",
+      "locationId": "6",
+      "videoUrl": "data/community/reels/r42/KSDANANG.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #KSDANANG",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 5457,
+      "views": 379149
+    },
+    {
+      "id": "r43",
+      "userId": "u3",
+      "locationId": "3",
+      "videoUrl": "data/community/reels/r43/KSHANOI.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #KSHANOI",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 903,
+      "views": 148132
+    },
+    {
+      "id": "r44",
+      "userId": "u5",
+      "locationId": "4",
+      "videoUrl": "data/community/reels/r44/PHDANA.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #PHDANA",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 2997,
+      "views": 442915
+    },
+    {
+      "id": "r45",
+      "userId": "u4",
+      "locationId": "7",
+      "videoUrl": "data/community/reels/r45/RMDL.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #RMDL",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 3926,
+      "views": 398295
+    },
+    {
+      "id": "r46",
+      "userId": "u4",
+      "locationId": "6",
+      "videoUrl": "data/community/reels/r46/STDN.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #STDN",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 9972,
+      "views": 156847
+    },
+    {
+      "id": "r47",
+      "userId": "u4",
+      "locationId": "5",
+      "videoUrl": "data/community/reels/r47/VINWONDERNAMHA.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #VINWONDERNAMHA",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 5420,
+      "views": 278347
+    },
+    {
+      "id": "r48",
+      "userId": "u1",
+      "locationId": "4",
+      "videoUrl": "data/community/reels/r48/XEDL.mp4",
+      "caption": "Trải nghiệm khó quên cùng Tripla! #XEDL",
+      "hashtags": [
+        "travel",
+        "vietnam",
+        "explore"
+      ],
+      "likes": 4227,
+      "views": 463222
+    }
+  ],
+  "posts": [
+    {
+      "id": "p1",
+      "userId": "u2",
+      "locationIds": [
+        "4",
+        "1",
+        "5"
+      ],
+      "title": "Chasing Sunsets at My Khe Beach",
+      "content": "Woke up at 5:00 AM to see the sunrise at My Khe Beach. The golden hour lights up the entire ocean and reflection on the wet sand is spectacular.",
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=60",
+      "likes": 245
+    },
+    {
+      "id": "p2",
+      "userId": "u1",
+      "locationId": "5",
+      "title": "Hidden Gem: Reply 1988 Cafe",
+      "content": "For all KDrama and coffee enthusiasts, this cafe is an absolute hidden gem in Da Nang! The signature egg coffee is incredibly rich.",
+      "image": "https://images.unsplash.com/photo-1498804103079-a6351b050096?w=800&auto=format&fit=crop&q=60",
+      "likes": 128
+    }
+  ]
+}

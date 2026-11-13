@@ -1,4 +1,4 @@
-﻿<article>
+<article>
   <div class="photo">
     <button
       type="button"
@@ -43,7 +43,7 @@
     <h3>
       <a
         class="card-link"
-        [routerLink]="['/activities', activity().id]"
+        [routerLink]="['/activities', activity().slug || activity().id]"
         queryParamsHandling="preserve"
         >{{ activity().name }}</a
       >

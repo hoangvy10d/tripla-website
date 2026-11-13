@@ -15,6 +15,8 @@ import { ActivitySearchBar } from '../../components/activity-search-bar/activity
 import { ActivityFilterSidebar } from '../../components/activity-filter-sidebar/activity-filter-sidebar';
 import { ActivityResultsList } from '../../components/activity-results-list/activity-results-list';
 import { ActivityNavigation } from '../../components/activity-navigation/activity-navigation';
+import { SiteFooterComponent } from '../../../shared/components/site-footer/site-footer';
+import { injectLiveHttp } from '../../../services/live-http';
 @Component({
   selector: 'app-activity-search-results',
   standalone: true,
@@ -24,6 +26,7 @@ import { ActivityNavigation } from '../../components/activity-navigation/activit
     ActivityFilterSidebar,
     ActivityResultsList,
     ActivityNavigation,
+    SiteFooterComponent,
   ],
   templateUrl: './activity-search-results.html',
   styleUrl: './activity-search-results.css',
@@ -32,6 +35,7 @@ export class ActivitySearchResults {
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
   private readonly source = inject(ActivitySearchService);
+  readonly isMongoConnected = signal(!!injectLiveHttp());
   readonly criteria = signal<ActivitySearchCriteria>({ location: '', query: '', categories: [] });
   readonly activities = signal<Activity[]>([]);
   readonly loading = signal(false);

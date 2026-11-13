@@ -1,23 +1,4 @@
-<header class="site-header">
-  <div class="header-bar glass">
-    <a class="brand" routerLink="/home">
-      <div class="brand-logo"><img src="images/logo (2).png" alt="TRIPLA Logo" /></div>
-      <span class="brand-name font-head">TRIPLA</span>
-    </a>
-
-    <nav class="nav-pill" id="main-nav-bar">
-      <a class="nav-link-indicator" routerLink="/home">Khám phá</a>
-      <a class="nav-link-indicator" routerLink="/tripshort">TripShorts</a>
-      <a class="nav-link-indicator is-nav-active" routerLink="/trip-shop">TripShop</a><a class="nav-link-indicator" routerLink="/trip-planning">Trip Planning</a>
-      <a class="nav-link-indicator" routerLink="/about">Về TRIPLA</a>
-    </nav>
-
-    <div class="header-actions">
-      <button type="button" class="btn btn-primary login-btn" (click)="openAuthModal()">Đăng Nhập</button>
-      <div class="avatar-btn"><span class="material-symbols-outlined">person</span></div>
-    </div>
-  </div>
-</header>
+<app-site-header variant="floating" positionMode="fixed" activeNav="trip-shop" subBrand="TripShop" />
 
 <main>
 
@@ -35,164 +16,384 @@
           Một nơi để đến.<br /><em>Một kỳ nghỉ của riêng bạn.</em>
         </h1>
         <p class="hero-sub reveal-item" style="animation-delay: 0.2s">
-          Hơn 2,000,000+ khách sạn, khu nghỉ dưỡng và trải nghiệm chuẩn mực toàn cầu với chính sách giá ưu đãi bảo chứng.
+          Hơn 2,000,000+ khách sạn, khu nghỉ dưỡng và trải nghiệm chuẩn mực toàn cầu với chính sách giá ưu đãi bảo
+          chứng.
         </p>
       </div>
 
       <!-- Booking console -->
       <div class="console glass" id="tripshop-booking" appReveal="zoom">
         <div class="tabs">
-          <button class="tab" [class.is-on]="bookingTab() === 'hotel'" (click)="selectBookingTab('hotel')" type="button"><span class="material-symbols-outlined">hotel</span><span>Khách Sạn &amp; Resort</span></button>
-          <button class="tab" [class.is-on]="bookingTab() === 'flight'" (click)="selectBookingTab('flight')" type="button"><span class="material-symbols-outlined">flight</span><span>Vé Máy Bay</span></button>
-          <button class="tab" type="button" [class.is-on]="bookingTab() === 'tour'" (click)="selectBookingTab('tour')"><span class="material-symbols-outlined">tour</span><span>Hoạt động &amp; Vui chơi</span></button>
-          <button class="tab" type="button" [class.is-on]="bookingTab() === 'bus'" (click)="selectBookingTab('bus')"><span class="material-symbols-outlined">directions_bus</span><span>Vé Xe Khách</span></button>
+          <button class="tab" [class.is-on]="bookingTab() === 'hotel'" (click)="selectBookingTab('hotel')"
+            type="button"><span class="material-symbols-outlined">hotel</span><span>Khách Sạn &amp;
+              Resort</span></button>
+          <button class="tab" [class.is-on]="bookingTab() === 'flight'" (click)="selectBookingTab('flight')"
+            type="button"><span class="material-symbols-outlined">flight</span><span>Vé Máy Bay</span></button>
+          <button class="tab" type="button" [class.is-on]="bookingTab() === 'tour'"
+            (click)="selectBookingTab('tour')"><span class="material-symbols-outlined">tour</span><span>Hoạt động &amp;
+              Vui chơi</span></button>
+          <button class="tab" type="button" [class.is-on]="bookingTab() === 'bus'"
+            (click)="selectBookingTab('bus')"><span class="material-symbols-outlined">directions_bus</span><span>Vé Xe
+              Khách</span></button>
         </div>
 
-        <div [hidden]="bookingTab() !== 'hotel'" class="hotel-booking-content"><div class="stay-type-options"><button *ngFor="let type of accommodationTypes" type="button" class="qf" [class.selected]="accommodationType === type" [attr.aria-pressed]="accommodationType === type" (click)="accommodationType = type">{{ type }}</button></div><div class="search-grid hotel-search-grid compact-hotel-search">
-  <div class="hotel-search-field">
-    <label class="hotel-field-label" for="tripshop-destination">Thành phố, địa điểm hoặc tên khách sạn</label>
-    <div class="seg" [class.destination-invalid]="hotelSearchError && !searchDestination.trim()"><span class="material-symbols-outlined">location_on</span><input class="seg-input" id="tripshop-destination" type="text" [(ngModel)]="searchDestination" (ngModelChange)="hotelSearchError = ''" [placeholder]="hotelSearchError && !searchDestination.trim() ? '*Vui lòng nhập điểm đến' : 'Đà Lạt'" [attr.aria-invalid]="hotelSearchError && !searchDestination.trim() ? 'true' : null" autocomplete="off" [attr.aria-expanded]="destinationOpen" aria-controls="destination-suggestions" (focus)="openDestinationSuggestions()" (click)="openDestinationSuggestions()" (keydown.escape)="destinationOpen = false" /></div>
-    <div *ngIf="destinationOpen" id="destination-suggestions" class="hotel-dropdown destination-dropdown">
-      <div class="dropdown-heading"><strong>Chọn điểm đến</strong><button type="button" class="qf" (click)="destinationOpen = false">Đóng</button></div>
-      <ng-container *ngIf="recentDestinations.length"><div class="dropdown-heading"><strong>Đã chọn gần đây</strong><button type="button" class="qf" (click)="recentDestinations = []">Xóa</button></div><button *ngFor="let name of recentDestinations" type="button" class="destination-option" (click)="chooseDestination(name)"><span class="material-symbols-outlined">history</span><span>{{ name }}</span></button></ng-container>
-      <h4>{{ searchDestination.trim() ? 'Kết quả phù hợp' : 'Điểm đến phổ biến' }}</h4>
-      <button *ngFor="let place of matchingDestinations" type="button" class="destination-option" (click)="chooseDestination(place.name)"><span class="material-symbols-outlined">location_on</span><span><strong>{{ place.name }}</strong><small>{{ place.region }}</small></span><small class="destination-type">Thành phố</small></button>
-      <p *ngIf="!matchingDestinations.length" class="dropdown-empty">Không có gợi ý phù hợp. Bạn có thể tiếp tục nhập tên địa điểm hoặc khách sạn.</p>
-    </div>
-  </div>
-  <div class="hotel-search-field">
-    <span class="hotel-field-label" id="hotel-dates-label">Ngày nhận phòng và trả phòng</span>
-    <button type="button" class="seg booking-date-trigger" aria-labelledby="hotel-dates-label hotel-dates-value" [attr.aria-expanded]="calendarOpen" aria-controls="hotel-date-calendar" (click)="toggleBookingCalendar()"><span class="material-symbols-outlined">calendar_month</span><span class="seg-input" id="hotel-dates-value">{{ checkIn | date:'dd/MM/yyyy' }} – {{ checkOut | date:'dd/MM/yyyy' }} ({{ bookingNights }} đêm)</span></button>
-  </div>
-  <div class="hotel-search-field">
-    <span class="hotel-field-label">Khách và Phòng</span>
-    <button type="button" class="seg guest-trigger" [attr.aria-expanded]="guestsOpen" aria-controls="hotel-guests" (click)="toggleGuests()"><span class="material-symbols-outlined">group</span><span class="seg-input">{{ adults }} người lớn, {{ children }} trẻ em, {{ rooms }} phòng</span></button>
-    <div *ngIf="guestsOpen" id="hotel-guests" class="hotel-dropdown guests-dropdown" (keydown.escape)="guestsOpen = false">
-      <div *ngFor="let counter of guestCounters" class="guest-counter"><strong>{{ counter.label }}</strong><button type="button" [attr.aria-label]="'Giảm ' + counter.label" [disabled]="this[counter.key] <= counter.min" (click)="changeGuestCount(counter.key, -1)">−</button><span aria-live="polite">{{ this[counter.key] }}</span><button type="button" [attr.aria-label]="'Tăng ' + counter.label" [disabled]="this[counter.key] >= counter.max" (click)="changeGuestCount(counter.key, 1)">+</button></div>
-      <div class="guest-done"><button type="button" class="btn btn-primary" (click)="guestsOpen = false">Xong</button></div>
-    </div>
-  </div>
-  <div class="search-wrap"><button class="search-btn" type="button" aria-label="Tìm kiếm" title="Tìm kiếm" (click)="searchHotels()"><span class="material-symbols-outlined">search</span></button></div>
-</div>
-<p *ngIf="hotelSearchError && searchDestination.trim()" class="hotel-search-validation" role="alert">{{ hotelSearchError }}</p>
-<div *ngIf="calendarOpen" id="hotel-date-calendar" class="booking-calendar" (keydown.escape)="calendarOpen = false">
-          <div class="booking-calendar-head"><h3>Ngày ở</h3><button type="button" class="qf" aria-label="Đóng lịch" (click)="calendarOpen = false">Đóng</button></div>
-          <div class="booking-date-summary"><div><small>Nhận phòng</small><strong>{{ (draftCheckIn || checkIn) | date:'dd/MM/yyyy' }}</strong></div><div><small>Trả phòng</small><strong>{{ (draftCheckOut || checkOut) | date:'dd/MM/yyyy' }}</strong></div></div>
-          <p class="booking-calendar-hint">{{ draftCheckIn && !draftCheckOut ? 'Chọn ngày trả phòng' : 'Chọn ngày nhận phòng và trả phòng' }}</p>
-          <div class="booking-calendar-head"><button type="button" class="qf" aria-label="Tháng trước" (click)="moveBookingMonth(-1)">‹</button><button type="button" class="qf" aria-label="Tháng sau" (click)="moveBookingMonth(1)">›</button></div>
-          <div class="booking-months"><section *ngFor="let month of bookingMonths"><h4>Tháng {{ month | date:'MM/yyyy' }}</h4><div class="booking-days"><span *ngFor="let label of weekLabels">{{ label }}</span><ng-container *ngFor="let day of monthDays(month)"><button *ngIf="day; else emptyBookingDay" type="button" [disabled]="day < bookingToday" [class.in-range]="bookingRange(day)" [class.endpoint]="day.getTime() === draftCheckIn?.getTime() || day.getTime() === draftCheckOut?.getTime()" [attr.aria-label]="day | date:'dd/MM/yyyy'" (click)="selectBookingDay(day)">{{ day.getDate() }}</button><ng-template #emptyBookingDay><span></span></ng-template></ng-container></div></section></div>
-          <div class="booking-calendar-actions"><button type="button" class="btn btn-primary" [disabled]="!draftCheckIn || !draftCheckOut" (click)="applyBookingDates()">Xác nhận</button></div>
-        </div><div class="quick">
-          <span class="qf-label"><span class="material-symbols-outlined">verified</span> Ưu điểm nổi bật:</span>
-          <span class="qf"><span class="material-symbols-outlined">check_circle</span> Miễn phí hủy phòng</span>
-          <span class="qf"><span class="material-symbols-outlined">credit_card_off</span> Thanh toán nhanh chóng</span>
-          <span class="qf"><span class="material-symbols-outlined">pool</span> Hồ bơi vô cực riêng</span>
+        <div [hidden]="bookingTab() !== 'hotel'" class="hotel-booking-content">
+          <div class="stay-type-options"><button *ngFor="let type of accommodationTypes" type="button" class="qf"
+              [class.selected]="accommodationType === type" [attr.aria-pressed]="accommodationType === type"
+              (click)="accommodationType = type">{{ type }}</button></div>
+          <div class="search-grid hotel-search-grid compact-hotel-search">
+            <div class="hotel-search-field">
+              <label class="hotel-field-label" for="tripshop-destination">Thành phố, địa điểm hoặc tên khách sạn</label>
+              <div class="seg" [class.destination-invalid]="hotelSearchError && !searchDestination.trim()"><span
+                  class="material-symbols-outlined">location_on</span><input class="seg-input" id="tripshop-destination"
+                  type="text" [(ngModel)]="searchDestination" (ngModelChange)="hotelSearchError = ''"
+                  [placeholder]="hotelSearchError && !searchDestination.trim() ? '*Vui lòng nhập điểm đến' : 'Đà Lạt'"
+                  [attr.aria-invalid]="hotelSearchError && !searchDestination.trim() ? 'true' : null" autocomplete="off"
+                  [attr.aria-expanded]="destinationOpen" aria-controls="destination-suggestions"
+                  (focus)="openDestinationSuggestions()" (click)="openDestinationSuggestions()"
+                  (keydown.escape)="destinationOpen = false" /></div>
+              <div *ngIf="destinationOpen" id="destination-suggestions" class="hotel-dropdown destination-dropdown">
+                <div class="dropdown-heading"><strong>Chọn điểm đến</strong><button type="button" class="qf"
+                    (click)="destinationOpen = false">Đóng</button></div>
+                <ng-container *ngIf="recentDestinations.length">
+                  <div class="dropdown-heading"><strong>Đã chọn gần đây</strong><button type="button" class="qf"
+                      (click)="recentDestinations = []">Xóa</button></div><button
+                    *ngFor="let name of recentDestinations" type="button" class="destination-option"
+                    (click)="chooseDestination(name)"><span class="material-symbols-outlined">history</span><span>{{
+                      name }}</span></button>
+                </ng-container>
+                <h4>{{ searchDestination.trim() ? 'Kết quả phù hợp' : 'Điểm đến phổ biến' }}</h4>
+                <button *ngFor="let place of matchingDestinations" type="button" class="destination-option"
+                  (click)="chooseDestination(place.name)"><span
+                    class="material-symbols-outlined">location_on</span><span><strong>{{ place.name }}</strong><small>{{
+                      place.region }}</small></span><small class="destination-type">Thành phố</small></button>
+                <p *ngIf="!matchingDestinations.length" class="dropdown-empty">Không có gợi ý phù hợp. Bạn có thể tiếp
+                  tục nhập tên địa điểm hoặc khách sạn.</p>
+              </div>
+            </div>
+            <div class="hotel-search-field">
+              <span class="hotel-field-label" id="hotel-dates-label">Ngày nhận phòng và trả phòng</span>
+              <button type="button" class="seg booking-date-trigger"
+                aria-labelledby="hotel-dates-label hotel-dates-value" [attr.aria-expanded]="calendarOpen"
+                aria-controls="hotel-date-calendar" (click)="toggleBookingCalendar()"><span
+                  class="material-symbols-outlined">calendar_month</span><span class="seg-input"
+                  id="hotel-dates-value">{{ checkIn | date:'dd/MM/yyyy' }} – {{ checkOut | date:'dd/MM/yyyy' }} ({{
+                  bookingNights }} đêm)</span></button>
+            </div>
+            <div class="hotel-search-field">
+              <span class="hotel-field-label">Khách và Phòng</span>
+              <button type="button" class="seg guest-trigger" [attr.aria-expanded]="guestsOpen"
+                aria-controls="hotel-guests" (click)="toggleGuests()"><span
+                  class="material-symbols-outlined">group</span><span class="seg-input">{{ adults }} người lớn, {{
+                  children }} trẻ em, {{ rooms }} phòng</span></button>
+              <div *ngIf="guestsOpen" id="hotel-guests" class="hotel-dropdown guests-dropdown"
+                (keydown.escape)="guestsOpen = false">
+                <div *ngFor="let counter of guestCounters" class="guest-counter"><strong>{{ counter.label
+                    }}</strong><button type="button" [attr.aria-label]="'Giảm ' + counter.label"
+                    [disabled]="this[counter.key] <= counter.min"
+                    (click)="changeGuestCount(counter.key, -1)">−</button><span aria-live="polite">{{ this[counter.key]
+                    }}</span><button type="button" [attr.aria-label]="'Tăng ' + counter.label"
+                    [disabled]="this[counter.key] >= counter.max" (click)="changeGuestCount(counter.key, 1)">+</button>
+                </div>
+                <div class="guest-done"><button type="button" class="btn btn-primary"
+                    (click)="guestsOpen = false">Xong</button></div>
+              </div>
+            </div>
+            <div class="search-wrap"><button class="search-btn" type="button" aria-label="Tìm kiếm" title="Tìm kiếm"
+                (click)="searchHotels()"><span class="material-symbols-outlined">search</span></button></div>
+          </div>
+          <p *ngIf="hotelSearchError && searchDestination.trim()" class="hotel-search-validation" role="alert">{{
+            hotelSearchError }}</p>
+          <div *ngIf="calendarOpen" id="hotel-date-calendar" class="booking-calendar"
+            (keydown.escape)="calendarOpen = false">
+            <div class="booking-calendar-head">
+              <h3>Ngày ở</h3><button type="button" class="qf" aria-label="Đóng lịch"
+                (click)="calendarOpen = false">Đóng</button>
+            </div>
+            <div class="booking-date-summary">
+              <div><small>Nhận phòng</small><strong>{{ (draftCheckIn || checkIn) | date:'dd/MM/yyyy' }}</strong></div>
+              <div><small>Trả phòng</small><strong>{{ (draftCheckOut || checkOut) | date:'dd/MM/yyyy' }}</strong></div>
+            </div>
+            <p class="booking-calendar-hint">{{ draftCheckIn && !draftCheckOut ? 'Chọn ngày trả phòng' : 'Chọn ngày nhận
+              phòng và trả phòng' }}</p>
+            <div class="booking-calendar-head"><button type="button" class="qf" aria-label="Tháng trước"
+                (click)="moveBookingMonth(-1)">‹</button><button type="button" class="qf" aria-label="Tháng sau"
+                (click)="moveBookingMonth(1)">›</button></div>
+            <div class="booking-months">
+              <section *ngFor="let month of bookingMonths">
+                <h4>Tháng {{ month | date:'MM/yyyy' }}</h4>
+                <div class="booking-days"><span *ngFor="let label of weekLabels">{{ label }}</span><ng-container
+                    *ngFor="let day of monthDays(month)"><button *ngIf="day; else emptyBookingDay" type="button"
+                      [disabled]="day < bookingToday" [class.in-range]="bookingRange(day)"
+                      [class.endpoint]="day.getTime() === draftCheckIn?.getTime() || day.getTime() === draftCheckOut?.getTime()"
+                      [attr.aria-label]="day | date:'dd/MM/yyyy'" (click)="selectBookingDay(day)">{{ day.getDate()
+                      }}</button><ng-template #emptyBookingDay><span></span></ng-template></ng-container></div>
+              </section>
+            </div>
+            <div class="booking-calendar-actions"><button type="button" class="btn btn-primary"
+                [disabled]="!draftCheckIn || !draftCheckOut" (click)="applyBookingDates()">Xác nhận</button></div>
+          </div>
+          <div class="quick">
+            <span class="qf-label"><span class="material-symbols-outlined">verified</span> Ưu điểm nổi bật:</span>
+            <span class="qf"><span class="material-symbols-outlined">check_circle</span> Miễn phí hủy phòng</span>
+            <span class="qf"><span class="material-symbols-outlined">credit_card_off</span> Thanh toán nhanh
+              chóng</span>
+            <span class="qf"><span class="material-symbols-outlined">pool</span> Hồ bơi vô cực riêng</span>
+          </div>
         </div>
-</div>
-<div *ngIf="bookingTab() === 'bus'" class="bus-booking">
- <div class="bus-country-options"><span class="qf bus-country-note">🇻🇳 Việt Nam</span></div>
- <div class="bus-search-fields">
-  <div class="bus-location-pair">
-   <div class="bus-field">Điểm đi<button type="button" class="bus-input bus-location-trigger" (click)="openBusPopup('from')" [attr.aria-expanded]="busPopup === 'from'"><span class="material-symbols-outlined">location_on</span><strong>{{ busFrom }}</strong></button></div>
-   <button type="button" class="bus-swap" aria-label="Đổi điểm đi và đến" (click)="swapBusCities()"><span class="material-symbols-outlined">swap_horiz</span></button>
-   <div class="bus-field">Điểm đến<button type="button" class="bus-input bus-location-trigger" (click)="openBusPopup('to')" [attr.aria-expanded]="busPopup === 'to'"><span class="material-symbols-outlined">location_on</span><strong>{{ busTo }}</strong></button></div>
-   <div *ngIf="busPopup === 'from' || busPopup === 'to'" class="hotel-dropdown bus-route-panel" (keydown.escape)="busPopup = null">
-    <div class="dropdown-heading"><strong>{{ busPopup === 'from' ? 'Chọn điểm đi' : 'Tuyến xe từ ' + busFrom }}</strong><button type="button" class="qf" (click)="busPopup = null">Đóng</button></div>
-    <input type="search" class="airport-query" placeholder="Tìm thành phố" aria-label="Tìm thành phố" [(ngModel)]="busCityQuery">
-    <ng-container *ngIf="busPopup === 'from'"><h4>Các tuyến đường phổ biến</h4><div class="tour-chips"><button *ngFor="let route of busRoutes" type="button" class="qf" (click)="chooseBusRoute(route.from, route.to)">{{ route.from }} → {{ route.to }}</button></div></ng-container>
-    <h4>{{ busPopup === 'from' ? 'Thành phố phổ biến' : 'Điểm đến phù hợp' }}</h4>
-    <button *ngFor="let city of busSuggestedCities" type="button" class="destination-option" (click)="chooseBusCity(city)"><span class="material-symbols-outlined">location_city</span><span><strong>{{ city }}</strong><small>Việt Nam</small></span></button>
-    <p *ngIf="!busSuggestedCities.length" class="dropdown-empty">Chưa có tuyến phù hợp.</p>
-   </div>
-  </div>  <div class="bus-field">Khởi hành<button type="button" class="bus-calendar-value" [attr.aria-expanded]="busCalendar === 'departure'" (click)="openBusCalendar('departure')"><span class="material-symbols-outlined">calendar_month</span>{{ busDeparture | date:'dd/MM/yyyy' }}</button></div>
-  <div class="bus-field"><label class="bus-return-label"><input type="checkbox" [(ngModel)]="busRoundTrip">Khứ hồi</label><button type="button" class="bus-calendar-value" aria-label="Ngày về" [disabled]="!busRoundTrip" [attr.aria-expanded]="busCalendar === 'return'" (click)="openBusCalendar('return')"><span class="material-symbols-outlined">calendar_month</span>{{ busReturn | date:'dd/MM/yyyy' }}</button></div>
-    <div class="bus-field bus-guests-field">Số hành khách<button type="button" class="bus-input bus-location-trigger" (click)="openBusPopup('guests')" [attr.aria-expanded]="busPopup === 'guests'"><span class="material-symbols-outlined">group</span><strong>{{ busPassengers }} hành khách</strong></button>
-   <div *ngIf="busPopup === 'guests'" class="hotel-dropdown bus-guest-panel">
-    <p>Tối đa 4 người lớn. Số em bé không vượt quá số người lớn.</p>
-    <div class="flight-passenger-row"><span class="material-symbols-outlined passenger-icon">person</span><div class="flight-passenger-label"><strong>Người lớn</strong><small>Từ 12 tuổi trở lên</small></div><button type="button" class="passenger-step" aria-label="Giảm người lớn" [disabled]="busAdults <= 1" (click)="changeBusAdults(-1)">−</button><span class="passenger-number">{{ busAdults }}</span><button type="button" class="passenger-step" aria-label="Tăng người lớn" [disabled]="busAdults >= 4" (click)="changeBusAdults(1)">+</button></div>
-    <div class="flight-passenger-row"><span class="material-symbols-outlined passenger-icon">child_care</span><div class="flight-passenger-label"><strong>Em bé</strong><small>Dưới 3 tuổi</small></div><button type="button" class="passenger-step" aria-label="Giảm em bé" [disabled]="busInfants <= 0" (click)="changeBusInfants(-1)">−</button><span class="passenger-number">{{ busInfants }}</span><button type="button" class="passenger-step" aria-label="Tăng em bé" [disabled]="busInfants >= busAdults" (click)="changeBusInfants(1)">+</button></div>
-    <button type="button" class="btn btn-primary bus-guest-done" (click)="busPopup = null">Xong</button>
-   </div>
-  </div>
-  <button type="button" class="btn btn-primary bus-search" aria-label="Tìm vé xe khách" [disabled]="busFrom === busTo || !busDeparture || (busRoundTrip && (!busReturn || busReturn < busDeparture))" (click)="searchBus()"><span class="material-symbols-outlined">search</span></button>
- </div>
- <div *ngIf="busCalendar" class="hotel-dropdown bus-calendar-panel" (keydown.escape)="busCalendar = null">
-  <div class="booking-calendar-head"><strong>{{ busCalendar === 'departure' ? 'Chọn ngày khởi hành' : 'Chọn ngày về' }}</strong><button type="button" class="qf" (click)="busCalendar = null">Đóng</button></div>
-  <div class="booking-calendar-head"><button type="button" class="qf" aria-label="Tháng trước" (click)="moveBookingMonth(-1)">‹</button><strong>Tháng {{ calendarMonth | date:'MM/yyyy' }}</strong><button type="button" class="qf" aria-label="Tháng sau" (click)="moveBookingMonth(1)">›</button></div>
-  <div class="booking-days"><span *ngFor="let label of weekLabels">{{ label }}</span><ng-container *ngFor="let day of monthDays(calendarMonth)"><button *ngIf="day; else busBlankDay" type="button" [disabled]="busDayDisabled(day)" [class.endpoint]="busDaySelected(day)" [attr.aria-label]="day | date:'dd/MM/yyyy'" (click)="selectBusDay(day)">{{ day.getDate() }}</button><ng-template #busBlankDay><span></span></ng-template></ng-container></div>
- </div> <p *ngIf="busFrom === busTo" class="flight-validation">Vui lòng chọn điểm đi và đến khác nhau.</p><p *ngIf="busResult" class="tour-result" role="status">{{ busResult }}</p>
-</div><div *ngIf="bookingTab() === 'tour'" class="tour-booking">
- <h2>Hoạt động &amp; Vui chơi</h2>
- <div class="tour-search-row">
-  <button type="button" class="tour-destination-trigger" [attr.aria-expanded]="tourPanel === 'destinations'" (click)="tourPanel = tourPanel === 'destinations' ? null : 'destinations'"><span class="material-symbols-outlined">location_on</span><strong>{{ tourDestination || 'Chọn một điểm đến' }}</strong><span class="material-symbols-outlined">expand_more</span></button>
-  <div class="tour-search-input"><span class="material-symbols-outlined">search</span><input type="search" placeholder="Tìm kiếm địa điểm hoặc hoạt động" aria-label="Tìm kiếm địa điểm hoặc hoạt động" [(ngModel)]="tourQuery" (focus)="tourPanel = 'activities'" (click)="tourPanel = 'activities'" (keydown.enter)="searchTours()"><button type="button" class="btn btn-primary" (click)="searchTours()">Tìm kiếm</button></div>
- </div>
- <div *ngIf="selectedTourCategories.length" class="tour-chips" style="margin-top: 12px"><button *ngFor="let category of selectedTourCategories" type="button" class="qf tour-category-active" [attr.aria-label]="'Bỏ danh mục ' + category" (click)="toggleTourCategory(category)">{{ category }} ×</button></div>
- <p *ngIf="tourResult" class="tour-result" role="status">{{ tourResult }}</p>
- <div *ngIf="tourPanel" class="hotel-dropdown tour-discovery" (keydown.escape)="tourPanel = null">
-  <div class="dropdown-heading"><strong>{{ tourPanel === 'destinations' ? 'Khám phá điểm đến' : 'Khám phá hoạt động' }}</strong><button type="button" class="qf" (click)="tourPanel = null">Đóng</button></div>
-  <ng-container *ngIf="tourPanel === 'destinations'; else tourActivities">
-   <div class="tour-place-filter"><input type="search" placeholder="Tìm quốc gia, vùng hoặc thành phố" aria-label="Tìm điểm đến" [(ngModel)]="tourPlaceQuery"><button type="button" class="qf" (click)="chooseTourDestination('Việt Nam')">Khám phá Việt Nam</button></div>
-   <h3>{{ tourPlaceQuery.trim() ? 'Kết quả phù hợp' : 'Điểm đến phổ biến' }}</h3>
-   <div class="tour-country-list"><button *ngFor="let country of matchingTourCountries" type="button" class="tour-country" (click)="chooseTourDestination(country.name)"><img [src]="country.image" alt="" loading="lazy"><strong>{{ country.name }}</strong></button></div>
-   <div *ngFor="let country of matchingTourCountries" class="tour-city-group"><h4>{{ country.name }}</h4><div class="tour-chips"><button *ngFor="let city of country.cities" type="button" class="qf" (click)="chooseTourDestination(city)">{{ city }}</button></div></div>
-   <p *ngIf="!matchingTourCountries.length">Chưa có điểm đến phù hợp.</p>
-  </ng-container>
-  <ng-template #tourActivities>
-   <h3>Khám phá danh mục ({{ tourCategories.length }}) · Có thể chọn nhiều mục</h3><div class="tour-chips"><button *ngFor="let category of tourCategories" type="button" class="qf" [class.tour-category-active]="selectedTourCategories.includes(category)" [attr.aria-pressed]="selectedTourCategories.includes(category)" (click)="toggleTourCategory(category)">{{ category }}</button></div>
-   <div class="tour-discovery-groups"><section *ngFor="let group of tourGroups" class="tour-discovery-card"><div class="dropdown-heading"><h3>{{ group.title }}</h3><div class="tour-scroll-buttons"><button type="button" aria-label="Lướt trái" (click)="scrollTourPlaces(placeRail, -1)">‹</button><button type="button" aria-label="Lướt phải" (click)="scrollTourPlaces(placeRail, 1)">›</button></div></div><div #placeRail class="tour-place-rail"><button *ngFor="let place of group.places" type="button" class="tour-place-tile" (click)="tourDestination = place"><span class="material-symbols-outlined">travel_explore</span><strong>{{ place }}</strong><small>{{ tourDestination === place ? 'Đã chọn' : 'Khám phá trải nghiệm' }}</small></button></div></section></div>
-  </ng-template>
- </div>
-</div><div [hidden]="bookingTab() !== 'flight'" class="flight-booking">
- <div class="flight-options">
-  <span class="qf flight-trip-mode">Một chiều / Khứ hồi</span>
-  <label class="qf flight-direct"><input type="checkbox" [(ngModel)]="directFlight"> Bay thẳng</label>
-  <div class="flight-passengers"><button type="button" class="flight-option-button" (click)="flightGuestsOpen = !flightGuestsOpen; airportOpen = null"><span class="material-symbols-outlined">group</span>{{ flightAdults }} Người lớn, {{ flightChildren }} Trẻ em, {{ flightInfants }} Em bé</button>
-   <div *ngIf="flightGuestsOpen" class="hotel-dropdown flight-passenger-panel" (keydown.escape)="flightGuestsOpen = false">
-  <div class="flight-passenger-heading"><strong>Số hành khách</strong><button type="button" aria-label="Đóng bảng hành khách" (click)="flightGuestsOpen = false"><span class="material-symbols-outlined">close</span></button></div>
-  <div *ngFor="let type of flightPassengerTypes" class="flight-passenger-row">
-    <span class="material-symbols-outlined passenger-icon">{{ type.icon }}</span>
-    <div class="flight-passenger-label"><strong>{{ type.label }}</strong><small>{{ type.age }}</small></div>
-    <button type="button" class="passenger-step" [attr.aria-label]="'Giảm ' + type.label" [disabled]="this[type.key] <= type.min" (click)="changeFlightPassenger(type.key, -1)">−</button>
-    <span class="passenger-number" aria-live="polite">{{ this[type.key] }}</span>
-    <button type="button" class="passenger-step" [attr.aria-label]="'Tăng ' + type.label" [disabled]="this[type.key] >= flightPassengerMax(type.key)" (click)="changeFlightPassenger(type.key, 1)">+</button>
-  </div>
-  <button type="button" class="btn btn-primary passenger-done" (click)="flightGuestsOpen = false">Xong</button>
-</div>
-  </div>
-  <div class="flight-cabin-picker" (keydown.escape)="cabinOpen = false">
-    <button type="button" class="flight-option-button cabin-trigger" aria-label="Hạng vé" [attr.aria-expanded]="cabinOpen" aria-controls="flight-cabin-list" (click)="cabinOpen = !cabinOpen; flightGuestsOpen = false; airportOpen = null; flightCalendar = null">
-      <span class="material-symbols-outlined">airline_seat_recline_normal</span>
-      <strong>{{ cabin }}</strong>
-      <span class="material-symbols-outlined">expand_more</span>
-    </button>
-    <div *ngIf="cabinOpen" id="flight-cabin-list" class="hotel-dropdown flight-cabin-panel">
-      <div class="flight-passenger-heading"><strong>Hạng vé</strong><button type="button" aria-label="Đóng bảng hạng vé" (click)="cabinOpen = false"><span class="material-symbols-outlined">close</span></button></div>
-      <button *ngFor="let item of cabins" type="button" class="cabin-option" [class.cabin-selected]="cabin === item" [attr.aria-pressed]="cabin === item" (click)="cabin = item; cabinOpen = false">
-        <span class="material-symbols-outlined">airline_seat_recline_normal</span><strong>{{ item }}</strong><span *ngIf="cabin === item" class="material-symbols-outlined">check_circle</span>
-      </button>
-    </div>
-  </div>
- </div>
- <div class="flight-fields">
-  <div class="flight-route">
-   <div class="flight-airport-field"><label>Từ</label><button type="button" class="flight-value" (click)="openAirports('from')"><span class="material-symbols-outlined">flight_takeoff</span><span><strong>{{ flightFrom.city }} ({{ flightFrom.code }})</strong><small>{{ flightFrom.name }}</small></span></button></div>
-   <button type="button" class="flight-swap" aria-label="Đổi chiều" (click)="swapAirports()"><span class="material-symbols-outlined">swap_horiz</span></button>
-   <div class="flight-airport-field"><label>Đến</label><button type="button" class="flight-value" (click)="openAirports('to')"><span class="material-symbols-outlined">flight_land</span><span><strong>{{ flightTo.city }} ({{ flightTo.code }})</strong><small>{{ flightTo.name }}</small></span></button></div>
-   <div *ngIf="airportOpen" class="hotel-dropdown airport-dropdown"><div class="dropdown-heading"><strong>{{ airportOpen === 'from' ? 'Chọn sân bay đi' : 'Chọn sân bay đến' }}</strong><button type="button" class="qf" (click)="airportOpen = null">Đóng</button></div><input type="search" class="airport-query" [(ngModel)]="airportQuery" placeholder="Thành phố hoặc mã sân bay" aria-label="Tìm sân bay"><h4>Thành phố hoặc sân bay phổ biến</h4><button *ngFor="let airport of filteredAirports" type="button" class="destination-option" (click)="chooseAirport(airport)"><span class="material-symbols-outlined">flight</span><span><strong>{{ airport.name }} · {{ airport.code }}</strong><small>{{ airport.city }}</small></span></button><p *ngIf="!filteredAirports.length">Không tìm thấy sân bay phù hợp.</p></div>
-  </div>
-  <div class="flight-date-pair">
- <div *ngIf="flightCalendar" class="hotel-dropdown flight-calendar" (keydown.escape)="flightCalendar = null">
-  <div class="booking-calendar-head"><strong>{{ flightCalendar === 'departure' ? 'Chọn ngày đi' : 'Chọn ngày về' }}</strong><button type="button" class="qf" (click)="flightCalendar = null">Đóng</button></div>
-  <div class="booking-calendar-head"><button type="button" class="qf" aria-label="Tháng trước" (click)="moveBookingMonth(-1)">‹</button><strong>Tháng {{ calendarMonth | date:'MM/yyyy' }}</strong><button type="button" class="qf" aria-label="Tháng sau" (click)="moveBookingMonth(1)">›</button></div>
-  <div class="booking-days"><span *ngFor="let label of weekLabels">{{ label }}</span><ng-container *ngFor="let day of monthDays(calendarMonth)"><button *ngIf="day; else flightBlank" type="button" [disabled]="flightDayDisabled(day)" [class.endpoint]="flightDaySelected(day)" [attr.aria-label]="day | date:'dd/MM/yyyy'" (click)="selectFlightDay(day)">{{ day.getDate() }}</button><ng-template #flightBlank><span></span></ng-template></ng-container></div>
- </div>
-    <div class="flight-day"><label for="flight-departure">Ngày khởi hành</label><button id="flight-departure" type="button" class="flight-date-value" [attr.aria-expanded]="flightCalendar === 'departure'" (click)="openFlightCalendar('departure')"><span class="material-symbols-outlined">calendar_month</span>{{ flightDeparture | date:'dd/MM/yyyy' }}</button></div>
-    <div class="flight-day" [class.return-disabled]="!flightRoundTrip"><label class="flight-return-label" for="flight-round-trip"><input id="flight-round-trip" type="checkbox" [(ngModel)]="flightRoundTrip"> Ngày về</label><button id="flight-return" aria-label="Ngày về" type="button" class="flight-date-value" [disabled]="!flightRoundTrip" [attr.aria-expanded]="flightCalendar === 'return'" (click)="openFlightCalendar('return')"><span class="material-symbols-outlined">calendar_month</span>{{ flightReturn | date:'dd/MM/yyyy' }}</button></div>
-  </div>  <button type="button" class="flight-search btn btn-primary" aria-label="Tìm chuyến bay" (click)="searchFlights()" [disabled]="flightFrom.code === flightTo.code || !flightDeparture || (flightRoundTrip && (!flightReturn || flightReturn < flightDeparture))"><span class="material-symbols-outlined">search</span></button>
- </div>
- <p *ngIf="flightSearchError" class="flight-validation" role="alert">{{flightSearchError}}</p><p *ngIf="flightFrom.code === flightTo.code" class="flight-validation">Vui lòng chọn sân bay đi và đến khác nhau.</p>
-</div>      </div>
+        <div *ngIf="bookingTab() === 'bus'" class="bus-booking">
+          <div class="bus-country-options"><span class="qf bus-country-note">🇻🇳 Việt Nam</span></div>
+          <div class="bus-search-fields">
+            <div class="bus-location-pair">
+              <div class="bus-field">Điểm đi<button type="button" class="bus-input bus-location-trigger"
+                  (click)="openBusPopup('from')" [attr.aria-expanded]="busPopup === 'from'"><span
+                    class="material-symbols-outlined">location_on</span><strong>{{ busFrom }}</strong></button></div>
+              <button type="button" class="bus-swap" aria-label="Đổi điểm đi và đến" (click)="swapBusCities()"><span
+                  class="material-symbols-outlined">swap_horiz</span></button>
+              <div class="bus-field">Điểm đến<button type="button" class="bus-input bus-location-trigger"
+                  (click)="openBusPopup('to')" [attr.aria-expanded]="busPopup === 'to'"><span
+                    class="material-symbols-outlined">location_on</span><strong>{{ busTo }}</strong></button></div>
+              <div *ngIf="busPopup === 'from' || busPopup === 'to'" class="hotel-dropdown bus-route-panel"
+                (keydown.escape)="busPopup = null">
+                <div class="dropdown-heading"><strong>{{ busPopup === 'from' ? 'Chọn điểm đi' : 'Tuyến xe từ ' + busFrom
+                    }}</strong><button type="button" class="qf" (click)="busPopup = null">Đóng</button></div>
+                <input type="search" class="airport-query" placeholder="Tìm thành phố" aria-label="Tìm thành phố"
+                  [(ngModel)]="busCityQuery">
+                <ng-container *ngIf="busPopup === 'from'">
+                  <h4>Các tuyến đường phổ biến</h4>
+                  <div class="tour-chips"><button *ngFor="let route of busRoutes" type="button" class="qf"
+                      (click)="chooseBusRoute(route.from, route.to)">{{ route.from }} → {{ route.to }}</button></div>
+                </ng-container>
+                <h4>{{ busPopup === 'from' ? 'Thành phố phổ biến' : 'Điểm đến phù hợp' }}</h4>
+                <button *ngFor="let city of busSuggestedCities" type="button" class="destination-option"
+                  (click)="chooseBusCity(city)"><span
+                    class="material-symbols-outlined">location_city</span><span><strong>{{ city }}</strong><small>Việt
+                      Nam</small></span></button>
+                <p *ngIf="!busSuggestedCities.length" class="dropdown-empty">Chưa có tuyến phù hợp.</p>
+              </div>
+            </div>
+            <div class="bus-field">Khởi hành<button type="button" class="bus-calendar-value"
+                [attr.aria-expanded]="busCalendar === 'departure'" (click)="openBusCalendar('departure')"><span
+                  class="material-symbols-outlined">calendar_month</span>{{ busDeparture | date:'dd/MM/yyyy' }}</button>
+            </div>
+            <div class="bus-field"><label class="bus-return-label"><input type="checkbox" [(ngModel)]="busRoundTrip">Khứ
+                hồi</label><button type="button" class="bus-calendar-value" aria-label="Ngày về"
+                [disabled]="!busRoundTrip" [attr.aria-expanded]="busCalendar === 'return'"
+                (click)="openBusCalendar('return')"><span class="material-symbols-outlined">calendar_month</span>{{
+                busReturn | date:'dd/MM/yyyy' }}</button></div>
+            <div class="bus-field bus-guests-field">Số hành khách<button type="button"
+                class="bus-input bus-location-trigger" (click)="openBusPopup('guests')"
+                [attr.aria-expanded]="busPopup === 'guests'"><span
+                  class="material-symbols-outlined">group</span><strong>{{ busPassengers }} hành khách</strong></button>
+              <div *ngIf="busPopup === 'guests'" class="hotel-dropdown bus-guest-panel">
+                <p>Tối đa 4 người lớn. Số em bé không vượt quá số người lớn.</p>
+                <div class="flight-passenger-row"><span class="material-symbols-outlined passenger-icon">person</span>
+                  <div class="flight-passenger-label"><strong>Người lớn</strong><small>Từ 12 tuổi trở lên</small></div>
+                  <button type="button" class="passenger-step" aria-label="Giảm người lớn" [disabled]="busAdults <= 1"
+                    (click)="changeBusAdults(-1)">−</button><span class="passenger-number">{{ busAdults }}</span><button
+                    type="button" class="passenger-step" aria-label="Tăng người lớn" [disabled]="busAdults >= 4"
+                    (click)="changeBusAdults(1)">+</button>
+                </div>
+                <div class="flight-passenger-row"><span
+                    class="material-symbols-outlined passenger-icon">child_care</span>
+                  <div class="flight-passenger-label"><strong>Em bé</strong><small>Dưới 3 tuổi</small></div><button
+                    type="button" class="passenger-step" aria-label="Giảm em bé" [disabled]="busInfants <= 0"
+                    (click)="changeBusInfants(-1)">−</button><span class="passenger-number">{{ busInfants
+                    }}</span><button type="button" class="passenger-step" aria-label="Tăng em bé"
+                    [disabled]="busInfants >= busAdults" (click)="changeBusInfants(1)">+</button>
+                </div>
+                <button type="button" class="btn btn-primary bus-guest-done" (click)="busPopup = null">Xong</button>
+              </div>
+            </div>
+            <button type="button" class="btn btn-primary bus-search" aria-label="Tìm vé xe khách"
+              [disabled]="busFrom === busTo || !busDeparture || (busRoundTrip && (!busReturn || busReturn < busDeparture))"
+              (click)="searchBus()"><span class="material-symbols-outlined">search</span></button>
+          </div>
+          <div *ngIf="busCalendar" class="hotel-dropdown bus-calendar-panel" (keydown.escape)="busCalendar = null">
+            <div class="booking-calendar-head"><strong>{{ busCalendar === 'departure' ? 'Chọn ngày khởi hành' : 'Chọn
+                ngày về' }}</strong><button type="button" class="qf" (click)="busCalendar = null">Đóng</button></div>
+            <div class="booking-calendar-head"><button type="button" class="qf" aria-label="Tháng trước"
+                (click)="moveBookingMonth(-1)">‹</button><strong>Tháng {{ calendarMonth | date:'MM/yyyy'
+                }}</strong><button type="button" class="qf" aria-label="Tháng sau"
+                (click)="moveBookingMonth(1)">›</button></div>
+            <div class="booking-days"><span *ngFor="let label of weekLabels">{{ label }}</span><ng-container
+                *ngFor="let day of monthDays(calendarMonth)"><button *ngIf="day; else busBlankDay" type="button"
+                  [disabled]="busDayDisabled(day)" [class.endpoint]="busDaySelected(day)"
+                  [attr.aria-label]="day | date:'dd/MM/yyyy'" (click)="selectBusDay(day)">{{ day.getDate()
+                  }}</button><ng-template #busBlankDay><span></span></ng-template></ng-container></div>
+          </div>
+          <p *ngIf="busFrom === busTo" class="flight-validation">Vui lòng chọn điểm đi và đến khác nhau.</p>
+          <p *ngIf="busResult" class="tour-result" role="status">{{ busResult }}</p>
+        </div>
+        <div *ngIf="bookingTab() === 'tour'" class="tour-booking">
+          <h2>Hoạt động &amp; Vui chơi</h2>
+          <div class="tour-search-row">
+            <button type="button" class="tour-destination-trigger" [attr.aria-expanded]="tourPanel === 'destinations'"
+              (click)="tourPanel = tourPanel === 'destinations' ? null : 'destinations'"><span
+                class="material-symbols-outlined">location_on</span><strong>{{ tourDestination || 'Chọn một điểm đến'
+                }}</strong><span class="material-symbols-outlined">expand_more</span></button>
+            <div class="tour-search-input"><span class="material-symbols-outlined">search</span><input type="search"
+                placeholder="Tìm kiếm địa điểm hoặc hoạt động" aria-label="Tìm kiếm địa điểm hoặc hoạt động"
+                [(ngModel)]="tourQuery" (focus)="tourPanel = 'activities'" (click)="tourPanel = 'activities'"
+                (keydown.enter)="searchTours()"><button type="button" class="btn btn-primary"
+                (click)="searchTours()">Tìm kiếm</button></div>
+          </div>
+          <div *ngIf="selectedTourCategories.length" class="tour-chips" style="margin-top: 12px"><button
+              *ngFor="let category of selectedTourCategories" type="button" class="qf tour-category-active"
+              [attr.aria-label]="'Bỏ danh mục ' + category" (click)="toggleTourCategory(category)">{{ category }}
+              ×</button></div>
+          <p *ngIf="tourResult" class="tour-result" role="status">{{ tourResult }}</p>
+          <div *ngIf="tourPanel" class="hotel-dropdown tour-discovery" (keydown.escape)="tourPanel = null">
+            <div class="dropdown-heading"><strong>{{ tourPanel === 'destinations' ? 'Khám phá điểm đến' : 'Khám phá hoạt
+                động' }}</strong><button type="button" class="qf" (click)="tourPanel = null">Đóng</button></div>
+            <ng-container *ngIf="tourPanel === 'destinations'; else tourActivities">
+              <div class="tour-place-filter"><input type="search" placeholder="Tìm quốc gia, vùng hoặc thành phố"
+                  aria-label="Tìm điểm đến" [(ngModel)]="tourPlaceQuery"><button type="button" class="qf"
+                  (click)="chooseTourDestination('Việt Nam')">Khám phá Việt Nam</button></div>
+              <h3>{{ tourPlaceQuery.trim() ? 'Kết quả phù hợp' : 'Điểm đến phổ biến' }}</h3>
+              <div class="tour-country-list"><button *ngFor="let country of matchingTourCountries" type="button"
+                  class="tour-country" (click)="chooseTourDestination(country.name)"><img [src]="country.image" alt=""
+                    loading="lazy"><strong>{{ country.name }}</strong></button></div>
+              <div *ngFor="let country of matchingTourCountries" class="tour-city-group">
+                <h4>{{ country.name }}</h4>
+                <div class="tour-chips"><button *ngFor="let city of country.cities" type="button" class="qf"
+                    (click)="chooseTourDestination(city)">{{ city }}</button></div>
+              </div>
+              <p *ngIf="!matchingTourCountries.length">Chưa có điểm đến phù hợp.</p>
+            </ng-container>
+            <ng-template #tourActivities>
+              <h3>Khám phá danh mục ({{ tourCategories.length }}) · Có thể chọn nhiều mục</h3>
+              <div class="tour-chips"><button *ngFor="let category of tourCategories" type="button" class="qf"
+                  [class.tour-category-active]="selectedTourCategories.includes(category)"
+                  [attr.aria-pressed]="selectedTourCategories.includes(category)"
+                  (click)="toggleTourCategory(category)">{{ category }}</button></div>
+              <div class="tour-discovery-groups">
+                <section *ngFor="let group of tourGroups" class="tour-discovery-card">
+                  <div class="dropdown-heading">
+                    <h3>{{ group.title }}</h3>
+                    <div class="tour-scroll-buttons"><button type="button" aria-label="Lướt trái"
+                        (click)="scrollTourPlaces(placeRail, -1)">‹</button><button type="button" aria-label="Lướt phải"
+                        (click)="scrollTourPlaces(placeRail, 1)">›</button></div>
+                  </div>
+                  <div #placeRail class="tour-place-rail"><button *ngFor="let place of group.places" type="button"
+                      class="tour-place-tile" (click)="tourDestination = place"><span
+                        class="material-symbols-outlined">travel_explore</span><strong>{{ place }}</strong><small>{{
+                        tourDestination === place ? 'Đã chọn' : 'Khám phá trải nghiệm' }}</small></button></div>
+                </section>
+              </div>
+            </ng-template>
+          </div>
+        </div>
+        <div [hidden]="bookingTab() !== 'flight'" class="flight-booking">
+          <div class="flight-options">
+            <span class="qf flight-trip-mode">Một chiều / Khứ hồi</span>
+            <label class="qf flight-direct"><input type="checkbox" [(ngModel)]="directFlight"> Bay thẳng</label>
+            <div class="flight-passengers"><button type="button" class="flight-option-button"
+                (click)="flightGuestsOpen = !flightGuestsOpen; airportOpen = null"><span
+                  class="material-symbols-outlined">group</span>{{ flightAdults }} Người lớn, {{ flightChildren }} Trẻ
+                em, {{ flightInfants }} Em bé</button>
+              <div *ngIf="flightGuestsOpen" class="hotel-dropdown flight-passenger-panel"
+                (keydown.escape)="flightGuestsOpen = false">
+                <div class="flight-passenger-heading"><strong>Số hành khách</strong><button type="button"
+                    aria-label="Đóng bảng hành khách" (click)="flightGuestsOpen = false"><span
+                      class="material-symbols-outlined">close</span></button></div>
+                <div *ngFor="let type of flightPassengerTypes" class="flight-passenger-row">
+                  <span class="material-symbols-outlined passenger-icon">{{ type.icon }}</span>
+                  <div class="flight-passenger-label"><strong>{{ type.label }}</strong><small>{{ type.age }}</small>
+                  </div>
+                  <button type="button" class="passenger-step" [attr.aria-label]="'Giảm ' + type.label"
+                    [disabled]="this[type.key] <= type.min" (click)="changeFlightPassenger(type.key, -1)">−</button>
+                  <span class="passenger-number" aria-live="polite">{{ this[type.key] }}</span>
+                  <button type="button" class="passenger-step" [attr.aria-label]="'Tăng ' + type.label"
+                    [disabled]="this[type.key] >= flightPassengerMax(type.key)"
+                    (click)="changeFlightPassenger(type.key, 1)">+</button>
+                </div>
+                <button type="button" class="btn btn-primary passenger-done"
+                  (click)="flightGuestsOpen = false">Xong</button>
+              </div>
+            </div>
+            <div class="flight-cabin-picker" (keydown.escape)="cabinOpen = false">
+              <button type="button" class="flight-option-button cabin-trigger" aria-label="Hạng vé"
+                [attr.aria-expanded]="cabinOpen" aria-controls="flight-cabin-list"
+                (click)="cabinOpen = !cabinOpen; flightGuestsOpen = false; airportOpen = null; flightCalendar = null">
+                <span class="material-symbols-outlined">airline_seat_recline_normal</span>
+                <strong>{{ cabin }}</strong>
+                <span class="material-symbols-outlined">expand_more</span>
+              </button>
+              <div *ngIf="cabinOpen" id="flight-cabin-list" class="hotel-dropdown flight-cabin-panel">
+                <div class="flight-passenger-heading"><strong>Hạng vé</strong><button type="button"
+                    aria-label="Đóng bảng hạng vé" (click)="cabinOpen = false"><span
+                      class="material-symbols-outlined">close</span></button></div>
+                <button *ngFor="let item of cabins" type="button" class="cabin-option"
+                  [class.cabin-selected]="cabin === item" [attr.aria-pressed]="cabin === item"
+                  (click)="cabin = item; cabinOpen = false">
+                  <span class="material-symbols-outlined">airline_seat_recline_normal</span><strong>{{ item
+                    }}</strong><span *ngIf="cabin === item" class="material-symbols-outlined">check_circle</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="flight-fields">
+            <div class="flight-route">
+              <div class="flight-airport-field"><label>Từ</label><button type="button" class="flight-value"
+                  (click)="openAirports('from')"><span
+                    class="material-symbols-outlined">flight_takeoff</span><span><strong>{{ flightFrom.city }} ({{
+                      flightFrom.code }})</strong><small>{{ flightFrom.name }}</small></span></button></div>
+              <button type="button" class="flight-swap" aria-label="Đổi chiều" (click)="swapAirports()"><span
+                  class="material-symbols-outlined">swap_horiz</span></button>
+              <div class="flight-airport-field"><label>Đến</label><button type="button" class="flight-value"
+                  (click)="openAirports('to')"><span
+                    class="material-symbols-outlined">flight_land</span><span><strong>{{ flightTo.city }} ({{
+                      flightTo.code }})</strong><small>{{ flightTo.name }}</small></span></button></div>
+              <div *ngIf="airportOpen" class="hotel-dropdown airport-dropdown">
+                <div class="dropdown-heading"><strong>{{ airportOpen === 'from' ? 'Chọn sân bay đi' : 'Chọn sân bay đến'
+                    }}</strong><button type="button" class="qf" (click)="airportOpen = null">Đóng</button></div><input
+                  type="search" class="airport-query" [(ngModel)]="airportQuery" placeholder="Thành phố hoặc mã sân bay"
+                  aria-label="Tìm sân bay">
+                <h4>Thành phố hoặc sân bay phổ biến</h4><button *ngFor="let airport of filteredAirports" type="button"
+                  class="destination-option" (click)="chooseAirport(airport)"><span
+                    class="material-symbols-outlined">flight</span><span><strong>{{ airport.name }} · {{ airport.code
+                      }}</strong><small>{{ airport.city }}</small></span></button>
+                <p *ngIf="!filteredAirports.length">Không tìm thấy sân bay phù hợp.</p>
+              </div>
+            </div>
+            <div class="flight-date-pair">
+              <div *ngIf="flightCalendar" class="hotel-dropdown flight-calendar"
+                (keydown.escape)="flightCalendar = null">
+                <div class="booking-calendar-head"><strong>{{ flightCalendar === 'departure' ? 'Chọn ngày đi' : 'Chọn
+                    ngày về' }}</strong><button type="button" class="qf" (click)="flightCalendar = null">Đóng</button>
+                </div>
+                <div class="booking-calendar-head"><button type="button" class="qf" aria-label="Tháng trước"
+                    (click)="moveBookingMonth(-1)">‹</button><strong>Tháng {{ calendarMonth | date:'MM/yyyy'
+                    }}</strong><button type="button" class="qf" aria-label="Tháng sau"
+                    (click)="moveBookingMonth(1)">›</button></div>
+                <div class="booking-days"><span *ngFor="let label of weekLabels">{{ label }}</span><ng-container
+                    *ngFor="let day of monthDays(calendarMonth)"><button *ngIf="day; else flightBlank" type="button"
+                      [disabled]="flightDayDisabled(day)" [class.endpoint]="flightDaySelected(day)"
+                      [attr.aria-label]="day | date:'dd/MM/yyyy'" (click)="selectFlightDay(day)">{{ day.getDate()
+                      }}</button><ng-template #flightBlank><span></span></ng-template></ng-container></div>
+              </div>
+              <div class="flight-day"><label for="flight-departure">Ngày khởi hành</label><button id="flight-departure"
+                  type="button" class="flight-date-value" [attr.aria-expanded]="flightCalendar === 'departure'"
+                  (click)="openFlightCalendar('departure')"><span
+                    class="material-symbols-outlined">calendar_month</span>{{ flightDeparture | date:'dd/MM/yyyy'
+                  }}</button></div>
+              <div class="flight-day" [class.return-disabled]="!flightRoundTrip"><label class="flight-return-label"
+                  for="flight-round-trip"><input id="flight-round-trip" type="checkbox" [(ngModel)]="flightRoundTrip">
+                  Ngày về</label><button id="flight-return" aria-label="Ngày về" type="button" class="flight-date-value"
+                  [disabled]="!flightRoundTrip" [attr.aria-expanded]="flightCalendar === 'return'"
+                  (click)="openFlightCalendar('return')"><span class="material-symbols-outlined">calendar_month</span>{{
+                  flightReturn | date:'dd/MM/yyyy' }}</button></div>
+            </div> <button type="button" class="flight-search btn btn-primary" aria-label="Tìm chuyến bay"
+              (click)="searchFlights()"
+              [disabled]="flightFrom.code === flightTo.code || !flightDeparture || (flightRoundTrip && (!flightReturn || flightReturn < flightDeparture))"><span
+                class="material-symbols-outlined">search</span></button>
+          </div>
+          <p *ngIf="flightSearchError" class="flight-validation" role="alert">{{flightSearchError}}</p>
+          <p *ngIf="flightFrom.code === flightTo.code" class="flight-validation">Vui lòng chọn sân bay đi và đến khác
+            nhau.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -209,14 +410,15 @@
             <p class="promo-title">Khám phá phòng thực tế cùng hệ sinh thái TRIPLA
               <span class="tag-4k">TripShorts 4K</span>
             </p>
-            <p class="promo-sub">Xem video review thực tế 100% từ travel creator &amp; chuyên gia trước khi đặt phòng</p>
+            <p class="promo-sub">Xem video review thực tế 100% từ travel creator &amp; chuyên gia trước khi đặt phòng
+            </p>
           </div>
         </div>
         <div class="promo-actions">
           <a class="btn btn-primary promo-btn" routerLink="/tripshort">
             <span class="material-symbols-outlined">videocam</span><span>Lướt TripShorts Ngay</span>
           </a>
-          <a class="btn-amber" href="#">
+          <a class="btn-amber" routerLink="/trip-planning">
             <span class="material-symbols-outlined">smart_toy</span><span>Hỏi AI Concierge</span>
           </a>
         </div>
@@ -255,14 +457,15 @@
           <span class="material-symbols-outlined t-ico">timer</span>
           <span class="t-text">Kết thúc sau:</span>
           <div class="digits">
-            <span class="dg">{{ countdownHours }}</span>:<span class="dg">{{ countdownMinutes }}</span>:<span class="dg">{{ countdownSeconds }}</span>
+            <span class="dg">{{ countdownHours }}</span>:<span class="dg">{{ countdownMinutes }}</span>:<span
+              class="dg">{{ countdownSeconds }}</span>
           </div>
         </div>
       </div>
 
       <div class="grid-4">
-        <div *ngFor="let deal of flashDeals; let i = index" class="cell"
-             appReveal [revealDelay]="i * 120" [appParallax]="i % 2 === 1 ? -0.04 : 0.03">
+        <div *ngFor="let deal of flashDeals; let i = index" class="cell" appReveal [revealDelay]="i * 120"
+          [appParallax]="i % 2 === 1 ? -0.04 : 0.03">
           <article class="deal glass">
             <div class="deal-media">
               <div class="img-par" appParallax="-0.05" pxBase="scale(1.08)">
@@ -289,12 +492,16 @@
               <div class="price-box">
                 <div class="price-row">
                   <span class="price-old">{{ deal.originalPrice | number:'1.0-0' }}₫</span>
-                  <span class="price-now font-head">{{ deal.discountPrice | number:'1.0-0' }}₫<span class="price-unit">/đêm</span></span>
+                  <span class="price-now font-head">{{ deal.discountPrice | number:'1.0-0' }}₫<span
+                      class="price-unit">/đêm</span></span>
                 </div>
-                <div class="bar"><div class="bar-fill" [style.width.%]="deal.soldPercent"></div></div>
+                <div class="bar">
+                  <div class="bar-fill" [style.width.%]="deal.soldPercent"></div>
+                </div>
                 <span class="sold">Đã bán {{ deal.soldPercent }}%</span>
               </div>
-              <button type="button" class="book-now" (click)="beginBooking(deal.name)" [attr.aria-label]="'Đặt ngay ' + deal.name">
+              <button type="button" class="book-now" (click)="beginBooking(deal.name, deal.location)"
+                [attr.aria-label]="'Đặt ngay ' + deal.name">
                 <span>Đặt ngay</span><span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
               </button>
             </div>
@@ -314,17 +521,18 @@
         <div class="head-text">
           <span class="eyebrow" appReveal>Điểm Đến Hấp Dẫn 2026</span>
           <h2 class="h2 font-head" appReveal revealDelay="100">Điểm Đến Được Yêu Thích Nhất</h2>
-          <p class="lead" appReveal revealDelay="200">Khám phá thiên đường nghỉ dưỡng trong nước và quốc tế với chi phí tối ưu</p>
+          <p class="lead" appReveal revealDelay="200">Khám phá thiên đường nghỉ dưỡng trong nước và quốc tế với chi phí
+            tối ưu</p>
         </div>
-        <button class="pill-btn glass" type="button" appReveal="left">
+        <button class="pill-btn glass" type="button" appReveal="left" routerLink="/map">
           <span>Xem tất cả 120+ điểm đến</span>
           <span class="material-symbols-outlined">arrow_forward</span>
         </button>
       </div>
 
       <div class="dest-grid">
-        <div *ngFor="let dest of destinations; let i = index" class="cell"
-             appReveal [revealDelay]="i * 140" [appParallax]="i === 1 ? -0.05 : 0.04">
+        <div *ngFor="let dest of destinations; let i = index" class="cell" appReveal [revealDelay]="i * 140"
+          [appParallax]="i === 1 ? -0.05 : 0.04">
           <article class="dest">
             <div class="dest-par" appParallax="-0.07" pxBase="scale(1.1)">
               <div class="dest-bg" [style.background-image]="'url(' + dest.imageUrl + ')'"></div>
@@ -335,13 +543,14 @@
               <h3 class="dest-name font-head">{{ dest.name }}</h3>
               <p class="dest-sub">{{ dest.subtitle }}</p>
               <div class="destination-actions">
-              <div class="dest-price">
-                <span class="dp-label">Giá chỉ từ</span>
-                <span class="dp-value font-head">{{ dest.startingPrice | number:'1.0-0' }}₫/đêm</span>
-              </div>
-              <button type="button" class="book-now destination-book" (click)="beginBooking(dest.name)" [attr.aria-label]="'Tìm kiếm tại ' + dest.name">
-                <span>Tìm kiếm</span><span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
-              </button>
+                <div class="dest-price">
+                  <span class="dp-label">Giá chỉ từ</span>
+                  <span class="dp-value font-head">{{ dest.startingPrice | number:'1.0-0' }}₫/đêm</span>
+                </div>
+                <button type="button" class="book-now destination-book" (click)="beginBooking(dest.name, '', false)"
+                  [attr.aria-label]="'Tìm kiếm tại ' + dest.name">
+                  <span>Tìm kiếm</span><span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+                </button>
               </div>
             </div>
           </article>
@@ -360,13 +569,17 @@
         <div class="head-text">
           <span class="eyebrow" appReveal>Được Chuyên Gia Tuyển Chọn</span>
           <h2 class="h2 font-head" appReveal revealDelay="100">Khách Sạn &amp; Resort Xa Hoa Đề Xuất</h2>
-          <p class="lead" appReveal revealDelay="200">Đánh giá thực tế từ khách du lịch đã lưu trú cùng đặc quyền độc quyền</p>
+          <p class="lead" appReveal revealDelay="200">Đánh giá thực tế từ khách du lịch đã lưu trú cùng đặc quyền độc
+            quyền</p>
         </div>
 
         <div class="filters" appReveal="left">
-          <button type="button" class="fbtn" [class.is-on]="activeCategory === 'all'" (click)="filterCategory('all')">Tất cả</button>
-          <button type="button" class="fbtn" [class.is-on]="activeCategory === 'resort'" (click)="filterCategory('resort')">Resort Biển</button>
-          <button type="button" class="fbtn" [class.is-on]="activeCategory === 'villa'" (click)="filterCategory('villa')">Biệt Thự Riêng Tư</button>
+          <button type="button" class="fbtn" [class.is-on]="activeCategory === 'all'"
+            (click)="filterCategory('all')">Tất cả</button>
+          <button type="button" class="fbtn" [class.is-on]="activeCategory === 'resort'"
+            (click)="filterCategory('resort')">Resort Biển</button>
+          <button type="button" class="fbtn" [class.is-on]="activeCategory === 'villa'"
+            (click)="filterCategory('villa')">Biệt Thự Riêng Tư</button>
         </div>
       </div>
 
@@ -382,7 +595,8 @@
           <div class="stay-main">
             <div>
               <div class="stay-meta">
-                <span class="stay-loc"><span class="material-symbols-outlined">location_on</span> {{ stay.location }}</span>
+                <span class="stay-loc"><span class="material-symbols-outlined">location_on</span> {{ stay.location
+                  }}</span>
                 <div class="stay-score">
                   <div class="score-txt">
                     <div class="st-a">{{ stay.ratingText }}</div>
@@ -395,7 +609,7 @@
               <p class="stay-desc">{{ stay.description }}</p>
 
               <div class="stay-tags">
-                <a class="tag-video" href="#">
+                <a class="tag-video" routerLink="/tripshort">
                   <span class="material-symbols-outlined">play_circle</span> Xem TripShorts ({{ stay.videoCount }})
                 </a>
                 <span *ngFor="let perk of stay.perks" class="perk">
@@ -414,7 +628,8 @@
                   <span class="stay-old">{{ stay.originalPrice | number:'1.0-0' }}₫</span>
                   <span class="stay-now font-head">{{ stay.discountPrice | number:'1.0-0' }}₫</span>
                 </div>
-                <button class="btn btn-primary stay-cta" type="button">Xem Phòng Trống</button>
+                <button class="btn btn-primary stay-cta" type="button"
+                  (click)="beginBooking(stay.name, stay.location)">Xem Phòng Trống</button>
               </div>
             </div>
           </div>
@@ -433,12 +648,19 @@
           <span class="material-symbols-outlined fill gold">workspace_premium</span>
           <span class="label-caps">Thành Viên TRIPLA VIP</span>
         </span>
-        <h2 class="h2 font-head news-title">Nhận Ưu Đãi Độc Quyền Giảm Thêm <span class="gradient-text">15%</span> Cho Chuyến Đi Tới</h2>
-        <p class="lead">Đăng ký nhận bản tin để nhận mã giảm giá bí mật cho các resort 5 sao cùng thông báo mở bán sớm nhất.</p>
+        <h2 class="h2 font-head news-title">Nhận Ưu Đãi Độc Quyền Giảm Thêm <span class="gradient-text">15%</span> Cho
+          Chuyến Đi Tới</h2>
+        <p class="lead">Đăng ký nhận bản tin để nhận mã giảm giá bí mật cho các resort 5 sao cùng thông báo mở bán sớm
+          nhất.</p>
         <form (submit)="subscribeNewsletter($event)" class="news-form">
-          <input [(ngModel)]="newsletterEmail" name="email" class="news-input" placeholder="Nhập địa chỉ email của bạn..." required type="email"/>
+          <input [(ngModel)]="newsletterEmail" name="email" class="news-input"
+            placeholder="Nhập địa chỉ email của bạn..." required type="email" />
           <button class="btn btn-primary news-btn" type="submit">Nhận Mã VIP</button>
         </form>
+        <p *ngIf="newsletterNotice" class="news-status" role="status"
+          style="margin-top: 12px; font-size: 13px; font-weight: 600; color: #f6e7c1;">
+          {{ newsletterNotice }}
+        </p>
       </div>
     </div>
   </section>
@@ -447,40 +669,4 @@
 <!-- ======================================================================= -->
 <!-- FOOTER                                                                    -->
 <!-- ======================================================================= -->
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-col brand-col">
-        <div class="foot-brand">
-          <div class="foot-ico"><span class="material-symbols-outlined">travel_explore</span></div>
-          <span class="foot-name font-head">TRIPLA</span>
-        </div>
-        <p>TRIPLA — Nghệ Thuật Du Lịch Thượng Lưu. TripShop là cổng đặt phòng &amp; dịch vụ độc quyền chuẩn mực 5 sao.</p>
-      </div>
-      <div class="foot-col">
-        <h3>Về TripShop</h3>
-        <ul>
-          <li>Giới thiệu thương hiệu</li>
-          <li>Cơ hội nghề nghiệp</li>
-          <li>Điều khoản &amp; Bảo mật</li>
-        </ul>
-      </div>
-      <div class="foot-col">
-        <h3>Dịch Vụ Du Lịch</h3>
-        <ul>
-          <li>Khách sạn 5 sao cao cấp</li>
-          <li>Vé máy bay vé thương gia</li>
-          <li>Hoạt động &amp; vui chơi độc quyền</li>
-        </ul>
-      </div>
-      <div class="foot-col">
-        <h3>Hỗ Trợ 24/7</h3>
-        <div class="hotline glass">
-          <span class="hl-label">Hotline</span>
-          <span class="hl-num font-head">1900 8888</span>
-        </div>
-      </div>
-    </div>
-    <div class="foot-copy">© 2026 TRIPLA Luxury Travel Connoisseurs. TripShop là dịch vụ thuộc hệ sinh thái TRIPLA.</div>
-  </div>
-</footer>
+<app-site-footer variant="full"></app-site-footer>

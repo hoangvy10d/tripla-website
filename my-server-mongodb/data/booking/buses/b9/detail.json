@@ -1,0 +1,13 @@
+{
+  "id": "b9",
+  "operator": "Tân Quang Dũng",
+  "busNumber": "74B-008.21",
+  "origin": "Đà Nẵng",
+  "destination": "Huế",
+  "departureTime": "14:30",
+  "arrivalTime": "17:00",
+  "price": 150000,
+  "classType": "Giường nằm 40 chỗ",
+  "seatsAvailable": 39,
+  "rating": 4.4
+}

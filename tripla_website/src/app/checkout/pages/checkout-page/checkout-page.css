@@ -1,5 +1,6 @@
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   background: radial-gradient(ellipse at 100% 0%, #dfe9cf90, transparent 50%), #f4f6ee;
   color: #38573c;
@@ -9,9 +10,11 @@
   box-sizing: border-box;
 }
 .checkout-page {
+  width: 100%;
+  flex: 1 0 auto;
   max-width: 1200px;
   padding: 22px 30px 65px;
-  margin: auto;
+  margin: 0 auto;
 }
 header {
   display: flex;

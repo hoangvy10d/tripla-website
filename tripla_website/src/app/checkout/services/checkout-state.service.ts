@@ -1,4 +1,5 @@
 import { DestroyRef, Injectable, inject, signal } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import {
   BookingDraft,
   BookingType,
@@ -25,6 +26,8 @@ type HotelResolution =
 @Injectable({ providedIn: 'root' })
 export class CheckoutStateService {
   // Memory only. Personal details never enter URLs or browser storage.
+  private readonly http = inject(HttpClient, { optional: true });
+  private readonly apiBase = 'http://localhost:3000/api/v1';
   private readonly drafts = signal<Record<string, BookingDraft>>({});
   private readonly clock = signal(Date.now());
   readonly now = this.clock.asReadonly();
@@ -111,10 +114,35 @@ export class CheckoutStateService {
     if (!draft) return false;
     const result = this.resolve(draft.type, id);
     if (!result.ok || !checkoutFormValid(result.draft)) return false;
+    const completedDraft = { ...result.draft, status: 'details-complete' as const };
     this.drafts.update((value) => ({
       ...value,
-      [id]: { ...result.draft, status: 'details-complete' },
+      [id]: completedDraft,
     }));
+    if (this.http) {
+      const totalVnd =
+        completedDraft.pricing.status === 'verified'
+          ? completedDraft.pricing.total
+          : completedDraft.pricing.status === 'estimate'
+            ? completedDraft.pricing.lines.reduce((sum, line) => sum + (line.amount || 0), 0)
+            : 0;
+      const selectionObj = completedDraft.selection as unknown as Record<string, unknown>;
+      this.http
+        .post(`${this.apiBase}/bookings`, {
+          bookingType: completedDraft.type,
+          title: String(selectionObj['hotelName'] || selectionObj['activityName'] || selectionObj['airline'] || selectionObj['operator'] || 'Đặt chỗ TRIPLA'),
+          location: String(selectionObj['city'] || selectionObj['from'] || selectionObj['visitDate'] || ''),
+          customerName: completedDraft.form.contact.fullName || 'Khách hàng TRIPLA',
+          customerPhone: completedDraft.form.contact.phone || '',
+          customerEmail: completedDraft.form.contact.email || '',
+          checkIn: String(selectionObj['visitDate'] || selectionObj['departureAt'] || ''),
+          guests: Number(selectionObj['quantity'] || selectionObj['adults'] || selectionObj['passengers'] || 1),
+          totalPriceVnd: totalVnd,
+          status: 'CONFIRMED',
+          details: selectionObj,
+        })
+        .subscribe({ error: () => {} });
+    }
     return true;
   }
   discard(id: string): void {

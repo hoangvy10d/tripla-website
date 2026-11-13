@@ -5,7 +5,7 @@ import { CommunityComponent } from './components/community/community.component';
 import { StepsComponent } from './components/steps/steps.component';
 import { TripshortsComponent } from './components/tripshorts/tripshorts.component';
 import { CtaComponent } from './components/cta/cta.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { SiteFooterComponent } from '../../shared/components/site-footer/site-footer';
 
 @Component({
   selector: 'app-about-page',
@@ -20,7 +20,7 @@ import { FooterComponent } from './components/footer/footer.component';
     StepsComponent,
     TripshortsComponent,
     CtaComponent,
-    FooterComponent,
+    SiteFooterComponent,
   ],
   template: `
     <app-header></app-header>
@@ -30,7 +30,7 @@ import { FooterComponent } from './components/footer/footer.component';
       <app-steps></app-steps>
       <app-tripshorts></app-tripshorts>
       <app-cta></app-cta>
-      <app-footer></app-footer>
+      <app-site-footer></app-site-footer>
     </main>
   `,
   styles: [

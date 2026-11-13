@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-label="Image Not Found">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f3f3e9" />
+      <stop offset="100%" stop-color="#e7edda" />
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" rx="24" fill="url(#bg)" />
+  <rect x="24" y="24" width="592" height="372" rx="18" fill="none" stroke="#30624b" stroke-opacity="0.22" stroke-width="2" stroke-dasharray="8 8" />
+  <g transform="translate(320 175)" fill="none" stroke="#173b32" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="-56" y="-42" width="112" height="84" rx="12" fill="#ffffff" fill-opacity="0.7" />
+    <circle cx="-24" cy="-14" r="9" fill="#dfecb6" />
+    <path d="M-42 26l26-26 18 16 14-14 26 24" />
+    <line x1="-64" y1="-50" x2="64" y2="50" stroke="#991b1b" stroke-width="3.5" />
+  </g>
+  <text x="320" y="268" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#173b32" letter-spacing="0.06em">NOT FOUND</text>
+  <text x="320" y="298" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="14" font-weight="500" fill="#30624b">Tripla • Hình ảnh hiện không khả dụng</text>
+</svg>
+

@@ -1,0 +1,33 @@
+{
+  "id": "u1",
+  "bio": "Content Creator đam mê xê dịch. Đi để học hỏi và chia sẻ 🌍✈️",
+  "location": "Hà Nội, Việt Nam",
+  "coverImage": "data/profiles/user_images/Nguyễn Hoàng Vy.png",
+  "points": 3450,
+  "followers": 1205,
+  "following": 45,
+  "socials": {
+    "instagram": "@hvy0209",
+    "tiktok": "@hvy0209"
+  },
+  "interests": [
+    "Nhiếp ảnh",
+    "Cắm trại",
+    "Khám phá"
+  ],
+  "badges": [
+    {
+      "icon": "📸",
+      "label": "Nhiếp ảnh gia"
+    },
+    {
+      "icon": "🌟",
+      "label": "Reviewer Uy tín"
+    }
+  ],
+  "name": "Nguyễn Hoàng Vy",
+  "avatar": "data/profiles/user_images/Nguyễn Hoàng Vy.png",
+  "role": "traveler",
+  "email": "vynhk24411e@st.uel.edu.vn",
+  "level": "Hạng Vàng"
+}

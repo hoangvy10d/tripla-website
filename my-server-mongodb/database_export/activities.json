@@ -1,0 +1,779 @@
+[
+  {
+    "_id": "demo-dalat-garden",
+    "id": "demo-dalat-garden",
+    "name": "Vườn hoa Đà Lạt",
+    "city": "Đà Lạt",
+    "address": "Số 2 Trần Nhân Tông, Phường 8, TP. Đà Lạt",
+    "categories": [
+      "Công viên & vườn",
+      "Vé tham quan"
+    ],
+    "imageUrl": "/images/Grassland.jpeg",
+    "description": "Một khoảng xanh để dạo bước và lưu lại những khung hình của chuyến đi.",
+    "priceFrom": 150000,
+    "originalPrice": 200000,
+    "currency": "VND",
+    "rating": 8.8,
+    "reviewCount": 240,
+    "coordinates": {
+      "latitude": 11.9465,
+      "longitude": 108.4494
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.4494,
+        11.9465
+      ]
+    },
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.716Z",
+    "updatedAt": "2026-11-13T03:10:21.716Z"
+  },
+  {
+    "_id": "demo-dalat-waterfall",
+    "id": "demo-dalat-waterfall",
+    "name": "Thác Datanla & Xe Trượt Alpine Coaster",
+    "city": "Đà Lạt",
+    "address": "QL20 Đèo Prenn, Phường 3, TP. Đà Lạt",
+    "categories": [
+      "Vé tham quan",
+      "Trò chơi & giải trí"
+    ],
+    "imageUrl": "/images/trangan.jpg",
+    "description": "Hành trình khám phá thác nước thiên nhiên và đường trượt xuyên rừng thông dài nhất Đông Nam Á.",
+    "priceFrom": 270000,
+    "currency": "VND",
+    "rating": 9.1,
+    "reviewCount": 415,
+    "coordinates": {
+      "latitude": 11.9022,
+      "longitude": 108.4508
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.4508,
+        11.9022
+      ]
+    },
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.716Z",
+    "updatedAt": "2026-11-13T03:10:21.716Z"
+  },
+  {
+    "_id": "demo-dalat-station",
+    "id": "demo-dalat-station",
+    "name": "Ga Đà Lạt & Tàu Cổ Trại Mát",
+    "city": "Đà Lạt",
+    "address": "Số 1 Quang Trung, Phường 10, TP. Đà Lạt",
+    "categories": [
+      "Điểm mốc",
+      "Vé tham quan"
+    ],
+    "imageUrl": "/resort-night-bg.png",
+    "description": "Nhà ga cổ nhất Đông Dương với hành trình tàu hỏa cổ điển ngắm toàn cảnh phố núi.",
+    "priceFrom": 190000,
+    "currency": "VND",
+    "rating": 9,
+    "reviewCount": 318,
+    "coordinates": {
+      "latitude": 11.9412,
+      "longitude": 108.4526
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.4526,
+        11.9412
+      ]
+    },
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.716Z",
+    "updatedAt": "2026-11-13T03:10:21.716Z"
+  },
+  {
+    "_id": "demo-hanoi-temple",
+    "id": "demo-hanoi-temple",
+    "name": "Tour Đêm Văn Miếu – Quốc Tử Giám 3D Mapping",
+    "city": "Hà Nội",
+    "address": "58 Quốc Tử Giám, Đống Đa, Hà Nội",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "imageUrl": "/images/tranganedit.jpeg",
+    "description": "Trải nghiệm ánh sáng 3D Mapping Tinh Hoa Đạo Học tại trường đại học đầu tiên của Việt Nam.",
+    "priceFrom": 290000,
+    "currency": "VND",
+    "rating": 9.4,
+    "reviewCount": 512,
+    "coordinates": {
+      "latitude": 21.0287,
+      "longitude": 105.8357
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        105.8357,
+        21.0287
+      ]
+    },
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.716Z",
+    "updatedAt": "2026-11-13T03:10:21.716Z"
+  },
+  {
+    "_id": "demo-danang-bana",
+    "id": "demo-danang-bana",
+    "name": "Sun World Bà Nà Hills & Cầu Vàng VIP",
+    "city": "Đà Nẵng",
+    "address": "Thôn An Sơn, Hòa Ninh, Hòa Vang, Đà Nẵng",
+    "categories": [
+      "Công viên giải trí",
+      "Vé tham quan"
+    ],
+    "imageUrl": "/images/Grassland.jpeg",
+    "description": "Vé cáp treo khứ hồi lối đi ưu tiên WOW Pass kèm buffet trưa 5 sao trên đỉnh Bà Nà.",
+    "priceFrom": 950000,
+    "originalPrice": 1250000,
+    "currency": "VND",
+    "rating": 9.5,
+    "reviewCount": 1240,
+    "coordinates": {
+      "latitude": 15.9977,
+      "longitude": 107.9881
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        107.9881,
+        15.9977
+      ]
+    },
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.716Z",
+    "updatedAt": "2026-11-13T03:10:21.716Z"
+  },
+  {
+    "_id": "demo-phuquoc-park",
+    "id": "demo-phuquoc-park",
+    "name": "VinWonders & Du Thuyền Hoàng Hôn Phú Quốc",
+    "city": "Phú Quốc",
+    "address": "Bãi Dài, Gành Dầu, TP. Phú Quốc",
+    "categories": [
+      "Công viên giải trí",
+      "Công viên nước"
+    ],
+    "imageUrl": "/images/tranganedit.jpeg",
+    "description": "Trọn gói khám phá công viên chủ đề lớn nhất Việt Nam và ngắm hoàng hôn Đảo Ngọc.",
+    "priceFrom": 880000,
+    "currency": "VND",
+    "rating": 9.6,
+    "reviewCount": 890,
+    "coordinates": {
+      "latitude": 10.3364,
+      "longitude": 103.8548
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        103.8548,
+        10.3364
+      ]
+    },
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.716Z",
+    "updatedAt": "2026-11-13T03:10:21.716Z"
+  },
+  {
+    "_id": "demo-ninhbinh-trangan",
+    "id": "demo-ninhbinh-trangan",
+    "name": "Du thuyền sinh thái Tràng An – Ninh Bình",
+    "city": "Ninh Bình",
+    "address": "Trường Yên, Hoa Lư, Ninh Bình",
+    "categories": [
+      "Vé tham quan",
+      "Các điểm tham quan khác"
+    ],
+    "imageUrl": "/images/trangan.jpg",
+    "description": "Đò chèo tay riêng khám phá Quần thể danh thắng Tràng An – Di sản Văn hóa và Thiên nhiên Thế giới UNESCO.",
+    "priceFrom": 350000,
+    "currency": "VND",
+    "rating": 9.7,
+    "reviewCount": 760,
+    "coordinates": {
+      "latitude": 20.2506,
+      "longitude": 105.9136
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        105.9136,
+        20.2506
+      ]
+    },
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.716Z",
+    "updatedAt": "2026-11-13T03:10:21.716Z"
+  },
+  {
+    "_id": "act_legacy_1",
+    "id": "act_legacy_1",
+    "name": "Golden Bridge (Ba Na Hills)",
+    "city": "Đà Nẵng",
+    "address": "Golden Bridge (Ba Na Hills), Da Nang",
+    "categories": [
+      "Điểm tham quan"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&auto=format&fit=crop&q=60",
+    "description": "A 150-metre-long pedestrian bridge in the Ba Na Hills resort, near Da Nang, Vietnam. It is designed to connect the cable car station with the gardens and to provide a scenic overlook and tourist attraction.",
+    "priceFrom": 900000,
+    "originalPrice": 1080000,
+    "currency": "VND",
+    "rating": 4.8,
+    "reviewCount": 1250,
+    "coordinates": {
+      "latitude": 15.9961,
+      "longitude": 107.9897
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        107.9897,
+        15.9961
+      ]
+    },
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.716Z",
+    "updatedAt": "2026-11-13T03:10:21.716Z"
+  },
+  {
+    "_id": "act_legacy_2",
+    "id": "act_legacy_2",
+    "name": "Marble Mountains",
+    "city": "Đà Nẵng",
+    "address": "Marble Mountains, Da Nang",
+    "categories": [
+      "Điểm tham quan"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&auto=format&fit=crop&q=60",
+    "description": "A cluster of five marble and limestone hills located in Ngu Hanh Son District, south of Da Nang city in Vietnam. The five mountains are named after the five elements: Kim (metal), Thuy (water), Moc (wood), Hoa (fire) and Tho (earth).",
+    "priceFrom": 40000,
+    "originalPrice": 48000,
+    "currency": "VND",
+    "rating": 4.6,
+    "reviewCount": 840,
+    "coordinates": {
+      "latitude": 16.0028,
+      "longitude": 108.2638
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.2638,
+        16.0028
+      ]
+    },
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.716Z",
+    "updatedAt": "2026-11-13T03:10:21.716Z"
+  },
+  {
+    "_id": "act_legacy_3",
+    "id": "act_legacy_3",
+    "name": "Dragon Bridge",
+    "city": "Đà Nẵng",
+    "address": "Dragon Bridge, Da Nang",
+    "categories": [
+      "Điểm tham quan"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&auto=format&fit=crop&q=60",
+    "description": "A bridge over the River Hàn at Da Nang, Vietnam, shaped like a dragon. It breathes fire and water every Saturday and Sunday night.",
+    "priceFrom": 150000,
+    "originalPrice": 200000,
+    "currency": "VND",
+    "rating": 4.9,
+    "reviewCount": 3200,
+    "coordinates": {
+      "latitude": 16.0611,
+      "longitude": 108.2275
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.2275,
+        16.0611
+      ]
+    },
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.716Z",
+    "updatedAt": "2026-11-13T03:10:21.716Z"
+  },
+  {
+    "_id": "act_legacy_4",
+    "id": "act_legacy_4",
+    "name": "My Khe Beach",
+    "city": "Đà Nẵng",
+    "address": "My Khe Beach, Da Nang",
+    "categories": [
+      "Điểm tham quan"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=60",
+    "description": "Famous for its blue sky, smooth white sand, gentle slope, clear & warm water year round and beautiful areas surrounded by coconut trees.",
+    "priceFrom": 150000,
+    "originalPrice": 200000,
+    "currency": "VND",
+    "rating": 4.5,
+    "reviewCount": 5400,
+    "coordinates": {
+      "latitude": 16.0656,
+      "longitude": 108.2483
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.2483,
+        16.0656
+      ]
+    },
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.716Z",
+    "updatedAt": "2026-11-13T03:10:21.716Z"
+  },
+  {
+    "_id": "act_legacy_5",
+    "id": "act_legacy_5",
+    "name": "Reply 1988 Cafe",
+    "city": "Đà Nẵng",
+    "address": "Reply 1988 Cafe, Da Nang",
+    "categories": [
+      "Ẩm thực"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1498804103079-a6351b050096?w=800&auto=format&fit=crop&q=60",
+    "description": "A cozy, retro-themed cafe inspired by the Korean drama Reply 1988. Famous for its amazing egg coffee and rustic interior design.",
+    "priceFrom": 150000,
+    "originalPrice": 200000,
+    "currency": "VND",
+    "rating": 4.7,
+    "reviewCount": 420,
+    "coordinates": {
+      "latitude": 16.0592,
+      "longitude": 108.2223
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.2223,
+        16.0592
+      ]
+    },
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.716Z",
+    "updatedAt": "2026-11-13T03:10:21.716Z"
+  },
+  {
+    "_id": "act_legacy_6",
+    "id": "act_legacy_6",
+    "name": "Thia Go Restaurant",
+    "city": "Đà Nẵng",
+    "address": "Thia Go Restaurant, Da Nang",
+    "categories": [
+      "Ẩm thực"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&auto=format&fit=crop&q=60",
+    "description": "Outstanding Central Vietnamese food including Mi Quang, Banh Xeo, and lemongrass pork. A must-visit for food lovers.",
+    "priceFrom": 150000,
+    "originalPrice": 200000,
+    "currency": "VND",
+    "rating": 4.7,
+    "reviewCount": 610,
+    "coordinates": {
+      "latitude": 16.0605,
+      "longitude": 108.2421
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.2421,
+        16.0605
+      ]
+    },
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.716Z",
+    "updatedAt": "2026-11-13T03:10:21.716Z"
+  },
+  {
+    "_id": "act_legacy_7",
+    "id": "act_legacy_7",
+    "name": "VinWonders Phu Quoc",
+    "city": "Phú Quốc",
+    "address": "VinWonders Phu Quoc, Phu Quoc",
+    "categories": [
+      "Điểm tham quan"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1513553404607-988bf2703777?w=800&auto=format&fit=crop&q=60",
+    "description": "The largest theme park in Vietnam with dozens of outdoor rides, an indoor game center, an aquarium, and a water park.",
+    "priceFrom": 880000,
+    "originalPrice": 1056000,
+    "currency": "VND",
+    "rating": 4.8,
+    "reviewCount": 1150,
+    "coordinates": {
+      "latitude": 10.3342,
+      "longitude": 103.8561
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        103.8561,
+        10.3342
+      ]
+    },
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.716Z",
+    "updatedAt": "2026-11-13T03:10:21.716Z"
+  },
+  {
+    "_id": "act_legacy_8",
+    "id": "act_legacy_8",
+    "name": "Vinpearl Safari",
+    "city": "Phú Quốc",
+    "address": "Vinpearl Safari, Phu Quoc",
+    "categories": [
+      "Điểm tham quan"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?w=800&auto=format&fit=crop&q=60",
+    "description": "Vietnam's first open zoo with over 150 species of rare animals from around the world.",
+    "priceFrom": 650000,
+    "originalPrice": 780000,
+    "currency": "VND",
+    "rating": 4.7,
+    "reviewCount": 980,
+    "coordinates": {
+      "latitude": 10.3245,
+      "longitude": 103.8711
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        103.8711,
+        10.3245
+      ]
+    },
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.717Z",
+    "updatedAt": "2026-11-13T03:10:21.717Z"
+  },
+  {
+    "_id": "act_legacy_9",
+    "id": "act_legacy_9",
+    "name": "Hon Thom Cable Car",
+    "city": "Phú Quốc",
+    "address": "Hon Thom Cable Car, Phu Quoc",
+    "categories": [
+      "Điểm tham quan"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1473163928189-364b2c4e1135?w=800&auto=format&fit=crop&q=60",
+    "description": "The world's longest sea-crossing cable car, providing a breathtaking view of the An Thoi archipelago.",
+    "priceFrom": 500000,
+    "originalPrice": 600000,
+    "currency": "VND",
+    "rating": 4.9,
+    "reviewCount": 2100,
+    "coordinates": {
+      "latitude": 10.0272,
+      "longitude": 104.0152
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        104.0152,
+        10.0272
+      ]
+    },
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.717Z",
+    "updatedAt": "2026-11-13T03:10:21.717Z"
+  },
+  {
+    "_id": "act_legacy_10",
+    "id": "act_legacy_10",
+    "name": "Saigon Skydeck",
+    "city": "Hồ Chí Minh",
+    "address": "Saigon Skydeck, Hồ Chí Minh",
+    "categories": [
+      "Điểm tham quan"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1000&q=80",
+    "description": "Enjoy a 360-degree bird's-eye view of Ho Chi Minh City from the 49th floor of the iconic Bitexco Financial Tower.",
+    "priceFrom": 200000,
+    "originalPrice": 240000,
+    "currency": "VND",
+    "rating": 4.6,
+    "reviewCount": 850,
+    "coordinates": {
+      "latitude": 10.7716,
+      "longitude": 106.7044
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.7044,
+        10.7716
+      ]
+    },
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.717Z",
+    "updatedAt": "2026-11-13T03:10:21.717Z"
+  },
+  {
+    "_id": "act_legacy_11",
+    "id": "act_legacy_11",
+    "name": "A O Show",
+    "city": "Hồ Chí Minh",
+    "address": "A O Show, Hồ Chí Minh",
+    "categories": [
+      "Điểm tham quan"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1465847899084-d164df4dedc6?w=800&auto=format&fit=crop&q=60",
+    "description": "A spectacular cultural performance at the Saigon Opera House, blending visual theater, acrobatics, and contemporary dance.",
+    "priceFrom": 630000,
+    "originalPrice": 756000,
+    "currency": "VND",
+    "rating": 4.8,
+    "reviewCount": 720,
+    "coordinates": {
+      "latitude": 10.7766,
+      "longitude": 106.7032
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.7032,
+        10.7766
+      ]
+    },
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.717Z",
+    "updatedAt": "2026-11-13T03:10:21.717Z"
+  },
+  {
+    "_id": "act_legacy_12",
+    "id": "act_legacy_12",
+    "name": "Water Puppet Theatre",
+    "city": "Hà Nội",
+    "address": "Water Puppet Theatre, Hà Nội",
+    "categories": [
+      "Điểm tham quan"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&auto=format&fit=crop&q=60",
+    "description": "Experience the ancient Vietnamese art of water puppetry accompanied by a live traditional orchestra.",
+    "priceFrom": 100000,
+    "originalPrice": 120000,
+    "currency": "VND",
+    "rating": 4.5,
+    "reviewCount": 1500,
+    "coordinates": {
+      "latitude": 21.0315,
+      "longitude": 105.8528
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        105.8528,
+        21.0315
+      ]
+    },
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.717Z",
+    "updatedAt": "2026-11-13T03:10:21.717Z"
+  },
+  {
+    "_id": "act_legacy_13",
+    "id": "act_legacy_13",
+    "name": "Hoa Lo Prison",
+    "city": "Hà Nội",
+    "address": "Hoa Lo Prison, Hà Nội",
+    "categories": [
+      "Điểm tham quan"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1555921015-5532091f6026?auto=format&fit=crop&w=1000&q=80",
+    "description": "A historic prison built by French colonists, ironically nicknamed the 'Hanoi Hilton' by American POWs.",
+    "priceFrom": 30000,
+    "originalPrice": 36000,
+    "currency": "VND",
+    "rating": 4.7,
+    "reviewCount": 2300,
+    "coordinates": {
+      "latitude": 21.0253,
+      "longitude": 105.8464
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        105.8464,
+        21.0253
+      ]
+    },
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.717Z",
+    "updatedAt": "2026-11-13T03:10:21.717Z"
+  },
+  {
+    "_id": "act_legacy_14",
+    "id": "act_legacy_14",
+    "name": "I-Resort Mud Bath",
+    "city": "Nha Trang",
+    "address": "I-Resort Mud Bath, Nha Trang",
+    "categories": [
+      "Điểm tham quan"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1544816155-12df9643f363?w=800&auto=format&fit=crop&q=60",
+    "description": "Relax in hot mineral springs and mud baths set in a beautiful tropical environment with waterfalls and pools.",
+    "priceFrom": 250000,
+    "originalPrice": 300000,
+    "currency": "VND",
+    "rating": 4.7,
+    "reviewCount": 640,
+    "coordinates": {
+      "latitude": 12.2829,
+      "longitude": 109.1869
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        109.1869,
+        12.2829
+      ]
+    },
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.717Z",
+    "updatedAt": "2026-11-13T03:10:21.717Z"
+  },
+  {
+    "_id": "act_legacy_15",
+    "id": "act_legacy_15",
+    "name": "Guinness Seaside Restaurant",
+    "city": "Phú Quốc",
+    "address": "Guinness Seaside Restaurant, Phu Quoc",
+    "categories": [
+      "Ẩm thực"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&auto=format&fit=crop&q=60",
+    "description": "Awarded a Guinness World Record for being the largest coastal restaurant. Specializes in fresh, local seafood.",
+    "priceFrom": 150000,
+    "originalPrice": 200000,
+    "currency": "VND",
+    "rating": 4.6,
+    "reviewCount": 350,
+    "coordinates": {
+      "latitude": 10.0272,
+      "longitude": 104.0152
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        104.0152,
+        10.0272
+      ]
+    },
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.717Z",
+    "updatedAt": "2026-11-13T03:10:21.717Z"
+  },
+  {
+    "_id": "act_legacy_16",
+    "id": "act_legacy_16",
+    "name": "Cai Rang Floating Market",
+    "city": "Cần Thơ",
+    "address": "Cai Rang Floating Market, Cần Thơ",
+    "categories": [
+      "Điểm tham quan"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1528127269322-539801943592?w=800&auto=format&fit=crop&q=60",
+    "description": "The largest and most bustling floating market in the Mekong Delta. A vibrant display of local culture and commerce.",
+    "priceFrom": 150000,
+    "originalPrice": 200000,
+    "currency": "VND",
+    "rating": 4.8,
+    "reviewCount": 980,
+    "coordinates": {
+      "latitude": 10.005,
+      "longitude": 105.7469
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        105.7469,
+        10.005
+      ]
+    },
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.717Z",
+    "updatedAt": "2026-11-13T03:10:21.717Z"
+  },
+  {
+    "_id": "act_legacy_17",
+    "id": "act_legacy_17",
+    "name": "Hồ Gươm (Hoàn Kiếm)",
+    "city": "Hà Nội",
+    "address": "Hồ Gươm (Hoàn Kiếm), Ha Noi",
+    "categories": [
+      "Điểm tham quan"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1590487988256-9ed24133863e?w=800&auto=format&fit=crop&q=60",
+    "description": "Biểu tượng của thủ đô Hà Nội ngàn năm văn hiến, với Tháp Rùa cổ kính nằm giữa hồ nước xanh trong.",
+    "priceFrom": 150000,
+    "originalPrice": 200000,
+    "currency": "VND",
+    "rating": 4.9,
+    "reviewCount": 15000,
+    "coordinates": {
+      "latitude": 21.0285,
+      "longitude": 105.8523
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        105.8523,
+        21.0285
+      ]
+    },
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.717Z",
+    "updatedAt": "2026-11-13T03:10:21.717Z"
+  },
+  {
+    "_id": "act_legacy_18",
+    "id": "act_legacy_18",
+    "name": "Hồ Xuân Hương",
+    "city": "Đà Lạt",
+    "address": "Hồ Xuân Hương, Da Lat",
+    "categories": [
+      "Điểm tham quan"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1509233725247-49e657c54213?auto=format&fit=crop&w=1000&q=80",
+    "description": "Trái tim của Đà Lạt mộng mơ. Thích hợp để đạp vịt, chạy bộ hoặc nhâm nhi ly cà phê sáng sớm.",
+    "priceFrom": 150000,
+    "originalPrice": 200000,
+    "currency": "VND",
+    "rating": 4.8,
+    "reviewCount": 8500,
+    "coordinates": {
+      "latitude": 11.9404,
+      "longitude": 108.4383
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.4383,
+        11.9404
+      ]
+    },
+    "__v": 0,
+    "createdAt": "2026-11-13T03:10:21.717Z",
+    "updatedAt": "2026-11-13T03:10:21.717Z"
+  }
+]

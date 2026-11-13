@@ -16,22 +16,26 @@ import { catchError, of, switchMap, tap } from 'rxjs';
 import { ActivityDetails, ActivityTicket } from '../../models/activity.model';
 import { ActivitySearchService } from '../../services/activity-search';
 import { ActivityNavigation } from '../../components/activity-navigation/activity-navigation';
+import { SiteFooterComponent } from '../../../shared/components/site-footer/site-footer';
 import { SavedTrips } from '../../../services/saved-trips';
 import { SaveHotelTrip } from '../../../hotel-search/components/save-hotel-trip/save-hotel-trip';
 import {
   localDateString,
   validDate,
 } from '../../../hotel-search/models/hotel-search-criteria.model';
+import { injectLiveHttp } from '../../../services/live-http';
 @Component({
   selector: 'app-activity-details',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink, ActivityNavigation, SaveHotelTrip],
+  imports: [CommonModule, FormsModule, RouterLink, ActivityNavigation, SiteFooterComponent, SaveHotelTrip],
   templateUrl: './activity-details.html',
   styleUrl: './activity-details.css',
 })
 export class ActivityDetailsPage implements OnDestroy {
   private readonly route = inject(ActivatedRoute);
   private readonly router=inject(Router);private readonly checkout=inject(CheckoutStateService);
+  private readonly http = injectLiveHttp();
+  readonly isMongoConnected = computed(() => !!this.http && !this.activity()?.id.startsWith('demo-'));
   readonly checkoutError=signal('');ticketQuantity=1;
   private readonly source = inject(ActivitySearchService);
   private readonly element = inject<ElementRef<HTMLElement>>(ElementRef);
@@ -52,6 +56,12 @@ export class ActivityDetailsPage implements OnDestroy {
   readonly expanded = signal(false);
   readonly today = localDateString(new Date());
   visitDate = this.today;
+  visitTimeSlot = '08:30 – Khung giờ sáng';
+  readonly timeSlots = [
+    '08:30 – Khung giờ sáng',
+    '13:30 – Khung giờ chiều',
+    '17:30 – Khung giờ hoàng hôn / tối',
+  ];
   get dateValid(): boolean {
     return validDate(this.visitDate) && this.visitDate >= this.today;
   }
@@ -143,7 +153,7 @@ export class ActivityDetailsPage implements OnDestroy {
   }
   startCheckout():void {
     const activity=this.activity(),ticket=this.selectedTicket();if(!activity||!ticket)return;
-    try{const draft=this.checkout.startActivity({activity,ticket,visitDate:this.visitDate,quantity:this.ticketQuantity,source:'demo',returnQuery:{...this.route.snapshot.queryParams}});
+    try{const draft=this.checkout.startActivity({activity,ticket,visitDate:this.visitDate,quantity:this.ticketQuantity,source:this.isMongoConnected()?'catalog':'demo',returnQuery:{...this.route.snapshot.queryParams}});
       this.closeDialogs();void this.router.navigate(['/checkout','activity'],{queryParams:{draft:draft.id}});
     }catch(error){this.checkoutError.set(error instanceof Error?error.message:'Lựa chọn gói vé chưa hợp lệ.');}
   }

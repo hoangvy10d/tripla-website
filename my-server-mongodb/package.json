@@ -1,0 +1,25 @@
+{
+  "name": "my-server-mongodb",
+  "version": "1.0.0",
+  "description": "TRIPLA Backend REST API Server (Express + Mongoose + MongoDB Compass) for TripShorts & TripShop",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "seed": "node seed.js",
+    "export-db": "node export_db.js",
+    "import-db": "node import_db.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "express-fileupload": "^1.5.1",
+    "mongodb": "^6.10.0",
+    "mongoose": "^8.8.1"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.7"
+  }
+}
+

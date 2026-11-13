@@ -1,0 +1,1092 @@
+[
+  {
+    "id": "h1",
+    "name": "InterContinental Danang",
+    "city": "Đà Nẵng",
+    "images": [
+      "data/booking/hotels/h1/images/10025678-f1b63600354e13d056571f18e3ecf359.webp",
+      "data/booking/hotels/h1/images/10025678-176d5be99441573f143b6d83cbb5d6f7.webp",
+      "data/booking/hotels/h1/images/10025678-2fdfd7db20346b6d8e9916a234c26fb2.webp",
+      "data/booking/hotels/h1/images/10025678-54bb5907433405ab452bac0bd287bed3.webp",
+      "data/booking/hotels/h1/images/10025678-7c41d583282ed7c4e088a75f5e722a2b.webp"
+    ],
+    "pricePerNight": 450,
+    "rating": 4.9,
+    "amenities": [
+      "Bãi biển riêng",
+      "Hồ bơi vô cực",
+      "Spa cao cấp",
+      "Nhà hàng Michelin",
+      "Đưa đón sân bay"
+    ],
+    "roomTypes": [
+      "Classic Room",
+      "Ocean Suite",
+      "Peninsula Villa"
+    ],
+    "address": "Số 71 Đường Trần Phú, Trung tâm, Đà Nẵng",
+    "description": "Chỗ nghỉ này ở vị trí cực kỳ thuận lợi tại Đà Nẵng. InterContinental Danang cung cấp chỗ nghỉ dưỡng đẳng cấp với các phòng nghỉ có máy điều hòa, Wi-Fi miễn phí, nhà hàng, hồ bơi ngoài trời và trung tâm thể dục. Nơi đây có quầy lễ tân 24 giờ, dịch vụ phòng và dịch vụ thu đổi ngoại tệ cho khách. Bữa sáng tự chọn được phục vụ hàng ngày.",
+    "reviewScore": 9.8,
+    "reviewText": "Tuyệt hảo",
+    "reviewCount": 2446,
+    "roomDetails": [
+      {
+        "id": "room_0",
+        "name": "Classic Room",
+        "price": 11250000,
+        "size": "42m²",
+        "beds": "1 giường đôi lớn",
+        "capacity": 2,
+        "breakfast": true,
+        "cancellation": "Miễn phí hủy trước 2 ngày",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      },
+      {
+        "id": "room_1",
+        "name": "Ocean Suite",
+        "price": 15749999,
+        "size": "44m²",
+        "beds": "2 giường đơn",
+        "capacity": 2,
+        "breakfast": true,
+        "cancellation": "Không hoàn tiền",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      },
+      {
+        "id": "room_2",
+        "name": "Peninsula Villa",
+        "price": 20250000,
+        "size": "26m²",
+        "beds": "1 giường đôi lớn",
+        "capacity": 3,
+        "breakfast": true,
+        "cancellation": "Không hoàn tiền",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "user": "Nguyễn Văn A",
+        "country": "Việt Nam",
+        "score": 9.7,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Vị trí đắc địa, dễ dàng di chuyển đến các điểm tham quan. Bữa sáng ngon miệng và đa dạng."
+      },
+      {
+        "user": "David Smith",
+        "country": "Việt Nam",
+        "score": 8,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Giá cả hợp lý so với chất lượng dịch vụ. Không gian yên tĩnh, thích hợp để nghỉ dưỡng."
+      },
+      {
+        "user": "Sarah Connor",
+        "country": "Việt Nam",
+        "score": 10,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Phòng ốc sạch sẽ, nhân viên cực kỳ thân thiện và hỗ trợ nhiệt tình. Chắc chắn sẽ quay lại!"
+      }
+    ]
+  },
+  {
+    "id": "h2",
+    "name": "Novotel Danang Han River",
+    "city": "Đà Nẵng",
+    "images": [
+      "data/booking/hotels/h2/images/20020070-b5360b527dad0709a04cd0b9ac25ef27.webp",
+      "data/booking/hotels/h2/images/20020070-867acfc518b79eb295055ba5226f293f.webp",
+      "data/booking/hotels/h2/images/20020070-8ecd3758a372509e8796c1f5f82b4085.webp",
+      "data/booking/hotels/h2/images/20020070-a7cedb28386c7360f511ff373953efbf.webp",
+      "data/booking/hotels/h2/images/20020070-1543bc976dc26a042805ea60c923ef3e.webp"
+    ],
+    "pricePerNight": 110,
+    "rating": 4.6,
+    "amenities": [
+      "View Sông Hàn",
+      "Rooftop Bar (SKY36)",
+      "Hồ bơi ngoài trời",
+      "Gym"
+    ],
+    "roomTypes": [
+      "Superior",
+      "Deluxe",
+      "Executive Suite"
+    ],
+    "address": "Số 65 Đường Trần Phú, Trung tâm, Đà Nẵng",
+    "description": "Chỗ nghỉ này ở vị trí cực kỳ thuận lợi tại Đà Nẵng. Novotel Danang Han River cung cấp chỗ nghỉ dưỡng đẳng cấp với các phòng nghỉ có máy điều hòa, Wi-Fi miễn phí, nhà hàng, hồ bơi ngoài trời và trung tâm thể dục. Nơi đây có quầy lễ tân 24 giờ, dịch vụ phòng và dịch vụ thu đổi ngoại tệ cho khách. Bữa sáng tự chọn được phục vụ hàng ngày.",
+    "reviewScore": 9.2,
+    "reviewText": "Tuyệt hảo",
+    "reviewCount": 1413,
+    "roomDetails": [
+      {
+        "id": "room_0",
+        "name": "Superior",
+        "price": 2750000,
+        "size": "60m²",
+        "beds": "1 giường đôi lớn",
+        "capacity": 2,
+        "breakfast": true,
+        "cancellation": "Miễn phí hủy trước 2 ngày",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      },
+      {
+        "id": "room_1",
+        "name": "Deluxe",
+        "price": 3849999,
+        "size": "25m²",
+        "beds": "2 giường đơn",
+        "capacity": 2,
+        "breakfast": true,
+        "cancellation": "Không hoàn tiền",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      },
+      {
+        "id": "room_2",
+        "name": "Executive Suite",
+        "price": 4950000,
+        "size": "43m²",
+        "beds": "1 giường đôi lớn",
+        "capacity": 3,
+        "breakfast": true,
+        "cancellation": "Không hoàn tiền",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "user": "Phạm Quỳnh D",
+        "country": "Việt Nam",
+        "score": 8.5,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Hồ bơi đẹp tuyệt vời, view xịn xò. Giường ngủ êm ái mang lại giấc ngủ ngon."
+      },
+      {
+        "user": "Trần Thị B",
+        "country": "Việt Nam",
+        "score": 9,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Phòng ốc sạch sẽ, nhân viên cực kỳ thân thiện và hỗ trợ nhiệt tình. Chắc chắn sẽ quay lại!"
+      },
+      {
+        "user": "Nguyễn Văn A",
+        "country": "Việt Nam",
+        "score": 9.2,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Hồ bơi đẹp tuyệt vời, view xịn xò. Giường ngủ êm ái mang lại giấc ngủ ngon."
+      }
+    ]
+  },
+  {
+    "id": "h3",
+    "name": "Haian Beach Hotel & Spa",
+    "city": "Đà Nẵng",
+    "images": [
+      "data/booking/hotels/h3/images/20097595-0f9cb554d0aff7e81ce8c6d33fe68c2d.webp",
+      "data/booking/hotels/h3/images/20097595-2cbb06319b8e4987bbc5a560ac6e2794.webp",
+      "data/booking/hotels/h3/images/20097595-00a95a3e7ea93412579029a7f802e22b.webp",
+      "data/booking/hotels/h3/images/20097595-ef4e83e15e86bf293af10661b128d744.webp",
+      "data/booking/hotels/h3/images/680059665-3125f1a3bcd77c0d0328569338325d58.webp"
+    ],
+    "pricePerNight": 85,
+    "rating": 4.7,
+    "amenities": [
+      "Hồ bơi vô cực",
+      "Mặt biển Mỹ Khê",
+      "Spa",
+      "Ăn sáng tự chọn"
+    ],
+    "roomTypes": [
+      "City View",
+      "Partial Ocean View",
+      "Beach Front Suite"
+    ],
+    "address": "Số 28 Đường Trần Phú, Trung tâm, Đà Nẵng",
+    "description": "Chỗ nghỉ này ở vị trí cực kỳ thuận lợi tại Đà Nẵng. Haian Beach Hotel & Spa cung cấp chỗ nghỉ dưỡng đẳng cấp với các phòng nghỉ có máy điều hòa, Wi-Fi miễn phí, nhà hàng, hồ bơi ngoài trời và trung tâm thể dục. Nơi đây có quầy lễ tân 24 giờ, dịch vụ phòng và dịch vụ thu đổi ngoại tệ cho khách. Bữa sáng tự chọn được phục vụ hàng ngày.",
+    "reviewScore": 9.4,
+    "reviewText": "Tuyệt hảo",
+    "reviewCount": 2126,
+    "roomDetails": [
+      {
+        "id": "room_0",
+        "name": "City View",
+        "price": 2125000,
+        "size": "39m²",
+        "beds": "1 giường đôi lớn",
+        "capacity": 2,
+        "breakfast": true,
+        "cancellation": "Miễn phí hủy trước 2 ngày",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      },
+      {
+        "id": "room_1",
+        "name": "Partial Ocean View",
+        "price": 2975000,
+        "size": "59m²",
+        "beds": "2 giường đơn",
+        "capacity": 2,
+        "breakfast": true,
+        "cancellation": "Không hoàn tiền",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      },
+      {
+        "id": "room_2",
+        "name": "Beach Front Suite",
+        "price": 3825000,
+        "size": "46m²",
+        "beds": "1 giường đôi lớn",
+        "capacity": 3,
+        "breakfast": true,
+        "cancellation": "Không hoàn tiền",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "user": "Sarah Connor",
+        "country": "Việt Nam",
+        "score": 8.3,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Phòng ốc sạch sẽ, nhân viên cực kỳ thân thiện và hỗ trợ nhiệt tình. Chắc chắn sẽ quay lại!"
+      },
+      {
+        "user": "Lê Hoàng C",
+        "country": "Việt Nam",
+        "score": 8.8,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Vị trí đắc địa, dễ dàng di chuyển đến các điểm tham quan. Bữa sáng ngon miệng và đa dạng."
+      },
+      {
+        "user": "Lê Hoàng C",
+        "country": "Việt Nam",
+        "score": 8.4,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Vị trí đắc địa, dễ dàng di chuyển đến các điểm tham quan. Bữa sáng ngon miệng và đa dạng."
+      }
+    ]
+  },
+  {
+    "id": "h4",
+    "name": "Sala Danang Beach Hotel",
+    "city": "Đà Nẵng",
+    "images": [
+      "data/booking/hotels/h4/images/20012109-4c65e4e808a2cf0c2bfee7a8e6e233fe.webp",
+      "data/booking/hotels/h4/images/20012109-66a2d29ce7ef7a9d731c2efa60779154.webp",
+      "data/booking/hotels/h4/images/20012109-7770fb4d67b838eecfde79310fed87c1.webp",
+      "data/booking/hotels/h4/images/20012109-8a8fc050d4f5e5e43c7249ea3e1485d2.webp",
+      "data/booking/hotels/h4/images/20012109-cccdcb44dccdcbe2e3ec2228856b3033.webp"
+    ],
+    "pricePerNight": 70,
+    "rating": 4.5,
+    "amenities": [
+      "Hồ bơi vô cực trên cao",
+      "Bữa sáng tuyệt hảo",
+      "View biển",
+      "Yoga"
+    ],
+    "roomTypes": [
+      "Standard",
+      "Sea View",
+      "Family Suite"
+    ],
+    "address": "Số 11 Đường Trần Phú, Trung tâm, Đà Nẵng",
+    "description": "Chỗ nghỉ này ở vị trí cực kỳ thuận lợi tại Đà Nẵng. Sala Danang Beach Hotel cung cấp chỗ nghỉ dưỡng đẳng cấp với các phòng nghỉ có máy điều hòa, Wi-Fi miễn phí, nhà hàng, hồ bơi ngoài trời và trung tâm thể dục. Nơi đây có quầy lễ tân 24 giờ, dịch vụ phòng và dịch vụ thu đổi ngoại tệ cho khách. Bữa sáng tự chọn được phục vụ hàng ngày.",
+    "reviewScore": 9,
+    "reviewText": "Tuyệt hảo",
+    "reviewCount": 200,
+    "roomDetails": [
+      {
+        "id": "room_0",
+        "name": "Standard",
+        "price": 1750000,
+        "size": "49m²",
+        "beds": "1 giường đôi lớn",
+        "capacity": 2,
+        "breakfast": true,
+        "cancellation": "Miễn phí hủy trước 2 ngày",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      },
+      {
+        "id": "room_1",
+        "name": "Sea View",
+        "price": 2450000,
+        "size": "52m²",
+        "beds": "2 giường đơn",
+        "capacity": 2,
+        "breakfast": true,
+        "cancellation": "Không hoàn tiền",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      },
+      {
+        "id": "room_2",
+        "name": "Family Suite",
+        "price": 3150000,
+        "size": "50m²",
+        "beds": "1 giường đôi lớn",
+        "capacity": 3,
+        "breakfast": true,
+        "cancellation": "Không hoàn tiền",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "user": "Sarah Connor",
+        "country": "Việt Nam",
+        "score": 10,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Vị trí đắc địa, dễ dàng di chuyển đến các điểm tham quan. Bữa sáng ngon miệng và đa dạng."
+      },
+      {
+        "user": "Phạm Quỳnh D",
+        "country": "Việt Nam",
+        "score": 8.9,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Hồ bơi đẹp tuyệt vời, view xịn xò. Giường ngủ êm ái mang lại giấc ngủ ngon."
+      },
+      {
+        "user": "David Smith",
+        "country": "Việt Nam",
+        "score": 8.7,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Phòng ốc sạch sẽ, nhân viên cực kỳ thân thiện và hỗ trợ nhiệt tình. Chắc chắn sẽ quay lại!"
+      }
+    ]
+  },
+  {
+    "id": "h5",
+    "name": "Sofitel Legend Metropole",
+    "city": "Hà Nội",
+    "images": [
+      "data/booking/hotels/h5/images/10019543-42d1ed72750e9677555c12ec379acd43.webp",
+      "data/booking/hotels/h5/images/10019543-bd97f171be0988d63a02c2be6de4e589.webp",
+      "data/booking/hotels/h5/images/10019543-20fe1230c0c7c42ed0b52dd6741e7da5.webp",
+      "data/booking/hotels/h5/images/10019543-b5b2dcc8e06f92e2997e7beb1b121af7.webp",
+      "data/booking/hotels/h5/images/10019543-b9efe9ec88d8fe5e2765c01937509249.webp"
+    ],
+    "pricePerNight": 350,
+    "rating": 4.9,
+    "amenities": [
+      "Kiến trúc Pháp cổ",
+      "Hồ bơi nước nóng",
+      "Luxury Spa",
+      "Nhà hàng Pháp"
+    ],
+    "roomTypes": [
+      "Luxury",
+      "Grand Premium",
+      "Prestige Suite"
+    ],
+    "address": "Số 79 Đường Trần Phú, Trung tâm, Hà Nội",
+    "description": "Chỗ nghỉ này ở vị trí cực kỳ thuận lợi tại Hà Nội. Sofitel Legend Metropole cung cấp chỗ nghỉ dưỡng đẳng cấp với các phòng nghỉ có máy điều hòa, Wi-Fi miễn phí, nhà hàng, hồ bơi ngoài trời và trung tâm thể dục. Nơi đây có quầy lễ tân 24 giờ, dịch vụ phòng và dịch vụ thu đổi ngoại tệ cho khách. Bữa sáng tự chọn được phục vụ hàng ngày.",
+    "reviewScore": 9.8,
+    "reviewText": "Tuyệt hảo",
+    "reviewCount": 1162,
+    "roomDetails": [
+      {
+        "id": "room_0",
+        "name": "Luxury",
+        "price": 8750000,
+        "size": "60m²",
+        "beds": "1 giường đôi lớn",
+        "capacity": 2,
+        "breakfast": true,
+        "cancellation": "Miễn phí hủy trước 2 ngày",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      },
+      {
+        "id": "room_1",
+        "name": "Grand Premium",
+        "price": 12250000,
+        "size": "37m²",
+        "beds": "2 giường đơn",
+        "capacity": 2,
+        "breakfast": true,
+        "cancellation": "Không hoàn tiền",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      },
+      {
+        "id": "room_2",
+        "name": "Prestige Suite",
+        "price": 15750000,
+        "size": "38m²",
+        "beds": "1 giường đôi lớn",
+        "capacity": 3,
+        "breakfast": true,
+        "cancellation": "Không hoàn tiền",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "user": "David Smith",
+        "country": "Việt Nam",
+        "score": 8,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Giá cả hợp lý so với chất lượng dịch vụ. Không gian yên tĩnh, thích hợp để nghỉ dưỡng."
+      },
+      {
+        "user": "Trần Thị B",
+        "country": "Việt Nam",
+        "score": 8.8,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Vị trí đắc địa, dễ dàng di chuyển đến các điểm tham quan. Bữa sáng ngon miệng và đa dạng."
+      },
+      {
+        "user": "David Smith",
+        "country": "Việt Nam",
+        "score": 9.2,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Phòng ốc sạch sẽ, nhân viên cực kỳ thân thiện và hỗ trợ nhiệt tình. Chắc chắn sẽ quay lại!"
+      }
+    ]
+  },
+  {
+    "id": "h6",
+    "name": "Lotte Hotel Hanoi",
+    "city": "Hà Nội",
+    "images": [
+      "data/booking/hotels/h6/images/20056907-be4ea64eec9fe6efa95e0c25a39d1ecd.webp",
+      "data/booking/hotels/h6/images/20056907-d4adabdba87145f5a1c2ac2c35cca1df.webp",
+      "data/booking/hotels/h6/images/20056907-b943daec57d38066551d5bb4d91fbd47.webp",
+      "data/booking/hotels/h6/images/20056907-96b2d8b419c712402d92ed0ed4e190f6.webp",
+      "data/booking/hotels/h6/images/20056907-58a591b8114f9705aba0c2bcc69fb3f1.webp"
+    ],
+    "pricePerNight": 140,
+    "rating": 4.8,
+    "amenities": [
+      "View toàn cảnh thành phố",
+      "Hồ bơi",
+      "Gym 24/7",
+      "Đài quan sát"
+    ],
+    "roomTypes": [
+      "Deluxe",
+      "Club Floor",
+      "Premier Suite"
+    ],
+    "address": "Số 56 Đường Trần Phú, Trung tâm, Hà Nội",
+    "description": "Chỗ nghỉ này ở vị trí cực kỳ thuận lợi tại Hà Nội. Lotte Hotel Hanoi cung cấp chỗ nghỉ dưỡng đẳng cấp với các phòng nghỉ có máy điều hòa, Wi-Fi miễn phí, nhà hàng, hồ bơi ngoài trời và trung tâm thể dục. Nơi đây có quầy lễ tân 24 giờ, dịch vụ phòng và dịch vụ thu đổi ngoại tệ cho khách. Bữa sáng tự chọn được phục vụ hàng ngày.",
+    "reviewScore": 9.6,
+    "reviewText": "Tuyệt hảo",
+    "reviewCount": 1740,
+    "roomDetails": [
+      {
+        "id": "room_0",
+        "name": "Deluxe",
+        "price": 3500000,
+        "size": "49m²",
+        "beds": "1 giường đôi lớn",
+        "capacity": 2,
+        "breakfast": true,
+        "cancellation": "Miễn phí hủy trước 2 ngày",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      },
+      {
+        "id": "room_1",
+        "name": "Club Floor",
+        "price": 4900000,
+        "size": "58m²",
+        "beds": "2 giường đơn",
+        "capacity": 2,
+        "breakfast": true,
+        "cancellation": "Không hoàn tiền",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      },
+      {
+        "id": "room_2",
+        "name": "Premier Suite",
+        "price": 6300000,
+        "size": "31m²",
+        "beds": "1 giường đôi lớn",
+        "capacity": 3,
+        "breakfast": true,
+        "cancellation": "Không hoàn tiền",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "user": "Nguyễn Văn A",
+        "country": "Việt Nam",
+        "score": 9.4,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Giá cả hợp lý so với chất lượng dịch vụ. Không gian yên tĩnh, thích hợp để nghỉ dưỡng."
+      },
+      {
+        "user": "David Smith",
+        "country": "Việt Nam",
+        "score": 8.7,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Giá cả hợp lý so với chất lượng dịch vụ. Không gian yên tĩnh, thích hợp để nghỉ dưỡng."
+      },
+      {
+        "user": "Sarah Connor",
+        "country": "Việt Nam",
+        "score": 9.1,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Hồ bơi đẹp tuyệt vời, view xịn xò. Giường ngủ êm ái mang lại giấc ngủ ngon."
+      }
+    ]
+  },
+  {
+    "id": "h7",
+    "name": "The Reverie Saigon",
+    "city": "Hồ Chí Minh",
+    "images": [
+      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&auto=format&fit=crop&q=60"
+    ],
+    "pricePerNight": 320,
+    "rating": 4.9,
+    "amenities": [
+      "Thiết kế chuẩn Ý",
+      "Hồ bơi nghệ thuật",
+      "Spa sang trọng bậc nhất"
+    ],
+    "roomTypes": [
+      "Deluxe",
+      "Grand Deluxe",
+      "Designer Suite"
+    ],
+    "address": "Số 2 Đường Trần Phú, Trung tâm, Hồ Chí Minh",
+    "description": "Chỗ nghỉ này ở vị trí cực kỳ thuận lợi tại Hồ Chí Minh. The Reverie Saigon cung cấp chỗ nghỉ dưỡng đẳng cấp với các phòng nghỉ có máy điều hòa, Wi-Fi miễn phí, nhà hàng, hồ bơi ngoài trời và trung tâm thể dục. Nơi đây có quầy lễ tân 24 giờ, dịch vụ phòng và dịch vụ thu đổi ngoại tệ cho khách. Bữa sáng tự chọn được phục vụ hàng ngày.",
+    "reviewScore": 9.8,
+    "reviewText": "Tuyệt hảo",
+    "reviewCount": 2191,
+    "roomDetails": [
+      {
+        "id": "room_0",
+        "name": "Deluxe",
+        "price": 8000000,
+        "size": "55m²",
+        "beds": "1 giường đôi lớn",
+        "capacity": 2,
+        "breakfast": true,
+        "cancellation": "Miễn phí hủy trước 2 ngày",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      },
+      {
+        "id": "room_1",
+        "name": "Grand Deluxe",
+        "price": 11200000,
+        "size": "29m²",
+        "beds": "2 giường đơn",
+        "capacity": 2,
+        "breakfast": true,
+        "cancellation": "Không hoàn tiền",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      },
+      {
+        "id": "room_2",
+        "name": "Designer Suite",
+        "price": 14400000,
+        "size": "30m²",
+        "beds": "1 giường đôi lớn",
+        "capacity": 3,
+        "breakfast": true,
+        "cancellation": "Không hoàn tiền",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "user": "David Smith",
+        "country": "Việt Nam",
+        "score": 9.1,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Hồ bơi đẹp tuyệt vời, view xịn xò. Giường ngủ êm ái mang lại giấc ngủ ngon."
+      },
+      {
+        "user": "Trần Thị B",
+        "country": "Việt Nam",
+        "score": 9.2,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Giá cả hợp lý so với chất lượng dịch vụ. Không gian yên tĩnh, thích hợp để nghỉ dưỡng."
+      },
+      {
+        "user": "Trần Thị B",
+        "country": "Việt Nam",
+        "score": 8.8,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Hồ bơi đẹp tuyệt vời, view xịn xò. Giường ngủ êm ái mang lại giấc ngủ ngon."
+      }
+    ]
+  },
+  {
+    "id": "h8",
+    "name": "Fusion Suites Saigon",
+    "city": "Hồ Chí Minh",
+    "images": [
+      "https://images.unsplash.com/photo-1568495248636-6432b97bd949?w=800&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&auto=format&fit=crop&q=60"
+    ],
+    "pricePerNight": 95,
+    "rating": 4.6,
+    "amenities": [
+      "Bao gồm Spa hàng ngày",
+      "Cafe",
+      "Trang trí Minimalist",
+      "Bếp nhỏ trong phòng"
+    ],
+    "roomTypes": [
+      "Suite",
+      "Corner Suite",
+      "Family Suite"
+    ],
+    "address": "Số 8 Đường Trần Phú, Trung tâm, Hồ Chí Minh",
+    "description": "Chỗ nghỉ này ở vị trí cực kỳ thuận lợi tại Hồ Chí Minh. Fusion Suites Saigon cung cấp chỗ nghỉ dưỡng đẳng cấp với các phòng nghỉ có máy điều hòa, Wi-Fi miễn phí, nhà hàng, hồ bơi ngoài trời và trung tâm thể dục. Nơi đây có quầy lễ tân 24 giờ, dịch vụ phòng và dịch vụ thu đổi ngoại tệ cho khách. Bữa sáng tự chọn được phục vụ hàng ngày.",
+    "reviewScore": 9.2,
+    "reviewText": "Tuyệt hảo",
+    "reviewCount": 191,
+    "roomDetails": [
+      {
+        "id": "room_0",
+        "name": "Suite",
+        "price": 2375000,
+        "size": "36m²",
+        "beds": "1 giường đôi lớn",
+        "capacity": 2,
+        "breakfast": true,
+        "cancellation": "Miễn phí hủy trước 2 ngày",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      },
+      {
+        "id": "room_1",
+        "name": "Corner Suite",
+        "price": 3325000,
+        "size": "26m²",
+        "beds": "2 giường đơn",
+        "capacity": 2,
+        "breakfast": true,
+        "cancellation": "Không hoàn tiền",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      },
+      {
+        "id": "room_2",
+        "name": "Family Suite",
+        "price": 4275000,
+        "size": "48m²",
+        "beds": "1 giường đôi lớn",
+        "capacity": 3,
+        "breakfast": true,
+        "cancellation": "Không hoàn tiền",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "user": "Lê Hoàng C",
+        "country": "Việt Nam",
+        "score": 9.1,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Giá cả hợp lý so với chất lượng dịch vụ. Không gian yên tĩnh, thích hợp để nghỉ dưỡng."
+      },
+      {
+        "user": "Nguyễn Văn A",
+        "country": "Việt Nam",
+        "score": 8.6,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Giá cả hợp lý so với chất lượng dịch vụ. Không gian yên tĩnh, thích hợp để nghỉ dưỡng."
+      },
+      {
+        "user": "Phạm Quỳnh D",
+        "country": "Việt Nam",
+        "score": 9,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Hồ bơi đẹp tuyệt vời, view xịn xò. Giường ngủ êm ái mang lại giấc ngủ ngon."
+      }
+    ]
+  },
+  {
+    "id": "h9",
+    "name": "Sol by Meliá Phu Quoc",
+    "city": "Phú Quốc",
+    "images": [
+      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&auto=format&fit=crop&q=60"
+    ],
+    "pricePerNight": 90,
+    "rating": 4.6,
+    "amenities": [
+      "Bãi biển riêng",
+      "Hệ thống hồ bơi rộng",
+      "Beach Bar",
+      "Kids Club"
+    ],
+    "roomTypes": [
+      "Standard",
+      "Superior",
+      "Xtra Beach House"
+    ],
+    "address": "Số 54 Đường Trần Phú, Trung tâm, Phú Quốc",
+    "description": "Chỗ nghỉ này ở vị trí cực kỳ thuận lợi tại Phú Quốc. Sol by Meliá Phu Quoc cung cấp chỗ nghỉ dưỡng đẳng cấp với các phòng nghỉ có máy điều hòa, Wi-Fi miễn phí, nhà hàng, hồ bơi ngoài trời và trung tâm thể dục. Nơi đây có quầy lễ tân 24 giờ, dịch vụ phòng và dịch vụ thu đổi ngoại tệ cho khách. Bữa sáng tự chọn được phục vụ hàng ngày.",
+    "reviewScore": 9.2,
+    "reviewText": "Tuyệt hảo",
+    "reviewCount": 504,
+    "roomDetails": [
+      {
+        "id": "room_0",
+        "name": "Standard",
+        "price": 2250000,
+        "size": "55m²",
+        "beds": "1 giường đôi lớn",
+        "capacity": 2,
+        "breakfast": true,
+        "cancellation": "Miễn phí hủy trước 2 ngày",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      },
+      {
+        "id": "room_1",
+        "name": "Superior",
+        "price": 3150000,
+        "size": "60m²",
+        "beds": "2 giường đơn",
+        "capacity": 2,
+        "breakfast": true,
+        "cancellation": "Không hoàn tiền",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      },
+      {
+        "id": "room_2",
+        "name": "Xtra Beach House",
+        "price": 4050000,
+        "size": "29m²",
+        "beds": "1 giường đôi lớn",
+        "capacity": 3,
+        "breakfast": true,
+        "cancellation": "Không hoàn tiền",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "user": "Lê Hoàng C",
+        "country": "Việt Nam",
+        "score": 9.5,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Phòng ốc sạch sẽ, nhân viên cực kỳ thân thiện và hỗ trợ nhiệt tình. Chắc chắn sẽ quay lại!"
+      },
+      {
+        "user": "Phạm Quỳnh D",
+        "country": "Việt Nam",
+        "score": 8.7,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Phòng ốc sạch sẽ, nhân viên cực kỳ thân thiện và hỗ trợ nhiệt tình. Chắc chắn sẽ quay lại!"
+      },
+      {
+        "user": "Trần Thị B",
+        "country": "Việt Nam",
+        "score": 9.7,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Hồ bơi đẹp tuyệt vời, view xịn xò. Giường ngủ êm ái mang lại giấc ngủ ngon."
+      }
+    ]
+  },
+  {
+    "id": "h10",
+    "name": "JW Marriott Phu Quoc",
+    "city": "Phú Quốc",
+    "images": [
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&auto=format&fit=crop&q=60"
+    ],
+    "pricePerNight": 350,
+    "rating": 4.9,
+    "amenities": [
+      "Bãi Khem",
+      "Hồ bơi hình con sò",
+      "Spa Đạt Giải",
+      "Thiết kế Bill Bensley"
+    ],
+    "roomTypes": [
+      "Emerald Bay View",
+      "Turquoise Suite",
+      "Villa"
+    ],
+    "address": "Số 39 Đường Trần Phú, Trung tâm, Phú Quốc",
+    "description": "Chỗ nghỉ này ở vị trí cực kỳ thuận lợi tại Phú Quốc. JW Marriott Phu Quoc cung cấp chỗ nghỉ dưỡng đẳng cấp với các phòng nghỉ có máy điều hòa, Wi-Fi miễn phí, nhà hàng, hồ bơi ngoài trời và trung tâm thể dục. Nơi đây có quầy lễ tân 24 giờ, dịch vụ phòng và dịch vụ thu đổi ngoại tệ cho khách. Bữa sáng tự chọn được phục vụ hàng ngày.",
+    "reviewScore": 9.8,
+    "reviewText": "Tuyệt hảo",
+    "reviewCount": 645,
+    "roomDetails": [
+      {
+        "id": "room_0",
+        "name": "Emerald Bay View",
+        "price": 8750000,
+        "size": "51m²",
+        "beds": "1 giường đôi lớn",
+        "capacity": 2,
+        "breakfast": true,
+        "cancellation": "Miễn phí hủy trước 2 ngày",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      },
+      {
+        "id": "room_1",
+        "name": "Turquoise Suite",
+        "price": 12250000,
+        "size": "30m²",
+        "beds": "2 giường đơn",
+        "capacity": 2,
+        "breakfast": true,
+        "cancellation": "Không hoàn tiền",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      },
+      {
+        "id": "room_2",
+        "name": "Villa",
+        "price": 15750000,
+        "size": "59m²",
+        "beds": "1 giường đôi lớn",
+        "capacity": 3,
+        "breakfast": true,
+        "cancellation": "Không hoàn tiền",
+        "amenities": [
+          "Ban công",
+          "Điều hòa",
+          "TV màn hình phẳng",
+          "Minibar",
+          "Phòng tắm riêng"
+        ]
+      }
+    ],
+    "reviews": [
+      {
+        "user": "Trần Thị B",
+        "country": "Việt Nam",
+        "score": 9.2,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Hồ bơi đẹp tuyệt vời, view xịn xò. Giường ngủ êm ái mang lại giấc ngủ ngon."
+      },
+      {
+        "user": "Sarah Connor",
+        "country": "Việt Nam",
+        "score": 8.3,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Giá cả hợp lý so với chất lượng dịch vụ. Không gian yên tĩnh, thích hợp để nghỉ dưỡng."
+      },
+      {
+        "user": "Trần Thị B",
+        "country": "Việt Nam",
+        "score": 8.9,
+        "date": "Tháng 5 năm 2026",
+        "title": "Trải nghiệm tuyệt vời",
+        "text": "Vị trí đắc địa, dễ dàng di chuyển đến các điểm tham quan. Bữa sáng ngon miệng và đa dạng."
+      }
+    ]
+  }
+]

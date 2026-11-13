@@ -1,0 +1,46 @@
+[
+  {
+    "_id": "673000000000000000001201",
+    "plan_id": "673000000000000000001001",
+    "location_id": null,
+    "hotel_id": "673000000000000000000401",
+    "visit_date": "2026-11-20T00:00:00.000Z",
+    "start_time": "14:00:00",
+    "sequence_order": 1,
+    "note": "Check-in Ocean Pool Pavilion tại Amanoi Resort Vĩnh Hy & thưởng thức trà chiều.",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000001202",
+    "plan_id": "673000000000000000001001",
+    "location_id": "673000000000000000000301",
+    "hotel_id": "673000000000000000000401",
+    "visit_date": "2026-11-20T00:00:00.000Z",
+    "start_time": "18:30:00",
+    "sequence_order": 2,
+    "note": "Thưởng thức bữa tối Fine Dining 9 món tại The Cliff Dining Pavilion.",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000001203",
+    "plan_id": "673000000000000000001001",
+    "location_id": "673000000000000000000302",
+    "hotel_id": null,
+    "visit_date": "2026-11-21T00:00:00.000Z",
+    "start_time": "15:30:00",
+    "sequence_order": 1,
+    "note": "Lên siêu du thuyền Sovereign Catamaran 68ft ngắm hoàng hôn Vịnh Vĩnh Hy.",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000001204",
+    "plan_id": "673000000000000000001002",
+    "location_id": "673000000000000000000306",
+    "hotel_id": "673000000000000000000420",
+    "visit_date": "2026-12-05T00:00:00.000Z",
+    "start_time": "09:00:00",
+    "sequence_order": 1,
+    "note": "Tham quan Cầu Vàng Bà Nà Hills & nghỉ dưỡng tại InterContinental Đà Nẵng.",
+    "__v": 0
+  }
+]

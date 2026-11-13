@@ -1,0 +1,13 @@
+{
+  "id": "b8",
+  "operator": "Havel Limousine",
+  "busNumber": "43B-082.31",
+  "origin": "Đà Nẵng",
+  "destination": "Huế",
+  "departureTime": "09:00",
+  "arrivalTime": "11:30",
+  "price": 180000,
+  "classType": "Limousine 9 Ghế Massage",
+  "seatsAvailable": 9,
+  "rating": 4.8
+}

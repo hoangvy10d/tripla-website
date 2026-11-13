@@ -12,11 +12,13 @@ import {
 } from '../../models/bus-search.model';
 import { BusSearchService } from '../../services/bus-search';
 import { ActivityNavigation } from '../../../activity-search/components/activity-navigation/activity-navigation';
+import { SiteFooterComponent } from '../../../shared/components/site-footer/site-footer';
 import { CheckoutStateService } from '../../../checkout/services/checkout-state.service';
+import { injectLiveHttp } from '../../../services/live-http';
 @Component({
   selector: 'app-bus-details',
   standalone: true,
-  imports: [CommonModule, RouterLink, ActivityNavigation],
+  imports: [CommonModule, RouterLink, ActivityNavigation, SiteFooterComponent],
   templateUrl: './bus-details.html',
   styleUrl: './bus-details.css',
 })
@@ -25,6 +27,8 @@ export class BusDetailsPage {
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
   private readonly source = inject(BusSearchService);
+  private readonly http = injectLiveHttp();
+  readonly isMongoConnected = computed(() => !!this.http && !this.details()?.trip.id.startsWith('demo-'));
   readonly details = signal<BusDetails | null>(null);
   readonly state = signal<BusSearchState | null>(null);
   readonly loading = signal(true);
@@ -99,7 +103,7 @@ export class BusDetailsPage {
   }
   startCheckout():void {
     const details=this.details(),state=this.state();if(!details||!state||!this.canContinue())return;
-    try{const draft=this.checkout.startBus({details,state,seats:this.selectedSeats(),source:'demo'});
+    try{const draft=this.checkout.startBus({details,state,seats:this.selectedSeats(),source:this.isMongoConnected()?'catalog':'demo'});
       void this.router.navigate(['/checkout','bus'],{queryParams:{draft:draft.id}});
     }catch(error){this.error.set(error instanceof Error?error.message:'Ghế đã chọn chưa hợp lệ.');}
   }

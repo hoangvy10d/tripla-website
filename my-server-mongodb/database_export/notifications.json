@@ -1,0 +1,22 @@
+[
+  {
+    "_id": "673000000000000000001501",
+    "user_id": "673000000000000000000111",
+    "title": "Xác nhận đặt phòng thành công #TRP-880101",
+    "content": "Biệt thự Ocean Pool Pavilion tại Amanoi Resort Vĩnh Hy của bạn đã được xác nhận.",
+    "type": "booking",
+    "is_read": false,
+    "created_at": "2026-11-10T08:03:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "673000000000000000001502",
+    "user_id": "673000000000000000000112",
+    "title": "Ưu đãi độc quyền TRIPLA VIP 38%",
+    "content": "Tặng gói đưa đón thủy phi cơ và trà chiều khi đặt kỳ nghỉ trước 30/11.",
+    "type": "promotion",
+    "is_read": false,
+    "created_at": "2026-11-10T09:30:00.000Z",
+    "__v": 0
+  }
+]

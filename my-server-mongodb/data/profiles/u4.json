@@ -1,0 +1,27 @@
+{
+  "id": "u4",
+  "bio": "Đại lý du lịch, chuyên review các tour tuyến độc lạ.",
+  "location": "Nha Trang, Việt Nam",
+  "coverImage": "data/profiles/user_images/Võ Lê Quỳnh Nga.jpg",
+  "points": 15000,
+  "followers": 8900,
+  "following": 15,
+  "socials": {
+    "facebook": "ThankTrip Agency"
+  },
+  "interests": [
+    "Tour Du Lịch",
+    "Cảnh quan thiên nhiên"
+  ],
+  "badges": [
+    {
+      "icon": "🏆",
+      "label": "Đối tác tin cậy"
+    }
+  ],
+  "name": "Võ Lê Quỳnh Nga",
+  "avatar": "data/profiles/user_images/Võ Lê Quỳnh Nga.jpg",
+  "role": "traveler",
+  "email": "ngavlqk24411e@st.uel.edu.vn",
+  "level": "Hạng Vàng"
+}
