@@ -6,10 +6,10 @@
  * Kiến trúc: Normalized ERD Relational Schema (15 ERD Collections + Populate JOIN)
  * ============================================================================
  */
-
+require('dotenv').config();
+const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
@@ -32,6 +32,7 @@ const authV2Module = require('./modules/auth-v2.module');
 const bookingCartModule = require('./modules/booking-cart.module');
 const adminV2Module = require('./modules/admin-v2.module');
 const plannerV2Module = require('./modules/planner-v2.module');
+const visualSearchRoutes = require('./routes/visualSearchRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -53,6 +54,7 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 const localDataDir = path.join(__dirname, 'data');
 const legacyTriplaDataDir = path.join(__dirname, '..', 'tripla', 'data');
 app.use('/data', express.static(fs.existsSync(localDataDir) ? localDataDir : legacyTriplaDataDir));
+app.use('/api/visual-search', visualSearchRoutes);
 
 // 2. Healthcheck & Kiến trúc ERD + Module
 app.get('/api/v1/health', (req, res) => {

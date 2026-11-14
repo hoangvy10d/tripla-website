@@ -307,6 +307,7 @@ const ContentSchema = new Schema(
     caption: { type: String },
     image_url: { type: String },
     video_url: { type: String, required: true },
+    location_id: { type: Schema.Types.ObjectId, ref: 'Location', default: null },
     location_name: { type: String, default: 'Vịnh Vĩnh Hy, Ninh Thuận' },
     drawerKey: { type: String, enum: ['resort', 'dining', 'yacht'], default: 'resort' },
     category: { type: String, enum: ['for-you', 'trending', 'latest'], default: 'for-you', index: true },

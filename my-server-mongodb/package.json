@@ -10,8 +10,10 @@
     "import-db": "node import_db.js"
   },
   "dependencies": {
+    "@google/genai": "^3.3.0",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
+    "dotenv": "^18.0.10",
     "express": "^4.21.1",
     "express-fileupload": "^1.5.1",
     "mongodb": "^6.10.0",
@@ -22,4 +24,3 @@
     "nodemon": "^3.1.7"
   }
 }
-
