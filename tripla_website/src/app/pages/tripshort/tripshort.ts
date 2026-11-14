@@ -1,4 +1,4 @@
-import { Component, HostListener, effect, inject } from '@angular/core';
+import { ApplicationRef, Component, ComponentRef, EnvironmentInjector, HostListener, OnDestroy, createComponent, effect, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
@@ -8,6 +8,7 @@ import { AuthService } from '../../services/auth-service';
 import { TripShortService } from '../../services/trip-short.service';
 import { SavedTrips } from '../../services/saved-trips';
 import { SiteHeaderComponent, SiteNavKey } from '../../shared/components/site-header/site-header';
+import { VisualSearch } from '../visual-search/visual-search';
 
 @Component({
   selector: 'app-tripshort',
@@ -16,7 +17,7 @@ import { SiteHeaderComponent, SiteNavKey } from '../../shared/components/site-he
   templateUrl: './tripshort.html',
   styleUrls: ['./tripshort.css']
 })
-export class Tripshort {
+export class Tripshort implements OnDestroy {
   galleryIndex = 0;
   calendarOpen = false;
   readonly today = new Date(new Date().setHours(0, 0, 0, 0));
@@ -246,6 +247,10 @@ export class Tripshort {
   }
   private lastWheelScrollAt = 0;
   private readonly router = inject(Router);
+  private readonly appRef = inject(ApplicationRef);
+  private readonly environmentInjector = inject(EnvironmentInjector);
+  private visualSearchRef: ComponentRef<VisualSearch> | null = null;
+  private youtubeSearchActive = false;
   readonly authService = inject(AuthService);
   private lastAuthUserId: string | null = this.authService.currentUser()?.id || null;
 
@@ -403,6 +408,15 @@ export class Tripshort {
   get hubVideos() { return this.store.hubVideos(); }
   get comments() { return this.store.comments(); }
   get liveCards() { return this.store.liveCards(); }
+  readonly scannedLocationResult = signal<any | null>(null);
+
+  applyVisualSearchResult(result: any): void {
+    this.scannedLocationResult.set(result);
+  }
+
+  clearScannedLocationResult(): void {
+    this.scannedLocationResult.set(null);
+  }
   readonly isSidebarCollapsed = this.store.isSidebarCollapsed;
   readonly activeNav = this.store.activeNav;
   readonly isCommunityHubVisible = this.store.isCommunityHubVisible;
@@ -425,6 +439,8 @@ export class Tripshort {
   readonly likeCountText = this.store.likeCountText;
   readonly bookmarkCountText = this.store.bookmarkCountText;
   readonly commentCountText = this.store.commentCountText;
+  readonly encodeURIComponent = encodeURIComponent;
+
 
   // Chuyển video bằng nút bấm
   nextVideo(event?: Event): void {
@@ -576,6 +592,12 @@ export class Tripshort {
 
   handleVideoClick(event: MouseEvent): void {
     const target = event.target as HTMLElement;
+    if (target instanceof HTMLVideoElement) {
+      event.stopPropagation();
+      target.pause();
+      this.openVisualSearch(event, target);
+      return;
+    }
     if (target.closest('.pin-hotspot')) return;
 
     if (this.store.isDrawerOpen() || this.store.isCommentDrawerOpen() || this.store.isShareModalOpen()) {
@@ -586,6 +608,103 @@ export class Tripshort {
     this.store.isTagsVisible.update(v => !v);
     this.store.isPlayOverlayVisible.set(true);
     setTimeout(() => this.store.isPlayOverlayVisible.set(false), 600);
+  }
+
+  handleYouTubeVisualSearchClick(
+    event: MouseEvent,
+    iframe: HTMLIFrameElement,
+    clickSurface: HTMLElement
+  ): void {
+    event.stopPropagation();
+    if (this.youtubeSearchActive) {
+      this.sendYouTubeCommand(iframe, 'playVideo');
+      this.youtubeSearchActive = false;
+      this.closeVisualSearch();
+      return;
+    }
+
+    this.sendYouTubeCommand(iframe, 'pauseVideo');
+    this.youtubeSearchActive = true;
+    this.openVisualSearch(event, null, iframe, clickSurface);
+  }
+
+  handleYouTubeVisualSearchKeydown(
+    event: Event,
+    iframe: HTMLIFrameElement,
+    clickSurface: HTMLElement
+  ): void {
+    event.preventDefault();
+    const rect = iframe.getBoundingClientRect();
+    this.handleYouTubeVisualSearchClick(
+      new MouseEvent('click', {
+        clientX: rect.left + rect.width / 2,
+        clientY: rect.top + rect.height / 2
+      }),
+      iframe,
+      clickSurface
+    );
+  }
+
+  private sendYouTubeCommand(iframe: HTMLIFrameElement, func: 'pauseVideo' | 'playVideo'): void {
+    iframe.contentWindow?.postMessage(JSON.stringify({ event: 'command', func, args: '' }), '*');
+  }
+
+  private openVisualSearch(
+    event: MouseEvent,
+    videoElement: HTMLVideoElement | null,
+    iframeElement: HTMLIFrameElement | null = null,
+    clickSurface: HTMLElement | null = null
+  ): void {
+    if (this.visualSearchRef) {
+      this.closeVisualSearch();
+      return;
+    }
+    const videoCard = document.getElementById('video-card');
+    if (!videoCard) return;
+
+    const rect = videoCard.getBoundingClientRect();
+    const x = Math.max(16, Math.min(event.clientX - rect.left, rect.width - 230));
+    const y = Math.max(24, Math.min(event.clientY - rect.top, rect.height - 44));
+    const video = this.currentVideo();
+    const componentRef = createComponent(VisualSearch, {
+      environmentInjector: this.environmentInjector
+    });
+
+    this.appRef.attachView(componentRef.hostView);
+    componentRef.setInput('x', x);
+    componentRef.setInput('y', y);
+    componentRef.setInput('videoElement', videoElement);
+    componentRef.setInput('iframeElement', iframeElement);
+    componentRef.setInput('clickSurface', clickSurface);
+    componentRef.setInput('videoId', String(video._id || video.id || ''));
+    componentRef.instance.dismissed.subscribe(() => {
+      this.youtubeSearchActive = false;
+      this.closeVisualSearch();
+    });
+    componentRef.instance.hotelDrawerRequested.subscribe(() => {
+      this.youtubeSearchActive = false;
+      this.closeVisualSearch();
+      this.openDrawerWithData('resort');
+    });
+    componentRef.instance.resumeRequested.subscribe(() => {
+      if (iframeElement) this.sendYouTubeCommand(iframeElement, 'playVideo');
+      this.youtubeSearchActive = false;
+      this.closeVisualSearch();
+    });
+    videoCard.appendChild(componentRef.location.nativeElement);
+    componentRef.changeDetectorRef.detectChanges();
+    this.visualSearchRef = componentRef;
+  }
+
+  private closeVisualSearch(): void {
+    if (!this.visualSearchRef) return;
+    this.appRef.detachView(this.visualSearchRef.hostView);
+    this.visualSearchRef.destroy();
+    this.visualSearchRef = null;
+  }
+
+  ngOnDestroy(): void {
+    this.closeVisualSearch();
   }
 
   closeDrawersOnBackdrop(event: MouseEvent): void {
@@ -824,6 +943,26 @@ export class Tripshort {
     this.shareNotice = `Đã sao chép liên kết chia sẻ qua ${channel}!`;
   }
 
+  openHotelDrawer(hotel: any): void {
+    const anyStore = this.store as any;
+    if (typeof anyStore.openHotelDrawer === 'function') {
+      anyStore.openHotelDrawer(hotel);
+      return;
+    }
+    if (typeof anyStore.selectHotel === 'function') {
+      anyStore.selectHotel(hotel);
+      return;
+    }
+    if (anyStore.selectedHotel?.set) {
+      anyStore.selectedHotel.set(hotel);
+    }
+    if (anyStore.isDrawerOpen?.set) {
+      anyStore.isDrawerOpen.set(true);
+    } else if (anyStore.showDrawer?.set) {
+      anyStore.showDrawer.set(true);
+    }
+  }
+
   closeAllDrawers(): void {
     this.isSlideDrawerOpen = false;
     this.isCommentDrawerOpen = false;
@@ -832,3 +971,5 @@ export class Tripshort {
     this.store.isShareModalOpen.set(false);
   }
 }
+
+

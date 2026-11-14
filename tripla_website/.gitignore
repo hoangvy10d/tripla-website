@@ -44,3 +44,8 @@ __screenshots__/
 Thumbs.db
 
 *.zip
+
+
+.env
+node_modules/
+dist/

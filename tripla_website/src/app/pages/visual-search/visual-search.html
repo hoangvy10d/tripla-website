@@ -1,0 +1,261 @@
+<ng-container *ngIf="!loading && !result">
+    <div
+        #reticle
+        class="visual-search-reticle"
+        [style.left.px]="cropX"
+        [style.top.px]="cropY"
+        [style.width.px]="cropW"
+        [style.height.px]="cropH"
+        (pointerdown)="startReticleAction($event, 'move')">
+        
+        <button
+            type="button"
+            class="reticle-corner reticle-corner-top-left"
+            aria-label="Kéo góc trên bên trái để chỉnh kích thước"
+            (pointerdown)="startReticleAction($event, 'nw')"></button>
+        <button
+            type="button"
+            class="reticle-corner reticle-corner-top-right"
+            aria-label="Kéo góc trên bên phải để chỉnh kích thước"
+            (pointerdown)="startReticleAction($event, 'ne')"></button>
+        <button
+            type="button"
+            class="reticle-corner reticle-corner-bottom-left"
+            aria-label="Kéo góc dưới bên trái để chỉnh kích thước"
+            (pointerdown)="startReticleAction($event, 'sw')"></button>
+        <button
+            type="button"
+            class="reticle-corner reticle-corner-bottom-right"
+            aria-label="Kéo góc dưới bên phải để chỉnh kích thước"
+            (pointerdown)="startReticleAction($event, 'se')"></button>
+
+        <button
+            class="visual-search-drag-handle"
+            type="button"
+            aria-label="Di chuyển khung quét. Dùng phím mũi tên để căn chỉnh."
+            (pointerdown)="startReticleAction($event, 'move')"
+            (keydown)="moveReticleWithKeyboard($event)">
+            <span class="material-symbols-outlined" aria-hidden="true">drag_indicator</span>
+        </button>
+    </div>
+
+    <div
+        class="visual-search-controls"
+        [style.left.px]="controlsLeft"
+        [style.top.px]="controlsTop">
+        <button class="visual-search-trigger" type="button" (click)="search($event)">
+            <span aria-hidden="true">📍</span>
+            <span>Tìm kiếm địa điểm</span>
+        </button>
+        <button *ngIf="iframeElement" class="visual-search-resume" type="button" aria-label="Tiếp tục phát video" (click)="resume($event)">
+            <span class="material-symbols-outlined" aria-hidden="true">play_arrow</span>
+            <span>Tiếp tục</span>
+        </button>
+    </div>
+</ng-container>
+
+<div *ngIf="loading" class="visual-search-loading" [style.left.px]="controlsLeft" [style.top.px]="controlsTop" aria-live="polite">
+    <span class="visual-search-spinner" aria-hidden="true"></span>
+    <span>Đang nhận diện địa điểm...</span>
+</div>
+
+<p class="visual-search-sr-only" aria-live="polite">{{ dragAnnouncement }}</p>
+
+<dialog
+    #resultDialog
+    class="visual-search-dialog"
+    [attr.closedby]="'any'"
+    aria-labelledby="visual-search-title"
+    (click)="dismissOnBackdrop($event)"
+    (close)="onDialogClosed()">
+    <header class="visual-search-header">
+        <div>
+            <p class="visual-search-eyebrow">TRIPLA VISUAL SEARCH</p>
+            <h2 id="visual-search-title">{{ result?.found ? ($any(result?.location)?.place_type || 'Địa điểm được nhận diện') : 'Chưa nhận diện được' }}</h2>
+        </div>
+        <form method="dialog">
+            <button type="submit" class="visual-search-close" aria-label="Đóng kết quả">×</button>
+        </form>
+    </header>
+
+    <ng-container *ngIf="result?.found && result?.location; else noLocation">
+        <!-- THÔNG TIN CHUNG ĐỊA ĐIỂM NHẬN DIỆN TỪ VIDEO -->
+        <dl class="visual-search-details">
+            <div>
+                <dt>Địa danh</dt>
+                <dd>{{ result?.location?.landmark_name }}</dd>
+            </div>
+            <div>
+                <dt>Địa chỉ</dt>
+                <dd>{{ result?.location?.formatted_address }}</dd>
+            </div>
+        </dl>
+
+        <p *ngIf="$any(result?.location)?.description"
+           style="margin: 10px 0 12px; font-size: 13px; line-height: 1.55; color: #50675b;">
+            {{ $any(result?.location)?.description }}
+        </p>
+
+        <!-- Cặp nút hành động cho địa điểm tổng quát: TripShop (Chính) + Maps (Phụ) -->
+        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 14px;">
+            <button type="button"
+                    class="visual-search-trigger"
+                    style="flex: 1; justify-content: center; background: #173b32; color: #fffdf5; font-size: 12px; padding: 9px 14px;"
+                    (click)="bookHotelInTripShop({ name: result?.location?.landmark_name, address: result?.location?.formatted_address }, false)">
+                <span>Tìm lưu trú trên TripShop</span>
+                <span aria-hidden="true">→</span>
+            </button>
+            <a class="visual-search-resume"
+               [href]="googleMapsUrl"
+               target="_blank"
+               rel="noopener noreferrer"
+               style="min-height: 36px; padding: 8px 12px; font-size: 12px; text-decoration: none; flex-shrink: 0;">
+                <span>Maps ↗</span>
+            </a>
+        </div>
+
+        <!-- 1. KHÁCH SẠN CHÍNH CHỦ (Nếu quét trúng đúng khách sạn có trong DB Tripla) -->
+        <section *ngIf="matchedHotel" class="visual-search-related" aria-label="Thông tin khách sạn nhận diện được">
+            <h3>Khách sạn nhận diện trong video</h3>
+            <div style="padding: 14px; border-radius: 18px; background: linear-gradient(145deg, #fffffb, #faf6ea); border: 1px solid rgba(23, 59, 50, 0.16); box-shadow: 0 12px 28px -18px rgba(23, 59, 50, 0.45); display: grid; gap: 10px;">
+                <div style="display: flex; gap: 12px; align-items: center;">
+                    <img *ngIf="matchedHotel.imageUrl || matchedHotel.images?.[0]"
+                         [src]="matchedHotel.imageUrl || matchedHotel.images?.[0]"
+                         [alt]="matchedHotel.name || matchedHotel.hotel_name"
+                         style="width: 64px; height: 64px; border-radius: 12px; object-fit: cover; flex-shrink: 0;">
+                    <div style="min-width: 0; flex: 1;">
+                        <span style="display: inline-block; padding: 2px 8px; border-radius: 99px; background: #dfecb6; color: #173b32; font-size: 10px; font-weight: 700; margin-bottom: 4px;">
+                            CÓ SẴN TRÊN TRIPSHOP
+                        </span>
+                        <div style="font-weight: 700; font-size: 15px; color: #173b32;">{{ matchedHotel.name || matchedHotel.hotel_name }}</div>
+                        <div style="font-size: 11px; color: #50675b; margin-top: 2px;">{{ matchedHotel.address }}</div>
+                        <div style="font-size: 12px; font-weight: 700; color: #30624b; margin-top: 4px;">
+                            <span *ngIf="matchedHotel.stars">{{ matchedHotel.stars }}★ · </span>
+                            <span *ngIf="matchedHotel.rating">Điểm {{ matchedHotel.rating }}/10 · </span>
+                            <span>{{ formatHotelPrice(matchedHotel) }}/đêm</span>
+                        </div>
+                    </div>
+                </div>
+                <p *ngIf="matchedHotel.description" style="margin: 0; font-size: 12px; color: #50675b; line-height: 1.45;">
+                    {{ matchedHotel.description }}
+                </p>
+                <div style="display: flex; gap: 8px; align-items: center;">
+                    <button type="button"
+                            class="visual-search-trigger"
+                            style="flex: 1; justify-content: center; padding: 9px 14px; border-radius: 99px; background: #173b32; color: #fffdf4; font-size: 12px; font-weight: 600;"
+                            (click)="bookHotelInTripShop(matchedHotel, true)">
+                        <span>Đặt phòng ngay</span>
+                        <span aria-hidden="true">→</span>
+                    </button>
+                    <a class="visual-search-resume"
+                       [href]="buildItemMapsUrl(matchedHotel.name || matchedHotel.hotel_name, matchedHotel.address)"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       style="min-height: 36px; padding: 8px 12px; font-size: 12px; text-decoration: none; flex-shrink: 0;">
+                        <span>Maps ↗</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. KHÁCH SẠN & LƯU TRÚ THẬT GẦN KHU VỰC (Từ DB Tripla) -->
+        <section *ngIf="nearbyHotels.length" class="visual-search-related" aria-label="Khách sạn gợi ý gần khu vực">
+            <h3>Khách sạn &amp; Lưu trú gần đây ({{ nearbyHotels.length }})</h3>
+            <div style="display: grid; gap: 10px;">
+                <div *ngFor="let hotel of nearbyHotels"
+                     style="padding: 12px; border-radius: 16px; background: linear-gradient(145deg, #fffffb, #faf6ea); border: 1px solid rgba(23, 59, 50, 0.14); display: grid; gap: 8px;">
+                    <div style="display: flex; align-items: center; gap: 10px; min-width: 0;">
+                        <img *ngIf="hotel.imageUrl || hotel.images?.[0]"
+                             [src]="hotel.imageUrl || hotel.images?.[0]"
+                             [alt]="hotel.name || hotel.hotel_name"
+                             style="width: 50px; height: 50px; border-radius: 10px; object-fit: cover; flex-shrink: 0;">
+                        <div style="min-width: 0; flex: 1;">
+                            <div style="font-weight: 700; font-size: 13px; color: #173b32; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                {{ hotel.name || hotel.hotel_name }}
+                            </div>
+                            <div style="font-size: 11px; color: #50675b; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 2px;">
+                                {{ hotel.address }}
+                            </div>
+                            <div style="font-size: 11px; font-weight: 700; color: #30624b; margin-top: 3px;">
+                                <span *ngIf="hotel.stars">{{ hotel.stars }}★ · </span>{{ formatHotelPrice(hotel) }}/đêm
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 8px; justify-content: flex-end; align-items: center;">
+                        <a class="visual-search-resume"
+                           [href]="buildItemMapsUrl(hotel.name || hotel.hotel_name, hotel.address)"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           style="min-height: 30px; padding: 5px 10px; font-size: 11px; text-decoration: none;">
+                            <span>Bản đồ ↗</span>
+                        </a>
+                        <button type="button"
+                                class="visual-search-trigger"
+                                style="padding: 6px 13px; border-radius: 99px; background: #173b32; color: #fffdf4; font-size: 11px; font-weight: 600;"
+                                (click)="bookHotelInTripShop(hotel, true)">
+                            <span>Đặt trên TripShop →</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. ĐỊA ĐIỂM / KHÁCH SẠN THỰC TẾ LÂN CẬN DO AI NHẬN DIỆN -->
+        <section *ngIf="nearbyPlaces.length" class="visual-search-related" aria-label="Địa điểm thực tế lân cận">
+            <h3>Khám phá quanh {{ result?.location?.landmark_name }}</h3>
+            <ul style="display: grid; gap: 8px; padding: 0; list-style: none;">
+                <li *ngFor="let place of nearbyPlaces"
+                    style="padding: 11px 13px; border-radius: 14px; background: #eef0e5; border: 1px solid rgba(23, 59, 50, 0.12); display: grid; gap: 8px;">
+                    <div style="min-width: 0;">
+                        <div style="display: flex; align-items: center; gap: 6px;">
+                            <span style="font-size: 10px; font-weight: 700; text-transform: uppercase; padding: 2px 7px; border-radius: 999px; background: #dfecb6; color: #173b32; flex-shrink: 0;">
+                                {{ place.category }}
+                            </span>
+                            <strong style="font-size: 13px; color: #173b32; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                {{ place.name }}
+                            </strong>
+                        </div>
+                        <div *ngIf="place.highlight" style="font-size: 11px; color: #50675b; margin-top: 4px;">
+                            {{ place.highlight }}
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 8px; justify-content: flex-end; align-items: center;">
+                        <a class="visual-search-resume"
+                           [href]="buildItemMapsUrl(place.name, result?.location?.formatted_address)"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           style="min-height: 28px; padding: 4px 10px; font-size: 11px; text-decoration: none;">
+                            <span>Maps ↗</span>
+                        </a>
+                        <button type="button"
+                                class="visual-search-trigger"
+                                style="padding: 5px 12px; border-radius: 99px; background: #173b32; color: #fffdf4; font-size: 11px; font-weight: 600;"
+                                (click)="explorePlaceInTripShop(place)">
+                            <span>Đặt trên TripShop →</span>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="visual-search-related" aria-labelledby="related-videos-title">
+            <h3 id="related-videos-title">Video cùng địa điểm</h3>
+            <ul *ngIf="relatedVideos.length; else noRelatedVideos">
+                <li *ngFor="let video of relatedVideos">
+                    <a *ngIf="video.video_url; else relatedVideoText" [href]="video.video_url" target="_blank" rel="noopener noreferrer">
+                        <span>{{ video.content_title || video.caption || 'Video Tripla' }}</span>
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                    <ng-template #relatedVideoText>
+                        <span>{{ video.content_title || video.caption || 'Video Tripla' }}</span>
+                    </ng-template>
+                </li>
+            </ul>
+            <ng-template #noRelatedVideos><p>Chưa có video liên quan.</p></ng-template>
+        </section>
+    </ng-container>
+
+    <ng-template #noLocation>
+        <p class="visual-search-empty">{{ result?.message || 'Ảnh chưa cho thấy một địa điểm đủ rõ để nhận diện.' }}</p>
+    </ng-template>
+</dialog>

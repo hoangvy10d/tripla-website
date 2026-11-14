@@ -45,6 +45,17 @@ export class TripShortService {
   readonly isLoadingFeed = signal<boolean>(false);
   readonly searchQuery = signal<string>('');
 
+  // Visual search
+  readonly scannedLocationResult = signal<any | null>(null);
+
+  applyVisualSearchResult(result: any): void {
+    this.scannedLocationResult.set(result);
+  }
+
+  clearScannedLocationResult(): void {
+    this.scannedLocationResult.set(null);
+  }
+
   // 2. STATE SIGNALS GIAO DIỆN
   isSidebarCollapsed = signal<boolean>(false);
   activeNav = signal<NavItem>('nav-for-you');

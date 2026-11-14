@@ -238,14 +238,26 @@
         <!-- Lớp media có cắt bo góc -->
         <div class="video-clip">
           <!-- 1. Trình phát YouTube Embed nếu là link YouTube -->
-          <iframe
-            *ngIf="isYouTubeVideo(currentVideo().videoUrl)"
-            [src]="getYouTubeEmbedUrl(currentVideo().videoUrl)"
-            class="w-full h-full object-cover border-0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            title="TripShort Video Player"
-          ></iframe>
+          <ng-container *ngIf="isYouTubeVideo(currentVideo().videoUrl)">
+            <iframe
+              #youtubeIframe
+              [src]="getYouTubeEmbedUrl(currentVideo().videoUrl)"
+              class="w-full h-full object-cover border-0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              title="TripShort Video Player"
+            ></iframe>
+
+            <div
+              class="youtube-visual-search-surface absolute inset-0 z-10 bg-transparent"
+              role="button"
+              tabindex="0"
+              aria-label="Chạm để tạm dừng và tìm kiếm địa điểm"
+              (click)="handleYouTubeVisualSearchClick($event, youtubeIframe, $any($event.currentTarget))"
+              (keydown.enter)="handleYouTubeVisualSearchKeydown($event, youtubeIframe, $any($event.currentTarget))"
+              (keydown.space)="handleYouTubeVisualSearchKeydown($event, youtubeIframe, $any($event.currentTarget))"
+            ></div>
+          </ng-container>
 
           <!-- 2. Trình phát HTML5 Video nếu là video MP4/WebM (có thanh tua và mở âm thanh theo cài đặt) -->
           <video
@@ -276,42 +288,72 @@
           </div>
         </div>
 
-        <!-- Hotspot pins -->
-        <div *ngIf="activeNav() === 'nav-for-you'" class="video-tags z-30 tags-transition" [ngClass]="isTagsVisible() ? 'tags-visible' : 'tags-hidden'">
+        <!-- Hotspot pins NẾU ĐÃ QUÉT VISUAL SEARCH: HIỂN THỊ DỮ LIỆU THẬT -->
+        <ng-container *ngIf="store.scannedLocationResult() as scanned; else noScannedData">
+          <div class="trip-info-real-card" style="padding: 12px; border-radius: 16px; background: var(--surface-container, #e5e9db); display: grid; gap: 8px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;">
+              <div>
+                <span style="font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--neon, #30624b);">
+                  {{ scanned.location?.place_type || 'Địa điểm đã nhận diện' }}
+                </span>
+                <h4 style="margin: 2px 0 0; font-size: 14px; font-weight: 700;">
+                  {{ scanned.location?.landmark_name }}
+                </h4>
+                <p style="margin: 2px 0 0; font-size: 11px; color: var(--ink-variant, #50675b);">
+                  {{ scanned.location?.formatted_address }}
+                </p>
+              </div>
+              <a [href]="'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(scanned.location?.formatted_address || scanned.location?.landmark_name)"
+                target="_blank" rel="noopener noreferrer"
+                style="font-size: 11px; font-weight: 700; color: var(--neon, #30624b); text-decoration: none; flex-shrink: 0;">
+                Maps ↗
+              </a>
+            </div>
 
-          <div class="pin-hotspot hotspot-resort" (click)="openDrawerWithData('resort', $event)">
-            <div class="relative flex items-center">
-              <div class="pin-icon pin-neon pulse-ring"><span class="material-symbols-outlined text-sm">hotel</span></div>
-              <div class="pin-label glass-2">
-                <span class="pin-title">{{ pointDataMap.resort.title }}</span>
-                <span class="pin-price">{{ pointDataMap.resort.price }}/đêm</span>
-                <span class="material-symbols-outlined text-xs t-muted">chevron_right</span>
+            <!-- Ưu tiên 1: Nếu có khách sạn thật trong DB Tripla -->
+            <div *ngIf="scanned.matched_hotel || scanned.nearby_hotels?.length" style="display: grid; gap: 6px; margin-top: 4px;">
+              <div *ngFor="let h of (scanned.matched_hotel ? [scanned.matched_hotel] : scanned.nearby_hotels.slice(0, 2))"
+                  style="padding: 8px 10px; border-radius: 12px; background: #fff; display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+                <div style="min-width: 0;">
+                  <div style="font-size: 12px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                    {{ h.name || h.hotel_name }}
+                  </div>
+                  <div style="font-size: 11px; color: var(--neon, #30624b); font-weight: 600;">
+                    Từ {{ (h.lowestPrice || h.pricePerNight || 0) | number }}₫/đêm
+                  </div>
+                </div>
+                <button type="button" (click)="openHotelDrawer(h)"
+                        style="padding: 5px 10px; border-radius: 999px; border: none; background: #173b32; color: #fff; font-size: 11px; font-weight: 600; cursor: pointer;">
+                  Đặt phòng
+                </button>
               </div>
             </div>
-          </div>
 
-          <div class="pin-hotspot hotspot-dining" (click)="openDrawerWithData('dining', $event)">
-            <div class="relative flex items-center">
-              <div class="pin-icon pin-light"><span class="material-symbols-outlined text-sm">restaurant</span></div>
-              <div class="pin-label glass-2">
-                <span class="pin-title">{{ pointDataMap.dining.title }}</span>
-                <span class="pin-sub">Michelin Star</span>
-                <span class="material-symbols-outlined text-xs t-muted">chevron_right</span>
-              </div>
+            <!-- Ưu tiên 2: Nếu ngoài vùng DB Tripla -> Hiện các quán ăn/địa điểm thật quanh đó -->
+            <div *ngIf="!scanned.matched_hotel && !scanned.nearby_hotels?.length && scanned.nearby_places?.length"
+                style="display: grid; gap: 6px; margin-top: 4px;">
+              <a *ngFor="let p of scanned.nearby_places.slice(0, 3)"
+                [href]="'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(p.name + ', ' + (scanned.location?.formatted_address || ''))"
+                target="_blank" rel="noopener noreferrer"
+                style="padding: 8px 10px; border-radius: 12px; background: #fff; text-decoration: none; color: inherit; display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+                <div style="min-width: 0;">
+                  <div style="font-size: 12px; font-weight: 700;">{{ p.name }}</div>
+                  <div style="font-size: 11px; color: var(--ink-variant, #50675b); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                    {{ p.highlight }}
+                  </div>
+                </div>
+                <span style="font-size: 11px; font-weight: 700; color: var(--neon, #30624b);">↗</span>
+              </a>
             </div>
           </div>
+        </ng-container>
 
-          <div class="pin-hotspot hotspot-yacht" (click)="openDrawerWithData('yacht', $event)">
-            <div class="relative flex items-center">
-              <div class="pin-icon pin-gold"><span class="material-symbols-outlined text-sm">sailing</span></div>
-              <div class="pin-label glass-2">
-                <span class="pin-title">{{ pointDataMap.yacht.title }}</span>
-                <span class="chip chip-neon" style="padding: 1px 6px; font-size: 9px">Đặt ngay</span>
-                <span class="material-symbols-outlined text-xs t-muted">chevron_right</span>
-              </div>
-            </div>
+        <!-- KHI CHƯA QUÉT: ẨN SẠCH MOCK, CHỈ HIỆN GỢI Ý CHẠM ĐỂ QUÉT -->
+        <ng-template #noScannedData>
+          <div style="padding: 12px 14px; border-radius: 16px; background: rgba(23, 59, 50, 0.06); border: 1px dashed rgba(23, 59, 50, 0.2); font-size: 12px; color: var(--ink-variant, #50675b); line-height: 1.45;">
+            📍 Chạm trực tiếp vào khung hình video để nhận diện địa điểm, nhà hàng và khách sạn thực tế quanh khu vực này.
           </div>
-        </div>
+        </ng-template> 
 
         <!-- Creator info -->
         <div class="creator-info absolute bottom-4 left-4 right-14 text-white z-20 pointer-events-auto">
@@ -454,7 +496,7 @@
 
               <div class="hub-pill hub-pill-loc">
                 <span class="material-symbols-outlined fill hub-pill-gold">location_on</span>
-                <span>{{ video.location || pointDataMap[video.drawerKey].title }}</span>
+                <span>{{ video.location || 'Khám phá TRIPLA' }}</span>
               </div>
 
               <div class="hub-pill hub-pill-stat">
@@ -473,7 +515,7 @@
                     class="hub-card-avatar"
                     (error)="onHubImageError($event, true)" />
                   <span class="hub-card-sub">
-                    {{ video.creator }} &bull; {{ pointDataMap[video.drawerKey].title }}
+                    {{ video.creator }} &bull; {{ video.location || 'Hành trình thực tế' }}
                   </span>
                 </div>
               </div>
@@ -624,44 +666,13 @@
         </div>
 
         <section class="detail-trip-info glass-1 card-hover" aria-labelledby="trip-info-title">
-          <h3 id="trip-info-title" class="label-sm t-muted">{{ selectedDrawerKey() === 'resort' ? 'Thông tin chuyến đi' : selectedDrawerKey() === 'dining' ? 'Thông tin quán' : 'Thông tin vui chơi' }}</h3>
-          <p class="font-head font-bold text-xs t-ink">{{ activeDrawerData().title }}</p>
-          <p class="trip-info-location"><span class="material-symbols-outlined">location_on</span>{{ activeDrawerData().location }}</p>
-          <p [ngSwitch]="selectedDrawerKey()">
-            <span *ngSwitchCase="'resort'">Kỳ nghỉ tại biệt thự hướng biển, tận hưởng không gian riêng tư bên vịnh Vĩnh Hy.</span>
-            <span *ngSwitchCase="'dining'">Trải nghiệm bàn tiệc riêng trên vách đá Núi Chúa, thưởng thức ẩm thực và ngắm hoàng hôn.</span>
-            <span *ngSwitchCase="'yacht'">Khám phá quần đảo An Thới, Phú Quốc trên hành trình du thuyền riêng.</span>
-          </p>
+          <h3 id="trip-info-title" class="label-sm t-muted">
+            {{ selectedDrawerKey() === 'resort' ? 'Thông tin lưu trú' : selectedDrawerKey() === 'dining' ? 'Thông tin địa điểm' : 'Thông tin trải nghiệm' }}
+          </h3>
+          <p class="font-head font-bold text-xs t-ink">{{ store.activeDrawerData().title }}</p>
+          <p class="trip-info-location"><span class="material-symbols-outlined">location_on</span>{{ store.activeDrawerData().location }}</p>
+          <p *ngIf="$any(store.activeDrawerData()).description">{{ $any(store.activeDrawerData()).description }}</p>
         </section>
-
-        <ng-container *ngIf="selectedDrawerKey() === 'dining'">
-          <section class="detail-trip-info glass-1 card-hover">
-            <h3 class="label-sm t-muted">Ẩm thực &amp; không gian</h3>
-            <p><strong>Phục vụ:</strong> Thực đơn degustation 7 món.</p>
-            <p><strong>Phong cách:</strong> Bàn tiệc riêng trên vách đá, hướng biển và ngắm hoàng hôn.</p>
-            <p><strong>Phù hợp:</strong> Bữa tối riêng tư, hẹn hò và dịp kỷ niệm.</p>
-          </section>
-          <section class="detail-trip-info glass-1 card-hover">
-            <h3 class="label-sm t-muted">Thông tin ghé quán</h3>
-            <p class="trip-info-location"><span class="material-symbols-outlined">location_on</span>{{ activeDrawerData().location }}</p>
-            <p><strong>Giờ phục vụ:</strong> Chưa cập nhật.</p>
-            <p><strong>Liên hệ đặt bàn:</strong> Chưa cập nhật.</p>
-          </section>
-        </ng-container>
-
-        <ng-container *ngIf="selectedDrawerKey() === 'yacht'">
-          <section class="detail-trip-info glass-1 card-hover">
-            <h3 class="label-sm t-muted">Hoạt động trải nghiệm</h3>
-            <p class="trip-info-location"><span class="material-symbols-outlined">sailing</span>Du ngoạn bằng du thuyền Catamaran, khám phá quần đảo An Thới.</p>
-            <p class="trip-info-location"><span class="material-symbols-outlined">photo_camera</span>Ngắm cảnh biển đảo và chụp ảnh trên du thuyền.</p>
-          </section>
-          <section class="detail-trip-info glass-1 card-hover">
-            <h3 class="label-sm t-muted">Giờ hoạt động</h3>
-            <p><strong>Giờ mở cửa:</strong> Chưa cập nhật.</p>
-            <p><strong>Giờ đóng cửa:</strong> Chưa cập nhật.</p>
-            <p><strong>Điểm trải nghiệm:</strong> {{ activeDrawerData().location }}</p>
-          </section>
-        </ng-container>
 
         <div *ngIf="selectedDrawerKey() !== 'dining'" class="detail-stay">
           <p class="label-sm t-muted">{{ selectedDrawerKey() === 'yacht' ? 'Thời gian vui chơi' : 'Thời gian kỳ nghỉ' }}</p>
@@ -903,9 +914,10 @@
 
     <p *ngIf="shareNotice" class="mb-3 text-xs font-semibold text-neon-deep" role="status">{{ shareNotice }}</p>
     <div class="field flex items-center gap-2 p-1.5">
-      <input class="copy-input truncate" readonly type="text" value="https://tripla.travel/community/amanoi-vinh-hy">
-      <button type="button" class="btn btn-primary px-3 py-1.5" (click)="copyLinkAction()">Sao Chép</button>
-    </div>
+      <div class="field flex items-center gap-2 p-1.5">
+        <input class="copy-input truncate" readonly type="text" [value]="'https://tripla.travel/community/' + (currentVideo().id || 'shorts')">
+        <button type="button" class="btn btn-primary px-3 py-1.5" (click)="copyLinkAction()">Sao Chép</button>
+      </div>
   </div>
 </div>
 
