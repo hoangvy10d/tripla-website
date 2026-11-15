@@ -7,6 +7,10 @@
     {
       "source": "/data/:path*",
       "destination": "https://tripla-website.onrender.com/data/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
