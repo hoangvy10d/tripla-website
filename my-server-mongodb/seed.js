@@ -669,7 +669,7 @@ function getPreparedSeedData() {
   rawHotels.forEach((h, idx) => {
     const mappedSeed = hotelSeedById[h.id];
     const hotelOid =
-      mappedSeed?.oid || oid(`6730000000000000000004${String(idx + 1).padStart(2, '0')}`);
+      mappedSeed?.oid || oid(`6730000000000000000004${String(idx + 30).padStart(2, '0')}`);
     const providerOid = idx % 2 === 0 ? provider1Id : provider2Id;
     const coords = mappedSeed?.coords || [109.1932, 11.7145];
     const basePrice = Number(h.pricePerNight) || 15000000;
