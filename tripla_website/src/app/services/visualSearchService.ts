@@ -35,7 +35,7 @@ export interface VisualSearchCropBox {
 @Injectable({ providedIn: 'root' })
 export class VisualSearchService {
   private readonly http = inject(HttpClient);
-  private readonly endpoint = 'http://localhost:3000/api/visual-search/search-location';
+  private readonly endpoint = '/api/visual-search/search-location';
 
   searchLocation(
     videoId: string,

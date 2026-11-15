@@ -38,10 +38,9 @@ let cachedClient = null;
 let cachedApiKey = '';
 
 function getGeminiClient() {
-  // Ép cứng key vào đây luôn, vừa đọc từ env vừa có key dự phòng khỏi sợ lỗi!
-  const apiKey = String(process.env.GEMINI_API_KEY || 'AQ.Ab8RN6K6LmY0DqeVCWbU_5fPFvYrv57BooYbEZ04RBW8TR6AXA').trim();
+  const apiKey = String(process.env.GEMINI_API_KEY || '').trim();
 
-  if (!apiKey || apiKey.includes('DÁN_KEY_THẬT')) {
+  if (!apiKey) {
     throw new Error('GEMINI_API_KEY chưa được cấu hình.');
   }
   if (!cachedClient || cachedApiKey !== apiKey) {
