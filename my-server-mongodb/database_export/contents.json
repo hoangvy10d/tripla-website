@@ -130,7 +130,7 @@
       }
     },
     "stats": {
-      "views": 128500,
+      "views": 128522,
       "likes": 24600,
       "commentsCount": 520,
       "bookmarks": 8900
@@ -139,7 +139,8 @@
     "isBookmarked": false,
     "created_at": "2026-11-13T03:10:21.081Z",
     "createdAt": "2026-11-13T03:10:21.081Z",
-    "__v": 0
+    "__v": 0,
+    "location_id": "6af95b42131c353edf309a56"
   },
   {
     "_id": "673000000000000000000802",
@@ -264,7 +265,7 @@
       }
     },
     "stats": {
-      "views": 342000,
+      "views": 342015,
       "likes": 58200,
       "commentsCount": 1420,
       "bookmarks": 16500
@@ -273,7 +274,8 @@
     "isBookmarked": false,
     "created_at": "2026-11-13T02:10:21.081Z",
     "createdAt": "2026-11-13T02:10:21.081Z",
-    "__v": 0
+    "__v": 0,
+    "location_id": "6af95b77131c353edf309a57"
   },
   {
     "_id": "673000000000000000000803",
@@ -406,7 +408,7 @@
       }
     },
     "stats": {
-      "views": 195000,
+      "views": 195008,
       "likes": 31200,
       "commentsCount": 680,
       "bookmarks": 9400
@@ -415,7 +417,8 @@
     "isBookmarked": false,
     "created_at": "2026-11-13T01:10:21.081Z",
     "createdAt": "2026-11-13T01:10:21.081Z",
-    "__v": 0
+    "__v": 0,
+    "location_id": "6af95b42131c353edf309a56"
   },
   {
     "_id": "673000000000000000000804",
@@ -540,7 +543,7 @@
       }
     },
     "stats": {
-      "views": 248000,
+      "views": 248008,
       "likes": 45000,
       "commentsCount": 890,
       "bookmarks": 12200
@@ -549,7 +552,8 @@
     "isBookmarked": false,
     "created_at": "2026-11-13T00:10:21.081Z",
     "createdAt": "2026-11-13T00:10:21.081Z",
-    "__v": 0
+    "__v": 0,
+    "location_id": "6af96b93131c353edf309a8c"
   },
   {
     "_id": "673000000000000000000805",
@@ -682,7 +686,7 @@
       }
     },
     "stats": {
-      "views": 88000,
+      "views": 88007,
       "likes": 16500,
       "commentsCount": 310,
       "bookmarks": 4200
@@ -691,7 +695,8 @@
     "isBookmarked": false,
     "created_at": "2026-11-12T23:10:21.082Z",
     "createdAt": "2026-11-12T23:10:21.082Z",
-    "__v": 0
+    "__v": 0,
+    "location_id": "6af96bc0131c353edf309a8d"
   },
   {
     "_id": "673000000000000000000806",
@@ -816,7 +821,7 @@
       }
     },
     "stats": {
-      "views": 76000,
+      "views": 76009,
       "likes": 14200,
       "commentsCount": 280,
       "bookmarks": 3900
@@ -825,7 +830,8 @@
     "isBookmarked": false,
     "created_at": "2026-11-12T22:10:21.082Z",
     "createdAt": "2026-11-12T22:10:21.082Z",
-    "__v": 0
+    "__v": 0,
+    "location_id": "6af96bd3131c353edf309a8e"
   },
   {
     "_id": "673000000000000000000807",
@@ -958,7 +964,7 @@
       }
     },
     "stats": {
-      "views": 92000,
+      "views": 92008,
       "likes": 19800,
       "commentsCount": 410,
       "bookmarks": 5600
@@ -1092,7 +1098,7 @@
       }
     },
     "stats": {
-      "views": 85400,
+      "views": 85406,
       "likes": 14200,
       "commentsCount": 342,
       "bookmarks": 3800
@@ -1234,7 +1240,7 @@
       }
     },
     "stats": {
-      "views": 62100,
+      "views": 62104,
       "likes": 9800,
       "commentsCount": 215,
       "bookmarks": 2400
@@ -1368,7 +1374,7 @@
       }
     },
     "stats": {
-      "views": 120800,
+      "views": 120804,
       "likes": 21500,
       "commentsCount": 518,
       "bookmarks": 6200
@@ -1510,7 +1516,7 @@
       }
     },
     "stats": {
-      "views": 210500,
+      "views": 210502,
       "likes": 33100,
       "commentsCount": 890,
       "bookmarks": 11200
@@ -1644,7 +1650,7 @@
       }
     },
     "stats": {
-      "views": 94000,
+      "views": 94001,
       "likes": 18400,
       "commentsCount": 409,
       "bookmarks": 5100
@@ -1786,7 +1792,7 @@
       }
     },
     "stats": {
-      "views": 73200,
+      "views": 73201,
       "likes": 12000,
       "commentsCount": 276,
       "bookmarks": 3300

@@ -449,5 +449,38 @@
       "roomName": "Classic Room"
     },
     "__v": 0
+  },
+  {
+    "_id": "6af6dea0dcbea11732b73388",
+    "user_id": "673000000000000000000103",
+    "room_id": null,
+    "hotel_id": null,
+    "location_id": null,
+    "check_in": "2026-11-12T00:00:00.000Z",
+    "check_out": "2026-11-15T00:00:00.000Z",
+    "total_price": 15000000,
+    "discount": 0,
+    "items": [],
+    "booking_status": "confirmed",
+    "booking_code": "TRP-483580YB",
+    "created_at": "2026-11-13T09:55:44.051Z",
+    "bookingCode": "TRP-483580YB",
+    "bookingType": "tripshorts_yacht",
+    "title": "Du Thuyền Siêu Sang Sovereign Catamaran 68ft",
+    "location": "Bến Du Thuyền Vịnh Vĩnh Hy & Hòn Rùa, Ninh Thuận",
+    "customerName": "Victoria Chen",
+    "customerPhone": "0909123456",
+    "customerEmail": "victoria.chen@tripla.vn",
+    "guests": 2,
+    "totalPriceVnd": 15000000,
+    "status": "CONFIRMED",
+    "details": {
+      "drawerKey": "yacht",
+      "roomName": "Ocean Pool Pavilion",
+      "priceDisplay": "18.500.000₫",
+      "stayNights": 3,
+      "visitDate": "2026-11-12"
+    },
+    "__v": 0
   }
 ]

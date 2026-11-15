@@ -1417,7 +1417,7 @@ function createActivitiesFromLocations(locations) {
   });
 }
 
-async function main() {
+async function main(keepConnected = false) {
   console.log('🚀 Bắt đầu quá trình làm giàu dữ liệu...');
 
   // 1. Cập nhật file compass_data/activities.json
@@ -1465,9 +1465,11 @@ async function main() {
   console.log(`✅ Đã ghi nhận ${enrichedHotels.length} hotels vào compass_data/hotels.json`);
 
   // 3. Kết nối MongoDB và nạp bổ sung vào Database tripla_db
-  console.log(`📡 Đang kết nối tới MongoDB: ${MONGO_URI}`);
-  await mongoose.connect(MONGO_URI, { serverSelectionTimeoutMS: 5000 });
-  console.log('✅ Đã kết nối MongoDB tripla_db thành công!');
+  if (!keepConnected || mongoose.connection.readyState !== 1) {
+    console.log(`📡 Đang kết nối tới MongoDB: ${MONGO_URI}`);
+    await mongoose.connect(MONGO_URI, { serverSelectionTimeoutMS: 5000 });
+    console.log('✅ Đã kết nối MongoDB tripla_db thành công!');
+  }
 
   const db = mongoose.connection.db;
 
@@ -1577,12 +1579,14 @@ async function main() {
     console.warn(`⚠️ Index 2dsphere:`, err.message);
   }
 
-  await mongoose.disconnect();
+  if (!keepConnected) {
+    await mongoose.disconnect();
+  }
   console.log('🎉 Toàn bộ dữ liệu phong phú đã được nạp thành công!');
 }
 
 if (require.main === module) {
-  main().catch(err => {
+  main(false).catch(err => {
     console.error('❌ Lỗi nạp dữ liệu:', err);
     process.exit(1);
   });
@@ -1591,5 +1595,6 @@ if (require.main === module) {
 module.exports = {
   NEW_LOCATIONS,
   NEW_HOTELS,
-  createActivitiesFromLocations
+  createActivitiesFromLocations,
+  enrichDatabase: () => main(true)
 };

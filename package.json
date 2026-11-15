@@ -1,0 +1,15 @@
+{
+  "name": "tripla-complete-system",
+  "version": "1.0.0",
+  "description": "TRIPLA Complete Travel Ecosystem (Angular 22 SPA + Express REST API + MongoDB + Gemini Visual Search)",
+  "main": "my-server-mongodb/index.js",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "build": "npm --prefix tripla_website install --include=dev && npm --prefix tripla_website run build && npm --prefix my-server-mongodb install",
+    "start": "node my-server-mongodb/index.js",
+    "dev:backend": "npm --prefix my-server-mongodb run dev",
+    "dev:frontend": "npm --prefix tripla_website start"
+  }
+}

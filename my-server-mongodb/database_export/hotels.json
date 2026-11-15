@@ -2074,5 +2074,492 @@
     "__v": 0,
     "createdAt": "2026-11-13T03:10:21.386Z",
     "updatedAt": "2026-11-13T03:10:21.386Z"
+  },
+  {
+    "_id": "6af96466131c353edf309a75",
+    "name": "The Imperial Hotel Vũng Tàu",
+    "accommodationType": "Khách sạn",
+    "address": "159 Thùy Vân, Phường Thắng Tam, TP. Vũng Tàu",
+    "amenities": [
+      "Wi-Fi",
+      "Hồ bơi riêng",
+      "Bãi biển riêng",
+      "Bữa sáng",
+      "Spa"
+    ],
+    "area": "Bãi Sau",
+    "city": "Vũng Tàu",
+    "createdAt": "2026-11-15T08:25:31.533Z",
+    "currency": "VND",
+    "description": "Khách sạn 5 sao mang phong cách cổ điển hoàng gia châu Âu duy nhất tọa lạc tại Bãi Sau Vũng Tàu với câu lạc bộ biển riêng biệt và hồ bơi vô cực sát biển.",
+    "freeCancellation": true,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        107.0965,
+        10.3395
+      ]
+    },
+    "hotel_name": "The Imperial Hotel Vũng Tàu",
+    "hotel_slug": "the-imperial-hotel-vung-tau",
+    "id": "hotel-imperial-vungtau",
+    "imageUrl": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "latitude": 10.3395,
+    "longitude": 107.0965,
+    "pricePerNight": 2450000,
+    "price_from": 2450000,
+    "provider_id": "673000000000000000000201",
+    "rating": 9.3,
+    "reviewCount": 420,
+    "review_count": 420,
+    "star_rating": 5,
+    "stars": 5,
+    "updatedAt": "2026-11-15T08:25:31.533Z"
+  },
+  {
+    "_id": "6af96466131c353edf309a78",
+    "name": "Pullman Vũng Tàu Convention Centre",
+    "accommodationType": "Khách sạn",
+    "address": "15 Thi Sách, Phường Thắng Tam, TP. Vũng Tàu",
+    "amenities": [
+      "Wi-Fi",
+      "Hồ bơi",
+      "Phòng Gym",
+      "Bữa sáng",
+      "Bar"
+    ],
+    "area": "Trung tâm Bãi Sau",
+    "city": "Vũng Tàu",
+    "createdAt": "2026-11-15T08:25:31.545Z",
+    "currency": "VND",
+    "description": "Khách sạn phong cách nghỉ dưỡng hiện đại đạt chuẩn quốc tế của tập đoàn Accor tại Vũng Tàu với trung tâm hội nghị quy mô và hồ bơi tầng cao sang trọng.",
+    "freeCancellation": true,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        107.0925,
+        10.3425
+      ]
+    },
+    "hotel_name": "Pullman Vũng Tàu Convention Centre",
+    "hotel_slug": "pullman-vung-tau",
+    "id": "hotel-pullman-vungtau",
+    "imageUrl": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "latitude": 10.3425,
+    "longitude": 107.0925,
+    "pricePerNight": 1950000,
+    "price_from": 1950000,
+    "provider_id": "673000000000000000000201",
+    "rating": 9.1,
+    "reviewCount": 380,
+    "review_count": 380,
+    "star_rating": 5,
+    "stars": 5,
+    "updatedAt": "2026-11-15T08:25:31.545Z"
+  },
+  {
+    "_id": "6af96466131c353edf309a7b",
+    "name": "Dalat Palace Heritage Hotel",
+    "accommodationType": "Khách sạn",
+    "address": "02 Trần Phú, Phường 3, TP. Đà Lạt",
+    "amenities": [
+      "Wi-Fi",
+      "Sân Golf",
+      "Bữa sáng",
+      "Spa",
+      "Sân vườn"
+    ],
+    "area": "Hồ Xuân Hương",
+    "city": "Đà Lạt",
+    "createdAt": "2026-11-15T08:25:31.571Z",
+    "currency": "VND",
+    "description": "Biểu tượng khách sạn di sản kiến trúc hoàng gia Pháp từ năm 1922 nhìn ra hồ Xuân Hương thơ mộng giữa công viên thông xanh mát.",
+    "freeCancellation": true,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.4385,
+        11.9382
+      ]
+    },
+    "hotel_name": "Dalat Palace Heritage Hotel",
+    "hotel_slug": "dalat-palace-heritage-hotel",
+    "id": "hotel-dalat-palace",
+    "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1000&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "latitude": 11.9382,
+    "longitude": 108.4385,
+    "pricePerNight": 3200000,
+    "price_from": 3200000,
+    "provider_id": "673000000000000000000201",
+    "rating": 9.6,
+    "reviewCount": 450,
+    "review_count": 450,
+    "star_rating": 5,
+    "stars": 5,
+    "updatedAt": "2026-11-15T08:25:31.571Z"
+  },
+  {
+    "_id": "6af96466131c353edf309a7e",
+    "name": "Anantara Hoi An Resort",
+    "accommodationType": "Khu nghỉ dưỡng",
+    "address": "01 Phạm Hồng Thái, Cẩm Châu, TP. Hội An",
+    "amenities": [
+      "Wi-Fi",
+      "Hồ bơi",
+      "Du thuyền sông",
+      "Bữa sáng",
+      "Spa"
+    ],
+    "area": "Bên bờ Sông Thu Bồn",
+    "city": "Hội An",
+    "createdAt": "2026-11-15T08:25:31.577Z",
+    "currency": "VND",
+    "description": "Khu nghỉ dưỡng boutique sang trọng nép mình bên dòng sông Thu Bồn thơ mộng, chỉ cách phố cổ Hội An vài phút tản bộ yên bình.",
+    "freeCancellation": true,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.3375,
+        15.8778
+      ]
+    },
+    "hotel_name": "Anantara Hoi An Resort",
+    "hotel_slug": "anantara-hoi-an-resort",
+    "id": "hotel-anantara-hoian",
+    "imageUrl": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1000&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "latitude": 15.8778,
+    "longitude": 108.3375,
+    "pricePerNight": 4800000,
+    "price_from": 4800000,
+    "provider_id": "673000000000000000000201",
+    "rating": 9.7,
+    "reviewCount": 390,
+    "review_count": 390,
+    "star_rating": 5,
+    "stars": 5,
+    "updatedAt": "2026-11-15T08:25:31.577Z"
+  },
+  {
+    "_id": "6af96466131c353edf309a80",
+    "name": "Emeralda Resort Ninh Bình",
+    "accommodationType": "Khu nghỉ dưỡng",
+    "address": "Khu bảo tồn đất ngập nước Vân Long, Gia Vân, Gia Viễn, Ninh Bình",
+    "amenities": [
+      "Wi-Fi",
+      "Hồ bơi vô cực",
+      "Spa",
+      "Bữa sáng",
+      "Xe đạp miễn phí"
+    ],
+    "area": "Đầm Vân Long",
+    "city": "Ninh Bình",
+    "createdAt": "2026-11-15T08:25:31.587Z",
+    "currency": "VND",
+    "description": "Không gian nghỉ dưỡng tái hiện ngôi làng Bắc Bộ xưa mộc mạc bên đầm ngập nước Vân Long với kiến trúc nhà ba gian truyền thống.",
+    "freeCancellation": true,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        105.8652,
+        20.3542
+      ]
+    },
+    "hotel_name": "Emeralda Resort Ninh Bình",
+    "hotel_slug": "emeralda-resort-ninh-binh",
+    "id": "hotel-emeralda-ninhbinh",
+    "imageUrl": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "latitude": 20.3542,
+    "longitude": 105.8652,
+    "pricePerNight": 2300000,
+    "price_from": 2300000,
+    "provider_id": "673000000000000000000201",
+    "rating": 9.4,
+    "reviewCount": 510,
+    "review_count": 510,
+    "star_rating": 5,
+    "stars": 5,
+    "updatedAt": "2026-11-15T08:25:31.587Z"
+  },
+  {
+    "_id": "6af96a88131c353edf309a87",
+    "name": "Vinpearl Resort & Spa Hạ Long",
+    "accommodationType": "Khu nghỉ dưỡng",
+    "address": "Đảo Rều, Bãi Cháy, TP. Hạ Long, Quảng Ninh",
+    "amenities": [
+      "Wi-Fi",
+      "Hồ bơi vô cực",
+      "Bãi biển riêng",
+      "Spa",
+      "Bữa sáng",
+      "Tàu cao tốc đưa đón"
+    ],
+    "area": "Đảo Rều Bãi Cháy",
+    "city": "Hạ Long",
+    "createdAt": "2026-11-15T08:25:31.509Z",
+    "currency": "VND",
+    "description": "Khu nghỉ dưỡng biệt lập đầu tiên và duy nhất nằm hoàn toàn trên mặt biển Đảo Rều với tầm nhìn 360 độ ôm trọn kỳ quan Vịnh Hạ Long hùng vĩ.",
+    "freeCancellation": true,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        107.0395,
+        20.9485
+      ]
+    },
+    "hotel_name": "Vinpearl Resort & Spa Hạ Long",
+    "hotel_slug": "vinpearl-resort-spa-ha-long",
+    "id": "hotel-vinpearl-halong",
+    "imageUrl": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "latitude": 20.9485,
+    "longitude": 107.0395,
+    "pricePerNight": 2850000,
+    "price_from": 2850000,
+    "provider_id": "673000000000000000000201",
+    "rating": 9.6,
+    "reviewCount": 520,
+    "review_count": 520,
+    "star_rating": 5,
+    "stars": 5,
+    "updatedAt": "2026-11-15T08:25:31.509Z"
+  },
+  {
+    "_id": "6af96a88131c353edf309a8a",
+    "name": "Du Thuyền 5 Sao Paradise Elegance Cruise Hạ Long",
+    "accommodationType": "Khu nghỉ dưỡng",
+    "address": "Cảng Tàu Khách Quốc Tế Tuần Châu, TP. Hạ Long, Quảng Ninh",
+    "amenities": [
+      "Wi-Fi",
+      "Hồ bơi Jacuzzi",
+      "Tiệc tối Fine Dining",
+      "Kayak",
+      "Bữa sáng"
+    ],
+    "area": "Cảng Tuần Châu",
+    "city": "Hạ Long",
+    "createdAt": "2026-11-15T08:25:31.523Z",
+    "currency": "VND",
+    "description": "Du thuyền vỏ thép sang trọng bậc nhất vịnh di sản với ban công riêng cho từng phòng ngủ, spa thư giãn và hải trình qua Đảo Ti Tốp, Hang Sửng Sốt.",
+    "freeCancellation": true,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.9892,
+        20.9185
+      ]
+    },
+    "hotel_name": "Du Thuyền 5 Sao Paradise Elegance Cruise Hạ Long",
+    "hotel_slug": "du-thuyen-paradise-elegance-ha-long",
+    "id": "hotel-paradise-elegance",
+    "imageUrl": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1000&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "latitude": 20.9185,
+    "longitude": 106.9892,
+    "pricePerNight": 6200000,
+    "price_from": 6200000,
+    "provider_id": "673000000000000000000201",
+    "rating": 9.8,
+    "reviewCount": 410,
+    "review_count": 410,
+    "star_rating": 5,
+    "stars": 5,
+    "updatedAt": "2026-11-15T08:25:31.523Z"
+  },
+  {
+    "_id": "6af96c7b131c353edf309a94",
+    "name": "Sài Gòn - Bản Giốc Resort",
+    "accommodationType": "Khu nghỉ dưỡng",
+    "address": "Xã Đàm Thủy, Huyện Trùng Khánh, Cao Bằng",
+    "amenities": [
+      "Wi-Fi",
+      "Bữa sáng",
+      "Nhà hàng đặc sản",
+      "Sân vườn",
+      "Bãi đỗ xe"
+    ],
+    "area": "Cạnh Thác Bản Giốc",
+    "city": "Cao Bằng",
+    "createdAt": "2026-11-15T08:25:31.459Z",
+    "currency": "VND",
+    "description": "Khu nghỉ dưỡng cao cấp 4 sao duy nhất tọa lạc ngay bên cạnh thắng cảnh Thác Bản Giốc, kiến trúc nhà sàn kết hợp tiện nghi hiện đại.",
+    "freeCancellation": true,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.7215,
+        22.8525
+      ]
+    },
+    "hotel_name": "Sài Gòn - Bản Giốc Resort",
+    "hotel_slug": "saigon-ban-gioc-resort",
+    "id": "hotel-saigon-bangioc",
+    "imageUrl": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "latitude": 22.8525,
+    "longitude": 106.7215,
+    "pricePerNight": 1250000,
+    "price_from": 1250000,
+    "provider_id": "673000000000000000000201",
+    "rating": 9.1,
+    "reviewCount": 310,
+    "review_count": 310,
+    "star_rating": 4,
+    "stars": 4,
+    "updatedAt": "2026-11-15T08:25:31.459Z"
+  },
+  {
+    "_id": "6af96c7b131c353edf309a96",
+    "name": "Phong Nha Lodge & Lake House Resort",
+    "accommodationType": "Khu nghỉ dưỡng",
+    "address": "Khương Hà, Xã Sơn Trạch, Huyện Bố Trạch, Quảng Bình",
+    "amenities": [
+      "Wi-Fi",
+      "Hồ bơi bên hồ",
+      "Bữa sáng",
+      "Chèo Kayak",
+      "Nhà hàng"
+    ],
+    "area": "Vườn Quốc gia Phong Nha",
+    "city": "Quảng Bình",
+    "createdAt": "2026-11-15T08:25:31.469Z",
+    "currency": "VND",
+    "description": "Chốn lưu trú lý tưởng ven hồ Đồng Suôn thơ mộng, trạm dừng chân thuận tiện bậc nhất cho các hành trình thám hiểm hang động Phong Nha - Kẻ Bàng.",
+    "freeCancellation": true,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.2852,
+        17.5842
+      ]
+    },
+    "hotel_name": "Phong Nha Lodge & Lake House Resort",
+    "hotel_slug": "phong-nha-lodge-lake-house",
+    "id": "hotel-phongnha-lodge",
+    "imageUrl": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "latitude": 17.5842,
+    "longitude": 106.2852,
+    "pricePerNight": 950000,
+    "price_from": 950000,
+    "provider_id": "673000000000000000000201",
+    "rating": 9.3,
+    "reviewCount": 420,
+    "review_count": 420,
+    "star_rating": 4,
+    "stars": 4,
+    "updatedAt": "2026-11-15T08:25:31.469Z"
+  },
+  {
+    "_id": "6af96c7b131c353edf309a98",
+    "name": "Victoria Jungfrau Grand Hotel & Spa",
+    "accommodationType": "Khách sạn",
+    "address": "Höheweg 41, 3800 Interlaken, Switzerland",
+    "amenities": [
+      "Wi-Fi",
+      "Spa 5500m2",
+      "Hồ bơi nước ấm",
+      "Bữa sáng",
+      "Tầm nhìn Jungfrau"
+    ],
+    "area": "Interlaken",
+    "city": "Thụy Sĩ",
+    "createdAt": "2026-11-15T08:25:31.480Z",
+    "currency": "VND",
+    "description": "Khách sạn huyền thoại 5 sao sang trọng bậc nhất tại Interlaken với tầm nhìn triệu đô hướng thẳng ra ngọn núi tuyết Jungfrau vĩnh cửu.",
+    "freeCancellation": true,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        7.8592,
+        46.6875
+      ]
+    },
+    "hotel_name": "Victoria Jungfrau Grand Hotel & Spa",
+    "hotel_slug": "victoria-jungfrau-grand-hotel",
+    "id": "hotel-victoria-jungfrau",
+    "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1000&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "latitude": 46.6875,
+    "longitude": 7.8592,
+    "pricePerNight": 12500000,
+    "price_from": 12500000,
+    "provider_id": "673000000000000000000201",
+    "rating": 9.8,
+    "reviewCount": 380,
+    "review_count": 380,
+    "star_rating": 5,
+    "stars": 5,
+    "updatedAt": "2026-11-15T08:25:31.480Z"
+  },
+  {
+    "_id": "6af96c7b131c353edf309a9a",
+    "name": "Fairmont Chateau Lake Louise",
+    "accommodationType": "Khu nghỉ dưỡng",
+    "address": "111 Lake Louise Dr, Lake Louise, AB, Canada",
+    "amenities": [
+      "Wi-Fi",
+      "Hồ nước ngọc bích",
+      "Spa",
+      "Bữa sáng",
+      "Trượt tuyết"
+    ],
+    "area": "Banff National Park",
+    "city": "Canada",
+    "createdAt": "2026-11-15T08:25:31.499Z",
+    "currency": "VND",
+    "description": "Lâu đài nghỉ dưỡng di sản biểu tượng nằm soi bóng xuống mặt hồ Louise xanh ngọc bích giữa vườn quốc gia Banff hùng vĩ.",
+    "freeCancellation": true,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        -116.1772,
+        51.4178
+      ]
+    },
+    "hotel_name": "Fairmont Chateau Lake Louise",
+    "hotel_slug": "fairmont-chateau-lake-louise",
+    "id": "hotel-fairmont-lake-louise",
+    "imageUrl": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1000&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "latitude": 51.4178,
+    "longitude": -116.1772,
+    "pricePerNight": 14500000,
+    "price_from": 14500000,
+    "provider_id": "673000000000000000000201",
+    "rating": 9.7,
+    "reviewCount": 650,
+    "review_count": 650,
+    "star_rating": 5,
+    "stars": 5,
+    "updatedAt": "2026-11-15T08:25:31.499Z"
   }
 ]

@@ -775,5 +775,1148 @@
     "__v": 0,
     "createdAt": "2026-11-13T03:10:21.717Z",
     "updatedAt": "2026-11-13T03:10:21.717Z"
+  },
+  {
+    "_id": "act_loc_dalat_lamvien_square",
+    "name": "Quảng trường Lâm Viên",
+    "address": "Đường Trần Quốc Toản, Phường 10, TP. Đà Lạt",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "city": "Đà Lạt",
+    "coordinates": {
+      "latitude": 11.936,
+      "longitude": 108.4455
+    },
+    "currency": "VND",
+    "description": "Biểu tượng check-in của xứ sở sương mù với đóa hoa dã quỳ và búp hoa atiso bằng kính màu khổng lồ nhìn ra hồ Xuân Hương.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.4455,
+        11.936
+      ]
+    },
+    "id": "act_loc_dalat_lamvien_square",
+    "imageUrl": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 200000,
+    "priceFrom": 150000,
+    "rating": 4.8,
+    "reviewCount": 3200
+  },
+  {
+    "_id": "act_loc_dalat_flower_garden",
+    "name": "Vườn hoa Thành phố Đà Lạt",
+    "address": "Số 2 Trần Nhân Tông, Phường 8, TP. Đà Lạt",
+    "categories": [
+      "Công viên & vườn",
+      "Các điểm tham quan khác",
+      "Vé tham quan"
+    ],
+    "city": "Đà Lạt",
+    "coordinates": {
+      "latitude": 11.9465,
+      "longitude": 108.4494
+    },
+    "currency": "VND",
+    "description": "Khoảng trời muôn sắc hoa hội tụ hơn 300 loài hoa quý hiếm trong và ngoài nước nở rộ quanh năm.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.4494,
+        11.9465
+      ]
+    },
+    "id": "act_loc_dalat_flower_garden",
+    "imageUrl": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 120000,
+    "priceFrom": 100000,
+    "rating": 4.7,
+    "reviewCount": 2450
+  },
+  {
+    "_id": "act_loc_dalat_tui_mo_to_cafe",
+    "name": "Tiệm Cà Phê Túi Mơ To",
+    "address": "Hẻm 31 Sào Nam, Phường 11, TP. Đà Lạt",
+    "categories": [
+      "Food & Dining"
+    ],
+    "city": "Đà Lạt",
+    "coordinates": {
+      "latitude": 11.9388,
+      "longitude": 108.4765
+    },
+    "currency": "VND",
+    "description": "Quán cafe nhà kính bên triền đồi với vườn cúc họa mi trắng muốt và góc ngắm thung lũng đèn lồng lung linh về đêm.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.4765,
+        11.9388
+      ]
+    },
+    "id": "act_loc_dalat_tui_mo_to_cafe",
+    "imageUrl": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 102000,
+    "priceFrom": 85000,
+    "rating": 4.8,
+    "reviewCount": 3600
+  },
+  {
+    "_id": "act_loc_dalat_love_valley",
+    "name": "Thung Lũng Tình Yêu",
+    "address": "3 – 5 – 7 Mai Anh Đào, Phường 8, TP. Đà Lạt",
+    "categories": [
+      "Công viên & vườn",
+      "Các điểm tham quan khác",
+      "Vé tham quan"
+    ],
+    "city": "Đà Lạt",
+    "coordinates": {
+      "latitude": 11.9806,
+      "longitude": 108.4528
+    },
+    "currency": "VND",
+    "description": "Danh thắng thơ mộng nép mình bên sườn đồi thông xanh ngắt và hồ Đa Thiện trong vắt, tích hợp mê cung cây và cầu kính 7D.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.4528,
+        11.9806
+      ]
+    },
+    "id": "act_loc_dalat_love_valley",
+    "imageUrl": "https://images.unsplash.com/photo-1470246973918-29a93221c455?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 300000,
+    "priceFrom": 250000,
+    "rating": 4.6,
+    "reviewCount": 1980
+  },
+  {
+    "_id": "act_loc_dalat_night_market",
+    "name": "Chợ Đêm Đà Lạt (Chợ Âm Phủ)",
+    "address": "Nguyễn Thị Minh Khai, Phường 1, TP. Đà Lạt",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "city": "Đà Lạt",
+    "coordinates": {
+      "latitude": 11.9425,
+      "longitude": 108.4372
+    },
+    "currency": "VND",
+    "description": "Trái tim sôi động về đêm của Đà Lạt: thưởng thức bánh tráng nướng nóng hổi, sữa đậu nành nóng hổi, dâu tây và mua sắm đồ len ấm áp.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.4372,
+        11.9425
+      ]
+    },
+    "id": "act_loc_dalat_night_market",
+    "imageUrl": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 200000,
+    "priceFrom": 150000,
+    "rating": 4.7,
+    "reviewCount": 5200
+  },
+  {
+    "_id": "act_loc_vungtau_christ_statue",
+    "name": "Tượng Chúa Kito Vua",
+    "address": "Hạ Long, Phường 2, TP. Vũng Tàu",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "city": "Vũng Tàu",
+    "coordinates": {
+      "latitude": 10.3262,
+      "longitude": 107.0845
+    },
+    "currency": "VND",
+    "description": "Bức tượng Chúa cao 32m ngự trên đỉnh Núi Nhỏ với hai tay dang rộng 18.3m, bên trong có 133 bậc thang dẫn ra hai cánh tay ngắm biển trời bao la.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        107.0845,
+        10.3262
+      ]
+    },
+    "id": "act_loc_vungtau_christ_statue",
+    "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 200000,
+    "priceFrom": 150000,
+    "rating": 4.8,
+    "reviewCount": 4200
+  },
+  {
+    "_id": "act_loc_vungtau_lighthouse",
+    "name": "Ngọn Hải Đăng Vũng Tàu",
+    "address": "Đỉnh Núi Nhỏ, Phường 2, TP. Vũng Tàu",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "city": "Vũng Tàu",
+    "coordinates": {
+      "latitude": 10.334,
+      "longitude": 107.0754
+    },
+    "currency": "VND",
+    "description": "Ngọn hải đăng cổ kính xây dựng năm 1862 sơn trắng nổi bật giữa nền trời xanh, là điểm ngắm hoàng hôn và thưởng thức sữa chua cô Tiên nổi tiếng.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        107.0754,
+        10.334
+      ]
+    },
+    "id": "act_loc_vungtau_lighthouse",
+    "imageUrl": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 200000,
+    "priceFrom": 150000,
+    "rating": 4.7,
+    "reviewCount": 3100
+  },
+  {
+    "_id": "act_loc_vungtau_nghinh_phong",
+    "name": "Mũi Nghinh Phong & Cổng Trời",
+    "address": "Số 1 Hạ Long, Phường 2, TP. Vũng Tàu",
+    "categories": [
+      "Công viên & vườn",
+      "Các điểm tham quan khác",
+      "Vé tham quan"
+    ],
+    "city": "Vũng Tàu",
+    "coordinates": {
+      "latitude": 10.323,
+      "longitude": 107.0865
+    },
+    "currency": "VND",
+    "description": "Mũi đất vươn mình ra biển đón gió suốt bốn mùa, nổi bật với \"Cổng Trời\" hướng biển tạo nên góc chụp ảnh ấn tượng.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        107.0865,
+        10.323
+      ]
+    },
+    "id": "act_loc_vungtau_nghinh_phong",
+    "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 200000,
+    "priceFrom": 150000,
+    "rating": 4.6,
+    "reviewCount": 2750
+  },
+  {
+    "_id": "act_loc_vungtau_bai_sau",
+    "name": "Bãi Sau Vũng Tàu (Bãi Thùy Vân)",
+    "address": "Đường Thùy Vân, Phường Thắng Tam, TP. Vũng Tàu",
+    "categories": [
+      "Công viên & vườn",
+      "Các điểm tham quan khác",
+      "Vé tham quan"
+    ],
+    "city": "Vũng Tàu",
+    "coordinates": {
+      "latitude": 10.3385,
+      "longitude": 107.0988
+    },
+    "currency": "VND",
+    "description": "Bãi cát vàng thoai thoải dài hơn 8km với làn nước trong xanh, rặng phi lao xanh rì và sóng vỗ nhẹ nhàng thích hợp tắm biển cả ngày.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        107.0988,
+        10.3385
+      ]
+    },
+    "id": "act_loc_vungtau_bai_sau",
+    "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 200000,
+    "priceFrom": 150000,
+    "rating": 4.5,
+    "reviewCount": 4800
+  },
+  {
+    "_id": "act_loc_vungtau_banh_khot_coba",
+    "name": "Bánh Khọt Cô Ba Vũng Tàu",
+    "address": "Số 1 Hoàng Hoa Thám, Phường 3, TP. Vũng Tàu",
+    "categories": [
+      "Food & Dining"
+    ],
+    "city": "Vũng Tàu",
+    "coordinates": {
+      "latitude": 10.3475,
+      "longitude": 107.0772
+    },
+    "currency": "VND",
+    "description": "Thương hiệu bánh khọt trứ danh với lớp vỏ giòn rụm màu vàng ruộm, nhân tôm tươi nhảy tanh tách ăn kèm rau sống và nước mắm chua ngọt đặc chế.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        107.0772,
+        10.3475
+      ]
+    },
+    "id": "act_loc_vungtau_banh_khot_coba",
+    "imageUrl": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 96000,
+    "priceFrom": 80000,
+    "rating": 4.7,
+    "reviewCount": 3890
+  },
+  {
+    "_id": "act_loc_nhatrang_vinwonders",
+    "name": "VinWonders Nha Trang (Đảo Hòn Tre)",
+    "address": "Đảo Hòn Tre, Phường Vĩnh Nguyên, TP. Nha Trang",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc",
+      "Trò chơi & giải trí"
+    ],
+    "city": "Nha Trang",
+    "coordinates": {
+      "latitude": 12.2178,
+      "longitude": 109.2435
+    },
+    "currency": "VND",
+    "description": "Công viên giải trí của những kỷ lục tọa lạc trên đảo thiên đường Hòn Tre: Tata Show đẳng cấp, cáp treo vượt biển và công viên nước khổng lồ.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        109.2435,
+        12.2178
+      ]
+    },
+    "id": "act_loc_nhatrang_vinwonders",
+    "imageUrl": "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 960000,
+    "priceFrom": 800000,
+    "rating": 4.9,
+    "reviewCount": 6200
+  },
+  {
+    "_id": "act_loc_nhatrang_ponagar",
+    "name": "Tháp Bà Ponagar Nha Trang",
+    "address": "Đường 2 Tháng 4, Vĩnh Phước, TP. Nha Trang",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "city": "Nha Trang",
+    "coordinates": {
+      "latitude": 12.2654,
+      "longitude": 109.1958
+    },
+    "currency": "VND",
+    "description": "Quần thể tháp Chăm cổ kính được xây dựng từ thế kỷ thứ 8 đến thế kỷ 13, uy nghiêm trên đồi Cù Lao soi bóng xuống dòng sông Cái thơ mộng.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        109.1958,
+        12.2654
+      ]
+    },
+    "id": "act_loc_nhatrang_ponagar",
+    "imageUrl": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 36000,
+    "priceFrom": 30000,
+    "rating": 4.7,
+    "reviewCount": 3400
+  },
+  {
+    "_id": "act_loc_hanoi_hoan_kiem_lake",
+    "name": "Hồ Hoàn Kiếm & Đền Ngọc Sơn",
+    "address": "Phố Đinh Tiên Hoàng, Hàng Trống, Hoàn Kiếm, Hà Nội",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "city": "Hà Nội",
+    "coordinates": {
+      "latitude": 21.0307,
+      "longitude": 105.8524
+    },
+    "currency": "VND",
+    "description": "Trái tim của Thủ đô ngàn năm văn hiến với Tháp Rùa cổ kính giữa làn nước xanh lục thủy, cầu Thê Húc đỏ son dẫn vào Đền Ngọc Sơn linh thiêng.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        105.8524,
+        21.0307
+      ]
+    },
+    "id": "act_loc_hanoi_hoan_kiem_lake",
+    "imageUrl": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 36000,
+    "priceFrom": 30000,
+    "rating": 4.9,
+    "reviewCount": 6800
+  },
+  {
+    "_id": "act_loc_hanoi_van_mieu",
+    "name": "Văn Miếu – Quốc Tử Giám",
+    "address": "58 Quốc Tử Giám, Văn Miếu, Đống Đa, Hà Nội",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "city": "Hà Nội",
+    "coordinates": {
+      "latitude": 21.0285,
+      "longitude": 105.8355
+    },
+    "currency": "VND",
+    "description": "Trường đại học đầu tiên của Việt Nam với 82 Bia Tiến sĩ được UNESCO công nhận là Di sản Tư liệu Thế giới.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        105.8355,
+        21.0285
+      ]
+    },
+    "id": "act_loc_hanoi_van_mieu",
+    "imageUrl": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 84000,
+    "priceFrom": 70000,
+    "rating": 4.8,
+    "reviewCount": 4500
+  },
+  {
+    "_id": "act_loc_hanoi_hoa_lo_prison",
+    "name": "Di Tích Nhà Tù Hỏa Lò",
+    "address": "Số 1 Phố Hỏa Lò, Trần Hưng Đạo, Hoàn Kiếm, Hà Nội",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "city": "Hà Nội",
+    "coordinates": {
+      "latitude": 21.0253,
+      "longitude": 105.8465
+    },
+    "currency": "VND",
+    "description": "Nơi lưu giữ những ký ức lịch sử kiên cường của các chiến sĩ cách mạng Việt Nam, nổi tiếng với tour đêm \"Đêm Thiêng Liêng\" chạm tới cảm xúc.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        105.8465,
+        21.0253
+      ]
+    },
+    "id": "act_loc_hanoi_hoa_lo_prison",
+    "imageUrl": "https://images.unsplash.com/photo-1541480601022-2308c0f02487?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 60000,
+    "priceFrom": 50000,
+    "rating": 4.9,
+    "reviewCount": 5100
+  },
+  {
+    "_id": "act_loc_hcm_dinh_doc_lap",
+    "name": "Dinh Độc Lập (Hội Trường Thống Nhất)",
+    "address": "135 Nam Kỳ Khởi Nghĩa, Bến Thành, Quận 1, TP. Hồ Chí Minh",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "city": "Hồ Chí Minh",
+    "coordinates": {
+      "latitude": 10.777,
+      "longitude": 106.6953
+    },
+    "currency": "VND",
+    "description": "Công trình kiến trúc biểu tượng ghi dấu thời khắc lịch sử thống nhất đất nước ngày 30/4/1975, do kiến trúc sư Ngô Viết Thụ thiết kế.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.6953,
+        10.777
+      ]
+    },
+    "id": "act_loc_hcm_dinh_doc_lap",
+    "imageUrl": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 78000,
+    "priceFrom": 65000,
+    "rating": 4.8,
+    "reviewCount": 5800
+  },
+  {
+    "_id": "act_loc_hcm_landmark_81",
+    "name": "Landmark 81 SkyView",
+    "address": "720A Điện Biên Phủ, Phường 22, Bình Thạnh, TP. Hồ Chí Minh",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "city": "Hồ Chí Minh",
+    "coordinates": {
+      "latitude": 10.795,
+      "longitude": 106.7218
+    },
+    "currency": "VND",
+    "description": "Đài quan sát cao nhất Việt Nam tại tầng 79-81 ngắm toàn cảnh Sài Gòn rực rỡ từ độ cao gần 400m với trải nghiệm cầu kính SkyTouch mạo hiểm.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.7218,
+        10.795
+      ]
+    },
+    "id": "act_loc_hcm_landmark_81",
+    "imageUrl": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 540000,
+    "priceFrom": 450000,
+    "rating": 4.8,
+    "reviewCount": 4100
+  },
+  {
+    "_id": "act_loc_hcm_ben_thanh_market",
+    "name": "Chợ Bến Thành",
+    "address": "Đường Lê Lợi, Bến Thành, Quận 1, TP. Hồ Chí Minh",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "city": "Hồ Chí Minh",
+    "coordinates": {
+      "latitude": 10.7725,
+      "longitude": 106.698
+    },
+    "currency": "VND",
+    "description": "Biểu tượng trăm năm sầm uất của TP. Hồ Chí Minh, nơi du khách thỏa thích khám phá ẩm thực đường phố và mua sắm quà lưu niệm.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.698,
+        10.7725
+      ]
+    },
+    "id": "act_loc_hcm_ben_thanh_market",
+    "imageUrl": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 200000,
+    "priceFrom": 150000,
+    "rating": 4.6,
+    "reviewCount": 6700
+  },
+  {
+    "_id": "act_loc_danang_dragon_bridge",
+    "name": "Cầu Rồng Đà Nẵng",
+    "address": "Đường Nguyễn Văn Linh, Phước Ninh, Hải Châu, Đà Nẵng",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "city": "Đà Nẵng",
+    "coordinates": {
+      "latitude": 16.061,
+      "longitude": 108.2268
+    },
+    "currency": "VND",
+    "description": "Cây cầu thép mô phỏng hình rồng thời Lý bắc qua sông Hàn, biểu diễn phun lửa và phun nước độc đáo vào 21:00 tối thứ Bảy và Chủ Nhật.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.2268,
+        16.061
+      ]
+    },
+    "id": "act_loc_danang_dragon_bridge",
+    "imageUrl": "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 200000,
+    "priceFrom": 150000,
+    "rating": 4.9,
+    "reviewCount": 5600
+  },
+  {
+    "_id": "act_loc_hoian_ancient_town",
+    "name": "Phố Cổ Hội An & Chùa Cầu",
+    "address": "Đường Nguyễn Thị Minh Khai, Phường Minh An, TP. Hội An",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "city": "Hội An",
+    "coordinates": {
+      "latitude": 15.8775,
+      "longitude": 108.3283
+    },
+    "currency": "VND",
+    "description": "Đô thị cổ thương cảng quốc tế được bảo tồn nguyên vẹn với những bức tường vàng rêu phong, giàn hoa giấy và hàng ngàn ngọn đèn lồng lung linh soi bóng sông Hoài.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.3283,
+        15.8775
+      ]
+    },
+    "id": "act_loc_hoian_ancient_town",
+    "imageUrl": "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 144000,
+    "priceFrom": 120000,
+    "rating": 4.95,
+    "reviewCount": 8200
+  },
+  {
+    "_id": "act_loc_hoian_bay_mau_coconut",
+    "name": "Rừng Dừa Bảy Mẫu Cẩm Thanh",
+    "address": "Thôn Vạn Lăng, Xã Cẩm Thanh, TP. Hội An",
+    "categories": [
+      "Công viên & vườn",
+      "Các điểm tham quan khác",
+      "Vé tham quan"
+    ],
+    "city": "Hội An",
+    "coordinates": {
+      "latitude": 15.8672,
+      "longitude": 108.3685
+    },
+    "currency": "VND",
+    "description": "Không gian miền Tây sông nước thu nhỏ giữa lòng phố Hội với trải nghiệm đi thuyền thúng len lỏi giữa rặng dừa nước và xem màn múa thúng xoay điệu nghệ.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.3685,
+        15.8672
+      ]
+    },
+    "id": "act_loc_hoian_bay_mau_coconut",
+    "imageUrl": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 180000,
+    "priceFrom": 150000,
+    "rating": 4.8,
+    "reviewCount": 3900
+  },
+  {
+    "_id": "act_loc_ninhbinh_trang_an",
+    "name": "Quần Thể Danh Thắng Tràng An",
+    "address": "Tràng An, Trường Yên, Hoa Lư, Ninh Bình",
+    "categories": [
+      "Công viên & vườn",
+      "Các điểm tham quan khác",
+      "Vé tham quan"
+    ],
+    "city": "Ninh Bình",
+    "coordinates": {
+      "latitude": 20.2535,
+      "longitude": 105.9082
+    },
+    "currency": "VND",
+    "description": "Di sản Văn hóa và Thiên nhiên Thế giới kép duy nhất tại Đông Nam Á với hệ thống hang động xuyên thủy, núi đá vôi sừng sững trên dòng sông Sào Khê ngọc bích.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        105.9082,
+        20.2535
+      ]
+    },
+    "id": "act_loc_ninhbinh_trang_an",
+    "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 300000,
+    "priceFrom": 250000,
+    "rating": 4.96,
+    "reviewCount": 6700
+  },
+  {
+    "_id": "act_loc_ninhbinh_hang_mua",
+    "name": "Hang Múa & Đỉnh Ngoạ Long",
+    "address": "Khê Đầu Hạ, Ninh Xuân, Hoa Lư, Ninh Bình",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "city": "Ninh Bình",
+    "coordinates": {
+      "latitude": 20.2315,
+      "longitude": 105.9325
+    },
+    "currency": "VND",
+    "description": "Chinh phục gần 500 bậc đá tựa Vạn Lý Trường Thành thu nhỏ để chạm tới đỉnh Ngoạ Long ngắm trọn vẹn cảnh sắc Tam Cốc và đồng lúa chín vàng ươm.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        105.9325,
+        20.2315
+      ]
+    },
+    "id": "act_loc_ninhbinh_hang_mua",
+    "imageUrl": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 120000,
+    "priceFrom": 100000,
+    "rating": 4.85,
+    "reviewCount": 4200
+  },
+  {
+    "_id": "act_loc_sapa_fansipan",
+    "name": "Đỉnh Fansipan – Sun World Fansipan Legend",
+    "address": "Đường Nguyễn Chí Thanh, Thị xã Sa Pa, Lào Cai",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "city": "Sa Pa",
+    "coordinates": {
+      "latitude": 22.3035,
+      "longitude": 103.7752
+    },
+    "currency": "VND",
+    "description": "Chinh phục Nóc nhà Đông Dương ở độ cao 3.143m bằng hệ thống cáp treo 3 dây hiện đại nhất thế giới và quần thể tâm linh kỳ vĩ trên đỉnh mây ngàn.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        103.7752,
+        22.3035
+      ]
+    },
+    "id": "act_loc_sapa_fansipan",
+    "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 1020000,
+    "priceFrom": 850000,
+    "rating": 4.95,
+    "reviewCount": 7300
+  },
+  {
+    "_id": "act_loc_sapa_cat_cat",
+    "name": "Bản Cát Cát Sa Pa",
+    "address": "Xã Hoàng Liên, Thị xã Sa Pa, Lào Cai",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "city": "Sa Pa",
+    "coordinates": {
+      "latitude": 22.3275,
+      "longitude": 103.8315
+    },
+    "currency": "VND",
+    "description": "Ngôi làng cổ người Mông đẹp như tranh vẽ nép mình dưới chân dãy Hoàng Liên Sơn với cọn nước khổng lồ, ruộng bậc thang và suối Tiên Sa róc rách.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        103.8315,
+        22.3275
+      ]
+    },
+    "id": "act_loc_sapa_cat_cat",
+    "imageUrl": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 180000,
+    "priceFrom": 150000,
+    "rating": 4.7,
+    "reviewCount": 4600
+  },
+  {
+    "_id": "act_loc_phuquoc_grand_world",
+    "name": "Grand World Phú Quốc (Thành Phố Không Ngủ)",
+    "address": "Khu Bãi Dài, Gành Dầu, TP. Phú Quốc",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc",
+      "Trò chơi & giải trí"
+    ],
+    "city": "Phú Quốc",
+    "coordinates": {
+      "latitude": 10.3282,
+      "longitude": 103.8585
+    },
+    "currency": "VND",
+    "description": "Trung tâm vui chơi giải trí 24/7 với kênh đào Venice lãng mạn, thuyền Gondola quý tộc và show thực cảnh nhạc nước Sắc Màu Venice triệu đô.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        103.8585,
+        10.3282
+      ]
+    },
+    "id": "act_loc_phuquoc_grand_world",
+    "imageUrl": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 200000,
+    "priceFrom": 150000,
+    "rating": 4.8,
+    "reviewCount": 5100
+  },
+  {
+    "_id": "act_loc_phuquoc_bai_sao",
+    "name": "Bãi Sao Phú Quốc",
+    "address": "Ấp Bãi Sao, Phường An Thới, TP. Phú Quốc",
+    "categories": [
+      "Công viên & vườn",
+      "Các điểm tham quan khác",
+      "Vé tham quan"
+    ],
+    "city": "Phú Quốc",
+    "coordinates": {
+      "latitude": 10.0525,
+      "longitude": 104.0325
+    },
+    "currency": "VND",
+    "description": "Bãi biển đẹp bậc nhất đảo Ngọc với bãi cát trắng mịn như kem dài hơn 7km uốn lượn bên làn nước xanh trong vắt thấy đáy và hàng dừa nghiêng bóng.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        104.0325,
+        10.0525
+      ]
+    },
+    "id": "act_loc_phuquoc_bai_sao",
+    "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 200000,
+    "priceFrom": 150000,
+    "rating": 4.75,
+    "reviewCount": 4800
+  },
+  {
+    "_id": "act_loc_halong_dao_titop",
+    "name": "Đảo Ti Tốp",
+    "address": "Vịnh Hạ Long, TP. Hạ Long, Quảng Ninh, Việt Nam",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "city": "Hạ Long",
+    "coordinates": {
+      "latitude": 20.8592,
+      "longitude": 107.0805
+    },
+    "currency": "VND",
+    "description": "Điểm ngắm toàn cảnh kỳ quan Vịnh Hạ Long 360 độ từ trên đỉnh núi đá vôi và bãi tắm hình vành trăng lưỡi liềm với làn nước trong xanh ngọc bích.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        107.0805,
+        20.8592
+      ]
+    },
+    "id": "act_loc_halong_dao_titop",
+    "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 300000,
+    "priceFrom": 250000,
+    "rating": 4.9,
+    "reviewCount": 5300
+  },
+  {
+    "_id": "act_loc_halong_hang_sung_sot",
+    "name": "Hang Sửng Sốt",
+    "address": "Đảo Bồ Hòn, Vịnh Hạ Long, TP. Hạ Long, Quảng Ninh, Việt Nam",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "city": "Hạ Long",
+    "coordinates": {
+      "latitude": 20.8445,
+      "longitude": 107.0912
+    },
+    "currency": "VND",
+    "description": "Một trong những hang động karst lớn và tráng lệ nhất Vịnh Hạ Long với hệ thống nhũ đá lung linh ngàn năm tuổi khiến du khách ngỡ ngàng.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        107.0912,
+        20.8445
+      ]
+    },
+    "id": "act_loc_halong_hang_sung_sot",
+    "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 348000,
+    "priceFrom": 290000,
+    "rating": 4.95,
+    "reviewCount": 6100
+  },
+  {
+    "_id": "act_loc_halong_cua_van_village",
+    "name": "Làng chài Cửa Vạn",
+    "address": "Vịnh Hạ Long, Xã Hùng Thắng, TP. Hạ Long, Quảng Ninh, Việt Nam",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "city": "Hạ Long",
+    "coordinates": {
+      "latitude": 20.8755,
+      "longitude": 107.1245
+    },
+    "currency": "VND",
+    "description": "Làng chài cổ kính nằm lọt thỏm giữa những vách núi đá vôi sừng sững, được bình chọn vào top những ngôi làng đẹp nhất thế giới.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        107.1245,
+        20.8755
+      ]
+    },
+    "id": "act_loc_halong_cua_van_village",
+    "imageUrl": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 216000,
+    "priceFrom": 180000,
+    "rating": 4.8,
+    "reviewCount": 3800
+  },
+  {
+    "_id": "act_loc_halong_sun_world",
+    "name": "Sun World Hạ Long Complex",
+    "address": "Số 9 Đường Hạ Long, Bãi Cháy, TP. Hạ Long, Quảng Ninh",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "city": "Hạ Long",
+    "coordinates": {
+      "latitude": 20.9542,
+      "longitude": 107.0545
+    },
+    "currency": "VND",
+    "description": "Tổ hợp vui chơi ven biển đẳng cấp quốc tế với Cáp treo Nữ Hoàng 2 tầng kỷ lục Guinness và Vòng quay Mặt Trời Sun Wheel ngắm trọn vịnh đêm.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        107.0545,
+        20.9542
+      ]
+    },
+    "id": "act_loc_halong_sun_world",
+    "imageUrl": "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 420000,
+    "priceFrom": 350000,
+    "rating": 4.85,
+    "reviewCount": 5200
+  },
+  {
+    "_id": "act_loc_caobang_ban_gioc_waterfall",
+    "name": "Thác Bản Giốc",
+    "address": "Xã Đàm Thủy, Huyện Trùng Khánh, Cao Bằng, Việt Nam",
+    "categories": [
+      "Công viên & vườn",
+      "Các điểm tham quan khác",
+      "Vé tham quan"
+    ],
+    "city": "Cao Bằng",
+    "coordinates": {
+      "latitude": 22.8539,
+      "longitude": 106.7238
+    },
+    "currency": "VND",
+    "description": "Thác nước tự nhiên lớn thứ tư thế giới trên đường biên giới quốc gia, nước tuôn bọt trắng xóa như dải lụa tiên giữa thung lũng lúa xanh ngút ngàn.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.7238,
+        22.8539
+      ]
+    },
+    "id": "act_loc_caobang_ban_gioc_waterfall",
+    "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 54000,
+    "priceFrom": 45000,
+    "rating": 4.96,
+    "reviewCount": 4800
+  },
+  {
+    "_id": "act_loc_caobang_dong_nguom_ngao",
+    "name": "Động Ngườm Ngao",
+    "address": "Bản Gun, Xã Đàm Thủy, Huyện Trùng Khánh, Cao Bằng, Việt Nam",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "city": "Cao Bằng",
+    "coordinates": {
+      "latitude": 22.8415,
+      "longitude": 106.6965
+    },
+    "currency": "VND",
+    "description": "Kiệt tác hang động đá vôi dài hơn 2.144m hình thành hơn 300 triệu năm trước với thạch nhũ hình đài sen úp ngược và suối ngầm róc rách.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.6965,
+        22.8415
+      ]
+    },
+    "id": "act_loc_caobang_dong_nguom_ngao",
+    "imageUrl": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 54000,
+    "priceFrom": 45000,
+    "rating": 4.88,
+    "reviewCount": 3100
+  },
+  {
+    "_id": "act_loc_caobang_chua_truc_lam_ban_gioc",
+    "name": "Chùa Phật Tích Trúc Lâm Bản Giốc",
+    "address": "Núi Phia Nhằn, Xã Đàm Thủy, Huyện Trùng Khánh, Cao Bằng, Việt Nam",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "city": "Cao Bằng",
+    "coordinates": {
+      "latitude": 22.8505,
+      "longitude": 106.7195
+    },
+    "currency": "VND",
+    "description": "Ngôi chùa đầu tiên tại vùng biên cương cực Bắc của Tổ quốc tọa lạc trên núi Phia Nhằn, nơi du khách chiêm bái và phóng tầm mắt ngắm trọn thác Bản Giốc.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.7195,
+        22.8505
+      ]
+    },
+    "id": "act_loc_caobang_chua_truc_lam_ban_gioc",
+    "imageUrl": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 200000,
+    "priceFrom": 150000,
+    "rating": 4.8,
+    "reviewCount": 2400
+  },
+  {
+    "_id": "act_loc_quangbinh_hang_son_doong",
+    "name": "Hang Sơn Đoòng",
+    "address": "Vườn Quốc gia Phong Nha - Kẻ Bàng, Tân Trạch, Bố Trạch, Quảng Bình, Việt Nam",
+    "categories": [
+      "Công viên & vườn",
+      "Các điểm tham quan khác",
+      "Vé tham quan"
+    ],
+    "city": "Quảng Bình",
+    "coordinates": {
+      "latitude": 17.4585,
+      "longitude": 106.2872
+    },
+    "currency": "VND",
+    "description": "Hang động tự nhiên lớn nhất thế giới ẩn chứa cả khu rừng nguyên sinh Vườn Địa Đàng, sông ngầm uốn lượn và những khối thạch nhũ khổng lồ cao đến 70m.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.2872,
+        17.4585
+      ]
+    },
+    "id": "act_loc_quangbinh_hang_son_doong",
+    "imageUrl": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 86400000,
+    "priceFrom": 72000000,
+    "rating": 5,
+    "reviewCount": 2100
+  },
+  {
+    "_id": "act_loc_quangbinh_hang_en",
+    "name": "Hang Én",
+    "address": "Vườn Quốc gia Phong Nha - Kẻ Bàng, Tân Trạch, Bố Trạch, Quảng Bình, Việt Nam",
+    "categories": [
+      "Công viên & vườn",
+      "Các điểm tham quan khác",
+      "Vé tham quan"
+    ],
+    "city": "Quảng Bình",
+    "coordinates": {
+      "latitude": 17.4325,
+      "longitude": 106.3015
+    },
+    "currency": "VND",
+    "description": "Hang động lớn thứ ba thế giới với bãi cắm trại bờ cát trắng mịn bên hồ nước ngầm xanh ngọc bích, nơi hàng triệu cánh én chao lượn mỗi mùa hè.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.3015,
+        17.4325
+      ]
+    },
+    "id": "act_loc_quangbinh_hang_en",
+    "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 9000000,
+    "priceFrom": 7500000,
+    "rating": 4.95,
+    "reviewCount": 1850
+  },
+  {
+    "_id": "act_loc_quangbinh_song_chay_hang_toi",
+    "name": "Sông Chày - Hang Tối",
+    "address": "Xã Sơn Trạch, Huyện Bố Trạch, Quảng Bình, Việt Nam",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "city": "Quảng Bình",
+    "coordinates": {
+      "latitude": 17.5685,
+      "longitude": 106.2345
+    },
+    "currency": "VND",
+    "description": "Tuyến du lịch sinh thái mạo hiểm hấp dẫn với đường trượt Zipline 400m vào cửa hang, chèo thuyền Kayak trên dòng sông Chày xanh ngọc và tắm bùn khoáng tự nhiên.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.2345,
+        17.5685
+      ]
+    },
+    "id": "act_loc_quangbinh_song_chay_hang_toi",
+    "imageUrl": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 540000,
+    "priceFrom": 450000,
+    "rating": 4.86,
+    "reviewCount": 4200
+  },
+  {
+    "_id": "act_loc_intl_st_beatus_caves",
+    "name": "St. Beatus Caves & Interlaken",
+    "address": "3652 Beatenberg, Switzerland",
+    "categories": [
+      "Công viên & vườn",
+      "Các điểm tham quan khác",
+      "Vé tham quan"
+    ],
+    "city": "Thụy Sĩ",
+    "coordinates": {
+      "latitude": 46.6845,
+      "longitude": 7.7812
+    },
+    "currency": "VND",
+    "description": "Hệ thống hang động đá vôi cổ xưa nép mình bên hồ Thun nước xanh biếc và thác nước ngầm hùng vĩ, bao quanh bởi đồng cỏ xanh mướt và rặng núi Alps tuyết phủ.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        7.7812,
+        46.6845
+      ]
+    },
+    "id": "act_loc_intl_st_beatus_caves",
+    "imageUrl": "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 588000,
+    "priceFrom": 490000,
+    "rating": 4.9,
+    "reviewCount": 3900
+  },
+  {
+    "_id": "act_loc_intl_icefields_parkway",
+    "name": "Icefields Parkway & Hồ Bow (Banff, Canada)",
+    "address": "Highway 93N, Banff National Park, AB, Canada",
+    "categories": [
+      "Công viên & vườn",
+      "Các điểm tham quan khác",
+      "Vé tham quan"
+    ],
+    "city": "Canada",
+    "coordinates": {
+      "latitude": 51.6667,
+      "longitude": -116.45
+    },
+    "currency": "VND",
+    "description": "Một trong những cung đường ngoạn mục nhất thế giới dài 232km nối liền Banff và Jasper, nổi bật với hồ Bow xanh ngọc bích, sông băng Crowfoot Glacier và đỉnh núi tuyết Rocky.",
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        -116.45,
+        51.6667
+      ]
+    },
+    "id": "act_loc_intl_icefields_parkway",
+    "imageUrl": "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1200&q=80",
+    "originalPrice": 336000,
+    "priceFrom": 280000,
+    "rating": 4.98,
+    "reviewCount": 6700
   }
 ]
