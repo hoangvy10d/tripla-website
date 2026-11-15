@@ -58,7 +58,7 @@ export class ExploreMapComponent implements AfterViewInit, OnDestroy {
   private cdr = inject(ChangeDetectorRef);
   private zone = inject(NgZone);
   private savedTrips = inject(SavedTrips);
-  private readonly apiBase = 'http://localhost:3000/api/v1';
+  private readonly apiBase = '/api/v1';
 
   places: MapPlace[] = [];
   categories: string[] = ['Tất cả'];

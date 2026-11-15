@@ -244,7 +244,7 @@ describe('Q15 Simulated Payment Gateway & Cart Checkout', () => {
     expect(harness.routeNativeElement!.textContent).toContain('Amanoi Vinh Hy');
 
     page.proceed();
-    const bookingReq = httpMock.expectOne('http://localhost:3000/api/v1/bookings');
+    const bookingReq = httpMock.expectOne('/api/v1/bookings');
     expect(bookingReq.request.body.fromCart).toBe(true);
     expect(bookingReq.request.body.awaitPayment).toBe(true);
     bookingReq.flush({
@@ -264,7 +264,7 @@ describe('Q15 Simulated Payment Gateway & Cart Checkout', () => {
     // Simulate failed payment: cart remains intact and booking remains pending
     page.selectPaymentMethod('bank_transfer');
     page.simulatePayment('failed');
-    const failReq = httpMock.expectOne('http://localhost:3000/api/v1/payments');
+    const failReq = httpMock.expectOne('/api/v1/payments');
     expect(failReq.request.body.payment_method).toBe('bank_transfer');
     expect(failReq.request.body.simulateResult).toBe('failed');
     failReq.flush(
@@ -279,7 +279,7 @@ describe('Q15 Simulated Payment Gateway & Cart Checkout', () => {
     // Retry with credit_card and succeed -> clears cart and issues E-Voucher
     page.selectPaymentMethod('credit_card');
     page.simulatePayment('success');
-    const okReq = httpMock.expectOne('http://localhost:3000/api/v1/payments');
+    const okReq = httpMock.expectOne('/api/v1/payments');
     expect(okReq.request.body.payment_method).toBe('credit_card');
     expect(okReq.request.body.simulateResult).toBe('success');
     okReq.flush({

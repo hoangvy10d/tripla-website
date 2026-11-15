@@ -37,7 +37,7 @@ export class TripPlanningPage {
   readonly authService = inject(AuthService);
   private readonly cartService = inject(BookingCartService);
   readonly isMongoConnected = signal(!!this.http);
-  private readonly apiBase = 'http://localhost:3000/api/v1';
+  private readonly apiBase = '/api/v1';
   private readonly source = inject(PlanningPlacesService);
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);

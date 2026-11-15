@@ -40,7 +40,7 @@ const ACTIVE_PROFILE_KEY = 'tripla_active_profile';
 export class AuthService {
   private readonly http = injectLiveHttp();
   private readonly router = inject(Router, { optional: true });
-  private readonly apiBase = 'http://localhost:3000/api/v1';
+  private readonly apiBase = '/api/v1';
 
   isModalOpen = signal<boolean>(false);
   currentUser = signal<AuthUserProfile | null>(null);

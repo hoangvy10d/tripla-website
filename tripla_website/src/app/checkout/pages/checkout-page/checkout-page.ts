@@ -199,7 +199,7 @@ export class CheckoutPage {
 
       this.http
         .post<{ success?: boolean; booking?: any; booking_code?: string; message?: string }>(
-          'http://localhost:3000/api/v1/bookings',
+          '/api/v1/bookings',
           {
             fromCart: true,
             awaitPayment: true,
@@ -262,7 +262,7 @@ export class CheckoutPage {
       this.paymentSubmitting.set(true);
       this.http
         .post<any>(
-          'http://localhost:3000/api/v1/payments',
+          '/api/v1/payments',
           {
             booking_id: booking._id || booking.booking_code,
             payment_method: this.paymentMethod(),
@@ -285,7 +285,7 @@ export class CheckoutPage {
               if (planId) {
                 this.http
                   ?.post(
-                    'http://localhost:3000/api/v1/trips',
+                    '/api/v1/trips',
                     { plan_id: planId, trip_status: 'upcoming' },
                     { headers: this.authService.getAuthHeaders() },
                   )
@@ -469,7 +469,7 @@ export class CheckoutPage {
         this.notice.set('Đang gửi yêu cầu đặt chỗ lên hệ thống...');
         this.http
           .post<{ success?: boolean; booking?: { booking_code?: string; bookingCode?: string } }>(
-            'http://localhost:3000/api/v1/bookings',
+            '/api/v1/bookings',
             bookingPayload,
           )
           .subscribe({

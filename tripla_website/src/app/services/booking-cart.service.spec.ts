@@ -52,7 +52,7 @@ describe('BookingCartService (Q5)', () => {
       })
       .subscribe((res) => (addRes = res));
 
-    const addReq = httpMock.expectOne('http://localhost:3000/api/v1/cart');
+    const addReq = httpMock.expectOne('/api/v1/cart');
     expect(addReq.request.method).toBe('POST');
     addReq.flush({
       success: true,
@@ -81,7 +81,7 @@ describe('BookingCartService (Q5)', () => {
     let updateRes: any = null;
     service.updateCartItem('item1', 3).subscribe((res) => (updateRes = res));
 
-    const putReq = httpMock.expectOne('http://localhost:3000/api/v1/cart/item1');
+    const putReq = httpMock.expectOne('/api/v1/cart/item1');
     expect(putReq.request.method).toBe('PUT');
     putReq.flush(
       {

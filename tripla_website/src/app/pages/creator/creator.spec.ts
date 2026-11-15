@@ -32,9 +32,9 @@ describe('CreatorComponent', () => {
     expect(component).toBeTruthy();
     fixture.detectChanges();
 
-    const profileReq = httpMock.expectOne('http://localhost:3000/api/v1/users/u1/profile');
-    const hotelsReq = httpMock.expectOne('http://localhost:3000/api/v1/hotels');
-    const locationsReq = httpMock.expectOne('http://localhost:3000/api/v1/locations');
+    const profileReq = httpMock.expectOne('/api/v1/users/u1/profile');
+    const hotelsReq = httpMock.expectOne('/api/v1/hotels');
+    const locationsReq = httpMock.expectOne('/api/v1/locations');
 
     profileReq.flush({
       user: {
@@ -65,9 +65,9 @@ describe('CreatorComponent', () => {
 
   it('should toggle upload modal', () => {
     fixture.detectChanges();
-    httpMock.expectOne('http://localhost:3000/api/v1/users/u1/profile').flush({ user: {}, contents: [] });
-    httpMock.expectOne('http://localhost:3000/api/v1/hotels').flush({ items: [] });
-    httpMock.expectOne('http://localhost:3000/api/v1/locations').flush({ items: [] });
+    httpMock.expectOne('/api/v1/users/u1/profile').flush({ user: {}, contents: [] });
+    httpMock.expectOne('/api/v1/hotels').flush({ items: [] });
+    httpMock.expectOne('/api/v1/locations').flush({ items: [] });
 
     expect(component.isUploadOpen).toBe(false);
     component.openUpload();

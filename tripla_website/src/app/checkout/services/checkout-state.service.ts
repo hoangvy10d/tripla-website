@@ -27,7 +27,7 @@ type HotelResolution =
 export class CheckoutStateService {
   // Memory only. Personal details never enter URLs or browser storage.
   private readonly http = inject(HttpClient, { optional: true });
-  private readonly apiBase = 'http://localhost:3000/api/v1';
+  private readonly apiBase = '/api/v1';
   private readonly drafts = signal<Record<string, BookingDraft>>({});
   private readonly clock = signal(Date.now());
   readonly now = this.clock.asReadonly();

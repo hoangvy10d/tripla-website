@@ -26,7 +26,7 @@ import {
 export class TripShortService {
   private readonly http = injectLiveHttp();
   private readonly authService = inject(AuthService);
-  readonly apiBaseUrl = 'http://localhost:3000/api/v1';
+  readonly apiBaseUrl = '/api/v1';
 
   // 1. DATA SIGNALS (Tự động đồng bộ từ MongoDB REST API `Contents`, `Hotels`, `Rooms`, `Locations`)
   private readonly basePointDataMap = signal<Record<DrawerKey, PointData>>(POINT_DATA_MOCK);

@@ -373,7 +373,7 @@ export function filterActivities(
 @Injectable({ providedIn: 'root' })
 export class ActivitySearchService {
   private readonly http = injectLiveHttp();
-  private readonly apiBase = 'http://localhost:3000/api/v1';
+  private readonly apiBase = '/api/v1';
 
   private buildActivityDetails(activity: Activity): ActivityDetails {
     const id = activity.id;

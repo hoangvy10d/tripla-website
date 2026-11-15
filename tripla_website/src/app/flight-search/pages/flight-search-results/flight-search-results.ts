@@ -61,7 +61,7 @@ export class FlightSearchResults {
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
   private readonly http = injectLiveHttp();
-  private readonly apiBase = 'http://localhost:3000/api/v1';
+  private readonly apiBase = '/api/v1';
   private readonly checkout=inject(CheckoutStateService);
   readonly checkoutError=signal('');
   readonly state = signal<AppliedFlightSearch | null>(null);

@@ -23,7 +23,7 @@ export interface SavedTrip {
 export class SavedTrips {
   private readonly storageKey = 'tripla.savedTrips';
   private readonly http = injectLiveHttp();
-  private readonly apiBase = 'http://localhost:3000/api/v1';
+  private readonly apiBase = '/api/v1';
   private readonly state = signal<SavedTrip[]>([]);
   readonly trips = this.state.asReadonly();
   readonly error = signal('');

@@ -330,7 +330,7 @@ export class BookingDetailComponent implements OnInit {
   private readonly http = injectLiveHttp();
   readonly authService = inject(AuthService);
   private readonly cdr = inject(ChangeDetectorRef);
-  private readonly apiBase = 'http://localhost:3000/api/v1';
+  private readonly apiBase = '/api/v1';
 
   loading = true;
   error = '';

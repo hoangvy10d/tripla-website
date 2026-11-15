@@ -43,27 +43,27 @@ describe('ProfileComponent (Q17 Hub)', () => {
   });
 
   function flushInitialLoads(): void {
-    httpMock.expectOne('http://localhost:3000/api/v1/bookings/my').flush({
+    httpMock.expectOne('/api/v1/bookings/my').flush({
       success: true,
       items: [
         { _id: 'b1', booking_code: 'TRP-CONFIRMED', booking_status: 'confirmed', total_price: 2000000, title: 'Amanoi' },
         { _id: 'b2', booking_code: 'TRP-CHECKEDIN', booking_status: 'checked_in', total_price: 3000000, title: 'Regent' },
       ],
     });
-    httpMock.expectOne('http://localhost:3000/api/v1/trip-plans').flush({
+    httpMock.expectOne('/api/v1/trip-plans').flush({
       success: true,
       items: [{ _id: 'p1', plan_name: 'Vĩnh Hy', estimated_budget: 5000000, start_date: '2026-12-01', end_date: '2026-12-03' }],
     });
-    httpMock.expectOne('http://localhost:3000/api/v1/trips/my').flush({
+    httpMock.expectOne('/api/v1/trips/my').flush({
       success: true,
       items: [{ _id: 't1', trip_status: 'upcoming', plan_id: { _id: 'p1', plan_name: 'Vĩnh Hy', estimated_budget: 5000000 } }],
     });
-    httpMock.expectOne('http://localhost:3000/api/v1/notifications').flush({
+    httpMock.expectOne('/api/v1/notifications').flush({
       success: true,
       unreadCount: 1,
       items: [{ _id: 'n1', title: 'Xác nhận đặt phòng', content: 'Đơn #TRP-CONFIRMED đã xác nhận', is_read: false, type: 'booking' }],
     });
-    httpMock.expectOne('http://localhost:3000/api/v1/users/u1-oid/profile').flush({
+    httpMock.expectOne('/api/v1/users/u1-oid/profile').flush({
       success: true,
       user: { _id: 'u1-oid', full_name: 'Hoàng Vy', email: 'vy@tripla.vn', role: 'tourist' },
       wishlists: [],
@@ -86,12 +86,12 @@ describe('ProfileComponent (Q17 Hub)', () => {
 
     // Filter bookings by status
     comp.setBookingStatusFilter('confirmed');
-    const filterReq = httpMock.expectOne('http://localhost:3000/api/v1/bookings/my?status=confirmed');
+    const filterReq = httpMock.expectOne('/api/v1/bookings/my?status=confirmed');
     filterReq.flush({ success: true, items: [] });
 
     // Mark notification as read
     comp.markNotificationRead('n1');
-    const readReq = httpMock.expectOne('http://localhost:3000/api/v1/notifications/n1/read');
+    const readReq = httpMock.expectOne('/api/v1/notifications/n1/read');
     expect(readReq.request.method).toBe('PUT');
     readReq.flush({ success: true });
     expect(comp.unreadNotificationsCount).toBe(0);
@@ -130,11 +130,11 @@ describe('ProfileComponent (Q17 Hub)', () => {
     const comp = fixture.componentInstance;
     fixture.detectChanges();
 
-    httpMock.expectOne('http://localhost:3000/api/v1/bookings/my').flush({ success: true, items: [] });
-    httpMock.expectOne('http://localhost:3000/api/v1/trip-plans').flush({ success: true, items: [] });
-    httpMock.expectOne('http://localhost:3000/api/v1/trips/my').flush({ success: true, items: [] });
-    httpMock.expectOne('http://localhost:3000/api/v1/notifications').flush({ success: true, unreadCount: 0, items: [] });
-    httpMock.expectOne('http://localhost:3000/api/v1/users/u1-oid/profile').flush({
+    httpMock.expectOne('/api/v1/bookings/my').flush({ success: true, items: [] });
+    httpMock.expectOne('/api/v1/trip-plans').flush({ success: true, items: [] });
+    httpMock.expectOne('/api/v1/trips/my').flush({ success: true, items: [] });
+    httpMock.expectOne('/api/v1/notifications').flush({ success: true, unreadCount: 0, items: [] });
+    httpMock.expectOne('/api/v1/users/u1-oid/profile').flush({
       success: true,
       user: {
         _id: 'u1-oid',

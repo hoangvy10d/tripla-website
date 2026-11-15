@@ -181,7 +181,7 @@ const FALLBACK_LUXURY_STAYS: LuxuryStay[] = [
 })
 export class TripShopService {
   private readonly http = injectLiveHttp();
-  private readonly API_URL = 'http://localhost:3000/api/v1/venues';
+  private readonly API_URL = '/api/v1/venues';
 
   getNavItems(): Observable<NavItem[]> {
     return of([

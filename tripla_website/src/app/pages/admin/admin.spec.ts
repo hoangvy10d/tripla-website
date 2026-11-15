@@ -76,14 +76,14 @@ describe('AdminComponent (Q7, Q8, Q9)', () => {
   };
 
   function flushInitialLoads(): void {
-    const dashReq = httpMock.expectOne('http://localhost:3000/api/v1/admin/dashboard');
+    const dashReq = httpMock.expectOne('/api/v1/admin/dashboard');
     expect(dashReq.request.headers.get('Authorization')).toBe('Bearer admin-test-token');
     dashReq.flush(sampleDashboard);
 
-    const provReq = httpMock.expectOne('http://localhost:3000/api/v1/admin/providers?status=approved');
+    const provReq = httpMock.expectOne('/api/v1/admin/providers?status=approved');
     provReq.flush(sampleProviders);
 
-    const topReq = httpMock.expectOne('http://localhost:3000/api/v1/admin/top-customers');
+    const topReq = httpMock.expectOne('/api/v1/admin/top-customers');
     topReq.flush(sampleTopCustomers);
   }
 
@@ -170,7 +170,7 @@ describe('AdminComponent (Q7, Q8, Q9)', () => {
     component.hotelForm.price_per_night = 4200000;
     component.saveHotelForm();
 
-    const postReq = httpMock.expectOne('http://localhost:3000/api/v1/admin/hotels');
+    const postReq = httpMock.expectOne('/api/v1/admin/hotels');
     expect(postReq.request.method).toBe('POST');
     expect(postReq.request.headers.get('Authorization')).toBe('Bearer admin-test-token');
     expect(postReq.request.body.provider_id).toBe('prov-3');
@@ -183,7 +183,7 @@ describe('AdminComponent (Q7, Q8, Q9)', () => {
     vi.spyOn(window, 'confirm').mockReturnValue(true);
     component.deleteItem(component.dataRows[0]);
 
-    const delReq = httpMock.expectOne('http://localhost:3000/api/v1/admin/hotels/hotel-1');
+    const delReq = httpMock.expectOne('/api/v1/admin/hotels/hotel-1');
     expect(delReq.request.method).toBe('DELETE');
     delReq.flush(
       { success: false, message: 'Không thể xóa khách sạn vì còn 1 đơn đặt phòng đang hoạt động.' },
@@ -200,7 +200,7 @@ describe('AdminComponent (Q7, Q8, Q9)', () => {
 
     component.updateBookingStatus(targetBooking, 'cancelled');
 
-    const putReq = httpMock.expectOne('http://localhost:3000/api/v1/admin/bookings/book-1/status');
+    const putReq = httpMock.expectOne('/api/v1/admin/bookings/book-1/status');
     expect(putReq.request.method).toBe('PUT');
     expect(putReq.request.body).toEqual({ booking_status: 'cancelled' });
     putReq.flush({
@@ -210,7 +210,7 @@ describe('AdminComponent (Q7, Q8, Q9)', () => {
       paymentRefunded: true
     });
 
-    const topRefresh = httpMock.expectOne('http://localhost:3000/api/v1/admin/top-customers');
+    const topRefresh = httpMock.expectOne('/api/v1/admin/top-customers');
     topRefresh.flush(sampleTopCustomers);
 
     expect(targetBooking.booking_status).toBe('cancelled');
@@ -224,7 +224,7 @@ describe('AdminComponent (Q7, Q8, Q9)', () => {
     component.setTab('community');
     component.filterReports('pending');
 
-    const repReq = httpMock.expectOne('http://localhost:3000/api/v1/admin/reports?status=pending');
+    const repReq = httpMock.expectOne('/api/v1/admin/reports?status=pending');
     repReq.flush({
       success: true,
       items: [
@@ -240,7 +240,7 @@ describe('AdminComponent (Q7, Q8, Q9)', () => {
     expect(component.reports.length).toBe(1);
 
     component.updateReportStatus(component.reports[0], 'dismissed');
-    const putReq = httpMock.expectOne('http://localhost:3000/api/v1/admin/reports/rep-1');
+    const putReq = httpMock.expectOne('/api/v1/admin/reports/rep-1');
     expect(putReq.request.method).toBe('PUT');
     expect(putReq.request.body).toEqual({ status: 'dismissed' });
     putReq.flush({ success: true, report: { _id: 'rep-1', status: 'dismissed' } });
@@ -252,7 +252,7 @@ describe('AdminComponent (Q7, Q8, Q9)', () => {
       status: 'pending',
       content_id: { _id: 'cnt-1', content_title: 'Bad Reel' }
     });
-    const delContentReq = httpMock.expectOne('http://localhost:3000/api/v1/admin/contents/cnt-1');
+    const delContentReq = httpMock.expectOne('/api/v1/admin/contents/cnt-1');
     expect(delContentReq.request.method).toBe('DELETE');
     delContentReq.flush({ success: true, resolvedReportsCount: 1 });
     expect(component.toastMessage).toContain('gỡ nội dung vi phạm');
@@ -261,7 +261,7 @@ describe('AdminComponent (Q7, Q8, Q9)', () => {
   it('Q19: queries paginated /admin/bookings with keyword/status and syncs real revenue via /admin/stats', () => {
     flushInitialLoads();
     component.loadAdminStats();
-    const statsReq = httpMock.expectOne('http://localhost:3000/api/v1/admin/stats');
+    const statsReq = httpMock.expectOne('/api/v1/admin/stats');
     statsReq.flush({
       success: true,
       stats: { revenue: 125000000, bookingsCount: 14, usersCount: 20, contentsCount: 9, pendingReportsCount: 3 }
@@ -273,7 +273,7 @@ describe('AdminComponent (Q7, Q8, Q9)', () => {
     component.bookingStatusFilter = 'confirmed';
     component.applyBookingFilter();
     const bookReq = httpMock.expectOne(
-      'http://localhost:3000/api/v1/admin/bookings?keyword=Amanoi&status=confirmed&page=1&limit=10'
+      '/api/v1/admin/bookings?keyword=Amanoi&status=confirmed&page=1&limit=10'
     );
     bookReq.flush({
       success: true,
@@ -293,7 +293,7 @@ describe('AdminComponent (Q7, Q8, Q9)', () => {
     component.setCategory('locations');
     component.openAddLocationModal();
 
-    const catReq = httpMock.expectOne('http://localhost:3000/api/v1/location-categories');
+    const catReq = httpMock.expectOne('/api/v1/location-categories');
     catReq.flush({
       success: true,
       categories: [
@@ -314,7 +314,7 @@ describe('AdminComponent (Q7, Q8, Q9)', () => {
     component.locationForm.location_category = 'nature';
     component.saveLocationForm();
 
-    const postLoc = httpMock.expectOne('http://localhost:3000/api/v1/admin/locations');
+    const postLoc = httpMock.expectOne('/api/v1/admin/locations');
     expect(postLoc.request.method).toBe('POST');
     expect(postLoc.request.body.location_category).toBe('nature');
     postLoc.flush({ success: true, location: { _id: 'loc-new', name: 'Đỉnh Bàn Cờ' } });
@@ -323,7 +323,7 @@ describe('AdminComponent (Q7, Q8, Q9)', () => {
 
     vi.spyOn(window, 'confirm').mockReturnValue(true);
     component.deleteItem({ id: 'loc-new', name: 'Đỉnh Bàn Cờ', sub: 'nature', price: 0 });
-    const delLoc = httpMock.expectOne('http://localhost:3000/api/v1/admin/locations/loc-new');
+    const delLoc = httpMock.expectOne('/api/v1/admin/locations/loc-new');
     expect(delLoc.request.method).toBe('DELETE');
     delLoc.flush({ success: true, deletedWishlists: 2, clearedLocationTags: 1, clearedPlanDetails: 1 });
     flushInitialLoads();

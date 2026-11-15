@@ -11,7 +11,7 @@ export class PlanningPlacesService {
   private readonly shorts = inject(TripshortService);
   private readonly activities = inject(ActivitySearchService);
   private readonly http = injectLiveHttp();
-  private readonly apiBase = 'http://localhost:3000/api/v1';
+  private readonly apiBase = '/api/v1';
 
   resolve(keys: readonly string[]): Observable<PlanningPlace[]> {
     if (!keys.length) return of([]);

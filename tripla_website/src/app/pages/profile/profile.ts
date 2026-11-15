@@ -21,7 +21,7 @@ export class ProfileComponent implements OnInit {
   private cdr = inject(ChangeDetectorRef);
   readonly authService = inject(AuthService);
 
-  private readonly apiBase = 'http://localhost:3000/api/v1';
+  private readonly apiBase = '/api/v1';
 
   activeProfileCode = '';
   isOwnProfile = true;

@@ -40,7 +40,7 @@ export interface CartApiResponse {
 export class BookingCartService {
   private readonly http = injectLiveHttp();
   private readonly authService = inject(AuthService);
-  private readonly apiBase = 'http://localhost:3000/api/v1';
+  private readonly apiBase = '/api/v1';
   private readonly sessionKeyStorage = 'tripla_cart_session';
 
   readonly items = signal<BookingCartItem[]>([]);

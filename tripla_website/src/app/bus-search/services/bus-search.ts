@@ -20,7 +20,7 @@ export function filterBusTrips(trips: readonly BusTrip[], filters: BusFilters): 
 @Injectable({ providedIn: 'root' })
 export class BusSearchService {
   private readonly http = injectLiveHttp();
-  private readonly apiBase = 'http://localhost:3000/api/v1';
+  private readonly apiBase = '/api/v1';
 
   details(id: string, state: BusSearchState): Observable<BusDetails | null> {
     if (this.http && id && !id.startsWith('demo-')) {

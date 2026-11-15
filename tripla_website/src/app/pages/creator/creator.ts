@@ -22,7 +22,7 @@ export class CreatorComponent implements OnInit {
   private authService = inject(AuthService);
   private cdr = inject(ChangeDetectorRef);
   private sanitizer = inject(DomSanitizer);
-  private readonly apiBase = 'http://localhost:3000/api/v1';
+  private readonly apiBase = '/api/v1';
 
   private readonly youtubeSafeUrlCache = new Map<string, SafeResourceUrl>();
 

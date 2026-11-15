@@ -50,7 +50,7 @@ describe('AuthService & adminGuard (Q2)', () => {
     let result: any = null;
     service.loginCust('0909111001', '123456').subscribe((res) => (result = res));
 
-    const req = httpMock.expectOne('http://localhost:3000/api/v1/auth/login-cust');
+    const req = httpMock.expectOne('/api/v1/auth/login-cust');
     expect(req.request.method).toBe('POST');
     expect(req.request.body).toEqual({ username: '0909111001', password: '123456' });
 
@@ -72,7 +72,7 @@ describe('AuthService & adminGuard (Q2)', () => {
 
     service.loginCust('admin@tripla.com', 'wrongpass').subscribe((res) => (result = res));
 
-    const req = httpMock.expectOne('http://localhost:3000/api/v1/auth/login-cust');
+    const req = httpMock.expectOne('/api/v1/auth/login-cust');
     req.flush(
       { success: false, errorCode: 'WRONG_ROLE', message: 'Tourist role required.' },
       { status: 403, statusText: 'Forbidden' }
@@ -118,7 +118,7 @@ describe('AuthService & adminGuard (Q2)', () => {
       })
       .subscribe((res) => (regRes = res));
 
-    const regReq = httpMock.expectOne('http://localhost:3000/api/v1/auth/register');
+    const regReq = httpMock.expectOne('/api/v1/auth/register');
     expect(regReq.request.method).toBe('POST');
     regReq.flush({
       success: true,
@@ -131,7 +131,7 @@ describe('AuthService & adminGuard (Q2)', () => {
     // /auth/me
     let meRes: any = null;
     service.fetchMe().subscribe((res) => (meRes = res));
-    const meReq = httpMock.expectOne('http://localhost:3000/api/v1/auth/me');
+    const meReq = httpMock.expectOne('/api/v1/auth/me');
     expect(meReq.request.headers.get('Authorization')).toBe('Bearer tok-new-1');
     meReq.flush({
       success: true,

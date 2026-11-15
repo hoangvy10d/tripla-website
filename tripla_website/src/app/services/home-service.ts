@@ -10,7 +10,7 @@ import { injectLiveHttp } from './live-http';
 })
 export class HomeService {
   private readonly http = injectLiveHttp();
-  private readonly apiBase = 'http://localhost:3000/api/v1';
+  private readonly apiBase = '/api/v1';
 
   private normalizeTripCard(raw: any, idx: number): TripCard {
     const rawPrice = raw?.price ?? raw?.pricePerNight ?? raw?.price_per_night;

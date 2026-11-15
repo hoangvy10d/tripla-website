@@ -68,7 +68,7 @@ describe('ExploreMapComponent', () => {
     fixture.detectChanges();
     await new Promise((resolve) => setTimeout(resolve, 0));
 
-    const req = httpMock.expectOne('http://localhost:3000/api/v1/map/places');
+    const req = httpMock.expectOne('/api/v1/map/places');
     req.flush({
       success: true,
       items: [

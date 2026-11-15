@@ -42,7 +42,7 @@ export class HotelSearchResults {
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
   private readonly http = injectLiveHttp();
-  private readonly apiBase = 'http://localhost:3000/api/v1';
+  private readonly apiBase = '/api/v1';
 
   readonly state = signal<HotelSearchState | null>(null);
   readonly error = signal('');

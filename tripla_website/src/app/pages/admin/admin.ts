@@ -73,7 +73,7 @@ export class AdminComponent implements OnInit {
   private cdr = inject(ChangeDetectorRef);
   private authService = inject(AuthService);
   private router = inject(Router);
-  private readonly apiBase = 'http://localhost:3000/api/v1';
+  private readonly apiBase = '/api/v1';
 
   @ViewChild('topCustomersCanvas') topCustomersCanvas?: ElementRef<HTMLCanvasElement>;
 
