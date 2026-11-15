@@ -62,7 +62,7 @@ app.get('/api/v1/health', (req, res) => {
     status: 'OK',
     server: 'my-server-mongodb (Normalized ERD + Modular Architecture)',
     mongoConnected: isMongoConnected(),
-    mongoUri: MONGO_URI,
+    mongoConfigured: Boolean(MONGO_URI),
     erdCollections: [
       'users',
       'providers (FK -> users)',
