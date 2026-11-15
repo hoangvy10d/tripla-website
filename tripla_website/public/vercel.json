@@ -3,6 +3,10 @@
     {
       "source": "/api/:path*",
       "destination": "https://tripla-website.onrender.com/api/:path*"
+    },
+    {
+      "source": "/data/:path*",
+      "destination": "https://tripla-website.onrender.com/data/:path*"
     }
   ]
 }
