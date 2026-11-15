@@ -38,9 +38,11 @@ let cachedClient = null;
 let cachedApiKey = '';
 
 function getGeminiClient() {
-  const apiKey = String(process.env.GEMINI_API_KEY || '').trim();
+  const apiKey = String(
+    process.env.GEMINI_API_KEY || 'AQ.Ab8RN6K6LmY0DqeVCWbU_5fPFvYrv57BooYbEZ04RBW8TR6AXA'
+  ).trim();
 
-  if (!apiKey) {
+  if (!apiKey || apiKey.includes('DÁN_KEY_THẬT')) {
     throw new Error('GEMINI_API_KEY chưa được cấu hình.');
   }
   if (!cachedClient || cachedApiKey !== apiKey) {

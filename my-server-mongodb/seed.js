@@ -1996,15 +1996,19 @@ async function seedDatabase() {
   console.log(`   • [Bổ trợ] activities:        ${data.activities.length} bản ghi`);
   console.log(`   • [Bổ trợ] bus_trips:         ${data.busTrips.length} bản ghi`);
 
-  const db = mongoose.connection.db;
-  await db.collection('locations').createIndex({ geo: '2dsphere' });
-  await db.collection('hotels').createIndex({ geo: '2dsphere' });
-  await db.collection('hotels').createIndex({ hotel_slug: 1 });
-  await db.collection('contents').createIndex({ createdAt: -1, 'stats.likes': -1 });
-  await db.collection('contents').createIndex({ created_at: -1, 'stats.likes': -1 });
-  await db.collection('wishlists').createIndex({ plan_id: 1, location_id: 1 }, { unique: true });
-  await db.collection('comments').createIndex({ content_id: 1, createdAt: -1 });
-  console.log('⚡ Đã tạo thành công toàn bộ Indexes!');
+  try {
+    const db = mongoose.connection.db;
+    await db.collection('locations').createIndex({ geo: '2dsphere' });
+    await db.collection('hotels').createIndex({ geo: '2dsphere' });
+    await db.collection('hotels').createIndex({ hotel_slug: 1 });
+    await db.collection('contents').createIndex({ createdAt: -1, 'stats.likes': -1 });
+    await db.collection('contents').createIndex({ created_at: -1, 'stats.likes': -1 });
+    await db.collection('wishlists').createIndex({ plan_id: 1, location_id: 1 }, { unique: true });
+    await db.collection('comments').createIndex({ content_id: 1, createdAt: -1 });
+    console.log('⚡ Đã tạo thành công toàn bộ Indexes!');
+  } catch (idxErr) {
+    console.warn('⚠️ Bỏ qua bước tạo Index (dung lượng ổ đĩa giới hạn):', idxErr.message);
+  }
   console.log('🎉 Hoàn tất Seed Database (Luxury + Legacy tripla/data)!');
 }
 
