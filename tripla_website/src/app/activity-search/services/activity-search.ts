@@ -120,6 +120,158 @@ const activities: Activity[] = [
     imageUrl: '/images/trangan.jpg',
     description: 'Một gợi ý khám phá cảnh sắc cho chuyến đi Ninh Bình.',
   },
+  {
+    id: 'demo-vungtau-christ',
+    name: 'Tượng Chúa Kito Vua & Mũi Nghinh Phong',
+    city: 'Vũng Tàu',
+    categories: ['Điểm mốc', 'Vé tham quan'],
+    imageUrl: '/images/Grassland.jpeg',
+    description: 'Chiêm ngưỡng toàn cảnh vịnh biển Vũng Tàu từ cánh tay bức tượng Chúa lớn nhất Đông Nam Á.',
+  },
+  {
+    id: 'demo-vungtau-homay',
+    name: 'Khu du lịch Hồ Mây Park Vũng Tàu',
+    city: 'Vũng Tàu',
+    categories: ['Công viên giải trí', 'Trò chơi & giải trí'],
+    imageUrl: '/resort-night-bg.png',
+    description: 'Tổ hợp vui chơi cáp treo ngắm biển trên đỉnh Núi Lớn.',
+  },
+  {
+    id: 'demo-nhatrang-vinwonders',
+    name: 'VinWonders Nha Trang (Đảo Hòn Tre)',
+    city: 'Nha Trang',
+    categories: ['Công viên giải trí', 'Công viên nước', 'Trò chơi & giải trí'],
+    imageUrl: '/images/tranganedit.jpeg',
+    description: 'Thiên đường giải trí đẳng cấp quốc tế trên đảo thiên đường Hòn Tre.',
+  },
+  {
+    id: 'demo-nhatrang-ponagar',
+    name: 'Tháp Bà Ponagar & Tắm bùn I-Resort',
+    city: 'Nha Trang',
+    categories: ['Điểm mốc', 'Vé tham quan'],
+    imageUrl: '/images/trangan.jpg',
+    description: 'Di tích Chăm Pa cổ kính và dịch vụ tắm bùn khoáng nóng thiên nhiên phục hồi năng lượng.',
+  },
+  {
+    id: 'demo-hoian-ancient',
+    name: 'Phố Cổ Hội An & Thả Hoa Đăng Sông Hoài',
+    city: 'Hội An',
+    categories: ['Điểm mốc', 'Vé tham quan'],
+    imageUrl: '/resort-night-bg.png',
+    description: 'Dạo bước giữa những dãy nhà cổ đèn lồng vàng son và đi thuyền ngắm hoàng hôn.',
+  },
+  {
+    id: 'demo-hoian-bay-mau',
+    name: 'Rừng Dừa Bảy Mẫu Cẩm Thanh',
+    city: 'Hội An',
+    categories: ['Các điểm tham quan khác', 'Vé tham quan'],
+    imageUrl: '/images/Grassland.jpeg',
+    description: 'Trải nghiệm đi thuyền thúng xoay độc đáo giữa rừng dừa nước bạt ngàn.',
+  },
+  {
+    id: 'demo-sapa-fansipan',
+    name: 'Đỉnh Fansipan – Sun World Fansipan Legend',
+    city: 'Sa Pa',
+    categories: ['Điểm mốc', 'Vé tham quan', 'Trò chơi & giải trí'],
+    imageUrl: '/images/ruongbacthangedit.jpeg',
+    description: 'Chinh phục nóc nhà Đông Dương 3.143m và chiêm bái quần thể tâm linh trên mây.',
+  },
+  {
+    id: 'demo-sapa-catcat',
+    name: 'Bản Cát Cát Sa Pa',
+    city: 'Sa Pa',
+    categories: ['Vé tham quan', 'Các điểm tham quan khác'],
+    imageUrl: '/images/Grassland.jpeg',
+    description: 'Làng cổ H’Mông thơ mộng bên dòng suối Tiên Sa và ruộng bậc thang hùng vĩ.',
+  },
+  {
+    id: 'demo-halong-bay',
+    name: 'Vịnh Hạ Long & Hang Sửng Sốt',
+    city: 'Hạ Long',
+    categories: ['Vé tham quan', 'Các điểm tham quan khác'],
+    imageUrl: '/images/trangan.jpg',
+    description: 'Hải trình khám phá kỳ quan thiên nhiên thế giới với hang động đá vôi tráng lệ.',
+  },
+  {
+    id: 'demo-halong-titop',
+    name: 'Đảo Ti Tốp (Titop) – Ngắm toàn cảnh Vịnh Hạ Long',
+    city: 'Hạ Long',
+    categories: ['Vé tham quan', 'Điểm mốc', 'Các điểm tham quan khác'],
+    imageUrl: 'https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1000&q=80',
+    description: 'Hòn đảo nổi tiếng với bãi cát hình vầng trăng và đài quan sát toàn cảnh Vịnh Hạ Long từ trên cao.',
+  },
+  {
+    id: 'demo-halong-sungsot',
+    name: 'Hang Sửng Sốt – Kỳ quan hang động Vịnh Hạ Long',
+    city: 'Hạ Long',
+    categories: ['Vé tham quan', 'Điểm mốc'],
+    imageUrl: 'https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1000&q=80',
+    description: 'Một trong những hang động thạch nhũ lớn và đẹp nhất tại Vịnh Hạ Long.',
+  },
+  {
+    id: 'demo-halong-cuavan',
+    name: 'Làng chài Cửa Vạn & Chèo Kayak Vịnh Hạ Long',
+    city: 'Hạ Long',
+    categories: ['Vé tham quan', 'Các điểm tham quan khác'],
+    imageUrl: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=1000&q=80',
+    description: 'Làng chài nổi yên bình giữa lòng di sản thiên nhiên thế giới, khám phá văn hóa ngư dân miền biển.',
+  },
+  {
+    id: 'demo-hue-imperial',
+    name: 'Đại Nội Huế & Ca Huế Sông Hương',
+    city: 'Huế',
+    categories: ['Điểm mốc', 'Vé tham quan'],
+    imageUrl: '/resort-night-bg.png',
+    description: 'Tham quan cung điện vàng son triều Nguyễn và nghe nhã nhạc cung đình Huế.',
+  },
+  {
+    id: 'demo-caobang-bangioc',
+    name: 'Thác Bản Giốc & Động Ngườm Ngao',
+    city: 'Cao Bằng',
+    categories: ['Vé tham quan', 'Các điểm tham quan khác'],
+    imageUrl: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80',
+    description: 'Kỳ quan thác nước hùng vĩ nơi biên cương và hang động thạch nhũ tự nhiên kỳ ảo.',
+  },
+  {
+    id: 'demo-caobang-truclam',
+    name: 'Chùa Phật Tích Trúc Lâm Bản Giốc',
+    city: 'Cao Bằng',
+    categories: ['Điểm mốc', 'Vé tham quan'],
+    imageUrl: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80',
+    description: 'Ngôi chùa tâm linh uy nghiêm hướng nhìn trực diện toàn cảnh Thác Bản Giốc.',
+  },
+  {
+    id: 'demo-quangbinh-sondoong',
+    name: 'Hang Sơn Đoòng & Vườn quốc gia Phong Nha - Kẻ Bàng',
+    city: 'Quảng Bình',
+    categories: ['Vé tham quan', 'Các điểm tham quan khác'],
+    imageUrl: 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1000&q=80',
+    description: 'Chinh phục kỳ quan hang động tự nhiên lớn nhất hành tinh cùng hệ sinh thái độc nhất vô nhị.',
+  },
+  {
+    id: 'demo-quangbinh-hangen',
+    name: 'Thám hiểm Hang Én & Sông Chày - Hang Tối',
+    city: 'Quảng Bình',
+    categories: ['Vé tham quan', 'Các điểm tham quan khác'],
+    imageUrl: 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1000&q=80',
+    description: 'Khám phá hang động lớn thứ ba thế giới và trải nghiệm Zipline, chèo Kayak trên dòng Sông Chày xanh ngọc.',
+  },
+  {
+    id: 'demo-thuy-si-beatus',
+    name: 'Hang động St. Beatus Caves & Du thuyền Hồ Thun',
+    city: 'Thụy Sĩ',
+    categories: ['Vé tham quan', 'Điểm mốc'],
+    imageUrl: 'https://images.unsplash.com/photo-1502784444187-359ac186c5bb?auto=format&fit=crop&w=1000&q=80',
+    description: 'Kỳ quan hang động cổ tích giữa hẻm núi đá vôi hướng nhìn ra hồ Thun và rặng núi Alps tuyết trắng.',
+  },
+  {
+    id: 'demo-canada-icefields',
+    name: 'Cung đường Icefields Parkway & Sông băng Columbia',
+    city: 'Canada',
+    categories: ['Vé tham quan', 'Các điểm tham quan khác'],
+    imageUrl: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80',
+    description: 'Một trong những cung đường đẹp nhất thế giới băng qua dãy Rocky Mountains, hồ Bow Lake và sông băng ngàn năm.',
+  },
 ];
 
 const foodSamples: Activity[] = [
@@ -129,6 +281,16 @@ const foodSamples: Activity[] = [
   'Đà Nẵng',
   'Phú Quốc',
   'Ninh Bình',
+  'Vũng Tàu',
+  'Nha Trang',
+  'Hội An',
+  'Sa Pa',
+  'Hạ Long',
+  'Huế',
+  'Cao Bằng',
+  'Quảng Bình',
+  'Thụy Sĩ',
+  'Canada',
 ].map((city, index) => ({
   id: `demo-food-${index}`,
   name: `Trải nghiệm ẩm thực tại ${city}`,
@@ -151,30 +313,53 @@ export function filterActivities(
   items: readonly Activity[],
   criteria: ActivitySearchCriteria,
 ): Activity[] {
-  const normalize = (value: string) => {
+  const normalizeCity = (value: string) => {
     const text = normalizeDestination(value);
-    return ['tp hcm', 'tphcm', 'sai gon', 'saigon', 'tp ho chi minh'].includes(text)
-      ? 'ho chi minh'
-      : text;
+    if (['tp hcm', 'tphcm', 'sai gon', 'saigon', 'tp ho chi minh'].includes(text)) return 'ho chi minh';
+    if (text.includes('ha long') || text.includes('quang ninh')) return 'ha long';
+    if (text.includes('cao bang') || text.includes('ban gioc')) return 'cao bang';
+    if (text.includes('quang binh') || text.includes('phong nha') || text.includes('son doong')) return 'quang binh';
+    if (text.includes('da lat') || text.includes('lam dong')) return 'da lat';
+    if (text.includes('nha trang') || text.includes('khanh hoa')) return 'nha trang';
+    if (text.includes('vung tau') || text.includes('ba ria')) return 'vung tau';
+    if (text.includes('hoi an') || text.includes('quang nam')) return 'hoi an';
+    if (text.includes('sa pa') || text.includes('sapa') || text.includes('lao cai')) return 'sa pa';
+    if (text.includes('phu quoc') || text.includes('kien giang')) return 'phu quoc';
+    if (text.includes('thuy si') || text.includes('switzerland') || text.includes('interlaken')) return 'thuy si';
+    if (text.includes('canada') || text.includes('banff') || text.includes('icefields')) return 'canada';
+    return text;
   };
-  const location = normalize(criteria.location);
+  const normalizeQueryText = (value: string) =>
+    normalizeDestination(value)
+      .replace(/\btitop\b|\btitov\b/g, 'ti top')
+      .replace(/\bsu sot\b/g, 'sung sot');
+
+  const location = normalizeCity(criteria.location);
   if (!location) return [];
-  const words = normalizeDestination(criteria.query).split(' ').filter(Boolean);
-  const results = items.filter(
+  const words = normalizeQueryText(criteria.query).split(' ').filter(Boolean);
+
+  const cityAndFilterPool = items.filter(
     (item) =>
-      (location === 'viet nam' || normalize(item.city) === location) &&
+      (location === 'viet nam' || normalizeCity(item.city) === location) &&
       (!criteria.categories.length ||
         item.categories.some((category) => criteria.categories.includes(category))) &&
       (criteria.minPrice === undefined ||
         (item.priceFrom !== undefined && item.priceFrom >= criteria.minPrice)) &&
       (criteria.maxPrice === undefined ||
-        (item.priceFrom !== undefined && item.priceFrom <= criteria.maxPrice)) &&
-      words.every((word) =>
-        normalizeDestination(
-          item.name + ' ' + item.description + ' ' + item.categories.join(' '),
-        ).includes(word),
-      ),
+        (item.priceFrom !== undefined && item.priceFrom <= criteria.maxPrice)),
   );
+
+  const exactMatches = words.length
+    ? cityAndFilterPool.filter((item) => {
+        const hay = normalizeQueryText(
+          item.name + ' ' + item.description + ' ' + item.categories.join(' '),
+        );
+        return words.every((word) => hay.includes(word));
+      })
+    : cityAndFilterPool;
+
+  const results = exactMatches.length > 0 ? [...exactMatches] : [...cityAndFilterPool];
+
   if (criteria.sort === 'price-asc' || criteria.sort === 'price-desc') {
     results.sort((a, b) => {
       if (a.priceFrom === undefined) return b.priceFrom === undefined ? 0 : 1;

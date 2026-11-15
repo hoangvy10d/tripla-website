@@ -61,13 +61,38 @@ function normalizeCityName(city) {
     'phu quoc': 'Phú Quốc',
     'ha noi': 'Hà Nội',
     'da lat': 'Đà Lạt',
+    'lam dong': 'Đà Lạt',
     'nha trang': 'Nha Trang',
+    'khanh hoa': 'Nha Trang',
+    'vung tau': 'Vũng Tàu',
+    'ba ria vung tau': 'Vũng Tàu',
     'ho chi minh': 'Hồ Chí Minh',
     'tp hcm': 'Hồ Chí Minh',
     'sai gon': 'Hồ Chí Minh',
-    'can tho': 'Cần Thơ',
+    'hoi an': 'Hội An',
+    'quang nam': 'Hội An',
     'ninh binh': 'Ninh Bình',
-    'ha long': 'Hạ Long'
+    'sa pa': 'Sa Pa',
+    'sapa': 'Sa Pa',
+    'lao cai': 'Sa Pa',
+    'ha long': 'Hạ Long',
+    'quang ninh': 'Hạ Long',
+    'hue': 'Huế',
+    'thua thien hue': 'Huế',
+    'quy nhon': 'Quy Nhơn',
+    'binh dinh': 'Quy Nhơn',
+    'can tho': 'Cần Thơ',
+    'phan thiet': 'Phan Thiết',
+    'mui ne': 'Mũi Né',
+    'cao bang': 'Cao Bằng',
+    'thac ban gioc': 'Cao Bằng',
+    'ban gioc': 'Cao Bằng',
+    'quang binh': 'Quảng Bình',
+    'phong nha': 'Quảng Bình',
+    'son doong': 'Quảng Bình',
+    'thuy si': 'Thụy Sĩ',
+    'switzerland': 'Thụy Sĩ',
+    'canada': 'Canada'
   };
   return map[norm] || city || 'Việt Nam';
 }
@@ -143,6 +168,8 @@ router.get('/activities', async (req, res) => {
     if (rawLocation && rawLocation !== 'viet nam' && rawLocation !== 'all') {
       const aliasLocation = ['tp hcm', 'tphcm', 'sai gon', 'saigon', 'tp ho chi minh'].includes(rawLocation)
         ? 'ho chi minh'
+        : rawLocation === 'sapa'
+        ? 'sa pa'
         : rawLocation;
       list = list.filter((a) => {
         const text = normalizeText(`${a.location || ''} ${a.city || ''} ${a.name || ''} ${a.address || ''}`);
@@ -151,9 +178,15 @@ router.get('/activities', async (req, res) => {
     }
 
     if (q) {
+      let normQ = q;
+      if (normQ.includes('titov') || normQ.includes('titop')) normQ = normQ.replace(/titov|titop/g, 'ti top');
+      if (normQ.includes('su sot')) normQ = normQ.replace(/su sot/g, 'sung sot');
+      const tokens = normQ.split(/\s+/).filter((w) => w.length >= 2);
+
       list = list.filter((a) => {
-        const text = normalizeText(`${a.name || ''} ${a.description || ''} ${a.city || ''} ${a.location || ''}`);
-        return text.includes(q);
+        const text = normalizeText(`${a.name || ''} ${a.description || ''} ${a.city || ''} ${a.location || ''} ${a.address || ''}`);
+        if (text.includes(normQ)) return true;
+        return tokens.length > 0 && tokens.every((tok) => text.includes(tok));
       });
     }
 

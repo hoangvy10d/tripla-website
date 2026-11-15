@@ -31,12 +31,14 @@ export const vietnamDestinations: readonly VietnamDestination[] = [
     ['Đà Lạt', 'Lâm Đồng'], ['Phú Quốc', 'An Giang'],
     ['Nha Trang', 'Khánh Hòa'], ['Vũng Tàu', 'Hồ Chí Minh'],
     ['Sa Pa', 'Lào Cai'], ['Hạ Long', 'Quảng Ninh'],
-    ['Hội An', 'Đà Nẵng'], ['Phong Nha', 'Quảng Trị'],
+    ['Hội An', 'Đà Nẵng'], ['Phong Nha', 'Quảng Bình'],
+    ['Cao Bằng', 'Cao Bằng'], ['Bản Giốc', 'Cao Bằng'],
+    ['Sơn Đoòng', 'Quảng Bình'], ['Ninh Bình', 'Ninh Bình'],
     ['Quy Nhơn', 'Gia Lai'], ['Phan Thiết', 'Lâm Đồng'],
     ['Mũi Né', 'Lâm Đồng'], ['Côn Đảo', 'Hồ Chí Minh'],
     ['Tam Đảo', 'Phú Thọ'], ['Mai Châu', 'Phú Thọ'],
     ['Mộc Châu', 'Sơn La'], ['Cát Bà', 'Hải Phòng'],
-    ['Đồng Hới', 'Quảng Trị'], ['Tuy Hòa', 'Đắk Lắk'],
+    ['Đồng Hới', 'Quảng Bình'], ['Tuy Hòa', 'Đắk Lắk'],
     ['Buôn Ma Thuột', 'Đắk Lắk'], ['Rạch Giá', 'An Giang'],
     ['Hà Tiên', 'An Giang'], ['Châu Đốc', 'An Giang'],
     ['Hà Giang', 'Tuyên Quang'], ['Yên Bái', 'Lào Cai'],
@@ -44,7 +46,7 @@ export const vietnamDestinations: readonly VietnamDestination[] = [
     ['Vĩnh Phúc', 'Phú Thọ'], ['Hòa Bình', 'Phú Thọ'],
     ['Hải Dương', 'Hải Phòng'], ['Thái Bình', 'Hưng Yên'],
     ['Hà Nam', 'Ninh Bình'], ['Nam Định', 'Ninh Bình'],
-    ['Quảng Bình', 'Quảng Trị'], ['Quảng Nam', 'Đà Nẵng'],
+    ['Quảng Bình', 'Quảng Bình'], ['Quảng Nam', 'Đà Nẵng'],
     ['Kon Tum', 'Quảng Ngãi'], ['Bình Định', 'Gia Lai'],
     ['Ninh Thuận', 'Khánh Hòa'], ['Đắk Nông', 'Lâm Đồng'],
     ['Bình Thuận', 'Lâm Đồng'], ['Phú Yên', 'Đắk Lắk'],
@@ -53,9 +55,11 @@ export const vietnamDestinations: readonly VietnamDestination[] = [
     ['Hậu Giang', 'Cần Thơ'], ['Sóc Trăng', 'Cần Thơ'],
     ['Bến Tre', 'Vĩnh Long'], ['Trà Vinh', 'Vĩnh Long'],
     ['Tiền Giang', 'Đồng Tháp'], ['Kiên Giang', 'An Giang'],
-    ['Bạc Liêu', 'Cà Mau']
-  ].map(([name, province]) => ({ name, region: `${province}, Việt Nam`,
-    aliases: name === 'Sa Pa' ? 'Sapa' : '' }))
+    ['Bạc Liêu', 'Cà Mau'],
+    ['Thụy Sĩ', 'Châu Âu (Quốc tế)'],
+    ['Canada', 'Bắc Mỹ (Quốc tế)']
+  ].map(([name, province]) => ({ name, region: `${province}, ${province.includes('Quốc tế') ? '' : 'Việt Nam'}`.replace(/,\s*$/, ''),
+    aliases: name === 'Sa Pa' ? 'Sapa' : (name === 'Thụy Sĩ' ? 'Switzerland Interlaken Alps' : (name === 'Canada' ? 'Banff Icefields Rocky Mountains' : (name === 'Hạ Long' ? 'Ha Long Bay Vịnh Hạ Long' : ''))) }))
 ];
 
 export function normalizeDestination(value: string): string {

@@ -28,6 +28,47 @@ import { activitySearchParams } from '../../activity-search/models/activity-sear
 
 type ReticleAction = 'move' | 'nw' | 'ne' | 'sw' | 'se';
 
+function foldAccents(value: string): string {
+  return String(value || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/đ/gi, 'd')
+    .toLowerCase();
+}
+
+function normalizePlaceQuery(name: string): string {
+  return String(name || '')
+    .replace(/\btitop\b|\btitov\b/gi, 'Ti Tốp')
+    .replace(/sử sốt/gi, 'Sửng Sốt')
+    .trim();
+}
+
+function resolveSearchCity(addr: string, landmark: string): string {
+  const text = foldAccents(addr + ' ' + landmark);
+  if (text.includes('cao bang') || text.includes('ban gioc') || text.includes('nguom ngao')) return 'Cao Bằng';
+  if (text.includes('quang binh') || text.includes('phong nha') || text.includes('son doong') || text.includes('hang en')) return 'Quảng Bình';
+  if (text.includes('ha long') || text.includes('quang ninh') || text.includes('titop') || text.includes('titov') || text.includes('ti top') || text.includes('sung sot') || text.includes('cua van')) return 'Hạ Long';
+  if (text.includes('da lat') || text.includes('lam dong')) return 'Đà Lạt';
+  if (text.includes('vung tau') || text.includes('ba ria')) return 'Vũng Tàu';
+  if (text.includes('nha trang') || text.includes('khanh hoa')) return 'Nha Trang';
+  if (text.includes('da nang')) return 'Đà Nẵng';
+  if (text.includes('hoi an') || text.includes('quang nam')) return 'Hội An';
+  if (text.includes('phu quoc') || text.includes('kien giang')) return 'Phú Quốc';
+  if (text.includes('sa pa') || text.includes('sapa') || text.includes('lao cai') || text.includes('fansipan')) return 'Sa Pa';
+  if (text.includes('ninh binh') || text.includes('trang an') || text.includes('tam coc')) return 'Ninh Bình';
+  if (text.includes('ha noi')) return 'Hà Nội';
+  if (text.includes('ho chi minh') || text.includes('sai gon') || text.includes('tp hcm')) return 'Hồ Chí Minh';
+  if (text.includes('hue')) return 'Huế';
+  if (text.includes('quy nhon') || text.includes('binh dinh')) return 'Quy Nhơn';
+  if (text.includes('switzerland') || text.includes('thuy si') || text.includes('beatenberg') || text.includes('interlaken') || text.includes('beatus')) return 'Thụy Sĩ';
+  if (text.includes('canada') || text.includes('banff') || text.includes('icefields') || text.includes('bow lake')) return 'Canada';
+
+  const rawTokens = addr.split(',').map((s) => s.trim()).filter(Boolean);
+  const nonCountry = rawTokens.filter((s) => !/việt nam|vietnam/i.test(s));
+  const candidate = nonCountry.length > 0 ? nonCountry[nonCountry.length - 1] : (rawTokens[0] || 'Việt Nam');
+  return candidate.replace(/thành phố|tỉnh|thị xã|quận|huyện/gi, '').trim() || candidate;
+}
+
 @Component({
   standalone: true,
   imports: [CommonModule],
@@ -100,18 +141,39 @@ export class VisualSearch implements AfterViewInit, OnChanges, OnDestroy {
   }
 
   get googleMapsUrl(): string {
-    const address = this.result?.location?.formatted_address || this.result?.location?.landmark_name || '';
-    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+    const landmark = this.result?.location?.landmark_name || '';
+    const address = this.result?.location?.formatted_address || '';
+    const city = resolveSearchCity(address, landmark);
+    const q = normalizePlaceQuery(landmark || city);
+    return `/map?q=${encodeURIComponent(q)}&city=${encodeURIComponent(city)}`;
   }
 
   buildItemMapsUrl(name: string, address?: string): string {
-    const query = [name, address].filter(Boolean).join(', ');
-    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+    const addr = address || this.result?.location?.formatted_address || '';
+    const landmark = this.result?.location?.landmark_name || '';
+    const city = resolveSearchCity(addr, `${landmark} ${name}`);
+    const q = normalizePlaceQuery(name || landmark);
+    return `/map?q=${encodeURIComponent(q)}&city=${encodeURIComponent(city)}`;
+  }
+
+  openInTriplaMap(name?: string, address?: string, event?: Event): void {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    this.resultDialog?.nativeElement?.close();
+    const addr = address || this.result?.location?.formatted_address || '';
+    const landmark = this.result?.location?.landmark_name || '';
+    const city = resolveSearchCity(addr, `${landmark} ${name || ''}`);
+    const q = normalizePlaceQuery(name || landmark || city);
+    void this.router.navigate(['/map'], {
+      queryParams: { q, city }
+    });
   }
 
   buildNearbySearchMapsUrl(categoryKeyword: string): string {
     const place = this.result?.location?.landmark_name || this.result?.location?.formatted_address || '';
-    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${categoryKeyword} gần ${place}`)}`;
+    return `/map?q=${encodeURIComponent(`${categoryKeyword} ${place}`)}`;
   }
 
   formatHotelPrice(hotel: any): string {
@@ -416,20 +478,19 @@ export class VisualSearch implements AfterViewInit, OnChanges, OnDestroy {
     }
     video.pause();
   }
+
   bookHotelInTripShop(hotel: any, isDbHotel = true): void {
     this.resultDialog?.nativeElement?.close();
 
     const today = new Date();
     const checkOut = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 2);
-    const hotelName = hotel?.name || hotel?.hotel_name || '';
-    const cityFallback = (hotel?.address || this.result?.location?.formatted_address || '')
-      .split(',')
-      .pop()
-      ?.trim();
+    const addr = hotel?.address || this.result?.location?.formatted_address || '';
+    const landmark = this.result?.location?.landmark_name || '';
+    const detectedCity = resolveSearchCity(addr, landmark);
 
     const criteria: HotelSearchCriteria = {
       service: 'hotel',
-      location: hotelName || cityFallback || 'Đà Lạt',
+      location: (isDbHotel ? hotel?.name || hotel?.hotel_name : '') || detectedCity || 'Hạ Long',
       checkIn: localDateString(today),
       checkOut: localDateString(checkOut),
       adults: 2,
@@ -450,7 +511,7 @@ export class VisualSearch implements AfterViewInit, OnChanges, OnDestroy {
 
   explorePlaceInTripShop(place: any): void {
     const category = String(place?.category || '').toLowerCase();
-    const isStay = /khách sạn|hotel|resort|villa|homestay|lưu trú/.test(category);
+    const isStay = /khách sạn|hotel|resort|villa|homestay|lưu trú|lodge/.test(category) || /lodge|hotel|resort/i.test(place?.name || '');
 
     if (isStay) {
       this.bookHotelInTripShop({ name: place.name, address: this.result?.location?.formatted_address }, false);
@@ -458,15 +519,14 @@ export class VisualSearch implements AfterViewInit, OnChanges, OnDestroy {
     }
 
     this.resultDialog?.nativeElement?.close();
-    const city = (this.result?.location?.formatted_address || this.result?.location?.landmark_name || '')
-      .split(',')
-      .pop()
-      ?.trim() || 'Đà Lạt';
+    const addr = this.result?.location?.formatted_address || '';
+    const landmark = this.result?.location?.landmark_name || '';
+    const city = resolveSearchCity(addr, `${landmark} ${place?.name || ''}`);
 
     void this.router.navigate(['/activity-search'], {
       queryParams: activitySearchParams({
         location: city,
-        query: place.name,
+        query: normalizePlaceQuery(place?.name || ''),
         categories: [],
       }),
     });

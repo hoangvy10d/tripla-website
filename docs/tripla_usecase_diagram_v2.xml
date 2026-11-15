@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" scale="1" border="0">
+  <diagram name="Tripla-Use-Case" id="TriplaUseCaseDiagramV2">
+    <mxGraphModel dx="2600" dy="2100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- SYSTEM BOUNDARY FRAME -->
+        <mxCell id="sys-frame" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;fillColor=#FAFAFA;strokeColor=#173B32;strokeWidth=2;fontSize=14;fontStyle=1;" value="TRIPLA Travel &amp;amp; Shorts Platform (System Boundary)" vertex="1">
+          <mxGeometry height="1620" width="860" x="0" y="-1030" as="geometry" />
+        </mxCell>
+
+        <!-- ACTORS -->
+        <mxCell id="actor-traveler" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontStyle=1;strokeColor=#173B32;" value="Traveler" vertex="1">
+          <mxGeometry height="65" width="35" x="980" y="-360" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-provider" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontStyle=1;strokeColor=#B26A00;" value="Provider&#xa;(Simulated)" vertex="1">
+          <mxGeometry height="65" width="35" x="-140" y="-620" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-admin" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontStyle=1;strokeColor=#C53030;" value="Admin" vertex="1">
+          <mxGeometry height="65" width="35" x="-140" y="-120" as="geometry" />
+        </mxCell>
+
+        <!-- ========================================== -->
+        <!-- 1. USER & AUTHENTICATION USE CASES         -->
+        <!-- ========================================== -->
+        <mxCell id="uc-login" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EDF2F7;strokeColor=#4A5568;" value="Log In" vertex="1">
+          <mxGeometry height="45" width="105" x="375" y="-990" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-recover-pass" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EDF2F7;strokeColor=#4A5568;" value="Recover Password" vertex="1">
+          <mxGeometry height="45" width="115" x="550" y="-990" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-register" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EDF2F7;strokeColor=#4A5568;" value="Register Account" vertex="1">
+          <mxGeometry height="45" width="110" x="375" y="-910" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-verify-acc" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EDF2F7;strokeColor=#4A5568;" value="Verify Account" vertex="1">
+          <mxGeometry height="45" width="110" x="550" y="-910" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-profile" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EDF2F7;strokeColor=#4A5568;" value="Manage Profile" vertex="1">
+          <mxGeometry height="45" width="110" x="375" y="-830" as="geometry" />
+        </mxCell>
+
+        <!-- Auth Relations -->
+        <mxCell id="e-login-traveler" edge="1" parent="1" source="actor-traveler" target="uc-login" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-login-provider" edge="1" parent="1" source="actor-provider" target="uc-login" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-login-admin" edge="1" parent="1" source="actor-admin" target="uc-login" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-recover-login" edge="1" parent="1" source="uc-recover-pass" target="uc-login" style="html=1;verticalAlign=middle;labelBackgroundColor=#FFFFFF;fontSize=11;fontStyle=2;fontColor=#2D3748;endArrow=open;endFill=0;dashed=1;rounded=0;strokeWidth=1.2;" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-reg-traveler" edge="1" parent="1" source="actor-traveler" target="uc-register" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-reg-provider" edge="1" parent="1" source="actor-provider" target="uc-register" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-reg-verify" edge="1" parent="1" source="uc-register" target="uc-verify-acc" style="html=1;verticalAlign=middle;labelBackgroundColor=#FFFFFF;fontSize=11;fontStyle=2;fontColor=#2D3748;endArrow=open;endFill=0;dashed=1;rounded=0;strokeWidth=1.2;" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-profile-traveler" edge="1" parent="1" source="actor-traveler" target="uc-profile" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-profile-provider" edge="1" parent="1" source="actor-provider" target="uc-profile" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ========================================== -->
+        <!-- 2. PROVIDER USE CASES (SIMULATED / BACKEND)-->
+        <!-- ========================================== -->
+        <mxCell id="uc-prop-listing" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEFCBF;strokeColor=#B7791F;" value="Manage Property Listing" vertex="1">
+          <mxGeometry height="45" width="125" x="80" y="-680" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-room-types" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEFCBF;strokeColor=#B7791F;" value="Manage Room Types" vertex="1">
+          <mxGeometry height="45" width="115" x="250" y="-740" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-room-inventory" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEFCBF;strokeColor=#B7791F;" value="Manage Room Inventory" vertex="1">
+          <mxGeometry height="45" width="125" x="250" y="-680" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-base-pricing" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEFCBF;strokeColor=#B7791F;" value="Manage Base Pricing" vertex="1">
+          <mxGeometry height="45" width="115" x="250" y="-620" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-prov-bookings" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEFCBF;strokeColor=#B7791F;" value="View Provider Bookings" vertex="1">
+          <mxGeometry height="45" width="125" x="80" y="-550" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-prov-earnings" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEFCBF;strokeColor=#B7791F;" value="View Earnings" vertex="1">
+          <mxGeometry height="45" width="110" x="80" y="-480" as="geometry" />
+        </mxCell>
+
+        <!-- Provider Relations -->
+        <mxCell id="e-prov-listing" edge="1" parent="1" source="actor-provider" target="uc-prop-listing" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-listing-types" edge="1" parent="1" source="uc-prop-listing" target="uc-room-types" style="html=1;verticalAlign=middle;labelBackgroundColor=#FFFFFF;fontSize=11;fontStyle=2;fontColor=#2D3748;endArrow=open;endFill=0;dashed=1;rounded=0;strokeWidth=1.2;" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-listing-inv" edge="1" parent="1" source="uc-prop-listing" target="uc-room-inventory" style="html=1;verticalAlign=middle;labelBackgroundColor=#FFFFFF;fontSize=11;fontStyle=2;fontColor=#2D3748;endArrow=open;endFill=0;dashed=1;rounded=0;strokeWidth=1.2;" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-listing-price" edge="1" parent="1" source="uc-prop-listing" target="uc-base-pricing" style="html=1;verticalAlign=middle;labelBackgroundColor=#FFFFFF;fontSize=11;fontStyle=2;fontColor=#2D3748;endArrow=open;endFill=0;dashed=1;rounded=0;strokeWidth=1.2;" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-prov-book" edge="1" parent="1" source="actor-provider" target="uc-prov-bookings" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-prov-earn" edge="1" parent="1" source="actor-provider" target="uc-prov-earnings" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ========================================== -->
+        <!-- 3. COMMUNITY, SHORTS & AI VISUAL SEARCH    -->
+        <!-- ========================================== -->
+        <mxCell id="uc-search-content" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EBF8FF;strokeColor=#3182CE;" value="Search Content" vertex="1">
+          <mxGeometry height="45" width="110" x="480" y="-740" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-view-content" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EBF8FF;strokeColor=#3182CE;fontStyle=1;" value="View Travel Content&#xa;(Shorts Feed)" vertex="1">
+          <mxGeometry height="50" width="130" x="470" y="-660" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-interact-content" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EBF8FF;strokeColor=#3182CE;" value="Like &amp;amp; Comment&#xa;on Content" vertex="1">
+          <mxGeometry height="45" width="120" x="690" y="-720" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-save-wishlist" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EBF8FF;strokeColor=#3182CE;" value="Save Content&#xa;to Wishlist" vertex="1">
+          <mxGeometry height="45" width="120" x="690" y="-660" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-report-content" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EBF8FF;strokeColor=#3182CE;" value="Report Content" vertex="1">
+          <mxGeometry height="45" width="110" x="695" y="-600" as="geometry" />
+        </mxCell>
+        
+        <!-- ✨ AI VISUAL SEARCH USE CASE (FEAT/VISUAL-SEARCH) -->
+        <mxCell id="uc-visual-search" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#C6F6D5;strokeColor=#22543D;fontStyle=1;" value="AI Visual Search&#xa;from Video Frame" vertex="1">
+          <mxGeometry height="50" width="130" x="470" y="-570" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc-manage-content" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EBF8FF;strokeColor=#3182CE;" value="Manage Own Content&#xa;(Creator Studio)" vertex="1">
+          <mxGeometry height="45" width="130" x="470" y="-480" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-manage-wishlist" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EBF8FF;strokeColor=#3182CE;" value="Manage Wishlist" vertex="1">
+          <mxGeometry height="45" width="115" x="477" y="-410" as="geometry" />
+        </mxCell>
+
+        <!-- Community Relations -->
+        <mxCell id="e-search-traveler" edge="1" parent="1" source="actor-traveler" target="uc-search-content" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-view-traveler" edge="1" parent="1" source="actor-traveler" target="uc-view-content" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-interact-view" edge="1" parent="1" source="uc-interact-content" target="uc-view-content" style="html=1;verticalAlign=middle;labelBackgroundColor=#FFFFFF;fontSize=11;fontStyle=2;fontColor=#2D3748;endArrow=open;endFill=0;dashed=1;rounded=0;strokeWidth=1.2;" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-save-view" edge="1" parent="1" source="uc-save-wishlist" target="uc-view-content" style="html=1;verticalAlign=middle;labelBackgroundColor=#FFFFFF;fontSize=11;fontStyle=2;fontColor=#2D3748;endArrow=open;endFill=0;dashed=1;rounded=0;strokeWidth=1.2;" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-report-view" edge="1" parent="1" source="uc-report-content" target="uc-view-content" style="html=1;verticalAlign=middle;labelBackgroundColor=#FFFFFF;fontSize=11;fontStyle=2;fontColor=#2D3748;endArrow=open;endFill=0;dashed=1;rounded=0;strokeWidth=1.2;" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-visual-view" edge="1" parent="1" source="uc-visual-search" target="uc-view-content" style="html=1;verticalAlign=middle;labelBackgroundColor=#FFFFFF;fontSize=11;fontStyle=2;fontColor=#22543D;endArrow=open;endFill=0;dashed=1;rounded=0;strokeColor=#22543D;strokeWidth=1.5;" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-content-traveler" edge="1" parent="1" source="actor-traveler" target="uc-manage-content" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-wishlist-traveler" edge="1" parent="1" source="actor-traveler" target="uc-manage-wishlist" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ========================================== -->
+        <!-- 4. BOOKING & PAYMENT USE CASES             -->
+        <!-- ========================================== -->
+        <mxCell id="uc-search-hotels" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EBF8FF;strokeColor=#3182CE;" value="Search Hotels&#xa;&amp;amp; Locations" vertex="1">
+          <mxGeometry height="50" width="130" x="470" y="-330" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-view-hotel" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EBF8FF;strokeColor=#3182CE;" value="View Hotel Information" vertex="1">
+          <mxGeometry height="45" width="130" x="690" y="-330" as="geometry" />
+        </mxCell>
+        
+        <!-- Connection from Visual Search to Search Hotels -->
+        <mxCell id="e-visual-to-hotel" edge="1" parent="1" source="uc-visual-search" target="uc-search-hotels" style="html=1;verticalAlign=middle;labelBackgroundColor=#FFFFFF;fontSize=11;fontStyle=2;fontColor=#22543D;endArrow=open;endFill=0;dashed=1;rounded=0;strokeColor=#22543D;strokeWidth=1.5;" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc-check-avail" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EBF8FF;strokeColor=#3182CE;" value="Check Room Availability" vertex="1">
+          <mxGeometry height="45" width="125" x="290" y="-270" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-create-booking" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EBF8FF;strokeColor=#3182CE;fontStyle=1;" value="Create Booking" vertex="1">
+          <mxGeometry height="45" width="115" x="477" y="-230" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-process-payment" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EBF8FF;strokeColor=#3182CE;" value="Process Payment&#xa;(Simulated)" vertex="1">
+          <mxGeometry height="45" width="115" x="295" y="-180" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-calc-price" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EBF8FF;strokeColor=#3182CE;" value="Calculate Booking Price" vertex="1">
+          <mxGeometry height="45" width="125" x="120" y="-180" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-view-booking-info" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EBF8FF;strokeColor=#3182CE;" value="View Booking Details&#xa;&amp;amp; E-Voucher" vertex="1">
+          <mxGeometry height="45" width="125" x="472" y="-130" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-cancel-booking" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EBF8FF;strokeColor=#3182CE;" value="Cancel Booking" vertex="1">
+          <mxGeometry height="45" width="110" x="695" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-booking-history" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EBF8FF;strokeColor=#3182CE;" value="Manage Booking History" vertex="1">
+          <mxGeometry height="45" width="125" x="472" y="30" as="geometry" />
+        </mxCell>
+
+        <!-- Booking Relations -->
+        <mxCell id="e-search-hotel-traveler" edge="1" parent="1" source="actor-traveler" target="uc-search-hotels" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-hotel-info-search" edge="1" parent="1" source="uc-view-hotel" target="uc-search-hotels" style="html=1;verticalAlign=middle;labelBackgroundColor=#FFFFFF;fontSize=11;fontStyle=2;fontColor=#2D3748;endArrow=open;endFill=0;dashed=1;rounded=0;strokeWidth=1.2;" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-book-traveler" edge="1" parent="1" source="actor-traveler" target="uc-create-booking" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-book-avail" edge="1" parent="1" source="uc-create-booking" target="uc-check-avail" style="html=1;verticalAlign=middle;labelBackgroundColor=#FFFFFF;fontSize=11;fontStyle=2;fontColor=#2D3748;endArrow=open;endFill=0;dashed=1;rounded=0;strokeWidth=1.2;" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-book-pay" edge="1" parent="1" source="uc-create-booking" target="uc-process-payment" style="html=1;verticalAlign=middle;labelBackgroundColor=#FFFFFF;fontSize=11;fontStyle=2;fontColor=#2D3748;endArrow=open;endFill=0;dashed=1;rounded=0;strokeWidth=1.2;" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-pay-calc" edge="1" parent="1" source="uc-process-payment" target="uc-calc-price" style="html=1;verticalAlign=middle;labelBackgroundColor=#FFFFFF;fontSize=11;fontStyle=2;fontColor=#2D3748;endArrow=open;endFill=0;dashed=1;rounded=0;strokeWidth=1.2;" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-book-voucher" edge="1" parent="1" source="uc-create-booking" target="uc-view-booking-info" style="html=1;verticalAlign=middle;labelBackgroundColor=#FFFFFF;fontSize=11;fontStyle=2;fontColor=#2D3748;endArrow=open;endFill=0;dashed=1;rounded=0;strokeWidth=1.2;" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-voucher-traveler" edge="1" parent="1" source="actor-traveler" target="uc-view-booking-info" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-history-traveler" edge="1" parent="1" source="actor-traveler" target="uc-booking-history" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-cancel-booking-extend" edge="1" parent="1" source="uc-cancel-booking" target="uc-booking-history" style="html=1;verticalAlign=middle;labelBackgroundColor=#FFFFFF;fontSize=11;fontStyle=2;fontColor=#2D3748;endArrow=open;endFill=0;dashed=1;rounded=0;strokeWidth=1.2;" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ========================================== -->
+        <!-- 5. TRIP PLANNING USE CASES                 -->
+        <!-- ========================================== -->
+        <mxCell id="uc-create-trip" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EBF8FF;strokeColor=#3182CE;" value="Create Trip Plan" vertex="1">
+          <mxGeometry height="45" width="110" x="480" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-manage-itinerary" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EBF8FF;strokeColor=#3182CE;fontStyle=1;" value="Manage Trip Itinerary" vertex="1">
+          <mxGeometry height="50" width="130" x="470" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-import-wishlist" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EBF8FF;strokeColor=#3182CE;" value="Import Wishlist&#xa;Locations" vertex="1">
+          <mxGeometry height="45" width="115" x="280" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-drag-drop" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EBF8FF;strokeColor=#3182CE;" value="Drag-and-Drop&#xa;Scheduling" vertex="1">
+          <mxGeometry height="45" width="115" x="280" y="212.5" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-calc-cost" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EBF8FF;strokeColor=#3182CE;" value="Calculate Estimated&#xa;Trip Cost" vertex="1">
+          <mxGeometry height="45" width="125" x="275" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-map-routing" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EBF8FF;strokeColor=#3182CE;" value="View Interactive Map&#xa;&amp;amp; Routing" vertex="1">
+          <mxGeometry height="45" width="130" x="470" y="320" as="geometry" />
+        </mxCell>
+
+        <!-- Trip Planning Relations -->
+        <mxCell id="e-trip-traveler" edge="1" parent="1" source="actor-traveler" target="uc-create-trip" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-itin-traveler" edge="1" parent="1" source="actor-traveler" target="uc-manage-itinerary" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-itin-wishlist" edge="1" parent="1" source="uc-manage-itinerary" target="uc-import-wishlist" style="html=1;verticalAlign=middle;labelBackgroundColor=#FFFFFF;fontSize=11;fontStyle=2;fontColor=#2D3748;endArrow=open;endFill=0;dashed=1;rounded=0;strokeWidth=1.2;" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-itin-dnd" edge="1" parent="1" source="uc-manage-itinerary" target="uc-drag-drop" style="html=1;verticalAlign=middle;labelBackgroundColor=#FFFFFF;fontSize=11;fontStyle=2;fontColor=#2D3748;endArrow=open;endFill=0;dashed=1;rounded=0;strokeWidth=1.2;" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-itin-cost" edge="1" parent="1" source="uc-manage-itinerary" target="uc-calc-cost" style="html=1;verticalAlign=middle;labelBackgroundColor=#FFFFFF;fontSize=11;fontStyle=2;fontColor=#2D3748;endArrow=open;endFill=0;dashed=1;rounded=0;strokeWidth=1.2;" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-itin-map" edge="1" parent="1" source="uc-manage-itinerary" target="uc-map-routing" style="html=1;verticalAlign=middle;labelBackgroundColor=#FFFFFF;fontSize=11;fontStyle=2;fontColor=#2D3748;endArrow=open;endFill=0;dashed=1;rounded=0;strokeWidth=1.2;" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-map-traveler" edge="1" parent="1" source="actor-traveler" target="uc-map-routing" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ========================================== -->
+        <!-- 6. ADMIN USE CASES                         -->
+        <!-- ========================================== -->
+        <mxCell id="uc-admin-roles" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FED7D7;strokeColor=#E53E3E;" value="Manage User Roles" vertex="1">
+          <mxGeometry height="45" width="125" x="80" y="-280" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-verify-creds" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FED7D7;strokeColor=#E53E3E;" value="Verify Business&#xa;Credentials" vertex="1">
+          <mxGeometry height="45" width="125" x="80" y="-210" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-moderate-content" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FED7D7;strokeColor=#E53E3E;" value="Moderate Content&#xa;&amp;amp; Reports" vertex="1">
+          <mxGeometry height="45" width="125" x="80" y="-140" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-admin-hotels" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FED7D7;strokeColor=#E53E3E;" value="Manage Hotels &amp;amp;&#xa;Locations (CRUD)" vertex="1">
+          <mxGeometry height="45" width="125" x="80" y="-70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-admin-bookings" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FED7D7;strokeColor=#E53E3E;" value="Manage Bookings&#xa;&amp;amp; Status" vertex="1">
+          <mxGeometry height="45" width="125" x="80" y="0" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-admin-stats" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FED7D7;strokeColor=#E53E3E;" value="View Dashboard&#xa;KPIs &amp;amp; Analytics" vertex="1">
+          <mxGeometry height="45" width="125" x="80" y="70" as="geometry" />
+        </mxCell>
+
+        <!-- Admin Relations -->
+        <mxCell id="e-admin-roles" edge="1" parent="1" source="actor-admin" target="uc-admin-roles" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-admin-creds" edge="1" parent="1" source="actor-admin" target="uc-verify-creds" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-admin-mod" edge="1" parent="1" source="actor-admin" target="uc-moderate-content" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-admin-hotels" edge="1" parent="1" source="actor-admin" target="uc-admin-hotels" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-admin-bookings" edge="1" parent="1" source="actor-admin" target="uc-admin-bookings" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-admin-stats" edge="1" parent="1" source="actor-admin" target="uc-admin-stats" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

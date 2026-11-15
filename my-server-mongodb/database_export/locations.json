@@ -1016,5 +1016,1194 @@
     "__v": 0,
     "createdAt": "2026-11-13T03:10:21.360Z",
     "updatedAt": "2026-11-13T03:10:21.360Z"
+  },
+  {
+    "_id": "673000000000000000000330",
+    "slug": "loc_dalat_lamvien_square",
+    "name": "Quảng trường Lâm Viên",
+    "landmark_name": "Quảng trường Lâm Viên",
+    "location_category": "attraction",
+    "address": "Đường Trần Quốc Toản, Phường 10, TP. Đà Lạt",
+    "formatted_address": "Đường Trần Quốc Toản, Phường 10, TP. Đà Lạt",
+    "city": "Đà Lạt",
+    "latitude": 11.936,
+    "longitude": 108.4455,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.4455,
+        11.936
+      ]
+    },
+    "entry_fee": 0,
+    "requires_reservation": false,
+    "reservation_duration": 90,
+    "location_description": "Biểu tượng check-in của xứ sở sương mù với đóa hoa dã quỳ và búp hoa atiso bằng kính màu khổng lồ nhìn ra hồ Xuân Hương.",
+    "image_url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.8,
+    "review_count": 3200,
+    "unit": "/ khách",
+    "tag": "Biểu Tượng Check-in",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "photo_camera",
+        "label": "Búp hoa Atiso & Nụ hoa dã quỳ khổng lồ"
+      },
+      {
+        "icon": "wb_twilight",
+        "label": "Ngắm hoàng hôn trên bờ hồ Xuân Hương"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.299Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000331",
+    "slug": "loc_dalat_flower_garden",
+    "name": "Vườn hoa Thành phố Đà Lạt",
+    "landmark_name": "Vườn hoa Thành phố Đà Lạt",
+    "location_category": "nature",
+    "address": "Số 2 Trần Nhân Tông, Phường 8, TP. Đà Lạt",
+    "formatted_address": "Số 2 Trần Nhân Tông, Phường 8, TP. Đà Lạt",
+    "city": "Đà Lạt",
+    "latitude": 11.9465,
+    "longitude": 108.4494,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.4494,
+        11.9465
+      ]
+    },
+    "entry_fee": 100000,
+    "requires_reservation": false,
+    "reservation_duration": 120,
+    "location_description": "Khoảng trời muôn sắc hoa hội tụ hơn 300 loài hoa quý hiếm trong và ngoài nước nở rộ quanh năm.",
+    "image_url": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.7,
+    "review_count": 2450,
+    "unit": "/ vé",
+    "tag": "Thiên Đường Muôn Hoa",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "local_florist",
+        "label": "Hơn 300 loài hoa khoe sắc"
+      },
+      {
+        "icon": "park",
+        "label": "Cảnh quan vườn tượng & nhà kính châu Âu"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000332",
+    "slug": "loc_dalat_datanla_waterfall",
+    "name": "Thác Datanla & Xe trượt Alpine Coaster",
+    "landmark_name": "Thác Datanla & Xe trượt Alpine Coaster",
+    "location_category": "attraction",
+    "address": "QL20 Đèo Prenn, Phường 3, TP. Đà Lạt",
+    "formatted_address": "QL20 Đèo Prenn, Phường 3, TP. Đà Lạt",
+    "city": "Đà Lạt",
+    "latitude": 11.9022,
+    "longitude": 108.4508,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.4508,
+        11.9022
+      ]
+    },
+    "entry_fee": 250000,
+    "requires_reservation": true,
+    "reservation_duration": 150,
+    "location_description": "Đường trượt Alpine Coaster xuyên rừng thông nguyên sinh dài nhất Đông Nam Á dẫn xuống dòng thác Datanla hùng vĩ.",
+    "image_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.9,
+    "review_count": 4100,
+    "unit": "/ vé trọn gói",
+    "tag": "Trò Chơi Cảm Giác Mạnh",
+    "drawerKey": "yacht",
+    "features": [
+      {
+        "icon": "downhill_skiing",
+        "label": "Đường trượt xuyên rừng thông 2.400m"
+      },
+      {
+        "icon": "water",
+        "label": "Thác nước 7 tầng kỳ vĩ"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000333",
+    "slug": "loc_dalat_railway_station",
+    "name": "Ga Đà Lạt & Tàu Cổ Trại Mát",
+    "landmark_name": "Ga Đà Lạt & Tàu Cổ Trại Mát",
+    "location_category": "attraction",
+    "address": "Số 1 Quang Trung, Phường 10, TP. Đà Lạt",
+    "formatted_address": "Số 1 Quang Trung, Phường 10, TP. Đà Lạt",
+    "city": "Đà Lạt",
+    "latitude": 11.9412,
+    "longitude": 108.4526,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.4526,
+        11.9412
+      ]
+    },
+    "entry_fee": 50000,
+    "requires_reservation": false,
+    "reservation_duration": 90,
+    "location_description": "Nhà ga xe lửa cổ kính bậc nhất Đông Dương xây dựng năm 1932 theo phong cách Art Deco kết hợp mái nhà rông Tây Nguyên.",
+    "image_url": "https://images.unsplash.com/photo-1517824806704-9040b037703b?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.7,
+    "review_count": 2890,
+    "unit": "/ vé",
+    "tag": "Di Tích Kiến Trúc Pháp",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "train",
+        "label": "Đầu máy hơi nước cổ & toa tàu gỗ"
+      },
+      {
+        "icon": "coffee",
+        "label": "Quán cà phê toa tàu độc đáo"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000334",
+    "slug": "loc_dalat_tui_mo_to_cafe",
+    "name": "Tiệm Cà Phê Túi Mơ To",
+    "landmark_name": "Tiệm Cà Phê Túi Mơ To",
+    "location_category": "cafe",
+    "address": "Hẻm 31 Sào Nam, Phường 11, TP. Đà Lạt",
+    "formatted_address": "Hẻm 31 Sào Nam, Phường 11, TP. Đà Lạt",
+    "city": "Đà Lạt",
+    "latitude": 11.9388,
+    "longitude": 108.4765,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.4765,
+        11.9388
+      ]
+    },
+    "entry_fee": 85000,
+    "requires_reservation": false,
+    "reservation_duration": 90,
+    "location_description": "Quán cafe nhà kính bên triền đồi với vườn cúc họa mi trắng muốt và góc ngắm thung lũng đèn lồng lung linh về đêm.",
+    "image_url": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.8,
+    "review_count": 3600,
+    "unit": "/ phần uống",
+    "tag": "Săn Mây & Hoàng Hôn Phố Núi",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "local_cafe",
+        "label": "Cà phê đặc sản & bánh ngọt thủ công"
+      },
+      {
+        "icon": "wb_sunny",
+        "label": "Vườn cúc họa mi ngắm biển mây"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000335",
+    "slug": "loc_dalat_love_valley",
+    "name": "Thung Lũng Tình Yêu",
+    "landmark_name": "Thung Lũng Tình Yêu",
+    "location_category": "nature",
+    "address": "3 – 5 – 7 Mai Anh Đào, Phường 8, TP. Đà Lạt",
+    "formatted_address": "3 – 5 – 7 Mai Anh Đào, Phường 8, TP. Đà Lạt",
+    "city": "Đà Lạt",
+    "latitude": 11.9806,
+    "longitude": 108.4528,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.4528,
+        11.9806
+      ]
+    },
+    "entry_fee": 250000,
+    "requires_reservation": false,
+    "reservation_duration": 180,
+    "location_description": "Danh thắng thơ mộng nép mình bên sườn đồi thông xanh ngắt và hồ Đa Thiện trong vắt, tích hợp mê cung cây và cầu kính 7D.",
+    "image_url": "https://images.unsplash.com/photo-1470246973918-29a93221c455?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.6,
+    "review_count": 1980,
+    "unit": "/ vé",
+    "tag": "Danh Thắng Thơ Mộng",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "favorite",
+        "label": "Cầu kính ngắm toàn cảnh thung lũng"
+      },
+      {
+        "icon": "pedal_bike",
+        "label": "Đạp vịt trên hồ Đa Thiện"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000336",
+    "slug": "loc_dalat_night_market",
+    "name": "Chợ Đêm Đà Lạt (Chợ Âm Phủ)",
+    "landmark_name": "Chợ Đêm Đà Lạt",
+    "location_category": "shopping",
+    "address": "Nguyễn Thị Minh Khai, Phường 1, TP. Đà Lạt",
+    "formatted_address": "Nguyễn Thị Minh Khai, Phường 1, TP. Đà Lạt",
+    "city": "Đà Lạt",
+    "latitude": 11.9425,
+    "longitude": 108.4372,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.4372,
+        11.9425
+      ]
+    },
+    "entry_fee": 0,
+    "requires_reservation": false,
+    "reservation_duration": 120,
+    "location_description": "Trái tim sôi động về đêm của Đà Lạt: thưởng thức bánh tráng nướng nóng hổi, sữa đậu nành nóng hổi, dâu tây và mua sắm đồ len ấm áp.",
+    "image_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.7,
+    "review_count": 5200,
+    "unit": "/ người",
+    "tag": "Ẩm Thực Đêm Phố Núi",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "restaurant",
+        "label": "Bánh tráng nướng, dâu lắc, kem bơ"
+      },
+      {
+        "icon": "shopping_bag",
+        "label": "Thời trang len & đặc sản mứt sấy"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000337",
+    "slug": "loc_vungtau_christ_statue",
+    "name": "Tượng Chúa Kito Vua",
+    "landmark_name": "Tượng Chúa Kito Vua",
+    "location_category": "attraction",
+    "address": "Hạ Long, Phường 2, TP. Vũng Tàu",
+    "formatted_address": "Hạ Long, Phường 2, TP. Vũng Tàu",
+    "city": "Vũng Tàu",
+    "latitude": 10.3262,
+    "longitude": 107.0845,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        107.0845,
+        10.3262
+      ]
+    },
+    "entry_fee": 0,
+    "requires_reservation": false,
+    "reservation_duration": 120,
+    "location_description": "Bức tượng Chúa cao 32m ngự trên đỉnh Núi Nhỏ với hai tay dang rộng 18.3m, bên trong có 133 bậc thang dẫn ra hai cánh tay ngắm biển trời bao la.",
+    "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.8,
+    "review_count": 4200,
+    "unit": "/ khách",
+    "tag": "Biểu Tượng Tôn Giáo Núi Nhỏ",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "hiking",
+        "label": "847 bậc thang đá rợp bóng cây xanh"
+      },
+      {
+        "icon": "visibility",
+        "label": "Tầm nhìn 360 độ ôm trọn biển Vũng Tàu"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000338",
+    "slug": "loc_vungtau_lighthouse",
+    "name": "Ngọn Hải Đăng Vũng Tàu",
+    "landmark_name": "Ngọn Hải Đăng Vũng Tàu",
+    "location_category": "attraction",
+    "address": "Đỉnh Núi Nhỏ, Phường 2, TP. Vũng Tàu",
+    "formatted_address": "Đỉnh Núi Nhỏ, Phường 2, TP. Vũng Tàu",
+    "city": "Vũng Tàu",
+    "latitude": 10.334,
+    "longitude": 107.0754,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        107.0754,
+        10.334
+      ]
+    },
+    "entry_fee": 0,
+    "requires_reservation": false,
+    "reservation_duration": 90,
+    "location_description": "Ngọn hải đăng cổ kính xây dựng năm 1862 sơn trắng nổi bật giữa nền trời xanh, là điểm ngắm hoàng hôn và thưởng thức sữa chua cô Tiên nổi tiếng.",
+    "image_url": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.7,
+    "review_count": 3100,
+    "unit": "/ khách",
+    "tag": "Hải Đăng Cổ Nhất Việt Nam",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "lightbulb",
+        "label": "Tháp tròn sơn trắng cao 18m"
+      },
+      {
+        "icon": "wb_sunny",
+        "label": "Cung đường hoa phượng & hoa giấy lãng mạn"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000339",
+    "slug": "loc_vungtau_nghinh_phong",
+    "name": "Mũi Nghinh Phong & Cổng Trời",
+    "landmark_name": "Mũi Nghinh Phong & Cổng Trời",
+    "location_category": "nature",
+    "address": "Số 1 Hạ Long, Phường 2, TP. Vũng Tàu",
+    "formatted_address": "Số 1 Hạ Long, Phường 2, TP. Vũng Tàu",
+    "city": "Vũng Tàu",
+    "latitude": 10.323,
+    "longitude": 107.0865,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        107.0865,
+        10.323
+      ]
+    },
+    "entry_fee": 0,
+    "requires_reservation": false,
+    "reservation_duration": 60,
+    "location_description": "Mũi đất vươn mình ra biển đón gió suốt bốn mùa, nổi bật với \"Cổng Trời\" hướng biển tạo nên góc chụp ảnh ấn tượng.",
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.6,
+    "review_count": 2750,
+    "unit": "/ khách",
+    "tag": "Mũi Biển Đón Gió",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "air",
+        "label": "Gió biển lồng lộng quanh năm"
+      },
+      {
+        "icon": "photo_camera",
+        "label": "Cổng Trời sống ảo triệu view"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000340",
+    "slug": "loc_vungtau_bai_sau",
+    "name": "Bãi Sau Vũng Tàu (Bãi Thùy Vân)",
+    "landmark_name": "Bãi Sau Vũng Tàu",
+    "location_category": "nature",
+    "address": "Đường Thùy Vân, Phường Thắng Tam, TP. Vũng Tàu",
+    "formatted_address": "Đường Thùy Vân, Phường Thắng Tam, TP. Vũng Tàu",
+    "city": "Vũng Tàu",
+    "latitude": 10.3385,
+    "longitude": 107.0988,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        107.0988,
+        10.3385
+      ]
+    },
+    "entry_fee": 0,
+    "requires_reservation": false,
+    "reservation_duration": 180,
+    "location_description": "Bãi cát vàng thoai thoải dài hơn 8km với làn nước trong xanh, rặng phi lao xanh rì và sóng vỗ nhẹ nhàng thích hợp tắm biển cả ngày.",
+    "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.5,
+    "review_count": 4800,
+    "unit": "/ khách",
+    "tag": "Bãi Tắm Sôi Động Nhất",
+    "drawerKey": "yacht",
+    "features": [
+      {
+        "icon": "surfing",
+        "label": "Thể thao biển: moto nước, lướt ván"
+      },
+      {
+        "icon": "beach_access",
+        "label": "Bãi cát dài thoai thoải sạch đẹp"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000341",
+    "slug": "loc_vungtau_banh_khot_coba",
+    "name": "Bánh Khọt Cô Ba Vũng Tàu",
+    "landmark_name": "Bánh Khọt Cô Ba Vũng Tàu",
+    "location_category": "restaurant",
+    "address": "Số 1 Hoàng Hoa Thám, Phường 3, TP. Vũng Tàu",
+    "formatted_address": "Số 1 Hoàng Hoa Thám, Phường 3, TP. Vũng Tàu",
+    "city": "Vũng Tàu",
+    "latitude": 10.3475,
+    "longitude": 107.0772,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        107.0772,
+        10.3475
+      ]
+    },
+    "entry_fee": 80000,
+    "requires_reservation": false,
+    "reservation_duration": 60,
+    "location_description": "Thương hiệu bánh khọt trứ danh với lớp vỏ giòn rụm màu vàng ruộm, nhân tôm tươi nhảy tanh tách ăn kèm rau sống và nước mắm chua ngọt đặc chế.",
+    "image_url": "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.7,
+    "review_count": 3890,
+    "unit": "/ phần",
+    "tag": "Đặc Sản Ẩm Thực Biển",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "restaurant_menu",
+        "label": "Bánh khọt tôm tươi, mực sữa giòn tan"
+      },
+      {
+        "icon": "soup_kitchen",
+        "label": "Rau thơm organic & đu đủ ngâm giòn"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000342",
+    "slug": "loc_nhatrang_vinwonders",
+    "name": "VinWonders Nha Trang (Đảo Hòn Tre)",
+    "landmark_name": "VinWonders Nha Trang",
+    "location_category": "attraction",
+    "address": "Đảo Hòn Tre, Phường Vĩnh Nguyên, TP. Nha Trang",
+    "formatted_address": "Đảo Hòn Tre, Phường Vĩnh Nguyên, TP. Nha Trang",
+    "city": "Nha Trang",
+    "latitude": 12.2178,
+    "longitude": 109.2435,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        109.2435,
+        12.2178
+      ]
+    },
+    "entry_fee": 800000,
+    "requires_reservation": true,
+    "reservation_duration": 360,
+    "location_description": "Công viên giải trí của những kỷ lục tọa lạc trên đảo thiên đường Hòn Tre: Tata Show đẳng cấp, cáp treo vượt biển và công viên nước khổng lồ.",
+    "image_url": "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.9,
+    "review_count": 6200,
+    "unit": "/ vé trọn gói",
+    "tag": "Công Viên Giải Trí Đảo",
+    "drawerKey": "yacht",
+    "features": [
+      {
+        "icon": "roller_coaster",
+        "label": "Trò chơi cảm giác mạnh & Vịnh Phao Nổi"
+      },
+      {
+        "icon": "theater_comedy",
+        "label": "Show thực cảnh triệu đô Tata Show"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000343",
+    "slug": "loc_nhatrang_ponagar",
+    "name": "Tháp Bà Ponagar Nha Trang",
+    "landmark_name": "Tháp Bà Ponagar",
+    "location_category": "attraction",
+    "address": "Đường 2 Tháng 4, Vĩnh Phước, TP. Nha Trang",
+    "formatted_address": "Đường 2 Tháng 4, Vĩnh Phước, TP. Nha Trang",
+    "city": "Nha Trang",
+    "latitude": 12.2654,
+    "longitude": 109.1958,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        109.1958,
+        12.2654
+      ]
+    },
+    "entry_fee": 30000,
+    "requires_reservation": false,
+    "reservation_duration": 90,
+    "location_description": "Quần thể tháp Chăm cổ kính được xây dựng từ thế kỷ thứ 8 đến thế kỷ 13, uy nghiêm trên đồi Cù Lao soi bóng xuống dòng sông Cái thơ mộng.",
+    "image_url": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.7,
+    "review_count": 3400,
+    "unit": "/ vé",
+    "tag": "Kiến Trúc Chăm Pa Cổ",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "temple_buddhist",
+        "label": "Kiến trúc gạch nung Champa độc đáo"
+      },
+      {
+        "icon": "music_note",
+        "label": "Biểu diễn múa Chăm & kèn Saranai"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000344",
+    "slug": "loc_hanoi_hoan_kiem_lake",
+    "name": "Hồ Hoàn Kiếm & Đền Ngọc Sơn",
+    "landmark_name": "Hồ Hoàn Kiếm",
+    "location_category": "attraction",
+    "address": "Phố Đinh Tiên Hoàng, Hàng Trống, Hoàn Kiếm, Hà Nội",
+    "formatted_address": "Phố Đinh Tiên Hoàng, Hàng Trống, Hoàn Kiếm, Hà Nội",
+    "city": "Hà Nội",
+    "latitude": 21.0307,
+    "longitude": 105.8524,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        105.8524,
+        21.0307
+      ]
+    },
+    "entry_fee": 30000,
+    "requires_reservation": false,
+    "reservation_duration": 120,
+    "location_description": "Trái tim của Thủ đô ngàn năm văn hiến với Tháp Rùa cổ kính giữa làn nước xanh lục thủy, cầu Thê Húc đỏ son dẫn vào Đền Ngọc Sơn linh thiêng.",
+    "image_url": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.9,
+    "review_count": 6800,
+    "unit": "/ khách",
+    "tag": "Biểu Tượng Thủ Đô",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "bridge",
+        "label": "Cầu Thê Húc cong cong tôm đỏ"
+      },
+      {
+        "icon": "history_edu",
+        "label": "Huyền tích trả gươm báu vua Lê Lợi"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000345",
+    "slug": "loc_hanoi_van_mieu",
+    "name": "Văn Miếu – Quốc Tử Giám",
+    "landmark_name": "Văn Miếu – Quốc Tử Giám",
+    "location_category": "attraction",
+    "address": "58 Quốc Tử Giám, Văn Miếu, Đống Đa, Hà Nội",
+    "formatted_address": "58 Quốc Tử Giám, Văn Miếu, Đống Đa, Hà Nội",
+    "city": "Hà Nội",
+    "latitude": 21.0285,
+    "longitude": 105.8355,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        105.8355,
+        21.0285
+      ]
+    },
+    "entry_fee": 70000,
+    "requires_reservation": false,
+    "reservation_duration": 120,
+    "location_description": "Trường đại học đầu tiên của Việt Nam với 82 Bia Tiến sĩ được UNESCO công nhận là Di sản Tư liệu Thế giới.",
+    "image_url": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.8,
+    "review_count": 4500,
+    "unit": "/ vé",
+    "tag": "Tinh Hoa Đạo Học",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "school",
+        "label": "82 Bia Tiến sĩ trên lưng rùa đá"
+      },
+      {
+        "icon": "light_mode",
+        "label": "Tour đêm ánh sáng 3D Mapping"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000346",
+    "slug": "loc_hanoi_hoa_lo_prison",
+    "name": "Di Tích Nhà Tù Hỏa Lò",
+    "landmark_name": "Nhà Tù Hỏa Lò",
+    "location_category": "attraction",
+    "address": "Số 1 Phố Hỏa Lò, Trần Hưng Đạo, Hoàn Kiếm, Hà Nội",
+    "formatted_address": "Số 1 Phố Hỏa Lò, Trần Hưng Đạo, Hoàn Kiếm, Hà Nội",
+    "city": "Hà Nội",
+    "latitude": 21.0253,
+    "longitude": 105.8465,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        105.8465,
+        21.0253
+      ]
+    },
+    "entry_fee": 50000,
+    "requires_reservation": true,
+    "reservation_duration": 90,
+    "location_description": "Nơi lưu giữ những ký ức lịch sử kiên cường của các chiến sĩ cách mạng Việt Nam, nổi tiếng với tour đêm \"Đêm Thiêng Liêng\" chạm tới cảm xúc.",
+    "image_url": "https://images.unsplash.com/photo-1541480601022-2308c0f02487?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.9,
+    "review_count": 5100,
+    "unit": "/ vé",
+    "tag": "Di Tích Lịch Sử Hào Hùng",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "museum",
+        "label": "Tour Đêm Thiêng Liêng thuyết minh sống động"
+      },
+      {
+        "icon": "hearing",
+        "label": "Trải nghiệm Audio Guide đa ngôn ngữ"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000347",
+    "slug": "loc_hcm_dinh_doc_lap",
+    "name": "Dinh Độc Lập (Hội Trường Thống Nhất)",
+    "landmark_name": "Dinh Độc Lập",
+    "location_category": "attraction",
+    "address": "135 Nam Kỳ Khởi Nghĩa, Bến Thành, Quận 1, TP. Hồ Chí Minh",
+    "formatted_address": "135 Nam Kỳ Khởi Nghĩa, Bến Thành, Quận 1, TP. Hồ Chí Minh",
+    "city": "Hồ Chí Minh",
+    "latitude": 10.777,
+    "longitude": 106.6953,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.6953,
+        10.777
+      ]
+    },
+    "entry_fee": 65000,
+    "requires_reservation": false,
+    "reservation_duration": 120,
+    "location_description": "Công trình kiến trúc biểu tượng ghi dấu thời khắc lịch sử thống nhất đất nước ngày 30/4/1975, do kiến trúc sư Ngô Viết Thụ thiết kế.",
+    "image_url": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.8,
+    "review_count": 5800,
+    "unit": "/ vé",
+    "tag": "Di Tích Lịch Sử Quốc Gia",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "account_balance",
+        "label": "Hệ thống hầm ngầm kiên cố và trực thăng"
+      },
+      {
+        "icon": "park",
+        "label": "Khuôn viên rợp bóng cổ thụ giữa trung tâm"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000348",
+    "slug": "loc_hcm_landmark_81",
+    "name": "Landmark 81 SkyView",
+    "landmark_name": "Landmark 81 SkyView",
+    "location_category": "attraction",
+    "address": "720A Điện Biên Phủ, Phường 22, Bình Thạnh, TP. Hồ Chí Minh",
+    "formatted_address": "720A Điện Biên Phủ, Phường 22, Bình Thạnh, TP. Hồ Chí Minh",
+    "city": "Hồ Chí Minh",
+    "latitude": 10.795,
+    "longitude": 106.7218,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.7218,
+        10.795
+      ]
+    },
+    "entry_fee": 450000,
+    "requires_reservation": true,
+    "reservation_duration": 120,
+    "location_description": "Đài quan sát cao nhất Việt Nam tại tầng 79-81 ngắm toàn cảnh Sài Gòn rực rỡ từ độ cao gần 400m với trải nghiệm cầu kính SkyTouch mạo hiểm.",
+    "image_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.8,
+    "review_count": 4100,
+    "unit": "/ vé",
+    "tag": "Đài Quan Sát Đỉnh Cao",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "apartment",
+        "label": "Tầm nhìn 360 độ ngắm trọn khúc quanh sông Sài Gòn"
+      },
+      {
+        "icon": "vrpano",
+        "label": "Trải nghiệm thực tế ảo nhảy dù VR"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000349",
+    "slug": "loc_hcm_ben_thanh_market",
+    "name": "Chợ Bến Thành",
+    "landmark_name": "Chợ Bến Thành",
+    "location_category": "shopping",
+    "address": "Đường Lê Lợi, Bến Thành, Quận 1, TP. Hồ Chí Minh",
+    "formatted_address": "Đường Lê Lợi, Bến Thành, Quận 1, TP. Hồ Chí Minh",
+    "city": "Hồ Chí Minh",
+    "latitude": 10.7725,
+    "longitude": 106.698,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.698,
+        10.7725
+      ]
+    },
+    "entry_fee": 0,
+    "requires_reservation": false,
+    "reservation_duration": 90,
+    "location_description": "Biểu tượng trăm năm sầm uất của TP. Hồ Chí Minh, nơi du khách thỏa thích khám phá ẩm thực đường phố và mua sắm quà lưu niệm.",
+    "image_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.6,
+    "review_count": 6700,
+    "unit": "/ khách",
+    "tag": "Chợ Biểu Tượng Sài Gòn",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "watch_later",
+        "label": "Tháp đồng hồ 4 mặt biểu tượng"
+      },
+      {
+        "icon": "lunch_dining",
+        "label": "Bún riêu, chè ba màu, cà phê vợt"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000350",
+    "slug": "loc_danang_dragon_bridge",
+    "name": "Cầu Rồng Đà Nẵng",
+    "landmark_name": "Cầu Rồng Đà Nẵng",
+    "location_category": "attraction",
+    "address": "Đường Nguyễn Văn Linh, Phước Ninh, Hải Châu, Đà Nẵng",
+    "formatted_address": "Đường Nguyễn Văn Linh, Phước Ninh, Hải Châu, Đà Nẵng",
+    "city": "Đà Nẵng",
+    "latitude": 16.061,
+    "longitude": 108.2268,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.2268,
+        16.061
+      ]
+    },
+    "entry_fee": 0,
+    "requires_reservation": false,
+    "reservation_duration": 60,
+    "location_description": "Cây cầu thép mô phỏng hình rồng thời Lý bắc qua sông Hàn, biểu diễn phun lửa và phun nước độc đáo vào 21:00 tối thứ Bảy và Chủ Nhật.",
+    "image_url": "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.9,
+    "review_count": 5600,
+    "unit": "/ khách",
+    "tag": "Kỳ Quan Cầu Rồng Sông Hàn",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "local_fire_department",
+        "label": "Màn phun lửa và phun nước cuối tuần"
+      },
+      {
+        "icon": "sailing",
+        "label": "Bến du thuyền sông Hàn lộng gió"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000351",
+    "slug": "loc_hoian_ancient_town",
+    "name": "Phố Cổ Hội An & Chùa Cầu",
+    "landmark_name": "Phố Cổ Hội An",
+    "location_category": "attraction",
+    "address": "Đường Nguyễn Thị Minh Khai, Phường Minh An, TP. Hội An",
+    "formatted_address": "Đường Nguyễn Thị Minh Khai, Phường Minh An, TP. Hội An",
+    "city": "Hội An",
+    "latitude": 15.8775,
+    "longitude": 108.3283,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.3283,
+        15.8775
+      ]
+    },
+    "entry_fee": 120000,
+    "requires_reservation": false,
+    "reservation_duration": 240,
+    "location_description": "Đô thị cổ thương cảng quốc tế được bảo tồn nguyên vẹn với những bức tường vàng rêu phong, giàn hoa giấy và hàng ngàn ngọn đèn lồng lung linh soi bóng sông Hoài.",
+    "image_url": "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.95,
+    "review_count": 8200,
+    "unit": "/ vé tham quan",
+    "tag": "Di Sản Văn Hóa Thế Giới",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "wb_twilight",
+        "label": "Thả hoa đăng trên sông Hoài"
+      },
+      {
+        "icon": "restaurant_menu",
+        "label": "Cao lầu, bánh mì Phượng, cơm gà"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000352",
+    "slug": "loc_hoian_bay_mau_coconut",
+    "name": "Rừng Dừa Bảy Mẫu Cẩm Thanh",
+    "landmark_name": "Rừng Dừa Bảy Mẫu Cẩm Thanh",
+    "location_category": "nature",
+    "address": "Thôn Vạn Lăng, Xã Cẩm Thanh, TP. Hội An",
+    "formatted_address": "Thôn Vạn Lăng, Xã Cẩm Thanh, TP. Hội An",
+    "city": "Hội An",
+    "latitude": 15.8672,
+    "longitude": 108.3685,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.3685,
+        15.8672
+      ]
+    },
+    "entry_fee": 150000,
+    "requires_reservation": true,
+    "reservation_duration": 120,
+    "location_description": "Không gian miền Tây sông nước thu nhỏ giữa lòng phố Hội với trải nghiệm đi thuyền thúng len lỏi giữa rặng dừa nước và xem màn múa thúng xoay điệu nghệ.",
+    "image_url": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.8,
+    "review_count": 3900,
+    "unit": "/ thuyền thúng",
+    "tag": "Trải Nghiệm Thuyền Thúng",
+    "drawerKey": "yacht",
+    "features": [
+      {
+        "icon": "surfing",
+        "label": "Màn lắc thúng điêu luyện của ngư dân"
+      },
+      {
+        "icon": "phishing",
+        "label": "Quăng chài bắt cá và câu cua đá"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000353",
+    "slug": "loc_ninhbinh_trang_an",
+    "name": "Quần Thể Danh Thắng Tràng An",
+    "landmark_name": "Quần Thể Danh Thắng Tràng An",
+    "location_category": "nature",
+    "address": "Tràng An, Trường Yên, Hoa Lư, Ninh Bình",
+    "formatted_address": "Tràng An, Trường Yên, Hoa Lư, Ninh Bình",
+    "city": "Ninh Bình",
+    "latitude": 20.2535,
+    "longitude": 105.9082,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        105.9082,
+        20.2535
+      ]
+    },
+    "entry_fee": 250000,
+    "requires_reservation": true,
+    "reservation_duration": 210,
+    "location_description": "Di sản Văn hóa và Thiên nhiên Thế giới kép duy nhất tại Đông Nam Á với hệ thống hang động xuyên thủy, núi đá vôi sừng sững trên dòng sông Sào Khê ngọc bích.",
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.96,
+    "review_count": 6700,
+    "unit": "/ vé thuyền",
+    "tag": "Di Sản Kép Thế Giới",
+    "drawerKey": "yacht",
+    "features": [
+      {
+        "icon": "rowing",
+        "label": "Thuyền chèo tay qua các hang động ngập nước"
+      },
+      {
+        "icon": "terrain",
+        "label": "Phim trường King Kong & Đền Trần"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000354",
+    "slug": "loc_ninhbinh_hang_mua",
+    "name": "Hang Múa & Đỉnh Ngoạ Long",
+    "landmark_name": "Hang Múa & Đỉnh Ngoạ Long",
+    "location_category": "attraction",
+    "address": "Khê Đầu Hạ, Ninh Xuân, Hoa Lư, Ninh Bình",
+    "formatted_address": "Khê Đầu Hạ, Ninh Xuân, Hoa Lư, Ninh Bình",
+    "city": "Ninh Bình",
+    "latitude": 20.2315,
+    "longitude": 105.9325,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        105.9325,
+        20.2315
+      ]
+    },
+    "entry_fee": 100000,
+    "requires_reservation": false,
+    "reservation_duration": 120,
+    "location_description": "Chinh phục gần 500 bậc đá tựa Vạn Lý Trường Thành thu nhỏ để chạm tới đỉnh Ngoạ Long ngắm trọn vẹn cảnh sắc Tam Cốc và đồng lúa chín vàng ươm.",
+    "image_url": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.85,
+    "review_count": 4200,
+    "unit": "/ vé",
+    "tag": "Góc Check-in Đỉnh Cao",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "hiking",
+        "label": "486 bậc thang đá trắng hùng vĩ"
+      },
+      {
+        "icon": "landscape",
+        "label": "Tượng rồng đá uốn lượn trên đỉnh núi"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000355",
+    "slug": "loc_sapa_fansipan",
+    "name": "Đỉnh Fansipan – Sun World Fansipan Legend",
+    "landmark_name": "Đỉnh Fansipan",
+    "location_category": "attraction",
+    "address": "Đường Nguyễn Chí Thanh, Thị xã Sa Pa, Lào Cai",
+    "formatted_address": "Đường Nguyễn Chí Thanh, Thị xã Sa Pa, Lào Cai",
+    "city": "Sa Pa",
+    "latitude": 22.3035,
+    "longitude": 103.7752,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        103.7752,
+        22.3035
+      ]
+    },
+    "entry_fee": 850000,
+    "requires_reservation": true,
+    "reservation_duration": 300,
+    "location_description": "Chinh phục Nóc nhà Đông Dương ở độ cao 3.143m bằng hệ thống cáp treo 3 dây hiện đại nhất thế giới và quần thể tâm linh kỳ vĩ trên đỉnh mây ngàn.",
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.95,
+    "review_count": 7300,
+    "unit": "/ vé cáp treo",
+    "tag": "Nóc Nhà Đông Dương 3.143m",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "flight",
+        "label": "Cáp treo 3 dây vượt thung lũng Mường Hoa"
+      },
+      {
+        "icon": "temple_buddhist",
+        "label": "Đại tượng Phật A Di Đà bằng đồng cao nhất VN"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000356",
+    "slug": "loc_sapa_cat_cat",
+    "name": "Bản Cát Cát Sa Pa",
+    "landmark_name": "Bản Cát Cát",
+    "location_category": "attraction",
+    "address": "Xã Hoàng Liên, Thị xã Sa Pa, Lào Cai",
+    "formatted_address": "Xã Hoàng Liên, Thị xã Sa Pa, Lào Cai",
+    "city": "Sa Pa",
+    "latitude": 22.3275,
+    "longitude": 103.8315,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        103.8315,
+        22.3275
+      ]
+    },
+    "entry_fee": 150000,
+    "requires_reservation": false,
+    "reservation_duration": 150,
+    "location_description": "Ngôi làng cổ người Mông đẹp như tranh vẽ nép mình dưới chân dãy Hoàng Liên Sơn với cọn nước khổng lồ, ruộng bậc thang và suối Tiên Sa róc rách.",
+    "image_url": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.7,
+    "review_count": 4600,
+    "unit": "/ vé tham quan",
+    "tag": "Bản Làng Cổ Người Mông",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "waterfall_chart",
+        "label": "Thác Tiên Sa & Guồng nước khổng lồ"
+      },
+      {
+        "icon": "dry_cleaning",
+        "label": "Thuê trang phục thổ cẩm truyền thống"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000357",
+    "slug": "loc_phuquoc_grand_world",
+    "name": "Grand World Phú Quốc (Thành Phố Không Ngủ)",
+    "landmark_name": "Grand World Phú Quốc",
+    "location_category": "attraction",
+    "address": "Khu Bãi Dài, Gành Dầu, TP. Phú Quốc",
+    "formatted_address": "Khu Bãi Dài, Gành Dầu, TP. Phú Quốc",
+    "city": "Phú Quốc",
+    "latitude": 10.3282,
+    "longitude": 103.8585,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        103.8585,
+        10.3282
+      ]
+    },
+    "entry_fee": 0,
+    "requires_reservation": false,
+    "reservation_duration": 240,
+    "location_description": "Trung tâm vui chơi giải trí 24/7 với kênh đào Venice lãng mạn, thuyền Gondola quý tộc và show thực cảnh nhạc nước Sắc Màu Venice triệu đô.",
+    "image_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.8,
+    "review_count": 5100,
+    "unit": "/ khách",
+    "tag": "Thành Phố Không Ngủ",
+    "drawerKey": "dining",
+    "features": [
+      {
+        "icon": "directions_boat",
+        "label": "Đi thuyền Gondola trên kênh đào Venice"
+      },
+      {
+        "icon": "celebration",
+        "label": "Show nhạc nước Sắc Màu Venice miễn phí hàng đêm"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
+  },
+  {
+    "_id": "673000000000000000000358",
+    "slug": "loc_phuquoc_bai_sao",
+    "name": "Bãi Sao Phú Quốc",
+    "landmark_name": "Bãi Sao Phú Quốc",
+    "location_category": "nature",
+    "address": "Ấp Bãi Sao, Phường An Thới, TP. Phú Quốc",
+    "formatted_address": "Ấp Bãi Sao, Phường An Thới, TP. Phú Quốc",
+    "city": "Phú Quốc",
+    "latitude": 10.0525,
+    "longitude": 104.0325,
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        104.0325,
+        10.0525
+      ]
+    },
+    "entry_fee": 0,
+    "requires_reservation": false,
+    "reservation_duration": 180,
+    "location_description": "Bãi biển đẹp bậc nhất đảo Ngọc với bãi cát trắng mịn như kem dài hơn 7km uốn lượn bên làn nước xanh trong vắt thấy đáy và hàng dừa nghiêng bóng.",
+    "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    "rating": 4.75,
+    "review_count": 4800,
+    "unit": "/ khách",
+    "tag": "Bãi Biển Cát Trắng Thiên Đường",
+    "drawerKey": "yacht",
+    "features": [
+      {
+        "icon": "waves",
+        "label": "Nước biển êm ả trong xanh nhìn tận đáy"
+      },
+      {
+        "icon": "photo_camera",
+        "label": "Xích đu cây dừa huyền thoại sống ảo"
+      }
+    ],
+    "createdAt": "2026-11-15T07:52:51.301Z",
+    "updatedAt": "2026-11-15T07:52:51.301Z"
   }
 ]

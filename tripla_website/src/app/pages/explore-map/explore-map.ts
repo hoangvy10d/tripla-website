@@ -160,15 +160,32 @@ export class ExploreMapComponent implements AfterViewInit, OnDestroy {
       });
   }
 
-  /** Supports /map?q=...&focus=<id> coming from TripShop, TripShorts and the Planner. */
+  /** Supports /map?q=...&city=...&focus=<id> coming from TripShop, TripShorts and the Planner. */
   private applyQueryParams(): void {
     const params = this.route.snapshot.queryParamMap;
-    const q = params.get('q') || params.get('city');
+    const q = params.get('q') || '';
+    const city = params.get('city') || '';
     const focus = params.get('focus');
-    if (q) this.searchText = q;
+
+    if (q) {
+      this.searchText = q;
+    } else if (city) {
+      this.searchText = city;
+    }
+
+    // Nếu từ khóa chi tiết không khớp trực tiếp địa điểm nào, lùi về hiển thị toàn bộ địa điểm trong thành phố đó
+    if (this.searchText && this.filteredPlaces.length === 0 && city) {
+      this.searchText = city;
+    }
+
     this.renderMarkers(true);
-    const target = focus ? this.places.find((p) => p.id === focus) : null;
-    if (target) this.selectPlace(target);
+
+    const target = focus
+      ? this.places.find((p) => p.id === focus)
+      : (q && this.filteredPlaces.length > 0 ? this.filteredPlaces[0] : null);
+    if (target) {
+      this.selectPlace(target);
+    }
   }
 
   private toPlace(raw: any, kind: MapPlace['kind']): MapPlace | null {
@@ -207,13 +224,24 @@ export class ExploreMapComponent implements AfterViewInit, OnDestroy {
   }
 
   private foldText(value: string): string {
-    return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/gi, 'd').toLowerCase();
+    return value
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/đ/gi, 'd')
+      .toLowerCase()
+      .replace(/\btitov\b|\btitop\b/g, 'ti top')
+      .replace(/\bsu sot\b/g, 'sung sot')
+      .replace(/\bsapa\b/g, 'sa pa')
+      .replace(/\s+/g, ' ')
+      .trim();
   }
 
   private matchesScope(p: MapPlace): boolean {
-    const q = this.foldText(this.searchText.trim());
+    const rawQ = this.foldText(this.searchText.trim());
+    const cleanQ = rawQ.replace(/^(vinh|thanh pho|tp|tinh)\s+/g, '').trim();
     const cityOk = !this.activeCity || this.foldText(p.city || p.address).includes(this.foldText(this.activeCity));
-    const searchOk = !q || this.foldText(`${p.name} ${p.address} ${p.city} ${this.categoryLabel(p.category)}`).includes(q);
+    const hay = this.foldText(`${p.name} ${p.address} ${p.city} ${this.categoryLabel(p.category)}`);
+    const searchOk = !rawQ || hay.includes(rawQ) || (cleanQ.length >= 2 && hay.includes(cleanQ));
     return cityOk && searchOk;
   }
 

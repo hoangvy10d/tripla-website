@@ -27,9 +27,21 @@ export const demoHotels: readonly Hotel[] = [
   { id: 'demo-coast', name: 'Gió Biển Retreat', address: 'Đà Nẵng', stars: 4,
     rating: 9.1, reviewCount: 204, pricePerNight: 1250000, currency: 'VND',
     imageUrl: '/resort-night-bg.png', amenities: ['Wi-Fi', 'Hồ bơi', 'Bữa sáng'], freeCancellation: true },
-  { id: 'demo-island', name: 'Đảo Xanh Resort', address: 'Phú Quốc, An Giang', stars: 5,
+  { id: 'demo-island', name: 'Đảo Xanh Resort', address: 'Phú Quốc, Kiên Giang', stars: 5,
     rating: 9.4, reviewCount: 312, pricePerNight: 2100000, currency: 'VND',
     imageUrl: '/resort-night-bg.png', amenities: ['Wi-Fi', 'Hồ bơi', 'Spa'], freeCancellation: true },
+  { id: 'demo-vungtau-imperial', name: 'The Imperial Hotel Vũng Tàu', address: '159 Thùy Vân, Phường Thắng Tam, TP. Vũng Tàu', stars: 5,
+    rating: 9.3, reviewCount: 420, pricePerNight: 2450000, currency: 'VND',
+    imageUrl: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80',
+    amenities: ['Wi-Fi', 'Hồ bơi riêng', 'Bãi biển riêng', 'Bữa sáng', 'Spa'], freeCancellation: true },
+  { id: 'demo-hoian-anantara', name: 'Anantara Hoi An Resort', address: '01 Phạm Hồng Thái, Cẩm Châu, TP. Hội An', stars: 5,
+    rating: 9.7, reviewCount: 390, pricePerNight: 4800000, currency: 'VND',
+    imageUrl: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1000&q=80',
+    amenities: ['Wi-Fi', 'Hồ bơi', 'Du thuyền sông', 'Bữa sáng', 'Spa'], freeCancellation: true },
+  { id: 'demo-ninhbinh-emeralda', name: 'Emeralda Resort Ninh Bình', address: 'Đầm Vân Long, Gia Vân, Gia Viễn, Ninh Bình', stars: 5,
+    rating: 9.4, reviewCount: 510, pricePerNight: 2300000, currency: 'VND',
+    imageUrl: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80',
+    amenities: ['Wi-Fi', 'Hồ bơi vô cực', 'Spa', 'Bữa sáng'], freeCancellation: true },
 ].map(enrichHotel);
 
 export const offlineCatalogHotels: readonly Hotel[] = [
@@ -49,12 +61,33 @@ export const offlineCatalogHotels: readonly Hotel[] = [
     rating: 9.8, reviewCount: 412, pricePerNight: 15500000, currency: 'VND',
     imageUrl: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80',
     amenities: ['Wi-Fi', 'Hồ bơi riêng', 'Spa', 'Bữa sáng', 'Tàu cao tốc đưa đón'], freeCancellation: true },
+  { id: 'hotel-vinpearl-halong', name: 'Vinpearl Resort & Spa Hạ Long', address: 'Đảo Rều, Bãi Cháy, TP. Hạ Long, Quảng Ninh', stars: 5,
+    rating: 9.5, reviewCount: 650, pricePerNight: 2850000, currency: 'VND',
+    imageUrl: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1000&q=80',
+    amenities: ['Wi-Fi', 'Hồ bơi 4 mùa', 'Bãi tắm riêng', 'Bữa sáng buffet', 'Spa'], freeCancellation: true },
+  { id: 'hotel-bangioc-resort', name: 'Sài Gòn - Bản Giốc Resort', address: 'Xóm Bản Giốc, Đàm Thủy, Trùng Khánh, Cao Bằng', stars: 4,
+    rating: 9.1, reviewCount: 215, pricePerNight: 1200000, currency: 'VND',
+    imageUrl: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80',
+    amenities: ['Wi-Fi', 'View Thác Bản Giốc', 'Nhà hàng đặc sản', 'Bữa sáng', 'Thuê xe máy'], freeCancellation: true },
+  { id: 'hotel-phongnha-lakehouse', name: 'Phong Nha Lake House Resort', address: 'Khương Hà, Bố Trạch, Quảng Bình', stars: 4,
+    rating: 9.3, reviewCount: 310, pricePerNight: 1450000, currency: 'VND',
+    imageUrl: 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1000&q=80',
+    amenities: ['Wi-Fi', 'Hồ bơi hướng hồ', 'Kayak miễn phí', 'Bữa sáng', 'Tour Sơn Đoòng'], freeCancellation: true },
+  { id: 'hotel-switzerland-victoria', name: 'Victoria Jungfrau Grand Hotel & Spa', address: 'Höheweg 41, 3800 Interlaken, Thụy Sĩ (Switzerland)', stars: 5,
+    rating: 9.8, reviewCount: 520, pricePerNight: 14200000, currency: 'VND',
+    imageUrl: 'https://images.unsplash.com/photo-1502784444187-359ac186c5bb?auto=format&fit=crop&w=1000&q=80',
+    amenities: ['Wi-Fi', 'Spa 5500m²', 'View dãy Alps', 'Hồ bơi nước khoáng nóng', 'Nhà hàng Michelin'], freeCancellation: true },
+  { id: 'hotel-canada-fairmont', name: 'The Fairmont Chateau Lake Louise', address: '111 Lake Louise Dr, Banff National Park, Icefields Parkway, Canada', stars: 5,
+    rating: 9.9, reviewCount: 840, pricePerNight: 16800000, currency: 'VND',
+    imageUrl: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80',
+    amenities: ['Wi-Fi', 'View hồ Lake Louise', 'Trượt tuyết thế giới', 'Spa cao cấp', 'Chèo kayak'], freeCancellation: true },
 ].map(enrichHotel);
 
 export function findDemoHotels(location: string): Hotel[] {
   const query = normalizeDestination(location);
   if (!query) return [];
-  return demoHotels.filter(hotel =>
+  const allPool = [...demoHotels, ...offlineCatalogHotels];
+  return allPool.filter(hotel =>
     normalizeDestination(`${hotel.name} ${hotel.address}`).includes(query)
   );
 }

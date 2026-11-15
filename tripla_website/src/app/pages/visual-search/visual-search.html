@@ -107,9 +107,8 @@
             </button>
             <a class="visual-search-resume"
                [href]="googleMapsUrl"
-               target="_blank"
-               rel="noopener noreferrer"
-               style="min-height: 36px; padding: 8px 12px; font-size: 12px; text-decoration: none; flex-shrink: 0;">
+               (click)="openInTriplaMap(result?.location?.landmark_name, result?.location?.formatted_address, $event)"
+               style="min-height: 36px; padding: 8px 12px; font-size: 12px; text-decoration: none; flex-shrink: 0; cursor: pointer;">
                 <span>Maps ↗</span>
             </a>
         </div>
@@ -149,9 +148,8 @@
                     </button>
                     <a class="visual-search-resume"
                        [href]="buildItemMapsUrl(matchedHotel.name || matchedHotel.hotel_name, matchedHotel.address)"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       style="min-height: 36px; padding: 8px 12px; font-size: 12px; text-decoration: none; flex-shrink: 0;">
+                       (click)="openInTriplaMap(matchedHotel.name || matchedHotel.hotel_name, matchedHotel.address, $event)"
+                       style="min-height: 36px; padding: 8px 12px; font-size: 12px; text-decoration: none; flex-shrink: 0; cursor: pointer;">
                         <span>Maps ↗</span>
                     </a>
                 </div>
@@ -184,9 +182,8 @@
                     <div style="display: flex; gap: 8px; justify-content: flex-end; align-items: center;">
                         <a class="visual-search-resume"
                            [href]="buildItemMapsUrl(hotel.name || hotel.hotel_name, hotel.address)"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           style="min-height: 30px; padding: 5px 10px; font-size: 11px; text-decoration: none;">
+                           (click)="openInTriplaMap(hotel.name || hotel.hotel_name, hotel.address, $event)"
+                           style="min-height: 30px; padding: 5px 10px; font-size: 11px; text-decoration: none; cursor: pointer;">
                             <span>Bản đồ ↗</span>
                         </a>
                         <button type="button"
@@ -211,6 +208,7 @@
                             <span style="font-size: 10px; font-weight: 700; text-transform: uppercase; padding: 2px 7px; border-radius: 999px; background: #dfecb6; color: #173b32; flex-shrink: 0;">
                                 {{ place.category }}
                             </span>
+                            <span style="color: rgba(23, 59, 50, 0.4); font-size: 11px;"> • </span>
                             <strong style="font-size: 13px; color: #173b32; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                                 {{ place.name }}
                             </strong>
@@ -222,9 +220,8 @@
                     <div style="display: flex; gap: 8px; justify-content: flex-end; align-items: center;">
                         <a class="visual-search-resume"
                            [href]="buildItemMapsUrl(place.name, result?.location?.formatted_address)"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           style="min-height: 28px; padding: 4px 10px; font-size: 11px; text-decoration: none;">
+                           (click)="openInTriplaMap(place.name, result?.location?.formatted_address, $event)"
+                           style="min-height: 28px; padding: 4px 10px; font-size: 11px; text-decoration: none; cursor: pointer;">
                             <span>Maps ↗</span>
                         </a>
                         <button type="button"

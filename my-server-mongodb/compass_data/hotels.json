@@ -12,7 +12,12 @@
     "currency": "VND",
     "accommodationType": "Homestay",
     "imageUrl": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1000&q=80",
-    "amenities": ["Wi-Fi", "Bữa sáng", "Sân vườn", "Bãi đỗ xe"],
+    "amenities": [
+      "Wi-Fi",
+      "Bữa sáng",
+      "Sân vườn",
+      "Bãi đỗ xe"
+    ],
     "freeCancellation": true,
     "description": "Một chốn dừng chân thư thái giữa rừng thông Đà Lạt, nơi bạn có thể chậm lại và tận hưởng kỳ nghỉ theo cách riêng.",
     "images": [
@@ -59,7 +64,11 @@
     "currency": "VND",
     "accommodationType": "Nhà nghỉ",
     "imageUrl": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
-    "amenities": ["Wi-Fi", "Bãi đỗ xe", "Sân vườn"],
+    "amenities": [
+      "Wi-Fi",
+      "Bãi đỗ xe",
+      "Sân vườn"
+    ],
     "freeCancellation": true,
     "description": "Khu vườn hồng cổ yên bình ngay gần trung tâm Đà Lạt, phù hợp cho cặp đôi và gia đình nhỏ.",
     "images": [
@@ -105,7 +114,12 @@
     "currency": "VND",
     "accommodationType": "Khách sạn",
     "imageUrl": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1000&q=80",
-    "amenities": ["Wi-Fi", "Hồ bơi", "Bữa sáng", "Spa"],
+    "amenities": [
+      "Wi-Fi",
+      "Hồ bơi",
+      "Bữa sáng",
+      "Spa"
+    ],
     "freeCancellation": true,
     "description": "Khách sạn nghỉ dưỡng ven biển Mỹ Khê & bán đảo Sơn Trà với hồ bơi vô cực hướng thẳng ra đại dương.",
     "images": [
@@ -151,7 +165,13 @@
     "currency": "VND",
     "accommodationType": "Khu nghỉ dưỡng",
     "imageUrl": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1000&q=80",
-    "amenities": ["Wi-Fi", "Hồ bơi", "Spa", "Bữa sáng", "Đưa đón sân bay"],
+    "amenities": [
+      "Wi-Fi",
+      "Hồ bơi",
+      "Spa",
+      "Bữa sáng",
+      "Đưa đón sân bay"
+    ],
     "freeCancellation": true,
     "description": "Khu nghỉ dưỡng 5 sao sở hữu bãi biển riêng tại Phú Quốc với biệt thự hồ bơi và nhà hàng hải sản sát biển.",
     "images": [
@@ -197,7 +217,13 @@
     "currency": "VND",
     "accommodationType": "Khu nghỉ dưỡng",
     "imageUrl": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1000&q=80",
-    "amenities": ["Wi-Fi", "Hồ bơi", "Spa", "Bữa sáng", "Đưa đón sân bay"],
+    "amenities": [
+      "Wi-Fi",
+      "Hồ bơi",
+      "Spa",
+      "Bữa sáng",
+      "Đưa đón sân bay"
+    ],
     "freeCancellation": true,
     "description": "Khu nghỉ dưỡng 6 sao đầu tiên tại Việt Nam nằm giữa Vườn Quốc gia Núi Chúa và vịnh Vĩnh Hy.",
     "images": [
@@ -242,7 +268,12 @@
     "currency": "VND",
     "accommodationType": "Khách sạn",
     "imageUrl": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
-    "amenities": ["Wi-Fi", "Hồ bơi", "Spa", "Bữa sáng"],
+    "amenities": [
+      "Wi-Fi",
+      "Hồ bơi",
+      "Spa",
+      "Bữa sáng"
+    ],
     "freeCancellation": true,
     "description": "Khách sạn boutique nghệ thuật Opera của kiến trúc sư Bill Bensley ngay trung tâm Hoàn Kiếm, Hà Nội.",
     "images": [
@@ -277,7 +308,12 @@
     "currency": "VND",
     "accommodationType": "Khách sạn",
     "imageUrl": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1000&q=80",
-    "amenities": ["Wi-Fi", "Hồ bơi", "Spa", "Bữa sáng"],
+    "amenities": [
+      "Wi-Fi",
+      "Hồ bơi",
+      "Spa",
+      "Bữa sáng"
+    ],
     "freeCancellation": true,
     "description": "Tuyệt tác kiến trúc Pháp Haute Couture giữa biển mây Sa Pa, kết nối trực tiếp ga tàu hỏa leo núi Mường Hoa.",
     "images": [
@@ -311,7 +347,13 @@
     "currency": "VND",
     "accommodationType": "Khu nghỉ dưỡng",
     "imageUrl": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80",
-    "amenities": ["Wi-Fi", "Hồ bơi", "Spa", "Bữa sáng", "Đưa đón sân bay"],
+    "amenities": [
+      "Wi-Fi",
+      "Hồ bơi",
+      "Spa",
+      "Bữa sáng",
+      "Đưa đón sân bay"
+    ],
     "freeCancellation": true,
     "description": "Biệt thự ghềnh đá biệt lập chỉ có thể tiếp cận bằng tàu cao tốc riêng tại vịnh Ninh Vân, Nha Trang.",
     "images": [
@@ -331,6 +373,616 @@
         "breakfast": true
       }
     ]
+  },
+  {
+    "_id": "hotel-imperial-vungtau",
+    "id": "hotel-imperial-vungtau",
+    "hotel_slug": "the-imperial-hotel-vung-tau",
+    "name": "The Imperial Hotel Vũng Tàu",
+    "hotel_name": "The Imperial Hotel Vũng Tàu",
+    "address": "159 Thùy Vân, Phường Thắng Tam, TP. Vũng Tàu",
+    "city": "Vũng Tàu",
+    "area": "Bãi Sau",
+    "stars": 5,
+    "star_rating": 5,
+    "rating": 9.3,
+    "reviewCount": 420,
+    "pricePerNight": 2450000,
+    "currency": "VND",
+    "accommodationType": "Khách sạn",
+    "imageUrl": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+    "amenities": [
+      "Wi-Fi",
+      "Hồ bơi riêng",
+      "Bãi biển riêng",
+      "Bữa sáng",
+      "Spa"
+    ],
+    "freeCancellation": true,
+    "description": "Khách sạn 5 sao mang phong cách cổ điển hoàng gia châu Âu duy nhất tọa lạc tại Bãi Sau Vũng Tàu với câu lạc bộ biển riêng biệt và hồ bơi vô cực sát biển.",
+    "images": [
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "rooms": [
+      {
+        "id": "vungtau-imperial-deluxe",
+        "name": "Deluxe Hướng Biển Hoàng Gia",
+        "size": 45,
+        "bed": "1 giường King",
+        "guests": 2,
+        "pricePerNight": 2450000,
+        "breakfast": true
+      },
+      {
+        "id": "vungtau-imperial-suite",
+        "name": "Imperial Grand Suite",
+        "size": 75,
+        "bed": "1 giường King siêu lớn",
+        "guests": 3,
+        "pricePerNight": 4600000,
+        "breakfast": true
+      }
+    ],
+    "coordinates": [
+      107.0965,
+      10.3395
+    ],
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        107.0965,
+        10.3395
+      ]
+    }
+  },
+  {
+    "_id": "hotel-pullman-vungtau",
+    "id": "hotel-pullman-vungtau",
+    "hotel_slug": "pullman-vung-tau",
+    "name": "Pullman Vũng Tàu Convention Centre",
+    "hotel_name": "Pullman Vũng Tàu Convention Centre",
+    "address": "15 Thi Sách, Phường Thắng Tam, TP. Vũng Tàu",
+    "city": "Vũng Tàu",
+    "area": "Trung tâm Bãi Sau",
+    "stars": 5,
+    "star_rating": 5,
+    "rating": 9.1,
+    "reviewCount": 380,
+    "pricePerNight": 1950000,
+    "currency": "VND",
+    "accommodationType": "Khách sạn",
+    "imageUrl": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80",
+    "amenities": [
+      "Wi-Fi",
+      "Hồ bơi",
+      "Phòng Gym",
+      "Bữa sáng",
+      "Bar"
+    ],
+    "freeCancellation": true,
+    "description": "Khách sạn phong cách nghỉ dưỡng hiện đại đạt chuẩn quốc tế của tập đoàn Accor tại Vũng Tàu với trung tâm hội nghị quy mô và hồ bơi tầng cao sang trọng.",
+    "images": [
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "rooms": [
+      {
+        "id": "vungtau-pullman-superior",
+        "name": "Superior King Room",
+        "size": 40,
+        "bed": "1 giường King",
+        "guests": 2,
+        "pricePerNight": 1950000,
+        "breakfast": true
+      },
+      {
+        "id": "vungtau-pullman-executive",
+        "name": "Executive Suite Lounge Access",
+        "size": 65,
+        "bed": "1 giường King",
+        "guests": 2,
+        "pricePerNight": 3500000,
+        "breakfast": true
+      }
+    ],
+    "coordinates": [
+      107.0925,
+      10.3425
+    ],
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        107.0925,
+        10.3425
+      ]
+    }
+  },
+  {
+    "_id": "hotel-dalat-palace",
+    "id": "hotel-dalat-palace",
+    "hotel_slug": "dalat-palace-heritage-hotel",
+    "name": "Dalat Palace Heritage Hotel",
+    "hotel_name": "Dalat Palace Heritage Hotel",
+    "address": "02 Trần Phú, Phường 3, TP. Đà Lạt",
+    "city": "Đà Lạt",
+    "area": "Hồ Xuân Hương",
+    "stars": 5,
+    "star_rating": 5,
+    "rating": 9.6,
+    "reviewCount": 450,
+    "pricePerNight": 3200000,
+    "currency": "VND",
+    "accommodationType": "Khách sạn",
+    "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1000&q=80",
+    "amenities": [
+      "Wi-Fi",
+      "Sân Golf",
+      "Bữa sáng",
+      "Spa",
+      "Sân vườn"
+    ],
+    "freeCancellation": true,
+    "description": "Biểu tượng khách sạn di sản kiến trúc hoàng gia Pháp từ năm 1922 nhìn ra hồ Xuân Hương thơ mộng giữa công viên thông xanh mát.",
+    "images": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "rooms": [
+      {
+        "id": "dalat-palace-superior",
+        "name": "Superior Heritage Room",
+        "size": 42,
+        "bed": "1 giường King",
+        "guests": 2,
+        "pricePerNight": 3200000,
+        "breakfast": true
+      },
+      {
+        "id": "dalat-palace-suite",
+        "name": "Royal Palace Suite",
+        "size": 70,
+        "bed": "1 giường King",
+        "guests": 2,
+        "pricePerNight": 5500000,
+        "breakfast": true
+      }
+    ],
+    "coordinates": [
+      108.4385,
+      11.9382
+    ],
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.4385,
+        11.9382
+      ]
+    }
+  },
+  {
+    "_id": "hotel-anantara-hoian",
+    "id": "hotel-anantara-hoian",
+    "hotel_slug": "anantara-hoi-an-resort",
+    "name": "Anantara Hoi An Resort",
+    "hotel_name": "Anantara Hoi An Resort",
+    "address": "01 Phạm Hồng Thái, Cẩm Châu, TP. Hội An",
+    "city": "Hội An",
+    "area": "Bên bờ Sông Thu Bồn",
+    "stars": 5,
+    "star_rating": 5,
+    "rating": 9.7,
+    "reviewCount": 390,
+    "pricePerNight": 4800000,
+    "currency": "VND",
+    "accommodationType": "Khu nghỉ dưỡng",
+    "imageUrl": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1000&q=80",
+    "amenities": [
+      "Wi-Fi",
+      "Hồ bơi",
+      "Du thuyền sông",
+      "Bữa sáng",
+      "Spa"
+    ],
+    "freeCancellation": true,
+    "description": "Khu nghỉ dưỡng boutique sang trọng nép mình bên dòng sông Thu Bồn thơ mộng, chỉ cách phố cổ Hội An vài phút tản bộ yên bình.",
+    "images": [
+      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "rooms": [
+      {
+        "id": "hoian-anantara-deluxe",
+        "name": "Deluxe River View Suite",
+        "size": 50,
+        "bed": "1 giường King",
+        "guests": 2,
+        "pricePerNight": 4800000,
+        "breakfast": true
+      }
+    ],
+    "coordinates": [
+      108.3375,
+      15.8778
+    ],
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        108.3375,
+        15.8778
+      ]
+    }
+  },
+  {
+    "_id": "hotel-emeralda-ninhbinh",
+    "id": "hotel-emeralda-ninhbinh",
+    "hotel_slug": "emeralda-resort-ninh-binh",
+    "name": "Emeralda Resort Ninh Bình",
+    "hotel_name": "Emeralda Resort Ninh Bình",
+    "address": "Khu bảo tồn đất ngập nước Vân Long, Gia Vân, Gia Viễn, Ninh Bình",
+    "city": "Ninh Bình",
+    "area": "Đầm Vân Long",
+    "stars": 5,
+    "star_rating": 5,
+    "rating": 9.4,
+    "reviewCount": 510,
+    "pricePerNight": 2300000,
+    "currency": "VND",
+    "accommodationType": "Khu nghỉ dưỡng",
+    "imageUrl": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+    "amenities": [
+      "Wi-Fi",
+      "Hồ bơi vô cực",
+      "Spa",
+      "Bữa sáng",
+      "Xe đạp miễn phí"
+    ],
+    "freeCancellation": true,
+    "description": "Không gian nghỉ dưỡng tái hiện ngôi làng Bắc Bộ xưa mộc mạc bên đầm ngập nước Vân Long với kiến trúc nhà ba gian truyền thống.",
+    "images": [
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "rooms": [
+      {
+        "id": "ninhbinh-emeralda-superior",
+        "name": "Superior Village Room",
+        "size": 50,
+        "bed": "1 giường King hoặc 2 giường đơn",
+        "guests": 2,
+        "pricePerNight": 2300000,
+        "breakfast": true
+      }
+    ],
+    "coordinates": [
+      105.8652,
+      20.3542
+    ],
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        105.8652,
+        20.3542
+      ]
+    }
+  },
+  {
+    "_id": "hotel-vinpearl-halong",
+    "id": "hotel-vinpearl-halong",
+    "hotel_slug": "vinpearl-resort-spa-ha-long",
+    "name": "Vinpearl Resort & Spa Hạ Long",
+    "hotel_name": "Vinpearl Resort & Spa Hạ Long",
+    "address": "Đảo Rều, Bãi Cháy, TP. Hạ Long, Quảng Ninh",
+    "city": "Hạ Long",
+    "area": "Đảo Rều Bãi Cháy",
+    "stars": 5,
+    "star_rating": 5,
+    "rating": 9.6,
+    "reviewCount": 520,
+    "pricePerNight": 2850000,
+    "currency": "VND",
+    "accommodationType": "Khu nghỉ dưỡng",
+    "imageUrl": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+    "amenities": [
+      "Wi-Fi",
+      "Hồ bơi vô cực",
+      "Bãi biển riêng",
+      "Spa",
+      "Bữa sáng",
+      "Tàu cao tốc đưa đón"
+    ],
+    "freeCancellation": true,
+    "description": "Khu nghỉ dưỡng biệt lập đầu tiên và duy nhất nằm hoàn toàn trên mặt biển Đảo Rều với tầm nhìn 360 độ ôm trọn kỳ quan Vịnh Hạ Long hùng vĩ.",
+    "images": [
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "rooms": [
+      {
+        "id": "halong-vinpearl-deluxe",
+        "name": "Deluxe Hướng Biển Vịnh Hạ Long",
+        "size": 48,
+        "bed": "1 giường King",
+        "guests": 2,
+        "pricePerNight": 2850000,
+        "breakfast": true
+      },
+      {
+        "id": "halong-vinpearl-suite",
+        "name": "Executive Ocean Panoramic Suite",
+        "size": 85,
+        "bed": "1 giường King siêu lớn",
+        "guests": 3,
+        "pricePerNight": 5200000,
+        "breakfast": true
+      }
+    ],
+    "coordinates": [
+      107.0395,
+      20.9485
+    ],
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        107.0395,
+        20.9485
+      ]
+    }
+  },
+  {
+    "_id": "hotel-paradise-elegance",
+    "id": "hotel-paradise-elegance",
+    "hotel_slug": "du-thuyen-paradise-elegance-ha-long",
+    "name": "Du Thuyền 5 Sao Paradise Elegance Cruise Hạ Long",
+    "hotel_name": "Du Thuyền 5 Sao Paradise Elegance Cruise Hạ Long",
+    "address": "Cảng Tàu Khách Quốc Tế Tuần Châu, TP. Hạ Long, Quảng Ninh",
+    "city": "Hạ Long",
+    "area": "Cảng Tuần Châu",
+    "stars": 5,
+    "star_rating": 5,
+    "rating": 9.8,
+    "reviewCount": 410,
+    "pricePerNight": 6200000,
+    "currency": "VND",
+    "accommodationType": "Khu nghỉ dưỡng",
+    "imageUrl": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1000&q=80",
+    "amenities": [
+      "Wi-Fi",
+      "Hồ bơi Jacuzzi",
+      "Tiệc tối Fine Dining",
+      "Kayak",
+      "Bữa sáng"
+    ],
+    "freeCancellation": true,
+    "description": "Du thuyền vỏ thép sang trọng bậc nhất vịnh di sản với ban công riêng cho từng phòng ngủ, spa thư giãn và hải trình qua Đảo Ti Tốp, Hang Sửng Sốt.",
+    "images": [
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "rooms": [
+      {
+        "id": "halong-paradise-balcony",
+        "name": "Deluxe Balcony Cabin trên Vịnh",
+        "size": 36,
+        "bed": "1 giường đôi",
+        "guests": 2,
+        "pricePerNight": 6200000,
+        "breakfast": true
+      }
+    ],
+    "coordinates": [
+      106.9892,
+      20.9185
+    ],
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.9892,
+        20.9185
+      ]
+    }
+  },
+  {
+    "_id": "hotel-saigon-bangioc",
+    "id": "hotel-saigon-bangioc",
+    "hotel_slug": "saigon-ban-gioc-resort",
+    "name": "Sài Gòn - Bản Giốc Resort",
+    "hotel_name": "Sài Gòn - Bản Giốc Resort",
+    "address": "Xã Đàm Thủy, Huyện Trùng Khánh, Cao Bằng",
+    "city": "Cao Bằng",
+    "area": "Cạnh Thác Bản Giốc",
+    "stars": 4,
+    "star_rating": 4,
+    "rating": 9.1,
+    "reviewCount": 310,
+    "pricePerNight": 1250000,
+    "currency": "VND",
+    "accommodationType": "Khu nghỉ dưỡng",
+    "imageUrl": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+    "amenities": [
+      "Wi-Fi",
+      "Bữa sáng",
+      "Nhà hàng đặc sản",
+      "Sân vườn",
+      "Bãi đỗ xe"
+    ],
+    "freeCancellation": true,
+    "description": "Khu nghỉ dưỡng cao cấp 4 sao duy nhất tọa lạc ngay bên cạnh thắng cảnh Thác Bản Giốc, kiến trúc nhà sàn kết hợp tiện nghi hiện đại.",
+    "images": [
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "rooms": [
+      {
+        "id": "caobang-bangioc-deluxe",
+        "name": "Deluxe Hướng Thác Bản Giốc",
+        "size": 38,
+        "bed": "1 giường đôi lớn",
+        "guests": 2,
+        "pricePerNight": 1250000,
+        "breakfast": true
+      }
+    ],
+    "coordinates": [
+      106.7215,
+      22.8525
+    ],
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.7215,
+        22.8525
+      ]
+    }
+  },
+  {
+    "_id": "hotel-phongnha-lodge",
+    "id": "hotel-phongnha-lodge",
+    "hotel_slug": "phong-nha-lodge-lake-house",
+    "name": "Phong Nha Lodge & Lake House Resort",
+    "hotel_name": "Phong Nha Lodge & Lake House Resort",
+    "address": "Khương Hà, Xã Sơn Trạch, Huyện Bố Trạch, Quảng Bình",
+    "city": "Quảng Bình",
+    "area": "Vườn Quốc gia Phong Nha",
+    "stars": 4,
+    "star_rating": 4,
+    "rating": 9.3,
+    "reviewCount": 420,
+    "pricePerNight": 950000,
+    "currency": "VND",
+    "accommodationType": "Khu nghỉ dưỡng",
+    "imageUrl": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80",
+    "amenities": [
+      "Wi-Fi",
+      "Hồ bơi bên hồ",
+      "Bữa sáng",
+      "Chèo Kayak",
+      "Nhà hàng"
+    ],
+    "freeCancellation": true,
+    "description": "Chốn lưu trú lý tưởng ven hồ Đồng Suôn thơ mộng, trạm dừng chân thuận tiện bậc nhất cho các hành trình thám hiểm hang động Phong Nha - Kẻ Bàng.",
+    "images": [
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "rooms": [
+      {
+        "id": "quangbinh-phongnha-bungalow",
+        "name": "Lake View Bungalow ven hồ",
+        "size": 45,
+        "bed": "1 giường King",
+        "guests": 2,
+        "pricePerNight": 950000,
+        "breakfast": true
+      }
+    ],
+    "coordinates": [
+      106.2852,
+      17.5842
+    ],
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.2852,
+        17.5842
+      ]
+    }
+  },
+  {
+    "_id": "hotel-victoria-jungfrau",
+    "id": "hotel-victoria-jungfrau",
+    "hotel_slug": "victoria-jungfrau-grand-hotel",
+    "name": "Victoria Jungfrau Grand Hotel & Spa",
+    "hotel_name": "Victoria Jungfrau Grand Hotel & Spa",
+    "address": "Höheweg 41, 3800 Interlaken, Switzerland",
+    "city": "Thụy Sĩ",
+    "area": "Interlaken",
+    "stars": 5,
+    "star_rating": 5,
+    "rating": 9.8,
+    "reviewCount": 380,
+    "pricePerNight": 12500000,
+    "currency": "VND",
+    "accommodationType": "Khách sạn",
+    "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1000&q=80",
+    "amenities": [
+      "Wi-Fi",
+      "Spa 5500m2",
+      "Hồ bơi nước ấm",
+      "Bữa sáng",
+      "Tầm nhìn Jungfrau"
+    ],
+    "freeCancellation": true,
+    "description": "Khách sạn huyền thoại 5 sao sang trọng bậc nhất tại Interlaken với tầm nhìn triệu đô hướng thẳng ra ngọn núi tuyết Jungfrau vĩnh cửu.",
+    "images": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "rooms": [
+      {
+        "id": "swiss-jungfrau-suite",
+        "name": "Jungfrau View Superior Suite",
+        "size": 55,
+        "bed": "1 giường King",
+        "guests": 2,
+        "pricePerNight": 12500000,
+        "breakfast": true
+      }
+    ],
+    "coordinates": [
+      7.8592,
+      46.6875
+    ],
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        7.8592,
+        46.6875
+      ]
+    }
+  },
+  {
+    "_id": "hotel-fairmont-lake-louise",
+    "id": "hotel-fairmont-lake-louise",
+    "hotel_slug": "fairmont-chateau-lake-louise",
+    "name": "Fairmont Chateau Lake Louise",
+    "hotel_name": "Fairmont Chateau Lake Louise",
+    "address": "111 Lake Louise Dr, Lake Louise, AB, Canada",
+    "city": "Canada",
+    "area": "Banff National Park",
+    "stars": 5,
+    "star_rating": 5,
+    "rating": 9.7,
+    "reviewCount": 650,
+    "pricePerNight": 14500000,
+    "currency": "VND",
+    "accommodationType": "Khu nghỉ dưỡng",
+    "imageUrl": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1000&q=80",
+    "amenities": [
+      "Wi-Fi",
+      "Hồ nước ngọc bích",
+      "Spa",
+      "Bữa sáng",
+      "Trượt tuyết"
+    ],
+    "freeCancellation": true,
+    "description": "Lâu đài nghỉ dưỡng di sản biểu tượng nằm soi bóng xuống mặt hồ Louise xanh ngọc bích giữa vườn quốc gia Banff hùng vĩ.",
+    "images": [
+      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "rooms": [
+      {
+        "id": "canada-fairmont-lakeview",
+        "name": "Fairmont Lake View King Room",
+        "size": 42,
+        "bed": "1 giường King",
+        "guests": 2,
+        "pricePerNight": 14500000,
+        "breakfast": true
+      }
+    ],
+    "coordinates": [
+      -116.1772,
+      51.4178
+    ],
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        -116.1772,
+        51.4178
+      ]
+    }
   }
 ]
-

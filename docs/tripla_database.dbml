@@ -1,0 +1,244 @@
+// ==========================================
+// TRIPLA DATABASE ERD (DBML DEFINITION V2)
+// Hỗ trợ import trực tiếp vào https://dbdiagram.io
+// ==========================================
+
+// ==========================================
+// 1. BẢNG NGƯỜI DÙNG & NHÀ CUNG CẤP
+// ==========================================
+
+Table Users {
+  user_id INT [pk, increment, note: 'The unique identifier for each user in the system.']
+  full_name VARCHAR(100) [not null, note: 'The user’s full name.']
+  email VARCHAR(255) [unique, not null, note: 'The user\'s email address.']
+  password VARCHAR(255) [not null, note: 'The securely hashed string of the user\'s password.']
+  phone_number VARCHAR(20) [unique, null, note: 'The user’s contact phone number.']
+  avatar VARCHAR(500) [null, note: 'The URL linking to the user’s profile picture.']
+  role ENUM('tourist', 'provider', 'admin') [not null, default: 'tourist', note: 'Defines the user’s permission level.']
+  created_at TIMESTAMP [not null, default: `CURRENT_TIMESTAMP`, note: 'The exact date and time when the account was registered.']
+}
+
+Table Providers {
+  provider_id INT [pk, increment, note: 'The unique identifier for each provider profile.']
+  user_id INT [unique, not null, note: 'Links to the users table. One user has only one provider profile.']
+  business_name VARCHAR(255) [not null, note: 'The official registered name of the hotel or business.']
+  business_license VARCHAR(500) [not null, note: 'The URL linking to the uploaded business license document.']
+  verification_status ENUM('pending', 'approved', 'rejected') [not null, default: 'pending', note: 'The current review status of the provider\'s credentials by the Admin.']
+  verified_at TIMESTAMP [null, note: 'The exact date and time when the admin approved the profile.']
+}
+
+// ==========================================
+// 2. BẢNG ĐỊA ĐIỂM & KHÁCH SẠN
+// ==========================================
+
+Table Locations {
+  location_id INT [pk, increment, note: 'The unique identifier for each tourist destination or spot.']
+  name VARCHAR(255) [not null, note: 'The official name of the location.']
+  location_category ENUM('attraction', 'restaurant', 'cafe', 'shopping', 'nature', 'other') [not null, default: 'attraction', note: 'The classification of the spot to filter locations.']
+  address VARCHAR(500) [null, note: 'The physical street address. Can be null for natural landmarks.']
+  latitude DECIMAL(10,8) [not null, note: 'The GPS latitude coordinate.']
+  longitude DECIMAL(11,8) [not null, note: 'The GPS longitude coordinate.']
+  entry_fee DECIMAL(10,2) [null, default: 0.00, note: 'Standard admission fee or ticket price.']
+  requires_reservation BOOLEAN [not null, default: false, note: 'Indicates whether advance reservation is required.']
+  reservation_duration INT [null, note: 'Recommended reservation duration in minutes.']
+  location_description TEXT [null, note: 'A detailed overview, historical context, or general info.']
+}
+
+Table Hotels {
+  hotel_id INT [pk, increment, note: 'The unique identifier for each hotel property.']
+  hotel_slug VARCHAR(255) [unique, not null, note: 'SEO-friendly URL identifier used for primary route querying.']
+  provider_id INT [not null, note: 'Identifies which business owns this hotel.']
+  hotel_name VARCHAR(255) [not null, note: 'The official name of the hotel property.']
+  description TEXT [null, note: 'A detailed overview or specific selling points.']
+  address VARCHAR(500) [not null, note: 'The full physical street address of the hotel.']
+  latitude DECIMAL(10,8) [not null, note: 'The GPS latitude coordinate.']
+  longitude DECIMAL(11,8) [not null, note: 'The GPS longitude coordinate.']
+  star_rating TINYINT [null, note: 'The official star classification (ranging from 1 to 5).']
+  total_rooms INT [not null, default: 0, note: 'The total capacity count of rooms managed.']
+  hotel_amenities TEXT [null, note: 'A comma-separated string or JSON array listing service tags.']
+  policies TEXT [null, note: 'General property rules, regulations, and cancellation guidelines.']
+  check_in_time TIME [not null, default: '14:00:00', note: 'The standard check-in time.']
+  check_out_time TIME [not null, default: '12:00:00', note: 'The standard check-out time.']
+}
+
+Table Room {
+  room_id INT [pk, increment, note: 'The unique identifier for each room record.']
+  hotel_id INT [not null, note: 'Identifies which hotel this room belongs to.']
+  room_name VARCHAR(255) [not null, note: 'The specific name or label of the room.']
+  room_type ENUM('single', 'double', 'twin', 'suite', 'family') [not null, note: 'The category classification of the room.']
+  capacity TINYINT [not null, default: 2, note: 'The maximum number of guests allowed.']
+  room_price DECIMAL(12,2) [not null, note: 'The base operational price per night.']
+  total_units INT [not null, default: 1, note: 'Total physical room inventory for this room type.']
+  stock INT [not null, default: 1, note: 'Current available room stock; decremented upon booking, restored upon cancellation.']
+  room_status ENUM('available', 'maintenance', 'inactive') [not null, default: 'available', note: 'The current operational status.']
+  room_description TEXT [not null, note: 'A detailed overview highlighting specific features.']
+  room_amenities TEXT [not null, note: 'A comma-separated string or JSON array of room features.']
+  room_images TEXT [not null, note: 'A comma-separated list or JSON array storing image URLs.']
+}
+
+// ==========================================
+// 3. BẢNG ĐẶT PHÒNG & THANH TOÁN
+// ==========================================
+
+Table Bookings {
+  booking_id INT [pk, increment, note: 'The unique identifier for each booking transaction.']
+  user_id INT [not null, note: 'Identifies the Tourist who made the reservation.']
+  room_id INT [not null, note: 'Identifies the specific room reserved.']
+  quantity INT [not null, default: 1, note: 'The number of rooms booked for this category.']
+  check_in DATE [not null, note: 'The exact date the guest is scheduled to arrive.']
+  check_out DATE [not null, note: 'The exact date the guest is scheduled to depart.']
+  total_price DECIMAL(12,2) [not null, note: 'The final calculated amount paid (nights * room_price * quantity + taxes - discount).']
+  booking_status ENUM('pending', 'confirmed', 'checked_in', 'checked_out', 'cancelled', 'no_show') [not null, default: 'pending', note: 'The real-time lifecycle state.']
+  booking_code VARCHAR(20) [unique, not null, note: 'A unique alphanumeric code for QR and verification.']
+  created_at TIMESTAMP [not null, default: `CURRENT_TIMESTAMP`, note: 'The exact date and time the booking was created.']
+}
+
+Table Payments {
+  payment_id INT [pk, increment, note: 'The unique identifier for each payment transaction.']
+  booking_id INT [unique, not null, note: 'Ensures one booking has exactly one primary payment record.']
+  payment_method ENUM('credit_card', 'e_wallet', 'bank_transfer') [not null, note: 'The specific method used (e.g., Momo, VNPay, Visa).']
+  transaction_id VARCHAR(100) [unique, null, note: 'The external tracking code from third-party gateway.']
+  amount DECIMAL(12,2) [not null, note: 'The exact monetary value processed.']
+  payment_status ENUM('pending', 'completed', 'failed', 'refunded') [not null, default: 'pending', note: 'The real-time financial state.']
+  paid_at TIMESTAMP [null, note: 'The exact date and time the transaction was verified.']
+}
+
+// ==========================================
+// 4. BẢNG NỘI DUNG, BÌNH LUẬN & KIỂM DUYỆT
+// ==========================================
+
+Table Contents {
+  content_id INT [pk, increment, note: 'The unique identifier for each video post/reel.']
+  user_id INT [not null, note: 'References the user who created the content.']
+  content_title VARCHAR(255) [null, note: 'The title of the content.']
+  content_description TEXT [null, note: 'A detailed description of the travel experience.']
+  caption TEXT [null, note: 'The caption written by the traveler.']
+  image_url VARCHAR(500) [null, note: 'The cover image or uploaded image.']
+  video_url VARCHAR(500) [not null, note: 'The uploaded travel video (YouTube Shorts or MP4).']
+  status ENUM('visible', 'hidden', 'removed') [not null, default: 'visible', note: 'The moderation state of the content.']
+  created_at TIMESTAMP [not null, default: `CURRENT_TIMESTAMP`, note: 'The exact date and time the review was submitted.']
+}
+
+Table Comments {
+  comment_id INT [pk, increment, note: 'The unique identifier for each comment record.']
+  content_id INT [not null, note: 'Links to the contents table. Identifies the video reel receiving the comment.']
+  user_id INT [not null, note: 'Links to the users table. Identifies the author of the comment.']
+  comment_text TEXT [not null, note: 'The actual text content of the comment.']
+  likes_count INT [not null, default: 0, note: 'The number of likes received on this comment.']
+  created_at TIMESTAMP [not null, default: `CURRENT_TIMESTAMP`, note: 'The exact timestamp when the comment was posted.']
+}
+
+Table Location_tags {
+  tag_id INT [pk, increment, note: 'The unique identifier for each location tag.']
+  content_id INT [not null, note: 'References the content containing the tag.']
+  location_id INT [null, note: 'References a tourist location.']
+  hotel_id INT [null, note: 'References a hotel.']
+}
+
+Table Reports {
+  report_id INT [pk, increment, note: 'The unique identifier for each report ticket.']
+  content_id INT [not null, note: 'Identifies the specific video/post being reported.']
+  reporter_id INT [not null, note: 'Identifies the Tourist who submitted the report.']
+  reason ENUM('spam', 'inappropriate', 'false_info', 'copyright', 'other') [not null, note: 'The predefined category of the violation.']
+  details TEXT [null, note: 'Additional context or explanation.']
+  status ENUM('pending', 'resolved', 'dismissed') [not null, default: 'pending', note: 'The current moderation state.']
+  handled_by INT [null, note: 'Identifies the Admin who reviewed and closed this ticket.']
+  created_at TIMESTAMP [not null, default: `CURRENT_TIMESTAMP`, note: 'The exact date and time the report was submitted.']
+}
+
+// ==========================================
+// 5. BẢNG KẾ HOẠCH & CHUYẾN ĐI
+// ==========================================
+
+Table Trip_plans {
+  plan_id INT [pk, increment, note: 'The unique identifier for each planned trip itinerary.']
+  user_id INT [not null, note: 'References the user who owns the travel plan.']
+  plan_name VARCHAR(255) [not null, note: 'The name of the travel plan.']
+  start_date DATE [not null, note: 'Planned departure date.']
+  end_date DATE [not null, note: 'Planned return date.']
+  estimated_budget DECIMAL(12,2) [null, default: 0.00, note: 'Estimated travel budget.']
+  note TEXT [null, note: 'General notes for the travel plan.']
+  created_at TIMESTAMP [default: `CURRENT_TIMESTAMP`, note: 'Creation timestamp.']
+}
+
+Table Wishlist {
+  wishlist_id INT [pk, increment, note: 'The unique identifier for each saved item record.']
+  plan_id INT [not null, note: 'References the associated trip plan.']
+  location_id INT [not null, note: 'References the saved location.']
+  added_at TIMESTAMP [not null, default: `CURRENT_TIMESTAMP`, note: 'The exact date and time it was saved.']
+
+  Indexes {
+    (plan_id, location_id) [unique, name: 'unique_plan_location']
+  }
+}
+
+Table Plan_details {
+  detail_id INT [pk, increment, note: 'The unique identifier for each activity/stop in the trip.']
+  plan_id INT [not null, note: 'Identifies which overarching trip this activity belongs to.']
+  location_id INT [null, note: 'The tourist spot to visit.']
+  hotel_id INT [null, note: 'Used if the activity is checking into or resting at the hotel.']
+  visit_date DATE [not null, note: 'The specific day this activity takes place.']
+  start_time TIME [null, note: 'The estimated time the tourist will arrive.']
+  sequence_order TINYINT [not null, default: 0, note: 'The chronological order of the stop within that day.']
+  note VARCHAR(255) [null, note: 'Traveler\'s note for this stop.']
+}
+
+Table Trips {
+  trip_id INT [pk, increment, note: 'The unique identifier for each confirmed trip.']
+  plan_id INT [unique, not null, note: 'References the originating travel plan (1-to-1).']
+  user_id INT [not null, note: 'References the traveler who owns the trip.']
+  trip_status ENUM('upcoming','ongoing','completed','cancelled') [default: 'upcoming', note: 'Current trip status.']
+  confirmed_at TIMESTAMP [null, note: 'Confirmation time.']
+  note TEXT [null, note: 'Additional notes for the confirmed trip.']
+}
+
+// ==========================================
+// 6. BẢNG THÔNG BÁO
+// ==========================================
+
+Table Notifications {
+  notification_id INT [pk, increment, note: 'The unique identifier for each notification record.']
+  user_id INT [not null, note: 'Identifies the recipient of this specific notification.']
+  title VARCHAR(255) [not null, note: 'The short headline or subject.']
+  content TEXT [not null, note: 'The detailed message or body.']
+  type ENUM('booking', 'promotion', 'system', 'trip_reminder') [not null, default: 'system', note: 'The category of the notification.']
+  is_read BOOLEAN [not null, default: false, note: 'Indicates whether the user has opened/viewed this.']
+  created_at TIMESTAMP [not null, default: `CURRENT_TIMESTAMP`, note: 'The exact date and time triggered.']
+}
+
+// ==========================================
+// ĐỊNH NGHĨA KHÓA NGOẠI (RELATIONSHIPS)
+// ==========================================
+
+Ref: Providers.user_id - Users.user_id [delete: cascade] // 1-to-1
+Ref: Hotels.provider_id > Providers.provider_id [delete: cascade]
+Ref: Room.hotel_id > Hotels.hotel_id [delete: cascade]
+
+Ref: Bookings.user_id > Users.user_id [delete: cascade]
+Ref: Bookings.room_id > Room.room_id [delete: restrict]
+Ref: Payments.booking_id - Bookings.booking_id [delete: cascade] // 1-to-1
+
+Ref: Contents.user_id > Users.user_id [delete: cascade]
+Ref: Comments.content_id > Contents.content_id [delete: cascade]
+Ref: Comments.user_id > Users.user_id [delete: cascade]
+
+Ref: Location_tags.content_id > Contents.content_id [delete: cascade]
+Ref: Location_tags.location_id > Locations.location_id [delete: set null]
+Ref: Location_tags.hotel_id > Hotels.hotel_id [delete: set null]
+
+Ref: Trip_plans.user_id > Users.user_id [delete: cascade]
+Ref: Wishlist.plan_id > Trip_plans.plan_id [delete: cascade]
+Ref: Wishlist.location_id > Locations.location_id [delete: cascade]
+
+Ref: Plan_details.plan_id > Trip_plans.plan_id [delete: cascade]
+Ref: Plan_details.location_id > Locations.location_id [delete: set null]
+Ref: Plan_details.hotel_id > Hotels.hotel_id [delete: set null]
+
+Ref: Trips.plan_id - Trip_plans.plan_id [delete: cascade] // 1-to-1
+Ref: Trips.user_id > Users.user_id [delete: cascade]
+
+Ref: Notifications.user_id > Users.user_id [delete: cascade]
+
+Ref: Reports.content_id > Contents.content_id [delete: cascade]
+Ref: Reports.reporter_id > Users.user_id [delete: cascade]
+Ref: Reports.handled_by > Users.user_id [delete: set null]

@@ -100,12 +100,25 @@ router.get('/hotels', async (req, res) => {
       });
     });
 
-    const normLocCity = ['tp hcm', 'tphcm', 'sai gon', 'tp ho chi minh'].includes(location)
+    let normLocCity = ['tp hcm', 'tphcm', 'sai gon', 'tp ho chi minh'].includes(location)
       ? 'ho chi minh'
       : location;
 
+    if (normLocCity.includes('ha long')) normLocCity = 'ha long';
+    else if (normLocCity.includes('vung tau')) normLocCity = 'vung tau';
+    else if (normLocCity.includes('da lat')) normLocCity = 'da lat';
+    else if (normLocCity.includes('nha trang')) normLocCity = 'nha trang';
+    else if (normLocCity.includes('phu quoc')) normLocCity = 'phu quoc';
+    else if (normLocCity.includes('hoi an')) normLocCity = 'hoi an';
+    else if (normLocCity.includes('sa pa') || normLocCity.includes('sapa')) normLocCity = 'sa pa';
+    else if (normLocCity.includes('ninh binh')) normLocCity = 'ninh binh';
+    else if (normLocCity.includes('cao bang') || normLocCity.includes('ban gioc')) normLocCity = 'cao bang';
+    else if (normLocCity.includes('quang binh') || normLocCity.includes('phong nha') || normLocCity.includes('son doong')) normLocCity = 'quang binh';
+    else if (normLocCity.includes('thuy si') || normLocCity.includes('switzerland') || normLocCity.includes('interlaken')) normLocCity = 'thuy si';
+    else if (normLocCity.includes('canada') || normLocCity.includes('banff')) normLocCity = 'canada';
+
     if (normLocCity && normLocCity !== 'viet nam' && normLocCity !== 'all' && normLocCity !== 'toan quoc') {
-      const stopWords = new Set(['resort', 'hotel', 'khach', 'san', 'khu', 'nghi', 'duong', 'villa', 'mong', 'mo', 'di', 'san', 'tp', 'tinh', 'thanh', 'pho', 'dao', 'ngoc']);
+      const stopWords = new Set(['resort', 'hotel', 'khach', 'san', 'khu', 'nghi', 'duong', 'villa', 'mong', 'mo', 'di', 'san', 'tp', 'tinh', 'thanh', 'pho', 'dao', 'ngoc', 'vinh', 'bai', 'bien', 'nui']);
       const tokens = normLocCity.split(/\s+/).filter((w) => w.length >= 2 && !stopWords.has(w));
       const fallbackTokens = tokens.length > 0 ? tokens : normLocCity.split(/\s+/).filter((w) => w.length >= 2);
 
@@ -457,16 +470,36 @@ router.get('/rooms/:id', async (req, res) => {
 // 4. GET /api/v1/locations & GET /api/v1/locations/:id
 router.get('/locations', async (req, res) => {
   try {
-    const { category, city } = req.query;
+    const { category, city, q } = req.query;
     let items = [];
 
     if (isMongoConnected()) {
       const filter = {};
-      if (category) filter.location_category = category;
-      if (city) filter.city = { $regex: city, $options: 'i' };
+      if (category && category !== 'all' && category !== 'Tất cả') {
+        filter.location_category = category;
+      }
       items = await Location.find(filter).lean();
     } else {
       items = [...(memoryStore.locations || [])];
+    }
+
+    if (city && city !== 'all' && city !== 'viet nam' && city !== 'toan quoc') {
+      const normCity = stripAccents(city);
+      const aliasCity = ['tp hcm', 'tphcm', 'sai gon', 'saigon', 'tp ho chi minh'].includes(normCity)
+        ? 'ho chi minh'
+        : normCity;
+      items = items.filter((loc) => {
+        const text = stripAccents(`${loc.city || ''} ${loc.address || ''} ${loc.name || ''}`);
+        return text.includes(aliasCity);
+      });
+    }
+
+    if (q) {
+      const normQ = stripAccents(q);
+      items = items.filter((loc) => {
+        const text = stripAccents(`${loc.name || ''} ${loc.address || ''} ${loc.city || ''} ${loc.location_description || ''} ${loc.tag || ''}`);
+        return text.includes(normQ);
+      });
     }
 
     return res.json({
