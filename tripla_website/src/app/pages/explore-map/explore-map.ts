@@ -232,7 +232,10 @@ export class ExploreMapComponent implements AfterViewInit, OnDestroy {
     }
 
     if (target) {
-      this.selectPlace(target, this.filteredPlaces.length === 1);
+      this.selectPlace(target, true);
+      setTimeout(() => {
+        this.markersById.get(target!.id)?.openTooltip();
+      }, 200);
     }
   }
 

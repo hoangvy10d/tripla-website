@@ -109,7 +109,7 @@
                [href]="googleMapsUrl"
                (click)="openInTriplaMap(result?.location?.landmark_name, result?.location?.formatted_address, $event)"
                style="min-height: 36px; padding: 8px 12px; font-size: 12px; text-decoration: none; flex-shrink: 0; cursor: pointer;">
-                <span>Maps ↗</span>
+                <span>Bản đồ ↗</span>
             </a>
         </div>
 
@@ -150,7 +150,7 @@
                        [href]="buildItemMapsUrl(matchedHotel.name || matchedHotel.hotel_name, matchedHotel.address)"
                        (click)="openInTriplaMap(matchedHotel.name || matchedHotel.hotel_name, matchedHotel.address, $event)"
                        style="min-height: 36px; padding: 8px 12px; font-size: 12px; text-decoration: none; flex-shrink: 0; cursor: pointer;">
-                        <span>Maps ↗</span>
+                        <span>Bản đồ ↗</span>
                     </a>
                 </div>
             </div>
@@ -222,7 +222,7 @@
                            [href]="buildItemMapsUrl(place.name, result?.location?.formatted_address)"
                            (click)="openInTriplaMap(place.name, result?.location?.formatted_address, $event)"
                            style="min-height: 28px; padding: 4px 10px; font-size: 11px; text-decoration: none; cursor: pointer;">
-                            <span>Maps ↗</span>
+                            <span>Bản đồ ↗</span>
                         </a>
                         <button type="button"
                                 class="visual-search-trigger"

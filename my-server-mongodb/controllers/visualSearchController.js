@@ -212,22 +212,29 @@ function extractAreaTokens(landmarkName, formattedAddress) {
 
 async function saveDiscoveredPlacesToDb(landmarkName, formattedAddress, description, placeType, canonicalCity, nearbyPlaces = []) {
   try {
-    const mainGeo = await geocodePlaceCoordinates(landmarkName, formattedAddress, canonicalCity, 0);
     const mainSlug = `loc_vs_${toSlug(landmarkName) || Date.now()}`;
+    const existingMain = await VisualSearchLocation.findOne({
+      $or: [{ landmark_name: landmarkName }, { name: landmarkName }, { slug: mainSlug }]
+    }).lean();
+
+    const mainGeo = (existingMain?.latitude && existingMain?.longitude)
+      ? { lat: existingMain.latitude, lng: existingMain.longitude, displayAddress: existingMain.formatted_address || formattedAddress }
+      : await geocodePlaceCoordinates(landmarkName, formattedAddress, canonicalCity, 0);
+
     const isFoodMain = /nhà hàng|ẩm thực|cà phê|cafe/i.test(placeType || '');
-    const mainCategory = isFoodMain ? 'restaurant' : (/trung tâm|mua sắm/i.test(placeType || '') ? 'shopping' : 'attraction');
+    const mainCategory = existingMain?.location_category || (isFoodMain ? 'restaurant' : (/trung tâm|mua sắm/i.test(placeType || '') ? 'shopping' : 'attraction'));
 
     const mainLoc = await VisualSearchLocation.findOneAndUpdate(
       { $or: [{ landmark_name: landmarkName }, { name: landmarkName }, { slug: mainSlug }] },
       {
         $set: {
-          name: landmarkName,
+          name: existingMain?.name || landmarkName,
           landmark_name: landmarkName,
           address: formattedAddress || mainGeo.displayAddress,
           formatted_address: formattedAddress || mainGeo.displayAddress,
           city: canonicalCity,
           location_category: mainCategory,
-          location_description: description || `Điểm đến nổi bật tại ${canonicalCity}: ${landmarkName}.`,
+          location_description: description || existingMain?.location_description || `Điểm đến nổi bật tại ${canonicalCity}: ${landmarkName}.`,
           latitude: mainGeo.lat,
           longitude: mainGeo.lng,
           geo: { type: 'Point', coordinates: [mainGeo.lng, mainGeo.lat] }
@@ -243,7 +250,7 @@ async function saveDiscoveredPlacesToDb(landmarkName, formattedAddress, descript
       { new: true, upsert: true, setDefaultsOnInsert: true }
     );
 
-    if (Activity) {
+    if (Activity && !existingMain) {
       await Activity.findOneAndUpdate(
         { name: landmarkName },
         {

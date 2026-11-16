@@ -637,6 +637,7 @@ router.get('/map/places', async (req, res) => {
       const id = String(l._id || l.id);
       locIds.add(id);
       if (l.name) locNames.add(stripAccents(l.name));
+      if (l.landmark_name) locNames.add(stripAccents(l.landmark_name));
       items.push({
         id,
         slug: toSlug(l.name || l.title) || l.slug || id,
