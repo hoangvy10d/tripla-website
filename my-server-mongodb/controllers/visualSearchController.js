@@ -20,7 +20,7 @@ function foldAccents(value) {
 
 const CITY_CENTERS = {
   'Canada': { lat: 51.1784, lng: -115.5708, aliases: ['canada', 'banff', 'lake louise', 'moraine', 'icefields', 'bow lake', 'peyto', 'cascade', 'brewhouse', 'sulphur', 'british columbia', 'alberta', 'yoho', 'emerald lake', 'vancouver', 'jasper'] },
-  'Thụy Sĩ': { lat: 46.5935, lng: 7.9091, aliases: ['switzerland', 'thuy si', 'lauterbrunnen', 'interlaken', 'beatenberg', 'beatus', 'jungfrau', 'grindelwald', 'thun', 'brienz', 'murren', 'schilthorn', 'staubbach', 'trummelbach', 'harder kulm'] },
+  'Thụy Sĩ': { lat: 46.5935, lng: 7.9091, aliases: ['switzerland', 'thuy si', 'lauterbrunnen', 'interlaken', 'beatenberg', 'beatus', 'jungfrau', 'grindelwald', 'lake thun', 'ho thun', 'brienz', 'murren', 'schilthorn', 'staubbach', 'trummelbach', 'harder kulm'] },
   'Cao Bằng': { lat: 22.8525, lng: 106.7215, aliases: ['cao bang', 'ban gioc', 'nguom ngao', 'trung khanh', 'pac bo', 'khuoi ky', 'mat than'] },
   'Quảng Bình': { lat: 17.5500, lng: 106.2800, aliases: ['quang binh', 'phong nha', 'ke bang', 'son doong', 'hang en', 'song chay', 'hang toi', 'thien duong', 'suoi nuoc mooc', 'dong hoi', 'chay lap'] },
   'Hạ Long': { lat: 20.9101, lng: 107.1839, aliases: ['ha long', 'quang ninh', 'ti top', 'titop', 'titov', 'sung sot', 'su sot', 'cua van', 'tuan chau', 'bai chay', 'bai tu long', 'lan ha', 'dao reu'] },
@@ -175,9 +175,7 @@ async function getVideoContext(video) {
 
   return {
     title: video.content_title || video.get('title') || '',
-    description: [video.content_description, video.caption, video.get('description')]
-      .filter(Boolean)
-      .join('\n'),
+    description: [...new Set([video.content_description, video.caption, video.get('description')].map((s) => String(s || '').trim()).filter(Boolean))].join('\n'),
     tags: [...new Set(tags)],
     category: video.category || '',
     comments: comments.map((comment) => comment.text || comment.content || '').filter(Boolean)
@@ -351,7 +349,7 @@ async function saveDiscoveredPlacesToDb(landmarkName, formattedAddress, descript
             { upsert: true }
           );
         }
-      } else if (Activity) {
+      } else if (Activity && !existingLoc) {
         await Activity.findOneAndUpdate(
           { name: pName },
           {
@@ -392,7 +390,11 @@ async function getRecommendedHotelsAndVenues(landmarkName, formattedAddress, key
   const cityAliases = cityInfo ? [resolvedCity.toLowerCase(), ...cityInfo.aliases] : [resolvedCity.toLowerCase()];
 
   const matchesResolvedCity = (doc) => {
-    const hay = foldAccents(`${doc.city || ''} ${doc.address || ''} ${doc.formatted_address || ''} ${doc.area || ''} ${doc.name || ''} ${doc.hotel_name || ''}`);
+    const docCity = String(doc.city || '').trim();
+    if (docCity && CITY_CENTERS[docCity]) {
+      return foldAccents(docCity) === foldAccents(resolvedCity);
+    }
+    const hay = foldAccents(`${doc.city || ''} ${doc.address || ''} ${doc.formatted_address || ''} ${doc.area || ''}`);
     return cityAliases.some((alias) => hay.includes(foldAccents(alias)));
   };
 
@@ -436,22 +438,52 @@ async function inferLocationFromVideoContext(video, videoContext) {
   const foldedCombined = foldAccents(rawCombined);
   const canonicalCity = resolveCanonicalCity(video.location_name || '', rawCombined, videoContext.tags || []);
 
+  // Xóa bỏ bản ghi bị lỗi từ các lần chạy cũ (nếu tên ngoài Hạ Long nhưng địa chỉ lại dính Hạ Long)
+  if (canonicalCity !== 'Hạ Long') {
+    await VisualSearchLocation.deleteMany({
+      $and: [
+        { $or: [{ formatted_address: /Hạ Long/i }, { address: /Hạ Long/i }] },
+        { city: { $ne: 'Hạ Long' } }
+      ]
+    }).catch(() => {});
+  }
+
   const allLocs = await VisualSearchLocation.find({}).lean();
   const cityInfo = CITY_CENTERS[canonicalCity];
   const cityAliases = cityInfo ? [foldAccents(canonicalCity), ...cityInfo.aliases] : [foldAccents(canonicalCity)];
 
   const cityLocs = allLocs.filter((l) => {
-    const hay = foldAccents(`${l.city || ''} ${l.address || ''} ${l.formatted_address || ''} ${l.name || ''} ${l.landmark_name || ''}`);
+    const addrText = foldAccents(`${l.address || ''} ${l.formatted_address || ''}`);
+    if (canonicalCity !== 'Hạ Long' && addrText.includes('ha long')) return false;
+    const docCity = String(l.city || '').trim();
+    if (docCity && CITY_CENTERS[docCity]) {
+      return foldAccents(docCity) === foldAccents(canonicalCity);
+    }
+    const hay = foldAccents(`${l.city || ''} ${l.address || ''} ${l.formatted_address || ''}`);
     return cityAliases.some((a) => hay.includes(a));
   });
 
-  let matchedLoc = cityLocs.find((l) => {
-    const lname = foldAccents(l.landmark_name || l.name || '');
-    return lname.length >= 3 && foldedCombined.includes(lname);
-  }) || cityLocs[0] || null;
+  let matchedLoc = null;
+  if (foldedCombined.includes('british columbia')) {
+    matchedLoc = cityLocs.find((l) => foldAccents(l.landmark_name || l.name || '').includes('emerald lake'));
+  } else if (foldedCombined.includes('lauterbrunnen')) {
+    matchedLoc = cityLocs.find((l) => foldAccents(l.landmark_name || l.name || '').includes('lauterbrunnen'));
+  } else if (foldedCombined.includes('banff')) {
+    matchedLoc = cityLocs.find((l) => foldAccents(l.landmark_name || l.name || '').includes('icefields') || foldAccents(l.landmark_name || l.name || '').includes('cascade'));
+  }
+
+  if (!matchedLoc) {
+    matchedLoc = cityLocs.find((l) => {
+      const lname = foldAccents(l.landmark_name || l.name || '');
+      return lname.length >= 3 && foldedCombined.includes(lname);
+    }) || cityLocs[0] || null;
+  }
 
   const landmark = matchedLoc?.landmark_name || matchedLoc?.name || video.location_name || canonicalCity;
-  const address = matchedLoc?.formatted_address || matchedLoc?.address || video.location_name || canonicalCity;
+  const rawAddr = matchedLoc?.formatted_address || matchedLoc?.address || video.location_name || canonicalCity;
+  const address = (canonicalCity !== 'Hạ Long' && foldAccents(rawAddr).includes('ha long'))
+    ? (video.location_name || canonicalCity)
+    : rawAddr;
 
   const otherCityLocs = cityLocs.filter(
     (l) => (l.landmark_name || l.name) !== landmark

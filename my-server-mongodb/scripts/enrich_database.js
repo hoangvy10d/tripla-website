@@ -2103,6 +2103,14 @@ async function main(keepConnected = false) {
 
   // Insert or update locations
   const locationsCol = db.collection('locations');
+  // Dọn dẹp các bản ghi cũ bị lệch địa chỉ (ví dụ tên là British Columbia, Canada nhưng địa chỉ lại là Hạ Long)
+  await locationsCol.deleteMany({
+    $and: [
+      { $or: [{ formatted_address: /Hạ Long/i }, { address: /Hạ Long/i }] },
+      { landmark_name: { $not: /Hạ Long|Ti Tốp|Titop|Titov|Sửng Sốt|Sử Sốt|Cửa Vạn|Tuần Châu|Bái Tử Long|Lan Hạ|Sun World Hạ Long/i } },
+      { name: { $not: /Hạ Long|Ti Tốp|Titop|Titov|Sửng Sốt|Sử Sốt|Cửa Vạn|Tuần Châu|Bái Tử Long|Lan Hạ|Sun World Hạ Long/i } }
+    ]
+  });
   let locInserted = 0;
   for (const loc of NEW_LOCATIONS) {
     const query = {
