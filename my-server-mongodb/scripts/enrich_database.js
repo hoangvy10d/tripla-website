@@ -1009,13 +1009,140 @@ const NEW_LOCATIONS = [
     ]
   },
 
-  // === QUỐC TẾ (THỤY SĨ & CANADA) ===
+  // === QUỐC TẾ (THỤY SĨ & CANADA) + MỞ RỘNG CAO BẰNG, QUẢNG BÌNH, VĨNH HY, PHÚ YÊN, LĂNG CÔ ===
+  {
+    slug: 'loc_caobang_nui_mat_than',
+    name: 'Núi Mắt Thần (Núi Thủng) & Thảo nguyên Bản Danh',
+    landmark_name: 'Núi Mắt Thần',
+    location_category: 'nature',
+    address: 'Xã Quốc Toản, Huyện Trà Lĩnh, Cao Bằng, Việt Nam',
+    formatted_address: 'Xã Quốc Toản, Huyện Trà Lĩnh, Cao Bằng, Việt Nam',
+    city: 'Cao Bằng',
+    latitude: 22.7485,
+    longitude: 106.3012,
+    entry_fee: 50000,
+    requires_reservation: false,
+    reservation_duration: 150,
+    location_description: 'Tuyệt tác địa chất thuộc Công viên Địa chất Toàn cầu UNESCO Non nước Cao Bằng với lỗ thủng tròn xuyên tâm núi đường kính hơn 50m giữa thảo nguyên xanh mướt.',
+    image_url: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80',
+    rating: 4.89,
+    review_count: 1950,
+    unit: '/ khách',
+    tag: 'Tuyệt Tác Công Viên Địa Chất UNESCO',
+    drawerKey: 'dining',
+    features: [
+      { icon: 'landscape', label: 'Lỗ thủng tự nhiên đường kính 50m xuyên đỉnh núi' },
+      { icon: 'camping', label: 'Cắm trại & dã ngoại bên hồ Nặm Trá' }
+    ]
+  },
+  {
+    slug: 'loc_caobang_pac_bo',
+    name: 'Khu di tích Quốc gia đặc biệt Pác Bó & Suối Lê-nin',
+    landmark_name: 'Suối Lê-nin & Hang Pác Bó',
+    location_category: 'attraction',
+    address: 'Bản Pác Bó, Xã Trường Hà, Huyện Hà Quảng, Cao Bằng, Việt Nam',
+    formatted_address: 'Bản Pác Bó, Xã Trường Hà, Huyện Hà Quảng, Cao Bằng, Việt Nam',
+    city: 'Cao Bằng',
+    latitude: 22.9781,
+    longitude: 106.0528,
+    entry_fee: 45000,
+    requires_reservation: false,
+    reservation_duration: 150,
+    location_description: 'Quần thể di tích lịch sử thiêng liêng nơi đầu nguồn cách mạng với dòng suối Lê-nin xanh màu ngọc bích và núi Các Mác hùng vĩ.',
+    image_url: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80',
+    rating: 4.92,
+    review_count: 3400,
+    unit: '/ vé',
+    tag: 'Di Tích Quốc Gia Đặc Biệt',
+    drawerKey: 'dining',
+    features: [
+      { icon: 'water', label: 'Dòng suối Lê-nin trong vắt màu ngọc bích' },
+      { icon: 'history_edu', label: 'Hang Cốc Bó & cột mốc biên giới 108' }
+    ]
+  },
+  {
+    slug: 'loc_quangbinh_dong_phong_nha',
+    name: 'Động Phong Nha & Động Tiên Sơn',
+    landmark_name: 'Động Phong Nha',
+    location_category: 'nature',
+    address: 'Thị trấn Phong Nha, Huyện Bố Trạch, Quảng Bình, Việt Nam',
+    formatted_address: 'Thị trấn Phong Nha, Huyện Bố Trạch, Quảng Bình, Việt Nam',
+    city: 'Quảng Bình',
+    latitude: 17.5835,
+    longitude: 106.2831,
+    entry_fee: 250000,
+    requires_reservation: true,
+    reservation_duration: 180,
+    location_description: 'Du thuyền ngược dòng sông Son thơ mộng tiến vào lòng "Đệ nhất kỳ quan động" với sông ngầm dài nhất và hệ thống thạch nhũ lung linh huyền ảo.',
+    image_url: 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80',
+    rating: 4.91,
+    review_count: 4600,
+    unit: '/ vé thuyền & động',
+    tag: 'Đệ Nhất Kỳ Quan Động',
+    drawerKey: 'yacht',
+    features: [
+      { icon: 'directions_boat', label: 'Du thuyền 30 phút trên dòng sông Son xanh biếc' },
+      { icon: 'auto_awesome', label: 'Hệ thống thạch nhũ 400 triệu năm tuổi' }
+    ]
+  },
+  {
+    slug: 'loc_quangbinh_dong_thien_duong',
+    name: 'Động Thiên Đường (Paradise Cave)',
+    landmark_name: 'Động Thiên Đường',
+    location_category: 'nature',
+    address: 'Km 16 Đường Hồ Chí Minh nhánh Tây, Xã Sơn Trạch, Bố Trạch, Quảng Bình, Việt Nam',
+    formatted_address: 'Km 16 Đường Hồ Chí Minh nhánh Tây, Xã Sơn Trạch, Bố Trạch, Quảng Bình, Việt Nam',
+    city: 'Quảng Bình',
+    latitude: 17.5212,
+    longitude: 106.2248,
+    entry_fee: 250000,
+    requires_reservation: false,
+    reservation_duration: 180,
+    location_description: '"Hoàng cung trong lòng đất" dài hơn 31.4km — hang động khô dài nhất châu Á với cầu gỗ 1.000m chiêm ngưỡng quần thể măng đá, nhũ đá tráng lệ.',
+    image_url: 'https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1200&q=80',
+    rating: 4.94,
+    review_count: 5100,
+    unit: '/ vé tham quan',
+    tag: 'Hoàng Cung Trong Lòng Đất',
+    drawerKey: 'dining',
+    features: [
+      { icon: 'hiking', label: 'Hệ thống cầu thang gỗ dài 1km xuyên lòng động' },
+      { icon: 'electric_car', label: 'Xe điện sinh thái xuyên tán rừng nguyên sinh' }
+    ]
+  },
+  {
+    slug: 'loc_quangbinh_suoi_nuoc_mooc',
+    name: 'Khu du lịch Sinh thái Suối Nước Moọc',
+    landmark_name: 'Suối Nước Moọc',
+    location_category: 'nature',
+    address: 'Đường Hồ Chí Minh nhánh Tây, Phúc Trạch, Bố Trạch, Quảng Bình, Việt Nam',
+    formatted_address: 'Đường Hồ Chí Minh nhánh Tây, Phúc Trạch, Bố Trạch, Quảng Bình, Việt Nam',
+    city: 'Quảng Bình',
+    latitude: 17.5621,
+    longitude: 106.2512,
+    entry_fee: 180000,
+    requires_reservation: false,
+    reservation_duration: 180,
+    location_description: 'Ốc đảo xanh ngọc bích mát lạnh quanh năm dưới tán rừng Phong Nha - Kẻ Bàng, nổi tiếng với chèo Kayak, cầu tre và mùa hoa Vàng Anh nở rộ.',
+    image_url: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80',
+    rating: 4.85,
+    review_count: 2950,
+    unit: '/ vé trọn gói',
+    tag: 'Ốc Đảo Xanh Ngọc Bích',
+    drawerKey: 'yacht',
+    features: [
+      { icon: 'kayaking', label: 'Chèo Kayak & tắm suối mát lạnh 20 độ C' },
+      { icon: 'restaurant', label: 'Thưởng thức mẹt gà nướng & cá suối Phong Nha' }
+    ]
+  },
+
+  // === THỤY SĨ (SWITZERLAND: LAUTERBRUNNEN, INTERLAKEN, JUNGFRAU, BEATENBERG) ===
   {
     slug: 'loc_intl_st_beatus_caves',
     name: 'St. Beatus Caves & Interlaken',
     landmark_name: 'St. Beatus Caves',
     location_category: 'nature',
-    address: '3652 Beatenberg, Switzerland',
+    address: 'Staatsstrasse 30, 3800 Sundlauenen / 3652 Beatenberg, Switzerland',
     formatted_address: '3652 Beatenberg, Switzerland',
     city: 'Thụy Sĩ',
     latitude: 46.6845,
@@ -1035,6 +1162,133 @@ const NEW_LOCATIONS = [
       { icon: 'waterfall_chart', label: 'Thác nước ngầm đổ cuồn cuộn giữa vách đá' }
     ]
   },
+  {
+    slug: 'loc_intl_lauterbrunnen_valley',
+    name: 'Thung lũng Lauterbrunnen & Thác Staubbach',
+    landmark_name: 'Lauterbrunnen',
+    location_category: 'nature',
+    address: '3822 Lauterbrunnen, Canton of Bern, Switzerland',
+    formatted_address: '3822 Lauterbrunnen, Switzerland',
+    city: 'Thụy Sĩ',
+    latitude: 46.5935,
+    longitude: 7.9091,
+    entry_fee: 350000,
+    requires_reservation: false,
+    reservation_duration: 240,
+    location_description: 'Thung lũng cổ tích với 72 ngọn thác đổ từ vách đá dựng đứng cao 300m, nổi bật với thác Staubbach và những ngôi nhà gỗ Chalet giữa đồng cỏ Alps.',
+    image_url: 'https://images.unsplash.com/photo-1502784444187-359ac186c5bb?auto=format&fit=crop&w=1200&q=80',
+    rating: 4.97,
+    review_count: 5800,
+    unit: '/ chuyến tham quan',
+    tag: 'Thung Lũng 72 Ngọn Thác',
+    drawerKey: 'dining',
+    features: [
+      { icon: 'water', label: 'Chiêm ngưỡng thác Staubbach cao 297m' },
+      { icon: 'train', label: 'Tàu bánh răng leo núi Wengernalpbahn cổ kính' }
+    ]
+  },
+  {
+    slug: 'loc_intl_interlaken_harder_kulm',
+    name: 'Interlaken & Đài quan sát Harder Kulm',
+    landmark_name: 'Interlaken',
+    location_category: 'attraction',
+    address: 'Höheweg, 3800 Interlaken, Switzerland',
+    formatted_address: 'Höheweg, 3800 Interlaken, Switzerland',
+    city: 'Thụy Sĩ',
+    latitude: 46.6976,
+    longitude: 7.8524,
+    entry_fee: 950000,
+    requires_reservation: true,
+    reservation_duration: 180,
+    location_description: 'Thị trấn nghỉ dưỡng nổi tiếng nằm giữa hai hồ nước ngọc bích Lake Thun và Lake Brienz, kết nối tàu kéo lên đỉnh Harder Kulm ngắm bộ ba đỉnh Eiger, Mönch, Jungfrau.',
+    image_url: 'https://images.unsplash.com/photo-1527668752968-14dc70a27c95?auto=format&fit=crop&w=1200&q=80',
+    rating: 4.94,
+    review_count: 4700,
+    unit: '/ vé cáp treo khứ hồi',
+    tag: 'Trái Tim Vùng Берner Oberland',
+    drawerKey: 'yacht',
+    features: [
+      { icon: 'visibility', label: 'Cầu kính Two Lakes Bridge độ cao 1.322m' },
+      { icon: 'paragliding', label: 'Trải nghiệm dù lượn ngắm trọn hai hồ Thụy Sĩ' }
+    ]
+  },
+  {
+    slug: 'loc_intl_jungfraujoch_top_of_europe',
+    name: 'Đỉnh Jungfraujoch – Top of Europe',
+    landmark_name: 'Jungfraujoch',
+    location_category: 'attraction',
+    address: '3801 Jungfraujoch, Lauterbrunnen, Switzerland',
+    formatted_address: '3801 Jungfraujoch, Switzerland',
+    city: 'Thụy Sĩ',
+    latitude: 46.5475,
+    longitude: 7.9851,
+    entry_fee: 4800000,
+    requires_reservation: true,
+    reservation_duration: 360,
+    location_description: 'Nhà ga xe lửa cao nhất châu Âu ở độ cao 3.454m quanh năm tuyết trắng, sở hữu Đài quan sát Nhân sư Sphinx, Cung điện Băng và dòng sông băng Aletsch.',
+    image_url: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1200&q=80',
+    rating: 4.98,
+    review_count: 6200,
+    unit: '/ vé tàu Jungfrau',
+    tag: 'Nóc Nhà Châu Âu 3.454m',
+    drawerKey: 'yacht',
+    features: [
+      { icon: 'ac_unit', label: 'Khám phá Cung điện Băng Ice Palace dưới sông băng' },
+      { icon: 'train', label: 'Tuyến cáp treo Eiger Express & tàu xuyên núi' }
+    ]
+  },
+  {
+    slug: 'loc_intl_grindelwald_first',
+    name: 'Grindelwald First & Cầu treo Cliff Walk',
+    landmark_name: 'Grindelwald First',
+    location_category: 'attraction',
+    address: 'Dorfstrasse 187, 3818 Grindelwald, Switzerland',
+    formatted_address: 'Dorfstrasse 187, 3818 Grindelwald, Switzerland',
+    city: 'Thụy Sĩ',
+    latitude: 46.6608,
+    longitude: 8.0531,
+    entry_fee: 1850000,
+    requires_reservation: true,
+    reservation_duration: 240,
+    location_description: 'Thiên đường phiêu lưu trên đỉnh núi Alps với cầu treo vách đá First Cliff Walk by Tissot, đường trượt First Flyer và cung trekking đến hồ Bachalpsee.',
+    image_url: 'https://images.unsplash.com/photo-1502784444187-359ac186c5bb?auto=format&fit=crop&w=1200&q=80',
+    rating: 4.95,
+    review_count: 5100,
+    unit: '/ vé cáp treo & Cliff Walk',
+    tag: 'Cầu Treo Vách Đá Alps',
+    drawerKey: 'yacht',
+    features: [
+      { icon: 'hiking', label: 'Đi bộ trên cầu treo bám dọc vách đá dựng đứng' },
+      { icon: 'downhill_skiing', label: 'Đường trượt Zipline First Flyer & Mountain Cart' }
+    ]
+  },
+  {
+    slug: 'loc_intl_lake_thun_cruise',
+    name: 'Du thuyền Hồ Thun & Lâu đài Oberhofen (Lake Thun)',
+    landmark_name: 'Lake Thun',
+    location_category: 'nature',
+    address: 'Seestrasse, 3600 Thun / Interlaken West, Switzerland',
+    formatted_address: '3600 Thun, Interlaken, Switzerland',
+    city: 'Thụy Sĩ',
+    latitude: 46.6711,
+    longitude: 7.7285,
+    entry_fee: 1450000,
+    requires_reservation: true,
+    reservation_duration: 180,
+    location_description: 'Hành trình du thuyền thư thái trên mặt hồ Thun xanh biếc ngắm nhìn những lâu đài cổ tích thời Trung cổ (Oberhofen, Spiez) và đỉnh núi tuyết Alps.',
+    image_url: 'https://images.unsplash.com/photo-1527668752968-14dc70a27c95?auto=format&fit=crop&w=1200&q=80',
+    rating: 4.92,
+    review_count: 3400,
+    unit: '/ vé du thuyền',
+    tag: 'Du Thuyền Hồ Tuyết Sơn',
+    drawerKey: 'yacht',
+    features: [
+      { icon: 'directions_boat', label: 'Tàu hơi nước cổ điển chạy dọc hồ Thun' },
+      { icon: 'castle', label: 'Tham quan lâu đài Oberhofen bên bờ hồ' }
+    ]
+  },
+
+  // === CANADA (BANFF, LAKE LOUISE, ICEFIELDS PARKWAY, BRITISH COLUMBIA) ===
   {
     slug: 'loc_intl_icefields_parkway',
     name: 'Icefields Parkway & Hồ Bow (Banff, Canada)',
@@ -1058,6 +1312,181 @@ const NEW_LOCATIONS = [
     features: [
       { icon: 'directions_car', label: 'Cung đường cao tốc băng qua dãy núi Rocky' },
       { icon: 'ac_unit', label: 'Chiêm ngưỡng sông băng vĩnh cửu Crowfoot Glacier' }
+    ]
+  },
+  {
+    slug: 'loc_intl_cascade_shops_banff',
+    name: 'Cascade Shops & Đại lộ Banff Avenue',
+    landmark_name: 'Cascade Shops',
+    location_category: 'shopping',
+    address: '317 Banff Ave, Banff, AB T1L 1B5, Canada',
+    formatted_address: '317 Banff Ave, Banff, AB T1L 1B5, Canada',
+    city: 'Canada',
+    latitude: 51.1762,
+    longitude: -115.5708,
+    entry_fee: 0,
+    requires_reservation: false,
+    reservation_duration: 120,
+    location_description: 'Trung tâm thương mại và ẩm thực sầm uất bậc nhất ngay trái tim thị trấn Banff với hơn 40 cửa hiệu bản địa, nhà hàng The Canadian Brewhouse và tầm nhìn thẳng ra núi Cascade.',
+    image_url: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1200&q=80',
+    rating: 4.85,
+    review_count: 3200,
+    unit: '/ khách',
+    tag: 'Tâm Điểm Mua Sắm Thị Trấn Banff',
+    drawerKey: 'dining',
+    features: [
+      { icon: 'shopping_bag', label: 'Hơn 40 cửa hàng quà lưu niệm & thời trang mùa đông' },
+      { icon: 'restaurant', label: 'Tổ hợp nhà hàng & quán bar ngắm núi Cascade' }
+    ]
+  },
+  {
+    slug: 'loc_intl_canadian_brewhouse_banff',
+    name: 'The Canadian Brewhouse (Banff)',
+    landmark_name: 'The Canadian Brewhouse (Banff)',
+    location_category: 'restaurant',
+    address: '317 Banff Ave #205, Banff, AB T1L 1B5, Canada',
+    formatted_address: '317 Banff Ave #205, Banff, AB T1L 1B5, Canada',
+    city: 'Canada',
+    latitude: 51.1764,
+    longitude: -115.5705,
+    entry_fee: 650000,
+    requires_reservation: true,
+    reservation_duration: 120,
+    location_description: 'Nhà hàng thể thao & gastropub đặc trưng của Canada tọa lạc tại tầng trên Cascade Shops, nổi tiếng với món Poutine truyền thống, bít tết Alberta và sân thượng ngắm núi tuyết.',
+    image_url: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80',
+    rating: 4.82,
+    review_count: 2450,
+    unit: '/ thực khách',
+    tag: 'Ẩm Thực & Bia Thủ Công Canada',
+    drawerKey: 'dining',
+    features: [
+      { icon: 'sports_bar', label: 'Sân thượng Rooftops nhìn thẳng ra đỉnh núi Rocky' },
+      { icon: 'restaurant_menu', label: 'Đặc sản Poutine, bò Alberta & bia thủ công' }
+    ]
+  },
+  {
+    slug: 'loc_intl_lake_louise_banff',
+    name: 'Hồ Lake Louise & Sông băng Victoria (Banff, Canada)',
+    landmark_name: 'Lake Louise',
+    location_category: 'nature',
+    address: 'Lake Louise, Banff National Park, AB T0L 1E0, Canada',
+    formatted_address: 'Lake Louise, Banff National Park, AB, Canada',
+    city: 'Canada',
+    latitude: 51.4167,
+    longitude: -116.2167,
+    entry_fee: 450000,
+    requires_reservation: false,
+    reservation_duration: 180,
+    location_description: 'Viên ngọc lục bảo của Vườn Quốc gia Banff với mặt hồ nước băng tan xanh biếc vào mùa hè và sân trượt băng cổ tích trước lâu đài Fairmont vào mùa đông.',
+    image_url: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80',
+    rating: 4.99,
+    review_count: 8900,
+    unit: '/ vé thuyền Canoe / khách',
+    tag: 'Báu Vật Vườn Quốc Gia Banff',
+    drawerKey: 'yacht',
+    features: [
+      { icon: 'kayaking', label: 'Chèo thuyền Canoe đỏ biểu tượng trên mặt hồ ngọc bích' },
+      { icon: 'hiking', label: 'Cung trekking lên Lake Agnes Tea House' }
+    ]
+  },
+  {
+    slug: 'loc_intl_moraine_lake_banff',
+    name: 'Hồ Moraine Lake & Thung lũng Mười Đỉnh Núi',
+    landmark_name: 'Moraine Lake',
+    location_category: 'nature',
+    address: 'Moraine Lake Rd, Banff National Park, AB, Canada',
+    formatted_address: 'Moraine Lake Rd, Banff National Park, AB, Canada',
+    city: 'Canada',
+    latitude: 51.3217,
+    longitude: -116.1860,
+    entry_fee: 380000,
+    requires_reservation: true,
+    reservation_duration: 180,
+    location_description: 'Hồ nước sông băng nổi tiếng trên tờ tiền 20 đô la Canada xưa, được bao bọc bởi 10 đỉnh núi tuyết hùng vĩ (Valley of the Ten Peaks) ở độ cao 1.884m.',
+    image_url: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1200&q=80',
+    rating: 4.99,
+    review_count: 7400,
+    unit: '/ vé xe trung chuyển',
+    tag: 'Tuyệt Tác Mười Đỉnh Núi Tuyết',
+    drawerKey: 'yacht',
+    features: [
+      { icon: 'photo_camera', label: 'Điểm ngắm bình minh Rockpile Trail nổi tiếng thế giới' },
+      { icon: 'landscape', label: 'Mặt nước xanh lam rực rỡ từ bột đá sông băng' }
+    ]
+  },
+  {
+    slug: 'loc_intl_banff_gondola_sulphur',
+    name: 'Cáp treo Banff Gondola & Đỉnh Sulphur Mountain',
+    landmark_name: 'Banff Gondola',
+    location_category: 'attraction',
+    address: '100 Mountain Ave, Banff, AB T1L 1B2, Canada',
+    formatted_address: '100 Mountain Ave, Banff, AB T1L 1B2, Canada',
+    city: 'Canada',
+    latitude: 51.1475,
+    longitude: -115.5565,
+    entry_fee: 1350000,
+    requires_reservation: true,
+    reservation_duration: 180,
+    location_description: 'Hành trình cáp treo lồng kính đưa du khách lên độ cao 2.281m trên đỉnh núi Sulphur, dạo bước trên cầu gỗ trên mây ngắm trọn 6 dãy núi Rocky và thung lũng Bow.',
+    image_url: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80',
+    rating: 4.95,
+    review_count: 6100,
+    unit: '/ vé cáp treo khứ hồi',
+    tag: 'Đài Quan Sát 360 Độ Đỉnh Rocky',
+    drawerKey: 'yacht',
+    features: [
+      { icon: 'visibility', label: 'Đường đi bộ lát gỗ tới trạm khí tượng Cosmic Ray' },
+      { icon: 'restaurant', label: 'Thưởng thức ẩm thực trên mây tại Sky Bistro' }
+    ]
+  },
+  {
+    slug: 'loc_intl_bow_lake_peyto_lake',
+    name: 'Hồ Bow Lake & Hồ Peyto (Icefields Parkway)',
+    landmark_name: 'Bow Lake',
+    location_category: 'nature',
+    address: 'Icefields Pkwy, Banff National Park, AB, Canada',
+    formatted_address: 'Icefields Pkwy, Banff National Park, AB, Canada',
+    city: 'Canada',
+    latitude: 51.6744,
+    longitude: -116.4664,
+    entry_fee: 250000,
+    requires_reservation: false,
+    reservation_duration: 120,
+    location_description: 'Cặp hồ băng trứ danh dọc đại lộ Icefields Parkway với mặt nước phẳng lặng soi bóng sông băng Crowfoot và hồ Peyto mang hình dáng đầu sói độc đáo.',
+    image_url: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1200&q=80',
+    rating: 4.96,
+    review_count: 4300,
+    unit: '/ khách',
+    tag: 'Hồ Băng Hình Đầu Sói Kỳ Thú',
+    drawerKey: 'yacht',
+    features: [
+      { icon: 'water', label: 'Mặt hồ phẳng như gương dưới chân sông băng Bow' },
+      { icon: 'hiking', label: 'Đài quan sát Bow Summit cao nhất trên Icefields Parkway' }
+    ]
+  },
+  {
+    slug: 'loc_intl_emerald_lake_bc',
+    name: 'Hồ Ngọc Lục Bảo Emerald Lake (British Columbia, Canada)',
+    landmark_name: 'Emerald Lake',
+    location_category: 'nature',
+    address: 'Emerald Lake Rd, Yoho National Park, Field, BC V0A 1G0, Canada',
+    formatted_address: 'Emerald Lake Rd, Field, British Columbia, Canada',
+    city: 'Canada',
+    latitude: 51.4431,
+    longitude: -116.5332,
+    entry_fee: 320000,
+    requires_reservation: false,
+    reservation_duration: 180,
+    location_description: 'Hồ nước lớn nhất tại Vườn Quốc gia Yoho (British Columbia), được bao quanh bởi những cánh rừng thông tùng rậm rạp và rặng núi President Range hùng vĩ.',
+    image_url: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80',
+    rating: 4.97,
+    review_count: 5400,
+    unit: '/ khách',
+    tag: 'Viên Ngọc Xanh British Columbia',
+    drawerKey: 'yacht',
+    features: [
+      { icon: 'forest', label: 'Cung đường trekking 5.2km vòng quanh mặt hồ' },
+      { icon: 'kayaking', label: 'Chèo thuyền giữa làn nước màu xanh ngọc lục bảo' }
     ]
   }
 ];
@@ -1092,6 +1521,33 @@ const NEW_HOTELS = [
     coordinates: [106.7215, 22.8525],
     geo: { type: 'Point', coordinates: [106.7215, 22.8525] }
   },
+  {
+    _id: 'hotel-lan-rung-bangioc',
+    id: 'hotel-lan-rung-bangioc',
+    hotel_slug: 'lan-rung-ban-gioc-boutique-homestay',
+    name: 'Lan Rừng Bản Giốc Boutique Lodge',
+    hotel_name: 'Lan Rừng Bản Giốc Boutique Lodge',
+    address: 'Làng đá cổ Khuổi Ky, Xã Đàm Thủy, Trùng Khánh, Cao Bằng',
+    city: 'Cao Bằng',
+    area: 'Làng đá Khuổi Ky',
+    stars: 4,
+    star_rating: 4,
+    rating: 9.3,
+    reviewCount: 245,
+    pricePerNight: 980000,
+    currency: 'VND',
+    accommodationType: 'Homestay',
+    imageUrl: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1000&q=80',
+    amenities: ['Wi-Fi', 'Bữa sáng bản địa', 'View suối & núi', 'Sân vườn', 'Lửa trại'],
+    freeCancellation: true,
+    description: 'Khu nghỉ dưỡng sinh thái mang đậm kiến trúc nhà sàn đá truyền thống của người Tày tại làng cổ Khuổi Ky, cách Động Ngườm Ngao và Thác Bản Giốc chỉ 5 phút.',
+    images: ['https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1000&q=80'],
+    rooms: [
+      { id: 'caobang-lanrung-bungalow', name: 'Bungalow Đá View Suối Khuổi Ky', size: 35, bed: '1 giường King', guests: 2, pricePerNight: 980000, breakfast: true }
+    ],
+    coordinates: [106.7012, 22.8455],
+    geo: { type: 'Point', coordinates: [106.7012, 22.8455] }
+  },
 
   // === QUẢNG BÌNH ===
   {
@@ -1121,8 +1577,35 @@ const NEW_HOTELS = [
     coordinates: [106.2852, 17.5842],
     geo: { type: 'Point', coordinates: [106.2852, 17.5842] }
   },
+  {
+    _id: 'hotel-chay-lap-farmstay',
+    id: 'hotel-chay-lap-farmstay',
+    hotel_slug: 'chay-lap-farmstay-resort-phong-nha',
+    name: 'Chày Lập Farmstay & Resort Phong Nha',
+    hotel_name: 'Chày Lập Farmstay & Resort Phong Nha',
+    address: 'Thôn Chày Lập, Xã Phúc Trạch, Huyện Bố Trạch, Quảng Bình',
+    city: 'Quảng Bình',
+    area: 'Cửa ngõ Sơn Đoòng & Hang Tối',
+    stars: 4,
+    star_rating: 4,
+    rating: 9.5,
+    reviewCount: 530,
+    pricePerNight: 1450000,
+    currency: 'VND',
+    accommodationType: 'Khu nghỉ dưỡng',
+    imageUrl: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80',
+    amenities: ['Wi-Fi', 'Hồ bơi', 'Chèo Kayak Sông Chày', 'Xe đạp miễn phí', 'Bữa sáng'],
+    freeCancellation: true,
+    description: 'Khu nghỉ dưỡng sinh thái nổi tiếng trực thuộc hệ thống Oxalis Adventure — điểm xuất phát chính thức của các đoàn thám hiểm Hang Sơn Đoòng và Hang Én.',
+    images: ['https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80'],
+    rooms: [
+      { id: 'quangbinh-chaylap-farmroom', name: 'Farm Room View Núi Đá Vôi', size: 40, bed: '1 giường King', guests: 2, pricePerNight: 1450000, breakfast: true }
+    ],
+    coordinates: [106.2412, 17.5715],
+    geo: { type: 'Point', coordinates: [106.2412, 17.5715] }
+  },
 
-  // === THỤY SĨ & CANADA ===
+  // === THỤY SĨ (SWITZERLAND) ===
   {
     _id: 'hotel-victoria-jungfrau',
     id: 'hotel-victoria-jungfrau',
@@ -1151,12 +1634,68 @@ const NEW_HOTELS = [
     geo: { type: 'Point', coordinates: [7.8592, 46.6875] }
   },
   {
+    _id: 'hotel-silberhorn-lauterbrunnen',
+    id: 'hotel-silberhorn-lauterbrunnen',
+    hotel_slug: 'hotel-silberhorn-lauterbrunnen',
+    name: 'Hotel Silberhorn Lauterbrunnen',
+    hotel_name: 'Hotel Silberhorn Lauterbrunnen',
+    address: 'Auf der Fuhren 456, 3822 Lauterbrunnen, Switzerland',
+    city: 'Thụy Sĩ',
+    area: 'Thung lũng Lauterbrunnen',
+    stars: 4,
+    star_rating: 4,
+    rating: 9.5,
+    reviewCount: 490,
+    pricePerNight: 6800000,
+    currency: 'VND',
+    accommodationType: 'Khách sạn',
+    imageUrl: 'https://images.unsplash.com/photo-1502784444187-359ac186c5bb?auto=format&fit=crop&w=1000&q=80',
+    amenities: ['Wi-Fi', 'View Thác Staubbach', 'Bữa sáng Thụy Sĩ', 'Phòng xông hơi', 'Cạnh ga tàu'],
+    freeCancellation: true,
+    description: 'Khách sạn Chalet gỗ truyền thống Thụy Sĩ nằm ngay lối vào thung lũng Lauterbrunnen, nơi du khách mở cửa ban công là thấy thác Staubbach và núi tuyết Alps.',
+    images: ['https://images.unsplash.com/photo-1502784444187-359ac186c5bb?auto=format&fit=crop&w=1000&q=80'],
+    rooms: [
+      { id: 'swiss-silberhorn-chalet', name: 'Deluxe Chalet Balcony View Thác Staubbach', size: 38, bed: '1 giường King', guests: 2, pricePerNight: 6800000, breakfast: true }
+    ],
+    coordinates: [7.9078, 46.5975],
+    geo: { type: 'Point', coordinates: [7.9078, 46.5975] }
+  },
+  {
+    _id: 'hotel-schweizerhof-grindelwald',
+    id: 'hotel-schweizerhof-grindelwald',
+    hotel_slug: 'romantik-hotel-schweizerhof-grindelwald',
+    name: 'Romantik Hotel Schweizerhof Grindelwald',
+    hotel_name: 'Romantik Hotel Schweizerhof Grindelwald',
+    address: 'Swiss Alp Resort 1, 3818 Grindelwald, Switzerland',
+    city: 'Thụy Sĩ',
+    area: 'Grindelwald Alps',
+    stars: 5,
+    star_rating: 5,
+    rating: 9.6,
+    reviewCount: 340,
+    pricePerNight: 9900000,
+    currency: 'VND',
+    accommodationType: 'Khu nghỉ dưỡng',
+    imageUrl: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1000&q=80',
+    amenities: ['Wi-Fi', 'Hồ bơi nước ấm trong nhà', 'Spa Alps', 'Bữa sáng', 'Nhà hàng Fondue'],
+    freeCancellation: true,
+    description: 'Khu nghỉ dưỡng 5 sao đẳng cấp dưới chân vách núi Eiger hùng vĩ tại Grindelwald, kết hợp khu vườn riêng tư và ẩm thực phô mai Fondue thượng hạng.',
+    images: ['https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1000&q=80'],
+    rooms: [
+      { id: 'swiss-schweizerhof-eiger', name: 'Eiger Mountain View Junior Suite', size: 48, bed: '1 giường King', guests: 2, pricePerNight: 9900000, breakfast: true }
+    ],
+    coordinates: [8.0345, 46.6238],
+    geo: { type: 'Point', coordinates: [8.0345, 46.6238] }
+  },
+
+  // === CANADA (BANFF, LAKE LOUISE, BRITISH COLUMBIA) ===
+  {
     _id: 'hotel-fairmont-lake-louise',
     id: 'hotel-fairmont-lake-louise',
     hotel_slug: 'fairmont-chateau-lake-louise',
     name: 'Fairmont Chateau Lake Louise',
     hotel_name: 'Fairmont Chateau Lake Louise',
-    address: '111 Lake Louise Dr, Lake Louise, AB, Canada',
+    address: '111 Lake Louise Dr, Lake Louise, Banff National Park, AB, Canada',
     city: 'Canada',
     area: 'Banff National Park',
     stars: 5,
@@ -1174,8 +1713,89 @@ const NEW_HOTELS = [
     rooms: [
       { id: 'canada-fairmont-lakeview', name: 'Fairmont Lake View King Room', size: 42, bed: '1 giường King', guests: 2, pricePerNight: 14500000, breakfast: true }
     ],
-    coordinates: [-116.1772, 51.4178],
-    geo: { type: 'Point', coordinates: [-116.1772, 51.4178] }
+    coordinates: [-116.2169, 51.4178],
+    geo: { type: 'Point', coordinates: [-116.2169, 51.4178] }
+  },
+  {
+    _id: 'hotel-fairmont-banff-springs',
+    id: 'hotel-fairmont-banff-springs',
+    hotel_slug: 'fairmont-banff-springs-castle',
+    name: 'Fairmont Banff Springs (The Castle in the Rockies)',
+    hotel_name: 'Fairmont Banff Springs (The Castle in the Rockies)',
+    address: '405 Spray Ave, Banff, AB T1L 1J4, Canada',
+    city: 'Canada',
+    area: 'Trung tâm Thị trấn Banff',
+    stars: 5,
+    star_rating: 5,
+    rating: 9.8,
+    reviewCount: 820,
+    pricePerNight: 15800000,
+    currency: 'VND',
+    accommodationType: 'Khu nghỉ dưỡng',
+    imageUrl: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1000&q=80',
+    amenities: ['Wi-Fi', 'Hồ bơi khoáng nóng ngoài trời', 'Sân Golf 27 lỗ', 'Spa Willow Stream', 'Bữa sáng'],
+    freeCancellation: true,
+    description: 'Được mệnh danh là "Lâu đài giữa dãy Rocky" xây dựng từ năm 1888 theo phong cách Lâu đài Nam tước Scotland, chỉ cách đại lộ Banff Ave và Cascade Shops 3 phút.',
+    images: ['https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1000&q=80'],
+    rooms: [
+      { id: 'canada-banff-springs-valley', name: 'Bow Valley View Signature Suite', size: 52, bed: '1 giường King', guests: 2, pricePerNight: 15800000, breakfast: true }
+    ],
+    coordinates: [-115.5619, 51.1644],
+    geo: { type: 'Point', coordinates: [-115.5619, 51.1644] }
+  },
+  {
+    _id: 'hotel-moose-banff-suites',
+    id: 'hotel-moose-banff-suites',
+    hotel_slug: 'moose-hotel-and-suites-banff',
+    name: 'Moose Hotel & Suites Banff Avenue',
+    hotel_name: 'Moose Hotel & Suites Banff Avenue',
+    address: '345 Banff Ave, Banff, AB T1L 1H8, Canada',
+    city: 'Canada',
+    area: 'Banff Avenue (Cạnh Cascade Shops)',
+    stars: 4,
+    star_rating: 4,
+    rating: 9.5,
+    reviewCount: 540,
+    pricePerNight: 7200000,
+    currency: 'VND',
+    accommodationType: 'Khách sạn',
+    imageUrl: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80',
+    amenities: ['Wi-Fi', 'Bồn sục nước nóng tầng thượng', 'Lò sưởi trong phòng', 'Spa Meadow', 'Bữa sáng'],
+    freeCancellation: true,
+    description: 'Khách sạn kiến trúc gỗ thông ấm cúng tọa lạc ngay tại 345 Banff Ave (sát cạnh trung tâm thương mại Cascade Shops), sở hữu 2 hồ nước khoáng nóng trên sân thượng ngắm núi tuyết.',
+    images: ['https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80'],
+    rooms: [
+      { id: 'canada-moose-rooftop-suite', name: 'Rooftop One-Bedroom Mountain Suite', size: 46, bed: '1 giường King + lò sưởi', guests: 2, pricePerNight: 7200000, breakfast: true }
+    ],
+    coordinates: [-115.5692, 51.1802],
+    geo: { type: 'Point', coordinates: [-115.5692, 51.1802] }
+  },
+  {
+    _id: 'hotel-emerald-lake-lodge-bc',
+    id: 'hotel-emerald-lake-lodge-bc',
+    hotel_slug: 'emerald-lake-lodge-british-columbia',
+    name: 'Emerald Lake Lodge (Yoho National Park, BC)',
+    hotel_name: 'Emerald Lake Lodge (Yoho National Park, BC)',
+    address: '1 Emerald Lake Rd, Field, British Columbia V0A 1G0, Canada',
+    city: 'Canada',
+    area: 'British Columbia & Yoho National Park',
+    stars: 4,
+    star_rating: 4,
+    rating: 9.6,
+    reviewCount: 480,
+    pricePerNight: 8900000,
+    currency: 'VND',
+    accommodationType: 'Khu nghỉ dưỡng',
+    imageUrl: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1000&q=80',
+    amenities: ['Wi-Fi', 'Lò sưởi củi truyền thống', 'View hồ Ngọc Lục Bảo', 'Chèo thuyền Canoe', 'Nhà hàng Mount Burgess'],
+    freeCancellation: true,
+    description: 'Khu nghỉ dưỡng gỗ thông di sản xây dựng từ năm 1902 nằm trên bán đảo riêng biệt vươn ra giữa mặt hồ Emerald Lake xanh ngắt tại British Columbia.',
+    images: ['https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1000&q=80'],
+    rooms: [
+      { id: 'canada-emerald-lakefront', name: 'Lakefront Timber Cabin with Fireplace', size: 44, bed: '1 giường King', guests: 2, pricePerNight: 8900000, breakfast: true }
+    ],
+    coordinates: [-116.5398, 51.4401],
+    geo: { type: 'Point', coordinates: [-116.5398, 51.4401] }
   },
   // === HẠ LONG (ĐỒNG BỘ TRỰC TIẾP VISUAL SEARCH) ===
   {
@@ -1440,8 +2060,12 @@ async function main(keepConnected = false) {
     }
   });
   const enrichedActivities = Array.from(actMap.values());
-  fs.writeFileSync(compassActPath, JSON.stringify(enrichedActivities, null, 2), 'utf8');
-  console.log(`✅ Đã ghi nhận ${enrichedActivities.length} activities vào compass_data/activities.json`);
+  try {
+    fs.writeFileSync(compassActPath, JSON.stringify(enrichedActivities, null, 2), 'utf8');
+    console.log(`✅ Đã ghi nhận ${enrichedActivities.length} activities vào compass_data/activities.json`);
+  } catch (e) {
+    console.warn('⚠️ Bỏ qua ghi file compass_data/activities.json:', e.message);
+  }
 
   // 2. Cập nhật file compass_data/hotels.json
   const compassHotelPath = path.join(__dirname, '..', 'compass_data', 'hotels.json');
@@ -1461,8 +2085,12 @@ async function main(keepConnected = false) {
     }
   });
   const enrichedHotels = Array.from(hotelMap.values());
-  fs.writeFileSync(compassHotelPath, JSON.stringify(enrichedHotels, null, 2), 'utf8');
-  console.log(`✅ Đã ghi nhận ${enrichedHotels.length} hotels vào compass_data/hotels.json`);
+  try {
+    fs.writeFileSync(compassHotelPath, JSON.stringify(enrichedHotels, null, 2), 'utf8');
+    console.log(`✅ Đã ghi nhận ${enrichedHotels.length} hotels vào compass_data/hotels.json`);
+  } catch (e) {
+    console.warn('⚠️ Bỏ qua ghi file compass_data/hotels.json:', e.message);
+  }
 
   // 3. Kết nối MongoDB và nạp bổ sung vào Database tripla_db
   if (!keepConnected || mongoose.connection.readyState !== 1) {

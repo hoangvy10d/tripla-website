@@ -104,18 +104,21 @@ router.get('/hotels', async (req, res) => {
       ? 'ho chi minh'
       : location;
 
-    if (normLocCity.includes('ha long')) normLocCity = 'ha long';
-    else if (normLocCity.includes('vung tau')) normLocCity = 'vung tau';
-    else if (normLocCity.includes('da lat')) normLocCity = 'da lat';
-    else if (normLocCity.includes('nha trang')) normLocCity = 'nha trang';
-    else if (normLocCity.includes('phu quoc')) normLocCity = 'phu quoc';
-    else if (normLocCity.includes('hoi an')) normLocCity = 'hoi an';
-    else if (normLocCity.includes('sa pa') || normLocCity.includes('sapa')) normLocCity = 'sa pa';
-    else if (normLocCity.includes('ninh binh')) normLocCity = 'ninh binh';
-    else if (normLocCity.includes('cao bang') || normLocCity.includes('ban gioc')) normLocCity = 'cao bang';
-    else if (normLocCity.includes('quang binh') || normLocCity.includes('phong nha') || normLocCity.includes('son doong')) normLocCity = 'quang binh';
-    else if (normLocCity.includes('thuy si') || normLocCity.includes('switzerland') || normLocCity.includes('interlaken')) normLocCity = 'thuy si';
-    else if (normLocCity.includes('canada') || normLocCity.includes('banff')) normLocCity = 'canada';
+    if (normLocCity.includes('ha long') || normLocCity.includes('quang ninh') || normLocCity.includes('tuan chau') || normLocCity.includes('bai chay')) normLocCity = 'ha long';
+    else if (normLocCity.includes('vung tau') || normLocCity.includes('ba ria')) normLocCity = 'vung tau';
+    else if (normLocCity.includes('da lat') || normLocCity.includes('lam dong')) normLocCity = 'da lat';
+    else if (normLocCity.includes('nha trang') || normLocCity.includes('khanh hoa') || normLocCity.includes('ninh van')) normLocCity = 'nha trang';
+    else if (normLocCity.includes('phu quoc') || normLocCity.includes('kien giang') || normLocCity.includes('bai truong') || normLocCity.includes('bai khem')) normLocCity = 'phu quoc';
+    else if (normLocCity.includes('hoi an') || normLocCity.includes('quang nam')) normLocCity = 'hoi an';
+    else if (normLocCity.includes('sa pa') || normLocCity.includes('sapa') || normLocCity.includes('lao cai')) normLocCity = 'sa pa';
+    else if (normLocCity.includes('ninh binh') || normLocCity.includes('trang an') || normLocCity.includes('van long')) normLocCity = 'ninh binh';
+    else if (normLocCity.includes('cao bang') || normLocCity.includes('ban gioc') || normLocCity.includes('trung khanh') || normLocCity.includes('nguom ngao')) normLocCity = 'cao bang';
+    else if (normLocCity.includes('quang binh') || normLocCity.includes('phong nha') || normLocCity.includes('son doong') || normLocCity.includes('hang en') || normLocCity.includes('song chay')) normLocCity = 'quang binh';
+    else if (normLocCity.includes('vinh hy') || normLocCity.includes('ninh thuan') || normLocCity.includes('amanoi') || normLocCity.includes('nui chua')) normLocCity = 'ninh thuan';
+    else if (normLocCity.includes('phu yen') || normLocCity.includes('song cau') || normLocCity.includes('bai san ho') || normLocCity.includes('zannier')) normLocCity = 'phu yen';
+    else if (normLocCity.includes('lang co') || normLocCity.includes('hue') || normLocCity.includes('banyan tree')) normLocCity = 'hue';
+    else if (normLocCity.includes('thuy si') || normLocCity.includes('switzerland') || normLocCity.includes('interlaken') || normLocCity.includes('lauterbrunnen') || normLocCity.includes('grindelwald') || normLocCity.includes('jungfrau') || normLocCity.includes('beatenberg') || normLocCity.includes('beatus')) normLocCity = 'thuy si';
+    else if (normLocCity.includes('canada') || normLocCity.includes('banff') || normLocCity.includes('lake louise') || normLocCity.includes('icefields') || normLocCity.includes('moraine') || normLocCity.includes('british columbia') || normLocCity.includes('emerald lake') || normLocCity.includes('cascade')) normLocCity = 'canada';
 
     if (normLocCity && normLocCity !== 'viet nam' && normLocCity !== 'all' && normLocCity !== 'toan quoc') {
       const stopWords = new Set(['resort', 'hotel', 'khach', 'san', 'khu', 'nghi', 'duong', 'villa', 'mong', 'mo', 'di', 'san', 'tp', 'tinh', 'thanh', 'pho', 'dao', 'ngoc', 'vinh', 'bai', 'bien', 'nui']);

@@ -166,11 +166,20 @@ router.get('/activities', async (req, res) => {
     let list = [...mappedLocations, ...uniqueActivities];
 
     if (rawLocation && rawLocation !== 'viet nam' && rawLocation !== 'all') {
-      const aliasLocation = ['tp hcm', 'tphcm', 'sai gon', 'saigon', 'tp ho chi minh'].includes(rawLocation)
+      let aliasLocation = ['tp hcm', 'tphcm', 'sai gon', 'saigon', 'tp ho chi minh'].includes(rawLocation)
         ? 'ho chi minh'
         : rawLocation === 'sapa'
         ? 'sa pa'
         : rawLocation;
+      if (aliasLocation.includes('canada') || aliasLocation.includes('banff') || aliasLocation.includes('lake louise') || aliasLocation.includes('icefields') || aliasLocation.includes('british columbia') || aliasLocation.includes('cascade')) aliasLocation = 'canada';
+      else if (aliasLocation.includes('thuy si') || aliasLocation.includes('switzerland') || aliasLocation.includes('interlaken') || aliasLocation.includes('lauterbrunnen') || aliasLocation.includes('grindelwald') || aliasLocation.includes('beatenberg')) aliasLocation = 'thuy si';
+      else if (aliasLocation.includes('cao bang') || aliasLocation.includes('ban gioc') || aliasLocation.includes('nguom ngao')) aliasLocation = 'cao bang';
+      else if (aliasLocation.includes('quang binh') || aliasLocation.includes('phong nha') || aliasLocation.includes('son doong') || aliasLocation.includes('hang en')) aliasLocation = 'quang binh';
+      else if (aliasLocation.includes('ha long') || aliasLocation.includes('quang ninh')) aliasLocation = 'ha long';
+      else if (aliasLocation.includes('vinh hy') || aliasLocation.includes('ninh thuan') || aliasLocation.includes('nui chua')) aliasLocation = 'ninh thuan';
+      else if (aliasLocation.includes('phu yen') || aliasLocation.includes('song cau') || aliasLocation.includes('bai san ho')) aliasLocation = 'phu yen';
+      else if (aliasLocation.includes('lang co') || aliasLocation.includes('hue')) aliasLocation = 'hue';
+
       list = list.filter((a) => {
         const text = normalizeText(`${a.location || ''} ${a.city || ''} ${a.name || ''} ${a.address || ''}`);
         return text.includes(aliasLocation);

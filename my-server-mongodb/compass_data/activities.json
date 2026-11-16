@@ -1339,5 +1339,507 @@
         51.6667
       ]
     }
+  },
+  {
+    "_id": "act_loc_caobang_nui_mat_than",
+    "id": "act_loc_caobang_nui_mat_than",
+    "name": "Núi Mắt Thần (Núi Thủng) & Thảo nguyên Bản Danh",
+    "city": "Cao Bằng",
+    "address": "Xã Quốc Toản, Huyện Trà Lĩnh, Cao Bằng, Việt Nam",
+    "categories": [
+      "Công viên & vườn",
+      "Các điểm tham quan khác",
+      "Vé tham quan"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    "description": "Tuyệt tác địa chất thuộc Công viên Địa chất Toàn cầu UNESCO Non nước Cao Bằng với lỗ thủng tròn xuyên tâm núi đường kính hơn 50m giữa thảo nguyên xanh mướt.",
+    "priceFrom": 50000,
+    "currency": "VND",
+    "originalPrice": 60000,
+    "rating": 4.89,
+    "reviewCount": 1950,
+    "coordinates": {
+      "latitude": 22.7485,
+      "longitude": 106.3012
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.3012,
+        22.7485
+      ]
+    }
+  },
+  {
+    "_id": "act_loc_caobang_pac_bo",
+    "id": "act_loc_caobang_pac_bo",
+    "name": "Khu di tích Quốc gia đặc biệt Pác Bó & Suối Lê-nin",
+    "city": "Cao Bằng",
+    "address": "Bản Pác Bó, Xã Trường Hà, Huyện Hà Quảng, Cao Bằng, Việt Nam",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80",
+    "description": "Quần thể di tích lịch sử thiêng liêng nơi đầu nguồn cách mạng với dòng suối Lê-nin xanh màu ngọc bích và núi Các Mác hùng vĩ.",
+    "priceFrom": 45000,
+    "currency": "VND",
+    "originalPrice": 54000,
+    "rating": 4.92,
+    "reviewCount": 3400,
+    "coordinates": {
+      "latitude": 22.9781,
+      "longitude": 106.0528
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.0528,
+        22.9781
+      ]
+    }
+  },
+  {
+    "_id": "act_loc_quangbinh_dong_phong_nha",
+    "id": "act_loc_quangbinh_dong_phong_nha",
+    "name": "Động Phong Nha & Động Tiên Sơn",
+    "city": "Quảng Bình",
+    "address": "Thị trấn Phong Nha, Huyện Bố Trạch, Quảng Bình, Việt Nam",
+    "categories": [
+      "Công viên & vườn",
+      "Các điểm tham quan khác",
+      "Vé tham quan"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80",
+    "description": "Du thuyền ngược dòng sông Son thơ mộng tiến vào lòng \"Đệ nhất kỳ quan động\" với sông ngầm dài nhất và hệ thống thạch nhũ lung linh huyền ảo.",
+    "priceFrom": 250000,
+    "currency": "VND",
+    "originalPrice": 300000,
+    "rating": 4.91,
+    "reviewCount": 4600,
+    "coordinates": {
+      "latitude": 17.5835,
+      "longitude": 106.2831
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.2831,
+        17.5835
+      ]
+    }
+  },
+  {
+    "_id": "act_loc_quangbinh_dong_thien_duong",
+    "id": "act_loc_quangbinh_dong_thien_duong",
+    "name": "Động Thiên Đường (Paradise Cave)",
+    "city": "Quảng Bình",
+    "address": "Km 16 Đường Hồ Chí Minh nhánh Tây, Xã Sơn Trạch, Bố Trạch, Quảng Bình, Việt Nam",
+    "categories": [
+      "Công viên & vườn",
+      "Các điểm tham quan khác",
+      "Vé tham quan"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1200&q=80",
+    "description": "\"Hoàng cung trong lòng đất\" dài hơn 31.4km — hang động khô dài nhất châu Á với cầu gỗ 1.000m chiêm ngưỡng quần thể măng đá, nhũ đá tráng lệ.",
+    "priceFrom": 250000,
+    "currency": "VND",
+    "originalPrice": 300000,
+    "rating": 4.94,
+    "reviewCount": 5100,
+    "coordinates": {
+      "latitude": 17.5212,
+      "longitude": 106.2248
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.2248,
+        17.5212
+      ]
+    }
+  },
+  {
+    "_id": "act_loc_quangbinh_suoi_nuoc_mooc",
+    "id": "act_loc_quangbinh_suoi_nuoc_mooc",
+    "name": "Khu du lịch Sinh thái Suối Nước Moọc",
+    "city": "Quảng Bình",
+    "address": "Đường Hồ Chí Minh nhánh Tây, Phúc Trạch, Bố Trạch, Quảng Bình, Việt Nam",
+    "categories": [
+      "Công viên & vườn",
+      "Các điểm tham quan khác",
+      "Vé tham quan"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    "description": "Ốc đảo xanh ngọc bích mát lạnh quanh năm dưới tán rừng Phong Nha - Kẻ Bàng, nổi tiếng với chèo Kayak, cầu tre và mùa hoa Vàng Anh nở rộ.",
+    "priceFrom": 180000,
+    "currency": "VND",
+    "originalPrice": 216000,
+    "rating": 4.85,
+    "reviewCount": 2950,
+    "coordinates": {
+      "latitude": 17.5621,
+      "longitude": 106.2512
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.2512,
+        17.5621
+      ]
+    }
+  },
+  {
+    "_id": "act_loc_intl_lauterbrunnen_valley",
+    "id": "act_loc_intl_lauterbrunnen_valley",
+    "name": "Thung lũng Lauterbrunnen & Thác Staubbach",
+    "city": "Thụy Sĩ",
+    "address": "3822 Lauterbrunnen, Canton of Bern, Switzerland",
+    "categories": [
+      "Công viên & vườn",
+      "Các điểm tham quan khác",
+      "Vé tham quan"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1502784444187-359ac186c5bb?auto=format&fit=crop&w=1200&q=80",
+    "description": "Thung lũng cổ tích với 72 ngọn thác đổ từ vách đá dựng đứng cao 300m, nổi bật với thác Staubbach và những ngôi nhà gỗ Chalet giữa đồng cỏ Alps.",
+    "priceFrom": 350000,
+    "currency": "VND",
+    "originalPrice": 420000,
+    "rating": 4.97,
+    "reviewCount": 5800,
+    "coordinates": {
+      "latitude": 46.5935,
+      "longitude": 7.9091
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        7.9091,
+        46.5935
+      ]
+    }
+  },
+  {
+    "_id": "act_loc_intl_interlaken_harder_kulm",
+    "id": "act_loc_intl_interlaken_harder_kulm",
+    "name": "Interlaken & Đài quan sát Harder Kulm",
+    "city": "Thụy Sĩ",
+    "address": "Höheweg, 3800 Interlaken, Switzerland",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1527668752968-14dc70a27c95?auto=format&fit=crop&w=1200&q=80",
+    "description": "Thị trấn nghỉ dưỡng nổi tiếng nằm giữa hai hồ nước ngọc bích Lake Thun và Lake Brienz, kết nối tàu kéo lên đỉnh Harder Kulm ngắm bộ ba đỉnh Eiger, Mönch, Jungfrau.",
+    "priceFrom": 950000,
+    "currency": "VND",
+    "originalPrice": 1140000,
+    "rating": 4.94,
+    "reviewCount": 4700,
+    "coordinates": {
+      "latitude": 46.6976,
+      "longitude": 7.8524
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        7.8524,
+        46.6976
+      ]
+    }
+  },
+  {
+    "_id": "act_loc_intl_jungfraujoch_top_of_europe",
+    "id": "act_loc_intl_jungfraujoch_top_of_europe",
+    "name": "Đỉnh Jungfraujoch – Top of Europe",
+    "city": "Thụy Sĩ",
+    "address": "3801 Jungfraujoch, Lauterbrunnen, Switzerland",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1200&q=80",
+    "description": "Nhà ga xe lửa cao nhất châu Âu ở độ cao 3.454m quanh năm tuyết trắng, sở hữu Đài quan sát Nhân sư Sphinx, Cung điện Băng và dòng sông băng Aletsch.",
+    "priceFrom": 4800000,
+    "currency": "VND",
+    "originalPrice": 5760000,
+    "rating": 4.98,
+    "reviewCount": 6200,
+    "coordinates": {
+      "latitude": 46.5475,
+      "longitude": 7.9851
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        7.9851,
+        46.5475
+      ]
+    }
+  },
+  {
+    "_id": "act_loc_intl_grindelwald_first",
+    "id": "act_loc_intl_grindelwald_first",
+    "name": "Grindelwald First & Cầu treo Cliff Walk",
+    "city": "Thụy Sĩ",
+    "address": "Dorfstrasse 187, 3818 Grindelwald, Switzerland",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1502784444187-359ac186c5bb?auto=format&fit=crop&w=1200&q=80",
+    "description": "Thiên đường phiêu lưu trên đỉnh núi Alps với cầu treo vách đá First Cliff Walk by Tissot, đường trượt First Flyer và cung trekking đến hồ Bachalpsee.",
+    "priceFrom": 1850000,
+    "currency": "VND",
+    "originalPrice": 2220000,
+    "rating": 4.95,
+    "reviewCount": 5100,
+    "coordinates": {
+      "latitude": 46.6608,
+      "longitude": 8.0531
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        8.0531,
+        46.6608
+      ]
+    }
+  },
+  {
+    "_id": "act_loc_intl_lake_thun_cruise",
+    "id": "act_loc_intl_lake_thun_cruise",
+    "name": "Du thuyền Hồ Thun & Lâu đài Oberhofen (Lake Thun)",
+    "city": "Thụy Sĩ",
+    "address": "Seestrasse, 3600 Thun / Interlaken West, Switzerland",
+    "categories": [
+      "Công viên & vườn",
+      "Các điểm tham quan khác",
+      "Vé tham quan"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1527668752968-14dc70a27c95?auto=format&fit=crop&w=1200&q=80",
+    "description": "Hành trình du thuyền thư thái trên mặt hồ Thun xanh biếc ngắm nhìn những lâu đài cổ tích thời Trung cổ (Oberhofen, Spiez) và đỉnh núi tuyết Alps.",
+    "priceFrom": 1450000,
+    "currency": "VND",
+    "originalPrice": 1740000,
+    "rating": 4.92,
+    "reviewCount": 3400,
+    "coordinates": {
+      "latitude": 46.6711,
+      "longitude": 7.7285
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        7.7285,
+        46.6711
+      ]
+    }
+  },
+  {
+    "_id": "act_loc_intl_cascade_shops_banff",
+    "id": "act_loc_intl_cascade_shops_banff",
+    "name": "Cascade Shops & Đại lộ Banff Avenue",
+    "city": "Canada",
+    "address": "317 Banff Ave, Banff, AB T1L 1B5, Canada",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1200&q=80",
+    "description": "Trung tâm thương mại và ẩm thực sầm uất bậc nhất ngay trái tim thị trấn Banff với hơn 40 cửa hiệu bản địa, nhà hàng The Canadian Brewhouse và tầm nhìn thẳng ra núi Cascade.",
+    "priceFrom": 150000,
+    "currency": "VND",
+    "originalPrice": 200000,
+    "rating": 4.85,
+    "reviewCount": 3200,
+    "coordinates": {
+      "latitude": 51.1762,
+      "longitude": -115.5708
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        -115.5708,
+        51.1762
+      ]
+    }
+  },
+  {
+    "_id": "act_loc_intl_canadian_brewhouse_banff",
+    "id": "act_loc_intl_canadian_brewhouse_banff",
+    "name": "The Canadian Brewhouse (Banff)",
+    "city": "Canada",
+    "address": "317 Banff Ave #205, Banff, AB T1L 1B5, Canada",
+    "categories": [
+      "Food & Dining"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
+    "description": "Nhà hàng thể thao & gastropub đặc trưng của Canada tọa lạc tại tầng trên Cascade Shops, nổi tiếng với món Poutine truyền thống, bít tết Alberta và sân thượng ngắm núi tuyết.",
+    "priceFrom": 650000,
+    "currency": "VND",
+    "originalPrice": 780000,
+    "rating": 4.82,
+    "reviewCount": 2450,
+    "coordinates": {
+      "latitude": 51.1764,
+      "longitude": -115.5705
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        -115.5705,
+        51.1764
+      ]
+    }
+  },
+  {
+    "_id": "act_loc_intl_lake_louise_banff",
+    "id": "act_loc_intl_lake_louise_banff",
+    "name": "Hồ Lake Louise & Sông băng Victoria (Banff, Canada)",
+    "city": "Canada",
+    "address": "Lake Louise, Banff National Park, AB T0L 1E0, Canada",
+    "categories": [
+      "Công viên & vườn",
+      "Các điểm tham quan khác",
+      "Vé tham quan"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+    "description": "Viên ngọc lục bảo của Vườn Quốc gia Banff với mặt hồ nước băng tan xanh biếc vào mùa hè và sân trượt băng cổ tích trước lâu đài Fairmont vào mùa đông.",
+    "priceFrom": 450000,
+    "currency": "VND",
+    "originalPrice": 540000,
+    "rating": 4.99,
+    "reviewCount": 8900,
+    "coordinates": {
+      "latitude": 51.4167,
+      "longitude": -116.2167
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        -116.2167,
+        51.4167
+      ]
+    }
+  },
+  {
+    "_id": "act_loc_intl_moraine_lake_banff",
+    "id": "act_loc_intl_moraine_lake_banff",
+    "name": "Hồ Moraine Lake & Thung lũng Mười Đỉnh Núi",
+    "city": "Canada",
+    "address": "Moraine Lake Rd, Banff National Park, AB, Canada",
+    "categories": [
+      "Công viên & vườn",
+      "Các điểm tham quan khác",
+      "Vé tham quan"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1200&q=80",
+    "description": "Hồ nước sông băng nổi tiếng trên tờ tiền 20 đô la Canada xưa, được bao bọc bởi 10 đỉnh núi tuyết hùng vĩ (Valley of the Ten Peaks) ở độ cao 1.884m.",
+    "priceFrom": 380000,
+    "currency": "VND",
+    "originalPrice": 456000,
+    "rating": 4.99,
+    "reviewCount": 7400,
+    "coordinates": {
+      "latitude": 51.3217,
+      "longitude": -116.186
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        -116.186,
+        51.3217
+      ]
+    }
+  },
+  {
+    "_id": "act_loc_intl_banff_gondola_sulphur",
+    "id": "act_loc_intl_banff_gondola_sulphur",
+    "name": "Cáp treo Banff Gondola & Đỉnh Sulphur Mountain",
+    "city": "Canada",
+    "address": "100 Mountain Ave, Banff, AB T1L 1B2, Canada",
+    "categories": [
+      "Vé tham quan",
+      "Điểm mốc"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+    "description": "Hành trình cáp treo lồng kính đưa du khách lên độ cao 2.281m trên đỉnh núi Sulphur, dạo bước trên cầu gỗ trên mây ngắm trọn 6 dãy núi Rocky và thung lũng Bow.",
+    "priceFrom": 1350000,
+    "currency": "VND",
+    "originalPrice": 1620000,
+    "rating": 4.95,
+    "reviewCount": 6100,
+    "coordinates": {
+      "latitude": 51.1475,
+      "longitude": -115.5565
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        -115.5565,
+        51.1475
+      ]
+    }
+  },
+  {
+    "_id": "act_loc_intl_bow_lake_peyto_lake",
+    "id": "act_loc_intl_bow_lake_peyto_lake",
+    "name": "Hồ Bow Lake & Hồ Peyto (Icefields Parkway)",
+    "city": "Canada",
+    "address": "Icefields Pkwy, Banff National Park, AB, Canada",
+    "categories": [
+      "Công viên & vườn",
+      "Các điểm tham quan khác",
+      "Vé tham quan"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1200&q=80",
+    "description": "Cặp hồ băng trứ danh dọc đại lộ Icefields Parkway với mặt nước phẳng lặng soi bóng sông băng Crowfoot và hồ Peyto mang hình dáng đầu sói độc đáo.",
+    "priceFrom": 250000,
+    "currency": "VND",
+    "originalPrice": 300000,
+    "rating": 4.96,
+    "reviewCount": 4300,
+    "coordinates": {
+      "latitude": 51.6744,
+      "longitude": -116.4664
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        -116.4664,
+        51.6744
+      ]
+    }
+  },
+  {
+    "_id": "act_loc_intl_emerald_lake_bc",
+    "id": "act_loc_intl_emerald_lake_bc",
+    "name": "Hồ Ngọc Lục Bảo Emerald Lake (British Columbia, Canada)",
+    "city": "Canada",
+    "address": "Emerald Lake Rd, Yoho National Park, Field, BC V0A 1G0, Canada",
+    "categories": [
+      "Công viên & vườn",
+      "Các điểm tham quan khác",
+      "Vé tham quan"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+    "description": "Hồ nước lớn nhất tại Vườn Quốc gia Yoho (British Columbia), được bao quanh bởi những cánh rừng thông tùng rậm rạp và rặng núi President Range hùng vĩ.",
+    "priceFrom": 320000,
+    "currency": "VND",
+    "originalPrice": 384000,
+    "rating": 4.97,
+    "reviewCount": 5400,
+    "coordinates": {
+      "latitude": 51.4431,
+      "longitude": -116.5332
+    },
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        -116.5332,
+        51.4431
+      ]
+    }
   }
 ]

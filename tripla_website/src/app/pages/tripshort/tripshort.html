@@ -303,8 +303,8 @@
                   {{ scanned.location?.formatted_address }}
                 </p>
               </div>
-              <a [href]="'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(scanned.location?.formatted_address || scanned.location?.landmark_name)"
-                target="_blank" rel="noopener noreferrer"
+              <a [routerLink]="['/map']"
+                [queryParams]="{ q: scanned.location?.landmark_name || scanned.city, city: scanned.city || '' }"
                 style="font-size: 11px; font-weight: 700; color: var(--neon, #30624b); text-decoration: none; flex-shrink: 0;">
                 Maps ↗
               </a>
@@ -333,8 +333,8 @@
             <div *ngIf="!scanned.matched_hotel && !scanned.nearby_hotels?.length && scanned.nearby_places?.length"
                 style="display: grid; gap: 6px; margin-top: 4px;">
               <a *ngFor="let p of scanned.nearby_places.slice(0, 3)"
-                [href]="'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(p.name + ', ' + (scanned.location?.formatted_address || ''))"
-                target="_blank" rel="noopener noreferrer"
+                [routerLink]="['/map']"
+                [queryParams]="{ q: p.name, city: scanned.city || '' }"
                 style="padding: 8px 10px; border-radius: 12px; background: #fff; text-decoration: none; color: inherit; display: flex; justify-content: space-between; align-items: center; gap: 8px;">
                 <div style="min-width: 0;">
                   <div style="font-size: 12px; font-weight: 700;">{{ p.name }}</div>

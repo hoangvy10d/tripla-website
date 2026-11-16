@@ -265,12 +265,52 @@ const activities: Activity[] = [
     description: 'Kỳ quan hang động cổ tích giữa hẻm núi đá vôi hướng nhìn ra hồ Thun và rặng núi Alps tuyết trắng.',
   },
   {
+    id: 'demo-thuy-si-lauterbrunnen',
+    name: 'Thung lũng Lauterbrunnen & Thác Staubbach (72 Ngọn Thác)',
+    city: 'Thụy Sĩ',
+    categories: ['Vé tham quan', 'Công viên & vườn'],
+    imageUrl: 'https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1000&q=80',
+    description: 'Khám phá thung lũng cổ tích Lauterbrunnen, đi tàu leo núi lên đỉnh Jungfraujoch và ngắm nhìn thác Staubbach cao 300m.',
+  },
+  {
+    id: 'demo-thuy-si-interlaken-harder',
+    name: 'Đài quan sát Harder Kulm & Cầu treo Grindelwald First',
+    city: 'Thụy Sĩ',
+    categories: ['Vé tham quan', 'Trò chơi & giải trí', 'Điểm mốc'],
+    imageUrl: 'https://images.unsplash.com/photo-1527668752968-14dc70a27c95?auto=format&fit=crop&w=1000&q=80',
+    description: 'Ngắm trọn bộ ba đỉnh núi tuyết Eiger, Mönch, Jungfrau và hai hồ nước ngọc bích từ đỉnh Interlaken.',
+  },
+  {
     id: 'demo-canada-icefields',
     name: 'Cung đường Icefields Parkway & Sông băng Columbia',
     city: 'Canada',
     categories: ['Vé tham quan', 'Các điểm tham quan khác'],
     imageUrl: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80',
     description: 'Một trong những cung đường đẹp nhất thế giới băng qua dãy Rocky Mountains, hồ Bow Lake và sông băng ngàn năm.',
+  },
+  {
+    id: 'demo-canada-banff-cascade',
+    name: 'Cascade Shops, Đại lộ Banff Avenue & The Canadian Brewhouse',
+    city: 'Canada',
+    categories: ['Food & Dining', 'Điểm mốc', 'Vé tham quan'],
+    imageUrl: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1000&q=80',
+    description: 'Trung tâm mua sắm và ẩm thực sầm uất nhất thị trấn Banff dưới chân núi Cascade hùng vĩ.',
+  },
+  {
+    id: 'demo-canada-lake-louise-moraine',
+    name: 'Hồ Lake Louise, Hồ Moraine & Cáp treo Banff Gondola',
+    city: 'Canada',
+    categories: ['Vé tham quan', 'Công viên & vườn', 'Điểm mốc'],
+    imageUrl: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80',
+    description: 'Chèo thuyền Canoe trên mặt hồ băng ngọc bích Lake Louise, Moraine Lake và đi cáp treo ngắm toàn cảnh dãy Rocky.',
+  },
+  {
+    id: 'demo-canada-emerald-lake-bc',
+    name: 'Hồ Ngọc Lục Bảo Emerald Lake (British Columbia, Canada)',
+    city: 'Canada',
+    categories: ['Vé tham quan', 'Công viên & vườn'],
+    imageUrl: 'https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1000&q=80',
+    description: 'Hành trình khám phá viên ngọc xanh Emerald Lake giữa rừng thông tùng nguyên sinh tại British Columbia.',
   },
 ];
 
@@ -289,6 +329,8 @@ const foodSamples: Activity[] = [
   'Huế',
   'Cao Bằng',
   'Quảng Bình',
+  'Ninh Thuận',
+  'Phú Yên',
   'Thụy Sĩ',
   'Canada',
 ].map((city, index) => ({
@@ -316,17 +358,20 @@ export function filterActivities(
   const normalizeCity = (value: string) => {
     const text = normalizeDestination(value);
     if (['tp hcm', 'tphcm', 'sai gon', 'saigon', 'tp ho chi minh'].includes(text)) return 'ho chi minh';
-    if (text.includes('ha long') || text.includes('quang ninh')) return 'ha long';
-    if (text.includes('cao bang') || text.includes('ban gioc')) return 'cao bang';
-    if (text.includes('quang binh') || text.includes('phong nha') || text.includes('son doong')) return 'quang binh';
+    if (text.includes('ha long') || text.includes('quang ninh') || text.includes('tuan chau') || text.includes('lan ha')) return 'ha long';
+    if (text.includes('cao bang') || text.includes('ban gioc') || text.includes('nguom ngao') || text.includes('pac bo')) return 'cao bang';
+    if (text.includes('quang binh') || text.includes('phong nha') || text.includes('son doong') || text.includes('hang en') || text.includes('song chay')) return 'quang binh';
+    if (text.includes('vinh hy') || text.includes('ninh thuan') || text.includes('amanoi') || text.includes('nui chua')) return 'ninh thuan';
+    if (text.includes('phu yen') || text.includes('song cau') || text.includes('bai san ho') || text.includes('zannier')) return 'phu yen';
     if (text.includes('da lat') || text.includes('lam dong')) return 'da lat';
-    if (text.includes('nha trang') || text.includes('khanh hoa')) return 'nha trang';
+    if (text.includes('nha trang') || text.includes('khanh hoa') || text.includes('ninh van')) return 'nha trang';
     if (text.includes('vung tau') || text.includes('ba ria')) return 'vung tau';
     if (text.includes('hoi an') || text.includes('quang nam')) return 'hoi an';
     if (text.includes('sa pa') || text.includes('sapa') || text.includes('lao cai')) return 'sa pa';
     if (text.includes('phu quoc') || text.includes('kien giang')) return 'phu quoc';
-    if (text.includes('thuy si') || text.includes('switzerland') || text.includes('interlaken')) return 'thuy si';
-    if (text.includes('canada') || text.includes('banff') || text.includes('icefields')) return 'canada';
+    if (text.includes('hue') || text.includes('lang co')) return 'hue';
+    if (text.includes('thuy si') || text.includes('switzerland') || text.includes('interlaken') || text.includes('lauterbrunnen') || text.includes('grindelwald') || text.includes('jungfrau') || text.includes('beatenberg') || text.includes('beatus')) return 'thuy si';
+    if (text.includes('canada') || text.includes('banff') || text.includes('icefields') || text.includes('lake louise') || text.includes('moraine') || text.includes('british columbia') || text.includes('emerald lake') || text.includes('cascade') || text.includes('brewhouse')) return 'canada';
     return text;
   };
   const normalizeQueryText = (value: string) =>

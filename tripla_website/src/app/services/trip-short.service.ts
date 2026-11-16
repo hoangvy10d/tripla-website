@@ -462,6 +462,7 @@ export class TripShortService {
     const active = this.currentVideo();
     if (!active) return;
 
+    this.scannedLocationResult.set(null);
     this.isLiked.set(Boolean(active.isLiked));
     this.isBookmarked.set(Boolean(active.isBookmarked));
 

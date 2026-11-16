@@ -43,25 +43,28 @@ function normalizePlaceQuery(name: string): string {
     .trim();
 }
 
-function resolveSearchCity(addr: string, landmark: string): string {
+function resolveSearchCity(addr: string, landmark: string, backendCity?: string): string {
+  if (backendCity && backendCity.trim()) return backendCity.trim();
   const text = foldAccents(addr + ' ' + landmark);
-  if (text.includes('cao bang') || text.includes('ban gioc') || text.includes('nguom ngao')) return 'Cao Bằng';
-  if (text.includes('quang binh') || text.includes('phong nha') || text.includes('son doong') || text.includes('hang en')) return 'Quảng Bình';
-  if (text.includes('ha long') || text.includes('quang ninh') || text.includes('titop') || text.includes('titov') || text.includes('ti top') || text.includes('sung sot') || text.includes('cua van')) return 'Hạ Long';
+  if (text.includes('canada') || text.includes('banff') || text.includes('icefields') || text.includes('bow lake') || text.includes('lake louise') || text.includes('moraine') || text.includes('british columbia') || text.includes('alberta') || text.includes('emerald lake') || text.includes('cascade') || text.includes('brewhouse') || text.includes('peyto') || text.includes('yoho')) return 'Canada';
+  if (text.includes('switzerland') || text.includes('thuy si') || text.includes('beatenberg') || text.includes('interlaken') || text.includes('beatus') || text.includes('lauterbrunnen') || text.includes('grindelwald') || text.includes('jungfrau') || text.includes('thun') || text.includes('staubbach') || text.includes('harder kulm')) return 'Thụy Sĩ';
+  if (text.includes('cao bang') || text.includes('ban gioc') || text.includes('nguom ngao') || text.includes('pac bo') || text.includes('mat than') || text.includes('khuoi ky')) return 'Cao Bằng';
+  if (text.includes('quang binh') || text.includes('phong nha') || text.includes('son doong') || text.includes('hang en') || text.includes('song chay') || text.includes('hang toi') || text.includes('thien duong') || text.includes('suoi nuoc mooc')) return 'Quảng Bình';
+  if (text.includes('ha long') || text.includes('quang ninh') || text.includes('titop') || text.includes('titov') || text.includes('ti top') || text.includes('sung sot') || text.includes('cua van') || text.includes('tuan chau') || text.includes('bai tu long') || text.includes('lan ha')) return 'Hạ Long';
+  if (text.includes('vinh hy') || text.includes('ninh thuan') || text.includes('amanoi') || text.includes('nui chua') || text.includes('hang rai')) return 'Ninh Thuận';
+  if (text.includes('phu yen') || text.includes('song cau') || text.includes('bai san ho') || text.includes('zannier') || text.includes('tuy hoa')) return 'Phú Yên';
   if (text.includes('da lat') || text.includes('lam dong')) return 'Đà Lạt';
   if (text.includes('vung tau') || text.includes('ba ria')) return 'Vũng Tàu';
-  if (text.includes('nha trang') || text.includes('khanh hoa')) return 'Nha Trang';
-  if (text.includes('da nang')) return 'Đà Nẵng';
+  if (text.includes('nha trang') || text.includes('khanh hoa') || text.includes('ninh van')) return 'Nha Trang';
+  if (text.includes('da nang') || text.includes('ba na') || text.includes('golden bridge') || text.includes('son tra') || text.includes('my khe') || text.includes('marble mountains')) return 'Đà Nẵng';
   if (text.includes('hoi an') || text.includes('quang nam')) return 'Hội An';
-  if (text.includes('phu quoc') || text.includes('kien giang')) return 'Phú Quốc';
+  if (text.includes('phu quoc') || text.includes('kien giang') || text.includes('bai truong') || text.includes('bai khem')) return 'Phú Quốc';
   if (text.includes('sa pa') || text.includes('sapa') || text.includes('lao cai') || text.includes('fansipan')) return 'Sa Pa';
-  if (text.includes('ninh binh') || text.includes('trang an') || text.includes('tam coc')) return 'Ninh Bình';
-  if (text.includes('ha noi')) return 'Hà Nội';
+  if (text.includes('ninh binh') || text.includes('trang an') || text.includes('tam coc') || text.includes('van long')) return 'Ninh Bình';
+  if (text.includes('ha noi') || text.includes('hoan kiem')) return 'Hà Nội';
   if (text.includes('ho chi minh') || text.includes('sai gon') || text.includes('tp hcm')) return 'Hồ Chí Minh';
-  if (text.includes('hue')) return 'Huế';
+  if (text.includes('hue') || text.includes('lang co')) return 'Huế';
   if (text.includes('quy nhon') || text.includes('binh dinh')) return 'Quy Nhơn';
-  if (text.includes('switzerland') || text.includes('thuy si') || text.includes('beatenberg') || text.includes('interlaken') || text.includes('beatus')) return 'Thụy Sĩ';
-  if (text.includes('canada') || text.includes('banff') || text.includes('icefields') || text.includes('bow lake')) return 'Canada';
 
   const rawTokens = addr.split(',').map((s) => s.trim()).filter(Boolean);
   const nonCountry = rawTokens.filter((s) => !/việt nam|vietnam/i.test(s));
@@ -143,7 +146,7 @@ export class VisualSearch implements AfterViewInit, OnChanges, OnDestroy {
   get googleMapsUrl(): string {
     const landmark = this.result?.location?.landmark_name || '';
     const address = this.result?.location?.formatted_address || '';
-    const city = resolveSearchCity(address, landmark);
+    const city = resolveSearchCity(address, landmark, (this.result as any)?.city);
     const q = normalizePlaceQuery(landmark || city);
     return `/map?q=${encodeURIComponent(q)}&city=${encodeURIComponent(city)}`;
   }
@@ -151,7 +154,7 @@ export class VisualSearch implements AfterViewInit, OnChanges, OnDestroy {
   buildItemMapsUrl(name: string, address?: string): string {
     const addr = address || this.result?.location?.formatted_address || '';
     const landmark = this.result?.location?.landmark_name || '';
-    const city = resolveSearchCity(addr, `${landmark} ${name}`);
+    const city = resolveSearchCity(addr, `${landmark} ${name}`, (this.result as any)?.city);
     const q = normalizePlaceQuery(name || landmark);
     return `/map?q=${encodeURIComponent(q)}&city=${encodeURIComponent(city)}`;
   }
@@ -164,7 +167,7 @@ export class VisualSearch implements AfterViewInit, OnChanges, OnDestroy {
     this.resultDialog?.nativeElement?.close();
     const addr = address || this.result?.location?.formatted_address || '';
     const landmark = this.result?.location?.landmark_name || '';
-    const city = resolveSearchCity(addr, `${landmark} ${name || ''}`);
+    const city = resolveSearchCity(addr, `${landmark} ${name || ''}`, (this.result as any)?.city);
     const q = normalizePlaceQuery(name || landmark || city);
     void this.router.navigate(['/map'], {
       queryParams: { q, city }
@@ -486,7 +489,7 @@ export class VisualSearch implements AfterViewInit, OnChanges, OnDestroy {
     const checkOut = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 2);
     const addr = hotel?.address || this.result?.location?.formatted_address || '';
     const landmark = this.result?.location?.landmark_name || '';
-    const detectedCity = resolveSearchCity(addr, landmark);
+    const detectedCity = resolveSearchCity(addr, landmark, hotel?.city || (this.result as any)?.city);
 
     const criteria: HotelSearchCriteria = {
       service: 'hotel',
@@ -521,7 +524,7 @@ export class VisualSearch implements AfterViewInit, OnChanges, OnDestroy {
     this.resultDialog?.nativeElement?.close();
     const addr = this.result?.location?.formatted_address || '';
     const landmark = this.result?.location?.landmark_name || '';
-    const city = resolveSearchCity(addr, `${landmark} ${place?.name || ''}`);
+    const city = resolveSearchCity(addr, `${landmark} ${place?.name || ''}`, (this.result as any)?.city);
 
     void this.router.navigate(['/activity-search'], {
       queryParams: activitySearchParams({

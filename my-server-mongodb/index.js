@@ -169,10 +169,8 @@ async function startServer() {
       console.log('📦 Database tripla_db đang thiếu các bảng ERD mới, tự động chạy seedDatabase()...');
       await seedDatabase();
     }
-    if (locationCount < 40) {
-      console.log('🌍 Tự động làm giàu dữ liệu địa danh, khách sạn và hoạt động (enrichDatabase)...');
-      await enrichDatabase();
-    }
+    console.log('🌍 Tự động đồng bộ & làm giàu dữ liệu địa danh, khách sạn và hoạt động (enrichDatabase)...');
+    await enrichDatabase();
   } catch (err) {
     console.warn(
       `⚠️ Chưa kết nối được dịch vụ MongoDB tại ${MONGO_URI} (${err.message}).\n` +

@@ -984,5 +984,369 @@
         51.4178
       ]
     }
+  },
+  {
+    "_id": "hotel-lan-rung-bangioc",
+    "id": "hotel-lan-rung-bangioc",
+    "hotel_slug": "lan-rung-ban-gioc-boutique-homestay",
+    "name": "Lan Rừng Bản Giốc Boutique Lodge",
+    "hotel_name": "Lan Rừng Bản Giốc Boutique Lodge",
+    "address": "Làng đá cổ Khuổi Ky, Xã Đàm Thủy, Trùng Khánh, Cao Bằng",
+    "city": "Cao Bằng",
+    "area": "Làng đá Khuổi Ky",
+    "stars": 4,
+    "star_rating": 4,
+    "rating": 9.3,
+    "reviewCount": 245,
+    "pricePerNight": 980000,
+    "currency": "VND",
+    "accommodationType": "Homestay",
+    "imageUrl": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1000&q=80",
+    "amenities": [
+      "Wi-Fi",
+      "Bữa sáng bản địa",
+      "View suối & núi",
+      "Sân vườn",
+      "Lửa trại"
+    ],
+    "freeCancellation": true,
+    "description": "Khu nghỉ dưỡng sinh thái mang đậm kiến trúc nhà sàn đá truyền thống của người Tày tại làng cổ Khuổi Ky, cách Động Ngườm Ngao và Thác Bản Giốc chỉ 5 phút.",
+    "images": [
+      "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "rooms": [
+      {
+        "id": "caobang-lanrung-bungalow",
+        "name": "Bungalow Đá View Suối Khuổi Ky",
+        "size": 35,
+        "bed": "1 giường King",
+        "guests": 2,
+        "pricePerNight": 980000,
+        "breakfast": true
+      }
+    ],
+    "coordinates": [
+      106.7012,
+      22.8455
+    ],
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.7012,
+        22.8455
+      ]
+    }
+  },
+  {
+    "_id": "hotel-chay-lap-farmstay",
+    "id": "hotel-chay-lap-farmstay",
+    "hotel_slug": "chay-lap-farmstay-resort-phong-nha",
+    "name": "Chày Lập Farmstay & Resort Phong Nha",
+    "hotel_name": "Chày Lập Farmstay & Resort Phong Nha",
+    "address": "Thôn Chày Lập, Xã Phúc Trạch, Huyện Bố Trạch, Quảng Bình",
+    "city": "Quảng Bình",
+    "area": "Cửa ngõ Sơn Đoòng & Hang Tối",
+    "stars": 4,
+    "star_rating": 4,
+    "rating": 9.5,
+    "reviewCount": 530,
+    "pricePerNight": 1450000,
+    "currency": "VND",
+    "accommodationType": "Khu nghỉ dưỡng",
+    "imageUrl": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+    "amenities": [
+      "Wi-Fi",
+      "Hồ bơi",
+      "Chèo Kayak Sông Chày",
+      "Xe đạp miễn phí",
+      "Bữa sáng"
+    ],
+    "freeCancellation": true,
+    "description": "Khu nghỉ dưỡng sinh thái nổi tiếng trực thuộc hệ thống Oxalis Adventure — điểm xuất phát chính thức của các đoàn thám hiểm Hang Sơn Đoòng và Hang Én.",
+    "images": [
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "rooms": [
+      {
+        "id": "quangbinh-chaylap-farmroom",
+        "name": "Farm Room View Núi Đá Vôi",
+        "size": 40,
+        "bed": "1 giường King",
+        "guests": 2,
+        "pricePerNight": 1450000,
+        "breakfast": true
+      }
+    ],
+    "coordinates": [
+      106.2412,
+      17.5715
+    ],
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        106.2412,
+        17.5715
+      ]
+    }
+  },
+  {
+    "_id": "hotel-silberhorn-lauterbrunnen",
+    "id": "hotel-silberhorn-lauterbrunnen",
+    "hotel_slug": "hotel-silberhorn-lauterbrunnen",
+    "name": "Hotel Silberhorn Lauterbrunnen",
+    "hotel_name": "Hotel Silberhorn Lauterbrunnen",
+    "address": "Auf der Fuhren 456, 3822 Lauterbrunnen, Switzerland",
+    "city": "Thụy Sĩ",
+    "area": "Thung lũng Lauterbrunnen",
+    "stars": 4,
+    "star_rating": 4,
+    "rating": 9.5,
+    "reviewCount": 490,
+    "pricePerNight": 6800000,
+    "currency": "VND",
+    "accommodationType": "Khách sạn",
+    "imageUrl": "https://images.unsplash.com/photo-1502784444187-359ac186c5bb?auto=format&fit=crop&w=1000&q=80",
+    "amenities": [
+      "Wi-Fi",
+      "View Thác Staubbach",
+      "Bữa sáng Thụy Sĩ",
+      "Phòng xông hơi",
+      "Cạnh ga tàu"
+    ],
+    "freeCancellation": true,
+    "description": "Khách sạn Chalet gỗ truyền thống Thụy Sĩ nằm ngay lối vào thung lũng Lauterbrunnen, nơi du khách mở cửa ban công là thấy thác Staubbach và núi tuyết Alps.",
+    "images": [
+      "https://images.unsplash.com/photo-1502784444187-359ac186c5bb?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "rooms": [
+      {
+        "id": "swiss-silberhorn-chalet",
+        "name": "Deluxe Chalet Balcony View Thác Staubbach",
+        "size": 38,
+        "bed": "1 giường King",
+        "guests": 2,
+        "pricePerNight": 6800000,
+        "breakfast": true
+      }
+    ],
+    "coordinates": [
+      7.9078,
+      46.5975
+    ],
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        7.9078,
+        46.5975
+      ]
+    }
+  },
+  {
+    "_id": "hotel-schweizerhof-grindelwald",
+    "id": "hotel-schweizerhof-grindelwald",
+    "hotel_slug": "romantik-hotel-schweizerhof-grindelwald",
+    "name": "Romantik Hotel Schweizerhof Grindelwald",
+    "hotel_name": "Romantik Hotel Schweizerhof Grindelwald",
+    "address": "Swiss Alp Resort 1, 3818 Grindelwald, Switzerland",
+    "city": "Thụy Sĩ",
+    "area": "Grindelwald Alps",
+    "stars": 5,
+    "star_rating": 5,
+    "rating": 9.6,
+    "reviewCount": 340,
+    "pricePerNight": 9900000,
+    "currency": "VND",
+    "accommodationType": "Khu nghỉ dưỡng",
+    "imageUrl": "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1000&q=80",
+    "amenities": [
+      "Wi-Fi",
+      "Hồ bơi nước ấm trong nhà",
+      "Spa Alps",
+      "Bữa sáng",
+      "Nhà hàng Fondue"
+    ],
+    "freeCancellation": true,
+    "description": "Khu nghỉ dưỡng 5 sao đẳng cấp dưới chân vách núi Eiger hùng vĩ tại Grindelwald, kết hợp khu vườn riêng tư và ẩm thực phô mai Fondue thượng hạng.",
+    "images": [
+      "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "rooms": [
+      {
+        "id": "swiss-schweizerhof-eiger",
+        "name": "Eiger Mountain View Junior Suite",
+        "size": 48,
+        "bed": "1 giường King",
+        "guests": 2,
+        "pricePerNight": 9900000,
+        "breakfast": true
+      }
+    ],
+    "coordinates": [
+      8.0345,
+      46.6238
+    ],
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        8.0345,
+        46.6238
+      ]
+    }
+  },
+  {
+    "_id": "hotel-fairmont-banff-springs",
+    "id": "hotel-fairmont-banff-springs",
+    "hotel_slug": "fairmont-banff-springs-castle",
+    "name": "Fairmont Banff Springs (The Castle in the Rockies)",
+    "hotel_name": "Fairmont Banff Springs (The Castle in the Rockies)",
+    "address": "405 Spray Ave, Banff, AB T1L 1J4, Canada",
+    "city": "Canada",
+    "area": "Trung tâm Thị trấn Banff",
+    "stars": 5,
+    "star_rating": 5,
+    "rating": 9.8,
+    "reviewCount": 820,
+    "pricePerNight": 15800000,
+    "currency": "VND",
+    "accommodationType": "Khu nghỉ dưỡng",
+    "imageUrl": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1000&q=80",
+    "amenities": [
+      "Wi-Fi",
+      "Hồ bơi khoáng nóng ngoài trời",
+      "Sân Golf 27 lỗ",
+      "Spa Willow Stream",
+      "Bữa sáng"
+    ],
+    "freeCancellation": true,
+    "description": "Được mệnh danh là \"Lâu đài giữa dãy Rocky\" xây dựng từ năm 1888 theo phong cách Lâu đài Nam tước Scotland, chỉ cách đại lộ Banff Ave và Cascade Shops 3 phút.",
+    "images": [
+      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "rooms": [
+      {
+        "id": "canada-banff-springs-valley",
+        "name": "Bow Valley View Signature Suite",
+        "size": 52,
+        "bed": "1 giường King",
+        "guests": 2,
+        "pricePerNight": 15800000,
+        "breakfast": true
+      }
+    ],
+    "coordinates": [
+      -115.5619,
+      51.1644
+    ],
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        -115.5619,
+        51.1644
+      ]
+    }
+  },
+  {
+    "_id": "hotel-moose-banff-suites",
+    "id": "hotel-moose-banff-suites",
+    "hotel_slug": "moose-hotel-and-suites-banff",
+    "name": "Moose Hotel & Suites Banff Avenue",
+    "hotel_name": "Moose Hotel & Suites Banff Avenue",
+    "address": "345 Banff Ave, Banff, AB T1L 1H8, Canada",
+    "city": "Canada",
+    "area": "Banff Avenue (Cạnh Cascade Shops)",
+    "stars": 4,
+    "star_rating": 4,
+    "rating": 9.5,
+    "reviewCount": 540,
+    "pricePerNight": 7200000,
+    "currency": "VND",
+    "accommodationType": "Khách sạn",
+    "imageUrl": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
+    "amenities": [
+      "Wi-Fi",
+      "Bồn sục nước nóng tầng thượng",
+      "Lò sưởi trong phòng",
+      "Spa Meadow",
+      "Bữa sáng"
+    ],
+    "freeCancellation": true,
+    "description": "Khách sạn kiến trúc gỗ thông ấm cúng tọa lạc ngay tại 345 Banff Ave (sát cạnh trung tâm thương mại Cascade Shops), sở hữu 2 hồ nước khoáng nóng trên sân thượng ngắm núi tuyết.",
+    "images": [
+      "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "rooms": [
+      {
+        "id": "canada-moose-rooftop-suite",
+        "name": "Rooftop One-Bedroom Mountain Suite",
+        "size": 46,
+        "bed": "1 giường King + lò sưởi",
+        "guests": 2,
+        "pricePerNight": 7200000,
+        "breakfast": true
+      }
+    ],
+    "coordinates": [
+      -115.5692,
+      51.1802
+    ],
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        -115.5692,
+        51.1802
+      ]
+    }
+  },
+  {
+    "_id": "hotel-emerald-lake-lodge-bc",
+    "id": "hotel-emerald-lake-lodge-bc",
+    "hotel_slug": "emerald-lake-lodge-british-columbia",
+    "name": "Emerald Lake Lodge (Yoho National Park, BC)",
+    "hotel_name": "Emerald Lake Lodge (Yoho National Park, BC)",
+    "address": "1 Emerald Lake Rd, Field, British Columbia V0A 1G0, Canada",
+    "city": "Canada",
+    "area": "British Columbia & Yoho National Park",
+    "stars": 4,
+    "star_rating": 4,
+    "rating": 9.6,
+    "reviewCount": 480,
+    "pricePerNight": 8900000,
+    "currency": "VND",
+    "accommodationType": "Khu nghỉ dưỡng",
+    "imageUrl": "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1000&q=80",
+    "amenities": [
+      "Wi-Fi",
+      "Lò sưởi củi truyền thống",
+      "View hồ Ngọc Lục Bảo",
+      "Chèo thuyền Canoe",
+      "Nhà hàng Mount Burgess"
+    ],
+    "freeCancellation": true,
+    "description": "Khu nghỉ dưỡng gỗ thông di sản xây dựng từ năm 1902 nằm trên bán đảo riêng biệt vươn ra giữa mặt hồ Emerald Lake xanh ngắt tại British Columbia.",
+    "images": [
+      "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1000&q=80"
+    ],
+    "rooms": [
+      {
+        "id": "canada-emerald-lakefront",
+        "name": "Lakefront Timber Cabin with Fireplace",
+        "size": 44,
+        "bed": "1 giường King",
+        "guests": 2,
+        "pricePerNight": 8900000,
+        "breakfast": true
+      }
+    ],
+    "coordinates": [
+      -116.5398,
+      51.4401
+    ],
+    "geo": {
+      "type": "Point",
+      "coordinates": [
+        -116.5398,
+        51.4401
+      ]
+    }
   }
 ]
