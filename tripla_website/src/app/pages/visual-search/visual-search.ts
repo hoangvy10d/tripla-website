@@ -116,6 +116,7 @@ export class VisualSearch implements AfterViewInit, OnChanges, OnDestroy {
   private startCropY = 0;
   private startCropW = 220;
   private startCropH = 220;
+  private isNavigatingAway = false;
 
   get controlsLeft(): number {
     return this.cropX + this.cropW / 2;
@@ -164,11 +165,12 @@ export class VisualSearch implements AfterViewInit, OnChanges, OnDestroy {
       event.preventDefault();
       event.stopPropagation();
     }
-    this.resultDialog?.nativeElement?.close();
+    this.isNavigatingAway = true;
     const addr = address || this.result?.location?.formatted_address || '';
     const landmark = this.result?.location?.landmark_name || '';
     const city = resolveSearchCity(addr, `${landmark} ${name || ''}`, (this.result as any)?.city);
     const q = normalizePlaceQuery(name || landmark || city);
+    this.resultDialog?.nativeElement?.close();
     void this.router.navigate(['/map'], {
       queryParams: { q, city }
     });
@@ -230,6 +232,7 @@ export class VisualSearch implements AfterViewInit, OnChanges, OnDestroy {
 
   @HostListener('document:pointerdown', ['$event'])
   dismissOnOutsidePointer(event: PointerEvent): void {
+    if (this.isNavigatingAway) return;
     const target = event.target;
     if (target instanceof Node && this.elementRef.nativeElement.contains(target)) return;
     if (target === this.videoElement) return;
@@ -291,6 +294,9 @@ export class VisualSearch implements AfterViewInit, OnChanges, OnDestroy {
   }
 
   onDialogClosed(): void {
+    if (this.isNavigatingAway) {
+      return;
+    }
     if (this.iframeElement) {
       this.resumeRequested.emit();
       return;
@@ -482,56 +488,62 @@ export class VisualSearch implements AfterViewInit, OnChanges, OnDestroy {
     video.pause();
   }
 
-  bookHotelInTripShop(hotel: any, isDbHotel = true): void {
-    this.resultDialog?.nativeElement?.close();
+  buildHotelUrl(hotel: any, isDbHotel = true): string {
+    if (!hotel) return '/hotel-search';
+    const slug = hotel?.hotel_slug || hotel?.slug;
+    const id = hotel?._id || hotel?.id;
 
     const today = new Date();
     const checkOut = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 2);
     const addr = hotel?.address || this.result?.location?.formatted_address || '';
     const landmark = this.result?.location?.landmark_name || '';
     const detectedCity = resolveSearchCity(addr, landmark, hotel?.city || (this.result as any)?.city);
-
-    const criteria: HotelSearchCriteria = {
-      service: 'hotel',
-      location: (isDbHotel ? hotel?.name || hotel?.hotel_name : '') || detectedCity || 'Hạ Long',
-      checkIn: localDateString(today),
-      checkOut: localDateString(checkOut),
-      adults: 2,
-      children: 0,
-      rooms: 1,
-    };
-
-    const queryParams = hotelSearchParams(criteria, defaultHotelFilters());
-    const slug = hotel?.hotel_slug || hotel?.slug;
-    const id = hotel?._id || hotel?.id;
+    const loc = (isDbHotel ? (hotel?.name || hotel?.hotel_name) : '') || detectedCity || 'Canada';
+    const dateParams = `service=hotel&location=${encodeURIComponent(loc)}&checkIn=${localDateString(today)}&checkOut=${localDateString(checkOut)}&adults=2&children=0&rooms=1`;
 
     if (isDbHotel && (slug || id)) {
-      void this.router.navigate(slug ? ['/hotel', slug] : ['/hotels', id], { queryParams });
-    } else {
-      void this.router.navigate(['/hotel-search'], { queryParams });
+      return `/hotel/${encodeURIComponent(slug || id)}?${dateParams}`;
     }
+
+    return `/hotel-search?${dateParams}`;
   }
 
-  explorePlaceInTripShop(place: any): void {
+  buildPlaceUrl(place: any): string {
+    if (!place) return '/activity-search';
     const category = String(place?.category || '').toLowerCase();
     const isStay = /khách sạn|hotel|resort|villa|homestay|lưu trú|lodge/.test(category) || /lodge|hotel|resort/i.test(place?.name || '');
 
     if (isStay) {
-      this.bookHotelInTripShop({ name: place.name, address: this.result?.location?.formatted_address }, false);
-      return;
+      return this.buildHotelUrl({ name: place.name, address: this.result?.location?.formatted_address }, false);
     }
 
-    this.resultDialog?.nativeElement?.close();
     const addr = this.result?.location?.formatted_address || '';
     const landmark = this.result?.location?.landmark_name || '';
     const city = resolveSearchCity(addr, `${landmark} ${place?.name || ''}`, (this.result as any)?.city);
+    const q = normalizePlaceQuery(place?.name || '');
 
-    void this.router.navigate(['/activity-search'], {
-      queryParams: activitySearchParams({
-        location: city,
-        query: normalizePlaceQuery(place?.name || ''),
-        categories: [],
-      }),
-    });
+    return `/activity-search?location=${encodeURIComponent(city)}&query=${encodeURIComponent(q)}`;
+  }
+
+  bookHotelInTripShop(hotel: any, isDbHotel = true, event?: Event): void {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    this.isNavigatingAway = true;
+    const targetUrl = this.buildHotelUrl(hotel, isDbHotel);
+    this.resultDialog?.nativeElement?.close();
+    void this.router.navigateByUrl(targetUrl);
+  }
+
+  explorePlaceInTripShop(place: any, event?: Event): void {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    this.isNavigatingAway = true;
+    const targetUrl = this.buildPlaceUrl(place);
+    this.resultDialog?.nativeElement?.close();
+    void this.router.navigateByUrl(targetUrl);
   }
 }

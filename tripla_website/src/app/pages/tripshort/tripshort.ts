@@ -944,23 +944,18 @@ export class Tripshort implements OnDestroy {
   }
 
   openHotelDrawer(hotel: any): void {
-    const anyStore = this.store as any;
-    if (typeof anyStore.openHotelDrawer === 'function') {
-      anyStore.openHotelDrawer(hotel);
+    const slug = hotel?.hotel_slug || hotel?.slug;
+    const id = hotel?._id || hotel?.id;
+    if (slug || id) {
+      void this.router.navigate(slug ? ['/hotel', slug] : ['/hotels', id]);
       return;
     }
-    if (typeof anyStore.selectHotel === 'function') {
-      anyStore.selectHotel(hotel);
-      return;
-    }
-    if (anyStore.selectedHotel?.set) {
-      anyStore.selectedHotel.set(hotel);
-    }
-    if (anyStore.isDrawerOpen?.set) {
-      anyStore.isDrawerOpen.set(true);
-    } else if (anyStore.showDrawer?.set) {
-      anyStore.showDrawer.set(true);
-    }
+    void this.router.navigate(['/hotel-search'], {
+      queryParams: {
+        service: 'hotel',
+        location: hotel?.name || hotel?.hotel_name || hotel?.city || 'Canada'
+      }
+    });
   }
 
   closeAllDrawers(): void {
