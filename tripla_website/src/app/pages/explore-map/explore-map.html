@@ -217,15 +217,14 @@
             <small>{{ selected.kind === 'hotel' ? 'Giá từ / đêm' : selected.kind === 'activity' ? 'Giá từ / người' : 'Phí vào cửa' }}</small>
             <strong>{{ formatVnd(selected.price) }}</strong>
           </div>
-          <a
+          <button
+            type="button"
             class="gmaps-pill"
-            [href]="googleMapsUrl(selected)"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Mở chỉ đường trên Google Maps">
-            <span>Google Maps</span>
-            <span class="material-symbols-outlined">open_in_new</span>
-          </a>
+            (click)="zoomToSelected()"
+            aria-label="Phóng to vị trí trên bản đồ Tripla">
+            <span>Định vị trên Bản đồ</span>
+            <span class="material-symbols-outlined">my_location</span>
+          </button>
         </div>
 
         <div class="detail-actions">

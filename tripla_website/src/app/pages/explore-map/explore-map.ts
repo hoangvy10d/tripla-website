@@ -149,42 +149,90 @@ export class ExploreMapComponent implements AfterViewInit, OnDestroy {
         this.categories = ['Tất cả', ...Array.from(cats)];
         this.quickCities = Array.from(cityCounts.entries())
           .sort((a, b) => b[1] - a[1])
-          .slice(0, 5)
+          .slice(0, 14)
           .map(([name, count]) => ({ name, count }));
         this.isLoading = false;
         if (!this.places.length) {
           this.errorMessage = 'Chưa có dữ liệu toạ độ. Hãy chạy server (npm start) và seed dữ liệu (npm run seed).';
         }
-        this.applyQueryParams();
-        this.cdr.markForCheck();
+        this.route.queryParamMap.subscribe(() => {
+          this.applyQueryParams();
+          this.cdr.markForCheck();
+        });
       });
+  }
+
+  private resolveCityFromQuery(q: string, cityParam: string): string {
+    const combined = this.foldText(`${q} ${cityParam}`);
+    if (combined.includes('canada') || combined.includes('banff') || combined.includes('british columbia') || combined.includes('lake louise') || combined.includes('moraine') || combined.includes('icefields') || combined.includes('emerald lake') || combined.includes('cascade')) return 'Canada';
+    if (combined.includes('thuy si') || combined.includes('switzerland') || combined.includes('lauterbrunnen') || combined.includes('interlaken') || combined.includes('beatenberg') || combined.includes('beatus') || combined.includes('jungfrau') || combined.includes('grindelwald')) return 'Thụy Sĩ';
+    if (combined.includes('cao bang') || combined.includes('ban gioc') || combined.includes('nguom ngao') || combined.includes('pac bo')) return 'Cao Bằng';
+    if (combined.includes('quang binh') || combined.includes('phong nha') || combined.includes('son doong') || combined.includes('hang en') || combined.includes('song chay')) return 'Quảng Bình';
+    if (combined.includes('vinh hy') || combined.includes('ninh thuan') || combined.includes('amanoi') || combined.includes('nui chua')) return 'Ninh Thuận';
+    if (combined.includes('phu yen') || combined.includes('song cau') || combined.includes('bai san ho') || combined.includes('zannier')) return 'Phú Yên';
+    if (combined.includes('da lat') || combined.includes('lam dong')) return 'Đà Lạt';
+    if (combined.includes('vung tau') || combined.includes('ba ria')) return 'Vũng Tàu';
+    if (combined.includes('nha trang') || combined.includes('khanh hoa') || combined.includes('ninh van')) return 'Nha Trang';
+    if (combined.includes('da nang') || combined.includes('ba na') || combined.includes('golden bridge') || combined.includes('son tra') || combined.includes('my khe')) return 'Đà Nẵng';
+    if (combined.includes('hoi an') || combined.includes('quang nam')) return 'Hội An';
+    if (combined.includes('phu quoc') || combined.includes('kien giang')) return 'Phú Quốc';
+    if (combined.includes('sa pa') || combined.includes('lao cai') || combined.includes('fansipan')) return 'Sa Pa';
+    if (combined.includes('ninh binh') || combined.includes('trang an') || combined.includes('van long')) return 'Ninh Bình';
+    if (combined.includes('ha noi') || combined.includes('hoan kiem')) return 'Hà Nội';
+    if (combined.includes('ho chi minh') || combined.includes('sai gon') || combined.includes('tp hcm')) return 'Hồ Chí Minh';
+    if (combined.includes('hue') || combined.includes('lang co')) return 'Huế';
+    if (combined.includes('ha long') || combined.includes('quang ninh') || combined.includes('ti top') || combined.includes('sung sot') || combined.includes('cua van')) return 'Hạ Long';
+    return cityParam.trim();
   }
 
   /** Supports /map?q=...&city=...&focus=<id> coming from TripShop, TripShorts and the Planner. */
   private applyQueryParams(): void {
     const params = this.route.snapshot.queryParamMap;
-    const q = params.get('q') || '';
-    const city = params.get('city') || '';
+    const q = (params.get('q') || '').trim();
+    const rawCity = (params.get('city') || '').trim();
     const focus = params.get('focus');
 
-    if (q) {
+    const resolvedCity = this.resolveCityFromQuery(q, rawCity);
+
+    // Hiển thị toàn bộ các điểm tham quan, khách sạn và hoạt động trong cùng khu vực (resolvedCity)
+    if (resolvedCity) {
+      this.activeCity = resolvedCity;
+      this.searchText = '';
+    } else if (q) {
+      this.activeCity = '';
       this.searchText = q;
-    } else if (city) {
-      this.searchText = city;
     }
 
-    // Nếu từ khóa chi tiết không khớp trực tiếp địa điểm nào, lùi về hiển thị toàn bộ địa điểm trong thành phố đó
-    if (this.searchText && this.filteredPlaces.length === 0 && city) {
-      this.searchText = city;
+    if (this.filteredPlaces.length === 0) {
+      this.activeCity = '';
+      this.searchText = q || resolvedCity;
+      if (this.filteredPlaces.length === 0) {
+        this.searchText = '';
+      }
     }
 
     this.renderMarkers(true);
 
-    const target = focus
-      ? this.places.find((p) => p.id === focus)
-      : (q && this.filteredPlaces.length > 0 ? this.filteredPlaces[0] : null);
+    let target: MapPlace | null = null;
+    if (focus) {
+      target = this.places.find((p) => p.id === focus) || null;
+    } else if (q) {
+      const qFold = this.foldText(q);
+      const qTokens = qFold.split(' ').filter((w) => w.length >= 2);
+      target =
+        this.filteredPlaces.find((p) => this.foldText(p.name).includes(qFold)) ||
+        this.filteredPlaces.find((p) => {
+          const hay = this.foldText(`${p.name} ${p.address}`);
+          return qTokens.length > 0 && qTokens.every((t) => hay.includes(t));
+        }) ||
+        this.filteredPlaces[0] ||
+        null;
+    } else if (this.filteredPlaces.length > 0 && resolvedCity) {
+      target = this.filteredPlaces[0];
+    }
+
     if (target) {
-      this.selectPlace(target);
+      this.selectPlace(target, this.filteredPlaces.length === 1);
     }
   }
 
@@ -229,6 +277,7 @@ export class ExploreMapComponent implements AfterViewInit, OnDestroy {
       .replace(/[\u0300-\u036f]/g, '')
       .replace(/đ/gi, 'd')
       .toLowerCase()
+      .replace(/[^a-z0-9\s]/g, ' ')
       .replace(/\btitov\b|\btitop\b/g, 'ti top')
       .replace(/\bsu sot\b/g, 'sung sot')
       .replace(/\bsapa\b/g, 'sa pa')
@@ -239,9 +288,14 @@ export class ExploreMapComponent implements AfterViewInit, OnDestroy {
   private matchesScope(p: MapPlace): boolean {
     const rawQ = this.foldText(this.searchText.trim());
     const cleanQ = rawQ.replace(/^(vinh|thanh pho|tp|tinh)\s+/g, '').trim();
-    const cityOk = !this.activeCity || this.foldText(p.city || p.address).includes(this.foldText(this.activeCity));
+    const tokens = cleanQ.split(' ').filter((w) => w.length >= 2);
+    const cityOk = !this.activeCity || this.foldText(`${p.city} ${p.address}`).includes(this.foldText(this.activeCity));
     const hay = this.foldText(`${p.name} ${p.address} ${p.city} ${this.categoryLabel(p.category)}`);
-    const searchOk = !rawQ || hay.includes(rawQ) || (cleanQ.length >= 2 && hay.includes(cleanQ));
+    const searchOk =
+      !rawQ ||
+      hay.includes(rawQ) ||
+      (cleanQ.length >= 2 && hay.includes(cleanQ)) ||
+      (tokens.length > 0 && tokens.every((tok) => hay.includes(tok)));
     return cityOk && searchOk;
   }
 
@@ -368,6 +422,12 @@ export class ExploreMapComponent implements AfterViewInit, OnDestroy {
     this.cdr.markForCheck();
   }
 
+  zoomToSelected(): void {
+    if (this.selected && this.map) {
+      this.map.flyTo([this.selected.lat, this.selected.lng], 15, { duration: 0.7 });
+    }
+  }
+
   googleMapsUrl(p: MapPlace): string {
     const query = [p.name, p.address].filter(Boolean).join(', ');
     return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
@@ -396,7 +456,12 @@ export class ExploreMapComponent implements AfterViewInit, OnDestroy {
     } else if (this.selected.kind === 'activity') {
       void this.router.navigate(['/activities', this.selected.slug || this.selected.id]);
     } else {
-      void this.router.navigate(['/activity-search'], { queryParams: { q: this.selected.name } });
+      void this.router.navigate(['/activity-search'], {
+        queryParams: {
+          location: this.selected.city || 'Việt Nam',
+          query: this.selected.name
+        }
+      });
     }
   }
 
